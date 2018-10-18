@@ -1,0 +1,626 @@
+{{Fudan}}
+<html lang="en">
+<!--
+This html document is created by Tian Huang for Team Fudan iGEM 2018.
+We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
+-->
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/css.css&action=raw&ctype=text/css" />
+    <link rel="stylesheet" type="text/css" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/jquery-ui.min.css&action=raw&ctype=text/css" />
+
+    <!-- Font-awesome icons 4.7.0 -->
+    <link href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/font-awesome.css&action=raw&ctype=text/css" rel="stylesheet">
+
+    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
+    <link rel="stylesheet" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.css&action=raw&ctype=text/css">
+
+    <!-- Clear default CSS settings; CSS reset -->
+    <style type="text/css">
+        *{margin: 0;padding: 0;list-style: none;}
+        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
+
+        /** 清除内外边距 **/
+        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+        pre, /* text formatting elements 文本格式元素 */
+        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+        th, td /* table elements 表格元素 */ {
+            margin: 0;
+            padding: 0;
+        }
+
+        /** 设置默认字体 **/
+
+        h1, h3, h3, h4, h5, h6 { font-size: 100%; }
+        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+        small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+        /** 重置列表元素 **/
+        ul, ol { list-style: none; }
+
+        /** 重置文本格式元素 **/
+        a { text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+
+        /** 重置表单元素 **/
+        legend { color: #000; } /* for ie6 */
+        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+        /* 注：optgroup 无法扶正 */
+
+        /** 重置表格元素 **/
+        table { border-collapse: collapse; border-spacing: 0; }
+    </style>
+</head>
+
+<body>
+<!-- Fudan div at igem.org -->
+<div id="FudanWrapper" class="white">
+    <div id="FudanBody" class="white">
+        <header>
+            <!-- empty bar -->
+            <div id="emptyBar" style="position:relative;width: 100%;"></div>
+
+            <!-- Navigation bar -->
+            <nav id="topNav" class="white z-depth-0_5">
+                <div class="nav-wrapper">
+                    <div id="teamLogo" class="brand-logo">
+                        <a href="http://2018.igem.org/Team:Fudan" target="_self"><img src="http://2018.igem.org/wiki/images/c/c4/T--Fudan--teamLogo.svg"></a>
+                    </div>
+                    <ul id="nav-mobile" class="right blueBorder">
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown1">Project</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger thisPageLink" data-target="dropdown2">Dry lab</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown3">Wet lab</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown4">Toolbox</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown5">Outreach</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown6">Team</a></li>
+                        <li>
+                            <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
+                                <i class="fa fa-navicon" style="font-size: 24px"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Dropdown and List elements in navigation bar -->
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Demonstrate">Demonstration</a></li>
+
+                <li><a href="http://2018.igem.org/Team:Fudan/Antigen_Receptors">Antigen, Receptors</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Results">Transmembrane logic</a></li>
+            </ul>
+            <ul id="dropdown2" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Software">Software</a></li>
+            </ul>
+            <ul id="dropdown3" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/InterLab">iGEM interLab</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Notebook">Our notebook</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Primers">Primers used</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Protocols">Protocols</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Safety">Safety</a></li>
+            </ul>
+            <ul id="dropdown4" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Basic_Parts">Basic parts</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Composite_Parts">Composite parts</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Optimization">Optimization</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Parts_Collection">Parts collection</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Improve">Parts improvement</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Measurement">Quantification</a></li>
+            </ul>
+            <ul id="dropdown5" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Bio-Art">Bio-Art display</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Collaborations">Collaborations</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Design_Intention">Design intention</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Human_Practices">Human practices</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Public_Engagement">Public engagement</a></li>
+            </ul>
+            <ul id="dropdown6" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Acknowledgement">Acknowledgement</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Attributions">Attributions</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Heritage">Heritage</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Team">Members</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Sponsors">Sponsors</a></li>
+            </ul>
+
+            <!-- Slide-out navigator contents -->
+            <ul id="slide-out" class="sidenav">
+                <li style="padding: 0"><div class="sidenavBanner">
+                    <div class="background">
+                    </div>
+                    <p style="width: 100%;text-align: center;font-size: 24px"><span class="white-text">Model</p>
+                </div></li>
+                <li>
+                    <ul class="collapsible expandable">
+
+                        <li>Navigator on this page</li>
+                        <li class="onThisPageNav"><a href="#Transcriptional_Amplifer">Transcriptional amplifer</a></li>
+                        <li class="onThisPageNav"><a href="#NotchLigandKinetics">Receptor-Ligand kinetics</a></li>
+                        <li>Navigator on wiki</li>
+                        <li>
+                            <div class="collapsible-header">Project</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Demonstrate">Demonstration</a></li>
+
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Antigen_Receptors">Antigen, Receptors</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Results">Transmembrane logic</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Dry Lab</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Software">Software</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Wet Lab</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/InterLab">iGEM interLab</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Notebook">Our notebook</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Primers">Primers used</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Protocols">Protocols</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Safety">Safety</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Toolbox</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Basic_Parts">Basic parts</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Composite_Parts">Composite parts</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Optimization">Optimization</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Parts_Collection">Parts collection</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Improve">Parts improvement</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Measurement">Quantification</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Outreach</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Bio-Art">Bio-Art display</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Collaborations">Collaborations</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Design_Intention">Design intention</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Human_Practices">Human practices</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Public_Engagement">Public engagement</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Team</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Acknowledgement">Acknowledgement</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Attributions">Attributions</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Heritage">Heritage</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Team">Members</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Sponsors">Sponsors</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+
+                </li>
+                <li><div class="placeHolder"></div></li>
+            </ul>
+        </header>
+
+        <div id="pageContent" style="">
+
+
+            <div id="contentBanner" class="figureBanner">
+                <div class="row">
+                    <div class="col s12 hide-on-med-and-up">
+                        <h1>Model</h1>
+                    </div>
+                    <div class="col s12 hide-on-med-and-up">
+                        <span>It is important to observe and anticipate how one's product will work in the real world inorder to make it more applicable. </span>
+                    </div>
+                </div>
+                <div id="figureBannerTitle" class="hide-on-small-only">
+                    <h1>Model</h1>
+                    <p><span>It is important to observe and anticipate how one's product will work in the real world inorder to make it more applicable. </span></p>
+                </div>
+                <div class="hide-on-small-only">
+                    <img src="http://2018.igem.org/wiki/images/b/bb/T--Fudan--title_model.jpg">
+                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
+                        <defs>
+                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
+                        </g>
+                    </svg>
+                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
+                        <defs>
+                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- main content of the page -->
+            <div class="container">
+                <main>
+                    <!-- side navigator of page content -->
+                    <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
+
+                        <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                        <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                        <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                        <li><a href="http://2018.igem.org/Team:Fudan/Model">Model</a></li>
+                        <li class="onThisPageNav"><a href="#Transcriptional_Amplifer">Transcriptional amplifer</a></li>
+                        <li class="onThisPageNav"><a href="#NotchLigandKinetics">Receptor-Ligand kinetics</a></li>
+                        <li><a href="http://2018.igem.org/Team:Fudan/Software">Software</a></li>
+                    </ul>
+                    <div class="section container">
+                        <p>Our modeling focuses on two main aspects. The first is optimizing the transcriptional modules to increase signal-to-noise ratio, and the second is forecasting clinical outputs for multiple types of mixtures of immune cells and cancer cells. We experimentally showed that an amplification step is required. We also used a stochastic process to model receptor-ligand interaction kinetics, a possibility theory to model the transcriptional amplifier, and differential equations to model signal integration. ENABLE constructs with modeled parameters have increased signal-to-noise ratio and should have larger dynamic range.</p>
+                    </div>
+                    <div id="Transcriptional_Amplifer" class="section container scrollspy">
+                        <h2>The essence of the Amplifier for transmembrane signaling</h2>
+                        <p>By modeling, we demonstrated that our 3-layer design balances adjustability and stability for transmembrane logic processing.
+</p><p>
+                            Cellular logic gate lies at the foundation of our system, but the core and essential design of ENABLE is the detection of transmembrane signals. With our powerful SynNotch receptors transferring extracellular signals into intracellular transcription factors, we aim to detect real-world signals through ligand-receptor binding. In previous designs that detect intracellular signals with logic gates, researchers merely control the input to the system by not adding or adding superfluous small molecule drugs [PMID:22722847], or by not performing transfection or performing superfluous transfection, which is analogous to the 0 or 1 binary input. In such scenarios, just one single element is suffice to faithfully represent the on and off of the input. However, these previous designs are unable to transduce transmembrane signals in realistic circumstances. Our analysis through modelling leads to <a href="http://2018.igem.org/Team:Fudan/Results" target="_blank">the 3-layer design</a> principle of the ENABLE toolbox, which is to introduce an amplifier layer between the SynNotch (input, which we call the Receptor) system and the responsive element (output, which we call the Combiner).</p>
+                        <h3>Previous designs fail to transduce transmembrane signals</h3>
+                        <p>
+                            Signal detection in engineered cells is composed of three parts: input, the representation of information through transcription factors (TFs); process, the processing of information through TF-Promoter interactions; and output, the response to the information through gene expressions. When the input is experimentally controllable or even artificially manipulated, researchers can explore the capacity of cellular information processing by designing specific circuits with only one element (Figure 1). Using transduction or small molecule drugs for input manipulation, scientists in previous studies [PMID:24413461] have shown the logical processing ability of engineered cells and synthetic gene circuits.
+                        </p>
+                        <div class="expFigureHolder width40 left-on-med-and-up">
+                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/b/b9/T--Fudan--model_wyh_1.png">
+
+                            <p>
+                                Figure 1. Previous designs usually incorporate one pair of transcription factor and promoter as the detection system. The amount of transcription factor is manually controlled using small molecule drug, transduction, etc. As a result, the input of the system is nearly arbitrary, which can easily leads to the on/off output, represented by the activity of the promoter.
+                            </p>
+
+                        </div>
+                        <p>
+                            Unlike previous designs, the ENABLE system aims to detect real-world transmembrane signals represented by SynNotch receptors. The imperfect and variable situations and scenarios in the real world are far from experimentally controllable; yet they are unavoidable and must be dealt with.<br>
+                                    1. The number of Notch molecules on the cell membrane is relatively limited. Thus, the amount of released transcription factors is constrained (under detection level and have never been directly visualized) even under superfluous activation. This will prevent the input from being arbitrarily amplified.<br>
+                                    2. Experimental observations show that SynNotch comes with a certain level of background activation without external stimuli, which may most likely be a result of thermodynamic randomness.
+                        </p>
+                        <p>These factors prevent the previous designs from faithfully detecting the on and off of external stimuli. In fact, any synthetic circuits with only one input-process-output element will be limited in its detection ability. Here, we conventionally used the Hill Equation to characterize such an element, in which the output (denoted by X) relates to the input (activator for example, denoted by A) through the equation:
+                        </p>
+<p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width20"  src="http://2018.igem.org/wiki/images/e/eb/T--Fudan--model-eq1.png"></p>
+                        <p>
+                            Both X and A are described by their concentrations. Kd denotes the dissociation constant between the activator A and its binding site on the gene circuit whereas the n denotes the Hill coefficient. Please refer to <a href="http://2017.igem.org/Team:Fudan/Model/HE" target=_blank>the model from our team in 2017 for details</a>.
+                        </p>
+                        <p>
+                            The two free parameters, the dissociation constant (Kd) and n (Hill Coefficient), can be controlled to adjust the element. As shown in the following interactive figure, this allows us to manipulate the element to achieve different input (A) - output (X) relationships.
+                        </p>
+<p class="hide-on-med-and-up">(Hidden content only visible on a desktop computer.)</p>
+                        <div id="figure1" style="margin: 40px auto;width: 500px;" class="hide-on-small-only"></div>
+                        <div class="expFigureHolder width40 right-on-med-and-up">
+                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/4/4b/T--Fudan--model_wyh_2.png">
+
+                            <p>
+                                Figure 2. Previous designs with single element are not able to handle transmembrane signal processing task. The input-output relationship of a single element is characterized by Hill Equation, which comes with a 'detection range' defined by Kd and n. When the input range does not match the detection range, the system cannot faithfully represent the on and off of the input.
+                            </p>
+
+                        </div>
+                        <p>
+                            However, the free parameters are in reality not 'free' at all. While Kd is determined by the stability of the transcription factor-binding complex. The available transcription factor-promoter pairs, unfortunately, are limited, thus this constrains the dynamics that the one single input element can achieve to very few possibilities. More specifically, membrane receptors such as SynNotch that detect transmembrane signals and interact with ligands via non-covalent interactions require extremely low dissociation constants that may not even be realistic. On the other hand, the sensibility of the system needs to be high while the possible input range remains low and narrow. Furthermore, the Hill coefficient n representing the sensibility is almost uncontrollable and requires the specific and accurate designing of the promoter. Thus the previous designs that utilize a single element are not able to handle transmembrane signal processing tasks (Figure 2).
+                        </p>
+                        <p>
+                            One potential solution is to change the number of binding sites of the transcription factors. As illustrated in Figure 3, different binding situations can lead to different activation levels. While a single binding site can be characterized by the Hill Equation.
+                        </p>
+                        <div class="expFigureHolder width40 left-on-med-and-up">
+                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/3/32/T--Fudan--model_wyh_3.png">
+
+                            <p>
+                                Figure 3. Changing the number of binding sites of the transcription factors can potentially lead to more complex dynamics. Different numbers of bound transcription factors have different effects on the activity of the promoter, denoted by &alpha; in the figure.
+                            </p>
+
+                        </div>
+                        <p>We characterized the input-output relationship when there are multiple binding sites (of an activator A for example).</p>
+                               <p style="text-indent: 0;margin-bottom: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/8/83/T--Fudan--model-eq2.png"></p><p>
+                        While n and Kd are the Hill coefficient and dissociation constants, N represents the total number of binding sites, &alpha;<sub>i</sub> denotes the activation level while i activators are bound to the binding sites (bigger i leads to bigger &alpha;). Unfortunately, the following interactive figure demonstrates that such dynamics is still Hill-like, and still relies on different pairs of transcription factor-binding sites to manipulate the dynamical range (four binding sites are used as an example).</p>
+<p class="hide-on-med-and-up">(Hidden content only visible on a desktop computer.)</p>
+                        <div id="figure2" style="margin: 40px auto;width: 500px;" class="hide-on-small-only"></div>
+                        <p>In conclusion, changing both the transcription factor - promoter pairs and the number of binding sites can be used to adjust how a synthetic gene circuit responds to the input. However, both are limited and cannot enable a single limited-number element to faithfully detect transmembrane signals. Nevertheless, they are still valuable in our ENABLE after the addition of an amplifier layer (Figure 4).</p>
+                        <div class="expFigureHolder width40 right-on-med-and-up">
+                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/c/c2/T--Fudan--model_wyh_4.png">
+
+                            <p>
+                                Figure 4. In the design of our system, the input will first come from the SynNotch receptors. Then it will be amplified by a tunable amplifier circuit, which will then feed input to the final responsive element, our Combiner.
+                            </p>
+
+                        </div>
+                        <h3> An amplifier circuit</h3>
+                        <p>The realistic constraints and our analysis through modeling prompted us to introduce the amplifier circuit. With the amplifier circuit present, the eventual input into the final responsive element now comes from the output of the amplifier circuit instead of the output of the SynNotch receptors. This enables our system to be much more adjustable and stable.
+</p><p>
+                            With the amplifier circuit, the input from SynNotch will no longer directly enter the responsive element but will first go through the Amplifier. As demonstrated before, the input signal from SynNotch is weak and has a narrow range, making it unsuitable to be directly processed by the responsive element. However, with the amplifier, input strength to the responsive element can be manipulated by the amplifier, providing a higher level of control.
+                    </p>
+                        <div class="expFigureHolder width40 right-on-med-and-up">
+                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/8/85/T--Fudan--model_wyh_5.png">
+
+                            <p>
+                                Figure 5. The amplifier circuit introduces nested dynamics into our system. The output of the amplifier A and its input from SynNotch B are characterized by the Hill Equation. The A subsequently leads to the final output X, which again follows the Hill Equation in relation to A. While the input range of B is usually narrow and hard to detect, it can be amplified to the range of A through the amplifier circuit.
+                            </p>
+
+                        </div><p>
+                            To remain consistent, we denoted the final output of the responsive element as X and the input as A. With amplifier circuit present, the A now means the output of the amplifier circuit while the B now means the direct input from SynNotch, which is again still the input to the amplifier circuit. As shown in Figure 5, the narrow range of the SynNotch signal does not support faithful detection. But with the amplifier circuit, the input range will be converted to an output range, which will then become the input range to the responsive element. </p>
+                        <p>The output range of the amplifier is currently still undiscriminatable to the responsive element, but the amplification range can be manipulated. First, we can freely engineer the transcription factors to change the dissociation constant Kd. Since the input signal is now amplified, it will be easier to find an appropriate A to X relationship (Figure 6).</p>
+
+                        <p>Secondly, with a certain and fixed A to X relationship, we can change the binding sites of transcription factor B of the amplifier circuit which determines how the signal from SynNotch will be amplified. This allows us to very freely adjust the dynamical properties of the ENABLE toolbox. The previously unusable input range now gets amplified and enters the detection range of the responsive element; hence, allowing accurate detection (Figure 7).</p>
+                        <div class="row expFigureHolder">
+                            <div class="col s12 m6" style=""><img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/8/8e/T--Fudan--model_wyh_6.png">
+                                <p>
+                                    Figure 6. Adjusting the transcription factor - its promoter pair between the amplifier circuit and the responsive element changes the relationship between X and A.</p></div>
+                            <div class="col s12 m6" style=""><img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/a/a5/T--Fudan--model_wyh_7.png">
+
+                                <p>
+                                    Figure 7. Adjusting the binding sites of transcription factor B on the amplifier circuit leads to a dramatic change in the amplification magnitude. Thus, the former narrow and undetectable range of B can now be easily manipulated in terms of A.
+                                </p></div>
+                        </div>
+                        <ul class="collapsible expandable">
+                            <li style="list-style-type: none">
+                                <div class="collapsible-header">Click to expand</div>
+                                <div class="collapsible-body container"><p>
+                                    Derivation of the formula we use to characterize a single transcription factor - promoter pair with multiple binding sites is straightforward under a few appropriate assumptions. We will keep using activator for example. Since we have N binding sites, the number of actual bound activators ranges from 0 to N. First, we assume that the activity of the promoter is solely controlled by the number of bound activators, but not their spatial arrangement (or spatial arrangement has little influence on the activation mechanism). Similar evidence has been reported before \[3]. Thus we could simply consider in total the N+1 states representing N+1 bound activators. We use α\_i to denote the activation level while i activators are bound to the binding sites (bigger i leads to bigger α). Second, zinc finger proteins are used as the building block of our transcription factor. Structure analysis shows no known interaction sites between the proteins \[4]. We thus assume the different biding sites are independent to each other. This allows us to easily assign probabilities to the N+1 states. For each binding site, the probability of the activator being bound is again describe by 'Hill Equation' (refer to the model of our team in 2017 for the probabilistic explanation of Hill Equation and more <a href="http://2017.igem.org/Team:Fudan/Model/HE" target="_blank">Link here</a>).
+                                            </p><p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width20" src="http://2018.igem.org/wiki/images/7/7d/T--Fudan--model-eq3.png"></p>
+                                    <p>
+                                            To account for the four independent binding sites, elementary combination would show that the probability of i (ranging from 0 to 4) activator being bound is
+
+                                </p>
+                                    <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/0/08/T--Fudan--model-eq4.png"></p>
+                                    <p>
+                                            Thus the final output can be characterized by the expectation of the promoter activity under the N+1 states, which is
+                                </p>
+                                    <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/2/2a/T--Fudan--model-eq5.png"></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="NotchLigandKinetics" class="section container scrollspy">
+                        <h2>Receptor-Ligand kinetics</h2>
+                        <p>
+                            The Receptor-Ligand collects extracellular signals for further intercellular processing, which constitutes the most significant part for any transmembrane logic gate. To reduce the background activation of SynNotch, we put a huge <a href="http://2018.igem.org/Team:Fudan/Optimization" target=_blank>experimental effect based on its protein structure</a>.
+                        </p><p>
+                            We focused on the signal-noise-ratio (SNR) of the Notch/SynNotch receptor. In previous research, some quantitative descriptions of Notch-Ligand have been published for explanation and exploration of systematic design [PMID: 23839946]. For example, cis-inhibition was modeled via chemical kinetics, which precisely predict the mechanism of Notch-induced pattern formation [PMID: 20418862]. However, stochastic models for Notch-Ligand simulations have not been reported yet.
+                    </p><p>
+                            Here we present a mathematical model for Notch-Ligand kinetics using Stochastic Petri nets, which takes random intercellular processes into consideration. We found that the SNR of our system is not only dependent on the affinity of Notch-Ligands, but also the Secretase Complex. We also expanded our model from targeting just molecular-level chemical reactions to cell colony-level chemical reactions, which offers clues for oriented optimization of Notch. Last but not least, our object-oriented programming (OOP) makes it easy to transplant into <a href="http://2018.igem.org/Team:Fudan/Software">further application</a>.
+                        </p>
+                        <h3>Using ChemicalReactions toolkit</h3>
+                        <p>
+                            Not like chemical reactions happening in tubes, Notch-Ligand interaction occurs in a 2D manner. That is to say, chemical reactions between Notch and Ligand takes place on the membrane of two neighboring cells. Two cells may exchange their components on the membrane by touching to each other. Due to physical constraints, the chemical constitution of those cells remains relatively independent. However, when Ligand proteins binding to the extracellular domain of Notch receptor, proteolytic cleavage and release of the intracellular domain are induced.
+                        </p><p>
+                                    Proteolytic cleavage of Notch involves a few steps, including S2-cleaveage by metalloprotease ADAM10,  S3-cleavage by &gamma;-secretase complex or &gamma;-secretase Tetering, G. V., & Vooijs, M. (2011). Proteolytic cleavage of notch: “hit and run”. Current Molecular Medicine, 11(4),参考文献. Here we simplify the cleavage of Notch after ligand binding, and we suppose that the cleavage is a one-step reaction with the smallest rate constant of all cleavages mentioned above. This simplification is coming down to the rate-limiting step in physics chemistry. The simplified equations are as follows.
+
+                                    N+L⇌NL
+                                    NL+S⇌NLS→icd
+
+                    </p><p>
+                        Here N refers to Notch, L refers to Ligand, NL Notch-Ligand complex, S protease, NLS Notch-Ligand-protease complex, and icd means the intracellular domain of Notch.
+                    </p><p>
+                        Our mathematic tool is <a href="下载网站">Petri net</a>. For the history and definition of Petri net, please check reference 参考文献Wilkinson, D. J. (2006). Stochastic modelling for systems biology. Chapman and Hall/CRC.参考文献. This method views each chemical or reaction intermediate as nodes in a network, element reactions as edges, and weight and direction of each edge for stoichiometric number and reaction direction. Especially, we use {P, T, Pre, Post, M} to describe a Petri net precisely: P={p1, …, pu} is the space of chemicals, T={t1, …, tv} is the spaces of all transitions (element reactions) , Pre is a v*u integer matrix containing the weights from chemicals to transitions， and the (i,j)th element of this matrix is the weight of the arc going from chemical j to transition i, and Post is a v*u integer matrix containing the weights from transitions to chemicals, and the (i,j)th element of this matrix is the weight of the arc going from transition i to chemical j. M is a u-dimensional integer vector that represents the current state of the system (i.e. the number of molecules).
+                    </p><p>
+                        For system with only one kind of Notch and one kind of Ligand, we have
+                        公式公式嵌入 P={N\_1,L\_1,〖NL〗\_1,〖NLS〗\_1,S\_1,〖icd〗\_1,N\_2,L\_2,〖NL〗\_2,〖NLS〗\_2,S\_2,〖icd〗\_2} 公式公式嵌入
+                        the subscripts refer to the index of a cell in a cell-pair, and the index is designated arbitrarily.
+                        Also, we have 公式公式嵌入
+                        T={〖gN〗\_1,〖gL〗\_1,〖gN〗\_1 L\_2,〖dN〗\_1 L\_2,〖gN〗\_1 L\_2 S,〖dN〗\_1 L\_2 S,〖gicd〗\_1,〖gS〗\_1,〖dicd〗\_1,
+                        〖gN〗\_2,〖gL〗\_2,〖gN〗\_2 L\_1,〖dN〗\_2 L\_1,〖gN〗\_2 L\_1 S,〖dN〗\_2 L\_1 S,〖gicd〗\_2,〖gS〗\_2,〖dicd〗\_2} 公式公式嵌入 </p><p>
+                        Here the lower capital g and d refer to the generation and degradation of following chemicals.
+                        Similarly, we can write out the matrix Post and Pre.
+                    </p><p>
+                        We set W as a u-dimensional zero vector for initialization. Then we need to designate when and how this system chooses to finish a certain element reaction. For this purpose, we consider that the occurrence of an element reaction is a heterogeneous Poisson process, and certain reaction selection via sampling. That’s, the possibility that an element reaction R<sub>i</sub> happening in the time interval (t,&delta;t] is given by h<sub>i</sub>(x,<sub>i</sub>) &delta;t. With additivity assumption, we can get the possibility an arbitrary reaction happening in the time interval (t,&delta;t] is
+                        公式公式嵌入 h\_0=∑\_i▒〖h\_i (x,c\_i )&delta;t〗 公式公式嵌入
+                    </p><p>
+                        The form of h<sub>i</sub>(x,<sub>i</sub>) is given by mass-action stochastic kinetics. For a given system, h<sub>i</sub>(x,<sub>i</sub>)=c<sub>i</sub>\*C(n<sub>i1</sub>,n<sub>i2</sub>, …, n<sub>in</sub>), where c<sub>i</sub> is the rate constant for reaction i, n<sub>in</sub> refers to the molecule number of reactant k for reaction i, and function C() means combinatorial number of all n\_in. In practice, C() can be replaced by &Pi;() with some modifications for c<sub>i</sub>. For more details in our simulation, please refer to <a href="#simulationParameters">simulation parameters</a>.
+                    </p><p>
+                        Similarly, we can easily derive the expression for system with i kinds of Notch and j kind of Ligand.
+                        </p>
+                        <h3>Constitutive expression for stationary system</h3>
+                        <p>For certain parameters, Notch signaling component is equivalent to constitutive expression for stationary system (Figure 8A). It’s a good property for using Notch-Ligand in colony design, which uses the simplified version for higher-layer system simulation and shorten the simulation time without side effect of poor prediction.
+                        </p>
+                        <h3>The rate of Notch cleavage by proteases</h3>
+                        <p>Cleavage rate affects system response in a linear way. Notch-Ligand specificity may not affect system response.</p>
+                        <p>
+                            For certain parameters, generation of Notch-Ligand-protease complex may be the rate-limiting step (Figure 8A). For example, decreased rate constant of Notch-Ligand-protease complex generation reduce the icd generating rate in a linear manner (Figure 8B with rate constant of gN<sub>A</sub>LS decreased to one tenth of that of Figure 8A). Also, changing Notch-Ligand binding affinity may not significantly change icd generating rate, which strongly corroborated this view (Figure 8C with rate constant of gN<sub>A</sub>L<sub>B</sub> decreased to one tenth of that of Figure 8A; and in Figure 8D where heter/homo refers to the rate constant ratio of gN<sub>A</sub>L<sub>B</sub>/gN<sub>A</sub>L<sub>A</sub>.
+                        </p>
+                        <h3>The signal-noise-ratio (SNR)</h3>
+                        <p>
+                            SNR can be tuned via Notch-Ligand binding affinity in a power-law manner.
+                        </p><p>
+                            For certain parameters, signal-noise-ratio can be tuned via Notch-Ligand binding affinity in a power-law manner (Figure 8E with rate constant of gN<sub>A</sub>L<sub>B</sub>varied compared to Figure 8A]. This offers clue for <a href="http://2018.igem.org/Team:Fudan/Optimization">SynNotch optimization</a>.
+                    </p><p>
+                            Amplification is required for Notch-Ligand (see above).
+                            For certain parameters, signal of a certain pair of Notch-Ligand coupling may be diluted by occurrence of other reactions (Figure 8F with types of overall Notch/Ligand varied compared to Figure 8A).
+                        </p>
+                        <div class="expFigureHolder width40 left-on-med-and-up">
+                            <img class="responsive-img" src="">
+
+                            <p>
+                                Figure 8. Simulation results of Notch-Ligand kinetics
+                                        A-F分成6个，需要补各个的XY轴的涵义
+                            </p>
+
+                        </div>
+                        <p>
+                            The stochastic Notch-Ligand kinetics can be simplified as a single chemical constant for some certain conditions. Though this may greatly reduce the workload of transplant our model into a higher-scale application (e.g. to model a cell colony made up of cells armed with Notch and Ligand), this OOP modeling style makes it easy to transplant Notch-Ligand kinetics at the molecular level to macroscale level. Please continue to our <a href="http://2018.igem.org/Team:Fudan/Software">software</a>, where we abstracted mammalian cells into blocks (with parameters modeled and simulated above), to predict cellular behaviors. We quantified the behavior of individual cells within a population. We found that besides ENABLE signaling, cell proliferation speed, cell life-span and cell adhesion greatly impact cancer elimination effectiveness. Our modeling and software gives ENABLE gates a population perspective, and test them in a clinical scenario.
+                        </p>
+<p id="War_Predictor"><a href="http://2018.igem.org/Team:Fudan/Software#section4">See war predictor</a></p>
+                        <p><a href="http://2018.igem.org/wiki/images/c/c1/T--Fudan--model-cell-colony.pdf" target="_blank">Model_cell_colony</a></p>
+                    </div>
+                </main>
+            </div>
+
+            <!--Abstract on content page-->
+            <div id="abstractContent" class="z-depth-2">
+                <a href="#!"><img src="http://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
+                <div class="container">
+                    <h2 style="margin: 0;line-height: 0.8rem;">Abstract</h2>
+                    <p>Contact-dependent signaling is critical for multicellular biological
+                        events, yet customizing contact-dependent signal transduction between
+                        cells remains challenging. Here we have developed the ENABLE toolbox, a
+                        complete set of transmembrane binary logic gates. Each gate consists of
+                        3 layers: Receptor, Amplifier, and Combiner. We first optimized synthetic
+                        Notch receptors to enable cells to respond to different signals across the
+                        membrane reliably. These signals, individually amplified intracellularly by
+                        transcription, are further combined for computing. Our engineered zinc finger-based
+                        transcription factors perform binary computation and output designed products.
+                        In summary, we have combined spatially different signals in mammalian cells,
+                        and revealed new potentials for biological oscillators, tissue engineering,
+                        cancer treatments, bio-computing, etc. ENABLE is a toolbox for constructing
+                        contact-dependent signaling networks in mammals. The 3-layer design principle
+                        underlying ENABLE empowers any future development of transmembrane logic circuits,
+                        thus contributes a foundational advance to Synthetic Biology.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Floating Btns -->
+            <div class="floatingBtn">
+                <a href="#!" id="abstractBtn" class="btn">
+                    <i class="fa fa-sticky-note" style="font-size: 30px;line-height: 50px"></i>
+                </a>
+                <a href="#FudanWrapper" class="btn">
+                    <i class="fa fa-angle-up" style="font-size: 48px;line-height: 45px"></i>
+                </a>
+            </div>
+
+            <!-- Footer with sponsors and contact methods -->
+            <footer id="FudanFooter" class="page-footer grey">
+                <div class="container">
+                    <div class="row">
+                        <div id="sponsor" class="col m3 s12 row">
+                            <a href="http://2018.igem.org/Team:Fudan" target="_blank"><img class="col s3 m6 l3" style="position:relative; padding: 0 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="http://2018.igem.org/wiki/images/7/73/T--Fudan--teamLogoWhite.png">
+                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="http://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
+                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
+                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="http://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
+                        </a>
+                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size: 18px">ENABLE: making cells even smarter</h3>
+                        </div>
+                        <div id="usefulLinks" class="col m9 s12 row">
+                            <div class="col s12 l6 row">
+                                <div class="col s12 m4">
+                                    <span>Project</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Demonstrate">Demonstration</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Antigen_Receptors">Antigen, Receptors</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Results">Transmembrane logic</a></li>
+                                        <li><a href="http://2017.igem.org/Team:Fudan">2017.iGEM</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4 active">
+                                    <span>Dry lab</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Software">Software</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4">
+                                    <span>Wet lab</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/InterLab">iGEM interLab</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Notebook">Our notebook</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Primers">Primers used</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Protocols">Protocols</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Safety">Safety</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col s12 l6 row">
+                                <div class="col s12 m4">
+                                    <span>Toolbox</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Basic_Parts">Basic parts</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Composite_Parts">Composite parts</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Optimization">Optimization</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Parts_Collection">Parts collection</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Improve">Parts improvement</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Measurement">Quantification</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4">
+                                    <span>Outreach</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Bio-Art">Bio-Art display</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Collaborations">Collaborations</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Design_Intention">Design intention</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Human_Practices">Human practices</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Public_Engagement">Public engagement</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4">
+                                    <span>Team</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Acknowledgement">Acknowledgement</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Attributions">Attributions</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage">Heritage</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Team">Members</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Sponsors">Sponsors</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="contactUS row">
+                            <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg E301, 2005 Songhu Rd, Shanghai
+                            </div><div class="col s12 m6 l3"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
+                        </div><div class="col s12 m6 l2"><i class="fa fa-wechat"></i> Fudan_iGEM
+                        </div><div class="col s12 m6 l3"><i class="fa fa-fax"></i> +86-21-31246727
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Javascript files -->
+<!-- Materialize 1.0.0-rc.2 -->
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.js&action=raw&ctype=text/javascript"></script>
+
+<!-- Javascript -->
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/js.js&action=raw&ctype=text/javascript"></script>
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/jquery-ui.min.js&action=raw&ctype=text/javascript"></script>
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/d3.min.js&action=raw&ctype=text/javascript"></script>
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/function-plot.js&action=raw&ctype=text/javascript"></script>
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/Kernel.js&action=raw&ctype=text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,647 @@
+{{Fudan}}
+<html lang="en">
+<!--
+This html document is created by Tian Huang for Team Fudan iGEM 2018.
+We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
+-->
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/css.css&action=raw&ctype=text/css" />
+
+    <!-- Font-awesome icons 4.7.0 -->
+    <link href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/font-awesome.css&action=raw&ctype=text/css" rel="stylesheet">
+
+    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
+    <link rel="stylesheet" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.css&action=raw&ctype=text/css">
+
+    <!-- Clear default CSS settings; CSS reset -->
+    <style type="text/css">
+        *{margin: 0;padding: 0;list-style: none;}
+        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
+
+        /** 清除内外边距 **/
+        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+        pre, /* text formatting elements 文本格式元素 */
+        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+        th, td /* table elements 表格元素 */ {
+            margin: 0;
+            padding: 0;
+        }
+
+        /** 设置默认字体 **/
+
+        h1, h3, h3, h4, h5, h6 { font-size: 100%; }
+        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+        small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+        /** 重置列表元素 **/
+        ul, ol { list-style: none; }
+
+        /** 重置文本格式元素 **/
+        a { text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+
+        /** 重置表单元素 **/
+        legend { color: #000; } /* for ie6 */
+        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+        /* 注：optgroup 无法扶正 */
+
+        /** 重置表格元素 **/
+        table { border-collapse: collapse; border-spacing: 0; }
+        #FudanBody .imgNoM img{
+            width:100%;
+        }
+        #FudanBody .imgNoM{
+            text-align:center;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Fudan div at igem.org -->
+<div id="FudanWrapper" class="white">
+    <div id="FudanBody" class="white">
+        <header>
+            <!-- empty bar -->
+            <div id="emptyBar" style="position:relative;width: 100%;"></div>
+
+            <!-- Navigation bar -->
+            <nav id="topNav" class="white z-depth-0_5">
+                <div class="nav-wrapper">
+                    <div id="teamLogo" class="brand-logo">
+                        <a href="http://2018.igem.org/Team:Fudan" target="_self"><img src="http://2018.igem.org/wiki/images/c/c4/T--Fudan--teamLogo.svg"></a>
+                    </div>
+                    <ul id="nav-mobile" class="right orangeBorder">
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown1">Project</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger thisPageLink" data-target="dropdown2">Dry lab</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown3">Wet lab</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown4">Toolbox</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown5">Outreach</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown6">Team</a></li>
+                        <li>
+                            <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
+                                <i class="fa fa-navicon" style="font-size: 24px"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Dropdown and List elements in navigation bar -->
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Demonstrate">Demonstration</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Antigen_Receptors">Antigen, Receptors</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Results">Transmembrane logic</a></li>
+            </ul>
+            <ul id="dropdown2" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Software">Software</a></li>
+            </ul>
+            <ul id="dropdown3" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/InterLab">iGEM interLab</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Notebook">Our notebook</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Primers">Primers used</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Protocols">Protocols</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Safety">Safety</a></li>
+            </ul>
+            <ul id="dropdown4" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Basic_Parts">Basic parts</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Composite_Parts">Composite parts</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Optimization">Optimization</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Parts_Collection">Parts collection</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Improve">Parts improvement</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Measurement">Quantification</a></li>
+            </ul>
+            <ul id="dropdown5" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Bio-Art">Bio-Art display</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Collaborations">Collaborations</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Design_Intention">Design intention</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Human_Practices">Human practices</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Public_Engagement">Public engagement</a></li>
+            </ul>
+            <ul id="dropdown6" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Acknowledgement">Acknowledgement</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Attributions">Attributions</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Heritage">Heritage</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Team">Members</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Sponsors">Sponsors</a></li>
+            </ul>
+
+            <!-- Slide-out navigator contents -->
+            <ul id="slide-out" class="sidenav">
+                <li style="padding: 0"><div class="sidenavBanner">
+                    <div class="background orangeBg">
+                    </div>
+                    <p style="width: 100%;text-align: center;font-size: 24px"><span class="white-text">Software</span></p>
+                </div></li>
+                <li>
+                    <ul class="collapsible expandable">
+                        <li>Navigator on this page</li>
+                        <li class="onThisPageNav"><a href="#section1">Abstract</a></li>
+                        <li class="onThisPageNav"><a href="#section2">Introduction</a></li>
+                        <li class="onThisPageNav"><a href="#section3">Method</a></li>
+                        <li class="onThisPageNav"><a href="#section4">Tutorials</a></li>
+                        <li>Navigator on wiki</li>
+                        <li>
+                            <div class="collapsible-header">Project</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Demonstrate">Demonstration</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Antigen_Receptors">Antigen, Receptors</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Results">Transmembrane logic</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Dry Lab</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Software">Software</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Wet Lab</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/InterLab">iGEM interLab</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Notebook">Our notebook</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Primers">Primers used</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Protocols">Protocols</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Safety">Safety</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Toolbox</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Basic_Parts">Basic parts</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Composite_Parts">Composite parts</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Optimization">Optimization</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Parts_Collection">Parts collection</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Improve">Parts improvement</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Measurement">Quantification</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Outreach</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Bio-Art">Bio-Art display</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Collaborations">Collaborations</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Design_Intention">Design intention</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Human_Practices">Human practices</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Public_Engagement">Public engagement</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Team</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Acknowledgement">Acknowledgement</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Attributions">Attributions</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Heritage">Heritage</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Team">Members</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Sponsors">Sponsors</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+
+                </li>
+                <li><div class="placeHolder"></div></li>
+            </ul>
+        </header>
+
+        <div id="pageContent" style="">
+
+
+            <div id="contentBanner" class="figureBanner orangeBg">
+                <div class="row">
+                    <div class="col s12 hide-on-med-and-up">
+                        <h1>Software</h1>
+                    </div>
+                    <div class="col s12 hide-on-med-and-up">
+                        <span>...</span>
+                    </div>
+                </div>
+                <div id="figureBannerTitle" class="hide-on-small-only">
+                    <h1>Software</h1>
+                    <p><span>...</span></p>
+                </div>
+                <div class="hide-on-small-only">
+                    <img src="http://2018.igem.org/wiki/images/2/26/T--Fudan--title_software.jpg">
+                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
+                        <defs>
+                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
+                        </g>
+                    </svg>
+                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
+                        <defs>
+                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- @@@@ main content of the page -->
+            <div class="container">
+                <!-- side navigator of page content -->
+                <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
+                    <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                    <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                    <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                    <li><a href="http://2018.igem.org/Team:Fudan/Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
+                    <li><a href="http://2018.igem.org/Team:Fudan/Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                    <li>Software</li>
+                    <li class="onThisPageNav"><a href="#section1">Abstract</a></li>
+                    <li class="onThisPageNav"><a href="#section2">Introduction</a></li>
+                    <li class="onThisPageNav"><a href="#section3">Method</a></li>
+                    <li class="onThisPageNav"><a href="#section4">Tutorials</a></li>
+                </ul>
+                <main>
+                    <div id="section1" class="section container scrollspy">
+                        <h2>Abstract
+                        </h2>
+                        <p>Our software tool was built based on (1) <a href="./Model">modeled parameters</a> characterizing our 3-layer design; (2) populational description of individual cellular behaviors. We found that several cell behaviors and ENABLE signaling have key impact on the evolution of a cell colony with mixed cell types. In an object-oriented-programming and user-friendly style, our software allows users to adjust those key factors and profile the fate of their own mixed cells. Our software bridges a nanoscopic transcriptional design of biological circuits, with microscopic cellular behaviors, up to a macroscopic population output, from which clinical outcome could be predicted, artificial tissue could be assembled, etc.
+                        </p>
+
+                    </div>
+                    <div id="section2" class="section container scrollspy">
+                        <h2>Introduction
+                        </h2>
+                        <p>
+                            Modeling is necessary for quantifying biological processes and designing biological systems for customized function. With the increasingly rapid development of synthetic biology, many models are based on different branches of applied mathematics, as exampled by stochastic process, cellular automaton, dynamic systems, and Boltzmann kinetics for different biological processes [1-4]. For example, automaton is often used to model birth and death processes, stochastic processes is often used to model transcription factor-DNA binding，dynamic systems is often used in population ecology to predict the evolution of colony, and Boltzmann kinetics is often used to quantitatively describe chemical reactions. Some toolkit based on this model, like <a href="http://www.compucell3d.org/" target=_blank>CompCell3D</a>, has been developed for computational nanotechnology and simulating tissue development.
+                        </p>
+                        <p>
+                            However, there hasn’t a ready single model for our ENABLE project. It is because an overall model for our project should not only consist the 3-layer standard design (for more details [link to circuit design]) but also the biological mechanism underlying it(for more details [link to model]).
+                        </p>
+                        <p>
+                            Here we present a modeling software using multiscale mathematical tools for different biological processes, which serves as a reusable tool for cell colony design. We use different modules packaged in different <i>Classes</i> to simulate different biological processes. Based on the object-oriented principal, it is easy for users to realize customized Classes and simulate cell colony using our software.
+                        </p>
+                        <p>
+                            A colony is occupied by different populations, a population is unitized by abundant individuals, be it a cell or an ensemble of various cells, and a cell is a network of chemicals, for example, proteins, lipids, nucleotides, etc. To simulate cell colony, our software bridges a nanoscopic transcriptional design of biological circuits, with microscopic cellular behaviors, up to a macroscopic population output, from which clinical outcome could be predicted, artificial tissue could be assembled, etc.
+                        </p>
+                        <p>
+                            A demonstration using our software to simulate the process of our engineered cells collaborating to wipe out cancer cells are offered in this documentation.
+
+                        </p>
+
+                    </div>
+                    <div id="section3" class="section container scrollspy">
+                        <h2>Method
+                        </h2>
+                        <p>Our software is built based on OOP algorithm and MATLAB. A brief introduction to the workflow of our toolkit is shown below. For more details, please refer to our page on Github[link].
+                        </p>
+                        <div class="expFigureHolder" style="width:100%">
+                            <img style="width: 100%" src="http://2018.igem.org/wiki/images/5/57/T--Fudan--Software-1.png">
+                            <p>
+
+                                Figure.1 | UML of our toolbox.
+
+                            </p>
+
+                        </div>
+                        <div class="expFigureHolder" style="width:100%;margin-top: 23px">
+                            <img style="width: 100%" src="http://2018.igem.org/wiki/images/1/17/T--Fudan--Software-2.png">
+                            <p>
+                                Figure.2 | Workflow of our toolbox.
+                            </p>
+
+                        </div>
+                        <p>
+                            <b>Initialization:</b><br>
+                                    At first, initialize the system. Use the formative text as input, then designate the initial state of each cell (life span, type, vitality), properties of each cell type (type of Ligand and Notch, proliferation rate, mean vitality, and special chemical reactions in cells of this type), and relationship between cells (binding affinity between cells, which can be related to cell type and expression of membrane proteins, such as Notch and Ligand).
+
+                        </p>
+                        <div class="tableHolder">
+                            <table>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Meaning</th>
+                                </tr>
+                                <tr>
+                                    <td>T</td>
+                                    <td>Temperate, measuring the effect of random move.</td>
+                                </tr>
+                                <tr>
+                                    <td>E_neighbor</td>
+                                    <td>Affinity, measuring the effect of directional movement of cell based on cell-cell recognition.</td>
+                                </tr>
+                                <tr>
+                                    <td>Nm</td>
+                                    <td>Sampling rate in dt, measuring the rate of cell movement.</td>
+                                </tr>
+                                <tr>
+                                    <td>dt</td>
+                                    <td>The step length of Euler method in our simulation.</td>
+                                </tr>
+                                <tr>
+                                    <td>T</td>
+                                    <td>Simulation time, measuring how long we want to simulate with our software.
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>
+                            <b>Iteration:</b><br>
+                            After initiation, an iteration is made. In a period of &delta;t (very short time, and at the scale at 1-10 seconds), the cell may try to migrate, proliferate, or contact to neighboring cells to gather information for choice making. What is worth noticing is that if the cell moves/divides/dies, the Notch-Ligand kinetics may change abruptly for the changing cell-cell interaction, and a movement is relatively rapid compared with cell size. Therefore, it only takes little time for the switching of cell-cell network, but the process of finding proper movement takes some.
+
+                        </p>
+                        <p>
+                            Within the interval of two “cellular movements (proliferation/migration/death included)”, “chemical movements” happens. This refers to the Notch-Ligand kinetics between cell membranes, the amplification of the signal of Notch ICD (intracellular domain) and the combination of augmented signals. Using <a href="https://en.wikipedia.org/wiki/Euler_method" target=_"blank">Euler method</a> (for kinetics) and discrete <a href="https://en.wikipedia.org/wiki/Gillespie_algorithm" target="_blank">Gillespie algorithm</a> (for stochastic process), we have predicted how a single cell works in a period within the interval of <b>cellular movements</b> (proliferation/migration/death included) and <b>chemical movements</b>, which refers to the <a href="./Model#NotchLigandKinetics">Notch-Ligand kinetics</a> between cell membranes, the amplification of the signal of Notch intracellular domain and the combination of augmented signals.
+
+                        </p>
+                        <p>
+                            After this prediction, we construct some functions to record the general state of each cell, including index, position, age, and then tendency to die or divide, for further data analysis. A snapshot of our cell colony is taken simultaneously for further simulation visualization. A judgement statement is executed to determine whether to terminate (when &delta;t multiples iteration time is greater than T [这个是什么意思]) or continue to iterate (both cellular movements and chemical movements). Movements in a single iteration seems negligible, but a big number of iterations would show a difference.
+
+                        </p>
+                        <p>For more details of cellular movement, please refer to the <a href="#">supplementary material</a>; for more details of chemical movement, please refer to our modeling of <a href="./Model#NotchLigandKinetics">Notch-Ligand Kinetics</a>.
+                        </p>
+                        <p>
+                            <b>Data analysis:</b>
+                            Upon simulation termination, data will be analyzed using prepared functions. We offer APIs for cell track, cell census and cell network analysis.
+
+                        </p>
+                        <p><b>Simulation visualization:</b><br>
+                            Using <i>clips</i> recorded in Iteration step, it’s easy to get our simulation visualized using built-in Matlab function <i>videowrite</i>. Cell colony composition can be checked by watching the output video.
+                        </p>
+                    </div>
+                    <div id="section4" class="section container scrollspy">
+                        <h2>Tutorials (single functions)
+                        </h2>
+                        <h4>To make users familiar to our toolbox, a tutorial is as follows.
+                            Notch-Ligand kinetics (using <i>ChemicalReactions</i> toolkit)
+                        </h4>
+                        <p><i>ChemicalReactions</i> toolkit is a toolkit for chemical reaction modeling using Petri net and Possion process. Here we demonstrate the usage of <i>ChemicalReactions</i> through an example of Notch-Ligand kinetics modeling.
+                        </p>
+                        <div class="expFigureHolder" style="width:100%;margin-top: 23px">
+                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/5/5f/T--Fudan--Software-3.png">
+                            <p>
+                                Figure 1.3: Demo: Notch-Ligand kinetics analysis using ChemicalReactions toolkit. Code are offered on Github.
+                            </p>
+
+                        </div>
+                        <h4>
+                            STEP1: Open MATLAB, and open the file ChemicalReactions.md in folder @ChemicalReactions.</h4>
+                           <h4> STEP2: Enter the command line window
+
+                        </h4>
+                        <p>
+                            >>[Pre,Post]=Pre_Notch_Ligand(2)<br>
+                                    >>obj= ChemicalReactions(‘’,’’,Post,Pre,@H_Notch_Ligand,zeros(1,12),2)
+</p><p>
+                                    Here Pre_Notch_Ligand() is a function to generate transition matrix for chemical reactions, @H_Notch_Ligand is a function handle for calculation of reaction possibilities, zeros(1,12) designates the initial condition of the system, and 2 refers to 2 kinds of Notch/Ligand exist.
+
+                        </p>
+                        <h4>STEP3: Enter in the command line window
+                        </h4>
+                        <p>
+                            >>XMat=obj.iteration(100,1)<br>
+                            >>for i =1:12<br>
+                            >>plot(XMat(:,i));<br>
+                            >>hold on<br>
+                            >>end
+                        </p><p>
+                            Here iteration() is a method of class <i>ChemicalReactions</i> for predicting the state of system obj. (100, 1) is the setting step for data recording, and XMat is for data storage.
+                    </p><p>
+                            To repeat the results of Fig. 3, please refer to Github [link to Github] for code acquisition.
+
+                        </p>
+                        <h3>War predictor (using <i>Cell2DProl</i> toolkit)
+                        </h3>
+                        <p>
+                            <i>Cell2DProl</i> toolkit is a toolkit for Cell colony simulation. For more details, please refer to the <a href="#">supplementary material</a> or our code [link to Github]. Here we demonstrate the usage of <i>Cell2DProl</i> through an example of therapeutic engineered cell design.
+                        </p>
+                        <div class="expFigureHolder" style="width:100%;margin-top: 23px">
+                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--Software-4.png">
+                            <p>
+                                Figure 1.4: Demo: visualization function in the <i>Cell2DProl</i> toolkit
+                            </p>
+
+                        </div>
+                        <div class="expFigureHolder" style="width:100%;margin-top: 23px">
+                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/b/be/T--Fudan--Software-5.png">
+                            <p>
+                                Figure 1.5: Demo: Data analysis functions in <i>Cell2DProl</i> toolkit
+                            </p>
+
+                        </div>
+                        <h4>STEP1: Open MATLAB, and open the file Cell2DShadeProl.md in your folder.
+                        </h4>
+                        <h4>STEP2: Click the ‘run’ on the panel
+                        </h4>
+                        <p>Here all the parameters are set proper previously. For more details on parameters, please refer to the <a href="#">supplementary material</a>. If your simulation results are visualized successfully, a video called 1_6_1_6 can be found in your current folder.
+                        </p>
+                        <h4>STEP3: The left Figure in Fig.5 will be plotted automatically. To get the right figure, Enter in the command line window
+                        </h4>
+                        <p>>>res1=-Culture.*(Culture<-1);<br>
+                            >>res2=res1(:);<br>
+                            >>ecdf(res2);<br>
+                        </p>
+                        <h3>OOP-based AND gate design (using <i>Cell</i> toolkit)</h3>
+                        <p><i>Cell</i> toolkit is a toolkit to design combinational circuits by linking user-defined cellular movement (element) together. Here we show you how to use our toolkit <i>Cell</i> by an example of AND gate circuit design.
+                        </p>
+                        <div class="expFigureHolder" style="width:100%;margin-top: 23px">
+                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/8/84/T--Fudan--Software-6.png">
+                            <p>
+                                Figure 1.6: Demo: Simulation of 3-layer ENABLE using <i>Cell</i> toolkit
+                            </p>
+
+                        </div>
+                        <h4>STEP1: Open MATLAB, and open the folder with subfolder @Cell.
+                        </h4>
+                        <h4>STEP2: Run kinetic_notch_test.m, kinetic_addgate_test_signal.m, kinetic_addgate_test.m.
+                        </h4>
+                        <p>Here we use kinetic model for Notch activation and signal amplification [Ref1], and 3-step kinetics for intein kinetics [Ref.2] in literature[参考文献] to validate the function of our toolkit.
+                        </p>
+                        <h4>STEP3:The figures of Fig. 6 can be output automatically.
+                        </h4>
+                    </div>
+                    <div class="section container">
+                        <h4>Supplementary material
+                        </h4>
+                        <p><a href="http://2018.igem.org/wiki/images/c/c1/T--Fudan--model-cell-colony.pdf" target="_blank">Model_cell_colony</a></p>
+                        <h4 style="margin-left: 0;">References</h4>
+                        <ol id="ref" style="margin: 23px 0 0 0;">
+                            <li>Cis-interactions between Notch and Delta generate mutually exclusive signaling. J. Am. Chem. Soc., 2013, 135 (15), pp 5839–5847
+                            </li>
+                        </ol>
+                    </div>
+                </main>
+            </div>
+            <!-- @@@@ end of main content of the page -->
+
+            <!--Abstract on content page-->
+            <div id="abstractContent" class="z-depth-2">
+                <a href="#!"><img src="http://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
+                <div class="container">
+                    <h2 style="margin: 0;padding: 10px 0;">Abstract</h2>
+                    <p style="margin: 0">Contact-dependent signaling is critical for multicellular biological
+                        events, yet customizing contact-dependent signal transduction between
+                        cells remains challenging. Here we have developed the ENABLE toolbox, a
+                        complete set of transmembrane binary logic gates. Each gate consists of
+                        3 layers: Receptor, Amplifier, and Combiner. We first optimized synthetic
+                        Notch receptors to enable cells to respond to different signals across the
+                        membrane reliably. These signals, individually amplified intracellularly by
+                        transcription, are further combined for computing. Our engineered zinc finger-based
+                        transcription factors perform binary computation and output designed products.
+                        In summary, we have combined spatially different signals in mammalian cells,
+                        and revealed new potentials for biological oscillators, tissue engineering,
+                        cancer treatments, bio-computing, etc. ENABLE is a toolbox for constructing
+                        contact-dependent signaling networks in mammals. The 3-layer design principle
+                        underlying ENABLE empowers any future development of transmembrane logic circuits,
+                        thus contributes a foundational advance to Synthetic Biology.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Floating Btns -->
+            <div class="floatingBtn">
+                <a href="#!" id="abstractBtn" class="btn">
+                    <i class="fa fa-sticky-note" style="font-size: 30px;line-height: 50px"></i>
+                </a>
+                <a href="#FudanWrapper" class="btn">
+                    <i class="fa fa-angle-up" style="font-size: 48px;line-height: 45px"></i>
+                </a>
+            </div>
+
+            <!-- Footer with sponsors and contact methods -->
+            <footer id="FudanFooter" class="page-footer grey">
+                <div class="container">
+                    <div class="row">
+                        <div id="sponsor" class="col m3 s12 row">
+                            <a href="http://2018.igem.org/Team:Fudan" target="_blank"><img class="col s3 m6 l3" style="position:relative; padding: 0 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="http://2018.igem.org/wiki/images/7/73/T--Fudan--teamLogoWhite.png">
+                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="http://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
+                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
+                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="http://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
+                        </a>
+                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size: 18px">ENABLE: making cells even smarter</h3>
+                        </div>
+                        <div id="usefulLinks" class="col m9 s12 row">
+                            <div class="col s12 l6 row">
+                                <div class="col s12 m4">
+                                    <span>Project</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Demonstrate">Demonstration</a></li>
+
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Antigen_Receptors">Antigen, Receptors</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Results">Transmembrane logic</a></li>
+                                        <li><a href="http://2017.igem.org/Team:Fudan">2017.iGEM</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4 active">
+                                    <span>Dry lab</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Software">Software</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4">
+                                    <span>Wet lab</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/InterLab">iGEM interLab</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Notebook">Our notebook</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Primers">Primers used</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Protocols">Protocols</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Safety">Safety</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col s12 l6 row">
+                                <div class="col s12 m4">
+                                    <span>Toolbox</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Basic_Parts">Basic parts</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Composite_Parts">Composite parts</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Optimization">Optimization</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Parts_Collection">Parts collection</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Improve">Parts improvement</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Measurement">Quantification</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4">
+                                    <span>Outreach</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Bio-Art">Bio-Art display</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Collaborations">Collaborations</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Design_Intention">Design intention</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Human_Practices">Human practices</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Public_Engagement">Public engagement</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4">
+                                    <span>Team</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Acknowledgement">Acknowledgement</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Attributions">Attributions</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage">Heritage</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Team">Members</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Sponsors">Sponsors</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="contactUS row">
+                            <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg E301, 2005 Songhu Rd, Shanghai
+                            </div><div class="col s12 m6 l3"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
+                        </div><div class="col s12 m6 l2"><i class="fa fa-wechat"></i> Fudan_iGEM
+                        </div><div class="col s12 m6 l3"><i class="fa fa-fax"></i> +86-21-31246727
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Javascript files -->
+<!-- Materialize 1.0.0-rc.2 -->
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.js&action=raw&ctype=text/javascript"></script>
+
+<!-- Javascript -->
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/js.js&action=raw&ctype=text/javascript"></script>
+
+</body>
+</html>

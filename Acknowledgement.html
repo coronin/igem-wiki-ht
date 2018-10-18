@@ -1,0 +1,602 @@
+{{Fudan}}
+<html lang="en">
+<!--
+This html document is created by Tian Huang for Team Fudan iGEM 2018.
+We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
+-->
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/css.css&action=raw&ctype=text/css" />
+
+    <!-- Font-awesome icons 4.7.0 -->
+    <link href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/font-awesome.css&action=raw&ctype=text/css" rel="stylesheet">
+
+    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
+    <link rel="stylesheet" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.css&action=raw&ctype=text/css">
+
+    <!-- Clear default CSS settings; CSS reset -->
+    <style type="text/css">
+        *{margin: 0;padding: 0;list-style: none;}
+        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
+
+        /** 清除内外边距 **/
+        body, h1, h2, h2, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+        pre, /* text formatting elements 文本格式元素 */
+        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+        th, td /* table elements 表格元素 */ {
+            margin: 0;
+            padding: 0;
+        }
+
+        /** 设置默认字体 **/
+
+        h1, h2, h2, h4, h5, h6 { font-size: 100%; }
+        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+        small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+        /** 重置列表元素 **/
+        ul, ol { list-style: none; }
+
+        /** 重置文本格式元素 **/
+        a { text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+
+        /** 重置表单元素 **/
+        legend { color: #000; } /* for ie6 */
+        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+        /* 注：optgroup 无法扶正 */
+
+        /** 重置表格元素 **/
+        table { border-collapse: collapse; border-spacing: 0; }
+
+        #section1 ul li{
+            list-style-type: disc;
+            margin: 0 0 0 16px;
+            font-size: 19px;
+            text-align: justify;
+        }
+        #pageContent .section ul{
+            font-size: 19px;
+            margin-top: 23px;
+        }
+        #acknowledgementPhoto>div.row:nth-child(1)>div{
+            padding: 0 30px 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Fudan div at igem.org -->
+<div id="FudanWrapper" class="white">
+    <div id="FudanBody" class="white orangeBg">
+        <header>
+            <!-- empty bar -->
+            <div id="emptyBar" style="position:relative;width: 100%;"></div>
+
+            <!-- Navigation bar -->
+            <nav id="topNav" class="white z-depth-0_5">
+                <div class="nav-wrapper">
+                    <div id="teamLogo" class="brand-logo">
+                        <a href="http://2018.igem.org/Team:Fudan" target="_self"><img alt="2018 team Fudan logo" src="http://2018.igem.org/wiki/images/c/c4/T--Fudan--teamLogo.svg"></a>
+                    </div>
+                    <ul id="nav-mobile" class="right orangeBorder">
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown1">Project</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown2">Dry lab</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown3">Wet lab</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown4">Toolbox</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown5">Outreach</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger thisPageLink" data-target="dropdown6">Team</a></li>
+                        <li>
+                            <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
+                                <i class="fa fa-navicon" style="font-size: 24px"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Dropdown and List elements in navigation bar -->
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Demonstrate">Demonstration</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Antigen_Receptors">Antigen, Receptors</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Results">Transmembrane logic</a></li>
+            </ul>
+            <ul id="dropdown2" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Software">Software</a></li>
+            </ul>
+            <ul id="dropdown3" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/InterLab">iGEM interLab</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Notebook">Our notebook</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Primers">Primers used</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Protocols">Protocols</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Safety">Safety</a></li>
+            </ul>
+            <ul id="dropdown4" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Basic_Parts">Basic parts</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Composite_Parts">Composite parts</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Optimization">Optimization</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Parts_Collection">Parts collection</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Improve">Parts improvement</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Measurement">Quantification</a></li>
+            </ul>
+            <ul id="dropdown5" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Bio-Art">Bio-Art display</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Collaborations">Collaborations</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Design_Intention">Design intention</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Human_Practices">Human practices</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Public_Engagement">Public engagement</a></li>
+            </ul>
+            <ul id="dropdown6" class="dropdown-content">
+                <li><a href="http://2018.igem.org/Team:Fudan/Acknowledgement">Acknowledgement</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Attributions">Attributions</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Heritage">Heritage</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Team">Members</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Sponsors">Sponsors</a></li>
+            </ul>
+
+            <!-- Slide-out navigator contents -->
+            <ul id="slide-out" class="sidenav">
+                <li style="padding: 0"><div class="sidenavBanner">
+                    <div class="background orangeBg">
+                    </div>
+                    <p style="width: 100%;text-align: center;font-size: 24px"><span class="white-text">Acknowledgement</span></p>
+                </div></li>
+                <li>
+                    <ul class="collapsible expandable">
+                        <li>
+                            <div class="collapsible-header">Project</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Demonstrate">Demonstration</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Antigen_Receptors">Antigen, Receptors</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Results">Transmembrane logic</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Dry Lab</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                  <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Software">Software</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Wet Lab</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/InterLab">iGEM interLab</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Notebook">Our notebook</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Primers">Primers used</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Protocols">Protocols</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Safety">Safety</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Toolbox</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Basic_Parts">Basic parts</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Composite_Parts">Composite parts</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Optimization">Optimization</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Parts_Collection">Parts collection</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Improve">Parts improvement</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Measurement">Quantification</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Outreach</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Bio-Art">Bio-Art display</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Collaborations">Collaborations</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Design_Intention">Design intention</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Human_Practices">Human practices</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Public_Engagement">Public engagement</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Team</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Acknowledgement">Acknowledgement</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Attributions">Attributions</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Heritage">Heritage</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Team">Members</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Sponsors">Sponsors</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+
+                </li>
+                <li><div class="placeHolder"></div></li>
+            </ul>
+        </header>
+
+        <div id="pageContent" style="">
+            <div id="contentBanner" class="figureBanner orangeBg">
+                <div class="row">
+                    <div class="col s12 m6 valign-wrapper hide-on-med-and-up">
+                        <h1>Acknowledgement</h1>
+                    </div>
+                    <div class="col s12 m6 valign-wrapper hide-on-med-and-up">
+                        <span>Let us express the most sincere thanks to those
+                            who rendered their warm help to us. A successful
+                            team can’t be constructed without them.</span>
+                    </div>
+                </div>
+                <div id="figureBannerTitle" class="hide-on-small-only">
+                    <h1 style="word-break: break-all;font-size: 50px;">Acknowledgement</h1>
+                    <p><span>Let us express the most sincere thanks to those
+                            who rendered their warm help to us. A successful
+                            team can’t be constructed without them.</span></p>
+                </div>
+                <div class="hide-on-small-only">
+                    <img alt="2018 team Fudan title acknowledgement" src="http://2018.igem.org/wiki/images/1/1e/T--Fudan--title_ack.jpg">
+<svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
+                        <defs>
+                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
+                        </g>
+                    </svg>
+                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
+                        <defs>
+                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- main content of the page -->
+            <div class="container">
+                <main style="margin-right:0;">
+                    <div id="section1" class="section container scrollspy">
+                        <h2>Acknowledgement</h2>
+                        <ul>
+                            <!--li>
+                                We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Zijie Yang</a> for his practical guidance in <a href="/protocols">molecular cloning</a>,
+                                <a href="/primers">primers design</a>, <a href="/protocols">cell culture</a> and <a href="/measurements">flow data analysis</a>.
+                                He also helped us to start the <a href="/measurements">FACS</a> Jazz machine whenever we need.
+                            </li-->
+                            <li>
+                                We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Yiheng Wang</a> for teaching us to model
+                                <a href="/model#1">DNA and transcription factor binding</a> using his previous </a> using his previous <a href="http://2017.igem.org/Team:Fudan/Model" target="blank">model</a>.
+                            </li>
+                            <li>
+                                We thank <a href="http://2017.igem.org/Team:Fudan_China/Member" target="_blank">Tian Huang</a> for providing us with a <a href="https://materializecss.com/" target="_blank">Materialize</a>
+                                based wiki template and teaching us with basic knowledge about HTML and CSS.
+                            </li>
+                            <li>
+                                We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Yiming Cai</a> for giving us
+                                advice on purifying EGFP protein, which was used in the beads assay at the early
+                                stage of the project.
+                            </li>
+                            <li>
+                                We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Yijie Pan</a> for giving us practical suggestions
+                                on <a href="http://2018.igem.org/Team:Fudan/Protocols" target="_blank">repeated fragment</a> molecular cloning and <a href=""http://2018.igem.org/Team:Fudan/Parts_Collection" target="_blank">BioBrick parts</a> documentation.
+                            </li>
+                            <li>We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Xinxuan Xiong</a> and <a href="http://2017.igem.org/Team:Fudan_China/Member" target="_blank">Xinyi Xu</a>
+                                for giving us useful advice about the <a href="http://2017.igem.org/Team:Fudan/Bio-Art" target="_blank">Bio-ART</a> display and actively helping us in preparation for the display.
+                            </li>
+                            <li>
+                                We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Ao Feng</a> for helpful discussions on human practice.
+                            </li><li>We thank Jingyi Hu for helping us taking bacteria on the morning, and playing an active role in some of our <a href="http://2018.igem.org/Team:Fudan/Human_Practices" target="_blank">human practice</a>.
+                            </li><li>We thank Haotian Guo for incisive comments on refining our presentation during and immediately after <a href="http://2018.igem.org/Team:ShanghaiTech/Collaborations" target="_blank">CCiC</a>.
+                            </li><li>We thank Professor Xu Wei’s advice on performing flow cytometry and doing the flow data analysis.
+                            </li><li>We thank Professor <a href="http://life.fudan.edu.cn/Data/View/1456" target="_blank">Yufang Zheng</a> for helpful discussions on the known Notch regulation and unpublished insight from her study with metalloprotease [ADAM10] and [ADAM17].
+                            </li><li>We thank Professor <a href="https://blacklow.hms.harvard.edu/" target="_blank">Stephen Blacklow</a> on email and face-to-face discussions on engineered Notch receptor optimization.
+                            </li><li>We thank Doctor Lixin Yang, Doctor Ganjun Yu, Doctor Xiaoying Bi, and Doctor Pengfei Luo for sparing precise time to have the discussion on <a href="http://2018.igem.org/Team:Fudan/Human_Practices#section1" target="_blank">Interview doctors</a>.
+                            </li><li>We thank Professor Xin Yuan, in the Department of Philosophy, for attending our Bio-Ethic debate and his comments enriched our understanding.
+                            </li><li>We thank Professor  <a href="http://life.fudan.edu.cn/Data/View/1457" target="_blank">Jiang Zhong</a>, Professor <a href="http://life.fudan.edu.cn/Data/View/1335" target="_blank">Xiaoming Ding</a>, Professor <a href="http://life.fudan.edu.cn/Data/View/1475" target="_blank">Qiang Huang</a>, and Professor  <a href="http://life.fudan.edu.cn/Data/View/1391" target="_blank">Ting Ni</a> for giving us valuable suggestions and feeds at different stages of the project, from the initial brainstorm to the middle project progress and the pre-departure presentations.
+                            </li><li>We thank the Club of FDU Bertalanffy Society for helping to rent the space for  <a href="http://2018.igem.org/Team:Fudan/Bio-Art" target="_blank">Bio-ART</a> display.
+                            </li><li>We thank teachers in <a href="http://www.shedunews.com/jymp_qbdht.html" target="_blank">Qibao Dwight High School</a>, <a href="http://www.jincai.sh.cn/web/JCZX/273001.htm" target="_blank">Shanghai Jincai High School</a>, <a href="https://www.fdfz.cn/ " target="_blank">the High School Affiliated to Fudan University</a> for offering us with opportunities to implement <a href="http://2018.igem.org/Team:Fudan/Human_Practices" target="_blank">our HP</a>.
+                            </li><li>We thank <a href="http://2018.igem.org/Team:Fudan-CHINA" target="_blank">Team:Fudan_China</a> for teaching us how to use the plate reader.
+                            </li>
+                        </ul>
+
+                        <h2>Photos</h2>
+                        <div id="acknowledgementPhoto">
+                            <h4>People</h4>
+                            <p style="margin-left: 10px">Listed by alphabetical order of surnames.</p>
+                            <div class="row">
+                                <div class="col s12 m3 l2">
+                                    <img alt="doctor Bi" src="http://2018.igem.org/wiki/images/9/9f/T--Fudan--Xiaoying_Bi.jpg">
+                                    <span>Xiaoying Bi</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Blacklow S" src="http://2018.igem.org/wiki/images/d/d7/T--Fudan--Stephen_Blacklow.jpg">
+                                    <span>Stephen Blacklow</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Cai" src="http://2018.igem.org/wiki/images/7/72/T--Fudan--Yiming_Cai.jpg">
+                                    <span>Yiming Cai</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Ding" src="http://2018.igem.org/wiki/images/4/4a/T--Fudan--Xiaoming_Ding.jpg">
+                                    <span>Xiaoming Ding</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Feng" src="http://2018.igem.org/wiki/images/d/dc/T--Fudan--fengao.jpg">
+                                    <span>Ao Feng</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Guo" src="http://2018.igem.org/wiki/images/5/5c/T--Fudan--Haotian_Guo.jpg">
+                                    <span>Haotian Guo</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Hu" src="http://2018.igem.org/wiki/images/a/a6/T--Fudan--Jingyi_Hu.jpg">
+                                    <span>Jingyi Hu</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Huang Q" src="http://2018.igem.org/wiki/images/c/c7/T--Fudan--Qiang_Huang.jpg">
+                                    <span>Qiang Huang</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Huang T" src="http://2018.igem.org/wiki/images/3/3d/T--Fudan--Tian_Huang.jpg">
+                                    <span>Tian Huang</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Luo" src="http://2018.igem.org/wiki/images/6/65/T--Fudan--Pengfei_Luo.jpg">
+                                    <span>Pengfei Luo</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Ni" src="http://2018.igem.org/wiki/images/2/20/T--Fudan--Ting_Ni.jpg">
+                                    <span>Ting Ni</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Pan" src="http://2018.igem.org/wiki/images/3/3f/T--Fudan--Yijie_Pan.jpg">
+                                    <span>Yijie Pan</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Wang" src="http://2018.igem.org/wiki/images/1/11/T--Fudan--Yiheng_Wang.jpg">
+                                    <span>Yiheng Wang</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Xiong" src="http://2018.igem.org/wiki/images/8/80/T--Fudan--Xinxuan_Xiong.jpg">
+                                    <span>Xinxuan Xiong</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Xu W" src="http://2018.igem.org/wiki/images/1/16/T--Fudan--Wei_Xu.jpg">
+                                    <span>Wei Xu</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Xu X" src="http://2018.igem.org/wiki/images/a/a0/T--Fudan--Xinyi_Xu.jpg">
+                                    <span>Xinyi Xu</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="doctor Yang L" src="http://2018.igem.org/wiki/images/4/4e/T--Fudan--Lixing_Yang.jpg">
+                                    <span>Lixing Yang</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="doctor Yang S" src="http://2018.igem.org/wiki/images/5/57/T--Fudan--Shunhua_Yang.jpg">
+                                    <span>Shunhua Yang</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="doctor Yu" src="http://2018.igem.org/wiki/images/6/6f/T--Fudan--Ganjun_Yu.jpg">
+                                    <span>Ganjun Yu</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="doctor Yuan" src="http://2018.igem.org/wiki/images/6/6e/T--Fudan--Xin_Yuan.jpg">
+                                    <span>Xin Yuan</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Zhong" src="http://2018.igem.org/wiki/images/c/c6/T--Fudan--Jiang_Zhong.jpg">
+                                    <span>Jiang Zhong</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Zheng" src="http://2018.igem.org/wiki/images/7/79/T--Fudan--Yufang_Zheng.jpg">
+                                    <span>Yufang Zheng</span>
+                                </div>
+                            </div>
+                            <h4>Labs, Organizations & Schools</h4>
+                            <div class="row">
+                                <div class="col s12 m3 l2">
+                                    <img alt="Changhai" src="http://2018.igem.org/wiki/images/f/fd/T--Fudan--Changhai_Hospital.jpg">
+                                    <span>Changhai Hospital</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Jincai" src="http://2018.igem.org/wiki/images/7/7f/T--Fudan--Jincai_High_School.png">
+                                    <span>Jincai High School</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Fuzhong" src="http://2018.igem.org/wiki/images/a/a7/T--Fudan--Fudanfuzhong.jpg">
+                                    <span>High School Affiliated to Fudan University</span>
+                                </div>
+                                <div class="col s12 m3 l2">
+                                    <img alt="Qibao" src="http://2018.igem.org/wiki/images/f/f1/T--Fudan--Qibao_Dwight.jpg">
+                                    <span>Shanghai Qibao Dwight High School</span>
+                                </div>
+                            </div>
+                            <h4>iGEM Teams</h4>
+                            <div class="row">
+                                <div class="col s12 m4 l3">
+                                    <img alt="2018 Fudan-CHINA" src="http://2018.igem.org/wiki/images/6/65/T--Fudan--Fudan_China.jpg">
+                                    <span>Fudan-CHINA 2018</span>
+                                </div>
+                                <div class="col s12 m4 l3">
+                                    <img alt="2017 Fudan" src="http://2018.igem.org/wiki/images/f/fa/T--Fudan--team_Fudan.png">
+                                    <span>Fudan 2017</span>
+                                </div>
+                                <div class="col s12 m4 l3">
+                                    <img alt="2017 Fudan_China" src="http://2018.igem.org/wiki/images/4/4f/T--Fudan--Team_Fudan_China2017.png">
+                                    <span>Fudan_China 2017</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <!--Abstract on content page-->
+            <div id="abstractContent" class="z-depth-2">
+                <a href="#!"><img alt="2018 team Fudan abstract" src="http://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
+                <div class="container">
+                    <h2 style="margin: 0;padding: 10px 0;">Abstract</h2>
+                    <p style="margin: 0">Contact-dependent signaling is critical for multicellular biological
+                        events, yet customizing contact-dependent signal transduction between
+                        cells remains challenging. Here we have developed the ENABLE toolbox, a
+                        complete set of transmembrane binary logic gates. Each gate consists of
+                        3 layers: Receptor, Amplifier, and Combiner. We first optimized synthetic
+                        Notch receptors to enable cells to respond to different signals across the
+                        membrane reliably. These signals, individually amplified intracellularly by
+                        transcription, are further combined for computing. Our engineered zinc finger-based
+                        transcription factors perform binary computation and output designed products.
+                        In summary, we have combined spatially different signals in mammalian cells,
+                        and revealed new potentials for biological oscillators, tissue engineering,
+                        cancer treatments, bio-computing, etc. ENABLE is a toolbox for constructing
+                        contact-dependent signaling networks in mammals. The 3-layer design principle
+                        underlying ENABLE empowers any future development of transmembrane logic circuits,
+                        thus contributes a foundational advance to Synthetic Biology.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Floating Btns -->
+            <div class="floatingBtn">
+                <a href="#!" id="abstractBtn" class="btn">
+                    <i class="fa fa-sticky-note" style="font-size: 30px;line-height: 50px"></i>
+                </a>
+                <a href="#FudanWrapper" class="btn">
+                    <i class="fa fa-angle-up" style="font-size: 48px;line-height: 45px"></i>
+                </a>
+            </div>
+
+            <!-- Footer with sponsors and contact methods -->
+            <footer id="FudanFooter" class="page-footer grey">
+                <div class="container">
+                    <div class="row">
+                        <div id="sponsor" class="col m3 s12 row">
+                            <a href="http://2018.igem.org/Team:Fudan" target="_blank"><img alt="2018 team Fudan logo" class="col s3 m6 l3" style="position:relative; padding: 0 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="http://2018.igem.org/wiki/images/7/73/T--Fudan--teamLogoWhite.png">
+                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="http://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
+                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
+                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="http://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
+                        </a>
+                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size: 18px">ENABLE: making cells even smarter</h3>
+                        </div>
+                        <div id="usefulLinks" class="col m9 s12 row">
+                            <div class="col s12 l6 row">
+                                <div class="col s12 m4">
+                                    <span>Project</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Demonstrate">Demonstration</a></li>
+
+                <li><a href="http://2018.igem.org/Team:Fudan/Antigen_Receptors">Antigen, Receptors</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Results">Transmembrane logic</a></li>
+                                        <li><a href="http://2017.igem.org/Team:Fudan">2017.iGEM</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4">
+                                    <span>Dry lab</span>
+                                    <ul>
+                                     <li><a href="http://2018.igem.org/Team:Fudan/Addon#ribo">Addon: ribo</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#TALE">Addon: TALE</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Addon#T2">Addon: T2</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Software">Software</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4">
+                                    <span>Wet lab</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/InterLab">iGEM interLab</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Notebook">Our notebook</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Primers">Primers used</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Protocols">Protocols</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Safety">Safety</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col s12 l6 row">
+                                <div class="col s12 m4">
+                                    <span>Toolbox</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Basic_Parts">Basic parts</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Composite_Parts">Composite parts</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Optimization">Optimization</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Parts_Collection">Parts collection</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Improve">Parts improvement</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Measurement">Quantification</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4">
+                                    <span>Outreach</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Bio-Art">Bio-Art display</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Collaborations">Collaborations</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Design_Intention">Design intention</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Human_Practices">Human practices</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Public_Engagement">Public engagement</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12 m4 active">
+                                    <span>Team</span>
+                                    <ul>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Acknowledgement">Acknowledgement</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Attributions">Attributions</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage">Heritage</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Team">Members</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Sponsors">Sponsors</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="contactUS row">
+                            <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg E301, 2005 Songhu Rd, Shanghai
+                            </div><div class="col s12 m6 l3"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
+                        </div><div class="col s12 m6 l2"><i class="fa fa-wechat"></i> Fudan_iGEM
+                        </div><div class="col s12 m6 l3"><i class="fa fa-fax"></i> +86-21-31246727
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</div>
+<!-- Javascript files -->
+<!-- Materialize 1.0.0-rc.2 -->
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.js&action=raw&ctype=text/javascript"></script>
+
+<!-- Javascript -->
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/js.js&action=raw&ctype=text/javascript"></script>
+
+
+</body>
+</html>
