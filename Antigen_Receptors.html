@@ -4,6 +4,7 @@
 This html document is created by Tian Huang for Team Fudan iGEM 2018.
 We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
 -->
+<!-- LC check on 2018-10-20 -->
 <head>
     <meta charset="UTF-8">
 
@@ -273,66 +274,219 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
             <div class="container">
                 <main style="margin: 0">
                     <div id="section1" class="section container scrollspy">
-                        <h2>Signal transduction system review and comparison
+                        <h2>Transmembrane signal transduction systems
                         </h2>
-                        <div class="expFigureHolder" style="width:100%">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/8/88/T--Fudan--aa1.svg">
-
-                        </div>
-                        <p>
-                            In order to be able to implement a custom multiplexed transmembrane signal input/output relationship, the first condition is that engineering modular receptor to enable it to recognize extracellular signals and transduce them into customized intracellular signals. To this end, a variety of techniques have been developed, such as Tango(Barnea et al., 2008), CAR(Porter et al., 2011), GEMS(Scheller et al., 2018), MESA(Daringer et al., 2014; Hartfield et al., 2017; Schwarz et al., 2017), SynNotch(Morsut et al., 2016; Roybal et al., 2016a; Roybal et al., 2016b; Toda et al., 2018), etc. High programmability of the extracellular and intracellular domains of SynNotch, as well as adaptation to contact-dependent signaling, fully meets our needs. Thus we ultimately apply SynNtoch technology as a receiving port for extracellular signals of transmembrane logic gates.
-   </p> <p>
-Notch receptors are single-pass transmembrane receptors that transduce extracellular surface signals from sender cells to the inside of receiver cells. It features structural modularity and orthogonality in intracellular signal transduction. The signal strength and intensity of wild-type Notch receptors plays a crucial role in cell-fate decisions such as proliferation in development as well as homeostasis. This is true for functional outcomes that mainly rely on the dosage of the gene regulation and context of Notch signaling (Aster et al., 2008; Bray, 2016) For SynNotch, specialized factors will exclusively participate in regulation of genetic circuits that allow novel user-defined transcriptional responses. In our project ENABLE, we have engineered the cells to perform logical operations on multiple transmembrane signals to produce a variety of customizable outputs
-
+<div class="expFigureHolder" style="width:100%">
+    <img class="responsive-img" src="http://2018.igem.org/wiki/images/8/88/T--Fudan--aa1.svg">
+</div>
+                        <p>In order to be able to implement a customable multiplexed transmembrane signal input and
+                            output relationship, the first thing to do is to engineer modular receptors to enable it
+                            to recognize extracellular signals and transduce them into customized intracellular signals.
+                            To this end, a variety of techniques have been developed, such as Tango
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/18165312" target=_blank>(Barnea et al., 2008)</a>,
+                            CAR (Porter et al., 2011), GEMS (Scheller et al., 2018), MESA
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/24611683" target=_blank>(Daringer et al., 2014;</a>
+                            Hartfield et al., 2017; Schwarz et al., 2017), SynNotch <a href="https://www.ncbi.nlm.nih.gov/pubmed/26830878" target=_blank>(Morsut et al., 2016;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/26830879" target=_blank>Roybal et al., 2016a;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/27693353" target=_blank>Roybal et al., 2016b;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/29853554" target=_blank>Toda et al., 2018)</a>, etc.
+                            High modularity of the extracellular and intracellular domains of synthetic Notch (SynNotch),
+                            as well as its orthogonality and adaptation to contact-dependent signaling, fully meets our needs.
+                            Thus, we ultimately use SynNotch technology as receiver for extracellular signals to build our
+                            transmembrane logic gates.
                         </p>
-                        <h3>What is different in signal input?
-                        </h3>
-                        <h4>1.	Ligands
-                        </h4>
-                        <p>
-                            The largest family of ligands that can activate wild type Notch receptors features three related structural motifs, which are DSL (Delta/Serrate/LAG-2) motif, EGF-like repeats, and DOS (Delta and OSM-11-like proteins) domain that are tandem EGF repeats. (Kopan et al., 2009) Wild type Notch receptors also features cis-inhibition and trans-activation due to the antiparallel orientation of extracellular domains.
-                         </p><p>           With SynNotch receptors, the cis-inhibition mechanism was recapitulated in Morsut et al., 2016. This indicates that the activating and inhibiting mechanism of wild type Notch and SynNotch are probably alike in nature. Therefore, as long as the Notch core can be activated, any ectodomain could work. In 2015, Gordon and her colleagues demonstrated that Notch with FBP as ectodomain targeting FKBP in the presence of rapamycin can activate Notch receptors. (Gordon et al., 2015) Lim and his colleagues also showed SynNotch can utilize novel antigens such as CD19 and EGFP.
-
-
+                        <p>Notch receptors are single-pass transmembrane receptors that transduce extracellular surface
+                            signals from sender cells to the inside of receiver cells. It features structural modularity and
+                            orthogonality in intracellular signal transduction. The signal strength and intensity of wild-type
+                            Notch receptors plays a crucial role in cell-fate decisions such as proliferation in development
+                            as well as homeostasis. This is true for functional outcomes that mainly rely on the dosage of
+                            the gene regulation and context of Notch signaling <a href="https://www.ncbi.nlm.nih.gov/pubmed/18039126" target=_blank>(Aster et al., 2008;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/27507209" target=_blank>Bray, 2016)</a> For SynNotch,
+                            specialized factors will exclusively participate in regulation of genetic circuits that allow
+                            novel user-defined transcriptional responses. In our project ENABLE, we have engineered the cells
+                            to perform logical operations on multiple transmembrane signals to produce a variety of
+                            customizable outputs.
                         </p>
-                        <h4>2.	The ectodomain of Notch receptors
-                        </h4>
-                        <p>
-                           Previous work by Morsut et al. showed that the natural surface antigen CD19 and the non-natural surface antigen EGFP have good orthogonality(Toda et al., 2018). We applied this and designed two surface antigens, surCD19 and surEGFP. By immunostaining, we were able to clearly detect surCD19 and surEGFP expressed on 293T cells. Thus, these two surface antigens can serve as ideal dual antigens for our transmembrane binary Boolean logic inputs.
-                        </p><p>       The ectodomain of wild type Notch is composed of 29-36 modular epidermal growth factor (EGF)-like repeats, each around 40 residues in length and can be categorized into calcium binders and non-binders. Though former studies have assumed the shape of this ectodomain to be a long rod-like structure, taking a linear topology (Kopan and Ilagna,2009), recent studies have elucidated that there are multiple rods joined by flexible joints. (Weisshuhn et al., 2015a, Weisshuhn et al., 2015b)
-
+<div class="expFigureHolder" style="width:40%;margin:0 auto;">
+    <img class="responsive-img" src="./antigenreceptors1.png">
+    <p><b>Figure 1. SynNotch activation.</b><br/>
+        SynNotch has customizable extracellular and intracellular domains, as well as a core regulatory region.
+        After the extracellular domain of the single-chain antibody recognizes the corresponding surface antigen,
+        the core regulatory region undergoes two cleavage (S2, S3 sites) to finally release the intracellular
+        segment of the transcription factor into the nucleus to activate the downstream circuits.
+    </p>
+</div>
+                        <h3>What is different in signal input?</h3>
+                        <h4>1.	Ligands</h4>
+                        <p>The largest family of ligands that can activate wild type Notch receptors features three
+                            related structural motifs, which are DSL (Delta/Serrate/LAG-2) motif, EGF-like repeats,
+                            and DOS (Delta and OSM-11-like proteins) domain that are tandem EGF repeats
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/19379690" target=_blank>(Kopan et al., 2009)</a>.
+                            Wild type Notch receptors features cis-inhibition and trans-activation due to the antiparallel
+                            orientation of extracellular domains.
                         </p>
-                        <h3>
-                            Signal transduction of the Notch core is the same in theory
-
-                        </h3>
-                        <p>The signal transduction mechanism of Notch signaling is very unique. While conserved signaling pathways are activated at the efforts of receptors, Notch receptor signaling and proteolysis is caused by the action of corresponding ligands.
-                        </p><p>    Another interesting feature of Notch signaling is that its intracellular domains, released by intramembrane proteolysis during activation, will translocate to the cell nucleus. (Schroeter EH et al., 1998) This renders almost no amplification of the signal in this layer, and more importantly, signal orthogonality.
-                    </p><p>    Notch specific ligands are in constant endocytosis-surface presenting cycle in the signal-sender cell. When the N terminal recognition domain of Notch is bound to the ligand, this would produce resistance that will stimulate the ubiquitylation of the ligand and also enhance the recruitment of ubiquitin-binding epsin endocytic adaptors (Weinmaster G. 2011). Complementary to this model, Ligand and cells defective in endocytosis cannot activate Notch. (Nichols JT et al., 2007) This is like a cellular level “tug-of-war” between the two surface proteins, with the Notch receptor eventually giving in. When Notch extracellular domain is not bound by ligands with enough affinity to it or is under disturbances from small molecules, Notch 1 receptor will not activate because its negative regulatory region (NRR) will refrain it from happening.
+                        <p>Similar to Notch receptors, the cis-inhibition mechanism was recapitulated in SynNotch receptors
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/26830878" target=_blank>(Morsut et al., 2016)</a>.
+                            This indicates that the activating and inhibiting mechanism of wild type Notch and SynNotch
+                            are probably alike in nature. Therefore, as long as the Notch core can be activated, any
+                            ectodomain could work. In 2015, Gordon and her colleagues demonstrated that Notch with FBP
+                            as ectodomain targeting FKBP in the presence of chemical rapamycin can activate Notch receptors
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/26051539" target=_blank>(Gordon et al., 2015)</a>.
+                            Lim and his colleagues have showed that SynNotch could recognize antigens such as CD19 and EGFP
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/26830878" target=_blank>(Morsut et al., 2016;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/26830879" target=_blank>Roybal et al., 2016a)</a>.
                         </p>
-                        <div class="expFigureHolder" style="width:40%;margin: 0 auto;">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/f/f1/T--Fudan--bestpart2.png">
-<p>
-    Figure1 : Structure of the negative regulatory region of the human Notch 1 receptor.<br>
-    Adapted from Gordon et al., 2009 (A and B paper), using the PDB 3eto deposited by them.
+                        <h4>2.	The ectodomain of Notch receptors</h4>
+                        <p>Previous work by Morsut et al. showed that the natural surface antigen CD19 and the non-natural
+                            surface antigen EGFP have good orthogonality <a href="https://www.ncbi.nlm.nih.gov/pubmed/29853554" target=_blank>(Toda et al., 2018)</a>.
+                            We applied this and designed two surface antigens, surCD19 and surEGFP. By immunostaining,
+                            we were able to clearly detect surCD19 and surEGFP expressed on the surface of 293T cells
+                            <font color="purple">(Figure 2a)</font>.
+                            Thus, these two surface antigens can serve as ideal dual antigens for our transmembrane binary
+                            Boolean logic inputs.
+                        </p>
+                        <p>We selected &alpha;CD19 (anti-CD19) <a href="https://www.ncbi.nlm.nih.gov/pubmed/26830878" target=_blank>(Morsut et al., 2016)</a>,
+                            LaG17 (anti-EGFP with low affinity), LaG16-2 (anti-EGFP with high affinity) (Fridy et al., 2014)
+                            as the extracellular domain of SynNotch. Mouse Notch1 core (mN1c) regulatory region as the core
+                            transmembrane region of SynNotch. Two transcription factors, tTAA (TetR-VP48) and GV2 (Gal4DBD-VP64),
+                            which are orthogonal to each other, are used as the intracellular domain of SynNotch
+                            <font color="purple">(Figure 2a)</font>.
+                            We found that the combination of different extracellular domains and intracellular domains has
+                            differentiated activation characteristics <font color="purple">(Figure 2c)</font>
+                            in transient transfection experiments.
+                            In all combinations, &alpha;CD19-mN1c-GV2 was not able to be activated efficiently
+                            <font color="purple">(Figure 2c)</font>.
+                            LaG16-2-mN1c-GV2 and &alpha;CD19-mN1c-tTAA have high activation and low background expression.
+                            LaG16-2 was able to be efficiently activated only when activated with surEGFP but not surCD19
+                            <font color="purple">(Figure 2d)</font>. The excellent orthogonality between LaG16-2 and
+                            &alpha;CD19 ensures that we will
+                            not undergo signal crosstalk when using dual surface antigens as signal inputs in the future.
+                            In the following experiments, we used the LaG16-2-mN1c-GV2 and &alpha;CD19-mN1c-tTAA which has
+                            good performance, as actual transmembrane signal transduction elements. We used mCherry-tagged
+                            LaG16-2-mN1c-GV2 and EGFP-tagged &alpha;CD19-mN1c-tTAA to construct a stable cell line
+                            co-expressing dual-SynNotch receptors for subsequent experiments.
+                        </p>
+                        <p>Meanwhile, as we mentioned above, some types of SynNotch have high background expression.
+                            This phenomenon aroused our great interests. We designed a systematic experiment to study the
+                            mechanism of SynNotch activation and hope to optimize it. We specifically covered the details
+                            of this section in <a href="./Optimization">the Optimization page</a>.
+                        </p>
+<div class="expFigureHolder" style="width:80%;margin:0 auto;">
+    <img class="responsive-img" src="./antigenreceptors2.png">
+    <p><b>Figure 2. Engineering SynNotch can receive different extracellular signals and generate orthogonal
+        intracellular signals.</b><br/>
+        a. Use surEGFP and surCD19 as the antigens. Upper left, surEGFP schematic. Green, surEGFP autofluorescence;
+        red, surEGFP was stained with anti-GFP labeled with AF647. Red shows a clear contour line. Lower left, surCD19
+        schematic. The extracellular region of surCD19 with HA tag was stained with anti-HA labeled with AF488.
+        Scale bar, 5 &mu;m.<br/>
+        b. Schematic diagram of our SynNotch testing setting. Different extracellular scFvs and different intracellular
+        transcription factors were used as extracellular or intracellular domains of SynNotch.</br>
+        c. SynNotch with different extracellular domain and intracellular domains has different activation strength.
+        SynNotch expressing cells (receiver cells) were stimulated with excessive surface antigen (surAg) expressing sender cells or Mock cells
+        carrying no surAg. The percentage of cells expressing d2EGFP (EGFP++%) was quantified by flow cytometry after
+        24 hours of co-culture of sender and receiver cells.<br/>
+        d. LaG16-2 and &alpha;CD19 were able to recognize surEGFP and surCD19 orthogonally. LaG16-2-mN1c-tTAA or
+        &alpha;CD19-mN1c-tTAA was activated by surEGFP or surCD19, respectively, and TRE3GV-d2EGFP was used as the
+        downstream reporter. The median fluorence intensity of receiver cells were color coded on the right.<br/>
+        The error bar indicates SD of biological independent experiments, n=3.
+    </p>
+</div>
+                        <p>The ectodomain of wild type Notch is composed of 29-36 modular epidermal growth factor (EGF)-like
+                            repeats, each around 40 residues in length and can be categorized into calcium binders and
+                            non-binders. Though former studies have assumed the shape of this ectodomain to be a long
+                            rod-like structure, taking a linear topology
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/19379690" target=_blank>(Kopan and Ilagna,2009)</a>,
+                            recent studies have elucidated that there are multiple rods joined by flexible joints
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/25503468" target=_blank>(Weisshuhn et al., 2015a,</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/25930016" target=_blank>Weisshuhn et al., 2015b)</a>.
+                        </p>
+                        <h3>Signal transduction of the Notch core</h3>
+                        <p>The signal transduction mechanism of Notch signaling is very unique. While conserved signaling
+                            pathways are activated at the efforts of receptors, Notch receptor signaling and proteolysis
+                            is caused by the bing of corresponding ligands.</p>
+                        <p>One interesting feature of Notch signaling is that its intracellular domains, released by
+                            intramembrane proteolysis during activation, will translocate to the cell nucleus
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/15485896" target=_blank>(Schroeter EH et al., 1998)</a>
+                            This renders almost no amplification of the signal, and signal orthogonality.
+                        </p>
+                        <p>Notch specific ligands are in constant endocytosis-surface presenting cycle in the sender
+                            cell. When the N terminal recognition domain of Notch is bound to the ligand, this would
+                            produce resistance that will stimulate the ubiquitylation of the ligand and also enhance
+                            the recruitment of ubiquitin-binding Epsin endocytic adaptors
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/21763614" target=_blank>(Weinmaster G. 2011)</a>.
+                            Complementary to this model, Ligand and cells defective in endocytosis cannot activate Notch
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/17296795" target=_blank>(Nichols JT et al., 2007)</a>.
+                            This is like a cellular level <i>tug-of-war</i> between the two surface proteins, with the
+                            Notch receptor eventually giving up. When Notch extracellular domain is not bound by ligands
+                            with enough affinity or is under disturbances from small molecules, Notch 1 receptor will not
+                            activate because its negative regulatory region (NRR) will refrain it from being cleaved.
+                        </p>
+<div class="expFigureHolder" style="width:60%;margin: 0 auto;">
+<img class="responsive-img" src="http://2018.igem.org/wiki/images/f/f1/T--Fudan--bestpart2.png">
+<p><b>Figure 3. Structure of the negative regulatory region of the human Notch 1 receptor.</b><br/>
+    Adapted from <a href="https://www.ncbi.nlm.nih.gov/pubmed/19075186" target=_blank>Gordon et al., 2009a</a>
+    and <a href="https://www.ncbi.nlm.nih.gov/pubmed/19701457" target=_blank>Gordon et al., 2009b</a>. Rendered using
+    PDB structure <i>3eto</i>.
 </p>
-                        </div>
-                        <p>
-                            Notch core consists of the negatively regulated region and transmembrane region of the mouse Notch 1 receptor. It is the joint that empowers SynNotch the high modularity and proper activation. From the N terminal to C terminal, it is composed of three lin12-repeats (LNR) domains LNR-A, LNR-B, LNR-C, the heterodimerization domain (HD), and the transmembrane domain. The LNR-AB linker between LNR-A and B is like a plug that occludes ADAM from cleavts wild type extracellular domain can be substituted by antiGFP scfvs like LaG16 and anti-CD19, while its intracellular domain can be replaced by specialized transcription factors. Notch core is also the key to the activation of both wild type Notch receptors and SynNotch.Lin-12 repeats (LNR) (Vardar et al. 2003)
-                        </p><p>             The majority of Notch receptors are cleaved during the secretory pathway by furin-like convertase at cleavage site 1 (S1) (Logeat 1998), which protrudes as a part of a linker of the two parts of the Notch negative regulatory region's heterodimerization domain. (Gordon et al., 2009 A; Gordon et al., 2007) This action separates Notch extracellular domain and the Notch transmembrane domain on the level of peptide linkage, but noncovalent interactions between the lose heterodimerization domain holds the receptor together. Despite disparate results on the function of S1 cleavage is a prerequisite for later activation, it has also been suggested that it is not functional required for contact-dependent activation or expression on the cell membrane. (Gordon et al., 2009 B)
-                    </p><p>           When ligand binds to the Notch extracellular domain (NECD) and pulls it with mechanical force and thereby activating it, this action initiates a process called regulated intramembrane proteolysis (RIP). (Weinmaster et al., 1997, Brou et al. 2000, Gordon et al., 2015) In this process, the Notch receptor is first cleaved by two types of metalloproteases in the ADAM family (a disintegrin and metalloprotease), ADAM10/17, while ADAM10 is the dominant one. (Brou et al.,2000; Mumm et al., 2000, Bozkulak et al., 2009). The truncated transmembrane subunit remaining will be subsequently cleaved by  gamma-secretase, releasing the Notch intracellular domain (NICD). The wild type NICD will then enter the nucleus and interact with CSL and MAML (Schroteter et al., 1998, Struhl et al., 1998)
-
+</div>
+                        <p>Notch core consists of the negatively regulated region and transmembrane region of the mouse
+                            Notch 1 receptor. It is the joint that empowers SynNotch the high modularity and proper
+                            activation 需要参考文献. From the N terminal to C terminal, it is composed of three
+                            lin12-repeats (LNR) domains LNR-A, LNR-B, LNR-C, the heterodimerization domain (HD),
+                            and the transmembrane domain. The LNR-AB linker between LNR-A and B is like a plug that
+                            occludes ADAM from cleaving wild type extracellular domain can be substituted by anti-GFP
+                            single-chain antibodies like LaG16 and &alpha;CD19, while its intracellular domain can be
+                            replaced by specialized transcription factors. Notch core is the key to the activation
+                            of both wild type Notch receptors and SynNotch. Lin-12 repeats (LNR)
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/12795601" target=_blank>(Vardar et al. 2003)</a>.
+                        </p>
+                        <p>The majority of Notch receptors are cleaved during the secretory pathway by furin-like
+                            convertase at cleavage site 1 (S1)
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/9653148" target=_blank>(Logeat et al., 1998)</a>,
+                            which protrudes as a part of a linker of the two parts of the Notch negative regulatory
+                            region's heterodimerization domain <a href="https://www.ncbi.nlm.nih.gov/pubmed/19075186" target=_blank>(Gordon et al., 2009a;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/17401372" target=_blank>Gordon et al., 2007)</a>.
+                            This action separates Notch extracellular domain and the Notch transmembrane domain, but
+                            noncovalent interactions between the heterodimerization domains hold the receptor together.
+                            Despite disparate results on the role of S1 cleavage is a prerequisite for later activation,
+                            it has been suggested that it is not required for contact-dependent activation
+                            on the cell membrane <a href="https://www.ncbi.nlm.nih.gov/pubmed/19701457" target=_blank>(Gordon et al., 2009b)</a>.
+                        </p>
+                        <a>When ligand binds to the Notch extracellular domain (NECD) and pulls it with mechanical force
+                            and thereby activating it, it initiates a process called regulated intramembrane proteolysis (RIP)
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/9245493" target=_blank>(Weinmaster et al., 1997</a>;
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/10882063" target=_blank>Brou et al. 2000;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/26051539" target=_blank>Gordon et al., 2015)</a>
+                            In this process, the Notch receptor is first cleaved at S2 site by two types of metalloproteases in the
+                            ADAM family (a disintegrin and metalloprotease), ADAM10 or ADAM17, with ADAM10 the dominant
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/10882063" target=_blank>(Brou et al., 2000;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/11112321" target=_blank>Mumm et al., 2000;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/19704010" target=_blank>Bozkulak et al., 2009)</a>.
+                            The remaining truncated transmembrane subunit is subsequently cleaved by &gamma;-secretase at S3 site,
+                            and results in the releasing the Notch intracellular domain (NICD). The wild type NICD will
+                            then enter the nucleus and interact with CSL and MAML to activate transcription
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/9620803" target=_blank>(Schroteter et al., 1998;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/9604939" target=_blank>Struhl et al., 1998)</a>.
                         </p>
                         <h3>What is different in transcriptional signal output?
                         </h3>
                         <p>
-                            The wild type NICD will enter the nucleus and interact with CSL and MAML (Schroteter et al., 1998, Struhl et al., 1998) to regulate endogenous pathways that decide cell fate. SynNotch receptor’s customizable output have been integrated with chimeric antigen receptors to engineer T cells with customizable therapeutic response programs (Roybal et al., 2016 a and b ). programming self-organizing multicellular structures (Toda et al., 2018) In our project ENABLE, we have combined two types of SynNotch in order to empower mammalian cell the ability of binary computation. This promises more novel application potentials.
-
-
+                            The wild type NICD will enter the nucleus and interact with CSL and MAML
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/9620803" target=_blank>(Schroteter et al., 1998;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/9604939" target=_blank>Struhl et al., 1998)</a>
+                            to regulate endogenous pathways that decide cell fate. The customizable output of SynNotch receptors
+                            have been integrated with chimeric antigen receptors to engineer T cells with customizable
+                            therapeutic response programs <a href="https://www.ncbi.nlm.nih.gov/pubmed/26830879" target=_blank>(Roybal et al., 2016a;</a>
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/27693353" target=_blank>Roybal et al., 2016b)</a>, or to
+                            program self-organizing multicellular structures
+                            <a href="https://www.ncbi.nlm.nih.gov/pubmed/29853554" target=_blank>(Toda et al., 2018)</a>.
+                            In our ENABLE project, we have used two types of SynNotchs in order to empower mammalian cells
+                            the ability of binary computation. This promises more novel application potentials. Please
+                            continue the reading of <a href="./Results">our Results</a> on intracellular binary logic gates.
                         </p>
                     </div>
                     <div class="section container">
-                        <h4 style="margin-left: 0;">References</h4>
+                        <h4 style="margin-left: 0;">References 下面完全是凌乱的</h4>
                         <ol id="ref" style="margin: 23px 0 0 0;">
                             <li>Aster J C, Pear W S, Blacklow S C. Notch signaling in leukemia[J]. Annu. Rev. pathmechdis. Mech. Dis., 2008, 3: 587-613.
                             </li><li>
