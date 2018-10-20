@@ -8,7 +8,6 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 <head>
     <meta charset="UTF-8">
 
-    
 <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/css.css&action=raw&ctype=text/css" />
 
@@ -87,10 +86,10 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         }
         #highlight2 div,#highlight1 div{
             margin-bottom: 150px;
-color:#377893;
-font-weight:400;
+            color:#377893;
+            font-weight:400;
         }
-        @media only screen and (max-width: 991px){
+        @media only screen and (max-width: 991px) {
             #FudanBody #highlight1 .highlight{
                 width: 33%;margin: 0
             }
@@ -100,25 +99,23 @@ font-weight:400;
             #highlight1{width:100%;}
             #highlight2{width:66%;margin: 20px auto 0 auto;}
         }
-@media only screen and (max-width: 600px){
+        @media only screen and (max-width: 600px) {
             #FudanBody #pageContent .section p{
-            font-size: 18px;
-            line-height: 30px;
-            margin-top: 50px;
-        }
-#FudanBody .highlight{
-            float: none;
-        }
-#FudanBody #highlight1 .highlight{
-                width: 80%;margin: 0 auto;
+                font-size: 18px;
+                line-height: 30px;
+                margin-top: 50px;
             }
-            #FudanBody #highlight2 .highlight{
+            #FudanBody .highlight{
+                float: none;
+            }
+            #FudanBody #highlight1 .highlight,
+            #FudanBody #highlight1 .highlight{
                 width: 80%;margin: 0 auto;
             }
             #highlight1{width:100%;}
             #highlight2{width:100%;}
         }
-#FudanBody #pageContent p.figureCaption{
+        #FudanBody #pageContent p.figureCaption{
             color: rgba(0,0,0,0.4);
             font-size: 16px;
             line-height: 20px;
@@ -127,7 +124,6 @@ font-weight:400;
             position: absolute;
             bottom: -20px;
         }
-
     </style>
     <!-- init 2018-10-16 -->
     <script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/createjs20151126.js&action=raw&ctype=text/javascript"></script>
@@ -549,8 +545,6 @@ font-weight:400;
         $('.scrollspy').scrollSpy();
     });
 
-
-
     //Init slide-out nav
     $(function () {
         $('#slide-out .collapsible-body').css('display','none');
@@ -561,6 +555,31 @@ font-weight:400;
     $(function(){
         $('.parallax').parallax();
     });
+
+// @@@@ hide on igem.actin.cn 3556-302 ~ 2858
+//hide the nav
+var $topNav=$("#topNav");
+var footerHeight=$("#FudanFooter").height();
+var pageHeight=$("#FudanWrapper").height();
+scrollTop=$(document).scrollTop();
+if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
+    $topNav.fadeOut(200);
+}
+else {
+    $topNav.fadeIn(200);
+}
+$(document).on("scroll",function () {
+    footerHeight=$("#FudanFooter").height();
+    pageHeight=$("#FudanWrapper").height();
+    scrollTop=$(document).scrollTop();
+    if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
+        $topNav.fadeOut(200);
+    }
+    else {
+        $topNav.fadeIn(200);
+    }
+});
+
 //show caption
 if($(window).width()>991){
     var $figureCaption=$(".figureCaption");
