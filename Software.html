@@ -381,7 +381,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
                         </p>
                         <p>
-                            Within the interval of two “cellular movements (proliferation/migration/death included)”, “chemical movements” happens. This refers to the Notch-Ligand kinetics between cell membranes, the amplification of the signal of Notch ICD (intracellular domain) and the combination of augmented signals. Using <a href="https://en.wikipedia.org/wiki/Euler_method" target=_"blank">Euler method</a> (for kinetics) and discrete <a href="https://en.wikipedia.org/wiki/Gillespie_algorithm" target="_blank">Gillespie algorithm</a> (for stochastic process), we have predicted how a single cell works in a period within the interval of <b>cellular movements</b> (proliferation/migration/death included) and <b>chemical movements</b>, which refers to the <a href="./Model#NotchLigandKinetics">Notch-Ligand kinetics</a> between cell membranes, the amplification of the signal of Notch intracellular domain and the combination of augmented signals.
+                            Within the interval of two “cellular movements (proliferation/migration/death included)”, “chemical movements” happens. This refers to the Notch-Ligand kinetics between cell membranes, the amplification of the signal of Notch ICD (intracellular domain) and the combination of augmented signals. Using <a href="https://en.wikipedia.org/wiki/Euler_method" target=_blank>Euler method</a> (for kinetics) and discrete <a href="https://en.wikipedia.org/wiki/Gillespie_algorithm" target="_blank">Gillespie algorithm</a> (for stochastic process), we have predicted how a single cell works in a period within the interval of <b>cellular movements</b> (proliferation/migration/death included) and <b>chemical movements</b>, which refers to the <a href="./Model#NotchLigandKinetics">Notch-Ligand kinetics</a> between cell membranes, the amplification of the signal of Notch intracellular domain and the combination of augmented signals.
 
                         </p>
                         <p>
@@ -467,10 +467,9 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </p>
                         <h4>STEP3: The left Figure in Figure 5 will be plotted automatically. To get the right figure, Enter in the command line window
                         </h4>
-                        <p>>>res1=-Culture.*(Culture<-1);<br>
-                            >>res2=res1(:);<br>
-                            >>ecdf(res2);<br>
-                        </p>
+                        <p> >> res1 = -Culture.*(Culture&lt;-1);<br/>
+                            >> res2 = res1(:);<br/>
+                            >> ecdf(res2);</p>
                         <h3>OOP-based AND gate design (using <i>Cell</i> toolkit)</h3>
                         <p><i>Cell</i> toolkit is a toolkit to design combinational circuits by linking user-defined cellular movement (element) together. Here we show you how to use our toolkit <i>Cell</i> by an example of AND gate circuit design.
                         </p>
