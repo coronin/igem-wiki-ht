@@ -313,7 +313,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     <div id="section2" class="section container scrollspy">
                         <h2>Results</h2>
                         <h3>Contructed SynNotch and Surface antigen (surAg)</h3>
-                        <a>
+                        <p>
                             For our project’s wet lab part, we first built a variety of SynNotch with the same synthetic intracellular domains (SynICDs), but has different synthetic extracellular domains (SynECDs). We chose three different Synthetic extracellular domains: LaG17 (low affinity single domain antibody against EGFP), LaG16-2 (high affinity scFv against EGFP) <a href="https://www.ncbi.nlm.nih.gov/pubmed/25362362">(Fridy PC, et al., 2014)</a>, &alpha;CD19 (scFv against CD19) <a href="https://www.ncbi.nlm.nih.gov/pubmed/23527958" target=_blank>(Grupp SA, et al., 2013)</a> with same SynICD: tTAA (tTA-Advanced. Its corresponding promoter is TRE3GV) which can theoretically respond to surface EGFP (surEGFP) and surface CD19 (surCD19), (Table 1).
                         </p>
                         <p>
@@ -380,10 +380,9 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </p>
                         <div class="expFigureHolder" style="width:100%">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/e/e3/T--Fudan--opt-3.png">
-                            <p>Fig 3 | Comparison between different SynNotch receptors<br>
+                            <p>Figure 1. Comparison between different SynNotch receptors<br>
                                     a.	Mouse Notch core and human Notch core with the same extracellular domain and intracellular domain manifest different activation to noise ratio. While mouse SynNotch with LaG17 and tTAA as NECD and NICD exhibit significantly high activation to basal activation, the corresponding human SynNotch shows lower activation.<br>
                                     b.	Performance of SynNotch receptors with different NECDs and the same NICD shows LaG17 SynNotch with the highest activation but also the highest leakage, while CD19 SynNotch shows relatively lower activation but the least leakage. In addition, SynNotch receptors with the same NECD, the one with NICD of tTA-Advanced shows better activation to noise ratio compared those with NICD of Gal4-VP64.
-
 
                             </p>
 
@@ -401,7 +400,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </p>
                         <div class="expFigureHolder" style="width:100%">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--opt-4.png">
-                            <p>Fig 3 | Truncation of different parts of the LNR-A domain of LaG17 SynNotch<br>
+                            <p>Figure 2. Truncation of different parts of the LNR-A domain of LaG17 SynNotch<br>
                                 a.	With LaG17 SynNotch as control, the more we removed from the LNR-A region, the higher activation. Though leaving helix3 in LNR-A makes the activation even lower than our control is a huge surprise, it is possible this is a deviation due to SynNotch expression.<br>
                                 b.	This is a graph that “translates” fluorescence data into a relative performance of truncated SynNotch to LaG17 SynNotch with normal Notch core. X axis indicates performance relative to wt Notch core without induction, while y axis is when surEGFP antigens are presented to Notch cells.<br>
                                 c.-e. These three structures of the human Notch1 core from (Gordon et al., 2009) (PDB accession code 3eto) has been adapted to represent mouse Notch core. Grey domains indicate truncation.<br>
@@ -417,7 +416,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <p>From the results from figure 4, it seems as if there is a threshold length or structural hinderance of LNR-A that is within the range of optimal enzymatic activity for ADAM10/17 cleavage. Of course, further experiments must be done to rule out possibilities of SynNotch malfunction.</p>
                         <div class="expFigureHolder" style="width:100%">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/e/e1/T--Fudan--opt-5.png">
-                            <p>Fig 4 | Adding glycine linker to truncated versions of LaG17 mouse SynNotch core<br>
+                            <p>Figure 3. Adding glycine linker to truncated versions of LaG17 mouse SynNotch core<br>
                                     a.&d. Adding glycine linker to the ∆LNR-A hlx3+ NRR significantly lowered activation. This needs further verification.<br>
                                     b.&e. Adding a six-glycine linker between the ∆LNR-A NRR and scfv lowered induced activation and little of noise. However, a nine- glycine linker raised both basal and induced activation.<br>
                                     c.&f. Adding a nine-glycine linker between the ∆LNR-ABlinker NRR could increase activation, but a bold addition of 39 glycines significantly lowered it.
@@ -428,11 +427,12 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <h3>Mutating the calcium binding site of LNR-A and LNR-AB linker for better SynNotch receptors, some of them showing improvement.</h3>
                         <p>
                             Studies have shown that calcium depletion of the negative regulatory region <a href="https://www.ncbi.nlm.nih.gov/pubmed/19075186" target=_blank>(Gordon et al., 2009a</a>
-    and <a href="https://www.ncbi.nlm.nih.gov/pubmed/19701457" target=_blank>Gordon et al., 2009b;</a> <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10669757" target=_blank> Rand MD, et al., 2000</a could activate Notch, implying the electrostatic interactions of calcium ions with LNR domains and heterodimerization domain are fundamental in holding the NRR together. It occurred to us that perhaps slightly maneuvering the interaction strength by changing neighboring side chains of amino acids could either lead to either high basal activation with higher sensitivity, or lower basal activation with same or lower activation. We first analyzed the how conserved these amino acids are and chose ones that are quite conserved. Mutating the amino acids into others with residues with diverged features, we found that changing the charge from negative to positive (Lysine) significantly sensitized SyNotch.
+                            and <a href="https://www.ncbi.nlm.nih.gov/pubmed/19701457" target=_blank>Gordon et al., 2009b;</a> <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10669757" target=_blank> Rand MD, et al., 2000</a>
+                            could activate Notch, implying the electrostatic interactions of calcium ions with LNR domains and heterodimerization domain are fundamental in holding the NRR together. It occurred to us that perhaps slightly maneuvering the interaction strength by changing neighboring side chains of amino acids could either lead to either high basal activation with higher sensitivity, or lower basal activation with same or lower activation. We first analyzed the how conserved these amino acids are and chose ones that are quite conserved. Mutating the amino acids into others with residues with diverged features, we found that changing the charge from negative to positive (Lysine) significantly sensitized SyNotch.
                         </p>
                         <div class="expFigureHolder" style="width:100%">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/c/cc/T--Fudan--opt-7.png">
-                            <p>Fig 5| LNR-A calcium binding site and LNR-AB linker mutation shows improvement in LaG17 SynNotch performance.<br>
+                            <p>Figure 4. LNR-A calcium binding site and LNR-AB linker mutation shows improvement in LaG17 SynNotch performance.<br>
                                     a.&c.&e.  Mutation of the D1433 to K and Q (for mouse) (shown here with adapted NRR structure from Gordon’s work, it is D 1458 for human) shows higher activation and lower basal activation than LaG17 SynNotch. Due to the variance of data, further repeats must be done to confirm. It can be seen in e. that there are five electrostatic interaction between the calcium ion at LNRA with D1433, N1436, V1438, D1451 and D1454 (for mouse).<br>
                                     b.&d.&f. Mutation of the LNR-AB linker mostly shows functional SynNotch with heighten sensitivity. L 1457 (mouse)mutation to V and G (or A) showed LaG17 SynNotch with better activation to noise ratio. It can be seen in f., L1457(for mouse)/L1482 (for human)‘s side chain is locked in a hydrophobic pocket.<br>
                                     g. Evolutionary analysis on the NRR sequence with MEGA software. Though D1433 (for mouse) is not highly conserved, L1457 (for mouse) is.
@@ -451,7 +451,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </p>
                         <div class="expFigureHolder" style="width:100%">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/e/e6/T--Fudan--opt-6.png">
-                            <p>Fig 6 | Further mutations on LaG16-2 SynNotch LNR-AB-linker shows functional results.
+                            <p>Figure 5. Further mutations on LaG16-2 SynNotch LNR-AB-linker shows functional results.
 
                             </p>
 
