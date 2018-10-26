@@ -294,29 +294,26 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <h2>The essence of the Amplifier for transmembrane signaling</h2>
                         <p>By modeling, we demonstrated that our 3-layer design balances adjustability and stability for transmembrane logic processing.
 </p><p>
-                            Cellular logic gate lies at the foundation of our system, but the core and essential design of ENABLE is the detection of transmembrane signals. With our powerful SynNotch receptors transferring extracellular signals into intracellular transcription factors, we aim to detect real-world signals through ligand-receptor binding. In previous designs that detect intracellular signals with logic gates, researchers merely control the input to the system by not adding or adding superfluous small molecule drugs <a href="https://www.ncbi.nlm.nih.gov/pubmed/22722847" target=_blank>(Auslnder et al., 2012)</a>, or by not performing transfection or performing superfluous transfection, which is analogous to the 0 or 1 binary input. In such scenarios, just one single element is suffice to faithfully represent the on and off of the input. However, these previous designs are unable to transduce transmembrane signals in realistic circumstances. Our analysis through modelling leads to <a href="./Results" target="_blank">the 3-layer design</a> principle of the ENABLE toolbox, which is to introduce an amplifier layer between the SynNotch (input, which we call the Receptor) system and the responsive element (output, which we call the Combiner).</p>
+                            Cellular logic gate lies at the foundation of our system, but the core and essential design of ENABLE is the detection of transmembrane signals. With our powerful SynNotch receptors transferring extracellular signals into intracellular transcription factors, we aim to detect real-world signals through ligand-receptor binding. In previous designs that detect intracellular signals with logic gates, researchers merely control the input to the system by not adding or adding superfluous small molecule drugs <a href="https://www.ncbi.nlm.nih.gov/pubmed/22722847" target=_blank>(Auslnder et al., 2012)</a>, or by not performing transfection or performing superfluous transfection, which is analogous to the 0 or 1 binary input. In such scenarios, just one single element is suffice to faithfully represent the on and off of the input. However, these previous designs are unable to transduce transmembrane signals in realistic circumstances. Our analysis through modelling leads to the 3-layer design principle of the ENABLE toolbox, which is to introduce an amplifier layer between the SynNotch (input, which we call the Receptor) system and the responsive element (output, which we call the Combiner).</p>
                         <h3>Previous designs fail to transduce transmembrane signals</h3>
                         <p>
                             Signal detection in engineered cells is composed of three parts: input, the representation of information through transcription factors (TFs); process, the processing of information through TF-Promoter interactions; and output, the response to the information through gene expressions. When the input is experimentally controllable or even artificially manipulated, researchers can explore the capacity of cellular information processing by designing specific circuits with only one element <font color="purple">(Figure 1)</font>. Using transduction or small molecule drugs for input manipulation, scientists in previous studies <a href="https://www.ncbi.nlm.nih.gov/pubmed/24413461" target=_blank>(Gaber et al., 2014)</a> have shown the logical processing ability of engineered cells and synthetic gene circuits.
                         </p>
                         <div class="expFigureHolder width40 left-on-med-and-up">
                             <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/b/b9/T--Fudan--model_wyh_1.png">
-
-                            <p>
-                                Figure 1. Previous designs usually incorporate one pair of transcription factor and promoter as the detection system. The amount of transcription factor is manually controlled using small molecule drug, transduction, etc. As a result, the input of the system is nearly arbitrary, which can easily leads to the on/off output, represented by the activity of the promoter.
+                            <p><b>Figure 1. Previous designs usually incorporate one pair of transcription factor and promoter as the detection system.</b>
+                                <br/>The amount of transcription factor is manually controlled using small molecule drug, transduction, etc. As a result, the input of the system is nearly arbitrary, which can easily leads to the on/off output, represented by the activity of the promoter.
                             </p>
 
                         </div>
-                        <p>
-                            Unlike previous designs, the ENABLE system aims to detect real-world transmembrane signals represented by SynNotch receptors. The imperfect and variable situations and scenarios in the real world are far from experimentally controllable; yet they are unavoidable and must be dealt with.<br>
-                                    1. The number of Notch molecules on the cell membrane is relatively limited. Thus, the amount of released transcription factors is constrained (under detection level and have never been directly visualized) even under superfluous activation. This will prevent the input from being arbitrarily amplified.<br>
-                                    2. Experimental observations show that SynNotch comes with a certain level of background activation without external stimuli, which may most likely be a result of thermodynamic randomness.
+                        <p>Unlike previous designs, the ENABLE system aims to detect real-world transmembrane signals represented by SynNotch receptors. The imperfect and variable situations and scenarios in the real world are far from experimentally controllable; yet they are unavoidable and must be dealt with.</p>
+                        <p>1) The number of Notch molecules on the cell membrane is relatively limited. Thus, the amount of released transcription factors is constrained (under detection level and have never been directly visualized) even under superfluous activation. This will prevent the input from being arbitrarily amplified.</p>
+                        <p>2) Experimental observations show that SynNotch comes with a certain level of background activation without external stimuli, which may most likely be a result of thermodynamic randomness.
                         </p>
                         <p>These factors prevent the previous designs from faithfully detecting the on and off of external stimuli. In fact, any synthetic circuits with only one input-process-output element will be limited in its detection ability. Here, we conventionally used the Hill Equation to characterize such an element, in which the output (denoted by X) relates to the input (activator for example, denoted by A) through the equation:
                         </p>
 <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width20"  src="http://2018.igem.org/wiki/images/e/eb/T--Fudan--model-eq1.png"></p>
-                        <p>
-                            Both X and A are described by their concentrations. Kd denotes the dissociation constant between the activator A and its binding site on the gene circuit whereas the n denotes the Hill coefficient. Please refer to <a href="http://2017.igem.org/Team:Fudan/Model/HE" target=_blank>the model from our team in 2017 for details</a>.
+                        <p>Both X and A are described by their concentrations. Kd denotes the dissociation constant between the activator A and its binding site on the gene circuit whereas the n denotes the Hill coefficient. Please refer to <a href="http://2017.igem.org/Team:Fudan/Model/HE" target=_blank>the model from our team in 2017 for details on the simulation</a>.
                         </p>
                         <p>
                             The two free parameters, the dissociation constant (Kd) and n (Hill Coefficient), can be controlled to adjust the element. As shown in the following interactive figure, this allows us to manipulate the element to achieve different input (A) - output (X) relationships.
@@ -325,9 +322,8 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <div id="figure1" style="margin: 40px auto;width: 500px;" class="hide-on-small-only"></div>
                         <div class="expFigureHolder width40 right-on-med-and-up">
                             <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/4/4b/T--Fudan--model_wyh_2.png">
-
-                            <p>
-                                Figure 2. Previous designs with single element are not able to handle transmembrane signal processing task. The input-output relationship of a single element is characterized by Hill Equation, which comes with a 'detection range' defined by Kd and n. When the input range does not match the detection range, the system cannot faithfully represent the on and off of the input.
+                            <p><b>Figure 2. Previous designs with single element are not able to handle transmembrane signal processing task.</b>
+                                <br/>The input-output relationship of a single element is characterized by Hill Equation, which comes with a 'detection range' defined by Kd and n. When the input range does not match the detection range, the system cannot faithfully represent the on and off of the input.
                             </p>
 
                         </div>
@@ -339,23 +335,19 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </p>
                         <div class="expFigureHolder width40 left-on-med-and-up">
                             <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/3/32/T--Fudan--model_wyh_3.png">
-
-                            <p>
-                                Figure 3. Changing the number of binding sites of the transcription factors can potentially lead to more complex dynamics. Different numbers of bound transcription factors have different effects on the activity of the promoter, denoted by &alpha; in the figure.
+                            <p><b>Figure 3. Changing the number of binding sites of the transcription factors can potentially lead to more complex dynamics.</b>
+                                <br/>Different numbers of bound transcription factors have different effects on the activity of the promoter, denoted by &alpha; in the figure.
                             </p>
 
                         </div>
                         <p>We characterized the input-output relationship when there are multiple binding sites (of an activator A for example).</p>
-                               <p style="text-indent: 0;margin-bottom: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/8/83/T--Fudan--model-eq2.png"></p><p>
-                        While n and Kd are the Hill coefficient and dissociation constants, N represents the total number of binding sites, &alpha;<sub>i</sub> denotes the activation level while i activators are bound to the binding sites (bigger i leads to bigger &alpha;). Unfortunately, the following interactive Figure demonstrates that such dynamics is still Hill-like, and still relies on different pairs of transcription factor-binding sites to manipulate the dynamical range (four binding sites are used as an example).</p>
-<p class="hide-on-med-and-up">(Hidden content only visible on a desktop computer.)</p>
-                        <div id="figure2" style="margin: 40px auto;width: 500px;" class="hide-on-small-only"></div>
+                        <p style="text-indent: 0;margin-bottom: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/8/83/T--Fudan--model-eq2.png"></p>
+                        <p>While n and Kd are the Hill coefficient and dissociation constants, N represents the total number of binding sites, &alpha;<sub>i</sub> denotes the activation level while i activators are bound to the binding sites (bigger i leads to bigger &alpha;). Unfortunately, the following interactive Figure demonstrates that such dynamics is still Hill-like, and still relies on different pairs of transcription factor-binding sites to manipulate the dynamical range (four binding sites are used as an example).</p>
                         <p>In conclusion, changing both the transcription factor - promoter pairs and the number of binding sites can be used to adjust how a synthetic gene circuit responds to the input. However, both are limited and cannot enable a single limited-number element to faithfully detect transmembrane signals. Nevertheless, they are still valuable in our ENABLE after the addition of an amplifier layer <font color="purple">(Figure 4)</font>.</p>
                         <div class="expFigureHolder width40 right-on-med-and-up">
                             <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/c/c2/T--Fudan--model_wyh_4.png">
-
-                            <p>
-                                Figure 4. In the design of our system, the input will first come from the SynNotch receptors. Then it will be amplified by a tunable amplifier circuit, which will then feed input to the final responsive element, our Combiner.
+                            <p><b>Figure 4. In the design of our system, the input will first come from the SynNotch receptors.</b>
+                                <br/>Then it will be amplified by a tunable amplifier circuit, which will then feed input to the final responsive element, our Combiner.
                             </p>
 
                         </div>
@@ -366,9 +358,8 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     </p>
                         <div class="expFigureHolder width40 right-on-med-and-up">
                             <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/8/85/T--Fudan--model_wyh_5.png">
-
-                            <p>
-                                Figure 5. The amplifier circuit introduces nested dynamics into our system. The output of the amplifier A and its input from SynNotch B are characterized by the Hill Equation. The A subsequently leads to the final output X, which again follows the Hill Equation in relation to A. While the input range of B is usually narrow and hard to detect, it can be amplified to the range of A through the amplifier circuit.
+                            <p><b>Figure 5. The amplifier circuit introduces nested dynamics into our system.</b>
+                                <br/>The output of the amplifier A and its input from SynNotch B are characterized by the Hill Equation. The A subsequently leads to the final output X, which again follows the Hill Equation in relation to A. While the input range of B is usually narrow and hard to detect, it can be amplified to the range of A through the amplifier circuit.
                             </p>
 
                         </div><p>
@@ -378,28 +369,23 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <p>Secondly, with a certain and fixed A to X relationship, we can change the binding sites of transcription factor B of the amplifier circuit which determines how the signal from SynNotch will be amplified. This allows us to very freely adjust the dynamical properties of the ENABLE toolbox. The previously unusable input range now gets amplified and enters the detection range of the responsive element; hence, allowing accurate detection <font color="purple">(Figure 7)</font>.</p>
                         <div class="row expFigureHolder">
                             <div class="col s12 m6" style=""><img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/8/8e/T--Fudan--model_wyh_6.png">
-                                <p>
-                                    Figure 6. Adjusting the transcription factor - its promoter pair between the amplifier circuit and the responsive element changes the relationship between X and A.</p></div>
+                                <p><b>Figure 6. Adjusting the transcription factor - its promoter pair between the amplifier circuit and the responsive element changes the relationship between X and A.</b>
+                                    <br/>Comparing with Figure 5, the organe line moves, which suggests a response to lower concertation of input from the Amplifer output, allowing the final response to be a full range.
+                                </p></div>
                             <div class="col s12 m6" style=""><img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/a/a5/T--Fudan--model_wyh_7.png">
-
-                                <p>
-                                    Figure 7. Adjusting the binding sites of transcription factor B on the amplifier circuit leads to a dramatic change in the amplification magnitude. Thus, the former narrow and undetectable range of B can now be easily manipulated in terms of A.
+                                <p><b>Figure 7. Adjusting the binding sites of transcription factor B on the amplifier circuit leads to a dramatic change in the amplification magnitude.</b>
+                                    <br/>The former narrow and undetectable range of B can now be easily manipulated in terms of A. This modeling suggests to increase the copy number of our Amplifer's DNA binding domain in our 3-layer design.
                                 </p></div>
                         </div>
                         <ul class="collapsible expandable">
                             <li style="list-style-type: none">
-                                <div class="collapsible-header">Click to expand</div>
-                                <div class="collapsible-body container"><p>
-                                    Derivation of the formula we use to characterize a single transcription factor - promoter pair with multiple binding sites is straightforward under a few appropriate assumptions. We will keep using activator for example. Since we have N binding sites, the number of actual bound activators ranges from 0 to N. First, we assume that the activity of the promoter is solely controlled by the number of bound activators, but not their spatial arrangement (or spatial arrangement has little influence on the activation mechanism). Similar evidence has been reported before \[3]. Thus we could simply consider in total the N+1 states representing N+1 bound activators. We use α\_i to denote the activation level while i activators are bound to the binding sites (bigger i leads to bigger α). Second, zinc finger proteins are used as the building block of our transcription factor. Structure analysis shows no known interaction sites between the proteins \[4]. We thus assume different biding sites are independent to each other. This allows us to easily assign probabilities to the N+1 states. For each binding site, the probability of the activator being bound is again describe by 'Hill Equation' (refer to the model of our team in 2017 for the probabilistic explanation of Hill Equation and more <a href="http://2017.igem.org/Team:Fudan/Model/HE" target="_blank">Link here</a>).
-                                            </p><p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width20" src="http://2018.igem.org/wiki/images/7/7d/T--Fudan--model-eq3.png"></p>
-                                    <p>
-                                            To account for the four independent binding sites, elementary combination would show that the probability of i (ranging from 0 to 4) activator being bound is
-
-                                </p>
+                                <div class="collapsible-header">Click to see more about the formula</div>
+                                <div class="collapsible-body container">
+                                  <p>Derivation of the formula we use to characterize a single transcription factor - promoter pair with multiple binding sites is straightforward under a few appropriate assumptions. We will keep using activator for example. Since we have N binding sites, the number of actual bound activators ranges from 0 to N. First, we assume that the activity of the promoter is solely controlled by the number of bound activators, but not their spatial arrangement (or spatial arrangement has little influence on the activation mechanism). Similar evidence has been reported before. Thus we could simply consider in total the N+1 states representing N+1 bound activators. We use &alpha;<sub>i</sub> to denote the activation level while i activators are bound to the binding sites (bigger i leads to bigger &alpha;). Second, zinc finger proteins are used as the building block of our transcription factor. Structure analysis shows no known interaction sites between the proteins. We thus assume different biding sites are independent to each other. This allows us to easily assign probabilities to the N+1 states. For each binding site, the probability of the activator being bound is again describe by 'Hill Equation' (refer to the model of our team in 2017 for the probabilistic explanation of Hill Equation and more <a href="http://2017.igem.org/Team:Fudan/Model/HE" target="_blank">Link here</a>).</p>
+                                    <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width20" src="http://2018.igem.org/wiki/images/7/7d/T--Fudan--model-eq3.png"></p>
+                                  <p>To account for the four independent binding sites, elementary combination would show that the probability of i (ranging from 0 to 4) activator being bound is</p>
                                     <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/0/08/T--Fudan--model-eq4.png"></p>
-                                    <p>
-                                            Thus the final output can be characterized by the expectation of the promoter activity under the N+1 states, which is
-                                </p>
+                                  <p>Thus the final output can be characterized by the expectation of the promoter activity under the N+1 states, which is</p>
                                     <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/2/2a/T--Fudan--model-eq5.png"></p>
                                 </div>
                             </li>
@@ -407,7 +393,9 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     </div>
 <div class="expFigureHolder" style="width:100%">
     <img class="responsive-img" src="./gj-2012jp.png" />
-    <p>In our GJ presentation (10/25 Room 311 9:00-9:25), we used the image above to demonstrate a previous study highlights the requirement of amplification for signaling transduction across many cells.</p>
+    <p>In our GJ presentation (10/25 Room 311 9:00-9:25), we used the image above in addition to the modeling just describe to add two points:
+        (1) A summary of the Receptor-Ligand kinetics described below that with the same number of receptors and proteases, due to the increased complexity with more diversed ligand-receptor interactions, the release of Notch intracellular domains significantly decreased.
+        (2) There was a previous study highlighting the requirement of amplification for signaling transduction across many cells.</p>
 </div>
                     <div id="NotchLigandKinetics" class="section container scrollspy">
                         <h2>Receptor-Ligand kinetics</h2>
@@ -416,33 +404,32 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </p><p>
                             We focused on the signal-to-noise ratio (SNR) of the Notch/SynNotch receptor. In previous research, some quantitative descriptions of Notch-Ligand have been published for explanation and exploration of systematic design <a href="https://www.ncbi.nlm.nih.gov/pubmed/23839946" target=_blank>(Andrawes MB, et al., 2013)</a>. For example, cis-inhibition was modeled via chemical kinetics, which precisely predict the mechanism of Notch-induced pattern formation <a href="https://www.ncbi.nlm.nih.gov/pubmed/20418862" target=_blank>(Sprinzak D, et al., 2010)</a>. However, stochastic models for Notch-Ligand simulations have not been reported yet.
                     </p><p>
-                            Here we present a mathematical model for Notch-Ligand kinetics using Stochastic Petri nets, which takes random intercellular processes into consideration. We found that the SNR of our system is not only dependent on the affinity of Notch-Ligands, but also the Secretase Complex. We also expanded our model from targeting just molecular-level chemical reactions to cell colony-level chemical reactions, which offers clues for oriented optimization of Notch. Last but not least, our object-oriented programming (OOP) makes it easy to transplant into <a href="./Software">further application</a>.
+                        Here we present a mathematical model for Notch-Ligand kinetics using Stochastic <a href="https://en.wikipedia.org/wiki/Petri_net#Mathematical_properties_of_Petri_nets" target=_blank>Petri nets</a>, which takes random intercellular processes into consideration. We found that the SNR of our system is not only dependent on the affinity of Notch-Ligands, but also the Secretase Complex. We also expanded our model from targeting just molecular-level chemical reactions to cell colony-level chemical reactions, which offers clues for oriented optimization of Notch. Last but not least, our object-oriented programming (OOP) makes it easy to transplant into <a href="./Software">further application</a>.
                         </p>
                         <h3>Using ChemicalReactions toolkit</h3>
                         <p>
                             Not like chemical reactions happening in tubes, Notch-Ligand interaction occurs in a 2D manner. That is to say, chemical reactions between Notch and Ligand takes place on the membrane of two neighboring cells. Two cells may exchange their components on the membrane by touching to each other. Due to physical constraints, the chemical constitution of those cells remains relatively independent. However, when Ligand proteins binding to the extracellular domain of Notch receptor, proteolytic cleavage and release of the intracellular domain are induced.
                         </p><p>
                         Proteolytic cleavage of Notch involves a few steps, including S2-cleaveage by metalloprotease ADAM10,  S3-cleavage by &gamma;-secretase complex or &gamma;-secretase Tetering <a href="https://www.ncbi.nlm.nih.gov/pubmed/21506924" target=_blank>(van Tetering G, et al., 2011)</a>. Here we simplify the cleavage of Notch after ligand binding, and we suppose that the cleavage is a one-step reaction with the smallest rate constant of all cleavages mentioned above. This simplification is coming down to the rate-limiting step in physics chemistry. The simplified equations are as follows.
-                                    N+L⇌NL
-                                    NL+S⇌NLS→icd
-
-                    </p><p>
+                                   &nbsp; N+L⇌NL &nbsp;
+                                   &nbsp; NL+S⇌NLS→icd &nbsp;
                         Here N refers to Notch, L refers to Ligand, NL Notch-Ligand complex, S protease, NLS Notch-Ligand-protease complex, and icd means the intracellular domain of Notch.
                     </p><p>
-                        Our mathematic tool is <a href="https://en.wikipedia.org/wiki/Petri_net#Mathematical_properties_of_Petri_nets" target=_blank>Petri net</a>. For the history and definition of Petri net, please check reference <a href="https://www.crcpress.com/Stochastic-Modelling-for-Systems-Biology/Wilkinson/p/book/9781439837726" target="_blank">Wilkinson DJ， et al., 2006</a>. This method views each chemical or reaction intermediate as nodes in a network, element reactions as edges, and weight and direction of each edge for stoichiometric number and reaction direction. Especially, we use {P, T, Pre, Post, M} to describe a Petri net precisely: P={p1, …, pu} is the space of chemicals, T={t1, …, tv} is the spaces of all transitions (element reactions) , Pre is a v*u integer matrix containing the weights from chemicals to transitions， and the (i,j)th element of this matrix is the weight of the arc going from chemical j to transition i, and Post is a v*u integer matrix containing the weights from transitions to chemicals, and the (i,j)th element of this matrix is the weight of the arc going from transition i to chemical j. M is a u-dimensional integer vector that represents the current state of the system (i.e. the number of molecules).
+                        Our mathematic tool is <a href="https://en.wikipedia.org/wiki/Petri_net#Mathematical_properties_of_Petri_nets" target=_blank>Petri net</a>. For the history and definition of Petri net,
+                        please check reference <a href="https://www.crcpress.com/Stochastic-Modelling-for-Systems-Biology/Wilkinson/p/book/9781439837726" target="_blank">Wilkinson DJ, et al., 2006</a>. This method views each chemical or reaction intermediate as nodes in a network, element reactions as edges, and weight and direction of each edge for stoichiometric number and reaction direction. Especially, we use {P, T, Pre, Post, M} to describe a Petri net precisely: P={p1, …, pu} is the space of chemicals, T={t1, …, tv} is the spaces of all transitions (element reactions) , Pre is a v*u integer matrix containing the weights from chemicals to transitions， and the (i,j)th element of this matrix is the weight of the arc going from chemical j to transition i, and Post is a v*u integer matrix containing the weights from transitions to chemicals, and the (i,j)th element of this matrix is the weight of the arc going from transition i to chemical j. M is a u-dimensional integer vector that represents the current state of the system (i.e. the number of molecules).
                     </p><p>
                         For system with only one kind of Notch and one kind of Ligand, we have
-                        <img class="responsive-img width50" src="./model-zlw1.png" alt="zlw1 model equation" />
+                        <img class="responsive-img width60" src="./model-zlw1.png" alt="zlw1 model equation" />
                         the subscripts refer to the index of a cell in a cell-pair, and the index is designated arbitrarily.
-                        Also, we have 公式公式嵌入
-                        <img class="responsive-img width50" src="./model-zlw2.png" alt="zlw1 model equation" /></p><p>
+                        Also, we have
+                        <img class="responsive-img width80" src="./model-zlw2.png" alt="zlw1 model equation" />
                         Here the lower capital g and d refer to the generation and degradation of following chemicals.
                         Similarly, we can write out the matrix Post and Pre.
                     </p><p>
                         We set W as a u-dimensional zero vector for initialization. Then we need to designate when and how this system chooses to finish a certain element reaction. For this purpose, we consider that the occurrence of an element reaction is a heterogeneous Poisson process, and certain reaction selection via sampling. That’s, the possibility that an element reaction R<sub>i</sub> happening in the time interval (t,&delta;t] is given by h<sub>i</sub>(x,<sub>i</sub>) &delta;t. With additivity assumption, we can get the possibility an arbitrary reaction happening in the time interval (t,&delta;t] is
                         <img class="responsive-img width20" src="./model-zlw3.png" alt="zlw1 model equation" />
                     </p><p>
-                        The form of h<sub>i</sub>(x,<sub>i</sub>) is given by mass-action stochastic kinetics. For a given system, h<sub>i</sub>(x,<sub>i</sub>)=c<sub>i</sub>\*C(n<sub>i1</sub>,n<sub>i2</sub>, …, n<sub>in</sub>), where c<sub>i</sub> is the rate constant for reaction i, n<sub>in</sub> refers to the molecule number of reactant k for reaction i, and function C() means combinatorial number of all n\_in. In practice, C() can be replaced by &Pi;() with some modifications for c<sub>i</sub>. For more details in our simulation, please refer to <a href="#simulationParameters">simulation parameters</a>.
+                        The form of h<sub>i</sub>(x,<sub>i</sub>) is given by mass-action stochastic kinetics. For a given system, h<sub>i</sub>(x,<sub>i</sub>)=c<sub>i</sub>\*C(n<sub>i1</sub>,n<sub>i2</sub>, …, n<sub>in</sub>), where c<sub>i</sub> is the rate constant for reaction i, n<sub>in</sub> refers to the molecule number of reactant k for reaction i, and function C() means combinatorial number of all n\_in. In practice, C() can be replaced by &Pi;() with some modifications for c<sub>i</sub>.
                     </p><p>
                         Similarly, we can easily derive the expression for system with i kinds of Notch and j kind of Ligand.
                         </p>
@@ -458,24 +445,35 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <p>
                             SNR can be tuned via Notch-Ligand binding affinity in a power-law manner.
                         </p><p>
-                        For certain parameters, signal-to-noise ratio can be tuned via Notch-Ligand binding affinity in a power-law manner (<font color="purple">Figure 8E</font> with rate constant of gN<sub>A</sub>L<sub>B</sub>varied compared to Figure 8A]. This offers clue for <a href="./Optimization">SynNotch optimization</a>.
+                        For certain parameters, signal-to-noise ratio can be tuned via Notch-Ligand binding affinity in a power-law manner (<font color="purple">Figure 8E</font> with rate constant of gN<sub>A</sub>L<sub>B</sub>varied compared to Figure 8A). This offers clue for <a href="./Optimization">SynNotch optimization</a>.
                     </p><p>
                             Amplification is required for Notch-Ligand (see above).
                         For certain parameters, signal of a certain pair of Notch-Ligand coupling may be diluted by occurrence of other reactions (<font color="purple">Figure 8F</font> with types of overall Notch/Ligand varied compared to Figure 8A).
                         </p>
-                        <div class="expFigureHolder width40 left-on-med-and-up">
-                            <img class="responsive-img" src="./xxxx">
-                            <p>
-                                Figure 8. Simulation results of Notch-Ligand kinetics
-                                        A-F分成6个，需要补各个的XY轴的涵义 @@@@
+                        <div class="expFigureHolder" style="width:100%">
+                            <img class="responsive-img" src="./zlw1018.png">
+                            <p><b>Figure 8. Simulation results of Notch-Ligand kinetics.</b>
+<br/>(A) Simulation of a 2 Notch-2 Ligand system. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. Both Cell1 and Cell2 are armed with all four kinds of Notch/Ligand A/B.
+<br/>(B) Weak binding affinity for cleavage leads to low response. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. The affinity of protease to NotchB-LigandB complex is weakened, leading to poor NotchB response to Ligand signal.
+<br/>(C) High Notch-Ligand specificity may not affect system response. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. The specificity of Notch-Ligand binding is enhanced, making no significant difference of system response with the cleavage being the rate-limit reaction in this system.
+<br/>(D) Variant Notch-Ligand specificity may not affect system response. The graph's horizontal axis shows the ratio of rate constant of gN<sub>i</sub>L<sub>j</sub> (i≠j) and that of gN<sub>i</sub>L<sub>j</sub> (i=j), and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in Cell2. The specificity of Notch-Ligand binding is tuned, making no significant difference of system response with the cleavage being the rate-limit reaction in this system. This strongly corresponds to the fact that the cleavage reaction is the rate-limit reaction in this system.
+<br/>(E) SNR can be tuned by Notch-Ligand specificity. The graph's horizontal axis shows the ratio of rate constant of gN<sub>i</sub>L<sub>j</sub> (i≠j) and that of gN<sub>i</sub>L<sub>j</sub> (i=j), and the SNR are defined as the ratio of the number of 2 kinds of intracellular domain (icdA and icdB) in Cell2, with Cell1 only have LigandA. The specificity of Notch-Ligand binding is tuned, changing SNR in a power-law manner.
+<br/>(F) Amplification is needed for multi-Notch/Signal system. The graph's horizontal axis shows the diversity of the Notch-Ligand system, and the diversity are defined as the species number of Notch/Ligand. With the diversity increasing, the number of a certain type of Notch intracellular domain molecules reduces.
                             </p>
-
                         </div>
+                        <ul class="collapsible expandable">
+                            <li style="list-style-type: none">
+                                <div class="collapsible-header">Click to see more about the modeling parameters</div>
+                                <div class="collapsible-body container">
+                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width80" src="./zlw1018param1.png"></p>
+                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width80" src="./zlw1018param2.png"></p>
+                                </div>
+                            </li>
+                        </ul>
                         <p>
                             The stochastic Notch-Ligand kinetics can be simplified as a single chemical constant for some certain conditions. Though this may greatly reduce the workload of transplant our model into a higher-scale application (e.g. to model a cell colony made up of cells armed with Notch and Ligand), this OOP modeling style makes it easy to transplant Notch-Ligand kinetics at the molecular level to macroscale level. Please continue to our <a href="./Software">software</a>, where we abstracted mammalian cells into blocks (with parameters modeled and simulated above), to predict cellular behaviors. We quantified the behavior of individual cells within a population. We found that besides ENABLE signaling, cell proliferation speed, cell life-span and cell adhesion greatly impact cancer elimination effectiveness. Our modeling and software gives ENABLE gates a population perspective, and test them in a clinical scenario.
                         </p>
-<p id="War_Predictor"><a href="./Software#section4">See war predictor</a></p>
-                        <p><a href="http://2018.igem.org/wiki/images/c/c1/T--Fudan--model-cell-colony.pdf" target="_blank">Model_cell_colony</a></p>
+                        <p>A document on <a href="http://2018.igem.org/wiki/images/c/c1/T--Fudan--model-cell-colony.pdf" target="_blank">model cell colony</a>, and source code is available on <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>GitHub</a>.</p>
                     </div>
                 </main>
             </div>
