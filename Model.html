@@ -103,7 +103,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                 <li><a href="./Addon#TALE">Addon: TALE</a></li>
                 <li><a href="./Addon#T2">Addon: T2</a></li>
                 <li><a href="./Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
-                <li><a href="./Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                <li><a href="./Model#NotchLigandKinetics">Model: Notch-ligand&nbsp;kinetics</a></li>
                 <li><a href="./Software">Software</a></li>
             </ul>
             <ul id="dropdown3" class="dropdown-content">
@@ -169,7 +169,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                     <li><a href="./Addon#TALE">Addon: TALE</a></li>
                                     <li><a href="./Addon#T2">Addon: T2</a></li>
                                     <li><a href="./Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
-                                    <li><a href="./Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                                    <li><a href="./Model#NotchLigandKinetics">Model: Notch-ligand&nbsp;kinetics</a></li>
                                     <li><a href="./Software">Software</a></li>
                                 </ul>
                             </div>
@@ -429,7 +429,8 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         We set W as a u-dimensional zero vector for initialization. Then we need to designate when and how this system chooses to finish a certain element reaction. For this purpose, we consider that the occurrence of an element reaction is a heterogeneous Poisson process, and certain reaction selection via sampling. That’s, the possibility that an element reaction R<sub>i</sub> happening in the time interval (t,&delta;t] is given by h<sub>i</sub>(x,<sub>i</sub>) &delta;t. With additivity assumption, we can get the possibility an arbitrary reaction happening in the time interval (t,&delta;t] is
                         <img class="responsive-img width20" src="./model-zlw3.png" alt="zlw1 model equation" />
                     </p><p>
-                        The form of h<sub>i</sub>(x,<sub>i</sub>) is given by mass-action stochastic kinetics. For a given system, h<sub>i</sub>(x,<sub>i</sub>)=c<sub>i</sub>\*C(n<sub>i1</sub>,n<sub>i2</sub>, …, n<sub>in</sub>), where c<sub>i</sub> is the rate constant for reaction i, n<sub>in</sub> refers to the molecule number of reactant k for reaction i, and function C() means combinatorial number of all n\_in. In practice, C() can be replaced by &Pi;() with some modifications for c<sub>i</sub>.
+                        The form of h<sub>i</sub>(x,<sub>i</sub>) is given by mass-action stochastic kinetics. For a given system, h<sub>i</sub>(x,<sub>i</sub>)=c<sub>i</sub>*C(n<sub>i1</sub>,n<sub>i2</sub>, …, n<sub>in</sub>), where c<sub>i</sub> is the rate constant for reaction i, n<sub>in</sub> refers to the molecule number of reactant k for reaction i, and function C() means
+                        combinatorial number of all n<sub>in</sub>. In practice, C() can be replaced by &Pi;() with some modifications for c<sub>i</sub>.
                     </p><p>
                         Similarly, we can easily derive the expression for system with i kinds of Notch and j kind of Ligand.
                         </p>
@@ -465,8 +466,8 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                             <li style="list-style-type: none">
                                 <div class="collapsible-header">Click to see more about the modeling parameters</div>
                                 <div class="collapsible-body container">
-                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width80" src="./zlw1018param1.png"></p>
-                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width80" src="./zlw1018param2.png"></p>
+                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img" src="./zlw1018param2.png"></p>
+                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img" src="./zlw1018param1.png"></p>
                                 </div>
                             </li>
                         </ul>
@@ -543,7 +544,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                         <li><a href="./Addon#TALE">Addon: TALE</a></li>
                                         <li><a href="./Addon#T2">Addon: T2</a></li>
                                         <li><a href="./Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
-                                        <li><a href="./Model#War_Predictor">Model: war&nbsp;predictor</a></li>
+                                        <li><a href="./Model#NotchLigandKinetics">Model: Notch-ligand&nbsp;kinetics</a></li>
                                         <li><a href="./Software">Software</a></li>
                                     </ul>
                                 </div>
