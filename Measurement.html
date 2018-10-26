@@ -4,7 +4,7 @@
 This html document is created by Tian Huang for Team Fudan iGEM 2018.
 We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
 -->
-<!-- LC check on 2018-10-25 -->
+<!-- LC check on 2018-10-26 -->
 <head>
     <meta charset="UTF-8">
 
@@ -301,7 +301,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
                             <h2>Introduction</h2>
                             <p>
-                                Transcription factors and promoters are the basis of the genetic circuit. Compared with prokaryotic promoters, the mechanism of action of eukaryotic promoters is complex(Struhl, 1999), which increases the difficulty of our new design and transformation. The limited number of eukaryotic transcription factors and promoters is currently limiting the design and implementation of complex gene circuits in mammalian cells from meeting a variety of clinical or industrial applications.
+                                Transcription factors and promoters are the basis of the genetic circuit. Compared with prokaryotic promoters, the mechanism of action of eukaryotic promoters is complex <a href="https://www.ncbi.nlm.nih.gov/pubmed/10412974" target=_blank>(Struhl, 1999)</a>, which increases the difficulty of our new design and transformation. The limited number of eukaryotic transcription factors and promoters is currently limiting the design and implementation of complex gene circuits in mammalian cells from meeting a variety of clinical or industrial applications.
                             </p>
                             <p>
                                 In order to obtain a sufficient number of orthogonal synthetic transcription factor-promoter pairs, it is often necessary to carry out a certain number of constructions and select candidates with an excellent performance from the complex construction. This requires us to develop a robust, fast and cost-controllable method suitable for large-scale screening. Therefore, testing using transient transfection methods is an effective method.
@@ -311,36 +311,27 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/0/01/T--Fudan--Measurement-M1.svg">
 
                             <p>
-                                <b>
-                                    Figure 1: Using a dual fluorescence system to effectively remove data-to-data differences due to differences in transient efficiency.
-                                </b>
-                                <br>
-                                (a). Testing with a single fluorescence system is susceptible to transient effects resulting in measurement errors. U, untransfected cell; T, transfected cell. The two distinct peak shapes here are only for convenience of display. In actual tests, it is often difficult to distinguish a clear trough because of the copy number variability of the transiently transferred plasmid. This effect is more pronounced when a promoter has a higher background expression or an unstable expression. (b) Testing with dual fluorescence system can effectively eliminate the difference in transfection efficiency. Orange indicates more cell aggregation in this area, and yellow indicates less cell aggregation in this area.
+                                <b>Figure 1. Using a dual fluorescence system to effectively remove data-to-data differences due to differences in transient efficiency.
+                                </b><br/>
+                                (a) Testing with a single fluorescence system is susceptible to transient effects resulting in measurement errors. U, untransfected cell; T, transfected cell. The two distinct peak shapes here are only for convenience of display. In actual tests, it is often difficult to distinguish a clear trough because of the copy number variability of the transiently transferred plasmid. This effect is more pronounced when a promoter has a higher background expression or an unstable expression.<br/>
+                                (b) Testing with dual fluorescence system can effectively eliminate the difference in transfection efficiency. Orange indicates more cell aggregation in this area, and yellow indicates less cell aggregation in this area.
                             </p>
 
                         </div>
-                            <p>
-                                However, since transient transfection experiments will introduce a heterogeneous number of plasmid copies into cells(Cohen et al., 2009), the differences between experiments will be expanded compared to stable expression cell lines. We found that a reasonable way to distinguish successfully transfected cells is to maintain test robustness while quantifying the promoter. As an example taken from a group of experiments, when a transcription factor and its corresponding promoter which controls a downstream reporter gene are co-transfected, transient transfection will result in a high degree of heterogeneity in the fluorescent expression of the cells. If it is impossible to gate out cells that have been unsuccessfully transfected by any means, the transfection efficiency of each change in each experiment will make these untransfected cells have a catastrophic effect on the statistical results <font color=”purple”>(Figure 1a)</font>. However, by introducing an additional fluorescent signal, we can clearly distinguish cells that have been successfully transfected <font color=”purple”> (Figure 1b) </font>. Thus, this method contains important implementation value.
+                            <p>Since transient transfection experiments will introduce a heterogeneous number of plasmid copies into cells <a href="https://www.ncbi.nlm.nih.gov/pubmed/19211029" target=_blank>(Cohen et al., 2009)</a>, the differences between experiments will be expanded compared to stable expression cell lines. We found that a reasonable way to distinguish successfully transfected cells is to maintain test robustness while quantifying the promoter. As an example taken from a group of experiments, when a transcription factor and its corresponding promoter which controls a downstream reporter gene are co-transfected, transient transfection will result in a high degree of heterogeneity in the fluorescent expression of the cells. If it is impossible to gate out cells that have been unsuccessfully transfected by any means, the transfection efficiency of each change in each experiment will make these untransfected cells have a catastrophic effect on the statistical results <font color=”purple”>(Figure 1a)</font>. However, by introducing an additional fluorescent signal, we can clearly distinguish cells that have been successfully transfected <font color=”purple”> (Figure 1b) </font>. Thus, this method contains important implementation value.
                             </p>
-
-
-                            <p>
-                                However, in transient transfection, the introduction of additional plasmids may result in that not all cells are able to take up all of the components of the plasmid set. Thus, the use of such a method does not effectively distinguish whether those cells are successfully transferred to all of the plasmid groups based on the presence or absence of the internal reference fluorescence. However, in contrast, the success rate of co-transfection can be significantly improved by reducing the amount of plasmid used.
+                            <p>In transient transfection, the introduction of additional plasmids may result in that not all cells are able to take up all of the components of the plasmid set. Thus, the use of such a method does not effectively distinguish whether those cells are successfully transferred to all of the plasmid groups based on the presence or absence of the internal reference fluorescence. However, in contrast, the success rate of co-transfection can be significantly improved by reducing the amount of plasmid used.
                             </p>
-                            <p>
-                                Therefore, we developed a dual-fluorescence dual-plasmid (DFDP) quantification system (DFDP), in which we keep only two plasmids that allow us to confidently perform a co-transfection experiment. Simultaneously, the P2A element couples the expression of the internal reference fluorescence with transcription factor (TF) so that we can gate out the cells that have not been successfully transferred into the plasmid by distinguishing the presence or absence of one of the fluorescences. Thereby we can minimize the interference caused by utilizing the difference in transfection efficiency between the repeats. Thus, the DFDP quantification system helps us measure transcription factor-promoter pair strength quickly and robustly.
+                            <p>Therefore, we developed a dual-fluorescence dual-plasmid (DFDP) quantification system (DFDP), in which we keep only two plasmids that allow us to confidently perform a co-transfection experiment. Simultaneously, the P2A element couples the expression of the internal reference fluorescence with transcription factor (TF) so that we can gate out the cells that have not been successfully transferred into the plasmid by distinguishing the presence or absence of one of the fluorescences. Thereby we can minimize the interference caused by utilizing the difference in transfection efficiency between the repeats. Thus, DFDP quantification system helps us measure transcription factor-promoter pair strength quickly and robustly.
                             </p>
-
-                            <p>
-                                Here we summarize the comparison of using a 2A element to construct the DFDP system relative to co-transfecting an internal reference plasmid (Table. 1).
+                            <p>Here we summarize the comparison of using a 2A element to construct DFDP relative to co-transfecting an internal reference plasmid (Table 1).
                             </p>
-
-                             <div class="tableHolder">
-                            <table class="">
-                                <tr>
+                            <div class="tableHolder">
+                            <table>
+                                <tr style="border-top: #AAAAAA solid 1px">
                                     <th></th>
-                                    <th>DFDP system</th>
-                                    <th>The method of co-transfecting an internal reference fluorescence</th>
+                                    <th>Dual-fluorescence dual-plasmid (DFDP)</th>
+                                    <th>Co-transfecting an internal reference fluorescence</th>
                                 </tr>
                                 <tr>
                                     <td rowspan="2">Pro</td>
@@ -361,7 +352,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                         Due to the need to introduce an additional plasmid, co-transfection with 3 plasmids (even if 4 plasmids are required for co-transfection if the NIMPLY-form promoter is to be tested) actually reduces the efficiency of transfection. It is not guaranteed that cells with internal reference fluorescence do contain the two or three other plasmids.
                                     </td>
                                 </tr>
-                                <caption style="text-align:left">Table 1: Comparison of advantages and disadvantages between DFDP system and the method of co-transfecting an internal reference fluorescence.
+                                <caption style="text-align:left">Table 1. Comparison of advantages and disadvantages between DFDP and the method of co-transfecting an internal reference fluorescence.
 
 
                                     </caption>
@@ -371,75 +362,54 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <div id="section2" class="section container scrollspy">
                             <h2>Method</h2>
 
-                            <h3>
-                                The Desing of DFDP system
+                            <h3>The design of DFDP
                             </h3>
 
                             <p>
-                                Based on theoretical assumptions <font color=”orange”>(see <a href="#section5">Supplementary Materials</a> for details)</font>, we designed a dual-fluorescence-double plasmid (DFDP) system containing two plasmids <font color=”purple”>(Figure 2)</font>. Spectral overlap problems in multicolor fluorescence signal measurements can interfere with the effectiveness of the measurement. Thus, we used mCherry and EGFP here as two dual fluorescent signals because of the minimal overlap of their spectra.
+                                Based on theoretical assumptions (see <a href="#section5">Supplementary Materials</a> for details), we designed a dual-fluorescence-double plasmid (DFDP) system containing two plasmids <font color=”purple”>(Figure 2)</font>. Spectral overlap problems in multicolor fluorescence signal measurements can interfere with the effectiveness of the measurement.
+                                We used mCherry and d2EGFP here as two dual fluorescent signals because of the minimal overlap of their spectra.
                             </p>
                             <div class="expFigureHolder" style="width: 100%">
                                 <img class="responsive-img" src="http://2018.igem.org/wiki/images/8/80/T--Fudan--Measurement-M2.svg">
 
-                                <p>
-                                    <b>
-                                        Figure 2: DFDP system.
-                                    </b>
-                                    <br>
-                                    Structure of the plasmid with TF (P-TF): conPro-mCherry-P2A-SynTF. mCherry and TF are in one open reading frame linked by P2A and controlled by CMV promoter. P2A is a high efficiency self-cleaving 2A peptide (Kim et al., 2011). P2A are thought to function by making the ribosome skip the synthesis of a peptide bond at the C-terminus element, leading to “cleavage” between the end of the 2A sequence and and the next peptide downstream. The efficiency of cleavage can be improved by adding the Gly-Ser-Gly sequence at the N-terminus of the 2A peptide <a href="https://www.ncbi.nlm.nih.gov/pubmed/15064769" target=_blank>(Szymczak et al., 2004)</a>. Cleavage occurs between the Gly and Pro residues on the C-terminus causing the upstream cistron will have a few additional residues added to the C-terminus, while the downstream cistron will start with an additional Proline. Another advantage of using the 2A structure is that each molecule of mCherry expresses one molecule of TF at the same time, so that the relative expression level of TF can be indirectly known by detecting the fluorescence intensity of mCherry (see <font color=”blue”>theoretical assumptions</font> for details).
-                                    <br>
-                                    Structure of the plasmid with Pro (P-Pro): Pro-d2EGFP. Pro drives the expression of d2EGFP, which allows us to indirectly reflect the expression intensity of Pro in different states (for example, conditions with the presence of TF and conditions without the presence of TF) by detecting the fluorescence intensity of d2EGFP (see <font color=”blue”>theoretical assumptions</font> for details). At the same time, since our theoretical assumptions is derived under steady-state conditions, the key to the establishment of this test is that [d2EGFP] has reached steady state at the time of testing. Therefore, it is important to speed up the system to achieve fast response time. The response time can be accelerated by accelerating the rate of protein degradation (Rosenfeld and Alon, 2003). Therefore, compared to the traditional fluorescence reporting system, we used d2EGFP rapidly degradable EGFP (d2EGFP)(Li et al., 1998)) as a surrogate for EGFP. Comparing with EGFP, d2EGFP has a faster degradation rate, which will make Pro-driven fluorescence expression reach steady state faster, ensuring that we are as steady as possible in each test.
+                                <p><b>Figure 2. Dual-fluorescence dual-plasmid (DFDP) assay.</b><br/>
+                                    Structure of the plasmid with TF (P-TF): conPro-mCherry-P2A-SynTF. mCherry and TF are in one open reading frame linked by P2A and controlled by CMV promoter. P2A is a high efficiency self-cleaving 2A peptide
+                                    <a href="https://www.ncbi.nlm.nih.gov/pubmed/21602908" target=_blank>(Kim et al., 2011)</a>. P2A are thought to function by making the ribosome skip the synthesis of a peptide bond at the C-terminus element, leading to “cleavage” between the end of the 2A sequence and and the next peptide downstream. The efficiency of cleavage can be improved by adding the Gly-Ser-Gly sequence at the N-terminus of the 2A peptide <a href="https://www.ncbi.nlm.nih.gov/pubmed/15064769" target=_blank>(Szymczak et al., 2004)</a>. Cleavage occurs between the Gly and Pro residues on the C-terminus causing the upstream cistron will have a few additional residues added to the C-terminus, while the downstream cistron will start with an additional Proline. Another advantage of using the 2A structure is that each molecule of mCherry expresses one molecule of TF at the same time, so that the relative expression level of TF can be indirectly known by detecting the fluorescence intensity of mCherry (see <a href="#section5">Supplementary Materials</a> for details).<br/>
+                                    Structure of the plasmid with Pro (P-Pro): Pro-d2EGFP. Promoter drives the expression of d2EGFP, which allows us to indirectly reflect the expression intensity of Pro in different states (for example, conditions with the presence of TF and conditions without the presence of TF) by detecting the fluorescence intensity of d2EGFP (see <a href="#section5">Supplementary Materials</a> for details). At the same time, since our theoretical assumptions is derived under steady-state conditions, the key to the establishment of this test is that [d2EGFP] has reached steady state at the time of testing. Therefore, it is important to speed up the system to achieve fast response time. The response time can be accelerated by accelerating the rate of protein degradation
+                                    <a href="https://www.ncbi.nlm.nih.gov/pubmed/12787666" target=_blank>(Rosenfeld and Alon, 2003)</a>. Therefore, compared to the traditional fluorescence reporting system, we used rapidly degradable EGFP (d2EGFP)
+                                    <a href="https://www.ncbi.nlm.nih.gov/pubmed/9857028" target=_blank>(Li et al., 1998)</a> as a surrogate for EGFP. Comparing with EGFP, d2EGFP has a faster degradation rate, which will make promoter-driven fluorescence expression reach steady state faster, ensuring that we are as steady as possible in each test.
                                 </p>
 
                             </div>
 
-                            <h3>
-                                Optimize DHDP plasmid vector backbone easy molecular cloning
-                            </h3>
-
-                            <p>
-                                Since, in our design, the P-TF plasmid requires the construction of a fusion protein, we specifically designed p2Y-C-mCherry-P2A as the basic skeleton for P-TF construction. We also designed multiple cloning sites (MCS) at the mCherry-P2A backend and we inserted a BamHI site after the last Pro on the C-terminus of P2A. Furthermore, TF can be inserted directly after digestion with BamHI and HindIII. In addition to the restriction enzyme digestion method, we inserted two BbsI sites after the 3' end of BamHI and 5' of HindIII to meet the potential requirements of the Golden Gate cloning method while the restriction sites were specially designed. Make the same as the cleavage site of BamHI and HindIII. A stop codon was also inserted between the two BbsI sites, such that the p2Y-C-mCherry-P2A backbone without the insertion of TF was normally terminated after transcription initiation. Therefore, the p2Y-C-mCherry-P2A plasmid can be used as a control plasmid (P-Ctrl). We also optimized the base sequence after the 5' end of BamHI and the 3' end of HindIII to reduce the hairpin structure which makes it very easy to use when using ClonExpress or Gibson assembly. Although insertion of the BamHI site will result in three amino acids at the N-terminal residual (Pro-Gly-Ser) of the TF; yet as far as we know, this does not affect the function of SynTF. While, you can also use the ClonExpress or NEBuilder cloning method to remove the BamHI site during assembly, leaving only one Pro.
+                            <h3>Optimize DHDP plasmid vector backbone for easier molecular cloning</h3>
+                            <p>In our design, the P-TF plasmid requires the construction of a fusion protein, we specifically designed p2Y-C-mCherry-P2A as the basic skeleton for P-TF construction. We also designed multiple cloning sites (MCS) at the mCherry-P2A backend and we inserted a BamHI site after the last Pro on the C-terminus of P2A. Furthermore, TF can be inserted directly after digestion with BamHI and HindIII. In addition to the restriction enzyme digestion method, we inserted two BbsI sites after the 3' end of BamHI and 5' of HindIII to meet the potential requirements of the Golden Gate cloning method while the restriction sites were specially designed. Make the same as the cleavage site of BamHI and HindIII. A stop codon was also inserted between the two BbsI sites, such that the p2Y-C-mCherry-P2A backbone without the insertion of TF was normally terminated after transcription initiation. Therefore, the p2Y-C-mCherry-P2A plasmid can be used as a control plasmid (P-Ctrl). We also optimized the base sequence after the 5' end of BamHI and the 3' end of HindIII to reduce the hairpin structure which makes it very easy to use when using ClonExpress or Gibson assembly. Although insertion of the BamHI site will result in three amino acids at the N-terminal residual (Pro-Gly-Ser) of the TF; yet as far as we know, this does not affect the function of SynTF. While, you can also use the ClonExpress or NEBuilder cloning method to remove the BamHI site during assembly, leaving only one Pro.
                             </p>
-                            <p>
-                                Molecular cloning of the plasmids based on this specially optimized backbone system enables the DFDP system, making much easier and more convenient like never before.
+                            <p>Molecular cloning of the plasmids based on this specially optimized backbone system enables DFDP, making much easier and more convenient like never before.
                             </p>
-                            <p>
-                                We use the ClonExpress (Vazyme #C115) or the standard Biobrick assembly for all plasmid assembly.
+                            <p>We use the ClonExpress (Vazyme #C115) or the standard BioBrick assembly for all plasmid assembly.
                             </p>
-                            <p>
-                                <font color=”orange”>Download the file to view our MCS design.</font>
-
+                            <p>Download the file to view our MCS design.
 <a href="http://2018.igem.org/wiki/images/b/ba/T--Fudan--Measurement-MCS.txt" target="_blank"><i class="fa fa-download">MCS</i></a>
-
-
                             </p>
 
-                            <h3>
-                                Cell line
-                            </h3>
-
-                            <p>
-                                293T (ATCC #CRL-3216) was cultured in DMEM (Gibco #11965092) supplemented with 10% fetal bovine serum (Gibco # 10437036), 1x Penicillin-Streptomycin.
+                            <h3>Cell culture</h3>
+                            <p>293T (ATCC #CRL-3216) was cultured in DMEM (Gibco #11965092) supplemented with 10% fetal bovine serum (Gibco # 10437036), 1x Penicillin-Streptomycin and GlutaMax.
                             </p>
 
-                            <h3>
-                                Transient transfection
-                            </h3>
-
-                            <p>
-                                Transfection was performed using the cost-effective cationic polymer polyethyleneimine Max (Polysciences #24765). All transient transfection experiments of cells were performed in 24-well plates where the cells were plated one day earlier and transfected the next day at 80% cell confluence. For a well, 1.5 µl 1 µg/µl were added into 23.5 µl Opti-MEM (Thermo Fisher Scientific #11058021). A total of 500 or 450 ng plasmid was added into 25 µl Opti-MEM while 5 min later, PEI-Opti-MEM and DNA-Opti-MEM mixture were mixed and placed at room temperature for 10 min before being added into the well.
+                            <h3>Transient transfection</h3>
+                            <p>Transfection was performed using the cost-effective cationic polymer polyethyleneimine Max (Polysciences #24765). All transient transfection experiments of cells were performed in 24-well plates where the cells were plated one day earlier and transfected the next day at 80% cell confluence. For a well, 1.5 µl 1 µg/µl were added into 23.5 µl Opti-MEM (Thermo Fisher Scientific #11058021). A total of 500 or 450 ng plasmid was added into 25 µl Opti-MEM for 5 min. PEI-Opti-MEM and DNA-Opti-MEM mixture were mixed and placed at room temperature for 10 min before being added into the well.
                             </p>
-                            <p>
-                                The amount of plasmids used for activating-, silencing-, NIMPLY-form promoter tests is slightly different <font color=”purple”>(Table. 2)</font>.
+                            <p>The amount of plasmids used for activating-, silencing-, NIMPLY-form promoter tests is shown in <font color=”purple”>Table 2</font>.
                             </p>
-<div class="tableHolder">
+                            <div class="tableHolder">
                                 <table class="">
                                     <tr>
                                         <th></th>
                                         <th>-TF group</th>
                                         <th>+aTF group</th>
                                         <th>+sTF group</th>
-                                        <th>+aTF & +sTF (both) group</th>
+                                        <th>+aTF +sTF (both) group</th>
                                     </tr>
                                     <tr>
                                         <td>aTF-aPro
@@ -465,100 +435,89 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                         <td>P-Ctrl = 150 ng<br>P-sTF = 150 ng<br>P-aPros = 150 ng</td>
                                         <td>P-aTF = 150 ng<br>P-sTF = 150 ng<br>P-aPros = 150 ng</td>
                                     </tr>
-                                    <caption style="text-align:left">Table 2: different usage of plasmid for activating-, silencing-, NIMPLY-form promoter test.
+                                    <caption style="text-align:left">Table 2. Plasmids for activating-, silencing-, NIMPLY-form promoter test.
 
                                     </caption>
                                 </table>
                             </div>
-                            <h3>
-                                Flow Cytometry (FCM)
-                            </h3>
-                            <p>
 
-                                All the flow cytometry data is acquired by FACSJazz (BD Biosciences). After 48 hours of transfection, the cells were fixed with 4% paraformaldehyde for 15 min, and washed twice with PBS before analysis, keeping dark conditions as much as possible during the operation. Then the d2EGFP is recorded under the excitation laser of 488 nm with a 530/40 filter while the mCherry is recorded under the excitation laser of 561 nm with a 610/20 filter. The photomultiplier tube (PMT) amplification values for FSC, SSC, EGFP, mCherry channel are 28, 28, 28 and 44 separately. Overall, the spectral overlap between EGFP and mCherry is very small; but thankfully, EGFP and mCherry are activated by 2 lasers separately so no compensation is needed.
+                            <h3>Flow cytometry</h3>
+                            <p>All the flow cytometry data is acquired by FACSJazz (BD Biosciences). After 48 hours of transfection, the cells were fixed with 4% paraformaldehyde for 15 min, and washed twice with PBS before analysis.
+                                Keep in dark as much as possible between operations. The d2EGFP is recorded under the excitation laser of 488 nm with a 530/40 emission filter while the mCherry is recorded under the excitation laser of 561 nm with a 610/20 emission filter.
+                                The photomultiplier tube (PMT) amplification values for FSC, SSC, EGFP, mCherry channel are 28, 28, 28 and 44 separately.
+                                Overall, the spectral overlap between EGFP and mCherry is very small; emissions of EGFP and mCherry activated by 2 lasers separated well so no compensation is needed.
                             </p>
 
-                            <h3>
-                                Data analysis
-                            </h3>
-
-                            <p>
-                                Three biological replicates were performed for each experiment. FCM data are analyzed by FlowJo 10 (TreeStar). 3 basic hierarchical populations are gated: FSC-SSC → FSC-Trigger pulse width → 488_530/40-561_610/20. Successfully transfected cells are gated by mCherry positive for the same group. MFI represents the median fluorescence intensity of EGFP in the top 50% of cells with the strongest expression of d2EGFP. The different biological replicates were normalized using the fluorescence intensity of mCherry. For the Fold value, it is calculated according to the formula in the theoretical hypothesis <font color=”orange”>(see theoretical assumptions for details)</font>. All statistical analysis was performed with Prism 7 (Graphpad).
+                            <h3>Data analysis</h3>
+                            <p>Three biological replicates were performed for each experiment.
+                                Flow cytometry data are analyzed by FlowJo 10 (TreeStar). Three basic hierarchical populations are gated: FSC-SSC → FSC-Trigger pulse width → 488_530/40-561_610/20. Successfully transfected cells are gated by mCherry positive for the same group. MFI represents the median fluorescence intensity of EGFP in the top 50% of cells with the strongest expression of d2EGFP. Different biological replicates were normalized using the fluorescence intensity of mCherry. For the Fold value, it is calculated according to the formula in the theoretical hypothesis (see <a href="#section5">Supplementary Materials</a> for details). All statistical analysis was performed with Prism 7 (Graphpad).
                             </p>
                         </div>
                     <div id="section3" class="section container scrollspy">
                             <h2>Results</h2>
-                            <h3>
-                                Testing activating-form promoters using DFDP system
-                            </h3>
-
-                            <p>
-                                We used the artificial zinc finger protein (Synthetic Zinc finger, SynZF) (Khalil et al., 2012; Lohmueller et al., 2012)  to construct three mammalian-adapted DNA binding domains (DBD) of ZF21.16, ZF42.10, and ZF43.8, based on iGEM 2017 Fudan's standardized synthetic transcription factors (SynTF) – synthetic promoter (SynPro) construction paradigm. The tests using the DFDP system showed that the ZF21.16-, ZF42.10-, ZF43.8-VP64 had good activation characteristics <font color=”purple”>(Figure 3)</font>, and the activation magnification ratio ranged from 51 to 454 fold. Among them, 8×ZF21.16-minCMV had the largest activation ratio (454 fold), while 8×ZF43.8-minCMV had the smallest activation ratio (51 fold). The difference between them is mainly due to the relatively high background expression of 8×ZF43.8-minCMV. Thus, we believe that 8×ZF21.16-minCMV is a relatively better promoter (in our opinion on excellent promoters, please see the discussion section).
+                            <h3>Testing activating-form promoters using DFDP</h3>
+                            <p>We used the artificial zinc finger protein (Synthetic Zinc finger, SynZF)
+                                <a href="https://www.ncbi.nlm.nih.gov/pubmed/22863014" target=_blank>(Khalil et al., 2012;</a>
+                                <a href="https://www.ncbi.nlm.nih.gov/pubmed/22323524" target=_blank>Lohmueller et al., 2012)</a>  to construct three mammalian-adapted DNA binding domains (DBD) of ZF21.16, ZF42.10, and ZF43.8, based on
+                                <a href="http://2017.igem.org/Team:Fudan" target=_blank>iGEM 2017 Fudan</a> standardized synthetic transcription factors (SynTF) – synthetic promoter (SynPro) construction paradigm. The tests using DFDP showed that the ZF21.16-, ZF42.10-, ZF43.8-VP64 had good activation characteristics <font color=”purple”>(Figure 3)</font>, and the activation magnification ratio ranged from 51 to 454 fold. Among them, 8×ZF21.16-minCMV had the largest activation ratio (454 fold), while 8×ZF43.8-minCMV had the smallest activation ratio (51 fold). The difference between them is mainly due to the relatively high background expression of 8×ZF43.8-minCMV. Thus, we believe that 8×ZF21.16-minCMV is a
+                                better promoter (for our opinion on excellent promoters, please see the discussion section).
                             </p>
                         <div class="expFigureHolder row width80" style="margin: 23px auto 0 auto;">
                             <div class="col s12 m6"><img class="responsive-img" src="http://2018.igem.org/wiki/images/a/af/T--Fudan--Measurement-M3.svg"></div>
                             <div class="col s12 m6"><p>
-                                <b>
-                                    Figure 3: IDENTITY-form promoter.
-                                </b>
-                                <br>
-                                The diagram located at the top is the IDENTITY-form promoter working mechanism diagram. The activating-form transcription factor (aTF) is formed by a DNA binding domain (DBD) and a transcriptional activation domain (AD) linked via a linker. The IDENTITY-form promoter is just an activating-form promoter (aPro) because it is expressed only in the presence of aTFs. The aPro is constructed by inserting a plurality of response elements corresponding to aTF (aTF REs) before the minimal promoter (minPro, eg minCMV). At the bottom, the DFDP system was used to test the aPros. It can be seen that the aPro is fully activated in the presence of its corresponding aTF (n = 3, error bar, SD).
+                                <b>Figure 3. IDENTITY-form promoter.</b><br/>
+                                The diagram located at the top is the IDENTITY-form promoter working mechanism diagram. The activating-form transcription factor (aTF) is formed by a DNA binding domain (DBD) and a transcriptional activation domain (AD) linked via a linker. The IDENTITY-form promoter is just an activating-form promoter (aPro) because it is expressed only in the presence of aTFs. The aPro is constructed by inserting a plurality of response elements corresponding to aTF (aTF REs) before the minimal promoter (minPro, eg minCMV). At the bottom, DFDP was used to test the aPros. It can be seen that the aPro is fully activated in the presence of its corresponding aTF (n = 3, error bar, SD).
                             </p></div>
                         </div>
 
 
 
                             <h3>
-                                Testing the orthogonality between synthetic DBDs using cross-paired DFDP system
+                                Testing the orthogonality between synthetic DBDs using cross-paired DFDP
                             </h3>
                         <div class="expFigureHolder width40 right-on-med-and-up">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/7/78/T--Fudan--Measurement-M4.svg">
 
                             <p>
                                 <b>
-                                    Figure 4: testing of the Orthogonality of aTF-aPro pairs by using the cross-paired DFDP system.</b>
+                                    Figure 4. testing of the Orthogonality of aTF-aPro pairs by using the cross-paired DFDP.</b>
                                 <br>
                                 The five aTF-aPro pairs have good orthogonality.
                             </p>
 
                         </div>
                             <p>
-                                Cross-paired DFDP can be used to verify promoter orthogonality by using the co-transfection strategy of P-TF with both corresponding or uncorresponding P-Pro. Since there are 5 aSynTF-aSynPro pairs, 25 (5 x 5) sets of experiments are required. The intensity of d2EGFP under different conditions was examined, and it was observed that the group on the diagonal (i.e., the correctly paired group) had the most significant expression <font color=”purple”>(Figure 4)</font>, indicating that the 5 pairs of aSynTF-sSynProdui pairs were orthogonal to each other. The advantage of using the activated promoter for DNA binding domain orthogonality testing over the use of sSynTF-sSynPro testing is that there is a difference in the basal expression of sSynPro so more normalization is required to rule out differences in basic expression. Abnormal results:
+                                Cross-paired DFDP can be used to verify promoter orthogonality by using the co-transfection strategy of P-TF with both corresponding or uncorresponding P-Pro. Since there are 5 aSynTF-aSynPro pairs, 25 (5 x 5) sets of experiments are required. The intensity of d2EGFP under different conditions was examined, and it was observed that the group on the diagonal
+                                (the correctly paired group) had the most significant expression <font color=”purple”>(Figure 4)</font>, indicating that the 5 pairs of aSynTF-sSynProdui pairs were orthogonal to each other. The advantage of using the activated promoter for DNA binding domain orthogonality testing over the use of sSynTF-sSynPro testing is that there is a difference in the basal expression of sSynPro so more normalization is required to rule out differences in basic expression. Abnormal results:
                             </p>
 
 
 
 
                             <h3>
-                                Testing silencing-form promoters using DFDP system
+                                Testing silencing-form promoters using DFDP
                             </h3>
 
 
                             <p>
-                                Based on the SynTF of iGEM 2017 Fudan (see the <font color=”purple”>improvement</font> page), we adjusted the position of the sSynTF corresponding response element (sTF REs) from the 3' end of the promoter to the 5' end, and replaced the original pSV40 with a stronger CMV promoter to serve as the conPro. Then we constructed a new generation of inhibitory transcription factors <font color=”purple”>(Figure 5)</font>. Such a construction helps to attenuate the interference of sTF REs on the under expression of conPro. Tests using the DFDP system show that ZF21.16-, ZF42.10-, ZF43.8-KRAB have good inhibition characteristics, with the magnification ranging from 9 to 13 times <font color=”purple”>(Figure 5)</font>. The reason why aSynTF-aSynPro differs by a hundred fold while only having a difference of about tenfold here does not mean that our sSynPro function is not good. Rather, it's because the basic expression of aSynPro is particularly weak, and it was close to the minimum of our flow cytometry detection range at the time of testing.
+                                Based on the SynTF of <a href="http://2017.igem.org/Team:Fudan" target=_blank>iGEM 2017 Fudan</a> (see the <font color=”purple”>improvement</font> page), we adjusted the position of the sSynTF corresponding response element (sTF REs) from the 3' end of the promoter to the 5' end, and replaced the original pSV40 with a stronger CMV promoter to serve as the constitutive expression promoter (conPro). Then we constructed a new generation of inhibitory transcription factors <font color=”purple”>(Figure 5)</font>. Such a construction helps to attenuate the interference of sTF REs on the under expression of conPro. Tests using DFDP show that ZF21.16-, ZF42.10-, ZF43.8-KRAB have good inhibition characteristics, with the magnification ranging from 9 to 13 times <font color=”purple”>(Figure 5)</font>. The reason why aSynTF-aSynPro differs by a hundred fold while only having a difference of about tenfold here does not mean that our sSynPro function is not good. Rather, it's because the basic expression of aSynPro is particularly weak, and it was close to the minimum of our flow cytometry detection at the time of testing.
                             </p>
                         <div class="expFigureHolder row width80" style="margin: 23px auto 0 auto;">
                             <div class="col s12 m6"><img class="responsive-img" src="http://2018.igem.org/wiki/images/5/55/T--Fudan--Measurement-M5.svg"></div>
                             <div class="col s12 m6"><p>
-                                <b>
-                                    Figure 5: NOT-form promoter.
-                                </b>
-                                <br>
-                                The figure located at the top is the NOT-form promoter working mechanism diagram. Silencing-form transcription factors (sTFs) are formed by a (DBD) and a transcriptional silencing domain (SD, eg KRAB) linked via a linker. The NOT-form promoter is just a silencing-form promoter (sPro) because it is expressed only in the absence of sTFs. The sPro is structure by inserting a plurality of REs corresponding to sTFs (sTF REs) before a constitutive expression promoter (conPro, eg CMV). At the bottom, the DFDP system was used to test silencing-form promoters. It is observed that sPro are sufficiently inhibited in the presence of their corresponding inhibitory transcription factors. The dashed line indicates the intensity of expression of the CMV promoter under the same test conditions. Relative to the insertion of REs on the 3-terminus of conPro, the 5’-terminal design can reduce the interference to the basic expression of conPro (n = 3, error bar, SD).
+                                <b>Figure 5. NOT-form promoter.</b><br/>
+                                Above is the NOT-form promoter working mechanism diagram. Silencing-form transcription factors (sTFs) are formed by a (DBD) and a transcriptional silencing domain (SD, eg KRAB) linked via a linker. The NOT-form promoter is just a silencing-form promoter (sPro) because it is expressed only in the absence of sTFs. The sPro is structure by inserting a plurality of REs corresponding to sTFs (sTF REs) before a constitutive expression promoter (conPro, eg CMV). At the bottom, DFDP was used to test silencing-form promoters. It is observed that sPro are sufficiently inhibited in the presence of their corresponding inhibitory transcription factors. The dashed line indicates the intensity of expression of the CMV promoter under the same test conditions. Relative to the insertion of REs on the 3-terminus of conPro, the 5’-terminal design can reduce the interference to the basic expression of conPro (n = 3, error bar, SD).
                             </p></div>
                         </div>
 
 
                             <h3>
-                                Testing NIMPLY-form promoters using DFDP system
+                                Testing NIMPLY-form promoters using DFDP
                             </h3>
                         <div class="expFigureHolder width45 right-on-med-and-up">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/e/ef/T--Fudan--Measurement-M6.svg">
-                            <p>
-                                <b>
-                                    Figure 6: NIMPLY-form promoter. </b>
-                                <br>
-                                Top, the NIMPLY-form promoter working mechanism diagram. The NIMPLY-form promoter is highly expressed in the presence of only aTF and no sTF. When aTF and sTF coexist, sTF plays a major role. Bottom, using DFDP system to Test NIMPLY-form promoters. 8×ZF21.16-minCMV-2×ZF43.8 is highly expressed only in the presence of ZF21.16-VP64 without ZF43.8-KRAB, while 8×ZF43.8-minCMV-2×ZF21.16 is only in High expression under conditions of ZF43.8-VP64 without ZF21.16-KRAB.
+                            <p><b>Figure 6. NIMPLY-form promoter. </b><br>
+                                Top, the NIMPLY-form promoter working mechanism diagram. The NIMPLY-form promoter is highly expressed in the presence of only aTF and no sTF. When aTF and sTF coexist, sTF plays a major role. Bottom, using DFDP to Test NIMPLY-form promoters. 8×ZF21.16-minCMV-2×ZF43.8 is highly expressed only in the presence of ZF21.16-VP64 without ZF43.8-KRAB, while 8×ZF43.8-minCMV-2×ZF21.16 is only in High expression under conditions of ZF43.8-VP64 without ZF21.16-KRAB.
                             </p>
 
                         </div>
@@ -571,27 +530,28 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     </div>
                     <div id="section4" class="section container scrollspy">
                             <h2>Discussion</h2>
-                            <h3>
-                                What kind of promoter is a good promoter?
-                            </h3>
-
-                            <p>
-                                The performance of a promoter is not always correlated to its expression. For some experiments that require a good control of protein expression, Scienctist may not even insert a promoter on the viral vector and rely solely on the LTR element to maintain the protein at a weak expression(Cai et al., 2007). It was also observed in our SynNotch experiment that comparing with using CMV to control SynNotch, by using a weak promoter of PGK can significantly reduce the basal expression (data not shown). For inducible promoters, we always expect that the activating-form promoter maintains very low background expression when not activated, and produces differential expression when activated. Note that we do not believe that an activating-form promoter is activated as much as possible after being induced, indicating that it works well, and more importantly is whether the background expression of its background is low enough and whether it has sufficient tunability. Similarly, for silencing-form promoters, we always want to maintain stable expression under uninhibited conditions and can be shut down as much as possible after being inhibited. Similarly, we are more concerned about the stability of expression and the degree of inhibition.
+                            <h3>What is a good promoter?</h3>
+                            <p>The performance of a promoter is not always correlated to its expression. For some experiments that require a good control of protein expression,
+                                scientists may not even insert a promoter on the viral vector and rely solely on the LTR element to maintain the protein at a weak expression
+                                <a href="https://www.ncbi.nlm.nih.gov/pubmed/17350576" target=_blank>(Cai et al., 2007)</a>. It was also observed in our SynNotch experiment that comparing with using CMV to control SynNotch, by using a weak promoter of PGK can significantly reduce the basal expression (data not shown). For inducible promoters, we always expect that the activating-form promoter maintains very low background expression when not activated, and produces
+                                increased expression when activated. Note that we do not believe that an activating-form promoter is activated as much as possible after being induced, indicating that it works well, and more importantly is whether the background expression of its background is low enough and whether it has sufficient tunability. Similarly, for silencing-form promoters, we always want to maintain stable expression under uninhibited conditions and can be shut down as much as possible after being inhibited. Similarly, we are more concerned about the stability of expression and the degree of inhibition.
                             </p>
 
-                            <h3>
-                                Factors that interfere with the DFDP system
-                            </h3>
-
-                            <p>
-                                The d2EGFP intensity was used as an indirect characterization of promoter strength in our test system, but it should be noted that d2GFP stability may vary by cell type. Therefore, the comparison of d2EGFP intensity across cell types may not truly reflect differences in promoter strength in different cell types. Only the same cell type can be used as a common chassis for the promoter test. Under these conditions, the d2EGFP intensity driven by different promoters can be compared to reflect the difference between the strengths of the promoters. At the same time, for mammals, even the same constitutive promoter, its differential performance in different cell lines is still very significant, for example, the CMV promoter is very active in some cell types (such as 293T cells). But in some other cell types (such as mesenchymal stem cells) it may be quite weak (Qin et al., 2010). In our measurement protocol, we used 293T cells as chassis cells to screen for functional synthetic transcription factor-promoter pairs. If you need to migrate the potential synthetic transcription factor-promoter pair obtained from the initial screening to other cell lines, we strongly recommend you to use a commonly used transcription factor-promoter that works well in this cell line as a positive control. And then repeat the DFDP test on your target cell line to qualitatively verify the synthetic transcription factor-promoter pair again.
+                            <h3>Factors that interfere with DFDP</h3>
+                            <p>The d2EGFP intensity was used as an indirect characterization of promoter strength in our test system, but it should be noted that d2EGFP stability may vary by cell type. Therefore, the comparison of d2EGFP intensity across cell types may not truly reflect differences in promoter strength in different cell types. Only the same cell type can be used as a common chassis for the promoter test. Under these conditions, the d2EGFP intensity driven by different promoters can be compared to reflect the difference between the strengths of the promoters. At the same time, for mammals, even the same constitutive promoter, its differential performance in different cell lines is still very significant.
+                                For example, the CMV promoter is very active in some cell types (such as 293T cells). But in some other cell types (such as mesenchymal stem cells) it may be quite weak
+                                <a href="https://www.ncbi.nlm.nih.gov/pubmed/20485554" target=_blank>(Qin et al., 2010)</a>. In our measurement protocol, we used 293T cells as chassis cells to screen for functional synthetic transcription factor-promoter pairs. If you need to migrate the potential synthetic transcription factor-promoter pair obtained from the initial screening to other cell lines, we strongly recommend you to use a commonly used transcription factor-promoter that works well in the
+                                chosen cell line as a positive control. And then repeat DFDP test on your target cell line to qualitatively verify the synthetic transcription factor-promoter pair again.
                             </p>
-                            <p>
-                                The success of multicolor flow cytometry depends on many key hardware factors: first, the shape and position of the excitation laser beam; second, the choice and quality of the optical filter; and third, the sensitivity and resolution of photoelectron detection (Perfetto et al., 2012). The intensity and sensitivity of the excitation fluorescence of different flow cytometers have a certain degree of difference. To ensure that the data between each test is quantitatively comparable, the same flow cytometer should be used for the test. Quality control is required prior to each analysis even if using the same flow cytometer. If a non-fixed flow system is used, automatic/manual calibration of the flow is required. Make it the optimal position. Dual fluorescent signals should be received using the same optical channel (filter configuration) and should ensure that the sensor-photomultiplying tubes (PMTs) for each channel set the same gain for each test. An unfixed PMT setting will destroy your experiment. If a flow cytometer with non-fixed PMT is used, it is important to select and set an appropriate PMT value for the subsequent experimental needs during the initial experiment. We recommend the following method. When you first start your synthetic transcription factor-promoter pair measurement, you could set up a strong double positive cell to determin the proper PMT setting. For Example, we use CMV-mCherry and CMV-d2EGFP in our experiment and add just the two channels to ensure that the brightest group of cells are within the maximum detecting range of the flow cytometer.
+                            <p>The success of multicolor flow cytometry depends on many hardware factors.
+                                First, the shape and position of the excitation laser beam; second, the choice and quality of the optical filter; and third, the sensitivity and resolution of photoelectron detection
+                                <a href="https://www.ncbi.nlm.nih.gov/pubmed/23138348" target=_blank>(Perfetto et al., 2012)</a>. The intensity and sensitivity of the excitation fluorescence of different flow cytometers have a certain degree of difference. To ensure that the data between each test is quantitatively comparable, the same flow cytometer should be used for the test. Quality control is required prior to each analysis even if using the same flow cytometer.
+                                If multiple flow machines were used, automatic and manual calibrations between the flow are required.
+                                Dual fluorescent signals should be received using the same optical channel (filter configuration) and should ensure that the sensor-photomultiplying tubes (PMTs) for each channel set the same gain for each test. An unfixed PMT setting will destroy your experiment.
+                                If a flow cytometer with user adjustable PMT value is used, it is important to select and set an appropriate PMT value for the subsequent experimental needs during the initial experiment.
+                                We recommend the following. When you first start your synthetic transcription factor-promoter pair measurement, you could set up a strong double positive cell to determin the proper PMT setting. For Example, we use CMV-mCherry and CMV-d2EGFP in our experiment and add just the two channels to ensure that the brightest group of cells are within the maximum detecting range of the flow cytometer.
                             </p>
-
-                            <p>
-                                Transient transfection efficiency will interfere with comparability between different experiments. Different transfection reagents, reagent dosages, as well as cell density at the time of transfection, cell status, and the duration of transfection can significantly affect the efficiency of transfection. So you should control these variables as much as possible during the test. For example, try to use the same batch of transfection reagents; optimize the transfection efficiency and then use the same amount of transfection reagent and fix the ratio between the DNA and the transfection reagent; use the same transfection density; use the cells with low passage number; and fix the cell at the same time after transfection for future Flow analysis.
+                            <p>Transient transfection efficiency will interfere with comparability between different experiments. Different transfection reagents, reagent dosages, as well as cell density at the time of transfection, cell status, and the duration of transfection can significantly affect the efficiency of transfection. So you should control these variables as much as possible during the test. For example, try to use the same batch of transfection reagents; optimize the transfection efficiency and then use the same amount of transfection reagent and fix the ratio between the DNA and the transfection reagent; use the same transfection density; use the cells with low passage number; and fix the cell at the same time after transfection for future Flow analysis.
                             </p>
 
 
@@ -610,17 +570,17 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     <div class="section container">
                         <h4 style="margin-left: 0;">References</h4>
                         <ol id="ref" style="margin: 23px 0 0 0;">
-                            <li>Cai, L., Marshall, T.W., Uetrecht, A.C., Schafer, D.A., and Bear, J.E.J.C. (2007) 17350576. Coronin 1B coordinates Arp2/3 complex and cofilin activities at the leading edge.  128, 915-929.</li>
-                            <li>Cohen, R.N., van der Aa, M.A., Macaraeg, N., Lee, A.P., and Szoka Jr, F.C.J.J.o.C.R. (2009) 19211029. Quantification of plasmid DNA copies in the nucleus after lipoplex and polyplex transfection.  135, 166-174.</li>
-                            <li>Khalil, A.S., Lu, T.K., Bashor, C.J., Ramirez, C.L., Pyenson, N.C., Joung, J.K., and Collins, J.J. (2012) 22863014. A synthetic biology framework for programming eukaryotic transcription functions. Cell 150, 647--658.</li>
-                            <li>Kim, J.H., Lee, S.-R., Li, L.-H., Park, H.-J., Park, J.-H., Lee, K.Y., Kim, M.-K., Shin, B.A., and Choi, S.-Y. (2011) 21602908. High cleavage efficiency of a 2A peptide derived from porcine teschovirus-1 in human cell lines, zebrafish and mice. PLoS ONE 6, e18556.</li>
-                            <li>Li, X., Zhao, X., Fang, Y., Jiang, X., Duong, T., Fan, C., Huang, C.-C., and Kain, S.R. (1998) 9857028. Generation of destabilized green fluorescent protein as a transcription reporter. Journal of Biological Chemistry 273, 34970-34975.</li>
-                            <li>Lohmueller, J.J., Armel, T.Z., and Silver, P.A. (2012) 22323524. A tunable zinc finger-based framework for Boolean logic computation in mammalian cells. Nucleic Acids Research 40, 5180--5187.</li>
-                            <li>Margolin, J.F., Friedman, J.R., Meyer, W., Vissing, H., Thiesen, H.-J., and Rauscher, F. (1994) 8183939. Krüppel-associated boxes are potent transcriptional repression domains. Proceedings of the National Academy of Sciences 91, 4509-4513.</li>
-                            <li>Perfetto, S.P., Ambrozak, D., Nguyen, R., Chattopadhyay, P.K., and Roederer, M.J.n.p. (2012) 23138348. Quality assurance for polychromatic flow cytometry using a suite of calibration beads.  7, 2067.</li>
-                            <li>Qin, J.Y., Zhang, L., Clift, K.L., Hulur, I., Xiang, A.P., Ren, B.-Z., and Lahn, B.T.J.P.o. (2010) 20485554. Systematic comparison of constitutive promoters and the doxycycline-inducible promoter.  5, e10611.</li>
-                            <li>Rosenfeld, N., and Alon, U.J.J.o.m.b. (2003) 12787666. Response delays and the structure of transcription networks.  329, 645-654.</li>
-                            <li>Struhl, K.J.C. (1999) 10412974. Fundamentally different logic of gene regulation in eukaryotes and prokaryotes.  98, 1-4.</li>
+                            <li>Cai, L., Marshall, T.W., Uetrecht, A.C., Schafer, D.A., and Bear, J.E.J.C. (2007). Coronin 1B coordinates Arp2/3 complex and cofilin activities at the leading edge.  128, 915-929.</li>
+                            <li>Cohen, R.N., van der Aa, M.A., Macaraeg, N., Lee, A.P., and Szoka Jr, F.C.J.J.o.C.R. (2009). Quantification of plasmid DNA copies in the nucleus after lipoplex and polyplex transfection.  135, 166-174.</li>
+                            <li>Khalil, A.S., Lu, T.K., Bashor, C.J., Ramirez, C.L., Pyenson, N.C., Joung, J.K., and Collins, J.J. (2012). A synthetic biology framework for programming eukaryotic transcription functions. Cell 150, 647--658.</li>
+                            <li>Kim, J.H., Lee, S.-R., Li, L.-H., Park, H.-J., Park, J.-H., Lee, K.Y., Kim, M.-K., Shin, B.A., and Choi, S.-Y. (2011). High cleavage efficiency of a 2A peptide derived from porcine teschovirus-1 in human cell lines, zebrafish and mice. PLoS ONE 6, e18556.</li>
+                            <li>Li, X., Zhao, X., Fang, Y., Jiang, X., Duong, T., Fan, C., Huang, C.-C., and Kain, S.R. (1998). Generation of destabilized green fluorescent protein as a transcription reporter. Journal of Biological Chemistry 273, 34970-34975.</li>
+                            <li>Lohmueller, J.J., Armel, T.Z., and Silver, P.A. (2012). A tunable zinc finger-based framework for Boolean logic computation in mammalian cells. Nucleic Acids Research 40, 5180--5187.</li>
+                            <li>Margolin, J.F., Friedman, J.R., Meyer, W., Vissing, H., Thiesen, H.-J., and Rauscher, F. (1994). Krüppel-associated boxes are potent transcriptional repression domains. Proceedings of the National Academy of Sciences 91, 4509-4513.</li>
+                            <li>Perfetto, S.P., Ambrozak, D., Nguyen, R., Chattopadhyay, P.K., and Roederer, M.J.n.p. (2012). Quality assurance for polychromatic flow cytometry using a suite of calibration beads.  7, 2067.</li>
+                            <li>Qin, J.Y., Zhang, L., Clift, K.L., Hulur, I., Xiang, A.P., Ren, B.-Z., and Lahn, B.T.J.P.o. (2010). Systematic comparison of constitutive promoters and the doxycycline-inducible promoter.  5, e10611.</li>
+                            <li>Rosenfeld, N., and Alon, U.J.J.o.m.b. (2003). Response delays and the structure of transcription networks.  329, 645-654.</li>
+                            <li>Struhl, K.J.C. (1999). Fundamentally different logic of gene regulation in eukaryotes and prokaryotes.  98, 1-4.</li>
                             <li>Szymczak, A.L., Workman, C.J., Wang, Y., Vignali, K.M., Dilioglou, S., Vanin, E.F., and Vignali, D.A.J.N.b. (2004). Correction of multi-gene deficiency in vivo using a single'self-cleaving'2A peptide–based retroviral vector.  22, 589.</li>
                         </ol>
                     </div>

@@ -294,33 +294,31 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                 </ul>
                 <main>
                     <div id="section1" class="section container scrollspy">
-                        <h2>Abstract
-                        </h2>
                         <p>Our software tool was built based on (1) <a href="./Model">modeled parameters</a> characterizing our 3-layer design; (2) populational description of individual cellular behaviors. We found that several cell behaviors and ENABLE signaling have key impact on the evolution of a cell colony with mixed cell types. In an object-oriented-programming and user-friendly style, our software allows users to adjust those key factors and profile the fate of their own mixed cells. Our software bridges a nanoscopic transcriptional design of biological circuits, with microscopic cellular behaviors, up to a macroscopic population output, from which clinical outcome could be predicted, artificial tissue could be assembled, etc.
                         </p>
 
                     </div>
 <div class="expFigureHolder" style="width:100%">
     <img class="responsive-img" src="./gj-software.png" />
-    <p>In our GJ presentation (10/25 Room 311 9:00-9:25), we used the image above to demonstrate a possible application of our project.</p>
+    <p>In our GJ presentation (10/25 Room 311 9:00-9:25), we used the image above to demonstrate a possible clinical outcome with cells having 100-fold granzyme release.</p>
 </div>
                     <div id="section2" class="section container scrollspy">
                         <h2>Introduction
                         </h2>
                         <p>
-                            Modeling is necessary for quantifying biological processes and designing biological systems for customized function. With the increasingly rapid development of synthetic biology, many models are based on different branches of applied mathematics, as exampled by stochastic process, cellular automaton, dynamic systems, and Boltzmann kinetics for different biological processes [1-4]. For example, automaton is often used to model birth and death processes, stochastic processes is often used to model transcription factor-DNA binding，dynamic systems is often used in population ecology to predict the evolution of colony, and Boltzmann kinetics is often used to quantitatively describe chemical reactions. Some toolkit based on this model, like <a href="http://www.compucell3d.org/" target=_blank>CompCell3D</a>, has been developed for computational nanotechnology and simulating tissue development.
+                            Modeling is necessary for quantifying biological processes and designing biological systems for customized function. With the increasingly rapid development of synthetic biology, many models are based on different branches of applied mathematics, as exampled by stochastic process, cellular automaton, dynamic systems, and Boltzmann kinetics for different biological processes. For example, automaton is often used to model birth and death processes, stochastic processes is often used to model transcription factor-DNA binding，dynamic systems is often used in population ecology to predict the evolution of colony, and Boltzmann kinetics is often used to quantitatively describe chemical reactions. Some toolkit based on this model, like <a href="http://www.compucell3d.org/" target=_blank>CompCell3D</a>, has been developed for computational nanotechnology and simulating tissue development.
                         </p>
                         <p>
                             However, there hasn’t a ready single model for our ENABLE project. It is because an overall model for our project should not only consist the 3-layer standard design (for more details please visit <a href="./Results">our Results page</a>) but also the biological mechanism underlying it (for more details please visit <a href="./Model">our Modeling page</a>).
                         </p>
                         <p>
-                            Here we present a modeling software using multiscale mathematical tools for different biological processes, which serves as a reusable tool for cell colony design. We use different modules packaged in different <i>Classes</i> to simulate different biological processes. Based on the object-oriented principal, it is easy for users to realize customized Classes and simulate cell colony using our software.
+                            Here we present a software (<a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>github.com/0vioiano/iGEM2018_Team_Fudan</a>) using multiscale mathematical tools for different biological processes, which serves as a reusable tool for cell colony design. We use different modules packaged in different <i>Classes</i> to simulate different biological processes. Based on the object-oriented principal, it is easy for users to realize customized Classes and simulate cell colony using our software.
                         </p>
                         <p>
                             A colony is occupied by different populations, a population is unitized by abundant individuals, be it a cell or an ensemble of various cells, and a cell is a network of chemicals, for example, proteins, lipids, nucleotides, etc. To simulate cell colony, our software bridges a nanoscopic transcriptional design of biological circuits, with microscopic cellular behaviors, up to a macroscopic population output, from which clinical outcome could be predicted, artificial tissue could be assembled, etc.
                         </p>
                         <p>
-                            A demonstration using our software to simulate the process of our engineered cells collaborating to wipe out cancer cells are offered in this documentation.
+                            A demonstration using our software to simulate the process of our engineered cells collaborating to wipe out cancer cells are offered as <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan/tree/master/demo" target=_blank>a demo</a>.
 
                         </p>
 
@@ -328,27 +326,22 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     <div id="section3" class="section container scrollspy">
                         <h2>Method
                         </h2>
-                        <p>Our software is built based on OOP algorithm and MATLAB. A brief introduction to the workflow of our toolkit is shown below. For more details, please refer to <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>the src and demon folders on GitHub</a>.
+                        <p>Our software is built based on OOP algorithm and MATLAB. The workflow of our software is shown below. For more details, please refer to <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>src and demo folders on GitHub</a>.
                         </p>
                         <div class="expFigureHolder" style="width:100%">
                             <img style="width: 100%" src="http://2018.igem.org/wiki/images/5/57/T--Fudan--Software-1.png">
-                            <p>
-
-                                Figure.1 | UML of our toolbox.
-
+                            <p>Figure.1 UML of our toolbox.
                             </p>
 
                         </div>
                         <div class="expFigureHolder" style="width:100%;margin-top: 23px">
                             <img style="width: 100%" src="http://2018.igem.org/wiki/images/1/17/T--Fudan--Software-2.png">
-                            <p>
-                                Figure.2 | Workflow of our toolbox.
+                            <p>Figure.2 Workflow of our software.
                             </p>
 
                         </div>
                         <p>
-                            <b>Initialization:</b><br>
-                                    At first, initialize the system. Use the formative text as input, then designate the initial state of each cell (life span, type, vitality), properties of each cell type (type of Ligand and Notch, proliferation rate, mean vitality, and special chemical reactions in cells of this type), and relationship between cells (binding affinity between cells, which can be related to cell type and expression of membrane proteins, such as Notch and Ligand).
+                            <b>Initialization:</b> First, initialize the system. Use the formative text as input, then designate the initial state of each cell (life span, type, vitality), properties of each cell type (type of Ligand and Notch, proliferation rate, mean vitality, and special chemical reactions in cells of this type), and relationship between cells (binding affinity between cells, which can be related to cell type and expression of membrane proteins, such as Notch and Ligand).
 
                         </p>
                         <div class="tableHolder">
@@ -381,8 +374,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                             </table>
                         </div>
                         <p>
-                            <b>Iteration:</b><br>
-                            After initiation, an iteration is made. In a period of &delta;t (very short time, and at the scale at 1-10 seconds), the cell may try to migrate, proliferate, or contact to neighboring cells to gather information for choice making. What is worth noticing is that if the cell moves/divides/dies, the Notch-Ligand kinetics may change abruptly for the changing cell-cell interaction, and a movement is relatively rapid compared with cell size. Therefore, it only takes little time for the switching of cell-cell network, but the process of finding proper movement takes some.
+                            <b>Iteration:</b> After initiation, an iteration is made. In a period of &delta;t (very short time, and at the scale at 1-10 seconds), the cell may try to migrate, proliferate, or contact to neighboring cells to gather information for choice making. What is worth noticing is that if the cell moves/divides/dies, the Notch-Ligand kinetics may change abruptly for the changing cell-cell interaction, and a movement is relatively rapid compared with cell size. Therefore, it only takes little time for the switching of cell-cell network, but the process of finding proper movement takes some.
 
                         </p>
                         <p>
@@ -390,89 +382,81 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
                         </p>
                         <p>
-                            After this prediction, we construct some functions to record the general state of each cell, including index, position, age, and then tendency to die or divide, for further data analysis. A snapshot of our cell colony is taken simultaneously for further simulation visualization. A judgement statement is executed to determine whether to terminate (when &delta;t multiples iteration time is greater than T [这个是什么意思]) or continue to iterate (both cellular movements and chemical movements). Movements in a single iteration seems negligible, but a big number of iterations would show a difference.
+                            After this prediction, we construct some functions to record the general state of each cell, including index, position, age, and then tendency to die or divide, for further data analysis. A snapshot of our cell colony is taken simultaneously for further simulation visualization. A judgement statement is executed to determine whether to terminate (when &delta;t multiples iteration time is greater than T, the full length of the simulation) or continue to iterate (both cellular movements and chemical movements). Movements in a single iteration seems negligible, but a big number of iterations would show a difference.
 
                         </p>
                         <p>For more details of cellular movement, please refer to the <a href="#">supplementary material</a>; for more details of chemical movement, please refer to our modeling of <a href="./Model#NotchLigandKinetics">Notch-Ligand Kinetics</a>.
                         </p>
                         <p>
-                            <b>Data analysis:</b>
-                            Upon simulation termination, data will be analyzed using prepared functions. We offer APIs for cell track, cell census and cell network analysis.
+                            <b>Data analysis:</b> Upon simulation termination, data will be analyzed using prepared functions. We offer APIs for cell track, cell census and cell network analysis.
 
                         </p>
-                        <p><b>Simulation visualization:</b><br>
-                            Using <i>clips</i> recorded in Iteration step, it’s easy to get our simulation visualized using built-in Matlab function <i>videowrite</i>. Cell colony composition can be checked by watching the output video.
+                        <p><b>Simulation visualization:</b> Using <i>clips</i> recorded in Iteration step, it’s easy to get our simulation visualized using built-in Matlab function <i>videowrite</i>. Cell colony composition can be checked by watching the output video.
                         </p>
                     </div>
                     <div id="section4" class="section container scrollspy">
                         <h2>Tutorials (single functions)
                         </h2>
-                        <h4>To make users familiar to our toolbox, a tutorial is as follows.
-                            Notch-Ligand kinetics (using <i>ChemicalReactions</i> toolkit)
+                        <p>To make users familiar to our toolbox, a tutorial is as follows.</p>
+                        <h4>Notch-Ligand kinetics (using <i>ChemicalReactions</i> toolkit)
                         </h4>
                         <p><i>ChemicalReactions</i> toolkit is a toolkit for chemical reaction modeling using Petri net and Possion process. Here we demonstrate the usage of <i>ChemicalReactions</i> through an example of Notch-Ligand kinetics modeling.
                         </p>
                         <div class="expFigureHolder" style="width:100%;margin-top: 23px">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/5/5f/T--Fudan--Software-3.png">
                             <p>
-                                Figure 1.3: Demo: Notch-Ligand kinetics analysis using ChemicalReactions toolkit. Code are offered on Github.
+                                Figure 3. Notch-Ligand kinetics analysis using ChemicalReactions toolkit. Code are offered on <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>Github</a>.
                             </p>
 
                         </div>
-                        <h4>
-                            STEP1: Open MATLAB, and open the file ChemicalReactions.md in folder @ChemicalReactions.</h4>
-                           <h4> STEP2: Enter the command line window
-
-                        </h4>
-                        <p>
-                            >>[Pre,Post]=Pre_Notch_Ligand(2)<br>
+                        <h4>STEP 1</h4>
+                        <p>Open MATLAB, and open the file ChemicalReactions.md in folder @ChemicalReactions.</p>
+                        <h4>STEP 2</h4>
+                        <p>prepare MATLAB variables.<br/>
+                            >>[Pre,Post]=Pre_Notch_Ligand(2)<br/>
                                     >>obj= ChemicalReactions(‘’,’’,Post,Pre,@H_Notch_Ligand,zeros(1,12),2)
 </p><p>
                                     Here Pre_Notch_Ligand() is a function to generate transition matrix for chemical reactions, @H_Notch_Ligand is a function handle for calculation of reaction possibilities, zeros(1,12) designates the initial condition of the system, and 2 refers to 2 kinds of Notch/Ligand exist.
 
                         </p>
-                        <h4>STEP3: Enter in the command line window
-                        </h4>
-                        <p>
+                        <h4>STEP 3</h4>
+                        <p> Enter in the command line window<br/>
                             >>XMat=obj.iteration(100,1)<br>
                             >>for i =1:12<br>
                             >>plot(XMat(:,i));<br>
                             >>hold on<br>
                             >>end
                         </p><p>
-                            Here iteration() is a method of class <i>ChemicalReactions</i> for predicting the state of system obj. (100, 1) is the setting step for data recording, and XMat is for data storage.
-                    </p><p>
-                            To repeat the results of Figure 3, please refer to Github [link to Github] for code acquisition.
-
+                            Here iteration() is a method of class <i>ChemicalReactions</i> for predicting the state of the system. (100, 1) is the setting step for data recording, and XMat is for data storage.
+                        </p><p>
+                            To repeat the results of Figure 3, please refer to <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>Github</a> for code.
                         </p>
                         <h3>War predictor (using <i>Cell2DProl</i> toolkit)
                         </h3>
                         <p>
-                            <i>Cell2DProl</i> toolkit is a toolkit for Cell colony simulation. For more details, please refer to the <a href="#">supplementary material</a> or our code [link to Github]. Here we demonstrate the usage of <i>Cell2DProl</i> through an example of therapeutic engineered cell design.
+                            <i>Cell2DProl</i> toolkit is a toolkit for Cell colony simulation. For more details, please refer to the <a href="#">supplementary material at the end of this page</a> or <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>Github</a>.
+                            Here we demonstrate the usage of <i>Cell2DProl</i> through an example of therapeutic engineered cell design.
                         </p>
                         <div class="expFigureHolder" style="width:100%;margin-top: 23px">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--Software-4.png">
                             <p>
-                                Figure 1.4: Demo: visualization function in the <i>Cell2DProl</i> toolkit
+                                Figure 4. Demo - visualization function in the <i>Cell2DProl</i> toolkit
                             </p>
 
                         </div>
                         <div class="expFigureHolder" style="width:100%;margin-top: 23px">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/b/be/T--Fudan--Software-5.png">
                             <p>
-                                Figure 1.5: Demo: Data analysis functions in <i>Cell2DProl</i> toolkit
+                                Figure 5. Demo - Data analysis functions in <i>Cell2DProl</i> toolkit
                             </p>
 
                         </div>
-                        <h4>STEP1: Open MATLAB, and open the file Cell2DShadeProl.md in your folder.
-                        </h4>
-                        <h4>STEP2: Click the ‘run’ on the panel
-                        </h4>
-                        <p>Here all the parameters are set proper previously. For more details on parameters, please refer to the <a href="#">supplementary material</a>. If your simulation results are visualized successfully, a video called 1_6_1_6 can be found in your current folder.
+                        <h4>STEP 1</h4><p>Open MATLAB, and open the file Cell2DShadeProl.md in your folder.</p>
+                        <h4>STEP 2</h4><p>Click the ‘run’ on the panel.</p>
+                        <p>Here all the parameters are set proper previously. For more details on parameters, please refer to the supplementary PDF below. If your simulation results are visualized successfully, a video called 1_6_1_6 can be found in your current folder.
                         </p>
-                        <h4>STEP3: The left Figure in Figure 5 will be plotted automatically. To get the right figure, Enter in the command line window
-                        </h4>
-                        <p> >> res1 = -Culture.*(Culture&lt;-1);<br/>
+                        <h4>STEP 3</h4><p>The left Figure in Figure 5 will be plotted automatically. To get the right figure, Enter in the command line window<br/>
+                            >> res1 = -Culture.*(Culture&lt;-1);<br/>
                             >> res2 = res1(:);<br/>
                             >> ecdf(res2);</p>
                         <h3>OOP-based AND gate design (using <i>Cell</i> toolkit)</h3>
@@ -481,28 +465,22 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <div class="expFigureHolder" style="width:100%;margin-top: 23px">
                             <img class="responsive-img" src="http://2018.igem.org/wiki/images/8/84/T--Fudan--Software-6.png">
                             <p>
-                                Figure 1.6: Demo: Simulation of 3-layer ENABLE using <i>Cell</i> toolkit
+                                Figure 6. Demo - Simulation of 3-layer ENABLE using <i>Cell</i> toolkit
                             </p>
 
                         </div>
-                        <h4>STEP1: Open MATLAB, and open the folder with subfolder @Cell.
-                        </h4>
-                        <h4>STEP2: Run kinetic_notch_test.m, kinetic_addgate_test_signal.m, kinetic_addgate_test.m.
-                        </h4>
-                        <p>Here we use kinetic model for Notch activation and signal amplification [Ref1], and 3-step kinetics for intein kinetics [Ref.2] in literature[参考文献] to validate the function of our toolkit.
+                        <h4>STEP 1</h4><p>Open MATLAB, and open the folder with subfolder @Cell.
+                        </p >
+                        <h4>STEP 2</h4><p>Run kinetic_notch_test.m, kinetic_addgate_test_signal.m, kinetic_addgate_test.m<br/>
+                        Here we use kinetic model for Notch activation and signal amplification, and 3-step kinetics for intein kinetics to validate the function of our toolkit.
                         </p>
-                        <h4>STEP3:The figures of Figure 6 can be output automatically.
-                        </h4>
+                        <h4>STEP 3</h4><p>Figure 6 will be output automatically.
+                        </p>
                     </div>
                     <div class="section container">
-                        <h4>Supplementary material
+                        <h4>Supplementary PDF with references
                         </h4>
                         <p><a href="http://2018.igem.org/wiki/images/c/c1/T--Fudan--model-cell-colony.pdf" target="_blank">Model_cell_colony</a></p>
-                        <h4 style="margin-left: 0;">References</h4>
-                        <ol id="ref" style="margin: 23px 0 0 0;">
-                            <li>Cis-interactions between Notch and Delta generate mutually exclusive signaling. J. Am. Chem. Soc., 2013, 135 (15), pp 5839–5847
-                            </li>
-                        </ol>
                     </div>
                 </main>
             </div>
