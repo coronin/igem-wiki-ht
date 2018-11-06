@@ -23,7 +23,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
 
         /** 清除内外边距 **/
-        body, h1, h2, h2, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
         dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
         pre, /* text formatting elements 文本格式元素 */
         form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
@@ -34,7 +34,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
         /** 设置默认字体 **/
 
-        h1, h2, h2, h4, h5, h6 { font-size: 100%; }
+        h1, h3, h3, h4, h5, h6 { font-size: 100%; }
         address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
         code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
         small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
@@ -55,28 +55,20 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
         /** 重置表格元素 **/
         table { border-collapse: collapse; border-spacing: 0; }
-
-        #section1 ul li{
-            list-style-type: disc;
-            margin: 0 0 0 16px;
-            font-size: 19px;
-            text-align: justify;
+        #FudanBody .imgNoM img{
+            width:100%;
         }
-        #pageContent .section ul{
-            font-size: 19px;
-            margin-top: 23px;
-        }
-        #acknowledgementPhoto>div.row:nth-child(1)>div{
-            padding: 0 30px 0 10px;
+        #FudanBody .imgNoM{
+            text-align:center;
         }
     </style>
-    <title>2018 iGEM Team:Fudan - Acknowledgement</title>
+    <title>2018 iGEM Team:Fudan - Basic parts</title>
 </head>
 
 <body>
 <!-- Fudan div at igem.org -->
 <div id="FudanWrapper" class="white">
-    <div id="FudanBody" class="white orangeBg">
+    <div id="FudanBody" class="white">
         <header>
             <!-- empty bar -->
             <div id="emptyBar" style="position:relative;width: 100%;"></div>
@@ -91,9 +83,9 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown1">Project</a></li>
                         <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown2">Dry lab</a></li>
                         <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown3">Wet lab</a></li>
-                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown4">Toolbox</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger thisPageLink" data-target="dropdown4">Toolbox</a></li>
                         <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown5">Outreach</a></li>
-                        <li class="hide-on-med-and-down"><a class="dropdown-trigger thisPageLink" data-target="dropdown6">Team</a></li>
+                        <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown6">Team</a></li>
                         <li>
                             <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
                                 <i class="fa fa-navicon" style="font-size: 24px"></i>
@@ -118,17 +110,17 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                 <li><a href="./Software">Software</a></li>
             </ul>
             <ul id="dropdown3" class="dropdown-content">
-                <li><a href="./InterLab">iGEM interLab</a></li>
+                <li><a href="./Interlab">iGEM interLab</a></li>
                 <li><a href="./Notebook">Our notebook</a></li>
                 <li><a href="./Primers">Primers used</a></li>
                 <li><a href="./Protocols">Protocols</a></li>
                 <li><a href="./Safety">Safety</a></li>
             </ul>
             <ul id="dropdown4" class="dropdown-content">
-                <li><a href="./Basic_Parts">Basic parts</a></li>
-                <li><a href="./Composite_Parts">Composite parts</a></li>
+                <li><a href="./Basic_Part">Basic parts</a></li>
+                <li><a href="./Composite_Part">Composite parts</a></li>
                 <li><a href="./Optimization">Optimization</a></li>
-                <li><a href="./Parts_Collection">Parts collection</a></li>
+                <li><a href="./Part_Collection">Parts collection</a></li>
                 <li><a href="./Improve">Parts improvement</a></li>
                 <li><a href="./Measurement">Quantification</a></li>
             </ul>
@@ -142,7 +134,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
             <ul id="dropdown6" class="dropdown-content">
                 <li><a href="./Acknowledgement">Acknowledgement</a></li>
                 <li><a href="./Attributions">Attributions</a></li>
-                <li><a href="./Heritage">Heritage</a></li>
+                <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
                 <li><a href="./Team">Members</a></li>
                 <li><a href="./Sponsors">Sponsors</a></li>
             </ul>
@@ -152,16 +144,17 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                 <li style="padding: 0"><div class="sidenavBanner">
                     <div class="background orangeBg">
                     </div>
-                    <p style="width: 100%;text-align: center;font-size: 24px"><span class="white-text">Acknowledgement</span></p>
+                    <p style="width: 100%;text-align: center;font-size: 24px"><span class="white-text">Basic parts</span></p>
                 </div></li>
                 <li>
                     <ul class="collapsible expandable">
+                        <li>Navigator on wiki</li>
                         <li>
                             <div class="collapsible-header">Project</div>
                             <div class="collapsible-body">
                                 <ul>
                                     <li><a href="./Demonstrate">Demonstration</a></li>
-                <li><a href="./Antigen_Receptors">Antigen, Receptors</a></li>
+                                    <li><a href="./Antigen_Receptors">Antigen, Receptors</a></li>
                                     <li><a href="./Results">Transmembrane logic</a></li>
                                 </ul>
                             </div>
@@ -170,9 +163,9 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                             <div class="collapsible-header">Dry Lab</div>
                             <div class="collapsible-body">
                                 <ul>
-                                  <li><a href="./Addon#ribo">Addon: ribo</a></li>
-                <li><a href="./Addon#TALE">Addon: TALE</a></li>
-                <li><a href="./Addon#T2">Addon: T2</a></li>
+                                    <li><a href="./Addon#ribo">Addon: ribo</a></li>
+                                    <li><a href="./Addon#TALE">Addon: TALE</a></li>
+                                    <li><a href="./Addon#T2">Addon: T2</a></li>
                                     <li><a href="./Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
                                     <li><a href="./Model#NotchLigandKinetics">Model: Notch-ligand&nbsp;kinetics</a></li>
                                     <li><a href="./Software">Software</a></li>
@@ -183,7 +176,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                             <div class="collapsible-header">Wet Lab</div>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="./InterLab">iGEM interLab</a></li>
+                                    <li><a href="./Interlab">iGEM interLab</a></li>
                                     <li><a href="./Notebook">Our notebook</a></li>
                                     <li><a href="./Primers">Primers used</a></li>
                                     <li><a href="./Protocols">Protocols</a></li>
@@ -195,10 +188,10 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                             <div class="collapsible-header">Toolbox</div>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="./Basic_Parts">Basic parts</a></li>
-                                    <li><a href="./Composite_Parts">Composite parts</a></li>
+                                    <li><a href="./Basic_Part">Basic parts</a></li>
+                                    <li><a href="./Composite_Part">Composite parts</a></li>
                                     <li><a href="./Optimization">Optimization</a></li>
-                                    <li><a href="./Parts_Collection">Parts collection</a></li>
+                                    <li><a href="./Part_Collection">Parts collection</a></li>
                                     <li><a href="./Improve">Parts improvement</a></li>
                                     <li><a href="./Measurement">Quantification</a></li>
                                 </ul>
@@ -222,7 +215,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                 <ul>
                                     <li><a href="./Acknowledgement">Acknowledgement</a></li>
                                     <li><a href="./Attributions">Attributions</a></li>
-                                    <li><a href="./Heritage">Heritage</a></li>
+                                    <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
                                     <li><a href="./Team">Members</a></li>
                                     <li><a href="./Sponsors">Sponsors</a></li>
                                 </ul>
@@ -236,26 +229,24 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         </header>
 
         <div id="pageContent" style="">
+
+
             <div id="contentBanner" class="figureBanner orangeBg">
                 <div class="row">
-                    <div class="col s12 m6 valign-wrapper hide-on-med-and-up">
-                        <h1>Acknowledgement</h1>
+                    <div class="col s12 hide-on-med-and-up">
+                        <h1>Basic parts</h1>
                     </div>
-                    <div class="col s12 m6 valign-wrapper hide-on-med-and-up">
-                        <span>Let us express the most sincere thanks to those
-                            who rendered their warm help to us. A successful
-                            team can’t be constructed without them.</span>
+                    <div class="col s12 hide-on-med-and-up">
+                        <span>&nbsp;</span>
                     </div>
                 </div>
                 <div id="figureBannerTitle" class="hide-on-small-only">
-                    <h1 style="word-break: break-all;font-size: 50px;">Acknowledgement</h1>
-                    <p><span>Let us express the most sincere thanks to those
-                            who rendered their warm help to us. A successful
-                            team can’t be constructed without them.</span></p>
+                    <h1>Basic parts</h1>
+                    <p><span>&nbsp;</span></p>
                 </div>
                 <div class="hide-on-small-only">
-                    <img alt="2018 team Fudan title acknowledgement" src="http://2018.igem.org/wiki/images/1/1e/T--Fudan--title_ack.jpg">
-<svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
+                    <img src="http://2018.igem.org/wiki/images/6/66/T--Fudan--title_basicparts.jpg">
+                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
                         <defs>
                             <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
                                 <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
@@ -280,190 +271,85 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                 </div>
             </div>
 
-            <!-- main content of the page -->
+            <!-- @@@@ main content of the page -->
             <div class="container">
-                <main style="margin-right:0;">
+                <main style="margin: 0">
                     <div id="section1" class="section container">
-                        <h2>Acknowledgement</h2>
-                        <ul>
-                            <!--li>
-                                We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Zijie Yang</a> for his practical guidance in <a href="/protocols">molecular cloning</a>,
-                                <a href="/primers">primers design</a>, <a href="/protocols">cell culture</a> and <a href="/measurements">flow data analysis</a>.
-                                He also helped us to start the <a href="/measurements">FACS</a> Jazz machine whenever we need.
-                            </li-->
-                            <li>
-                                We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Yiheng Wang</a> for teaching us to model
-                                <a href="/model#1">DNA and transcription factor binding</a> using his previous <a href="http://2017.igem.org/Team:Fudan/Model" target="blank">model</a>.
-                            </li>
-                            <li>
-                                We thank <a href="http://2017.igem.org/Team:Fudan_China/Member" target="_blank">Tian Huang</a> for providing us with a <a href="https://materializecss.com/" target="_blank">Materialize</a>
-                                based wiki template and teaching us with basic knowledge about HTML and CSS.
-                            </li>
-                            <li>
-                                We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Yiming Cai</a> for giving us
-                                advice on purifying EGFP protein, which was used in the beads assay at the early
-                                stage of the project.
-                            </li>
-                            <li>
-                                We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Yijie Pan</a> for giving us practical suggestions
-                                on <a href="./Protocols" target="_blank">repeated fragment</a> molecular cloning and <a href="./Parts_Collection" target=_blank>BioBrick parts</a> documentation.
-                            </li>
-                            <li>We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Xinxuan Xiong</a> and <a href="http://2017.igem.org/Team:Fudan_China/Member" target="_blank">Xinyi Xu</a>
-                                for giving us useful advice about the <a href="http://2017.igem.org/Team:Fudan/Bio-Art" target="_blank">Bio-ART</a> display and actively helping us in preparation for the display.
-                            </li>
-                            <li>
-                                We thank <a href="http://2017.igem.org/Team:Fudan/Teamers" target="_blank">Ao Feng</a> for helpful discussions on human practice.
-                            </li><li>We thank Jingyi Hu for helping us taking bacteria on the morning, and playing an active role in some of our <a href="./Human_Practices" target="_blank">human practice</a>.
-                            </li><li>We thank Haotian Guo for incisive comments on refining our presentation during and immediately after <a href="http://2018.igem.org/Team:ShanghaiTech/Collaborations" target="_blank">CCiC</a>.
-                            </li><li>We thank Professor Xu Wei’s advice on performing flow cytometry and doing the flow data analysis.
-                            </li><li>We thank Professor <a href="http://life.fudan.edu.cn/Data/View/1456" target="_blank">Yufang Zheng</a> for helpful discussions on the known Notch regulation and unpublished insight from her study with metalloprotease [ADAM10] and [ADAM17].
-                            </li><li>We thank Professor <a href="https://www.ki.si/en/departments/d12-department-of-synthetic-biology-and-immunology/" target=_blank>Roman Jerala</a> on email and face-to-face discussions on designing TALE based logic gates.
-                            </li><li>We thank Professor <a href="https://blacklow.hms.harvard.edu/" target="_blank">Stephen Blacklow</a> on email and face-to-face discussions on engineered Notch receptor optimization.
-                            </li><li>We thank Doctor Lixin Yang, Doctor Ganjun Yu, Doctor Xiaoying Bi, and Doctor Pengfei Luo for sparing precise time to have the discussion on <a href="./Human_Practices#section1" target="_blank">Interview doctors</a>.
-                            </li><li>We thank Professor Xin Yuan, in the Department of Philosophy, for attending our Bio-Ethic debate and his comments enriched our understanding.
-                            </li><li>We thank Professor  <a href="http://life.fudan.edu.cn/Data/View/1457" target="_blank">Jiang Zhong</a>, Professor <a href="http://life.fudan.edu.cn/Data/View/1335" target="_blank">Xiaoming Ding</a>, Professor <a href="http://life.fudan.edu.cn/Data/View/1475" target="_blank">Qiang Huang</a>, and Professor  <a href="http://life.fudan.edu.cn/Data/View/1391" target="_blank">Ting Ni</a> for giving us valuable suggestions and feeds at different stages of the project, from the initial brainstorm to the middle project progress and the pre-departure presentations.
-                            </li><li>We thank the Club of FDU Bertalanffy Society for helping to rent the space for  <a href="./Bio-Art" target="_blank">Bio-ART</a> display.
-                            </li><li>We thank teachers in <a href="http://www.shedunews.com/jymp_qbdht.html" target="_blank">Qibao Dwight High School</a>, <a href="http://www.jincai.sh.cn/web/JCZX/273001.htm" target="_blank">Shanghai Jincai High School</a>, <a href="https://www.fdfz.cn/ " target="_blank">the High School Affiliated to Fudan University</a> for offering us with opportunities to implement <a href="./Human_Practices" target="_blank">our HP</a>.
-                            </li><li>We thank <a href="http://2018.igem.org/Team:Fudan-CHINA" target="_blank">Team:Fudan_China</a> for teaching us how to use the plate reader.
-                            </li>
-                        </ul>
+                        <h2>BBa_K2549006 <a href="http://parts.igem.org/Part:BBa_K2549006" target=_blank>mouse Notch 1 core</a></h2>
+                        <p>Our favorite basic part for this year’s iGEM competition is mouse Notch 1 receptor’s core domain.<br/><img alt="006 screencapture" src="http://2018.igem.org/wiki/images/thumb/7/7e/T--Fudan--BBa_K2549006.png/1444px-T--Fudan--BBa_K2549006.png" />
+                        </p><p>
+                            Notch core consists of the negatively regulated region and transmembrane region of the mouse Notch 1 receptor. It is the joint that empowers SynNotch the high modularity and proper activation. From the N terminal to C terminal, it is composed of three lin12-repeats (LNR) domains LNR-A, LNR-B, LNR-C, the heterodimerization domain (HD), and the transmembrane domain. The LNR-AB linker between LNR-A and B is like a plug that occludes ADAM from cleaving wild type extracellular domain can be substituted by antiGFP scFvs like LaG16 and anti-CD19, while its intracellular domain can be replaced by specialized transcription factors. Notch core is also the key to the activation of both wild type Notch receptors and SynNotch.
+                        </p>
+                        <div class="expFigureHolder" style="width:100%">
+                            <div class="row" style="background: white">
+                                <div class="col s12 m4"><img style="width:100%" src="http://2018.igem.org/wiki/images/9/9e/T--Fudan--bestpart1.png"></div>
+                                <div class="col s12 m4"><img style="width:100%" src="http://2018.igem.org/wiki/images/f/f1/T--Fudan--bestpart2.png"></div>
+                                <div class="col s12 m4"><img style="width:100%" src="http://2018.igem.org/wiki/images/8/80/T--Fudan--opt-gif.gif"></div>
+                                <div class="col s12 m4 offset-m1"><img style="width:100%" src="http://2018.igem.org/wiki/images/2/21/T--Fudan--bestpart3.png"></div>
+                                <div class="col s12 m4 offset-m2"><img style="width:100%" src="http://2018.igem.org/wiki/images/8/81/T--Fudan--bestpart4.png"></div>
+                            </div>
 
-                        <h2>Photos</h2>
-                        <div id="acknowledgementPhoto">
-                            <h4>People</h4>
-                            <p style="margin-left: 10px">Listed by alphabetical order of surnames.</p>
-                            <div class="row">
-                                <div class="col s12 m3 l2">
-                                    <img alt="doctor Bi" src="http://2018.igem.org/wiki/images/9/9f/T--Fudan--Xiaoying_Bi.jpg">
-                                    <span>Xiaoying Bi</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Blacklow S" src="http://2018.igem.org/wiki/images/d/d7/T--Fudan--Stephen_Blacklow.jpg">
-                                    <span>Stephen Blacklow</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Cai" src="http://2018.igem.org/wiki/images/7/72/T--Fudan--Yiming_Cai.jpg">
-                                    <span>Yiming Cai</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Ding" src="http://2018.igem.org/wiki/images/4/4a/T--Fudan--Xiaoming_Ding.jpg">
-                                    <span>Xiaoming Ding</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Feng" src="http://2018.igem.org/wiki/images/d/dc/T--Fudan--fengao.jpg">
-                                    <span>Ao Feng</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Guo" src="http://2018.igem.org/wiki/images/5/5c/T--Fudan--Haotian_Guo.jpg">
-                                    <span>Haotian Guo</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Hu" src="http://2018.igem.org/wiki/images/a/a6/T--Fudan--Jingyi_Hu.jpg">
-                                    <span>Jingyi Hu</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Huang Q" src="http://2018.igem.org/wiki/images/c/c7/T--Fudan--Qiang_Huang.jpg">
-                                    <span>Qiang Huang</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Huang T" src="http://2018.igem.org/wiki/images/3/3d/T--Fudan--Tian_Huang.jpg">
-                                    <span>Tian Huang</span>
-                                </div>
-<div class="col s12 m3 l2">
-    <img alt="Jerala" src="http://2018.igem.org/wiki/images/9/99/T--Fudan--LC--Roman_Jerala.jpg" />
-    <span>Jerala Roman</span>
-</div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Luo" src="http://2018.igem.org/wiki/images/6/65/T--Fudan--Pengfei_Luo.jpg">
-                                    <span>Pengfei Luo</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Ni" src="http://2018.igem.org/wiki/images/2/20/T--Fudan--Ting_Ni.jpg">
-                                    <span>Ting Ni</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Pan" src="http://2018.igem.org/wiki/images/3/3f/T--Fudan--Yijie_Pan.jpg">
-                                    <span>Yijie Pan</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Wang" src="http://2018.igem.org/wiki/images/1/11/T--Fudan--Yiheng_Wang.jpg">
-                                    <span>Yiheng Wang</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Xiong" src="http://2018.igem.org/wiki/images/8/80/T--Fudan--Xinxuan_Xiong.jpg">
-                                    <span>Xinxuan Xiong</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Xu W" src="http://2018.igem.org/wiki/images/1/16/T--Fudan--Wei_Xu.jpg">
-                                    <span>Wei Xu</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Xu X" src="http://2018.igem.org/wiki/images/a/a0/T--Fudan--Xinyi_Xu.jpg">
-                                    <span>Xinyi Xu</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="doctor Yang L" src="http://2018.igem.org/wiki/images/4/4e/T--Fudan--Lixing_Yang.jpg">
-                                    <span>Lixing Yang</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="doctor Yang S" src="http://2018.igem.org/wiki/images/5/57/T--Fudan--Shunhua_Yang.jpg">
-                                    <span>Shunhua Yang</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="doctor Yu" src="http://2018.igem.org/wiki/images/6/6f/T--Fudan--Ganjun_Yu.jpg">
-                                    <span>Ganjun Yu</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="doctor Yuan" src="http://2018.igem.org/wiki/images/6/6e/T--Fudan--Xin_Yuan.jpg">
-                                    <span>Xin Yuan</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Zhong" src="http://2018.igem.org/wiki/images/c/c6/T--Fudan--Jiang_Zhong.jpg">
-                                    <span>Jiang Zhong</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Zheng" src="http://2018.igem.org/wiki/images/7/79/T--Fudan--Yufang_Zheng.jpg">
-                                    <span>Yufang Zheng</span>
-                                </div>
-                            </div>
-                            <h4>Labs, Organizations & Schools</h4>
-                            <div class="row">
-                                <div class="col s12 m3 l2">
-                                    <img alt="Changhai" src="http://2018.igem.org/wiki/images/f/fd/T--Fudan--Changhai_Hospital.jpg">
-                                    <span>Changhai Hospital</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Jincai" src="http://2018.igem.org/wiki/images/7/7f/T--Fudan--Jincai_High_School.png">
-                                    <span>Jincai High School</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Fuzhong" src="http://2018.igem.org/wiki/images/a/a7/T--Fudan--Fudanfuzhong.jpg">
-                                    <span>High School Affiliated to Fudan University</span>
-                                </div>
-                                <div class="col s12 m3 l2">
-                                    <img alt="Qibao" src="http://2018.igem.org/wiki/images/f/f1/T--Fudan--Qibao_Dwight.jpg">
-                                    <span>Shanghai Qibao Dwight High School</span>
-                                </div>
-                            </div>
-                            <h4>iGEM Teams</h4>
-                            <div class="row">
-                                <div class="col s12 m4 l3">
-                                    <img alt="2018 Fudan-CHINA" src="http://2018.igem.org/wiki/images/6/65/T--Fudan--Fudan_China.jpg">
-                                    <span>Fudan-CHINA 2018</span>
-                                </div>
-                                <div class="col s12 m4 l3">
-                                    <img alt="2017 Fudan" src="http://2018.igem.org/wiki/images/f/fa/T--Fudan--team_Fudan.png">
-                                    <span>Fudan 2017</span>
-                                </div>
-                                <div class="col s12 m4 l3">
-                                    <img alt="2017 Fudan_China" src="http://2018.igem.org/wiki/images/4/4f/T--Fudan--Team_Fudan_China2017.png">
-                                    <span>Fudan_China 2017</span>
-                                </div>
-                            </div>
+                            <p><b>Structure of the negative regulatory region of Notch 1 receptor, surface delivery, and optimization.</b><br/>
+                                        a-c. Shows structure of the Notch 1 core, with more detail on the NRR. (With structural information adapted from Gordon et al., 2009)<br/>
+                                        d. Shows that mouse SynNotch with LaG16-2 scFv (single chain fragment variants) as ectodomain is expressed on the 293T cell membrane as an example via anti-myc AF488 immunofluorescence staining. Shown here the light parts.<br/>
+                                        e. A conclusive diagram of our Notch optimization. We have 5 mutations that exhibit better activation performance to SynNotch with LaG17 as scFv.
+                            </p>
+
                         </div>
+                        <b class="tableHolder">
+                            <table>
+                                <tr>
+                                    <th>SynNotch</th>
+                                    <th>Class</th>
+                                    <th>ARF<sub>aS</sub><sup>*)</sup></th>
+                                    <th>Preferred</th>
+                                </tr>
+                                <tr>
+                                    <td>LaG17-mN1c-tTAA</td>
+                                    <td>II</td>
+                                    <td>1.67 ± 0.20</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>LaG17-6G-LNRA[-]mN1c-tTAA</td>
+                                    <td>I</td>
+                                    <td>1.73 ± 0.29</td>
+                                    <td>☆</td>
+                                </tr>
+                                <tr>
+                                    <td>LaG17-LNRA cbs(D1433K)mN1c-tTAA</td>
+                                    <td>II</td>
+                                    <td>2.69 ± 0.11</td>
+                                    <td>☆</td>
+                                </tr>
+                                <tr>
+                                    <td>LaG17-LNRA cbs(D1433Q)mN1c-tTAA</td>
+                                    <td>II</td>
+                                    <td>Needs more repeat</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>LaG17-LNRAlnkr(L1457V)mN1c-tTAA</td>
+                                    <td>I</td>
+                                    <td>2.12 ± 0.39</td>
+                                    <td>☆</td>
+                                </tr>
+                                <tr>
+                                    <td>LaG17-LNRAlnkr(L1457G)mN1c-tTAA</td>
+                                    <td>II</td>
+                                    <td>2.55± 0.55</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                            <p>*) <b>ARF<sub>aS</sub>:</b> activation ratio fold of activating-form SynNotch</p>
+                            <p>See more in <a href="./Optimization">Optimization</a></p>
+                        </div>
+                        <p>It is suggested by recent research that Notch activation begin as the receptor is first "opened up" at its negatively regulatory region (NRR) by the mechanical force exerted by Notch-bound ligand endocytosis on signal-sender cell, exposing its cleavage sites to proteases. Intracellular proteolytic action releases the Notch intracellular domain (NICD). In the majority of cellular interactions, the free Notch intracellular domain then translocate into the cell nucleus via nuclear localization sequence to regulate downstream signaling. For wild type Notch, the Notch intracellular domain would interacted with its major downstream effector CBF-1/Suppressor of Hairless/Lag-1 (CSL) on their target DNA. Together they recruit co-factors to activate endogenous downstream transcription. For SynNotch, specialized transcription factors will exclusively participate in regulation of genetic circuits that allow user-defined cellular responses.
+                        </p>
                     </div>
                 </main>
             </div>
+            <!-- @@@@ end of main content of the page -->
 
             <!--Abstract on content page-->
             <div id="abstractContent" class="z-depth-2">
@@ -504,7 +390,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                 <div class="container">
                     <div class="row">
                         <div id="sponsor" class="col m3 s12 row">
-                            <a href="http://2018.igem.org/Team:Fudan" target="_blank"><img alt="2018 team Fudan logo" class="col s3 m6 l3" style="position:relative; padding: 0 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="http://2018.igem.org/wiki/images/7/73/T--Fudan--teamLogoWhite.png">
+                            <a href="http://2018.igem.org/Team:Fudan" target="_blank"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="http://2018.igem.org/wiki/images/7/73/T--Fudan--teamLogoWhite.png">
                             </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="http://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
                         </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
                         </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="http://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
@@ -518,7 +404,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                     <ul>
                                         <li><a href="./Demonstrate">Demonstration</a></li>
 
-                <li><a href="./Antigen_Receptors">Antigen, Receptors</a></li>
+                                        <li><a href="./Antigen_Receptors">Antigen, Receptors</a></li>
                                         <li><a href="./Results">Transmembrane logic</a></li>
                                         <li><a href="http://2017.igem.org/Team:Fudan">2017.iGEM</a></li>
                                     </ul>
@@ -526,9 +412,9 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                 <div class="col s12 m4">
                                     <span>Dry lab</span>
                                     <ul>
-                                     <li><a href="./Addon#ribo">Addon: ribo</a></li>
-                <li><a href="./Addon#TALE">Addon: TALE</a></li>
-                <li><a href="./Addon#T2">Addon: T2</a></li>
+                                        <li><a href="./Addon#ribo">Addon: ribo</a></li>
+                                        <li><a href="./Addon#TALE">Addon: TALE</a></li>
+                                        <li><a href="./Addon#T2">Addon: T2</a></li>
                                         <li><a href="./Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
                                         <li><a href="./Model#NotchLigandKinetics">Model: Notch-ligand&nbsp;kinetics</a></li>
                                         <li><a href="./Software">Software</a></li>
@@ -537,7 +423,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                 <div class="col s12 m4">
                                     <span>Wet lab</span>
                                     <ul>
-                                        <li><a href="./InterLab">iGEM interLab</a></li>
+                                        <li><a href="./Interlab">iGEM interLab</a></li>
                                         <li><a href="./Notebook">Our notebook</a></li>
                                         <li><a href="./Primers">Primers used</a></li>
                                         <li><a href="./Protocols">Protocols</a></li>
@@ -546,13 +432,13 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                 </div>
                             </div>
                             <div class="col s12 l6 row">
-                                <div class="col s12 m4">
+                                <div class="col s12 m4 active">
                                     <span>Toolbox</span>
                                     <ul>
-                                        <li><a href="./Basic_Parts">Basic parts</a></li>
-                                        <li><a href="./Composite_Parts">Composite parts</a></li>
+                                        <li><a href="./Basic_Part">Basic parts</a></li>
+                                        <li><a href="./Composite_Part">Composite parts</a></li>
                                         <li><a href="./Optimization">Optimization</a></li>
-                                        <li><a href="./Parts_Collection">Parts collection</a></li>
+                                        <li><a href="./Part_Collection">Parts collection</a></li>
                                         <li><a href="./Improve">Parts improvement</a></li>
                                         <li><a href="./Measurement">Quantification</a></li>
                                     </ul>
@@ -567,12 +453,12 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                         <li><a href="./Public_Engagement">Public engagement</a></li>
                                     </ul>
                                 </div>
-                                <div class="col s12 m4 active">
+                                <div class="col s12 m4">
                                     <span>Team</span>
                                     <ul>
                                         <li><a href="./Acknowledgement">Acknowledgement</a></li>
                                         <li><a href="./Attributions">Attributions</a></li>
-                                        <li><a href="./Heritage">Heritage</a></li>
+                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
                                         <li><a href="./Team">Members</a></li>
                                         <li><a href="./Sponsors">Sponsors</a></li>
                                     </ul>
@@ -597,13 +483,14 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         </div>
     </div>
 </div>
+
+
 <!-- Javascript files -->
 <!-- Materialize 1.0.0-rc.2 -->
 <script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.js&action=raw&ctype=text/javascript"></script>
 
 <!-- Javascript -->
 <script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/js.js&action=raw&ctype=text/javascript"></script>
-
 
 </body>
 </html>
