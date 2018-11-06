@@ -13,8 +13,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
     <link rel="stylesheet" type="text/css" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/jquery-ui.min.css&action=raw&ctype=text/css" />
 
     <!-- Font-awesome icons 4.7.0 -->
-    <link href="./Fudan-font-awesome.css" rel="stylesheet">
-    <!-- xxxx use local 10-25 -->
+    <link href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/font-awesome.css&action=raw&ctype=text/css" rel="stylesheet" />
 
     <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
     <link rel="stylesheet" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.css&action=raw&ctype=text/css">
@@ -392,7 +391,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </ul>
                     </div>
 <div class="expFigureHolder" style="width:100%">
-    <img class="responsive-img" src="./gj-2012jp.png" />
+    <img class="responsive-img" src="http://2018.igem.org/wiki/images/2/2c/T--Fudan--LC-gj-2012jp.png" />
     <p>In our GJ presentation (10/25 Room 311 9:00-9:25), we used the image above in addition to the modeling just describe to add two points:
         (1) A summary of the Receptor-Ligand kinetics described below that with the same number of receptors and proteases, due to the increased complexity with more diversed ligand-receptor interactions, the release of Notch intracellular domains significantly decreased.
         (2) There was a previous study highlighting the requirement of amplification for signaling transduction across many cells.</p>
@@ -419,15 +418,15 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         please check reference <a href="https://www.crcpress.com/Stochastic-Modelling-for-Systems-Biology/Wilkinson/p/book/9781439837726" target="_blank">Wilkinson DJ, et al., 2006</a>. This method views each chemical or reaction intermediate as nodes in a network, element reactions as edges, and weight and direction of each edge for stoichiometric number and reaction direction. Especially, we use {P, T, Pre, Post, M} to describe a Petri net precisely: P={p1, …, pu} is the space of chemicals, T={t1, …, tv} is the spaces of all transitions (element reactions) , Pre is a v*u integer matrix containing the weights from chemicals to transitions， and the (i,j)th element of this matrix is the weight of the arc going from chemical j to transition i, and Post is a v*u integer matrix containing the weights from transitions to chemicals, and the (i,j)th element of this matrix is the weight of the arc going from transition i to chemical j. M is a u-dimensional integer vector that represents the current state of the system (i.e. the number of molecules).
                     </p><p>
                         For system with only one kind of Notch and one kind of Ligand, we have
-                        <img class="responsive-img width60" src="./model-zlw1.png" alt="zlw1 model equation" />
+                        <img class="responsive-img width60" src="http://2018.igem.org/wiki/images/1/1b/T--Fudan--LC-model-zlw1.png" alt="zlw1 model equation" />
                         the subscripts refer to the index of a cell in a cell-pair, and the index is designated arbitrarily.
                         Also, we have
-                        <img class="responsive-img width80" src="./model-zlw2.png" alt="zlw1 model equation" />
+                        <img class="responsive-img width80" src="http://2018.igem.org/wiki/images/2/26/T--Fudan--LC-model-zlw2.png" alt="zlw1 model equation" />
                         Here the lower capital g and d refer to the generation and degradation of following chemicals.
                         Similarly, we can write out the matrix Post and Pre.
                     </p><p>
                         We set W as a u-dimensional zero vector for initialization. Then we need to designate when and how this system chooses to finish a certain element reaction. For this purpose, we consider that the occurrence of an element reaction is a heterogeneous Poisson process, and certain reaction selection via sampling. That’s, the possibility that an element reaction R<sub>i</sub> happening in the time interval (t,&delta;t] is given by h<sub>i</sub>(x,<sub>i</sub>) &delta;t. With additivity assumption, we can get the possibility an arbitrary reaction happening in the time interval (t,&delta;t] is
-                        <img class="responsive-img width20" src="./model-zlw3.png" alt="zlw1 model equation" />
+                        <img class="responsive-img width20" src="http://2018.igem.org/wiki/images/d/dd/T--Fudan--LC-model-zlw3.png" alt="zlw1 model equation" />
                     </p><p>
                         The form of h<sub>i</sub>(x,<sub>i</sub>) is given by mass-action stochastic kinetics. For a given system, h<sub>i</sub>(x,<sub>i</sub>)=c<sub>i</sub>*C(n<sub>i1</sub>,n<sub>i2</sub>, …, n<sub>in</sub>), where c<sub>i</sub> is the rate constant for reaction i, n<sub>in</sub> refers to the molecule number of reactant k for reaction i, and function C() means
                         combinatorial number of all n<sub>in</sub>. In practice, C() can be replaced by &Pi;() with some modifications for c<sub>i</sub>.
@@ -452,7 +451,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         For certain parameters, signal of a certain pair of Notch-Ligand coupling may be diluted by occurrence of other reactions (<font color="purple">Figure 8F</font> with types of overall Notch/Ligand varied compared to Figure 8A).
                         </p>
                         <div class="expFigureHolder" style="width:100%">
-                            <img class="responsive-img" src="./zlw1018.png">
+                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/3/33/T--Fudan--LC-zlw1018.png" />
                             <p><b>Figure 8. Simulation results of Notch-Ligand kinetics.</b>
 <br/>(A) Simulation of a 2 Notch-2 Ligand system. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. Both Cell1 and Cell2 are armed with all four kinds of Notch/Ligand A/B.
 <br/>(B) Weak binding affinity for cleavage leads to low response. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. The affinity of protease to NotchB-LigandB complex is weakened, leading to poor NotchB response to Ligand signal.
@@ -466,8 +465,8 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                             <li style="list-style-type: none">
                                 <div class="collapsible-header">Click to see more about the modeling parameters</div>
                                 <div class="collapsible-body container">
-                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img" src="./zlw1018param2.png"></p>
-                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img" src="./zlw1018param1.png"></p>
+                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img" src="http://2018.igem.org/wiki/images/d/d9/T--Fudan--LC-zlw1018param1.png" /></p>
+                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img" src="http://2018.igem.org/wiki/images/c/cf/T--Fudan--LC-zlw1018param2.png" /></p>
                                 </div>
                             </li>
                         </ul>
@@ -619,7 +618,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 <script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.js&action=raw&ctype=text/javascript"></script>
 
 <!-- Javascript -->
-<!-- script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/js.js&action=raw&ctype=text/javascript"></script --> <script src="./Fudan-js.js"></script>
+<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/js.js&action=raw&ctype=text/javascript"></script>
 <script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/jquery-ui.min.js&action=raw&ctype=text/javascript"></script>
 <script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/d3.min.js&action=raw&ctype=text/javascript"></script>
 <script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/function-plot.js&action=raw&ctype=text/javascript"></script>
