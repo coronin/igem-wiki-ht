@@ -336,11 +336,10 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
 
 <!-- Javascript files -->
-
 <!-- Materialize 1.0.0-rc.2 -->
 <script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.js&action=raw&ctype=text/javascript"></script>
 
-<!-- Javascript -->
+<!-- some from Fudan-js.js -->
 <script>
     //Sidenav Init
     $(function(){
@@ -359,12 +358,6 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
     });
 
     //Dropdown Init
-    $(".dropdown-trigger").dropdown({
-        coverTrigger: false,
-        hover: true,
-        inDuration: 250,
-        outDuration: 350
-    });
 
     //Floating Btn Init
     $(function(){
@@ -398,29 +391,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         $('.parallax').parallax();
     });
 
-// @@@@ <!DOCUTYPE html> required for .fadeIn .fadeOut
 //hide the nav
-var $topNav=$("#topNav");
-var footerHeight=$("#FudanFooter").height();
-var pageHeight=$("#FudanWrapper").height();
-scrollTop=$(document).scrollTop();
-if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
-    $topNav.fadeOut(200);
-}
-else {
-    $topNav.fadeIn(200);
-}
-$(document).on("scroll",function () {
-    footerHeight=$("#FudanFooter").height();
-    pageHeight=$("#FudanWrapper").height();
-    scrollTop=$(document).scrollTop();
-    if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
-        $topNav.fadeOut(200);
-    }
-    else {
-        $topNav.fadeIn(200);
-    }
-});
 
 //show caption
 if($(window).width()>991){
@@ -439,7 +410,6 @@ if($(window).width()>991){
         });
     });
 }
-
 </script>
 
 </body>
