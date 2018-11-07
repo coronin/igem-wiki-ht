@@ -9,11 +9,11 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
     <meta charset="UTF-8">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="./Fudan-css.css" />
+    <link rel="stylesheet" type="text/css" href="/Fudan-css.css" />
     <link rel="stylesheet" type="text/css" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/jquery-ui.min.css&action=raw&ctype=text/css" />
 
     <!-- Font-awesome icons 4.7.0 -->
-    <link href="./Fudan-font-awesome.css" rel="stylesheet" />
+    <link href="/Fudan-font-awesome.css" rel="stylesheet" />
 
     <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
     <link rel="stylesheet" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.css&action=raw&ctype=text/css">
@@ -122,13 +122,13 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     <!-- side navigator of page content -->
                     <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
 
-                        <li><a href="./Addon#ribo">Addon: ribo</a></li>
-                        <li><a href="./Addon#TALE">Addon: TALE</a></li>
-                        <li><a href="./Addon#T2">Addon: T2</a></li>
-                        <li><a href="./Model">Model</a></li>
+                        <li><a href="/Addon#ribo">Addon: ribo</a></li>
+                        <li><a href="/Addon#TALE">Addon: TALE</a></li>
+                        <li><a href="/Addon#T2">Addon: T2</a></li>
+                        <li><a href="/Model">Model</a></li>
                         <li class="onThisPageNav"><a href="#Transcriptional_Amplifer">Transcriptional amplifer</a></li>
                         <li class="onThisPageNav"><a href="#NotchLigandKinetics">Receptor-Ligand kinetics</a></li>
-                        <li><a href="./Software">Software</a></li>
+                        <li><a href="/Software">Software</a></li>
                     </ul>
                     <div class="section container">
                         <p>Our modeling focuses on two main aspects. The first is optimizing the transcriptional modules to increase signal-to-noise ratio, and the second is forecasting clinical outputs for multiple types of mixtures of immune cells and cancer cells. We experimentally showed that an amplification step is required. We also used a stochastic process to model receptor-ligand interaction kinetics, a possibility theory to model the transcriptional amplifier, and differential equations to model signal integration. ENABLE constructs with modeled parameters have increased signal-to-noise ratio and should have larger dynamic range.</p>
@@ -243,11 +243,11 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     <div id="NotchLigandKinetics" class="section container scrolSpy">
                         <h2>Receptor-Ligand kinetics</h2>
                         <p>
-                            The Receptor-Ligand collects extracellular signals for further intercellular processing, which constitutes the most significant part for any transmembrane logic gate. To reduce the background activation of SynNotch, we put a huge <a href="./Optimization" target=_blank>experimental effect based on its protein structure</a>.
+                            The Receptor-Ligand collects extracellular signals for further intercellular processing, which constitutes the most significant part for any transmembrane logic gate. To reduce the background activation of SynNotch, we put a huge <a href="/Optimization" target=_blank>experimental effect based on its protein structure</a>.
                         </p><p>
                             We focused on the signal-to-noise ratio (SNR) of the Notch/SynNotch receptor. In previous research, some quantitative descriptions of Notch-Ligand have been published for explanation and exploration of systematic design <a href="https://www.ncbi.nlm.nih.gov/pubmed/23839946" target=_blank>(Andrawes MB, et al., 2013)</a>. For example, cis-inhibition was modeled via chemical kinetics, which precisely predict the mechanism of Notch-induced pattern formation <a href="https://www.ncbi.nlm.nih.gov/pubmed/20418862" target=_blank>(Sprinzak D, et al., 2010)</a>. However, stochastic models for Notch-Ligand simulations have not been reported yet.
                     </p><p>
-                        Here we present a mathematical model for Notch-Ligand kinetics using Stochastic <a href="https://en.wikipedia.org/wiki/Petri_net#Mathematical_properties_of_Petri_nets" target=_blank>Petri nets</a>, which takes random intercellular processes into consideration. We found that the SNR of our system is not only dependent on the affinity of Notch-Ligands, but also the Secretase Complex. We also expanded our model from targeting just molecular-level chemical reactions to cell colony-level chemical reactions, which offers clues for oriented optimization of Notch. Last but not least, our object-oriented programming (OOP) makes it easy to transplant into <a href="./Software">further application</a>.
+                        Here we present a mathematical model for Notch-Ligand kinetics using Stochastic <a href="https://en.wikipedia.org/wiki/Petri_net#Mathematical_properties_of_Petri_nets" target=_blank>Petri nets</a>, which takes random intercellular processes into consideration. We found that the SNR of our system is not only dependent on the affinity of Notch-Ligands, but also the Secretase Complex. We also expanded our model from targeting just molecular-level chemical reactions to cell colony-level chemical reactions, which offers clues for oriented optimization of Notch. Last but not least, our object-oriented programming (OOP) makes it easy to transplant into <a href="/Software">further application</a>.
                         </p>
                         <h3>Using ChemicalReactions toolkit</h3>
                         <p>
@@ -289,7 +289,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <p>
                             SNR can be tuned via Notch-Ligand binding affinity in a power-law manner.
                         </p><p>
-                        For certain parameters, signal-to-noise ratio can be tuned via Notch-Ligand binding affinity in a power-law manner (<font color="purple">Figure 8E</font> with rate constant of gN<sub>A</sub>L<sub>B</sub>varied compared to Figure 8A). This offers clue for <a href="./Optimization">SynNotch optimization</a>.
+                        For certain parameters, signal-to-noise ratio can be tuned via Notch-Ligand binding affinity in a power-law manner (<font color="purple">Figure 8E</font> with rate constant of gN<sub>A</sub>L<sub>B</sub>varied compared to Figure 8A). This offers clue for <a href="/Optimization">SynNotch optimization</a>.
                     </p><p>
                             Amplification is required for Notch-Ligand (see above).
                         For certain parameters, signal of a certain pair of Notch-Ligand coupling may be diluted by occurrence of other reactions (<font color="purple">Figure 8F</font> with types of overall Notch/Ligand varied compared to Figure 8A).
@@ -315,7 +315,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                             </li>
                         </ul>
                         <p>
-                            The stochastic Notch-Ligand kinetics can be simplified as a single chemical constant for some certain conditions. Though this may greatly reduce the workload of transplant our model into a higher-scale application (e.g. to model a cell colony made up of cells armed with Notch and Ligand), this OOP modeling style makes it easy to transplant Notch-Ligand kinetics at the molecular level to macroscale level. Please continue to our <a href="./Software">software</a>, where we abstracted mammalian cells into blocks (with parameters modeled and simulated above), to predict cellular behaviors. We quantified the behavior of individual cells within a population. We found that besides ENABLE signaling, cell proliferation speed, cell life-span and cell adhesion greatly impact cancer elimination effectiveness. Our modeling and software gives ENABLE gates a population perspective, and test them in a clinical scenario.
+                            The stochastic Notch-Ligand kinetics can be simplified as a single chemical constant for some certain conditions. Though this may greatly reduce the workload of transplant our model into a higher-scale application (e.g. to model a cell colony made up of cells armed with Notch and Ligand), this OOP modeling style makes it easy to transplant Notch-Ligand kinetics at the molecular level to macroscale level. Please continue to our <a href="/Software">software</a>, where we abstracted mammalian cells into blocks (with parameters modeled and simulated above), to predict cellular behaviors. We quantified the behavior of individual cells within a population. We found that besides ENABLE signaling, cell proliferation speed, cell life-span and cell adhesion greatly impact cancer elimination effectiveness. Our modeling and software gives ENABLE gates a population perspective, and test them in a clinical scenario.
                         </p>
                         <p>A document on <a href="http://2018.igem.org/wiki/images/c/c1/T--Fudan--model-cell-colony.pdf" target="_blank">model cell colony</a>, and source code is available on <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>GitHub</a>.</p>
                     </div>
@@ -374,30 +374,30 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                 <div class="col s12 m4">
                                     <span>Project</span>
                                     <ul>
-                                        <li><a href="./Description">Background</a></li>
-                                        <li><a href="./Design">Design</a></li>
-                                        <li><a href="./Protocols">Experiments</a></li>
-                                        <li><a href="./Demonstrate">Results</a></li>
-                                        <li><a href="./Judging">iGEM judging</a></li>
+                                        <li><a href="/Description">Background</a></li>
+                                        <li><a href="/Design">Design</a></li>
+                                        <li><a href="/Protocols">Experiments</a></li>
+                                        <li><a href="/Demonstrate">Results</a></li>
+                                        <li><a href="/Judging">iGEM judging</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4">
-                                  <span><a href="./Parts">BioBricks</a></span>
+                                  <span><a href="/Parts">BioBricks</a></span>
                                     <ul>
-                                        <li><a href="./Basic_Part">Basic parts</a></li>
-                                        <li><a href="./Composite_Part">Composite parts</a></li>
-                                        <li><a href="./Part_Collection">Part collection</a></li>
-                                        <li><a href="./Improve">Parts improvement</a></li>
+                                        <li><a href="/Basic_Part">Basic parts</a></li>
+                                        <li><a href="/Composite_Part">Composite parts</a></li>
+                                        <li><a href="/Part_Collection">Part collection</a></li>
+                                        <li><a href="/Improve">Parts improvement</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4">
                                     <span>Lab</span>
                                     <ul>
-                                        <li><a href="./Interlab">iGEM interLab</a></li>
-                                        <li><a href="./Notebook">Notebook</a></li>
-                                        <li><a href="./Protocols">Protocols</a></li>
-                                        <li><a href="./Measurement">Quantification</a></li>
-                                        <li><a href="./Safety">Safety</a></li>
+                                        <li><a href="/Interlab">iGEM interLab</a></li>
+                                        <li><a href="/Notebook">Notebook</a></li>
+                                        <li><a href="/Protocols">Protocols</a></li>
+                                        <li><a href="/Measurement">Quantification</a></li>
+                                        <li><a href="/Safety">Safety</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -405,27 +405,27 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                 <div class="col s12 m4 active">
                                     <span>not-sure</span>
                                     <ul>
-                                        <li><a href="./Applied_Design">Applied design</a></li>
-                                        <li><a href="./Hardware">Hardware</a></li>
-                                        <li><a href="./Model">Model</a></li>
-                                        <li><a href="./Software">Software</a></li>
+                                        <li><a href="/Applied_Design">Applied design</a></li>
+                                        <li><a href="/Hardware">Hardware</a></li>
+                                        <li><a href="/Model">Model</a></li>
+                                        <li><a href="/Software">Software</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4">
                                     <span>Outreach</span>
                                     <ul>
-                                        <li><a href="./Collaborations">Collaborations</a></li>
-                                        <li><a href="./Human_Practices">Human practices</a></li>
-                                        <li><a href="./Public_Engagement">Public engagement</a></li>
-                                        <li><a href="./HP">Why we do this</a></li>
+                                        <li><a href="/Collaborations">Collaborations</a></li>
+                                        <li><a href="/Human_Practices">Human practices</a></li>
+                                        <li><a href="/Public_Engagement">Public engagement</a></li>
+                                        <li><a href="/HP">Why we do this</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4">
                                     <span>Team</span>
                                     <ul>
-                                        <li><a href="./Attributions">Attributions</a></li>
+                                        <li><a href="/Attributions">Attributions</a></li>
                                         <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-                                        <li><a href="./Team">Members</a></li>
+                                        <li><a href="/Team">Members</a></li>
                                     </ul>
                                 </div>
                             </div>
