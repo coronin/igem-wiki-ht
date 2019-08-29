@@ -9,13 +9,13 @@ import sys
 
 class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     def do_GET(self):            
-        possible_name = self.path.strip("/")+'.html'
         if self.path == '/':
             # default routing, change index.html if needed
             self.path = '/index.html'
-        elif os.path.isfile(possible_name):
+        else:
             # extensionless page serving
-            self.path = possible_name
+            #self.path = self.path.strip("/Team:Fudan-TSI/")+'.html'
+            self.path = self.path.replace("/Team:Fudan-TSI/", "")+'.html'
         return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
 
 Handler = MyRequestHandler

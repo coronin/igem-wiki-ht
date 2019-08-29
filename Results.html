@@ -8,7 +8,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 <head>
     <meta charset="UTF-8">
 
-<!-- CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-css.css&action=raw&ctype=text/css" />
 
     <!-- Font-awesome icons 4.7.0 -->
@@ -56,85 +56,14 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         /** 重置表格元素 **/
         table { border-collapse: collapse; border-spacing: 0; }
 
-        /* wangyiheng init 2018-10-16 */
-        #animation_container{
-            position:absolute;
-            margin:0 auto;/* Tian Huang edited here */
-            left:0;right:0;
-            top:0;bottom:0;
-        }
-        #FudanBody #pageContent .section p{
-            font-size: 25px;
-            line-height: 40px;
-            color: #377893;
-            margin-top: 70px;
-            text-indent: 0;
-        }
-        #FudanBody .section img{
-            margin-top: 70px;
-        }
-        #FudanBody .highlight{
-            width: 20%;
-            height: auto;
-            float: left;
-            padding: 0.5%;
-            text-align: center;
-        }
-        #FudanBody .section .highlight img{
-            width: 100%;
-            margin-top: 0;
-        }
-        #highlight2 div,#highlight1 div{
-            margin-bottom: 150px;
-            color:#377893;
-            font-weight:400;
-        }
-        @media only screen and (max-width: 991px) {
-            #FudanBody #highlight1 .highlight{
-                width: 33%;margin: 0
-            }
-            #FudanBody #highlight2 .highlight{
-                width: 50%;
-            }
-            #highlight1{width:100%;}
-            #highlight2{width:66%;margin: 20px auto 0 auto;}
-        }
-        @media only screen and (max-width: 600px) {
-            #FudanBody #pageContent .section p{
-                font-size: 18px;
-                line-height: 30px;
-                margin-top: 50px;
-            }
-            #FudanBody .highlight{
-                float: none;
-            }
-            #FudanBody #highlight1 .highlight,
-            #FudanBody #highlight1 .highlight{
-                width: 80%;margin: 0 auto;
-            }
-            #highlight1{width:100%;}
-            #highlight2{width:100%;}
-        }
-        #FudanBody #pageContent p.figureCaption{
-            color: rgba(0,0,0,0.4);
-            font-size: 16px;
-            line-height: 20px;
-            display: none;
-            text-indent: 0;
-            position: absolute;
-            bottom: -20px;
-        }
     </style>
-    <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/createjs20151126.js&action=raw&ctype=text/javascript"></script>
-    <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/mainpageDraw.js&action=raw&ctype=text/javascript"></script>
-    <!-- init 2018-10-16 -->
-    <title>2018 iGEM Team:Fudan</title>
+    <title>2019 Team:Fudan -Results</title>
 </head>
 
-<body onload="init();">
+<body>
 <!-- Fudan div at igem.org -->
 <div id="FudanWrapper" class="white">
-    <div id="FudanBody" class="white">
+    <div id="FudanBody" class="white orangeBg">
         <header>
             <!-- empty bar -->
             <div id="emptyBar" style="position:relative;width: 100%;"></div>
@@ -145,71 +74,86 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         </header>
 
         <div id="pageContent" style="">
-            <main style="margin: 0">
-                <div style="position: relative;top:0;width: 100%;">
-                    <!-- 5/58/T Fudan MainPageGIF_Half.gif , 0/06/T Fudan MainPageGIF.gif , 0/07/T Fudan mainpage2.gif -->
 
-                    <div id="animation_container" style="position:relative;background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
-                        <canvas id="canvas" width="1920" height="1080" style="position: relative;/* Tian Huang edited here */ display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-                        <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: relative;/* Tian Huang edited here */ left: 0px; top: 0px; display: block;"></div>
+
+            <div id="contentBanner" class="figureBanner orangeBg">
+                <div class="row"><!-- below for smaller screen, duplicate h1 and span -->
+                    <div class="col s12 hide-on-med-and-up">
+                        <h1>Results</h1>
                     </div>
+                    <div class="col s12 hide-on-med-and-up">
+                        <span>tba tba</span>
+                    </div>
+                </div><!-- above for smaller screen, duplicate h1 and span -->
+                <div id="figureBannerTitle" class="hide-on-small-only">
+                    <h1>Results</h1>
+                    <p><span>tba tba</span></p>
                 </div>
-                <div class="container">
-                    <div class="section container">
-<div class="container">
-                        <p>To survive, cells must identify and integrate various signals from the environment. Cells utilize their transmembrane receptors to recognize extracellular signals to execute a myriad of tasks ranging from cell-mediated immunity to tissue formation and regeneration.
-                        </p>
-                        <div style="position: relative"><img class="figure" style="width: 100%" src="https://2018.igem.org/wiki/images/6/6e/T--Fudan--111111.png" alt="frontpage image 1" /><p class="figureCaption">A cell using its specific transmembrane receptor, recognizes an external signal, integrates and output corresponding cellular decision.</p></div>
-                        <p>
-                            Therefore, in the field of synthetic biology, it would be especially impactful if cells could be programmed to recognize external environmental signals, generate contact-dependent signaling, and perform reliable logical computations.
-                        </p>
-                        <div style="position: relative"><img class="figure" style="width: 100%" src="https://2018.igem.org/wiki/images/7/7a/T--Fudan--2222222.png" alt="frontpage image 2" /><p class="figureCaption">Cells, armed with our transmembrane logic gates, can perform various tasks. We have made them even smarter.</p></div>
-                        <p>
-                            Our project ENABLE (ENgineered, Across membrane, Binary Logic in Eukaryotes) offers the first toolbox for mammalian cells to generate contact-dependent signaling from the external environment and Boolean output decisions. We believe this is a foundational advance for synthetic biology, and enables a wide range of opportunities.
-                        </p>
-                        <img style="width: 100%" src="https://2018.igem.org/wiki/images/7/71/T--Fudan--333333.png" alt="frontpage image 3" />
-</div>
-                    </div>
-                    <div class="section container">
-                        <p style="text-align:center">We gave the public presentation on #iGEM2018 between 9:00 and 9:25,
-                          Oct 25<sup>th</sup> 2018,
-                          Room 311, Hynes Convention Center in Boston, USA. This video was originally recorded by
-                          <a href="https://v.douyu.com/show/GnzXvb8263zM462l" target=_blank>douyu</a>,
-                          and later uploaded to <a href="https://youtu.be/hWuCCksK9d4" target=_blank>youtube</a>.</p>
-<div style="width:560px;margin:0 auto;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hWuCCksK9d4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<!-- iframe src="https://v.douyu.com/video/share/index?vid=GnzXvb8263zM462l" frameborder="0" allowfullscreen="true" width="480" height="350"></iframe -->
-</div>
-                    </div>
-                    <div class="section" style="margin-bottom: 150px">
-                        <h2 style="font-weight: 900; margin-bottom: 30px;color:#377893;">Highlights</h2>
-                        <div id="highlight1">
-                            <div class="highlight">
-                                <a href="/Team:Fudan-TSI/Demonstrate"><img src="http://2018.igem.org/wiki/images/6/65/T--Fudan--highlights_demonstration.png" alt="frontpage demonstration" /></a>
-                                Demonstration
-                            </div>
-                            <div class="highlight">
-                                <a href="/Team:Fudan-TSI/Public_Engagement"><img src="http://2018.igem.org/wiki/images/0/02/T--Fudan--highlights_education.png" alt="frontpage education" /></a>
-                                Public&nbsp;engagement
-                            </div>
-                            <div class="highlight">
-                                <a href="/Team:Fudan-TSI/Model"><img src="http://2018.igem.org/wiki/images/b/b9/T--Fudan--highlights_model.png" alt="frontpage model" /></a>
-                                Model
-                            </div>
-                        </div>
-                        <div id="highlight2">
-                            <div class="highlight">
-                                <a href="/Team:Fudan-TSI/Human_Practices"><img src="http://2018.igem.org/wiki/images/3/3b/T--Fudan--highlights_integrated.png" alt="frontpage human practices" /></a>
-                                Human&nbsp;practices
-                            </div>
-                            <div class="highlight">
-                                <a href="/Team:Fudan-TSI/Part_Collection"><img src="http://2018.igem.org/wiki/images/e/e3/T--Fudan--highlights_parts.png" alt="frontpage parts" /></a>
-                                Parts&nbsp;collection
-                            </div>
-                        </div>
-                    </div>
+                <div class="hide-on-small-only">
+                    <img alt="2018 team Fudan title attributions" src="http://2018.igem.org/wiki/images/5/5f/T--Fudan--title_attri.jpg">
+                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
+                        <defs>
+                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
+                        </g>
+                    </svg>
+                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
+                        <defs>
+                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
+                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
+                        </g>
+                    </svg>
                 </div>
-            </main>
+            </div>
+
+            <!-- main content of the page -->
+            <div class="container">
+                <!-- side navigator of page content -->
+                <main style="margin: 0;">
+                    <div class="section container">
+                        <h2>title</h2>
+                        <p>
+                            content content
+                        </p>
+                        <h2>title</h2>
+                        <p>
+                            link <a href="/Team:Fudan-TSI/Design_Intention" target="_blank">link</a> link
+                        </p>
+                    </div>
+
+                    <div id="ReverseTranscription" class="section container">
+                        <h2>title1 Reverse Transcription</h2>
+                        <p>
+                            content content
+                        </p>
+                        <h2>title2 Reverse Transcription</h2>
+                        <p>
+                            link <a href="/Team:Fudan-TSI/Design_Intention" target="_blank">link</a> link
+                        </p>
+                    </div>
+
+                    <div id="Recombination" class="section container">
+                        <h2>title1 Recombination</h2>
+                        <p>
+                            content content
+                        </p>
+                        <h2>title2 Recombination</h2>
+                        <p>
+                            link <a href="/Team:Fudan-TSI/Design_Intention" target="_blank">link</a> link
+                        </p>
+                    </div>
+                </main>
+            </div>
 
             <!--Abstract on content page-->
             <div id="abstractContent" class="z-depth-2">
@@ -221,12 +165,15 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                 </div>
             </div>
 
-            <!-- Floating Btns
+            <!-- Floating Btns -->
             <div class="floatingBtn">
+                <a href="#!" id="abstractBtn" class="btn">
+                    <i class="fa fa-sticky-note" style="font-size: 30px;line-height: 50px"></i>
+                </a>
                 <a href="#FudanWrapper" class="btn">
                     <i class="fa fa-angle-up" style="font-size: 48px;line-height: 45px"></i>
                 </a>
-            </div> -->
+            </div>
 
             <!-- Footer with sponsors and contact methods -->
             <footer id="FudanFooter" class="page-footer grey">
@@ -326,78 +273,8 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 <!-- Materialize 1.0.0-rc.2 -->
 <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script>
 
-<!-- from Fudan-js.js (other pages use src insertion) -->
-<script>
-    //Sidenav Init
-    $(function(){
-        $('.sidenav').sidenav({
-            edge:'right',
-            inDuration: 250,
-            outDuration: 350
-        });
-    });
-
-    //Slider Init (Index Only)
-    $(function(){
-        $('.slider').slider({
-            height: 400
-        });
-    });
-
-    //Dropdown Init
-
-    //Floating Btn Init
-    $(function(){
-        $('.fixed-action-btn').floatingActionButton();
-    });
-
-    //Tabs Init
-    $(function(){
-        $('.tabs').tabs();
-    });
-
-    $(function(){
-        $('.tap-target').tapTarget();
-    });
-
-    //Collapsible Init
-    $(function(){
-        $('.collapsible').collapsible({});
-    });
-
-    //ScrollSpy Init, not the frontpage or pages without sidebar
-
-    //Init slide-out nav
-    $(function () {
-        $('#slide-out .collapsible-body').css('display','none');
-        $('#slide-out .collapsible li').removeClass('active');
-    });
-
-    //Parallax Init
-    $(function(){
-        $('.parallax').parallax();
-    });
-
-//hide the nav
-
-//show caption
-if($(window).width()>991){
-    var $figureCaption=$(".figureCaption");
-    var $figure=$(".figure");
-    $figure.eq(0).mouseover(function () {
-        $figureCaption.eq(0).fadeIn(100);
-        $figure.eq(0).mouseout(function () {
-            $figureCaption.eq(0).fadeOut(100);
-        });
-    });
-    $figure.eq(1).mouseover(function () {
-        $figureCaption.eq(1).fadeIn(100);
-        $figure.eq(1).mouseout(function () {
-            $figureCaption.eq(1).fadeOut(100);
-        });
-    });
-}
-</script>
+<!-- Javascript -->
+<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-js.js&action=raw&ctype=text/javascript"></script>
 
 </body>
 </html>
