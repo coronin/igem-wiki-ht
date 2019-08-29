@@ -8,7 +8,7 @@ import os.path
 import sys
 
 class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
-    def do_GET(self):            
+    def do_GET(self):
         if self.path == '/':
             # default routing, change index.html if needed
             self.path = '/index.html'
@@ -28,6 +28,6 @@ if len(sys.argv) > 1:
     except ValueError:
         print 'port value provided must be an integer'
 
-print "serving on port {0}".format(port)
+print "serving on port %s " % port
 server = SocketServer.TCPServer(('0.0.0.0', port), Handler)
 server.serve_forever()
