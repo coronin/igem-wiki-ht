@@ -9,13 +9,13 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
     <meta charset="UTF-8">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/Fudan-css.css" />
+    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-css.css&action=raw&ctype=text/css" />
 
     <!-- Font-awesome icons 4.7.0 -->
-    <link href="/Fudan-font-awesome.css" rel="stylesheet" />
+    <link href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" rel="stylesheet" />
 
     <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
-    <link rel="stylesheet" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.css&action=raw&ctype=text/css">
+    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&action=raw&ctype=text/css">
 
     <!-- Clear default CSS settings; CSS reset -->
     <style>
@@ -117,16 +117,16 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
             <div class="container">
                 <!-- side navigator of page content -->
                 <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
-                    <li><a href="/Basic_Part">Basic parts</a></li>
-                    <li><a href="/Composite_Part">Composite parts</a></li>
-                    <li><a href="/Optimization">Optimization</a></li>
+                    <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
+                    <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
+                    <li><a href="/Team:Fudan-TSI/Optimization">Optimization</a></li>
                     <li>Part collection</li>
                     <li class="onThisPageNav"><a href="#section1">SynNotch receptors set</a></li>
                     <li class="onThisPageNav"><a href="#section2">Transcriptional amplifiers set</a></li>
                     <li class="onThisPageNav"><a href="#section3">Amplifiers & combiners</a></li>
                     <li class="onThisPageNav"><a href="#section4">ENABLE</a></li>
-                    <li><a href="/Improve">Parts improvement</a></li>
-                    <li><a href="/Measurement">Quantification</a></li>
+                    <li><a href="/Team:Fudan-TSI/Improve">Parts improvement</a></li>
+                    <li><a href="/Team:Fudan-TSI/Measurement">Quantification</a></li>
                 </ul>
                 <main>
                     <div class="section container">
@@ -136,7 +136,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </p>
                         <p>Following our 3-layer design principle, all ENABLE components have been well characterized, including our SynNotch receptors, Amplifiers and Combiners. In the collection, we have provided 7 versions of SynNotch receptors with (1) different combinations of extracellular domains which can bind to different antigens with different affinities, (2) transmembrane domains with varying cleavage efficiency and (3) intracellular domains executing diverse transcriptional amplifications.
                         </p>
-                        <p>We have provided a set of transcriptional amplifiers including zinc finger-based, TEV protease-based and split intein-based ones, allowing others to <b>build their own genetic circuits</b>, preferably through transcription (we have tested), but not limited to (we have not tested). Besides, a set of combiners with different copies of response elements are provided, which makes it <b>easy for others to tune the activation or repression threshold</b>. This feature was experimental confirmed previously and mathematically <a href="/Model#Transcriptional_Amplifier" target="_blank">modeled</a> in our 3-layer design again this year. Our modeling process could be used by others to predict their own genetic circuits before any wet-lab experiments.
+                        <p>We have provided a set of transcriptional amplifiers including zinc finger-based, TEV protease-based and split intein-based ones, allowing others to <b>build their own genetic circuits</b>, preferably through transcription (we have tested), but not limited to (we have not tested). Besides, a set of combiners with different copies of response elements are provided, which makes it <b>easy for others to tune the activation or repression threshold</b>. This feature was experimental confirmed previously and mathematically <a href="/Team:Fudan-TSI/Model#Transcriptional_Amplifier" target="_blank">modeled</a> in our 3-layer design again this year. Our modeling process could be used by others to predict their own genetic circuits before any wet-lab experiments.
                         </p>
                         <p>
                             Each part (sometimes two combined) constitutes one of our ENABLE module, which has its unique function. Yet they consolidate together to create all the 16 transmembrane binary logic gates for mammalian cells.
@@ -218,7 +218,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <h2>Transcriptional amplifiers set</h2>
                         <p>Last year, we have constructed <a href="http://2017.igem.org/Team:Fudan/Part_Collection" target="_blank">3 zinc finger-based transcription repressors</a>. This year, we have expanded our zinc finger-based transcription factors library by adding 3 more zinc finger-based transcription activators.</p>
                         <p>
-                            Although we prefer to use eight copies of response elements (RE) for a balance between not-too-hard molecular cloning and sufficient signal-to-noise ratio, we have provided 4 promotors with different repeats of response elements, <b>allowing others to explore and tune their own transcriptional amplifiers</b>. <a href="/Model#Transcriptional_Amplifer" target="_blank">Latest modeling</a> strongly supports our experimental preference, showing that eight copies of response elements can render the best result in line with our needs.</p>
+                            Although we prefer to use eight copies of response elements (RE) for a balance between not-too-hard molecular cloning and sufficient signal-to-noise ratio, we have provided 4 promotors with different repeats of response elements, <b>allowing others to explore and tune their own transcriptional amplifiers</b>. <a href="/Team:Fudan-TSI/Model#Transcriptional_Amplifer" target="_blank">Latest modeling</a> strongly supports our experimental preference, showing that eight copies of response elements can render the best result in line with our needs.</p>
                         <div class="tableHolder">
                             <table class="striped">
                                 <tr>
@@ -311,7 +311,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     <div id="section3" class="section container scrolSpy">
                         <h2>Amplifiers and Combiners work together to execute binary computation</h2>
                         <h3>Zinc finger-based</h3>
-                        <p>For simple binary logic function, such as A gate, NOT A gate, OR gate, NOR gate, and NIMPLY gate, placing response elements upstream and downstream of the promoter is sufficient. For more details, please visit our <a href="/Results" target=”_blank”>results page</a>.
+                        <p>For simple binary logic function, such as A gate, NOT A gate, OR gate, NOR gate, and NIMPLY gate, placing response elements upstream and downstream of the promoter is sufficient. For more details, please visit our <a href="/Team:Fudan-TSI/Results" target=”_blank”>results page</a>.
                         </p>
                         <div class="tableHolder">
                             <table class="striped">
@@ -360,7 +360,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                             </table>
                         </div>
                         <h3> TEV protease-based</h3>
-                        <p>For IMPLY gate, we placed TEV protease-controlled destroyable nuclear localization sequence between zinc finger DNA binding domain (DBD) and transcription factor (TF). In the presence of intracellular TEV protease, DBD-TF would be cleaved, thus destroying its transcriptional regulation function and efficiently blocking its signal. For more details, please visit our <a href="/Results" target=”_blank”>results page</a>.</p>
+                        <p>For IMPLY gate, we placed TEV protease-controlled destroyable nuclear localization sequence between zinc finger DNA binding domain (DBD) and transcription factor (TF). In the presence of intracellular TEV protease, DBD-TF would be cleaved, thus destroying its transcriptional regulation function and efficiently blocking its signal. For more details, please visit our <a href="/Team:Fudan-TSI/Results" target=”_blank”>results page</a>.</p>
                         <div class="tableHolder">
                             <table class="striped">
                                 <tr>
@@ -386,7 +386,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                             </table>
                         </div>
                         <h3>Split intein-based</h3>
-                        <p>We built the more complex binary logic gates, such as XOR and XNOR gate, using split intein-based Amplifiers. Utilizing intein's ability to fuse the split ends of a transcription factor together, we're able to present these logic gates consistent with our 3-layer design principle. For more details, please visit our <a href="/Results" target=”_blank”>results page</a>.</p>
+                        <p>We built the more complex binary logic gates, such as XOR and XNOR gate, using split intein-based Amplifiers. Utilizing intein's ability to fuse the split ends of a transcription factor together, we're able to present these logic gates consistent with our 3-layer design principle. For more details, please visit our <a href="/Team:Fudan-TSI/Results" target=”_blank”>results page</a>.</p>
                         <div class="tableHolder">
                             <table class="striped">
                                 <tr>
@@ -617,37 +617,37 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
                         </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="http://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
                         </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size: 18px">ENABLE: making cells even smarter</h3>
+                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size: 18px">Repeated Evolution in vivo</h3>
                         </div>
                         <div id="usefulLinks" class="col m9 s12 row">
                             <div class="col s12 l6 row">
                                 <div class="col s12 m4">
                                     <span>Project</span>
                                     <ul>
-                                        <li><a href="/Description">Background</a></li>
-                                        <li><a href="/Design">Design</a></li>
-                                        <li><a href="/Protocols">Experiments</a></li>
-                                        <li><a href="/Demonstrate">Results</a></li>
-                                        <li><a href="/Judging">iGEM judging</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Description">Background</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Design">Design</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Protocols">Experiments</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Demonstrate">Results</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Judging">iGEM judging</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4 active">
-                                  <span><a href="/Parts">BioBricks</a></span>
+                                  <span><a href="/Team:Fudan-TSI/Parts">BioBricks</a></span>
                                     <ul>
-                                        <li><a href="/Basic_Part">Basic parts</a></li>
-                                        <li><a href="/Composite_Part">Composite parts</a></li>
-                                        <li><a href="/Part_Collection">Part collection</a></li>
-                                        <li><a href="/Improve">Parts improvement</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Improve">Parts improvement</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4">
                                     <span>Lab</span>
                                     <ul>
-                                        <li><a href="/Interlab">iGEM interLab</a></li>
-                                        <li><a href="/Notebook">Notebook</a></li>
-                                        <li><a href="/Protocols">Protocols</a></li>
-                                        <li><a href="/Measurement">Quantification</a></li>
-                                        <li><a href="/Safety">Safety</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Interlab">iGEM interLab</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Protocols">Protocols</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Measurement">Quantification</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -655,27 +655,27 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                 <div class="col s12 m4">
                                     <span>not-sure</span>
                                     <ul>
-                                        <li><a href="/Applied_Design">Applied design</a></li>
-                                        <li><a href="/Hardware">Hardware</a></li>
-                                        <li><a href="/Model">Model</a></li>
-                                        <li><a href="/Software">Software</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Applied_Design">Applied design</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Model">Model</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4">
                                     <span>Outreach</span>
                                     <ul>
-                                        <li><a href="/Collaborations">Collaborations</a></li>
-                                        <li><a href="/Human_Practices">Human practices</a></li>
-                                        <li><a href="/Public_Engagement">Public engagement</a></li>
-                                        <li><a href="/HP">Why we do this</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Human_Practices">Human practices</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
+                                        <li><a href="/Team:Fudan-TSI/HP">Why we do this</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4">
                                     <span>Team</span>
                                     <ul>
-                                        <li><a href="/Attributions">Attributions</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
                                         <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-                                        <li><a href="/Team">Members</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Team">Members</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -702,10 +702,10 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
 <!-- Javascript files -->
 <!-- Materialize 1.0.0-rc.2 -->
-<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.js&action=raw&ctype=text/javascript"></script>
+<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script>
 
 <!-- Javascript -->
-<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/js.js&action=raw&ctype=text/javascript"></script>
+<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-js.js&action=raw&ctype=text/javascript"></script>
 
 </body>
 </html>
