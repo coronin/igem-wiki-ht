@@ -55,80 +55,12 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
         /** 重置表格元素 **/
         table { border-collapse: collapse; border-spacing: 0; }
-
-        /* wangyiheng init 2018-10-16 */
-        #animation_container{
-            position:absolute;
-            margin:0 auto;/* Tian Huang edited here */
-            left:0;right:0;
-            top:0;bottom:0;
-        }
-        #FudanBody #pageContent .section p{
-            font-size: 25px;
-            line-height: 40px;
-            color: #377893;
-            margin-top: 70px;
-            text-indent: 0;
-        }
-        #FudanBody .section img{
-            margin-top: 70px;
-        }
-        #FudanBody .highlight{
-            width: 20%;
-            height: auto;
-            float: left;
-            padding: 0.5%;
-            text-align: center;
-        }
-        #FudanBody .section .highlight img{
-            width: 100%;
-            margin-top: 0;
-        }
-        #highlight2 div,#highlight1 div{
-            margin-bottom: 150px;
-            color:#377893;
-            font-weight:400;
-        }
-        @media only screen and (max-width: 991px) {
-            #FudanBody #highlight1 .highlight{
-                width: 33%;margin: 0
-            }
-            #FudanBody #highlight2 .highlight{
-                width: 50%;
-            }
-            #highlight1{width:100%;}
-            #highlight2{width:66%;margin: 20px auto 0 auto;}
-        }
-        @media only screen and (max-width: 600px) {
-            #FudanBody #pageContent .section p{
-                font-size: 18px;
-                line-height: 30px;
-                margin-top: 50px;
-            }
-            #FudanBody .highlight{
-                float: none;
-            }
-            #FudanBody #highlight1 .highlight,
-            #FudanBody #highlight1 .highlight{
-                width: 80%;margin: 0 auto;
-            }
-            #highlight1{width:100%;}
-            #highlight2{width:100%;}
-        }
-        #FudanBody #pageContent p.figureCaption{
-            color: rgba(0,0,0,0.4);
-            font-size: 16px;
-            line-height: 20px;
-            display: none;
-            text-indent: 0;
-            position: absolute;
-            bottom: -20px;
-        }
     </style>
-    <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/createjs20151126.js&action=raw&ctype=text/javascript"></script>
-    <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/mainpageDraw.js&action=raw&ctype=text/javascript"></script>
-    <!-- init 2018-10-16 -->
-    <title>2018 iGEM Team:Fudan</title>
+
+<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/createjs.js&action=raw&ctype=text/javascript"></script>
+<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/project.js&action=raw&ctype=text/javascript"></script><!-- project.js with project.html script block -->
+
+    <title>2019 iGEM Team:Fudan-TSI</title>
 </head>
 
 <body onload="init();">
@@ -147,12 +79,13 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         <div id="pageContent" style="">
             <main style="margin: 0">
                 <div style="position: relative;top:0;width: 100%;">
-                    <!-- 5/58/T Fudan MainPageGIF_Half.gif , 0/06/T Fudan MainPageGIF.gif , 0/07/T Fudan mainpage2.gif -->
 
-                    <div id="animation_container" style="position:relative;background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
-                        <canvas id="canvas" width="1920" height="1080" style="position: relative;/* Tian Huang edited here */ display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-                        <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: relative;/* Tian Huang edited here */ left: 0px; top: 0px; display: block;"></div>
-                    </div>
+    <div id="animation_container" style="background-color:rgba(8, 39, 58, 1.00); width:800px; height:450px; margin:0 auto;">
+        <canvas id="canvas" width="800" height="450" style="position: relative; display: block; background-color:rgba(8, 39, 58, 1.00);"></canvas>
+        <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:800px; height:450px; position: relative; left: 0px; top: 0px; display: block;">
+        </div>
+    </div><!-- Tian Huang, LC @@@@ margin:0 auto; position: relative; -->
+
                 </div>
                 <div class="container">
                     <div class="section container">
