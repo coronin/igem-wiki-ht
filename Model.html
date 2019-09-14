@@ -89,14 +89,14 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                 <li style="padding: 0"><div class="sidenavBanner">
                     <div class="background">
                     </div>
-                    <p style="width: 100%;text-align: center;font-size: 24px"><span class="white-text">Applied Design</span></p>
+                    <p style="width: 100%;text-align: center;font-size: 24px"><span class="white-text">Model</span></p>
                 </div></li>
                 <li>
                     <ul class="collapsible expandable">
                         <li>On this page</li>
                         <li class="onThisPageNav"><a href="#section1">div with id section1</a></li>
                         <li class="onThisPageNav"><a href="#section2">div with id section2</a></li>
-                        <li class="onThisPageNav"><a href="#section3">div with id section1</a></li>
+                        <li class="onThisPageNav"><a href="#section3">div with id section3</a></li>
                         <li>Team: Fudan-TSI</li>
 <li><div class="collapsible-header">Project</div>
     <div class="collapsible-body"><ul>
@@ -198,22 +198,19 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
             <!-- main content of the page -->
             <div class="container">
-                <main>
-                    <!-- side navigator of page content -->
-                    <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
+                <!-- side navigator of page content -->
+                <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
+                    <li class="onThisPageNav"><a href="#section1">div with id section1</a></li>
+                    <li class="onThisPageNav"><a href="#section2">div with id section2</a></li>
+                    <li class="onThisPageNav"><a href="#section3">div with id section3</a></li>
+                    <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
+                </ul>
 
-                        <li><a href="/Team:Fudan-TSI/Addon#ribo">Addon: ribo</a></li>
-                        <li><a href="/Team:Fudan-TSI/Addon#TALE">Addon: TALE</a></li>
-                        <li><a href="/Team:Fudan-TSI/Addon#T2">Addon: T2</a></li>
-                        <li><a href="/Team:Fudan-TSI/Model">Model</a></li>
-                        <li class="onThisPageNav"><a href="#Transcriptional_Amplifer">Transcriptional amplifer</a></li>
-                        <li class="onThisPageNav"><a href="#NotchLigandKinetics">Receptor-Ligand kinetics</a></li>
-                        <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
-                    </ul>
+                <main>
                     <div class="section container">
                         <p>Our modeling focuses on two main aspects. The first is optimizing the transcriptional modules to increase signal-to-noise ratio, and the second is forecasting clinical outputs for multiple types of mixtures of immune cells and cancer cells. We experimentally showed that an amplification step is required. We also used a stochastic process to model receptor-ligand interaction kinetics, a possibility theory to model the transcriptional amplifier, and differential equations to model signal integration. ENABLE constructs with modeled parameters have increased signal-to-noise ratio and should have larger dynamic range.</p>
                     </div>
-                    <div id="Transcriptional_Amplifer" class="section container scrolSpy">
+                    <div id="section1" class="section container scrolSpy">
                         <h2>The essence of the Amplifier for transmembrane signaling</h2>
                         <p>By modeling, we demonstrated that our 3-layer design balances adjustability and stability for transmembrane logic processing.
 </p><p>
@@ -320,7 +317,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         (1) A summary of the Receptor-Ligand kinetics described below that with the same number of receptors and proteases, due to the increased complexity with more diversed ligand-receptor interactions, the release of Notch intracellular domains significantly decreased.
         (2) There was a previous study highlighting the requirement of amplification for signaling transduction across many cells.</p>
 </div>
-                    <div id="NotchLigandKinetics" class="section container scrolSpy">
+                    <div id="section2" class="section container scrolSpy">
                         <h2>Receptor-Ligand kinetics</h2>
                         <p>
                             The Receptor-Ligand collects extracellular signals for further intercellular processing, which constitutes the most significant part for any transmembrane logic gate. To reduce the background activation of SynNotch, we put a huge <a href="/Team:Fudan-TSI/Optimization" target=_blank>experimental effect based on its protein structure</a>.
@@ -399,6 +396,19 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </p>
                         <p>A document on <a href="http://2018.igem.org/wiki/images/c/c1/T--Fudan--model-cell-colony.pdf" target="_blank">model cell colony</a>, and source code is available on <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>GitHub</a>.</p>
                     </div>
+
+                    <div class="section container" id="section3">
+                        <h2>title</h2>
+                        <p>
+                            content content
+                        </p>
+
+                        <h2>title</h2>
+                        <p>
+                            Fangfei Ye is responsible for all <a href="/Team:Fudan-TSI/Design_Intention" target="_blank">art design</a>, which includes our team logo, team flag, team uniform (Dr. Cai gave comments), team name card, brochures, our posters, as well as materials related to our human practice events.
+                        </p>
+                    </div>
+
                 </main>
             </div>
 
