@@ -480,7 +480,7 @@ list-style-type: none;
         top: 18px;
     }
 
-    @media only screen and (min-width: 992px) {
+    /*@media only screen and (min-width: 992px) {
         #FudanBody.orangeBg #nav-mobile {
             border-top: solid 13px #F78E41;
         }
@@ -489,7 +489,7 @@ list-style-type: none;
             border-top: solid 13px #60A9C2;
             margin-right: 20px;
         }
-    }
+    }*/
     #nav-mobile > li > a {
         cursor: default;
         width: 135px;
@@ -521,13 +521,13 @@ list-style-type: none;
         margin: 5px 0;
         height: 46px;
     }
-
     @media only screen and (min-width: 601px) {
         #teamLogo {
             margin: 5px 0;
             height: 65px;
         }
     }
+
     #navList {
         line-height: inherit;
     }
