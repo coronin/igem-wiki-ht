@@ -55,6 +55,69 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
         /** 重置表格元素 **/
         table { border-collapse: collapse; border-spacing: 0; }
+
+        /* LC 2019-9-15 */
+        #FudanBody #pageContent .section p{
+            font-size: 25px;
+            line-height: 40px;
+            color: #377893;
+            margin-top: 70px;
+            text-indent: 0;
+        }
+        #FudanBody .section img{
+            margin-top: 70px;
+        }
+        #FudanBody .highlight{
+            width: 20%;
+            height: auto;
+            float: left;
+            padding: 0.5%;
+            text-align: center;
+        }
+        #FudanBody .section .highlight img{
+            width: 100%;
+            margin-top: 0;
+        }
+        #highlight2 div,#highlight1 div{
+            margin-bottom: 150px;
+            color:#377893;
+            font-weight:400;
+        }
+        @media only screen and (max-width: 991px) {
+            #FudanBody #highlight1 .highlight{
+                width: 33%;margin: 0
+            }
+            #FudanBody #highlight2 .highlight{
+                width: 50%;
+            }
+            #highlight1{width:100%;}
+            #highlight2{width:66%;margin: 20px auto 0 auto;}
+        }
+        @media only screen and (max-width: 600px) {
+            #FudanBody #pageContent .section p{
+                font-size: 18px;
+                line-height: 30px;
+                margin-top: 50px;
+            }
+            #FudanBody .highlight{
+                float: none;
+            }
+            #FudanBody #highlight1 .highlight,
+            #FudanBody #highlight1 .highlight{
+                width: 80%;margin: 0 auto;
+            }
+            #highlight1{width:100%;}
+            #highlight2{width:100%;}
+        }
+        #FudanBody #pageContent p.figureCaption{
+            color: rgba(0,0,0,0.4);
+            font-size: 16px;
+            line-height: 20px;
+            display: none;
+            text-indent: 0;
+            position: absolute;
+            bottom: -20px;
+        }
     </style>
 
 <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/createjs.js&action=raw&ctype=text/javascript"></script>
@@ -103,17 +166,13 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <img style="width: 100%" src="https://2018.igem.org/wiki/images/7/71/T--Fudan--333333.png" alt="frontpage image 3" />
 </div>
                     </div>
-                    <div class="section container">
-                        <p style="text-align:center">We gave the public presentation on #iGEM2018 between 9:00 and 9:25,
-                          Oct 25<sup>th</sup> 2018,
-                          Room 311, Hynes Convention Center in Boston, USA. This video was originally recorded by
+                    <!--div class="section container">
+                        <p style="text-align:center">We gave the public presentation on #iGEM2019 between ,
+                          Nov 2<sup>nd</sup> 2019,
+                          Room 1, Hynes Convention Center in Boston, USA. This video was originally recorded by
                           <a href="https://v.douyu.com/show/GnzXvb8263zM462l" target=_blank>douyu</a>,
                           and later uploaded to <a href="https://youtu.be/hWuCCksK9d4" target=_blank>youtube</a>.</p>
-<div style="width:560px;margin:0 auto;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hWuCCksK9d4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<!-- iframe src="https://v.douyu.com/video/share/index?vid=GnzXvb8263zM462l" frameborder="0" allowfullscreen="true" width="480" height="350"></iframe -->
-</div>
-                    </div>
+                    </div-->
                     <div class="section" style="margin-bottom: 150px">
                         <h2 style="font-weight: 900; margin-bottom: 30px;color:#377893;">Highlights</h2>
                         <div id="highlight1">
@@ -171,7 +230,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
                         </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
                         </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
+                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
                         </div>
                         <div id="usefulLinks" class="col m9 s12 row">
                             <div class="col s12 l6 row">

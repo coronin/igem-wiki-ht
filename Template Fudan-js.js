@@ -261,22 +261,22 @@ var $topNav=$("#topNav");
 var footerHeight=$("#FudanFooter").height();
 var pageHeight=$("#FudanWrapper").height();
 scrollTop=$(document).scrollTop();
-if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
-    $topNav.fadeOut(200);
-}
-else {
+//if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
+//    $topNav.fadeOut(200);
+//}
+//else {
     $topNav.fadeIn(200);
-}
+//}
 $(document).on("scroll",function () {
     footerHeight=$("#FudanFooter").height();
     pageHeight=$("#FudanWrapper").height();
     scrollTop=$(document).scrollTop();
-    if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
-        $topNav.fadeOut(200);
-    }
-    else {
+    //if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
+    //    $topNav.fadeOut(200);
+    //}
+    //else {
         $topNav.fadeIn(200);
-    }
+    //}
 });
 
 
