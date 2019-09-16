@@ -4311,11 +4311,11 @@ nav .nav-wrapper {
   height: 100%;
 }
 
-@media only screen and (min-width: 993px) {
+/* 2019-9-16 ht @media only screen and (min-width: 993px) {
   nav a.sidenav-trigger {
     display: none;
   }
-}
+}*/
 
 nav .sidenav-trigger {
   float: left;
@@ -4344,7 +4344,7 @@ nav .brand-logo.center {
           transform: translateX(-50%);
 }
 
-@media only screen and (max-width: 992px) {
+/* 2019-9-16 LC @media only screen and (max-width: 992px) {
   nav .brand-logo {
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -4362,7 +4362,7 @@ nav .brand-logo.center {
     right: 0.5rem;
     left: auto;
   }
-}
+}*/
 
 nav .brand-logo.right {
   right: 0.5rem;
