@@ -34,10 +34,10 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
         /** 设置默认字体 **/
 
-        h1, h3, h3, h4, h5, h6 { font-size: 100%; }
+        /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
         address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
         code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-        small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+        /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
 
         /** 重置列表元素 **/
         ul, ol { list-style: none; }
@@ -55,7 +55,6 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
         /** 重置表格元素 **/
         table { border-collapse: collapse; border-spacing: 0; }
-
     </style>
     <title>2019 Team:Fudan-TSI Collaborations</title>
 </head>
@@ -77,7 +76,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     <ul id="nav-mobile" class="right orangeBorder">
                         <li>
                             <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
-                                <i class="fa fa-navicon" style="font-size: 24px"></i>
+                                <i class="fa fa-navicon" style="font-size:24px"></i>
                             </a>
                         </li>
                     </ul>
@@ -89,7 +88,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                 <li style="padding: 0"><div class="sidenavBanner">
                     <div class="background">
                     </div>
-                    <p style="width: 100%;text-align: center;font-size: 24px"><span class="white-text">Collaborations</span></p>
+                    <p style="width:100%;text-align:center"><span class="white-text">Collaborations</span></p>
                 </div></li>
                 <li>
                     <ul class="collapsible expandable">
@@ -322,8 +321,8 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
             <div id="abstractContent" class="z-depth-2">
                 <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
                 <div class="container">
-                    <h2 style="margin: 0;padding: 10px 0;">Project Summary</h2>
-                    <p style="margin: 0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. Here we present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase reverts RNA into cDNA, during which the target is randomly mutated by enhanced error-prone reverse transcription. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the <i>in vivo</i> evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
+                    <h2 style="margin:0;padding:10px 0;">Project Summary</h2>
+                    <p style="margin:0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. Here we present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase reverts RNA into cDNA, during which the target is randomly mutated by enhanced error-prone reverse transcription. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the <i>in vivo</i> evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
                     </p>
                 </div>
             </div>
@@ -331,10 +330,10 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
             <!-- Floating Btns -->
             <div class="floatingBtn">
                 <a href="#!" id="abstractBtn" class="btn">
-                    <i class="fa fa-sticky-note" style="font-size: 30px;line-height: 50px"></i>
+                    <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i>
                 </a>
                 <a href="#FudanWrapper" class="btn">
-                    <i class="fa fa-angle-up" style="font-size: 48px;line-height: 45px"></i>
+                    <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i>
                 </a>
             </div>
 
