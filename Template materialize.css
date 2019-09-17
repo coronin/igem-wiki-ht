@@ -2239,8 +2239,8 @@ pre {
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
 a {
-/* Fudan Edited Here */
-  /*background-color: transparent;*/
+/* 2018 ht edited
+  background-color: transparent;*/
   /* 1 */
   -webkit-text-decoration-skip: objects;
   /* 2 */
@@ -4419,7 +4419,7 @@ nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.b
 }
 
 nav ul a:hover {
-/* Fudan Edited Here */
+/* 2018 ht edited */
   background-color: #FFE600;
 }
 
@@ -4478,7 +4478,7 @@ nav .input-field label.active i {
   nav.nav-extended .nav-wrapper {
     min-height: 64px;
   }
-/* Fudan Edited Here
+/* 2018 ht edited
   nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
     height: 75px;
     line-height: 62px;
@@ -5569,7 +5569,7 @@ button.btn-floating {
   clear: both;
   color: rgba(0, 0, 0, 0.87);
   cursor: pointer;
-/* Fudan Edited Here */
+/* 2018 ht edited */
   min-height: 25px;
   line-height: 1.5rem;
   width: 100%;
@@ -5577,7 +5577,7 @@ button.btn-floating {
 }
 
 .dropdown-content li:hover, .dropdown-content li.active {
-/* Fudan Edited Here */
+/* 2018 ht edited */
   background-color: #FFE600;
 }
 
@@ -5595,7 +5595,7 @@ button.btn-floating {
   color: #26a69a;
   display: block;
   line-height: 22px;
-/* Fudan Edited Here */
+/* 2018 ht edited */
   padding: 8px 10px;
 }
 
@@ -5913,10 +5913,10 @@ body.keyboard-focused .dropdown-content li:focus {
   padding: 0 16px;
 }
 
+/* 2018 ht edited
 .sidenav .collapsible-header:hover,
 .sidenav.fixed .collapsible-header:hover {
-/* Fudan Edited Here */  
-}
+}*/
 
 .sidenav .collapsible-header i,
 .sidenav.fixed .collapsible-header i {
@@ -7576,25 +7576,26 @@ input[type=range]::-ms-thumb {
   line-height: 48px;
 }
 
+/* 2018 ht edited
 .sidenav li.active {
-/* Fudan Edited Here */
-  /*background-color: rgba(0, 0, 0, 0.05);*/
-}
+  background-color: rgba(0, 0, 0, 0.05);
+}*/
 
 .sidenav li > a {
   color: rgba(0, 0, 0, 0.87);
   display: block;
-  font-size: 14px;
   font-weight: 500;
+/* 2019 LC edited
+  font-size: 14px;
   height: 48px;
-  line-height: 48px;
+  line-height: 48px;*/
   padding: 0 32px;
 }
 
+/* 2018 ht edited
 .sidenav li > a:hover {
-/* Fudan Edited Here */
-  /*background-color: rgba(0, 0, 0, 0.05);*/
-}
+  background-color: rgba(0, 0, 0, 0.05);
+}*/
 
 .sidenav li > a.btn, .sidenav li > a.btn-large, .sidenav li > a.btn-small, .sidenav li > a.btn-large, .sidenav li > a.btn-flat, .sidenav li > a.btn-floating {
   margin: 10px 15px;
@@ -7735,11 +7736,11 @@ input[type=range]::-ms-thumb {
   }
 }
 
+/* 2018 ht edited
 .sidenav .collapsible-body > ul:not(.collapsible) > li.active,
 .sidenav.sidenav-fixed .collapsible-body > ul:not(.collapsible) > li.active {
-/* Fudan Edited Here*/  
-/*background-color: #ee6e73;*/
-}
+  background-color: #ee6e73;
+}*/
 
 .sidenav .collapsible-body > ul:not(.collapsible) > li.active a,
 .sidenav.sidenav-fixed .collapsible-body > ul:not(.collapsible) > li.active a {
