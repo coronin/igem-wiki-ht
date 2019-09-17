@@ -211,10 +211,10 @@
         /* @@@@ line-height: 35px;*/
     }
 
-    #pageContent .section div {
-        /* @@@@ font-size: 18px;*/
-        /* @@@@ line-height: 35px;*/
-    }
+    /* @@@@ #pageContent .section div {
+        font-size: 18px;
+        line-height: 35px;
+    }*/
 
     #pageContent p {
         text-align: justify;
@@ -520,12 +520,12 @@
         margin: 5px 0;
         height: 46px;
     }
-    @media only screen and (min-width: 601px) {
+    /* LC 2019-9-17 @media only screen and (min-width: 601px) {
         #teamLogo {
             margin: 5px 0;
             height: 65px;
         }
-    }
+    }*/
 
     #navList {
         line-height: inherit;
@@ -657,10 +657,10 @@
         background: #FFE600;
     }
 
-    #FudanBody #pageContent li.onThisPageNav a,
-    #FudanBody.orangeBg #pageContent li.onThisPageNav a,
-    #FudanBody .sidenav li.onThisPageNav > a,
-    #FudanBody.orangeBg .sidenav li.onThisPageNav > a {
+    #FudanBody #pageContent li.onThisPageNav>a,
+    #FudanBody.orangeBg #pageContent li.onThisPageNav>a,
+    #FudanBody .sidenav li.onThisPageNav>a,
+    #FudanBody.orangeBg .sidenav li.onThisPageNav>a {
         /* @@@@ font-size: 15px;*/
         padding: 0 10px;
         /* @@@@ line-height: 24px;*/
@@ -692,27 +692,27 @@
         color: #F78E41;
     }
 
-    #pageContentNav li.onThisPageNav > a:hover,
-    #FudanBody .sidenav li.onThisPageNav > a:hover {
+    #pageContentNav li.onThisPageNav>a:hover,
+    #FudanBody .sidenav li.onThisPageNav>a:hover {
         background-color: rgba(96, 169, 194, 0.05);
         border-left: solid #60A9C2 2px;
         transition-duration: 0ms;
     }
 
-    #FudanBody.orangeBg #pageContentNav li.onThisPageNav > a:hover,
-    #FudanBody.orangeBg .sidenav li.onThisPageNav > a:hover {
+    #FudanBody.orangeBg #pageContentNav li.onThisPageNav>a:hover,
+    #FudanBody.orangeBg .sidenav li.onThisPageNav>a:hover {
         background-color: rgba(247, 142, 65, 0.05);
         border-left: solid #F78E41 2px;
     }
 
-    #pageContentNav li.onThisPageNav > a.active,
-    #FudanBody .sidenav li.onThisPageNav > a.active {
+    #pageContentNav li.onThisPageNav>a.active,
+    #FudanBody .sidenav li.onThisPageNav>a.active {
         border-left: solid #60A9C2 4px;
         background-color: rgba(96, 169, 194, 0.05);
     }
 
-    #FudanBody.orangeBg #pageContentNav li.onThisPageNav > a.active,
-    #FudanBody.orangeBg .sidenav li.onThisPageNav > a.active {
+    #FudanBody.orangeBg #pageContentNav li.onThisPageNav>a.active,
+    #FudanBody.orangeBg .sidenav li.onThisPageNav>a.active {
         border-left: solid #F78E41 4px;
         background-color: rgba(247, 142, 65, 0.05);
     }
@@ -1033,8 +1033,11 @@
 
 }
 
-
-
+li.onThisPageNav>span,
+li.onThisPageNav>a,
+ul#pageContentNav li>a,
+div.collapsible-body ul li>a,
+div.collapsible-header>span { font-size: 1.3rem; line-height: 2.2rem; }
 
 
 @media print {

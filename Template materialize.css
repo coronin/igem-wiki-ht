@@ -4478,11 +4478,11 @@ nav .input-field label.active i {
   nav.nav-extended .nav-wrapper {
     min-height: 64px;
   }
-/* Fudan Edited Here*/
+/* Fudan Edited Here
   nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
     height: 75px;
     line-height: 62px;
-  }
+  }*/
   .navbar-fixed {
     height: 64px;
   }
