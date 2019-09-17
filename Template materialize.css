@@ -1,9 +1,9 @@
-@media screen{
 /*!
- * Materialize v1.0.0-rc.2 (http://materializecss.com)
+ * Materialize v1.0.0 (http://materializecss.com)
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+@media screen{ /* 2018 ht added */
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -6558,7 +6558,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
           transform-origin: 0 0;
 }
 
-.input-field > input[type]:-webkit-autofill:not(.browser-default) + label,
+.input-field > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
 .input-field > input[type=date]:not(.browser-default) + label,
 .input-field > input[type=time]:not(.browser-default) + label {
   -webkit-transform: translateY(-14px) scale(0.8);
@@ -9094,4 +9094,4 @@ input[type=range]::-ms-thumb {
     margin-top: 1.2rem;
   }
 }
-}
+} /* 2018 ht added, screen only */
