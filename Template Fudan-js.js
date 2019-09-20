@@ -78,7 +78,7 @@ $(function () {
   $('#slide-out .collapsible li').removeClass('active');
 
   if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-    $('.pageSidebar').css('color', 'red'); // @@@@
+    //$('.pageSidebar').css('color', 'red');
     $('.pageSidebar').css('font-size', '2rem');
     $('.pageSidebar').css('line-height', '4rem');
   } // 2019-9-20 LC
