@@ -50,11 +50,6 @@ $(function(){
 
 
 if(0) {
-// 2019-9-20 iOS
-if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-  $('.pageSidebar').addClass('iosSidebar');
-}
-
 //align sponsors img
     var $sponsors = $('.sponsors');
     var sponsor0Height = $sponsors.eq(0).height();
@@ -79,8 +74,14 @@ if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
 
 //Init slide-out nav
 $(function () {
-    $('#slide-out .collapsible-body').css('display','none');
-    $('#slide-out .collapsible li').removeClass('active');
+  $('#slide-out .collapsible-body').css('display','none');
+  $('#slide-out .collapsible li').removeClass('active');
+
+  if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+    $('.pageSidebar').css('color', 'red'); // @@@@
+    $('.pageSidebar').css('font-size', '2rem');
+    $('.pageSidebar').css('line-height', '4rem');
+  } // 2019-9-20 LC
 });
 
 //Parallax Init
