@@ -1033,12 +1033,15 @@
 
 }
 
+ul#pageContentNav li>a,
 li.onThisPageNav>span,
 li.onThisPageNav>a,
-ul#pageContentNav li>a,
-div.collapsible-body ul li>a,
-div.collapsible-header>span { font-size: 1.3rem; line-height: 2.2rem; }
-
+.pageSidebar { font-size: 1.3rem; line-height: 2.4rem; }
+@media (orientation:portrait) {
+  .iosSidebar {
+    font-size: 2rem; line-height: 4rem; 
+  }
+}
 
 @media print {
     /*****
