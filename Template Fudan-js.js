@@ -49,10 +49,11 @@ $(function(){
 
 
 
-
-
-
 if(0) {
+// 2019-9-20 iOS
+if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+  $('.pageSidebar').addClass('iosSidebar');
+}
 
 //align sponsors img
     var $sponsors = $('.sponsors');
@@ -72,8 +73,8 @@ if(0) {
             sponsorsImgAlignment();
         });
     });
-
 }
+
 
 
 //Init slide-out nav
@@ -86,7 +87,6 @@ $(function () {
 $(function(){
     $('.parallax').parallax();
 });
-
 
 
 
@@ -120,6 +120,7 @@ $(window).resize(function () {
 });
 
 
+
 $acknowledgementPhotoImg1.mouseover(function () {
     $(this).children("span").eq(0).css("display","inherit");
     $(this).children("span").eq(0).css("width",acknowledgementPhotoImgWidth1);
@@ -136,8 +137,6 @@ $acknowledgementPhotoImg2.mouseover(function () {
 
     });
 });
-
-
 
 
 
@@ -278,6 +277,7 @@ $(document).on("scroll",function () {
         $topNav.fadeIn(200);
     //}
 });
+
 
 
 if(0){

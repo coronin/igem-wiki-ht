@@ -1039,7 +1039,7 @@ li.onThisPageNav>a,
 .pageSidebar { font-size: 1.3rem; line-height: 2.4rem; }
 @media (orientation:portrait) {
   .iosSidebar {
-    font-size: 2rem; line-height: 4rem; 
+    font-size: 2rem !important; line-height: 4rem !important;
   }
 }
 
