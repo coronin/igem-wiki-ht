@@ -1039,6 +1039,13 @@ li.onThisPageNav>span,
 li.onThisPageNav>a,
 .pageSidebar { font-size: 1.3rem; line-height: 2.4rem; }
 
+ul.expandable div.active {
+    border-left: solid #60A9C2 4px;
+    background-color: rgba(96,169,194, 0.05); }
+#FudanBody.orangeBg ul.expandable div.active {
+    border-left: solid #F78E41 4px;
+    background-color: rgba(247, 142, 65, 0.05); }
+
 
 @media print {
     /*****
