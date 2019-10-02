@@ -10,7 +10,7 @@ class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
         if self.path == '/':
             # default routing, change index.html if needed
             self.path = '/index.html'
-        else:
+        elif self.path.find('.') < 0:
             # extensionless page serving
             #self.path = self.path.strip("/")+'.html'
             self.path = self.path.replace("/Team:Fudan-TSI/", "")+'.html'
