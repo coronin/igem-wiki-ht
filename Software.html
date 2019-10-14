@@ -1,620 +1,13 @@
 {{Fudan-TSI}}<script src="/jquery-1.11.3.min.js"></script>
 <html lang="en">
 <!-- LC check on 2019-10-14 -->
-<script>
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  $(document).ready(function() {
-
-    //remove the HQ_page id
-    $("#HQ_page").attr('id','');
-    
-
-    //highlight current page on the menu
-    highlight_current_page_menu();
-      
-    //accessing submenus
-    $(".menu_item").click(function(){
-      $(".submenu_control_icon", this).toggleClass("open");
-      $(this).next(".submenu").fadeToggle(400);
-    });
-    
-    //mobile menu access 
-    $(".igem_2019_team_mobile_bar").click(function(){
-      $(this).next().toggleClass("displaying_menu");
-    });
-    
-  });
-
-
-    function highlight_current_page_menu() {
-      
-      var page_url="https://2019.igem.org/";
-      page_url = page_url + wgPageName;
-      $("a[href$='"+ page_url +"']").children().addClass("current_page");
-      
-      //if the page is in a submenu, open the submenu and make the appropiate changes
-      if( $( ".current_page" ).hasClass( "submenu_item" )){
-        
-        $(".current_page").parent().parent().fadeToggle(400);
-        $(".current_page").parent().parent().prev().addClass("current_page");
-        $(".menu_item.current_page > .submenu_control_icon").toggleClass("open");
-        
-      }
-    }
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-</script>
-
-
-<style>
-/**************************************************************************************************************************************************************************************************/
-
-
-
-/**************************************************************************************************************************************************************************************************/
-/* DEFAULT WIKI SETTINGS */
-/**************************************************************************************************************************************************************************************************/
-
-
-  #home_logo, #sideMenu { display:none; }
-  #sideMenu, #top_title, .patrollink  {display:none;}
-  #content { margin-left:0px; margin-top:-7px; padding:0px; width:100%;}
-  #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
-  #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
-  
-  
-
-
-/**************************************************************************************************************************************************************************************************/
-/* MENU */
-/**************************************************************************************************************************************************************************************************/
-
-  /*wrapping for the menu*/
-  .igem_2019_team_menu { 
-    background-color:#cecece; 
-    border-left: 1px solid #635d5d; 
-    float:right; 
-    height:100vh; 
-    max-width: 270px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding:0px;
-    position:fixed; 
-    right:0%;
-    text-align:left;
-    width: 15%; 
-  }
-
-  /*controlling menu visibility*/
-  .igem_2019_team_menu.displaying_menu{
-    display:block;  
-  }
-
-  /*links in the menu*/
-  .igem_2019_team_menu  a {
-    color: #484848;
-    text-decoration:none;
-  }
-
-  /*images in the menu*/
-  .igem_2019_team_menu img {
-    width:100%;
-  }
-
-  /*level 1 menu items*/
-  .igem_2019_team_menu .menu_item {
-      background-color: #cecece;
-      border-bottom: 1px solid #635d5d;
-      clear: both;
-    color: #484848;
-      cursor: pointer;
-    float: left;
-      font-size: 120%;
-      font-weight: bold;
-      padding: 15px 0px 15px 5%;
-      width: 100%;
-  }
-
-  /*level 1 menu items without submenus*/
-  .igem_2019_team_menu .menu_item.direct_link {
-    color: #484848;
-    padding-left: 15%;
-  }
-
-  
-  /*level 1 menu items on hover*/
-  .igem_2019_team_menu .menu_item:hover {
-    background-color: #ecb656 !important;
-  }
-
-  /*icon for expanding and collapsing level 1 menut items*/
-  .igem_2019_team_menu .menu_item .submenu_control_icon {
-    color: #484848;
-    float: left;
-    width: 10%;
-  }
-
-  /* submenu icon  "-"*/
-  .igem_2019_team_menu .menu_item .submenu_control_icon::before {
-    content: "+"; 
-  }
-
-  /* submenu icon  "-"*/
-  .igem_2019_team_menu .menu_item .submenu_control_icon.open::before {
-    content: "-"; 
-  }
-
-  
-  /*level 2 menu (submenu) wrapper*/
-  .igem_2019_team_menu .submenu{
-    background-color: #ececec;
-    clear:both;
-    display:none;
-    float: left;      
-    width:100%;
-  }
-
-  /*level 2 menu (submenu) item*/
-  .igem_2019_team_menu .submenu .submenu_item {
-    border-bottom: 1px solid #cecece;
-      color: #635d5d;
-      height: 30px;
-      float: left;
-      font-size: 110%;
-    font-weight: bold;
-      padding: 12px 0px 0px 15%;
-      width: 100%;
-  }
-
-  /*level 2 menu (submenu) items on hover*/
-  .igem_2019_team_menu .submenu .submenu_item:hover {
-    background-color: #ecb656 !important;
-  }
-
-  /*color for highlighting current page on the wiki*/
-  .igem_2019_team_menu .submenu .submenu_item.current_page,
-  .igem_2019_team_menu .menu_item.current_page, 
-  .igem_2019_team_menu .menu_item.direct_link.current_page {  
-    background-color:#a2d3d0;
-  }
-
-
-/*mobile menu bar styling*/
-/**************************************************************************************************************************************************************************************************/
-
-  /*mobile bar that controls the menu*/
-  .igem_2019_team_mobile_bar {
-    background-color:#ececec; 
-    border-bottom: 1px solid #cecece;
-    cursor:pointer;
-    display:none; 
-    float:left;
-    margin-top: 0;
-    padding: 5px 0;
-    position:fixed;
-    width:100%; 
-  }
-  
-  /*mobile logo*/
-  .igem_logo_mobile {
-    float:left; 
-    padding-left: 5%;
-    width: 30%; 
-  }
-
-  /*image within the mobile logo*/
-  .igem_logo_mobile img {
-    width:70px;
-  }
-  
-  /*mobile expand collapse button*/
-  .igem_menu_control_mobile {
-    float:right; 
-    padding-right:5%; 
-    padding-top:5px;
-    text-align:right; 
-    width: 30%; 
-  }
-
-  /*image for mobile expand collapse button*/
-  .igem_menu_control_mobile img {
-    width:25px;
-  }
-
-
-  /*add extra padding to the menu to improve mobile scrolling*/
-  .menu_padding{
-    float:left;
-    height:100px;
-  }
-
-
-/**************************************************************************************************************************************************************************************************/
-/* CONTENT OF THE PAGE */
-/**************************************************************************************************************************************************************************************************/
-
-  /* general wrapper for the content */
-  .igem_2019_team_content {
-    background-color:white; 
-    display:block;
-    width: 87%;
-  }
-
-  /* subwrapper to center content */
-  .igem_2019_team_content .igem_2019_team_column_wrapper {
-    margin:auto;
-    max-width: 1400px;
-    width:90%;
-  }
-
-
-
-/*general styling*/
-/**************************************************************************************************************************************************************************************************/
-
-  /*size for title h tags*/
-  .igem_2019_team_content .igem_2019_team_column_wrapper h1 { font-size: 210%;}
-  .igem_2019_team_content .igem_2019_team_column_wrapper h2 { font-size: 190%;}
-  .igem_2019_team_content .igem_2019_team_column_wrapper h3 { font-size: 170%;}
-  .igem_2019_team_content .igem_2019_team_column_wrapper h4 { font-size: 150%;}
-  .igem_2019_team_content .igem_2019_team_column_wrapper h5 { font-size: 140%;}
-  .igem_2019_team_content .igem_2019_team_column_wrapper h6 { font-size: 130%;}
-
-
-  /*titles h1, h2*/
-  .igem_2019_team_content .igem_2019_team_column_wrapper h1, .igem_2019_team_content .igem_2019_team_column_wrapper h2 {
-    border-bottom:0px; 
-    color: white;
-    font-family: "Arial Black", Gadget, sans-serif;
-    padding: 10px 0px;
-  }
-
-  /*titles h3, h3, h5, h6 */
-  .igem_2019_team_content .igem_2019_team_column_wrapper h3, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper h4, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper h5, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper h6 { 
-    border-bottom:0px; 
-    color: white;  
-    font-family: "Arial Black", Gadget, sans-serif;
-    padding: 5px 0px;
-  }
-
-  /* text p tag*/
-  .igem_2019_team_content .igem_2019_team_column_wrapper p { 
-    font-size: 130%;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 5px 0px;
-    text-align: left;
-    color: white;
-  }
-
-  /* Links a tag*/
-  .igem_2019_team_content .igem_2019_team_column_wrapper a {
-    color: #00a19b;
-    font-weight: bold; 
-    text-decoration: underline;
-    text-decoration-color:#00a19b;
-    transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease; 
-    -ms-transition: all 0.4s ease; 
-    -o-transition: all 0.4s ease; 
-  }
-
-  /* hover for the links */
-  .igem_2019_team_content .igem_2019_team_column_wrapper a:hover { 
-    color: #085156;
-    text-decoration:none;
-  }
-
-
-  /* Table tag*/
-  .igem_2019_team_content .igem_2019_team_column_wrapper table { 
-    border: 1px solid #635d5d; 
-    border-collapse: collapse; 
-    font-size: 130%;
-    width: 100%; 
-  }
-
-  /* table cells */
-  .igem_2019_team_content .igem_2019_team_column_wrapper td { 
-    border: 1px solid #cecece; 
-    border-collapse: collapse; 
-    font-size: 105%;
-    padding: 10px;
-    vertical-align: text-top; 
-  }
-
-  /* table headers */
-  .igem_2019_team_content .igem_2019_team_column_wrapper th { 
-    background-color:#cecece; 
-    border: 1px solid #635d5d; 
-    border-collapse: collapse; 
-    font-size: 110%;
-    padding: 10px; 
-    vertical-align: text-top; 
-  }
-
-
-
-  /* non numbered lists */
-  .igem_2019_team_content .igem_2019_team_column_wrapper ul, .igem_2019_team_content .igem_2019_team_column_wrapper ol {
-    font-size: 130%;
-    font-family: Arial, Helvetica, sans-serif;
-    padding:0px 20px;
-  }
-
-
-  /*font sizing within list nesting*/
-  .igem_2019_team_content .igem_2019_team_column_wrapper ul ul li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ul ul li, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper ul ol li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ul ol li, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper ol ol li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ol ul li, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper ol ul li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ol ol li, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper ol ul ul li, .igem_2019_team_content .igem_2019_team_column_wrapper ol ol ul li, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper ol ol ol li, .igem_2019_team_content .igem_2019_team_column_wrapper ol ul ol li{ font-size: 76%; }
-
-
-
-/*layout classes*/
-/**************************************************************************************************************************************************************************************************/
-
-  /*main layout class */
-  .igem_2019_team_content .igem_2019_team_column_wrapper .column  { 
-    float:left;
-    margin: 1% 2%;
-    padding: 0px;
-  }
-
-  /* 100% */
-  .igem_2019_team_content .igem_2019_team_column_wrapper .column.full_size { width:96%; }
-
-  /* 66% */
-  .igem_2019_team_content .igem_2019_team_column_wrapper .column.two_thirds_size { width: 62.6%; }
-
-  /* 33% */
-  .igem_2019_team_content .igem_2019_team_column_wrapper .column.third_size { width: 29.3%; }
-
-
-
-
-  /*all images*/
-  .igem_2019_team_content .igem_2019_team_column_wrapper .column.full_size img, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper .column.two_thirds_size img,
-  .igem_2019_team_content .igem_2019_team_column_wrapper .column.third_size img {
-    margin-bottom: 15px;
-    width: 100%; 
-  }
-
-
-  /* page break */
-  .igem_2019_team_content .igem_2019_team_column_wrapper .clear {
-    clear:both;
-  }
-  /*add extra space to page break with clear class*/
-  .igem_2019_team_content .igem_2019_team_column_wrapper .clear.extra_space {
-    height: 30px;
-  }
-
-  /* horizontal line to divide the page*/
-  .igem_2019_team_content .igem_2019_team_column_wrapper .line_divider {
-      border-top: 1px solid #cecece;
-      margin: auto;
-      width: 98%;
-  }
-
-
-
-  
-/*support classes*/
-/**************************************************************************************************************************************************************************************************/
-
-
-  /*Button  */
-  /************************************************/
-  .igem_2019_team_content .igem_2019_team_column_wrapper .button_link {
-    font-size: 130%;
-    margin: 30px auto;
-    text-align: center;
-  }
-
-  .igem_2019_team_content .igem_2019_team_column_wrapper .button_link a  {
-    background-color: #00a19bad !important;
-    color: #000 !important;
-    font-weight: bold;
-    margin: auto;
-    text-decoration: none !important;
-    padding: 10px 15px !important;
-  }
-
-  .igem_2019_team_content .igem_2019_team_column_wrapper .button_link a:hover {
-    background-color: #ffb819 !important;   
-  }
-
-  
-
-  /*highlight */
-  /************************************************/
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight { 
-    padding: 15px 20px;
-  }
-
-
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight p, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h1, 
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h2,
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h3,
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h4,
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h5,
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h6 {
-    padding: 5px 15px;
-  }
-
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_background {
-    background-color: #ececec; 
-  }
-
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_A_top {
-      border-top: 4px solid #00a19bad;
-  }
-
-
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_A_full {
-      border: 4px solid #00a19bad;
-  }
-
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_B_top {
-      border-top: 4px solid #ffb819
-  }
-
-
-  .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_B_full {
-      border: 4px solid #ffb819;
-  }
-
-
-
-
-/*mobile*/
-/**************************************************************************************************************************************************************************************************/
-
-
-  /* 1800px  */
-  /************************************************/
-  @media only screen and (max-width: 1800px) {
-    .igem_2019_team_content { width: 85%;}
-    .igem_2019_team_menu {display:block;}
-    
-}
-
-  /* 1400px  */
-  /************************************************/
-  @media only screen and (max-width: 1400px) {
-    .igem_2019_team_menu .menu_item { font-size:100%;}
-    .igem_2019_team_menu .submenu .submenu_item { font-size:90%;}
-    .igem_2019_team_menu {display:block;}
-  }
-
-
-  /* 1100px  */
-  /************************************************/
-  @media only screen and (max-width: 1100px) {
-    .igem_2019_team_content {width:100%; margin-left:0px;}
-    
-    .igem_2019_team_menu {display:none;float:right;margin-top:47px;max-width:100%;position:fixed;width:25%;}
-    
-    .igem_2019_team_mobile_bar {display:block;}
-    
-    .igem_2019_team_content .igem_2019_team_column_wrapper .column.full_size, .igem_2019_team_content .igem_2019_team_column_wrapper .column.two_thirds_size,.igem_2019_team_content .igem_2019_team_column_wrapper .column.third_size {width:96%; }
-
-  }
-
-  /* 850px  */
-  /************************************************/
-    @media only screen and (max-width: 850px) {
-    .igem_2019_team_menu {width:40%;}
-  }
-
-  /*500px  */
-  /************************************************/
-  @media only screen and (max-width: 500px) {
-    .igem_2019_team_menu {min-width:100%;width:100%;}
-  }
-
-
-/**************************************************************************************************************************************************************************************************/
-
-
-
-
-
-</style>
-
-
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!--- THIS IS WHERE THE HTML BEGINS --->
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
+<!-- jQuery load by HQ automatically -->
 <head> 
-
   <!-- This tells the browser that your page is responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  
-  <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/jQuery&amp;action=raw&amp;ctype=text/javascript"></script>
-    
-  
-  
-</head>
-
-<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
-
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!--- Menu --->
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-  
-
-    <style>
-  
-        *{margin: 0;padding: 0;list-style: none;}
-      /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
-
-      /** 清除内外边距 **/
-      body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-      dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-      pre, /* text formatting elements 文本格式元素 */
-      form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-      th, td /* table elements 表格元素 */ {
-        margin: 0;
-        padding: 0;
-      }
-
-      /** 设置默认字体 **/
-
-      /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
-      address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-      code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-      /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-
-      /** 重置列表元素 **/
-      ul, ol { list-style: none; }
-
-      /** 重置文本格式元素 **/
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-
-
-      /** 重置表单元素 **/
-      legend { color: #000; } /* for ie6 */
-      fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-      button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-      /* 注：optgroup 无法扶正 */
-
-      /** 重置表格元素 **/
-      table { border-collapse: collapse; border-spacing: 0; }
-    
-    </style>
-
-
-
-
-<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    Content begins    --------------------------------------------------------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-        
-            
-          
-            
-            
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-            
-            
-  <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&amp;action=raw&amp;ctype=text/css">
-  
+  <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
+  <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/bootstrap431.css&action=raw&ctype=text/css" />
   <style>
-    
     body{
       margin:0;
       padding:0;
@@ -689,7 +82,6 @@
     .teamname{
       height:28px;
     }
-
     #navBar{
       float:right;
       position:relative;
@@ -766,23 +158,13 @@
       text-decoration:none;
       color:white;
     }
-
-  </style>
-
-  
-
-  
-  <style>
-    
     #pageContent{
       margin:100px 0 0 0;
       text-align:center;
     }
-    
     .row{
       clear:both!important;
     }
-
     .title1{
       font-size:2.3rem;
       text-align:center;
@@ -832,8 +214,6 @@
       position:relative !important;
       float:right !important;
     }
-
-    
     .paraUl{
       list-style-type:decimal !important;
       list-style-position:outside;
@@ -843,18 +223,10 @@
     .paraUl li{
       padding-right:4% ;
     }
-    
-    
     #containerWithLeftNav{
       display:block;
       margin-left:25%;
     }
-
-
-  </style>
-  
-  <style>
-    
     @media only screen and (max-width:1200px){
       #mobileBar{
         margin-left:4%;
@@ -864,10 +236,7 @@
         margin-top:3.5%;
       }
     }
-    
-    
     @media only screen and (max-width:1100px){
-      
       #navUl{
         display:block;
         float:right;
@@ -877,16 +246,12 @@
         background-color:rgba(0,0,0,0);
         padding:0;
       }
-      
       #mobileNav{
         display:block;
       }
-      
       #navImg{
         display:none;
       }
-      
-      
       #navBar{
         margin:0 1% 0 0;
         padding-right:2%;
@@ -894,7 +259,6 @@
         position:relative;
         display:none;
       }
-      
       #mobileNav img{
         display:inline-block;
         margin:5px 0;
@@ -903,7 +267,6 @@
       #mobileControl{
         margin-top:8px;
       }
-
       .logo{
         height:45px;
         margin-top:7px;
@@ -947,11 +310,10 @@
         top:0;
         transform:translateY(1%);
         border-radius:0 0 0 10px;
-      } 
+      }
       .open{
         display:block;
       }
-      
       .title2{
         font-size:1.8rem;
         line-height:140%;
@@ -962,20 +324,14 @@
       .pic2{
         width:120%;
       }
-      
       .highlightIcon{
         margin:20% auto 10% auto;
       }
       .highlightTitle{
         margin-bottom:15%;
       }
-
-      
     }
-    
-    
     @media only screen and (max-width:992px){
-      
       #navUl{
         display:block;
         float:right;
@@ -983,19 +339,15 @@
         top:80px;
         right:0;
       }
-      
       #mobileNav{
         display:block;
       }
-      
       #navImg{
         display:none;
       }
-      
       #navTeamName{
         display:none;
       }
-      
       #navBar{
         margin:0 1% 0 0 ;
         margin-right:2%;
@@ -1044,17 +396,12 @@
       .open{
         display:block;
       }
-      
-
-      
       #animation_container{
         display:none;
       }
       #teamLogo{
         display:block;
       }
-
-      
       .title2{
         font-size:1.5rem;
       }
@@ -1064,11 +411,7 @@
       .pic2{
         width:100%;
       }
-
-      
     }
-    
-    
     @media only screen and (max-width:768px){
       .col-md-4{
         clear:both;
@@ -1092,21 +435,10 @@
       #sponser img {
         width:60%;
       }
-      
       #containerWithLeftNav{
         margin-left:auto;
       }
-      
     }
-    
-  </style>
-
-
-  
-  
-
-
-  <style>
     #footContainer{
       width:90%;
     }
@@ -1119,7 +451,6 @@
       color: #cacaca;
       padding-left: 1rem;
     }
-
     #FudanFooter #usefulLinks ul {
       font-size: 13px;
       line-height: 14px;
@@ -1129,73 +460,110 @@
       padding-top: 5px;
       margin:0;
     }
-
     #FudanFooter #usefulLinks div {
       color: #cacaca;
     }
-
     #FudanFooter #usefulLinks div:hover {
       color: white;
     }
-
     #FudanFooter #usefulLinks a {
       color: inherit;
     }
-
     #FudanFooter #usefulLinks a:hover {
       text-decoration: underline;
     }
-
     #FudanFooter #usefulLinks div.active,
     #FudanFooter #usefulLinks div.active a {
       color: white;
     }
-
     #FudanFooter #usefulLinks div.active ul {
       border-top: solid white 2px;
     }
-
     #FudanFooter #usefulLinks li {
       padding: 3px 0 6px 3px;
       list-style:none;
     }
-
     #usefulLinks span {
       font-size: 20px;
     }
-    
-
-    #FudanFooter div.footer-copyright {
+    #footer-copyright {
       font-size: 13px;
       line-height: 15px;
+      overflow: hidden;
+      min-height: 50px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      padding: 10px 0px;
+      color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(51, 51, 51, 0.08);
     }
     .footerUl{
       margin:2% 4%;
     }
   </style>
-
   <script>
-    
+    ////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////
+    $(document).ready(function() {
+      //remove the HQ_page id
+      $("#HQ_page").attr('id','');
+      //highlight current page on the menu
+      highlight_current_page_menu();
+      //accessing submenus
+      $(".menu_item").click(function(){
+        $(".submenu_control_icon", this).toggleClass("open");
+        $(this).next(".submenu").fadeToggle(400);
+      }
+                           );
+      //mobile menu access 
+      $(".igem_2019_team_mobile_bar").click(function(){
+        $(this).next().toggleClass("displaying_menu");
+      }
+                                           );
+    }
+                     );
+    function highlight_current_page_menu() {
+      var page_url="https://2019.igem.org/";
+      page_url = page_url + wgPageName;
+      $("a[href$='"+ page_url +"']").children().addClass("current_page");
+      //if the page is in a submenu, open the submenu and make the appropiate changes
+      if( $( ".current_page" ).hasClass( "submenu_item" )){
+        $(".current_page").parent().parent().fadeToggle(400);
+        $(".current_page").parent().parent().prev().addClass("current_page");
+        $(".menu_item.current_page > .submenu_control_icon").toggleClass("open");
+      }
+    }
+    ////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////
+
     $(document).ready(function(){
-      
-      
       var winWidth=$(window).width();
-      
       if (winWidth>1100){
         $(".navA").mouseenter(function(){
           $(this).parent().find(".ul2").stop().fadeIn(400);
-        });
+        }
+                             );
         $(".navLi").mouseleave(function(){
           $(this).find(".ul2").stop().fadeOut(400);
-        });
-        
-        
+        }
+                              );
       }
       else{
         $(".navA:not(.noSubmenu)").removeAttr("href");
         $("#mobileNav").click(function(){
           $("#navBar").toggle();
-        });
+        }
+                             );
         $(document).click(function(event){
           var m = $("#mobileNav,#navBar");
           if (!m.is(event.target)){
@@ -1204,9 +572,9 @@
               $(".open").parent().find(".navA").css("color","white");
               $(".open").removeClass("open");
             }
-
-          }         
-        });
+          }
+        }
+                         );
         $(".navLi").click(function(){
           if ($(this).find(".n2").hasClass("open")){
             $(".open").parent().find(".navA").css("color","white");
@@ -1218,154 +586,219 @@
             $(this).find(".n2").addClass("open");
             $(this).find(".navA").css("color","#7dded4");
           }
-        });
+        }
+                         );
       }
-      
-      
-      
-      
-      
-      
-    });
-  
-    
+    }
+                     );
   </script>
-            
-  
-  
+</head>
+<body>
   <div id="global_wrapper">
     <div id="mobileNav">
-      
-      <div id="mobileLogo"><img src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif" class="logo"></div>
-      <div id="mobileControl"><img src="https://2019.igem.org/wiki/images/thumb/a/ae/T--Fudan-TSI--mobileCtrl.gif/683px-T--Fudan-TSI--mobileCtrl.gif" id="mobileCtrl"></div>
-      
+      <div id="mobileLogo">
+        <img src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif" class="logo">
+      </div>
+      <div id="mobileControl">
+        <img src="https://2019.igem.org/wiki/images/thumb/a/ae/T--Fudan-TSI--mobileCtrl.gif/683px-T--Fudan-TSI--mobileCtrl.gif" id="mobileCtrl">
+      </div>
     </div>
-    
     <ul id="navUl">
-      
-        <li id="navImg">
-          <img src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif" class="logo">
-          
-        </li>
-      
-      
+      <li id="navImg">
+        <img src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif" class="logo">
+      </li>
       <ul id="navBar">
-        
-        <li class="navLi"><a class="navA noSubmenu" href="https://2019.igem.org/Team:Fudan-TSI">Home</a></li>
-        
         <li class="navLi">
-          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Description">Project</a>
+          <a class="navA noSubmenu" href="https://2019.igem.org/Team:Fudan-TSI">Home
+          </a>
+        </li>
+        <li class="navLi">
+          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Description">Project
+          </a>
           <div class="n2">
             <ul class="ul2">
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Description">Description</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Design">Design</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Design" style="white-space:nowrap">Applied Design</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Experiment">Experiment</a></li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Description">Description
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Design">Design
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Design" style="white-space:nowrap">Applied Design
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Experiment">Experiment
+                </a>
+              </li>
             </ul>
           </div>
         </li>
-        
         <li class="navLi">
-          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Results">Results</a>
+          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Results">Results
+          </a>
           <div class="n2">
             <ul class="ul2">
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Results/Reverse_Transcription">Reverse Transcription</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Results/Recombination">Recombination</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Measurement">Measurement</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Notebook">Notebook</a></li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Results/Reverse_Transcription">Reverse Transcription
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Results/Recombination">Recombination
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Demonstrate">Demonstration
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Measurement">Measurement
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Notebook">Notebook
+                </a>
+              </li>
             </ul>
           </div>
         </li>
-        
         <li class="navLi">
-          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Model_Software">Model</a>
+          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Model_Software">Model
+          </a>
           <div class="n2">
             <ul class="ul2">
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Model">Modeling</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Software">Software</a></li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Model">Modeling
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Software">Software
+                </a>
+              </li>
             </ul>
           </div>
         </li>
-        
         <li class="navLi">
-          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Parts">Parts</a>
+          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Parts">Parts
+          </a>
           <div class="n2">
             <ul class="ul2">
-              <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Basic_Part">Basic Parts</a></li>
-              <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Composite_Part">Composite Parts</a></li>
-              <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Improve">Improved Parts</a></li>
-              <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Part_Collection">Part Collection</a></li>
+              <li class="li2">
+                <a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Basic_Part">Basic Parts
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Composite_Part">Composite Parts
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Improve">Improved Parts
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Part_Collection">Part Collection
+                </a>
+              </li>
             </ul>
           </div>
         </li>
-        
         <li class="navLi">
-          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Human_Practices">Human Practices</a>
+          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Human_Practices">Human Practices
+          </a>
           <div class="n2">
             <ul class="ul2">
-              <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Public_Engagement">Education &amp; <br />Public Engagement</a></li>
-              <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Integrated_Human_Practice">Integrated <br />Human Practice</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Collaborations">Collaboration</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Safety">Safety</a></li>
+              <li class="li2">
+                <a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Public_Engagement">Education &amp; 
+                  <br />Public Engagement
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Integrated_Human_Practice">Integrated 
+                  <br />Human Practice
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Collaborations">Collaboration
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Safety">Safety
+                </a>
+              </li>
             </ul>
           </div>
         </li>
-        
         <li class="navLi">
-          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Team">Team</a>
+          <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Team">Team
+          </a>
           <div class="n2">
             <ul class="ul2">
-              <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Team">Team Members</a></li>
-              <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Team/Attribution">Attribution</a></li>
+              <li class="li2">
+                <a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Team">Team Members
+                </a>
+              </li>
+              <li class="li2">
+                <a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Team/Attribution">Attribution
+                </a>
+              </li>
             </ul>
           </div>
         </li>
-        
-        <li class="navLi"><a class="navA noSubmenu" href="https://2019.igem.org/Team:Fudan-TSI/Awards">Awards</a></li>
-        
+        <li class="navLi">
+          <a class="navA noSubmenu" href="https://2019.igem.org/Team:Fudan-TSI/Awards">Awards
+          </a>
+        </li>
       </ul>
-      
-      
-      </ul>
-
+    </ul>
     <!----------------------------------------------------------------------------------------------------------------------------------------->
     <!---- Cover ---->
     <!----------------------------------------------------------------------------------------------------------------------------------------->
-    
     <div id="pageCover">
-      
-      <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/bkg&amp;action=raw&amp;ctype=text/javascript"></script>
-      <script>
-      $(document).ready(function($){
-        var $root = $('html, body');
-        $('a[href^="#"]').click(function() {
-          var href = $.attr(this, 'href');
-          $root.animate({
-            scrollTop: $(href).offset().top
-          }, 1000, function () {
-            window.location.hash = href;
-          }); 
-          return false;
-        });
-      })
+      <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/bkg&amp;action=raw&amp;ctype=text/javascript">
       </script>
-      
+      <script>
+        $(document).ready(function($){
+          var $root = $('html, body');
+          $('a[href^="#"]').click(function() {
+            var href = $.attr(this, 'href');
+            $root.animate({
+              scrollTop: $(href).offset().top
+            }
+                          , 1000, function () {
+              window.location.hash = href;
+            }
+                         );
+            return false;
+          }
+                                 );
+        }
+                         )
+      </script>
       <svg id="demo" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" style="z-index: -100;">
         <defs>
-        <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
-          <stop id="stop1a" offset="0%" stop-color="#12a3b4"></stop>
-          <stop id="stop1b" offset="100%" stop-color="#ff509e"></stop>
-        </linearGradient>
-        <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
-          <stop id="stop2a" offset="0%" stop-color="#e3bc13"></stop>
-          <stop id="stop2b" offset="100%" stop-color="#00a78f"></stop>
-        </linearGradient>
+          <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
+            <stop id="stop1a" offset="0%" stop-color="#12a3b4">
+            </stop>
+            <stop id="stop1b" offset="100%" stop-color="#ff509e">
+            </stop>
+          </linearGradient>
+          <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
+            <stop id="stop2a" offset="0%" stop-color="#e3bc13">
+            </stop>
+            <stop id="stop2b" offset="100%" stop-color="#00a78f">
+            </stop>
+          </linearGradient>
         </defs>
-        <rect id="rect1" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad1)"></rect>
-        <rect id="rect2" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad2)"></rect>
+        <rect id="rect1" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad1)">
+        </rect>
+        <rect id="rect2" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad2)">
+        </rect>
       </svg>
-      <div id="demoCover"><img id="coverPic" src="https://2019.igem.org/wiki/images/6/6f/T--Fudan-TSI--coverSoftware.gif"></div>
+      <div id="demoCover">
+        <img id="coverPic" src="https://2019.igem.org/wiki/images/6/6f/T--Fudan-TSI--coverSoftware.gif">
+      </div>
     </div>
     <style>
       #pageCover{
@@ -1403,7 +836,6 @@
         stroke: none;
         fill: white;
       }
-      
       @media only screen and (max-width:1100px){
         #pageCover{
           padding-top:55px;
@@ -1450,22 +882,23 @@
         }
       }
     </style>
-        <script>
+    <script>
       //////////////////////////////
       // Demo Functions
       //////////////////////////////
       function bkgFunction(showStats) {
         // stats
         if (showStats) {
-        var stats = new Stats();
-        stats.domElement.style.position = 'absolute';
-        stats.domElement.style.left = '0';
-        stats.domElement.style.top = '0';
-        document.body.appendChild(stats.domElement);
-        requestAnimationFrame(function updateStats(){
-          stats.update();
-          requestAnimationFrame(updateStats);
-        });
+          var stats = new Stats();
+          stats.domElement.style.position = 'absolute';
+          stats.domElement.style.left = '0';
+          stats.domElement.style.top = '0';
+          document.body.appendChild(stats.domElement);
+          requestAnimationFrame(function updateStats(){
+            stats.update();
+            requestAnimationFrame(updateStats);
+          }
+                               );
         }
         // init
         var svg = document.getElementById('demo');
@@ -1473,15 +906,15 @@
         gradients.setup();
         var lastTransitionAt, transitionDelay = 10000, transitionDuration = 3000;
         function playNextTransition() {
-        tesselation.next(transitionDuration);
-        gradients.next(transitionDuration);
+          tesselation.next(transitionDuration);
+          gradients.next(transitionDuration);
         };
         function tick(time) {
-        if (!lastTransitionAt || time - lastTransitionAt > transitionDelay) {
-          lastTransitionAt = time;
-          playNextTransition();
-        }
-        window.requestAnimationFrame(tick);
+          if (!lastTransitionAt || time - lastTransitionAt > transitionDelay) {
+            lastTransitionAt = time;
+            playNextTransition();
+          }
+          window.requestAnimationFrame(tick);
         }
         window.requestAnimationFrame(tick);
       }
@@ -1491,225 +924,239 @@
       var calcDelaunayTriangulation = (function() {
         var EPSILON = 1.0 / 1048576.0;
         function getSuperT(vertices) {
-        var xMin = Number.POSITIVE_INFINITY, yMin = Number.POSITIVE_INFINITY,
-          xMax = Number.NEGATIVE_INFINITY, yMax = Number.NEGATIVE_INFINITY,
-          i, xDiff, yDiff, maxDiff, xCenter, yCenter;
-        for(i = vertices.length; i--; ) {
-          if(vertices[i][0] < xMin) xMin = vertices[i][0];
-          if(vertices[i][0] > xMax) xMax = vertices[i][0];
-          if(vertices[i][1] < yMin) yMin = vertices[i][1];
-          if(vertices[i][1] > yMax) yMax = vertices[i][1];
-        }
-        xDiff = xMax - xMin;
-        yDiff = yMax - yMin;
-        maxDiff = Math.max(xDiff, yDiff);
-        xCenter = xMin + xDiff * 0.5;
-        yCenter = yMin + yDiff * 0.5;
-        return [
-          [xCenter - 20 * maxDiff, yCenter - maxDiff],
-          [xCenter, yCenter + 20 * maxDiff],
-          [xCenter + 20 * maxDiff, yCenter - maxDiff]
-        ];
+          var xMin = Number.POSITIVE_INFINITY, yMin = Number.POSITIVE_INFINITY,
+              xMax = Number.NEGATIVE_INFINITY, yMax = Number.NEGATIVE_INFINITY,
+              i, xDiff, yDiff, maxDiff, xCenter, yCenter;
+          for(i = vertices.length; i--; ) {
+            if(vertices[i][0] < xMin) xMin = vertices[i][0];
+            if(vertices[i][0] > xMax) xMax = vertices[i][0];
+            if(vertices[i][1] < yMin) yMin = vertices[i][1];
+            if(vertices[i][1] > yMax) yMax = vertices[i][1];
+          }
+          xDiff = xMax - xMin;
+          yDiff = yMax - yMin;
+          maxDiff = Math.max(xDiff, yDiff);
+          xCenter = xMin + xDiff * 0.5;
+          yCenter = yMin + yDiff * 0.5;
+          return [
+            [xCenter - 20 * maxDiff, yCenter - maxDiff],
+            [xCenter, yCenter + 20 * maxDiff],
+            [xCenter + 20 * maxDiff, yCenter - maxDiff]
+          ];
         }
         function circumcircle(vertices, i, j, k) {
-        var xI = vertices[i][0], yI = vertices[i][1],
-          xJ = vertices[j][0], yJ = vertices[j][1],
-          xK = vertices[k][0], yK = vertices[k][1],
-          yDiffIJ = Math.abs(yI - yJ), yDiffJK = Math.abs(yJ - yK),
-          xCenter, yCenter, m1, m2, xMidIJ, xMidJK, yMidIJ, yMidJK, xDiff, yDiff;
-        // bail condition
-        if(yDiffIJ < EPSILON){
-          if (yDiffJK < EPSILON){
-             throw new Error("Can't get circumcircle since all 3 points are y-aligned");
-          }
-        }
-          
-         
-        // calc circumcircle center x/y, radius
-        m1  = -((xJ - xI) / (yJ - yI));
-        m2  = -((xK - xJ) / (yK - yJ));
-        xMidIJ = (xI + xJ) / 2.0;
-        xMidJK = (xJ + xK) / 2.0;
-        yMidIJ = (yI + yJ) / 2.0;
-        yMidJK = (yJ + yK) / 2.0;
-        xCenter = (yDiffIJ < EPSILON) ? xMidIJ :
-          (yDiffJK < EPSILON) ? xMidJK :
-          (m1 * xMidIJ - m2 * xMidJK + yMidJK - yMidIJ) / (m1 - m2);
-        yCenter  = (yDiffIJ > yDiffJK) ?
-          m1 * (xCenter - xMidIJ) + yMidIJ :
-          m2 * (xCenter - xMidJK) + yMidJK;
-        xDiff = xJ - xCenter;
-        yDiff = yJ - yCenter;
-        // return
-        return {i: i, j: j, k: k, x: xCenter, y: yCenter, r: xDiff * xDiff + yDiff * yDiff};
-        }
-        function dedupeEdges(edges) {
-        var i, j, a, b, m, n;
-        for(j = edges.length; j; ) {
-          b = edges[--j]; a = edges[--j];
-          for(i = j; i; ) {
-          n = edges[--i]; m = edges[--i];
-          if(a === m){
-             if (b===n){
-               edges.splice(j, 2); edges.splice(i, 2);
-              break;
-             }            
-          }
-          if(a === n){
-             if (b===m){
-               edges.splice(j, 2); edges.splice(i, 2);
-              break;
-             }            
-          }
-          }
-        }
-        }
-        return function(vertices) {
-        var n = vertices.length,
-          i, j, indices, st, candidates, locked, edges, dx, dy, a, b, c;
-        // bail if too few / too many verts
-        if(n < 3 || n > 2000)
-          return [];
-        // copy verts and sort indices by x-position
-        vertices = vertices.slice(0);
-        indices = new Array(n);
-        for(i = n; i--; )
-          indices[i] = i;
-        indices.sort(function(i, j) {
-          return vertices[j][0] - vertices[i][0];
-        });
-        // supertriangle
-        st = getSuperT(vertices);
-        vertices.push(st[0], st[1], st[2]);
-        // init candidates/locked tris list
-        candidates = [circumcircle(vertices, n + 0, n + 1, n + 2)];
-        locked = [];
-        edges = [];
-        // scan left to right
-        for(i = indices.length; i--; edges.length = 0) {
-          c = indices[i];
-          // check candidates tris against point
-          for(j = candidates.length; j--; ) {
-          // lock tri if point to right of circumcirc
-          dx = vertices[c][0] - candidates[j].x;
-          if (dx > 0.0){
-            if(dx * dx > candidates[j].r){
-              locked.push(candidates[j]);
-            candidates.splice(j, 1);
-            continue;
+          var xI = vertices[i][0], yI = vertices[i][1],
+              xJ = vertices[j][0], yJ = vertices[j][1],
+              xK = vertices[k][0], yK = vertices[k][1],
+              yDiffIJ = Math.abs(yI - yJ), yDiffJK = Math.abs(yJ - yK),
+              xCenter, yCenter, m1, m2, xMidIJ, xMidJK, yMidIJ, yMidJK, xDiff, yDiff;
+          // bail condition
+          if(yDiffIJ < EPSILON){
+            if (yDiffJK < EPSILON){
+              throw new Error("Can't get circumcircle since all 3 points are y-aligned");
             }
           }
-            
-            
-          // point outside circumcirc = leave candidates
-          dy = vertices[c][1] - candidates[j].y;
-          if(dx * dx + dy * dy - candidates[j].r > EPSILON)
-            continue;
-          // point inside circumcirc = break apart, save edges
-          edges.push(
-            candidates[j].i, candidates[j].j,
-            candidates[j].j, candidates[j].k,
-            candidates[j].k, candidates[j].i
-          );
-          candidates.splice(j, 1);
-          }
-          // new candidates from broken edges
-          dedupeEdges(edges);
-          for(j = edges.length; j; ) {
-          b = edges[--j];
-          a = edges[--j];
-          candidates.push(circumcircle(vertices, a, b, c));
-          }
+          // calc circumcircle center x/y, radius
+          m1  = -((xJ - xI) / (yJ - yI));
+          m2  = -((xK - xJ) / (yK - yJ));
+          xMidIJ = (xI + xJ) / 2.0;
+          xMidJK = (xJ + xK) / 2.0;
+          yMidIJ = (yI + yJ) / 2.0;
+          yMidJK = (yJ + yK) / 2.0;
+          xCenter = (yDiffIJ < EPSILON) ? xMidIJ :
+          (yDiffJK < EPSILON) ? xMidJK :
+          (m1 * xMidIJ - m2 * xMidJK + yMidJK - yMidIJ) / (m1 - m2);
+          yCenter  = (yDiffIJ > yDiffJK) ?
+            m1 * (xCenter - xMidIJ) + yMidIJ :
+          m2 * (xCenter - xMidJK) + yMidJK;
+          xDiff = xJ - xCenter;
+          yDiff = yJ - yCenter;
+          // return
+          return {
+            i: i, j: j, k: k, x: xCenter, y: yCenter, r: xDiff * xDiff + yDiff * yDiff};
         }
-        // close candidates tris, remove tris touching supertri verts
-        for(i = candidates.length; i--; )
-          locked.push(candidates[i]);
-        candidates.length = 0;
-        for(i = locked.length; i--; )
-          if(locked[i].i < n){
-            if(locked[i].j < n){
-              if(locked[i].k < n){
-                candidates.push(locked[i].i, locked[i].j, locked[i].k);
+        function dedupeEdges(edges) {
+          var i, j, a, b, m, n;
+          for(j = edges.length; j; ) {
+            b = edges[--j];
+            a = edges[--j];
+            for(i = j; i; ) {
+              n = edges[--i];
+              m = edges[--i];
+              if(a === m){
+                if (b===n){
+                  edges.splice(j, 2);
+                  edges.splice(i, 2);
+                  break;
+                }
+              }
+              if(a === n){
+                if (b===m){
+                  edges.splice(j, 2);
+                  edges.splice(i, 2);
+                  break;
+                }
               }
             }
           }
-          
-          
-        // done
-        return candidates;
+        }
+        return function(vertices) {
+          var n = vertices.length,
+              i, j, indices, st, candidates, locked, edges, dx, dy, a, b, c;
+          // bail if too few / too many verts
+          if(n < 3 || n > 2000)
+            return [];
+          // copy verts and sort indices by x-position
+          vertices = vertices.slice(0);
+          indices = new Array(n);
+          for(i = n; i--; )
+            indices[i] = i;
+          indices.sort(function(i, j) {
+            return vertices[j][0] - vertices[i][0];
+          }
+                      );
+          // supertriangle
+          st = getSuperT(vertices);
+          vertices.push(st[0], st[1], st[2]);
+          // init candidates/locked tris list
+          candidates = [circumcircle(vertices, n + 0, n + 1, n + 2)];
+          locked = [];
+          edges = [];
+          // scan left to right
+          for(i = indices.length; i--; edges.length = 0) {
+            c = indices[i];
+            // check candidates tris against point
+            for(j = candidates.length; j--; ) {
+              // lock tri if point to right of circumcirc
+              dx = vertices[c][0] - candidates[j].x;
+              if (dx > 0.0){
+                if(dx * dx > candidates[j].r){
+                  locked.push(candidates[j]);
+                  candidates.splice(j, 1);
+                  continue;
+                }
+              }
+              // point outside circumcirc = leave candidates
+              dy = vertices[c][1] - candidates[j].y;
+              if(dx * dx + dy * dy - candidates[j].r > EPSILON)
+                continue;
+              // point inside circumcirc = break apart, save edges
+              edges.push(
+                candidates[j].i, candidates[j].j,
+                candidates[j].j, candidates[j].k,
+                candidates[j].k, candidates[j].i
+              );
+              candidates.splice(j, 1);
+            }
+            // new candidates from broken edges
+            dedupeEdges(edges);
+            for(j = edges.length; j; ) {
+              b = edges[--j];
+              a = edges[--j];
+              candidates.push(circumcircle(vertices, a, b, c));
+            }
+          }
+          // close candidates tris, remove tris touching supertri verts
+          for(i = candidates.length; i--; )
+            locked.push(candidates[i]);
+          candidates.length = 0;
+          for(i = locked.length; i--; )
+            if(locked[i].i < n){
+              if(locked[i].j < n){
+                if(locked[i].k < n){
+                  candidates.push(locked[i].i, locked[i].j, locked[i].k);
+                }
+              }
+            }
+          // done
+          return candidates;
         };
-      })();
+      }
+                                      )();
       var tesselation = (function() {
         var svg, svgW, svgH, prevGroup;
         function createRandomTesselation() {
-        var wW = window.innerWidth;
-        var wH = window.innerHeight;
-        var gridSpacing = 250, scatterAmount = 0.75;
-        var gridSize, i, x, y;
-        if (wW / wH > svgW / svgH) { // window wider than svg = use width for gridSize
-          gridSize = gridSpacing * svgW / wW;
-        } else { // window taller than svg = use height for gridSize
-          gridSize = gridSpacing * svgH / wH;
-        }
-        var vertices = [];
-        var xOffset = (svgW % gridSize) / 2, yOffset = (svgH % gridSize) / 2;
-        for (x = Math.floor(svgW/gridSize) + 1; x >= -1; x--) {
-          for (y = Math.floor(svgH/gridSize) + 1; y >= -1; y--) {
-          vertices.push(
-            [
-            xOffset + gridSize * (x + scatterAmount * (Math.random() - 0.5)),
-            yOffset + gridSize * (y + scatterAmount * (Math.random() - 0.5))
-            ]
-          );
+          var wW = window.innerWidth;
+          var wH = window.innerHeight;
+          var gridSpacing = 250, scatterAmount = 0.75;
+          var gridSize, i, x, y;
+          if (wW / wH > svgW / svgH) {
+            // window wider than svg = use width for gridSize
+            gridSize = gridSpacing * svgW / wW;
           }
-        }
-        var triangles = calcDelaunayTriangulation(vertices);
-        var group = document.createElementNS('http://www.w3.org/2000/svg','g');
-        var polygon;
-        for(i = triangles.length; i; ) {
-          polygon = document.createElementNS('http://www.w3.org/2000/svg','polygon');
-          polygon.setAttribute('points',
-          vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1] + ' ' +
-          vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1] + ' ' +
-          vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1]
-          );
-          group.appendChild(polygon);
-        }
-        return group;
-        }
-        return {
-        setup: function(svgElement) {
-          svg = svgElement;
-          var vb = svg.getAttribute('viewBox').split(/\D/g);
-          svgW = vb[2];
-          svgH = vb[3];
-        },
-        next: function(t) {
-          var toRemove, i, n;
-          t /= 1000;
-          if(prevGroup){
-            if(prevGroup.children){
-              if(prevGroup.children.length){
-                toRemove = prevGroup;
-                n = toRemove.children.length;
-                for (i = n; i--; ) {
-                  TweenMax.to(toRemove.children[i], t*0.4, {opacity: 0, delay: t*(0.3*i/n)});
-                }
-                TweenMax.delayedCall(t * (0.7 + 0.05), function(group) { svg.removeChild(group); }, [toRemove], this);
-              }
+          else {
+            // window taller than svg = use height for gridSize
+            gridSize = gridSpacing * svgH / wH;
+          }
+          var vertices = [];
+          var xOffset = (svgW % gridSize) / 2, yOffset = (svgH % gridSize) / 2;
+          for (x = Math.floor(svgW/gridSize) + 1; x >= -1; x--) {
+            for (y = Math.floor(svgH/gridSize) + 1; y >= -1; y--) {
+              vertices.push(
+                [
+                  xOffset + gridSize * (x + scatterAmount * (Math.random() - 0.5)),
+                  yOffset + gridSize * (y + scatterAmount * (Math.random() - 0.5))
+                ]
+              );
             }
           }
-          
-          var g = createRandomTesselation();
-          n = g.children.length;
-          for (i = n; i--; ) {
-          TweenMax.fromTo(g.children[i], t*0.4, {opacity: 0}, {opacity: 0.3 + 0.25 * Math.random(), delay: t*(0.3*i/n + 0.3), ease: Back.easeOut});
+          var triangles = calcDelaunayTriangulation(vertices);
+          var group = document.createElementNS('http://www.w3.org/2000/svg','g');
+          var polygon;
+          for(i = triangles.length; i; ) {
+            polygon = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+            polygon.setAttribute('points',
+                                 vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1] + ' ' +
+                                 vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1] + ' ' +
+                                 vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1]
+                                );
+            group.appendChild(polygon);
           }
-          svg.appendChild(g);
-          prevGroup = g;
+          return group;
         }
+        return {
+          setup: function(svgElement) {
+            svg = svgElement;
+            var vb = svg.getAttribute('viewBox').split(/\D/g);
+            svgW = vb[2];
+            svgH = vb[3];
+          }
+          ,
+          next: function(t) {
+            var toRemove, i, n;
+            t /= 1000;
+            if(prevGroup){
+              if(prevGroup.children){
+                if(prevGroup.children.length){
+                  toRemove = prevGroup;
+                  n = toRemove.children.length;
+                  for (i = n; i--; ) {
+                    TweenMax.to(toRemove.children[i], t*0.4, {
+                      opacity: 0, delay: t*(0.3*i/n)}
+                               );
+                  }
+                  TweenMax.delayedCall(t * (0.7 + 0.05), function(group) {
+                    svg.removeChild(group);
+                  }
+                                       , [toRemove], this);
+                }
+              }
+            }
+            var g = createRandomTesselation();
+            n = g.children.length;
+            for (i = n; i--; ) {
+              TweenMax.fromTo(g.children[i], t*0.4, {
+                opacity: 0}
+                              , {
+                opacity: 0.3 + 0.25 * Math.random(), delay: t*(0.3*i/n + 0.3), ease: Back.easeOut}
+                             );
+            }
+            svg.appendChild(g);
+            prevGroup = g;
+          }
         }
-      })();
+      }
+                        )();
       //////////////////////////////
       // Gradients
       //////////////////////////////
@@ -1717,84 +1164,99 @@
         var grad1, grad2, showingGrad1;
         // using colors from IBM Design Colors this time
         var colors = [ // 14 colors - use 3-5 span
-        '#3c6df0', // ultramarine50
-        '#12a3b4', // aqua40
-        '#00a78f', // teal40
-        '#00aa5e', // green40
-        '#81b532', // lime30
-        '#e3bc13', // yellow20
-        '#ffb000', // gold20
-        '#fe8500', // orange30
-        '#fe6100', // peach40
-        '#e62325', // red50
-        '#dc267f', // magenta50
-        '#c22dd5', // purple50
-        '#9753e1', // violet50
-        '#5a3ec8'  // indigo60
+          '#3c6df0', // ultramarine50
+          '#12a3b4', // aqua40
+          '#00a78f', // teal40
+          '#00aa5e', // green40
+          '#81b532', // lime30
+          '#e3bc13', // yellow20
+          '#ffb000', // gold20
+          '#fe8500', // orange30
+          '#fe6100', // peach40
+          '#e62325', // red50
+          '#dc267f', // magenta50
+          '#c22dd5', // purple50
+          '#9753e1', // violet50
+          '#5a3ec8'  // indigo60
         ];
         function assignRandomColors(gradObj) {
-        var rA = Math.floor(colors.length * Math.random());
-        var rB = Math.floor(Math.random() * 3) + 3; // [3 - 5]
-        rB = (rA + (rB * (Math.random() < 0.5 ? -1 : 1)) + colors.length) % colors.length;
-        gradObj.stopA.setAttribute('stop-color', colors[rA]);
-        gradObj.stopB.setAttribute('stop-color', colors[rB]);
+          var rA = Math.floor(colors.length * Math.random());
+          var rB = Math.floor(Math.random() * 3) + 3;
+          // [3 - 5]
+          rB = (rA + (rB * (Math.random() < 0.5 ? -1 : 1)) + colors.length) % colors.length;
+          gradObj.stopA.setAttribute('stop-color', colors[rA]);
+          gradObj.stopB.setAttribute('stop-color', colors[rB]);
         }
         return {
-        setup: function() {
-          showingGrad1 = false;
-          grad1 = {
-          stopA: document.getElementById('stop1a'),
-          stopB: document.getElementById('stop1b'),
-          rect:  document.getElementById('rect1')
-          };
-          grad2 = {
-          stopA: document.getElementById('stop2a'),
-          stopB: document.getElementById('stop2b'),
-          rect:  document.getElementById('rect2')
-          };
-          grad1.rect.style.opacity = 0;
-          grad2.rect.style.opacity = 0;
-        },
-        next: function(t) {
-          t /= 1000;
-          var show, hide;
-          if (showingGrad1) {
-          hide = grad1;
-          show = grad2;
-          } else {
-          hide = grad2;
-          show = grad1;
+          setup: function() {
+            showingGrad1 = false;
+            grad1 = {
+              stopA: document.getElementById('stop1a'),
+              stopB: document.getElementById('stop1b'),
+              rect:  document.getElementById('rect1')
+            };
+            grad2 = {
+              stopA: document.getElementById('stop2a'),
+              stopB: document.getElementById('stop2b'),
+              rect:  document.getElementById('rect2')
+            };
+            grad1.rect.style.opacity = 0;
+            grad2.rect.style.opacity = 0;
           }
-          showingGrad1 = !showingGrad1;
-          TweenMax.to(hide.rect, 0.55*t, {opacity: 0, delay: 0.2*t, ease: Sine.easeOut});
-          assignRandomColors(show);
-          TweenMax.to(show.rect, 0.65*t, {opacity: 1, ease: Sine.easeIn});
-        }
+          ,
+          next: function(t) {
+            t /= 1000;
+            var show, hide;
+            if (showingGrad1) {
+              hide = grad1;
+              show = grad2;
+            }
+            else {
+              hide = grad2;
+              show = grad1;
+            }
+            showingGrad1 = !showingGrad1;
+            TweenMax.to(hide.rect, 0.55*t, {
+              opacity: 0, delay: 0.2*t, ease: Sine.easeOut}
+                       );
+            assignRandomColors(show);
+            TweenMax.to(show.rect, 0.65*t, {
+              opacity: 1, ease: Sine.easeIn}
+                       );
+          }
         };
-      })();
+      }
+                      )();
       //////////////////////////////
       // Start
       //////////////////////////////
       bkgFunction();
     </script>
-  
-
-
     <!----------------------------------------------------------------------------------------------------------------------------------------->
     <!---- Left Navigator ---->
     <!----------------------------------------------------------------------------------------------------------------------------------------->
     <ul class="leftNav" style="margin:0;padding:0;">
-  
-      <li class="leftNavLi"><a class="leftNavA" href="#mainTitle1">Motivation</a></li>
-      <li class="leftNavLi"><a class="leftNavA" href="#mainTitle2">Theoretical basis</a></li>
-      <li class="leftNavLi"><a class="leftNavA" href="#mainTitle3">User guidelines</a></li>
-      <li class="leftNavLi"><a class="leftNavA" href="#mainTitle4">References</a></li>
+      <li class="leftNavLi">
+        <a class="leftNavA" href="#mainTitle1">Motivation
+        </a>
+      </li>
+      <li class="leftNavLi">
+        <a class="leftNavA" href="#mainTitle2">Theoretical basis
+        </a>
+      </li>
+      <li class="leftNavLi">
+        <a class="leftNavA" href="#mainTitle3">User guidelines
+        </a>
+      </li>
+      <li class="leftNavLi">
+        <a class="leftNavA" href="#mainTitle4">References
+        </a>
+      </li>
     </ul>     
-    
     <style>
       .leftNav{
         position: absolute;
-        top:20vw; 
+        top:20vw;
         left:4%;
         list-style: none;
         z-index: 3;
@@ -1841,12 +1303,11 @@
       .leftNavA:focus{
         text-decoration: none;
         color:#4CA198;
-      } 
+      }
       .leftNavA:hover,.leftNavA:active{
         text-decoration: none;
         color: #B0EBE4;
       }
-
       .leftNavA2{
         display: block;
         font-size: 1vw;
@@ -1862,7 +1323,7 @@
       .leftNavA2:focus{
         text-decoration: none;
         color:rgba(168,168,168,1);
-      } 
+      }
       .leftNavA2:hover,.leftNavA2:active{
         text-decoration: none;
         color: white;
@@ -1875,106 +1336,127 @@
         text-decoration:none;
         color:#B0EBE4;
       }
-      
-      
       @media only screen and (max-width:768px){
         .leftNav{
           display:none;
         }
       }
     </style>
-
-
-    
     <div id="pageContent">
-    <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <!---- Content ---->
-    <!----------------------------------------------------------------------------------------------------------------------------------------->
-    
+      <!----------------------------------------------------------------------------------------------------------------------------------------->
+      <!---- Content ---->
+      <!----------------------------------------------------------------------------------------------------------------------------------------->
       <div class="container" id="containerWithLeftNav">
         <div class="row">
-          
-          
           <div class="row title2" id="mainTitle1">
-            <div class="col">Motivation</div>
+            <div class="col">Motivation
+            </div>
           </div>
-                    
           <div class="row para1">
             <div class="row">
               <div class="col">
-                Previous studies have shown that a tRNA primer is required for the initiation of reverse transcription <a>(Dahlberg et al.)</a>. In our system, we express the tRNA primer in E.coli by cloning it onto the plasmid that is used for generating the tools for mutation, i.e. P_mutant. However, designing the primer sequence according to different target sequences is time-consuming and needs many adjustments to find the perfect match. This motivates us to build a software for tRNA primer designing.
+                Previous studies have shown that a tRNA primer is required for the initiation of reverse transcription 
+                <a>(Dahlberg et al.)
+                </a>. In our system, we express the tRNA primer in E.coli by cloning it onto the plasmid that is used for generating the tools for mutation, i.e. P_mutant. However, designing the primer sequence according to different target sequences is time-consuming and needs many adjustments to find the perfect match. This motivates us to build a software for tRNA primer designing.
               </div>
             </div>                                              
           </div>
-          
           <div class="row title2" id="mainTitle2">
-            <div class="col"><i>Theoretical basis</i></div>
+            <div class="col">
+              <i>Theoretical basis
+              </i>
+            </div>
           </div>
-                    
           <div class="row para1">
             <div class="row">
               <div class="col">
-                Previous studies have reported that the interactions between tRNA primer and mRNA template as well as the reverse transcriptase are crucial in directing subsequent cDNA synthesis <a>(James E. Dahlberg et al.)</a>. Specifically, according to the model for reverse transcription proposed by Kulpa et al., reverse transcription includes 5 steps (Fig. 1), in which the annealing of tRNA primer to the primer binding site (PBS) region on mRNA template is crucial for the synthesis of minus strand strong stop DNA (–ssDNA) and the following cDNA synthesis process. <br /><br />
-                Many researchers have studied the reverse transcription process in viruses, from which we find two critical properties in the annealing process of tRNA primer and PBS that should be taken into consideration when building the tRNA primer designer. <br /><br />
-                The first property is that the 3'-terminal of the tRNA primer should be complementary to the PBS on mRNA template <a>(Kosloff et al.)</a>(Kosloff et al.). The second one is that different viruses prefer specific type of tRNA primer for reverse transcription <a>(Kulpa et al.,</a><a> Kosloff et al.)</a>. What should also be noted is that for different viruses, the lengths of PBS as well as the types of tRNA primer are different. The PBS lengths and the preferred tRNA types of 3 most well-studied retroviruses are listed in Table I.<br /><br />
-                These discoveries serve as the theoretical basis for our tRNA primer designer. So basically, the function of our tRNA primer designer is to change the tRNA template in order to suit the basic properties of the reverse transcriptase (MMLV RT/ HIV-1 RT/ RSV RT) selected by the user as well as to replace several nucleotides (17 or 18) on 3'-terminal of the tRNA templates to match with nucleotides at the 5'-terminal of the GOI which users input. Also, to make sure that the RNA sequence is a tRNA sequence, the secondary structure should be revealed. We achieve this goal by using the similar tRNA secondary structure prediction scheme as the one implemented in the opensource software tRNAfinder <a>(Kurokawa et al.)</a>.<br /><br />
-                Studies have shown that the primary factor guiding the selection of tRNA primer for MMLV RT is the PBS sequence instead of the inherent nature of reverse transcriptase <a>(A. H. Lund et al.,</a><a> S. P. Goff et al.)</a>. So, by making mutations on both the PBS and tRNA sequence, the researchers have found that reverse transcription could still successfully take place while the virus’ titer is not greatly affected. Also, after several cycles of replication, the mutated sequence is not changed back to its original version <a>(Pedersen et al., 1997)</a>. Even though it is found that the primer is not stringent for MMLV, studies have revealed that the tRNA-like structure is necessary. A study that the inclusion of one single non-Watson-Crick base pair between PBS and tRNA primer would improve the replication efficiency (F. S. Pedersen et al., 1993), but we didn’t adopt this construct as the one base pair mismatch would often be changed to the full-complementary version after the first cycle of replication <a>(Pedersen et al., 1997)</a>(Pedersen et al., 1997), making this addition unnecessary.
-
+                Previous studies have reported that the interactions between tRNA primer and mRNA template as well as the reverse transcriptase are crucial in directing subsequent cDNA synthesis 
+                <a>(James E. Dahlberg et al.)
+                </a>. Specifically, according to the model for reverse transcription proposed by Kulpa et al., reverse transcription includes 5 steps (Fig. 1), in which the annealing of tRNA primer to the primer binding site (PBS) region on mRNA template is crucial for the synthesis of minus strand strong stop DNA (–ssDNA) and the following cDNA synthesis process. 
+                <br />
+                <br />
+                Many researchers have studied the reverse transcription process in viruses, from which we find two critical properties in the annealing process of tRNA primer and PBS that should be taken into consideration when building the tRNA primer designer. 
+                <br />
+                <br />
+                The first property is that the 3'-terminal of the tRNA primer should be complementary to the PBS on mRNA template 
+                <a>(Kosloff et al.)
+                </a>(Kosloff et al.). The second one is that different viruses prefer specific type of tRNA primer for reverse transcription 
+                <a>(Kulpa et al.,
+                </a>
+                <a> Kosloff et al.)
+                </a>. What should also be noted is that for different viruses, the lengths of PBS as well as the types of tRNA primer are different. The PBS lengths and the preferred tRNA types of 3 most well-studied retroviruses are listed in Table I.
+                <br />
+                <br />
+                These discoveries serve as the theoretical basis for our tRNA primer designer. So basically, the function of our tRNA primer designer is to change the tRNA template in order to suit the basic properties of the reverse transcriptase (MMLV RT/ HIV-1 RT/ RSV RT) selected by the user as well as to replace several nucleotides (17 or 18) on 3'-terminal of the tRNA templates to match with nucleotides at the 5'-terminal of the GOI which users input. Also, to make sure that the RNA sequence is a tRNA sequence, the secondary structure should be revealed. We achieve this goal by using the similar tRNA secondary structure prediction scheme as the one implemented in the opensource software tRNAfinder 
+                <a>(Kurokawa et al.)
+                </a>.
+                <br />
+                <br />
+                Studies have shown that the primary factor guiding the selection of tRNA primer for MMLV RT is the PBS sequence instead of the inherent nature of reverse transcriptase 
+                <a>(A. H. Lund et al.,
+                </a>
+                <a> S. P. Goff et al.)
+                </a>. So, by making mutations on both the PBS and tRNA sequence, the researchers have found that reverse transcription could still successfully take place while the virus’ titer is not greatly affected. Also, after several cycles of replication, the mutated sequence is not changed back to its original version 
+                <a>(Pedersen et al., 1997)
+                </a>. Even though it is found that the primer is not stringent for MMLV, studies have revealed that the tRNA-like structure is necessary. A study that the inclusion of one single non-Watson-Crick base pair between PBS and tRNA primer would improve the replication efficiency (F. S. Pedersen et al., 1993), but we didn’t adopt this construct as the one base pair mismatch would often be changed to the full-complementary version after the first cycle of replication 
+                <a>(Pedersen et al., 1997)
+                </a>(Pedersen et al., 1997), making this addition unnecessary.
               </div>
             </div>                                              
           </div>
-          
           <div class="row title2" id="mainTitle3">
-            <div class="col"><i>User guidelines</i></div>
+            <div class="col">
+              <i>User guidelines
+              </i>
+            </div>
           </div>
-                    
           <div class="row para1">
             <div class="row">
               <div class="col">
-                Our tRNA primer designer is a web tool for potential users of our mutagenesis system to design their own tRNA primers according to their experimental setups. Here we provide a step-by-step guide to using this software.<br /><br />
-                Step 1. Input a DNA sequence that you want to mutate. The last 18 nucleotides of the sequence are selected to be PBS. Note that this sequence should be longer than 18 nucleotides. Besides, it shouldn't contain any characters other than A/T/C/G.<br /><br />
-                Step 2. Choose the type of reverse transcriptase that you want to use based on your experimental design. Note that this software only allows you to choose from MMLV RT/ HIV-1 RT/ RSV RT.<br /><br />
+                Our tRNA primer designer is a web tool for potential users of our mutagenesis system to design their own tRNA primers according to their experimental setups. Here we provide a step-by-step guide to using this software.
+                <br />
+                <br />
+                Step 1. Input a DNA sequence that you want to mutate. The last 18 nucleotides of the sequence are selected to be PBS. Note that this sequence should be longer than 18 nucleotides. Besides, it shouldn't contain any characters other than A/T/C/G.
+                <br />
+                <br />
+                Step 2. Choose the type of reverse transcriptase that you want to use based on your experimental design. Note that this software only allows you to choose from MMLV RT/ HIV-1 RT/ RSV RT.
+                <br />
+                <br />
                 Step3. Click on the "DESIGN FOR ME!!!" button and see the result. The result is composed of two parts. The first part shows you the secondary structure of the template tRNA that you will be using as well as the designed tRNA primer. The fragment that can be annealed to PBS of the input DNA sequence is shown in red. The second part will give you the DNA sequence encoding the tRNA primer that satisfies your need. You can just copy it and use it elsewhere.
               </div>
             </div>                                              
           </div>
-          
           <div class="row title2" id="mainTitle4">
-            <div class="col"><i>References</i></div>
+            <div class="col">
+              <i>References
+              </i>
+            </div>
           </div>
-                    
           <div class="row para1">
             <div class="row">
               <div class="col">
                 <ul class="paraUl" style="list-style:none;">
-                  <li>[1]: Peters G , Dahlberg J E . RNA-directed DNA synthesis in Moloney murine leukemia virus: interaction between the primer tRNA and the genome RNA.[J]. Journal of Virology, 1979, 31(2):398-407.</li>
-                  <li>[2]: Kulpa, D. Determination of the site of first strand transfer during Moloney murine leukemia virus reverse transcription and identification of strand transfer-associated reverse transcriptase errors[J]. EMBO (European Molecular Biology Organization) Journal, 1997, 16(4):856-865.</li>
-                  <li>[3]: Palmer M T , Kirkman R , Kosloff B R , et al. tRNA Isoacceptor Preference prior to Retrovirus Gag-Pol Junction Links Primer Selection and Viral Translation[J]. Journal of Virology, 2007, 81(9):4397-4404.</li>
-                  <li>[4]: Kinouchi M , Kurokawa K . [Special Issue: Fact Databases and Freewares] tRNAfinder: A Software System To Find All tRNA Genes in the DNA Sequence Based on the Cloverleaf Secondary Structure[J]. Journal of Computer Aided Chemistry, 2006, 7:116-124.</li>
-                  <li>[5]: Lund, Anders H. et al. “Mutated primer binding sites interacting with different tRNAs allow efficient murine leukemia virus replication.” Journal of virology, 67 12 (1993): 7125-30.</li>
+                  <li>[1]: Peters G , Dahlberg J E . RNA-directed DNA synthesis in Moloney murine leukemia virus: interaction between the primer tRNA and the genome RNA.[J]. Journal of Virology, 1979, 31(2):398-407.
+                  </li>
+                  <li>[2]: Kulpa, D. Determination of the site of first strand transfer during Moloney murine leukemia virus reverse transcription and identification of strand transfer-associated reverse transcriptase errors[J]. EMBO (European Molecular Biology Organization) Journal, 1997, 16(4):856-865.
+                  </li>
+                  <li>[3]: Palmer M T , Kirkman R , Kosloff B R , et al. tRNA Isoacceptor Preference prior to Retrovirus Gag-Pol Junction Links Primer Selection and Viral Translation[J]. Journal of Virology, 2007, 81(9):4397-4404.
+                  </li>
+                  <li>[4]: Kinouchi M , Kurokawa K . [Special Issue: Fact Databases and Freewares] tRNAfinder: A Software System To Find All tRNA Genes in the DNA Sequence Based on the Cloverleaf Secondary Structure[J]. Journal of Computer Aided Chemistry, 2006, 7:116-124.
+                  </li>
+                  <li>[5]: Lund, Anders H. et al. “Mutated primer binding sites interacting with different tRNAs allow efficient murine leukemia virus replication.” Journal of virology, 67 12 (1993): 7125-30.
+                  </li>
                 </ul>
               </div>
             </div>                                              
           </div>
-          
-          
         </div>
-          
-
-
       </div>
-      
-
-    
-    </div>    
-    
-    
+    </div>
     <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <!---- Foot ---->
+    <!---- Foot .active ---->
     <!----------------------------------------------------------------------------------------------------------------------------------------->
-    
-    <footer id="FudanFooter" class="page-footer grey">
-    
+    <footer id="FudanFooter" style="padding-top:20px;color:#9e9e9e">
       <div class="container" id="footContainer">
         <div class="row">
           <div class="col-md-4" id="sponser" style="padding-top:3%;">
@@ -1982,173 +1464,261 @@
               <div class="col-sm-6" style="padding:0;">
                 <div class="row align-items-center">
                   <div class="col">
-                    <img class="img-fluid" alt="Team Fudan-TSI" src="https://2019.igem.org/wiki/images/0/0f/T--Fudan-TSI--LogoGrey.gif" />
+                    <img style="max-width:100%;height:auto;" alt="Team Fudan-TSI" src="https://2019.igem.org/wiki/images/0/0f/T--Fudan-TSI--LogoGrey.gif" />
                   </div>
                   <div class="col">
-                    <img class="img-fluid" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png" />
+                    <img style="max-width:100%;height:auto;" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png" />
                   </div>
                 </div>                
               </div>
               <div class="col-sm-6" style="padding:0;">
                 <div class="row align-items-center">
                   <div class="col">
-                    <img class="img-fluid" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png" />
+                    <img style="max-width:100%;height:auto;" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png" />
                   </div>
                   <div class="col">
-                    <img class="img-fluid" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png" />
+                    <img style="max-width:100%;height:auto;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png" />
                   </div>
                 </div>                
               </div>              
             </div>
             <div class="row">
-              <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px; margin-top:5px;">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
+              <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px; margin-top:5px;">R-Evolution:
+                an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis
+              </h3>
             </div>
           </div>
-          
           <div class="col-md-8" id="usefulLinks">
             <div class="row">
               <div class="col-lg-6" style="padding:0;">
                 <div class="row">
-                  
                   <div class="col-sm-4">
                     <div class="footerUl align-items-center">
-                      <span><a href="/Team:Fudan-TSI/Description" style="text-decoration:none;">Project</a></span>
-                        <ul>
-                          <li><a href="/Team:Fudan-TSI/Description">Background</a></li>
-                          <li><a href="/Team:Fudan-TSI/Design">Design</a></li>
-                          <li><a href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-                          <li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-                          <li><a href="/Team:Fudan-TSI/Judging">Judging</a></li>
-                        </ul>
-                    </div>
-                  </div>
-                  
-                  <div class="col-sm-4">
-                    <div class="footerUl align-items-center">
-                      <span><a href="/Team:Fudan-TSI/Results" style="text-decoration:none;">Results</a></span>
+                      <span>
+                        <a href="/Team:Fudan-TSI/Description" style="text-decoration:none;">Project
+                        </a>
+                      </span>
                       <ul>
-                        <li><a href="/Team:Fudan-TSI/Results#ReverseTranscription">Reverse Transcription</a></li>
-                        <li><a href="/Team:Fudan-TSI/Results#Recombination">Recombination</a></li>
-                        <li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-                        <li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-                        <li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Description">Background
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Design">Design
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Experiments">Experiments
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Judging">Judging
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </div>
-                  
+                  <div class="col-sm-4">
+                    <div class="footerUl align-items-center">
+                      <span>
+                        <a href="/Team:Fudan-TSI/Results" style="text-decoration:none;">Results
+                        </a>
+                      </span>
+                      <ul>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Results#ReverseTranscription">Reverse Transcription
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Results#Recombination">Recombination
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Demonstrate">Demonstration
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Measurement">Measurement
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Notebook">Notebook
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                   <div class="col-sm-4">
                     <div class="footerUl align-items-center active">
-                      <span style="text-decoration:none;">Model</span>
+                      <span style="text-decoration:none;">Model
+                      </span>
                       <ul>
-                        <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
-                        <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
-                        <li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Model">Modeling
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Software">Software
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Hardware">Hardware
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </div>                  
-                                    
                 </div>
               </div>
               <div class="col-lg-6" style="padding:0;">
                 <div class="row">
-                  
                   <div class="col-sm-4">
                     <div class="footerUl align-items-center">
-                      <span><a href="/Team:Fudan-TSI/Parts" style="text-decoration:none;">Parts</a></span>
+                      <span>
+                        <a href="/Team:Fudan-TSI/Parts" style="text-decoration:none;">Parts
+                        </a>
+                      </span>
                       <ul>
-                        <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-                        <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-                        <li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Parts#BasicPart">Basic parts
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Parts#CompositePart">Composite parts
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Improve">Improved parts
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Parts#PartCollection">Part collection
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </div>
-                  
                   <div class="col-sm-4">
                     <div class="footerUl align-items-center">
-                      <span><a href="/Team:Fudan-TSI/Human_Practices" style="text-decoration:none;">Outreach</a></span>
+                      <span>
+                        <a href="/Team:Fudan-TSI/Human_Practices" style="text-decoration:none;">Outreach
+                        </a>
+                      </span>
                       <ul>
-                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
-                        <li><a href="/Team:Fudan-TSI/Integrated_Human_Practice">Integrated human practice</a></li>
-                        <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-                        <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Human_Practices#PublicEngagement">Education &amp; Public engagement
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated human practice
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Collaborations">Collaborations
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Safety">Safety
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </div>
-                  
                   <div class="col-sm-4">
                     <div class="footerUl align-items-center">
-                      <span><a href="/Team:Fudan-TSI/Team" style="text-decoration:none;">Team</a></span>
+                      <span>
+                        <a href="/Team:Fudan-TSI/Team" style="text-decoration:none;">Team
+                        </a>
+                      </span>
                       <ul>
-                        <li><a href="/Team:Fudan-TSI/Team">Members</a></li>
-                        <li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-                        <li><a href="/Team:Fudan-TSI">&#169; 2019</a></li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Team">Members
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI/Attributions">Attributions
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Team:Fudan-TSI">&#169; 2019
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </div>                  
-                                    
                 </div>
               </div>
-              
-              
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="footer-copyright">
+      <div id="footer-copyright">
         <div class="container" style="width:90%;">
-           <div class="contactUS row">
-             <div class="col s12 m6 l6"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai
-             </div>
-            <div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
-             </div>
-             <div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
-             </div>
-             <div class="col s12 m6 l2"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
-             </div>
-           </div>
-         </div>
+          <div class="contactUS row">
+            <div class="col s12 m6 l6">
+              <i class="fa fa-location-arrow">
+              </i> 2005 Songhu Rd, Shanghai
+            </div>
+            <div class="col s12 m6 l2">
+              <i class="fa fa-fax">
+              </i> +86-21-31246727
+            </div>
+            <div class="col s12 m6 l2">
+              <i class="fa fa-envelope-o">
+              </i> igem@fudan.edu.cn
+            </div>
+            <div class="col s12 m6 l2">
+              <i class="fa fa-twitter">
+              </i> 
+              <i class="fa fa-wechat">
+              </i> Fudan_iGEM
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
-    
-    
-
   </div>
-
-  
-  
   <script>
-  
     var winHeight=$(window).height();
     var winWidth=$(window).width();
     var pagePosition=$("#pageContent").offset().top;
     var navHeight=$(".leftNav").height();
     var footerHeight=$("#FudanFooter").height();
     var maxTopDistance=$("#pageContent").height();
-    $(".leftNav").css({"position":"absolute","top":pagePosition});
+    $(".leftNav").css({
+      "position":"absolute","top":pagePosition}
+                     );
     $(window).resize(function(){
-        var winHeight=$(window).height();
-        var winWidth=$(window).width();
-        var topDistance=$(window).scrollTop();
-        var navHeight=$(".leftNav").height();
-        var footerHeight=$("#FudanFooter").height();
-        var maxTopDistance=$("#pageContent").height();
-        var leftNavFromTop=pagePosition-$(window).scrollTop();
+      var winHeight=$(window).height();
+      var winWidth=$(window).width();
+      var topDistance=$(window).scrollTop();
+      var navHeight=$(".leftNav").height();
+      var footerHeight=$("#FudanFooter").height();
+      var maxTopDistance=$("#pageContent").height();
+      var leftNavFromTop=pagePosition-$(window).scrollTop();
       if (leftNavFromTop<0.1*winWidth){
         if(topDistance<maxTopDistance){
-          $(".leftNav").css({"position":"fixed","top":0.1*winWidth+$("#top_menu_14").height()});
+          $(".leftNav").css({
+            "position":"fixed","top":0.1*winWidth+$("#top_menu_14").height()}
+                           );
         }
         else{
-          $(".leftNav").css({"position":"absolute","top":maxTopDistance});
+          $(".leftNav").css({
+            "position":"absolute","top":maxTopDistance}
+                           );
         }
       }
       else{
-        $(".leftNav").css({"position":"absolute","top":pagePosition});
+        $(".leftNav").css({
+          "position":"absolute","top":pagePosition}
+                         );
       }
-    });
-
+    }
+                    );
     $(window).scroll(function(){
       var winHeight=$(window).height();
       var winWidth=$(window).width();
@@ -2156,27 +1726,32 @@
       var topDistance=$(window).scrollTop();
       if (leftNavFromTop<0.1*winWidth){
         if(topDistance<maxTopDistance){
-          $(".leftNav").css({"position":"fixed","top":0.1*winWidth+$("#top_menu_14").height()});
+          $(".leftNav").css({
+            "position":"fixed","top":0.1*winWidth+$("#top_menu_14").height()}
+                           );
         }
         else{
-          $(".leftNav").css({"position":"absolute","top":maxTopDistance});
+          $(".leftNav").css({
+            "position":"absolute","top":maxTopDistance}
+                           );
         };
       }
       else{
-        $(".leftNav").css({"position":"absolute","top":pagePosition});
+        $(".leftNav").css({
+          "position":"absolute","top":pagePosition}
+                         );
       }
-    });
-      
+    }
+                    );
     $(".leftNav a").click(function () {
       $('html, body').animate({
-      scrollTop: $($.attr(this, 'href')).offset().top-$("#navUl").height()-50
-    }, 500);
-    return false;
-    });
-
-
-    $(window).scroll(function(){    
-      
+        scrollTop: $($.attr(this, 'href')).offset().top-$("#navUl").height()-50
+      }
+                              , 500);
+      return false;
+    }
+                         );
+    $(window).scroll(function(){
       var currentScroll=$(this).scrollTop();
       var firstHeight=$("#pageCover").height();
       var footerFromTop=$("#FudanFooter").offset().top;
@@ -2192,9 +1767,9 @@
           $(".leftNavA").removeClass("menu-active");
           $currentSection.addClass("menu-active");
         }
-      });
-      
-      var $currentSection2;       
+      }
+                         );
+      var $currentSection2;
       $('.leftNavA2').each(function(){
         $('.leftNavA2').removeClass('menu-active2');
         var hePoint2=$($(this).attr("href"));
@@ -2204,29 +1779,14 @@
         }
         if (currentScroll>firstHeight){
           $('.leftNavA2').removeClass('menu-active2');
-          $currentSection2.addClass('menu-active2');            
+          $currentSection2.addClass('menu-active2');
         }
-      });
-    });
-
+      }
+                          );
+    }
+                    );
   </script>
-            
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
-  
-
-
-            
-            
-            
-            
-            
-            
-            
-
-<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    Content ends    --------------------------------------------------------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
+  <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/popper1147.js&action=raw&ctype=text/javascript"></script>
+  <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/bootstrap431.js&action=raw&ctype=text/javascript"></script>
+</body>
 </html>
