@@ -4,7 +4,7 @@
 This html document is created by Tian Huang for Team Fudan iGEM 2018.
 We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
 -->
-<!-- LC check on 2018-10-18 -->
+<!-- LC check on 2018-10-26 -->
 <head>
     <meta charset="UTF-8">
 
@@ -55,14 +55,8 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
         /** 重置表格元素 **/
         table { border-collapse: collapse; border-spacing: 0; }
-#FudanBody .imgNoM img{
-    width:100%;
-}
-#FudanBody .imgNoM{
-    text-align:center;
-}
     </style>
-    <title>2019 Team:Fudan-TSI Basic_Part</title>
+    <title>2019 Team:Fudan-TSI Improve</title>
 </head>
 
 <body>
@@ -94,10 +88,14 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                 <li style="padding: 0"><div class="sidenavBanner">
                     <div class="background">
                     </div>
-                    <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Basic parts</span></p>
+                    <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Improved parts</span></p>
                 </div></li>
                 <li>
                     <ul class="collapsible expandable">
+                        <li class="onThisPageNav"><span>On this page</span></li>
+                        <li class="onThisPageNav"><a href="#section1">div with id section1</a></li>
+                        <li class="onThisPageNav"><a href="#section2">div with id section2</a></li>
+                        <li class="onThisPageNav"><a href="#section3">div with id section3</a></li>
                         <li><span class="pageSidebar">Team: Fudan-TSI</span></li>
 <li><div class="collapsible-header"><span class="pageSidebar">Project</span></div>
     <div class="collapsible-body"><ul>
@@ -129,13 +127,13 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
+        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Parts#PartCollection">Part collection</a></li>
     </ul></div>
 </li>
 <li><div class="collapsible-header"><span class="pageSidebar">Outreach</span></div>
     <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Integrated_Human_Practice">Integrated human practice</a></li>
+        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#PublicEngagement">Education &amp; Public engagement</a></li>
+        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated human practice</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li>
     </ul></div>
@@ -154,21 +152,19 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         </header>
 
         <div id="pageContent" style="">
-
-
             <div id="contentBanner" class="figureBanner">
                 <div class="row">
-                    <div class="col s12 hide-on-med-and-up">
-                        <h4>Basic parts</h4>
-                        <p class="flow-text">&nbsp;</p>
+                    <div class="col s12 m6 valign-wrapper hide-on-med-and-up">
+                        <h4>Parts improvement</h4>
+                        <p class="flow-text">In an effort to innovate and improve, we enhanced our engineered transmembrane binary logic gates </p>
                     </div>
                 </div>
                 <div id="figureBannerTitle" class="hide-on-small-only">
-                    <h1>Basic parts</h1>
-                    <p class="flow-text">&nbsp; </p>
+                    <h1>Parts improvement</h1>
+                    <p class="flow-text">In an effort to innovate and improve, we enhanced our engineered transmembrane binary logic gates </p>
                 </div>
                 <div class="hide-on-small-only">
-                    <img src="http://2018.igem.org/wiki/images/6/66/T--Fudan--title_basicparts.jpg">
+                    <img src="http://2018.igem.org/wiki/images/7/72/T--Fudan--title_partsimprovement.jpg">
                     <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
                         <defs>
                             <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
@@ -196,83 +192,59 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
             <!-- main content of the page -->
             <div class="container">
-                <main style="margin: 0">
-                    <div id="section1" class="section container">
-                        <h2>BBa_K2549006 <a href="http://parts.igem.org/Part:BBa_K2549006" target=_blank>mouse Notch 1 core</a></h2>
-                        <p class="flow-text">Our favorite basic part for this year’s iGEM competition is mouse Notch 1 receptor’s core domain.<br/><img alt="006 screencapture" src="http://2018.igem.org/wiki/images/thumb/7/7e/T--Fudan--BBa_K2549006.png/1444px-T--Fudan--BBa_K2549006.png" />
-                        </p><p class="flow-text">
-                            Notch core consists of the negatively regulated region and transmembrane region of the mouse Notch 1 receptor. It is the joint that empowers SynNotch the high modularity and proper activation. From the N terminal to C terminal, it is composed of three lin12-repeats (LNR) domains LNR-A, LNR-B, LNR-C, the heterodimerization domain (HD), and the transmembrane domain. The LNR-AB linker between LNR-A and B is like a plug that occludes ADAM from cleaving wild type extracellular domain can be substituted by antiGFP scFvs like LaG16 and anti-CD19, while its intracellular domain can be replaced by specialized transcription factors. Notch core is also the key to the activation of both wild type Notch receptors and SynNotch.
-                        </p>
-                        <div class="expFigureHolder" style="width:100%">
-                            <div class="row" style="background: white">
-                                <div class="col s12 m4"><img style="width:100%" src="http://2018.igem.org/wiki/images/9/9e/T--Fudan--bestpart1.png"></div>
-                                <div class="col s12 m4"><img style="width:100%" src="http://2018.igem.org/wiki/images/f/f1/T--Fudan--bestpart2.png"></div>
-                                <div class="col s12 m4"><img style="width:100%" src="http://2018.igem.org/wiki/images/8/80/T--Fudan--opt-gif.gif"></div>
-                                <div class="col s12 m4 offset-m1"><img style="width:100%" src="http://2018.igem.org/wiki/images/2/21/T--Fudan--bestpart3.png"></div>
-                                <div class="col s12 m4 offset-m2"><img style="width:100%" src="http://2018.igem.org/wiki/images/8/81/T--Fudan--bestpart4.png"></div>
-                            </div>
+                <!-- side navigator of page content -->
+                <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
+                    <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
+                    <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
+                    <li><a href="/Team:Fudan-TSI/Optimization">Optimization</a></li>
+                    <li><a href="/Team:Fudan-TSI/Parts#PartCollection">Part collection</a></li>
+                    <li>Parts improvement</li>
+                    <li class="onThisPageNav"><a href="#section1">Introduction</a></li>
+                    <li class="onThisPageNav"><a href="#section2">Responsive elements</a></li>
+                    <li class="onThisPageNav"><a href="#section3">pSV40 vs pCMV</a></li>
+                    <li><a href="/Team:Fudan-TSI/Measurement">Quantification</a></li>
+                </ul>
 
-                            <p class="flow-text"><b>Structure of the negative regulatory region of Notch 1 receptor, surface delivery, and optimization.</b><br/>
-                                        a-c. Shows structure of the Notch 1 core, with more detail on the NRR. (With structural information adapted from Gordon et al., 2009)<br/>
-                                        d. Shows that mouse SynNotch with LaG16-2 scFv (single chain fragment variants) as ectodomain is expressed on the 293T cell membrane as an example via anti-myc AF488 immunofluorescence staining. Shown here the light parts.<br/>
-                                        e. A conclusive diagram of our Notch optimization. We have 5 mutations that exhibit better activation performance to SynNotch with LaG17 as scFv.
+                <main>
+                    <div id="section1" class="section container scrolSpy">
+                        <h2>Introduction</h2>
+                        <p class="flow-text">Last year our team has proposed a <a href="http://2017.igem.org/Team:Fudan/Part_Collection" target="_blank">SynTF-SynPro approach</a> which enables others to construct a customized and orthogonal transcriptional network in mammalian cells. The structures of the corresponding silencing- or activating-form of SynPros were pSV40-N*RE and N*RE-minCMV, in which N*RE is short for responsive elements of N repeats.
                             </p>
+                        <p class="flow-text">
+                            This year we took it a step further to create our engineered transmembrane binary logic gates in eukaryotic cells based on the foundational concepts we have constructed upon last year. We made use of the SynTF-SynPro system to function as our Combiner, which executes the final computation of our genetic circuits. To improve the signal-to-noise ratio of our Combiner and to allow others to more easily use our toolbox, we attempted to optimize the structure of the SynPros and constructed N*RE-CMV, which replaces the pSV40-N*RE to respond to transcriptional repressors. Furthermore, we also conducted experiments to characterize our N*RE-CMV, ensuring that it performs exceedingly better than the previous pSV40-N*RE. We have substituted all the pSV40-N*RE with N*RE-CMV when wiring our genetic circuits and picked 8*ZF21.16-CMV for specific demonstration of our parts improvement. For more details, refer to the <a href="http://parts.igem.org/Part:BBa_K2446030" target="_blank">existing BioBrick page</a> or the <a href="http://parts.igem.org/Part:BBa_K2549029" target="_blank">improved BioBrick page</a>.
+                        </p>
+                    </div>
+                    <div id="section2" class="section container scrolSpy">
+                        <h2>Place of responsive elements</h2>
+                        <p class="flow-text">We have experimentally discovered that the place of N*RE can have an impact on basal expression of SynPros. Thus, when designing transcription repressing circuit, we hope that the addition of the N*RE will not bother the original expression of the promotor. Unfortunately, we realized that when the N*RE is placed downstream the promotor, the basal expression of the promotor is effected without the transcriptional repressor. Therefore, we made an attempt to adjust the position of N*RE to upstream of the promotor. Interestingly, the basal expression of the promotor is less affected as compared to the previous design. Actually, similar phenomenon have been reported previously that reporter activity was highly variable among the four different TALE binding sites introduced between the promoter and the reporter coding sequence while the introduction of multiple copies of each of the four different operators upstream from the promoter caused only minimal variability in reporter expression
+                            as suggested by <a href="http://dx.doi.org/10.1038/nchembio.1433" target=_blank>Gaber R, et al, 2014 (PMID: 24413461)</a>.
+                        </p>
+                    </div>
+                    <div id="section3" class="section container scrolSpy">
+                        <h2>pSV40 vs pCMV
+                        </h2>
+                        <p class="flow-text">To better verify that the transcription repressor can effectively repress the expression of its responsive circuit, we attempted to increase the basal expression for a more precise comparison. As a result, we designed a simple genetic circuit in which a EGFP-P2A was put downstream the promotor to test and compare the basal expression of pSV40 and pCMV. We used fluorescence microscopy to detect the expression of the reporter gene 24 hours after transient transfecting 293T cells with the two mentioned circuits, respectively. We found that pCMV has a significantly higher basal expression than that of pSV40, providing us a more ideal alternation to construct our transcriptional repressor-based Combiner circuit.
+                        </p>
+                        <div class="figureHolder width40" style="margin: 23px auto 0 auto;">
+                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/c/c2/T--Fudan--improve-1.png">
+                        </div>
+                        <p style="margin-top:0;text-indent: 0;"><b>Figure 1. Flow cytometry data of previously designed SynPros based on pSV40.</b> It can be clearly identified that the basal expression of pSV40 is easily effected by the adding of responsive elements. (sTF is short for silencing-form transcriptional factors.)
+                        </p>
+                        <div class="figureHolder width40" style="margin: 23px auto 0 auto;">
+                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/b/bb/T--Fudan--improve-2.png">
+                        </div>
+                        <p style="margin-top:0;text-indent: 0;"><b>Figure 2. Flow cytometry data of the improved design of SynPros based on pCMV.</b> It is shown that the basal expression of pCMV is barely effected by the adding of responsive elements. (sTF is short for silencing-form transcriptional factors.)
 
+                        </p>
+                        <div class="figureHolder width45" style="margin: 23px auto 0 auto;">
+                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/0/06/T--Fudan--improve-3.png">
                         </div>
-                        <b class="tableHolder">
-                            <table>
-                                <tr>
-                                    <th>SynNotch</th>
-                                    <th>Class</th>
-                                    <th>ARF<sub>aS</sub><sup>*)</sup></th>
-                                    <th>Preferred</th>
-                                </tr>
-                                <tr>
-                                    <td>LaG17-mN1c-tTAA</td>
-                                    <td>II</td>
-                                    <td>1.67 ± 0.20</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>LaG17-6G-LNRA[-]mN1c-tTAA</td>
-                                    <td>I</td>
-                                    <td>1.73 ± 0.29</td>
-                                    <td>☆</td>
-                                </tr>
-                                <tr>
-                                    <td>LaG17-LNRA cbs(D1433K)mN1c-tTAA</td>
-                                    <td>II</td>
-                                    <td>2.69 ± 0.11</td>
-                                    <td>☆</td>
-                                </tr>
-                                <tr>
-                                    <td>LaG17-LNRA cbs(D1433Q)mN1c-tTAA</td>
-                                    <td>II</td>
-                                    <td>Needs more repeat</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>LaG17-LNRAlnkr(L1457V)mN1c-tTAA</td>
-                                    <td>I</td>
-                                    <td>2.12 ± 0.39</td>
-                                    <td>☆</td>
-                                </tr>
-                                <tr>
-                                    <td>LaG17-LNRAlnkr(L1457G)mN1c-tTAA</td>
-                                    <td>II</td>
-                                    <td>2.55± 0.55</td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                            <p class="flow-text">*) <b>ARF<sub>aS</sub>:</b> activation ratio fold of activating-form SynNotch</p>
-                            <p class="flow-text">See more in <a href="/Team:Fudan-TSI/Optimization">Optimization</a></p>
-                        </div>
-                        <p class="flow-text">It is suggested by recent research that Notch activation begin as the receptor is first "opened up" at its negatively regulatory region (NRR) by the mechanical force exerted by Notch-bound ligand endocytosis on signal-sender cell, exposing its cleavage sites to proteases. Intracellular proteolytic action releases the Notch intracellular domain (NICD). In the majority of cellular interactions, the free Notch intracellular domain then translocate into the cell nucleus via nuclear localization sequence to regulate downstream signaling. For wild type Notch, the Notch intracellular domain would interacted with its major downstream effector CBF-1/Suppressor of Hairless/Lag-1 (CSL) on their target DNA. Together they recruit co-factors to activate endogenous downstream transcription. For SynNotch, specialized transcription factors will exclusively participate in regulation of genetic circuits that allow user-defined cellular responses.
+                        <p style="margin-top:0;text-indent: 0;"><b>Figure 3. Fluorescence intensity comparison of pCMV-EGFP-P2A and pSV40-EGFP-P2A 24 hours after transfection.</b> The expression level of pCMV is significantly higher than pSV40.
+
                         </p>
                     </div>
                 </main>
             </div>
-            <!-- end of main content of the page -->
 
 <!--Abstract on content page-->
             <div id="abstractContent" class="z-depth-2">
@@ -337,21 +309,21 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col s12 l6 row active">
-                                <div class="col s12 m4">
+                            <div class="col s12 l6 row">
+                                <div class="col s12 m4 active">
                                   <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span>
                                     <ul>
                                         <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
                                         <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
                                         <li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Parts#PartCollection">Part collection</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4">
                                   <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span>
                                     <ul>
-                                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Integrated_Human_Practice">Integrated human practice</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Human_Practices#PublicEngagement">Education &amp; Public engagement</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated human practice</a></li>
                                         <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
                                         <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
                                     </ul>
