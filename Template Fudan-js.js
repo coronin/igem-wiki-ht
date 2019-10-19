@@ -145,13 +145,13 @@ $acknowledgementPhotoImg2.mouseover(function () {
 var $figureBanner=$(".figureBanner");
 var $figureBannerImg=$(".figureBanner img");
 if($(window).width()>=1100 && $(window).width()>$(window).height()){
-    $figureBanner.css("height",$(window).height()-100);
+    $figureBanner.css("height",$(window).height()-150);
 } else if($(window).width()>=600){
     $figureBanner.css("height",280);
 }
 $(window).resize(function () {
     if($(window).width()>=1100 && $(window).width()>$(window).height()){
-        $figureBanner.css("height",$(window).height()-100);
+        $figureBanner.css("height",$(window).height()-150);
     } else if($(window).width()>=600){
         $figureBanner.css("height",280);
     }

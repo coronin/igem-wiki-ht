@@ -605,7 +605,6 @@
         /* @@@@ line-height: 34px;*/
         /* @@@@ font-size: 18px;*/
         padding: 0 10px;
-        color: #16283f;
     }
 
     #FudanTSIBody .sidenav .collapsible-header,
@@ -627,13 +626,12 @@
         height: auto;
     }
 
-    #FudanTSIBody #nav-mobile li > a.thisPageLink,
-    #pageContentNav li > a.thisPageLink,
+/*    #FudanTSIBody #nav-mobile li > a.thisPageLink,
     #FudanTSIBody .sidenav li > a.thisPageLink {
         background-color: #e5e6e7;
-    }
+    }*/
 
-    #pageContentNav li > a,
+    #pageContentNav li > a { display: block; }
     #FudanTSIBody .sidenav li > a {
         color: #16283f;
         display: block;
@@ -641,14 +639,19 @@
         /* @@@@ line-height: 30px;*/
     }
 
-    #pageContentNav li.onThisPageNav>a:hover,
+    #pageContentNav li.onThisPageNav>a:hover {
+        border-left: solid #e5e6e7 2px;
+        transition-duration: 0ms;
+    }
     #FudanTSIBody .sidenav li.onThisPageNav>a:hover {
         background-color: rgba(96,169,194, 0.05);
         border-left: solid #16283f 2px;
         transition-duration: 0ms;
     }
 
-    #pageContentNav li.onThisPageNav>a.active,
+    #pageContentNav li.onThisPageNav>a.active {
+        border-left: solid #e5e6e7 4px;
+    }
     #FudanTSIBody .sidenav li.onThisPageNav>a.active {
         background-color: rgba(96,169,194, 0.05);
         border-left: solid #16283f 4px;
@@ -965,8 +968,7 @@
 
 }
 
-
-ul#pageContentNav li>a,
+ul#pageContentNav li>a { font-size: 1.3rem; line-height: 2.4rem; }
 li.onThisPageNav>span,
 li.onThisPageNav>a,
 .pageSidebar { font-size: 1.3rem; line-height: 2.4rem;
