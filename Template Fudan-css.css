@@ -9,7 +9,7 @@
     #FudanTSIBody h5,
     #FudanTSIBody h6,
     #nav-mobile {
-        font-family: Helvetica, sans-serif;
+        font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
     }
 
     #FudanTSIBody h3,
@@ -17,7 +17,7 @@
     #FudanTSIBody h5,
     #FudanTSIBody h6,
     #nav-mobile {
-        color: rgba(0, 0, 0, 0.87);
+        color: rgba(255, 255, 255, 0.86);
     }
 
     #FudanTSIBody p,
@@ -25,8 +25,8 @@
     #FudanTSIBody table,
     #FudanTSIBody ol,
     #FudanTSIBody ul {
-        font-family: Calibri, sans-serif;
-        color: rgba(0, 0, 0, 0.87);
+        font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+        color: rgba(255, 255, 255, 0.86);
     }
 
     #FudanTSIBody .slides h3 {
@@ -40,29 +40,17 @@
     }
 
     #FudanTSIBody nav ul a {
-        color: #60A9C2;
+        color: #16283f;
     }
 
     #FudanTSIBody .dropdown-content li a {
-        color: #60A9C2;
+        color: #16283f;
     }
 
     #FudanTSIBody a {
         text-decoration: none;
         outline: none;
-        color: #60A9C2;
-    }
-
-    #FudanTSIBody.orangeBg nav ul a {
-        color: #F78E41;
-    }
-
-    #FudanTSIBody.orangeBg .dropdown-content li a {
-        color: #F78E41;
-    }
-
-    #FudanTSIBody.orangeBg a {
-        color: #F78E41;
+        color: #47998e;
     }
 
     #FudanTSIBody .floatingBtn .btn {
@@ -79,16 +67,16 @@
 
     #FudanTSIBody .floatingBtn .btn:first-child {
         right: 100px;
-        background: #FFE600;
+        background: #e5e6e7;
     }
 
     #FudanTSIBody .floatingBtn .btn:last-child {
         right: 40px;
-        background: #60A9C2;
+        background: #47998e;
     }
 
     #FudanTSIBody #nav-mobile li a {
-        color: rgba(0, 0, 0, 0.87);
+        color: rgba(255, 255, 255, 0.86);
         text-align: center;
     }
 
@@ -176,14 +164,10 @@
     }
 
     #pageContent h2 {
-        color: #60A9C2;
+        color: #47998e;
         /* @@@@ font-size: 36px;*/
         margin: 30px 0 40px 0;
         text-align: center;
-    }
-
-    #FudanTSIBody.orangeBg #pageContent h2 {
-        color: #F78E41;
     }
 
     #pageContent h3 {
@@ -195,7 +179,7 @@
         content: "▪ ";
     }
 
-    #pageContent #FudanFooter h3:before {
+    #pageContent #FudanTSIfooter h3:before {
         content: normal;
     }
 
@@ -224,7 +208,7 @@
         text-indent: 0;
     }
 
-    #pageContent #FudanFooter h3 {
+    #pageContent #FudanTSIfooter h3 {
         margin: 10px 0 10px 0;
     }
 
@@ -234,17 +218,17 @@
         z-index: 10;
         display: none;
         color: #fff;
-        background: rgba(0, 0, 0, 0.87);
+        background: rgba(255, 255, 255, 0.86);
         /* @@@@ font-size: 20px;*/
         /* @@@@ line-height: 24px;*/
     }
 
-#FudanFooter #usefulLinks {
-    color: #cacaca;
+#FudanTSIfooter #usefulLinks {
+    color: #e1e2e3;
     padding-left: 1rem;
 }
 
-#FudanFooter #usefulLinks ul {
+#FudanTSIfooter #usefulLinks ul {
     font-size: 13px;
     line-height: 14px;
     border-top: solid 2px;
@@ -253,32 +237,32 @@
     padding-top: 5px;
 }
 
-#FudanFooter #usefulLinks div {
-    color: #cacaca;
+#FudanTSIfooter #usefulLinks div {
+    color: #e1e2e3;
 }
 
-#FudanFooter #usefulLinks div:hover {
-    color: white;
+#FudanTSIfooter #usefulLinks div:hover {
+    color: #cfd8df;
 }
 
-#FudanFooter #usefulLinks a {
+#FudanTSIfooter #usefulLinks a {
     color: inherit;
 }
 
-#FudanFooter #usefulLinks a:hover {
+#FudanTSIfooter #usefulLinks a:hover {
     text-decoration: underline;
 }
 
-#FudanFooter #usefulLinks div.active,
-#FudanFooter #usefulLinks div.active a {
-    color: white;
+#FudanTSIfooter #usefulLinks div.active,
+#FudanTSIfooter #usefulLinks div.active a {
+    color: #cfd8df;
 }
 
-#FudanFooter #usefulLinks div.active ul {
-    border-top: solid white 2px;
+#FudanTSIfooter #usefulLinks div.active ul {
+    border-top: solid #cfd8df 2px;
 }
 
-#FudanFooter #usefulLinks li {
+#FudanTSIfooter #usefulLinks li {
     padding: 3px 0 6px 3px;
 }
 
@@ -290,7 +274,7 @@
     padding-left: 1.2rem;
 }
 
-#FudanFooter div.footer-copyright {
+#FudanTSIfooter div.footer-copyright {
     font-size: 13px;
     line-height: 15px;
 }
@@ -480,12 +464,8 @@
     }
 
     /*@media only screen and (min-width: 992px) {
-        #FudanTSIBody.orangeBg #nav-mobile {
-            border-top: solid 13px #F78E41;
-        }
-
         #FudanTSIBody #nav-mobile {
-            border-top: solid 13px #60A9C2;
+            border-top: solid 13px #16283f;
             margin-right: 20px;
         }
     }*/
@@ -555,13 +535,8 @@
     #contentBanner {
         position: relative;
         min-height: 300px;
-        background: #60A9C2;
+        background: #16283f;
         width: 100%;
-    }
-
-    #FudanTSIBody.orangeBg #contentBanner,
-    #FudanTSIBody.orangeBg #slide-out .background {
-        background-color: #F78E41;
     }
 
     #contentBanner div.row {
@@ -605,11 +580,11 @@
         }
     }
 
-    #FudanFooter .contactUS {
+    #FudanTSIfooter .contactUS {
         display: block;
     }
 
-    #FudanFooter .contactUS > div {
+    #FudanTSIfooter .contactUS > div {
         margin: 5px 0;
         color: rgba(255, 255, 255, 0.8);
     }
@@ -638,12 +613,7 @@
         /* @@@@ line-height: 34px;*/
         /* @@@@ font-size: 18px;*/
         padding: 0 10px;
-        color: #60A9C2;
-    }
-
-    #FudanTSIBody.orangeBg #pageContentNav li,
-    #FudanTSIBody.orangeBg .sidenav li {
-        color: #F78E41;
+        color: #16283f;
     }
 
     #FudanTSIBody .sidenav .collapsible-header,
@@ -654,13 +624,11 @@
     }
 
     #FudanTSIBody .sidenav li.active .collapsible-header {
-        background: #FFE600;
+        background: #e5e6e7;
     }
 
     #FudanTSIBody #pageContent li.onThisPageNav>a,
-    #FudanTSIBody.orangeBg #pageContent li.onThisPageNav>a,
-    #FudanTSIBody .sidenav li.onThisPageNav>a,
-    #FudanTSIBody.orangeBg .sidenav li.onThisPageNav>a {
+    #FudanTSIBody .sidenav li.onThisPageNav>a {
         /* @@@@ font-size: 15px;*/
         padding: 0 10px;
         /* @@@@ line-height: 24px;*/
@@ -671,7 +639,7 @@
     #FudanTSIBody #nav-mobile li > a.thisPageLink,
     #pageContentNav li > a.thisPageLink,
     #FudanTSIBody .sidenav li > a.thisPageLink {
-        background-color: #FFE600;
+        background-color: #e5e6e7;
     }
 
     #pageContentNav li.onThisPageNav.active,
@@ -681,45 +649,28 @@
 
     #pageContentNav li > a,
     #FudanTSIBody .sidenav li > a {
-        color: #60A9C2;
+        color: #16283f;
         display: block;
         /* @@@@ font-size: 18px;*/
         /* @@@@ line-height: 30px;*/
     }
 
-    #FudanTSIBody.orangeBg #pageContentNav li > a,
-    #FudanTSIBody.orangeBg .sidenav li > a {
-        color: #F78E41;
-    }
-
     #pageContentNav li.onThisPageNav>a:hover,
     #FudanTSIBody .sidenav li.onThisPageNav>a:hover {
         background-color: rgba(96, 169, 194, 0.05);
-        border-left: solid #60A9C2 2px;
+        border-left: solid #16283f 2px;
         transition-duration: 0ms;
-    }
-
-    #FudanTSIBody.orangeBg #pageContentNav li.onThisPageNav>a:hover,
-    #FudanTSIBody.orangeBg .sidenav li.onThisPageNav>a:hover {
-        background-color: rgba(247, 142, 65, 0.05);
-        border-left: solid #F78E41 2px;
     }
 
     #pageContentNav li.onThisPageNav>a.active,
     #FudanTSIBody .sidenav li.onThisPageNav>a.active {
-        border-left: solid #60A9C2 4px;
+        border-left: solid #16283f 4px;
         background-color: rgba(96, 169, 194, 0.05);
-    }
-
-    #FudanTSIBody.orangeBg #pageContentNav li.onThisPageNav>a.active,
-    #FudanTSIBody.orangeBg .sidenav li.onThisPageNav>a.active {
-        border-left: solid #F78E41 4px;
-        background-color: rgba(247, 142, 65, 0.05);
     }
 
     @media only screen and (min-width: 992px) {
         #pageContent main {
-            margin: 0 270px 0 0;
+            margin: 0 0 0 270px;
         }
     }
     #pageContent {
@@ -760,11 +711,7 @@
     }
 
     #slide-out .background {
-        background: #60A9C2;
-    }
-
-    #FudanTSIBody.orangeBg #slide-out .background {
-        background: #F78E41;
+        background: #16283f;
     }
 
     #figDescription {
@@ -862,20 +809,20 @@
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 0 -1px rgba(0, 0, 0, 0.16), 0 1px 3px 0 rgba(0, 0, 0, 0.22);
     }
 
-    #FudanFooter img {
+    #FudanTSIfooter img {
         margin: 5px 0;
     }
 
-    #FudanFooter div.row {
+    #FudanTSIfooter div.row {
         margin: 5px 0;
         padding: 0;
     }
 
-    #FudanFooter div.row > img {
+    #FudanTSIfooter div.row > img {
         padding: 0 2%;
     }
 
-    #FudanFooter #sponsor {
+    #FudanTSIfooter #sponsor {
         margin-top: 35px;
     }
 
@@ -1040,11 +987,8 @@ li.onThisPageNav>a,
 .pageSidebar { font-size: 1.3rem; line-height: 2.4rem; }
 
 ul.expandable div.active {
-    border-left: solid #60A9C2 4px;
+    border-left: solid #16283f 4px;
     background-color: rgba(96,169,194, 0.05); }
-#FudanTSIBody.orangeBg ul.expandable div.active {
-    border-left: solid #F78E41 4px;
-    background-color: rgba(247, 142, 65, 0.05); }
 
 
 @media print {
@@ -1059,7 +1003,7 @@ ul.expandable div.active {
     #contentBanner>div:first-child{display: none}
     #contentBanner>div:last-child{display: none}
     #pageContentNav{display: none}
-    #FudanFooter{display: none}
+    #FudanTSIfooter{display: none}
     #pageContent{margin: 2cm}
     #pageContent div{width: 100%}
     #pageContent main{margin: 0}
@@ -1084,7 +1028,7 @@ ul.expandable div.active {
     #FudanTSIBody ul,
     #FudanTSIBody a,
     #FudanTSIBody span{
-        font-family: "Times New Roman",serif;
+        font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
         color: rgb(0,0,0);
     }
     #FudanTSIBody h1{

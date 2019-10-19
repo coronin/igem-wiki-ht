@@ -168,7 +168,7 @@ $(function () {
 var $topNav=$('#topNav');
 var $pageContentNav=$('#pageContentNav');
 var scrollTop=$(document).scrollTop();
-var footerLocation=$("#FudanFooter").offset().top-scrollTop;
+var footerLocation=$("#FudanTSIfooter").offset().top-scrollTop;
 var pageContentNavHeight=$pageContentNav.height();
 var bannerHeight=$('#contentBanner').height();
 //init
@@ -190,7 +190,7 @@ else{
 }
 $(document).on('scroll',function () {
     scrollTop=$(document).scrollTop();
-    footerLocation=$("#FudanFooter").offset().top-scrollTop;
+    footerLocation=$("#FudanTSIfooter").offset().top-scrollTop;
     pageContentNavHeight=$pageContentNav.height();
     bannerHeight=$('#contentBanner').height();
     if(0){
@@ -258,7 +258,7 @@ $galleryBtnRight.click(function () {
 
 //hide the nav
 var $topNav=$("#topNav");
-var footerHeight=$("#FudanFooter").height();
+var footerHeight=$("#FudanTSIfooter").height();
 var pageHeight=$("#FudanTSIdivWrapper").height();
 scrollTop=$(document).scrollTop();
 //if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
@@ -268,7 +268,7 @@ scrollTop=$(document).scrollTop();
     $topNav.fadeIn(200);
 //}
 $(document).on("scroll",function () {
-    footerHeight=$("#FudanFooter").height();
+    footerHeight=$("#FudanTSIfooter").height();
     pageHeight=$("#FudanTSIdivWrapper").height();
     scrollTop=$(document).scrollTop();
     //if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){

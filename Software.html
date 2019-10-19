@@ -25,7 +25,7 @@
     <title>2019 Team:Fudan-TSI Software</title>
 </head>
 <body>
-<div id="FudanTSIdivWrapper" class="black"><div id="FudanTSIBody" class="black">
+<div id="FudanTSIdivWrapper"><div id="FudanTSIBody" class="blue-grey">
         <header>
             <div id="emptyBar" style="position:relative;width: 100%;"></div>
 
@@ -54,6 +54,13 @@
                 </div></li>
                 <li>
                     <ul class="collapsible expandable">
+                        <li class="onThisPageNav"><span>On this page</span></li>
+                        <li class="onThisPageNav"><a href="#section1">Motivation</a></li>
+                        <li class="onThisPageNav"><a href="#section2">Theoretical basis</a></li>
+                        <li class="onThisPageNav"><a href="#section3">User guidelines</a></li>
+                        <li class="onThisPageNav"><a href="#section4">References</a></li>
+                        <li class="onThisPageNav"><a href="#section5">Demo</a></li>
+
                         <li><span class="pageSidebar">Team: Fudan-TSI</span></li>
 <li><div class="collapsible-header"><span class="pageSidebar">Project</span></div>
     <div class="collapsible-body"><ul>
@@ -110,528 +117,182 @@
 
         <div id="pageContent" style="">
 
-            <div id="contentBanner" class="figureBanner"><!-- orangeBg -->
+            <div id="contentBanner" class="figureBanner">
                 <div class="row">
                     <div class="col s12 hide-on-med-and-up">
-                        <h4>Software</h4>
-                        <p class="flow-text">...</p>
+                        <h1>Software</h1>
+                        <p style="flow-text">Our software simplifies the primer design process for target-specific mutagenesis via reverse transcriptase (RT). We called it tRNA primer designer. Studies have shown that tRNA functions as the primer for in vivo reverse transcription initiation: the 5' end of the tRNA interacts with RT, and the 3' end matches with the mRNA encoding the target.  The software consists of 4 parts: reverse transcriptase selection, target sequence input, designed-tRNA visualization, and primer output. Although we only test MMLV RT experimentally, the software can adjust its designing method based on the properties of well-studied RT from 3 species, MMLV, HIV-1 and RSV. Users could design their tRNA primers even for eukaryotic experiments. In addition, we calculate and output the tRNA acceptor stem annealing temperature, as this might be used as an indicator for likelihood to success.</p>
                     </div>
                 </div>
-                <div id="figureBannerTitle" class="hide-on-small-only">
-                    <h1>Software</h1>
-                    <p class="flow-text">...</p>
-                </div>
                 <div class="hide-on-small-only">
-                    <img src="http://2018.igem.org/wiki/images/2/26/T--Fudan--title_software.jpg">
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
+                    <img style="padding:10%" src="https://2019.igem.org/wiki/images/6/6f/T--Fudan-TSI--coverSoftware.gif" />
                 </div>
             </div>
 
             <!-- main content of the page -->
             <div class="container">
-                <main style="margin: 0">
-                    <div id="app" class="section container">
-<!-- LC 2019-10-2 -->
-  <p class="flow-text">
-    <em>Please input the type of reverse transcriptase that you want to use:</em><br/>
-    <input type="radio" name="rev" value="MMLV" id="rev_MMLV" checked /><label for="rev_MMLV">MMLV</label><br/>
-    <input type="radio" name="rev" value="HIV1" id="rev_HIV1" /><label for="rev_HIV1">HIV1</label><br/>
-    <input type="radio" name="rev" value="RSV" id="rev_RSV" /><label for="rev_RSV">RSV</label>
-  </p>
-  <p class="flow-text">
-    <em>Please input a sequence that you want to mutate:</em><br/>
-    <input type="text" name="target" size="60" id="target_seq" value="" />
-  </p>
-  <p>
-    <input type="submit" value="submit" id="submit" />
-    <input type="submit" value="clear" id="clear" />
-    <input type="submit" value="demo" id="demo" style="float:right" />
-  </p>
-  <p id="progress" style="background:yellow;font-size:0.75em;line-height:11pt;text-indent:-10px;padding-left:15px"></p>
-  <div><table id="table_result" style="background-color:#eee"></table></div>
-  <hr/>
-  <p id="p_primer" style="color:green" class="flow-text Off">
-    <em>Your tRNA primer:</em><br/>
-    5'-<span id="primer_seq"></span>-3'
-  </p>
-  <script>
-var DEBUG = false,
-    Max_Mismatch = 2,
-    temp_seq = 'GGCUCGUUGGUCUAGGGGUAUGAUUCUCGCUUAGGGUGCGAGAGGUCCCGGGUUCAAAUCCCGGACGAGCCCCCA',
-    PBS_len = 18;
+                <!-- side navigator of page content -->
+                <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
+                    <li class="onThisPageNav"><a href="#section1">Motivation</a></li>
+                    <li class="onThisPageNav"><a href="#section2">Theoretical basis</a></li>
+                    <li class="onThisPageNav"><a href="#section3">User guidelines</a></li>
+                    <li class="onThisPageNav"><a href="#section4">References</a></li>
+                    <li class="onThisPageNav"><a href="#section5">Demo</a></li>
+                    <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
+                </ul>
 
-function getQueryStringArgs() {
-  var qs = location.search.length > 0 ? location.search.substring(1) : '',
-      args = {},
-      items = qs.length ? qs.split('&') : [],
-      item = null,
-      name = null,
-      value = null,
-      i = 0,
-      len = items.length;
-  for (i = 0; i < len; i += 1) {
-    item = items[i].split('=');
-    name = decodeURIComponent(item[0]);
-    value = decodeURIComponent(item[1]);
-    if (name.length) {
-      args[name] = value;
-    }
-  }
-  return args;
-}
+                <main>
 
-function cumsum(myarray) {
-  var new_array = [];
-  myarray.reduce(function(a,b,i) { return new_array[i] = a+b; }, 0);
-  return new_array;
-}
+<div id="section1" class="section container scrolSpy">
+  <h2>Motivation</h2>
+  <p style="flow-text">Previous studies have shown that a tRNA primer is required for the initiation of reverse transcription <a href="#Ref1">(Dahlberg et al.)</a>. In our system, we express the tRNA primer in E.coli by cloning it onto the plasmid that is used for generating the tools for mutation, i.e. P_mutant. However, designing the primer sequence according to different target sequences is time-consuming and needs many adjustments to find the perfect match. This motivates us to build a software for tRNA primer designing.</p>
+</div>
 
-function complement(ele) {
-    if (ele === 'A') {
-      return 'U';
-    } else if (ele === 'U' || ele === 'T') {
-      return 'A';
-    } else if (ele === 'G') {
-      return 'C';
-    } else if (ele === 'C') {
-      return 'G';
-    }
-  return 'N';
-}
-function complement_dna(ele) {
-    if (ele === 'A') {
-      return 'T';
-    } else if (ele === 'T' || ele === 'U') {
-      return 'A';
-    } else if (ele === 'G') {
-      return 'C';
-    } else if (ele === 'C') {
-      return 'G';
-    }
-  return 'N';
-}
-
-function isComplement(Base1, Base2, drawMode, alignMode) {
-  if (!drawMode) { drawMode = 'none'; }
-  if (!alignMode) { alignMode = 'none'; }
-  if (Base1 == complement(Base2)) {
-    if (alignMode === 'vertical') {
-      return 3;
-    } else {
-      return 1;
-    }
-  } else if ( (Base1 === 'G' && Base2 === 'U') ||
-              (Base1 === 'U' && Base2 === 'G') ) {
-    if (drawMode === 'draw') {
-      return 2;
-    } else {
-      return 1;
-    }
-  } else {
-    return 0;
-  }      
-}
-
-function anti_parallel(t) {
-  var apt_list = [],
-      t_list = t.split('');
-  $.each(t_list, function (iV, ele) {
-    if (ele === 'A') {
-      apt_list.unshift( 'U' );
-    } else if (ele === 'T' || ele === 'U') {
-      apt_list.unshift( 'A' );
-    } else if (ele === 'G') {
-      apt_list.unshift( 'C' );
-    } else if (ele === 'C') {
-      apt_list.unshift( 'G' );
-    }
-  });
-  return apt_list.join('');
-}
-
-function complementSeq(t) {
-  var cs_list = [],
-      t_list = t.split('');
-  $.each(t_list, function (iV, ele) {
-    cs_list.push( complement(ele) );
-  });
-  return cs_list.join('');
-}
-function complementSeq_dna(t) {
-  var cs_list = [],
-      t_list = t.split('');
-  $.each(t_list, function (iV, ele) {
-    cs_list.push( complement_dna(ele) );
-  });
-  return cs_list.join('');
-}
-
-function reverseAB(t, A, B) {
-  if (A <= B || A >= t.length) { return ''; }
-  var tt = '';
-  for (let step = A; step > B; step--) {
-      tt += t.substr(step, 1);
-  }
-  return tt;
-}
-
-function findRegion(seq, L) {
-  var new_s = {};
-  // return the basic components of tRNA (e.g. TArm, TLoop, etc.) for subsequent plotting step
-  var S, Base1, Base2, mismatch1, mismatch2, mismatch3, MisMatch_total,
-      AcptStemStart, AcptStemEnd, AcptStemLen,
-      DLoopStart, DLoopEnd, DLoopLen,
-      AtCLoopEnd, AtCLoopStart, AtCLoopStemLen,
-      TArmSiteStart, TArmSiteEnd, TArmStemLen;
-  for (let n = 0; n < L; n++) {
-    for (let interval = 69; interval < 94; interval++) {
-            AcptStemStart = n;
-            AcptStemEnd = n + interval;
-            AcptStemLen = 7;
-            MisMatch_total = 0;
-            if (AcptStemEnd >= L) { continue; }
-            mismatch1 = 0;
-            S = 0;
-            for (let i = 0; i < AcptStemLen; i++) {
-                Base1 = seq.substr(AcptStemStart+i, 1);
-                Base2 = seq.substr(AcptStemEnd-i, 1);
-                S += isComplement(Base1, Base2);
-            }
-            mismatch1 += (AcptStemLen - S);
-            if (S < AcptStemLen-Max_Mismatch || mismatch1 > Max_Mismatch) { continue; }
-            TArmSiteEnd = n + interval - AcptStemLen;
-            TArmSiteStart = TArmSiteEnd - 16;
-            TArmStemLen = 5;
-            S = 0;
-            for (let i = 0; i < TArmStemLen; i++) {
-                Base1 = seq.substr(TArmSiteStart+i, 1);
-                Base2 = seq.substr(TArmSiteEnd-i, 1);
-                S += isComplement(Base1, Base2);
-            }
-            mismatch1 += (TArmStemLen - S);
-            MisMatch_total = mismatch1;
-            if (S < 4 || MisMatch_total > Max_Mismatch) { continue; }
-            for (let DLoopLen = 14; DLoopLen < 19; DLoopLen++) {
-                MisMatch_total = mismatch1;
-                DLoopStart = n + 9;
-                DLoopEnd = DLoopStart + DLoopLen;
-                S = 0;
-                if (DLoopLen < 17) { DLoopStemLen = 3; }
-                else { DLoopStemLen = 4; }
-                for (let i = 0; i < DLoopStemLen; i++) {
-                    Base1 = seq.substr(DLoopStart+i, 1);
-                    Base2 = seq.substr(DLoopEnd-i, 1);
-                    S += isComplement(Base1, Base2);
-                }
-                mismatch2 = DLoopStemLen - S;
-                MisMatch_total += mismatch2;
-                if (MisMatch_total <= Max_Mismatch) {
-                    AtCLoopStart = DLoopEnd + 2;
-                    AtCLoopStemLen = 5;
-                    for (let AtCLoopEnd = Math.max(AtCLoopStart+16, AcptStemEnd-54);
-                         AtCLoopEnd <= Math.min(AtCLoopStart+16, AcptStemEnd-28); AtCLoopEnd++) {
-                        S = 0;
-                        MisMatch_total = mismatch1 + mismatch2;
-                        for (let i = 0; i < AtCLoopStemLen; i++) {
-                            Base1 = seq.substr(AtCLoopStart+i, 1);
-                            Base2 = seq.substr(AtCLoopEnd-i, 1);
-                            S += isComplement(Base1, Base2);
-                        }
-                        mismatch3 = AtCLoopStemLen - S;
-                        MisMatch_total += mismatch3;
-                        if (MisMatch_total <= Max_Mismatch) {
-                            $('#progress').append('<br/>'+(AcptStemStart+1)+'..'+(AcptStemEnd+1+1)+'&nbsp;&nbsp;&nbsp;&nbsp;');
-                            $('#progress').append('mismatch='+MisMatch_total+'\n');
-                            GroupNum = [AcptStemStart, AcptStemLen, 2, 4, DLoopLen-2*4+1, 4, 1, AtCLoopStemLen,
-                                        AtCLoopEnd-AtCLoopStart-2*AtCLoopStemLen+1, AtCLoopStemLen,
-                                        TArmSiteStart-AtCLoopEnd-1, TArmStemLen, 16-2*TArmStemLen+1,
-                                        TArmStemLen, AcptStemLen, seq.length-AcptStemLen];
-                            GroupNum = cumsum(GroupNum);
-                            new_s = {
-                                AcceptArm: '',
-                                Interval1: '',
-                                DArm: '',
-                                DLoop: '',
-                                DArmComp: '',
-                                Interval2: '',
-                                AnticodonArm: '',
-                                AnticodonLoop: '',
-                                AnticodonArmComp: '',
-                                VariableLoop: '',
-                                TArm: '',
-                                TLoop: '',
-                                TArmComp: '',
-                                AcceptArmComp: '',
-                                Redundance:''
-                            };
-                            OutputName = [
-                                'AcceptArm',
-                                'Interval1',
-                                'DArm',
-                                'DLoop',
-                                'DArmComp',
-                                'Interval2',
-                                'AnticodonArm',
-                                'AnticodonLoop',
-                                'AnticodonArmComp',
-                                'VariableLoop',
-                                'TArm',
-                                'TLoop',
-                                'TArmComp',
-                                'AcceptArmComp',
-                                'Redundance'
-                            ];
-                            for (let i  = AcptStemStart; i < L; i++) {
-                                for (let j = 0; j < 15; j++) {
-                                    if (i >= GroupNum[j] && i < GroupNum[j+1]) {
-                                        new_s[OutputName[j]] += seq.substr(i, 1);
-                                    }
-                                }
-                            }
-                            DEBUG && console.log(new_s);
-                            return new_s;
-                        }
-                    } // for AtCLoopEnd
-                }
-            } // for DLoopLen
-    } // for interval
-  } // for n
-  $('#progress').text('!! not a tRNA, failed to draw');
-  return new_s;
-}
-
-function linkerDtm(seq1, seq2, mode) {
-  var linkSymbol = [' ', '-', '+', '|'],
-      L1 = seq1.length,
-      L2 = seq2.length, L, linkerSeq = '';
-  if (L1 != L2) {
-    return 0;
-  } else {
-    L = L1;
-  }
-  for (let i = 0; i < L; i++){
-    Base1 = seq1.substr(i, 1);
-    Base2 = seq2.substr(L-1-i, 1);
-    linkerSeq += linkSymbol[ isComplement(Base1, Base2, 'draw', mode) ];
-  }   
-  return linkerSeq;
-}
-
-function draw_tRNA(ForDraw, preId) {
-    var linker = {}, pre;
-    if (ForDraw.DLoop.length < 9) {
-        for (let i = 0; i < (9 - ForDraw.DLoop.length); i++) {
-          ForDraw.DLoop += ' ';
-        }
-    }
-    pre = '                        ' + ForDraw.Redundance + '\n';
-    linker['AcceptorArmLink'] = linkerDtm(ForDraw.AcceptArm, ForDraw.AcceptArmComp)
-    linker['DArmLink'] = linkerDtm(ForDraw.DArmComp,ForDraw.DArm, 'vertical')
-    linker['AnticodonArmLink'] = linkerDtm(ForDraw.AnticodonArm, ForDraw.AnticodonArmComp)
-    linker['TArmLink'] = linkerDtm(ForDraw.TArm, ForDraw.TArmComp, 'vertical')
-    for (let i = 0; i < ForDraw.AcceptArm.length-1; i++) {
-        pre += '                   ' + ForDraw.AcceptArm[i] +
-               ' ' + linker.AcceptorArmLink[i] + ' ' +
-               ForDraw.AcceptArmComp[ForDraw.AcceptArm.length-1-i] + '\n';
-    }
-    pre += '                   ' + ForDraw.AcceptArm[ForDraw.AcceptArm.length-1] +
-           ' ' + linker.AcceptorArmLink[ForDraw.AcceptArm.length-1] +
-           ' ' + ForDraw.AcceptArmComp[0] +
-           '          ' + ForDraw.TLoop[6] + ' ' + ForDraw.TLoop[5]+ '\n';
-    pre += '                  ' + ForDraw.Interval1[0] + '     ' +
-           ForDraw.TArmComp[4] + ' ' +
-           ForDraw.TArmComp[3] + ' ' +
-           ForDraw.TArmComp[2] + ' ' +
-           ForDraw.TArmComp[1] + ' ' +
-           ForDraw.TArmComp[0] + '     ' + ForDraw.TLoop[4]+ '\n';
-    pre += '      ' + ForDraw.DLoop[1] + ' ' + ForDraw.DLoop[0] +
-           '        ' + ForDraw.Interval1[1] +
-           '      ' + linker.TArmLink[0] + ' ' +
-           linker.TArmLink[1] + ' ' +
-           linker.TArmLink[2] + ' ' +
-           linker.TArmLink[3] + ' ' +
-           linker.TArmLink[4] + '     ' + ForDraw.TLoop[3]+ '\n';
-    pre += '    ' + ForDraw.DLoop[2] + '     ' +
-           ForDraw.DArm[3] + ' ' +
-           ForDraw.DArm[2] + ' ' +
-           ForDraw.DArm[1] + ' ' +
-           ForDraw.DArm[0] + '       ' +
-           ForDraw.TArm[0] + ' ' +
-           ForDraw.TArm[1] + ' ' +
-           ForDraw.TArm[2] + ' ' +
-           ForDraw.TArm[3] + ' ' +
-           ForDraw.TArm[4] + '     ' + ForDraw.TLoop[2]+ '\n';
-    pre += '    ' + ForDraw.DLoop[3] + '     ' +
-           linker.DArmLink[0] + ' ' +
-           linker.DArmLink[1] + ' ' +
-           linker.DArmLink[2] + ' ' +
-           linker.DArmLink[3] + '                 ' +
-           ForDraw.TLoop[1] + ' ' + ForDraw.TLoop[0]+ '\n';
-    pre += '    ' + ForDraw.DLoop[4] + '     '+
-           ForDraw.DArmComp[0] + ' ' +
-           ForDraw.DArmComp[1] + ' ' +
-           ForDraw.DArmComp[2] + ' ' + ForDraw.DArmComp[3]+ '\n';
-    pre += '      ' + ForDraw.DLoop[6] + ' ' + ForDraw.DLoop[7] +
-           '        ' + ForDraw.Interval2 +
-           '     ' + ForDraw.VariableLoop+ '\n';
-    for (let i = 0; i < ForDraw.AnticodonArm.length; i++) {
-        pre += '                  ' + ForDraw.AnticodonArm[i] +
-               ' ' + linker.AnticodonArmLink[i] + ' ' +
-               ForDraw.AnticodonArmComp[ForDraw.AnticodonArm.length-1-i] + '\n';
-    }
-    pre += '                ' + ForDraw.AnticodonLoop[0] + '       ' + ForDraw.AnticodonLoop[6] + '\n';
-    pre += '                ' + ForDraw.AnticodonLoop[1] + '       ' + ForDraw.AnticodonLoop[5] + '\n';
-    pre += '                  ' + ForDraw.AnticodonLoop[2] +
-           ' ' + ForDraw.AnticodonLoop[3] + ' ' + ForDraw.AnticodonLoop[4];
-    $('#'+preId).text(pre);
-}
-
-function tRNA_primer(std_q) {
-  var PBS = reverseAB(std_q, std_q.length-1, std_q.length-PBS_len-1);
-  var Primerseq = complementSeq(PBS);
-  var temp = findRegion( temp_seq.replace('T','U'), temp_seq.length );
-  if (temp) {
-    // tRNA_Pro for MMLV RT, tRNA_Lys for HIV-1 RT, tRNA_Trp for RSV RT
-    $('#table_result').html('<tr><th>Template for ' + $('input[name="rev"]:checked').val() + '</th><th>Your tRNA</th></tr>' +
-                            '<tr><td><pre id="preLeft"></pre></td><td><pre id="preRight"></pre></td></tr>');
-  }
-  draw_tRNA(temp, 'preLeft');
-  var qT = temp;
-  qT.Redundance = reverseAB(Primerseq, qT.Redundance.length-1, -1);
-  qT.AcceptArmComp = reverseAB(Primerseq,
-                               qT.Redundance.length+qT.AcceptArmComp.length-1, qT.Redundance.length-1);
-  qT.AcceptArm = anti_parallel(qT.AcceptArmComp);
-  qT.TArmComp = reverseAB(Primerseq.substr(qT.Redundance.length+qT.AcceptArmComp.length, 5), 4, -1);
-  qT.TArm = anti_parallel(qT.TArmComp);
-  var remainNotR = Primerseq.substr(qT.TArmComp.length+qT.Redundance.length+qT.AcceptArmComp.length);
-  qT.TLoop = qT.TLoop.substr(0, qT.TLoop.length-remainNotR.length) + reverseAB(remainNotR, remainNotR.length-1, -1);
-  draw_tRNA(qT, 'preRight');
-  return complementSeq_dna( qT.AcceptArm + qT.Interval1 + qT.DArm + qT.DArmComp + qT.Interval2 +
-                            qT.AnticodonArm + qT.AnticodonLoop + qT.VariableLoop + qT.TArm +
-                            qT.TLoop + qT.TArmComp + qT.AcceptArmComp + qT.Redundance );
-}
-
-function clean_results() {
-  $('#progress').text('');
-  $('#table_result').html('');
-  $('#graph_result').html('');
-  $('#primer_seq').text('');
-  $('#p_primer').addClass('Off');
-}
+<div id="section2" class="section container scrolSpy">
+  <h2>Theoretical basis</h2>
+  <p style="flow-text">Previous studies have reported that the interactions between tRNA primer and mRNA template as well as the reverse transcriptase are crucial in directing subsequent cDNA synthesis <a href="Ref1">(James E. Dahlberg et al.)</a>. Specifically, according to the model for reverse transcription proposed by <a href="Ref2">Kulpa et al.</a>, reverse transcription includes 5 steps (<a href="#Fig1">Figure 1</a>), in which the annealing of tRNA primer to the primer binding site (PBS) region on mRNA template is crucial for the synthesis of minus strand strong stop DNA (–ssDNA) and the following cDNA synthesis process.</p>
+</div>
+<div class="expFigureHolder" id="Fig1">
+  <img class="responsive-img" src="https://2019.igem.org/wiki/images/e/e9/T--Fudan-TSI--SFig1.gif" />
+  <p class="flow-text">Figure 1. Model for the whole process of reverse transcription.</p>
+</div>
 
 
-$(document).ready(function () {
-  $('#submit').on('click', function (event) {
-    clean_results();
-    var q = $('#target_seq').val();
-    if (q) {
-      std_q = q.replace(/[^atgc]/gi, '').toUpperCase();
-      DEBUG && $('#progress').text('Input: ' + std_q);
-      if (std_q && std_q.length >= PBS_len) {
-        $('#primer_seq').text(tRNA_primer( std_q ));
-        $('#p_primer').removeClass('Off');
-        DEBUG || $('#progress').addClass('Off');
-      } else {
-        $('#progress').text('!! the sequence should be longer');
-        $('#target_seq').focus();
-      }
-    } else {
-      $('#progress').text('!! please input something');
-      $('#target_seq').focus();
-    }
-    event.preventDefault();
-  });
-
-  var r = getQueryStringArgs();
-  if (r.seq) {
-    var q = r.seq;
-    $('#target_seq').val(r.seq);
-    std_q = t.replace(/[^atgc]/gi, '').toUpperCase();
-    //plus_strand_search(s, std_q);
-  }
-
-  $('#clear').on('click', function (event) {
-    clean_results();
-    $('#target_seq').val('');
-    $('#rev_MMLV').prop('checked', true);
-    temp_seq = 'GGCUCGUUGGUCUAGGGGUAUGAUUCUCGCUUAGGGUGCGAGAGGUCCCGGGUUCAAAUCCCGGACGAGCCCCCA';
-    PBS_len = 18;
-    event.preventDefault();
-  });
-
-  $('#demo').on('click', function (event) {
-    clean_results();
-    var q = 'CGATGATCGATCAGCTAGCTAGTCGATCGATCGATC';
-    $('#target_seq').val(q);
-    $('#primer_seq').text(tRNA_primer( q ));
-    $('#p_primer').removeClass('Off');
-    DEBUG || $('#progress').addClass('Off');
-    event.preventDefault();
-  });
-
-  $('input[name="rev"]').on('change', function () {
-    if (this.checked) {
-      clean_results();
-      if (this.value === 'MMLV') {
-        DEBUG && $('#progress').text('MMLV');
-        temp_seq = 'GGCUCGUUGGUCUAGGGGUAUGAUUCUCGCUUAGGGUGCGAGAGGUCCCGGGUUCAAAUCCCGGACGAGCCCCCA';
-        PBS_len = 18;
-      } else if (this.value === 'HIV1') {
-        DEBUG && $('#progress').text('HIV1');
-        temp_seq = 'GCCCGGCUAGCUCAGDCGGDAGAGCAUCAGACUUUUAAUCUGAGGGDCCAGGGTUCAAGUCCCUGUUCGGGCGCCA';
-        PBS_len = 18;
-      } else if (this.value === 'RSV') {
-        DEBUG && $('#progress').text('RSV');
-        temp_seq = 'GACCUCGUGGCGCAACGGDAGCGCGUCUGACUCCAGAUCAGAAGGCUGCGUGUUCGAAUCACGUCGGGGUCACCA';
-        PBS_len = 17;
-      } else {
-        $('#progress').text('This type of reverse transcriptase is not supported.');
-      }
-    }
-  });
-});
-  </script>
-<!-- LC 2019-10-2 -->
-                    </div>
-
+<div id="section3" class="section container scrolSpy">
+</div>
+<div id="section4" class="section container scrolSpy">
+</div>
+<div id="section5" class="section container scrolSpy">
+demo demo demo
+</div>
                     <div id="explained" class="section container">
-                        <h2>How to
-                        </h2>
+
+
+
+          <div class="row legend">
+            <div class="row">
+              <a name="Fig1"><img src="" style="width:30%; margin:auto;"></a>
+            </div>
+            <div class="row legends">
+              <b>Figure 1. </b><br />
+              Legend waiting to be added.
+            </div>
+          </div>
+
+          <div class="row para1">
+            <div class="row">
+              <div class="col">
+                Many researchers have studied the reverse transcription process in viruses, from which we find two critical properties in the annealing process of tRNA primer and PBS that should be taken into consideration when building the tRNA primer designer. <br /><br />
+                The first property is that the 3'-terminal of the tRNA primer should be complementary to the PBS on mRNA template (<a href="Ref2">Kosloff et al.</a>). The second one is that different viruses prefer specific type of tRNA primer for reverse transcription <a>(Kulpa et al.,</a><a> Kosloff et al.)</a>. What should also be noted is that for different viruses, the lengths of PBS as well as the types of tRNA primer are different. The PBS lengths and the preferred tRNA types of 3 most well-studied retroviruses are listed in Table I.<br /><br />
+
+                <table>
+                <tr>
+                   <td>Name of retrovirus</td>
+                   <td>Length of PBS</td>
+                   <td>Preferred tRNA type</td>
+                   <td>Reference</td>
+                </tr>
+                <tr>
+                   <td>Moloney murine leukemia virus (MMLV)</td>
+                   <td>18</td>
+                   <td>tRNA<sup>Pro</sup></td>
+                   <td>Kosloff et al.</td>
+                </tr>
+                <tr>
+                   <td>Human immunodeficiency virus type 1(HIV-1)</td>
+                   <td>18</td>
+                   <td>tRNA<sup>Lys</sup></td>
+                   <td>Kosloff et al.</td>
+                </tr>
+                <tr>
+                   <td>Rous sarcoma virus (RSV)</td>
+                   <td>17</td>
+                   <td>tRNA<sup>Trp</sup></td>
+                   <td>Kosloff et al.</td>
+                </tr>
+                </table>
+
+                These discoveries serve as the theoretical basis for our tRNA primer designer. So basically, the function of our tRNA primer designer is to change the tRNA template in order to suit the basic properties of the reverse transcriptase (MMLV RT/ HIV-1 RT/ RSV RT) selected by the user as well as to replace several nucleotides (17 or 18) on 3'-terminal of the tRNA templates to match with nucleotides at the 5'-terminal of the GOI which users input. Also, to make sure that the RNA sequence is a tRNA sequence, the secondary structure should be revealed. We achieve this goal by using the similar tRNA secondary structure prediction scheme as the one implemented in the opensource software tRNAfinder <a>(Kurokawa et al.)</a>.<br /><br />
+                Studies have shown that the primary factor guiding the selection of tRNA primer for MMLV RT is the PBS sequence instead of the inherent nature of reverse transcriptase <a>(A. H. Lund et al.,</a><a> S. P. Goff et al.)</a>. So, by making mutations on both the PBS and tRNA sequence, the researchers have found that reverse transcription could still successfully take place while the virus’ titer is not greatly affected. Also, after several cycles of replication, the mutated sequence is not changed back to its original version <a>(Pedersen et al., 1997)</a>. Even though it is found that the primer is not stringent for MMLV, studies have revealed that the tRNA-like structure is necessary. A study that the inclusion of one single non-Watson-Crick base pair between PBS and tRNA primer would improve the replication efficiency (F. S. Pedersen et al., 1993), but we didn’t adopt this construct as the one base pair mismatch would often be changed to the full-complementary version after the first cycle of replication <a>(Pedersen et al., 1997)</a>, making this addition unnecessary.
+
+              </div>
+            </div>                                              
+          </div>
+          
+          <div class="row title2" id="mainTitle3">
+            <div class="col"><i>User guidelines</i></div>
+          </div>
+                    
+          <div class="row para1">
+            <div class="row">
+              <div class="col">
+                Our tRNA primer designer is a web tool for potential users of our mutagenesis system to design their own tRNA primers according to their experimental setups. Here we provide a step-by-step guide to using this software.<br /><br />
+                Step 1. Select the type of reverse transcriptase (RT) that you want to use based on your experimental design, as shown in the figure below. Note that this software only allows you to choose from MMLV RT/ HIV-1 RT/ RSV RT.<br /><br />
+              </div>
+            </div>                                              
+          </div>
+
+          <div class="row legend">
+            <div class="row">
+              <img src="https://2019.igem.org/wiki/images/5/53/T--Fudan-TSI--SFig2.gif" style="width:30%; margin:auto;">
+            </div>
+          </div>
+
+                                       <div class="row para1">
+            <div class="row">
+              <div class="col">
+                Step 2. Input a DNA sequence that you want to mutate, as shown in the figure below (upper panel). You can find a demo for it if you click on the icon on the right side of the web page, as shown in the figure below (lower panel). The last 17/18 nucleotides (nt) of the sequence are selected to be PBS, depending on the type of RT that you have chosen in <b><i>Step 1</i></b>. The length of PBS is 18nt if MMLV RT/ HIV-1 RT is selected, and is 17nt if RSV RT is selected. Note that this sequence should be longer than 17/18 nucleotides based on your selected RT. Besides, it shouldn't contain any characters other than A/T/C/G.<br /><br />
+              </div>
+            </div>                                              
+          </div>
+
+          <div class="row legend">
+            <div class="row">
+              <img src="https://2019.igem.org/wiki/images/2/29/T--Fudan-TSI--SFig3.gif" style="width:30%; margin:auto;">
+            </div>
+          </div>
+
+                                       <div class="row para1">
+            <div class="row">
+              <div class="col">
+                Step3. Click on the "DESIGN FOR ME!" button and see the result, as shown in the figure below (upper panel). The result is composed of two parts. The first part shows you the secondary structure of the template tRNA that you will be using as well as the designed tRNA primer. The fragment that can be annealed to PBS of the input DNA sequence is shown in red. The second part will give you the DNA sequence encoding the tRNA primer that satisfies your need. You can just copy it and use it elsewhere. These two parts are demonstrated in the figure below (lower panel).
+                
+              </div>
+            </div>                                              
+          </div>
+
+          <div class="row legend">
+            <div class="row">
+              <img src="https://2019.igem.org/wiki/images/1/13/T--Fudan-TSI--SFig4.gif" style="width:30%; margin:auto;">
+            </div>
+          </div>
+
+          <div class="row legend">
+            <div class="row">
+              <img src="https://2019.igem.org/wiki/images/9/91/T--Fudan-TSI--SFig5.gif" style="width:30%; margin:auto;">
+            </div>
+          </div>
+          
+          <div class="row title2" id="mainTitle4">
+            <div class="col"><i>References</i></div>
+          </div>
+                    
+          <div class="row para1">
+            <div class="row">
+              <div class="col">
+                <ul class="paraUl" style="list-style:none;">
+                  <li><a name="Ref1">[1]. Peters G , Dahlberg J E . RNA-directed DNA synthesis in Moloney murine leukemia virus: interaction between the primer tRNA and the genome RNA.[J]. Journal of Virology, 1979, 31(2):398-407.</a></li>
+                  <li><a name="Ref2">[2]. Kulpa, D. Determination of the site of first strand transfer during Moloney murine leukemia virus reverse transcription and identification of strand transfer-associated reverse transcriptase errors[J]. EMBO (European Molecular Biology Organization) Journal, 1997, 16(4):856-865.</a></li>
+                  <li><a name="Ref3">[3]. Palmer M T , Kirkman R , Kosloff B R , et al. tRNA Isoacceptor Preference prior to Retrovirus Gag-Pol Junction Links Primer Selection and Viral Translation[J]. Journal of Virology, 2007, 81(9):4397-4404.</a></li>
+                  <li><a name="Ref4">[4]. Kinouchi M , Kurokawa K . [Special Issue: Fact Databases and Freewares] tRNAfinder: A Software System To Find All tRNA Genes in the DNA Sequence Based on the Cloverleaf Secondary Structure[J]. Journal of Computer Aided Chemistry, 2006, 7:116-124.</a></li>
+                  <li><a name="Ref5">[5]. Lund, Anders H. et al. “Mutated primer binding sites interacting with different tRNAs allow efficient murine leukemia virus replication.” Journal of virology, 67 12 (1993): 7125-30.</a></li>
+                </ul>
+
+
+
+
                         <p class="flow-text">
-                            Modeling is necessary for quantifying biological processes and designing biological systems for customized function. With the increasingly rapid development of synthetic biology, many models are based on different branches of applied mathematics, as exampled by stochastic process, cellular automaton, dynamic systems, and Boltzmann kinetics for different biological processes. For example, automaton is often used to model birth and death processes, stochastic processes is often used to model transcription factor-DNA binding，dynamic systems is often used in population ecology to predict the evolution of colony, and Boltzmann kinetics is often used to quantitatively describe chemical reactions. Some toolkit based on this model, like <a href="http://www.compucell3d.org/" target=_blank>CompCell3D</a>, has been developed for computational nanotechnology and simulating tissue development.
-                        </p>
-                        <p class="flow-text">
-                            However, there hasn’t a ready single model for our ENABLE project. It is because an overall model for our project should not only consist the 3-layer standard design (for more details please visit <a href="/Team:Fudan-TSI/Results">our Results page</a>) but also the biological mechanism underlying it (for more details please visit <a href="/Team:Fudan-TSI/Model">our Modeling page</a>).
-                        </p>
-                        <p class="flow-text">
-                            Here we present a software (<a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>github.com/0vioiano/iGEM2018_Team_Fudan</a>) using multiscale mathematical tools for different biological processes, which serves as a reusable tool for cell colony design. We use different modules packaged in different <i>Classes</i> to simulate different biological processes. Based on the object-oriented principal, it is easy for users to realize customized Classes and simulate cell colony using our software.
-                        </p>
-                        <p class="flow-text">
-                            A colony is occupied by different populations, a population is unitized by abundant individuals, be it a cell or an ensemble of various cells, and a cell is a network of chemicals, for example, proteins, lipids, nucleotides, etc. To simulate cell colony, our software bridges a nanoscopic transcriptional design of biological circuits, with microscopic cellular behaviors, up to a macroscopic population output, from which clinical outcome could be predicted, artificial tissue could be assembled, etc.
-                        </p>
-                        <p class="flow-text">
-                            A demonstration using our software to simulate the process of our engineered cells collaborating to wipe out cancer cells are offered as <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan/tree/master/demo" target=_blank>a demo</a>.
+                            A demonstration of our software is below. And, to simulate the process of our engineered cells collaborating to wipe out cancer cells are offered as <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan/tree/master/demo" target=_blank>a demo</a>.
                         </p>
                     </div>
                 </main>
@@ -642,8 +303,8 @@ $(document).ready(function () {
             <div id="abstractContent" class="z-depth-2">
                 <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
                 <div class="container">
-                    <h5 style="margin:0;padding:10px 0;">Project Summary &copy; Team:Fudan-TSI</h5>
-                    <p class="flow-text" style="margin:0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. Here we present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase reverts RNA into cDNA, during which the target is randomly mutated by enhanced error-prone reverse transcription. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the <i>in vivo</i> evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
+                    <h5 style="margin:0;padding:10px 0;">Software by Team:Fudan-TSI</h5>
+                    <p class="flow-text" style="margin:0">Our software simplifies the primer design process for target-specific mutagenesis via reverse transcriptase (RT). We called it tRNA primer designer. Studies have shown that tRNA functions as the primer for in vivo reverse transcription initiation: the 5' end of the tRNA interacts with RT, and the 3' end matches with the mRNA encoding the target.  The software consists of 4 parts: reverse transcriptase selection, target sequence input, designed-tRNA visualization, and primer output. Although we only test MMLV RT experimentally, the software can adjust its designing method based on the properties of well-studied RT from 3 species, MMLV, HIV-1 and RSV. Users could design their tRNA primers even for eukaryotic experiments. In addition, we calculate and output the tRNA acceptor stem annealing temperature, as this might be used as an indicator for likelihood to success.
                     </p>
                 </div>
             </div>
@@ -659,7 +320,7 @@ $(document).ready(function () {
             </div>
 
             <!-- Footer with sponsors and contact methods -->
-            <footer id="FudanFooter" class="page-footer grey">
+            <footer id="FudanTSIfooter" class="page-footer blue-grey darken-4">
                 <div class="container">
                     <div class="row">
                         <div id="sponsor" class="col m3 s12 row">

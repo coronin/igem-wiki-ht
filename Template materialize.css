@@ -4344,7 +4344,7 @@ nav .brand-logo.center {
           transform: translateX(-50%);
 }
 
-/* 2019-9-16 LC @media only screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   nav .brand-logo {
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -4362,7 +4362,7 @@ nav .brand-logo.center {
     right: 0.5rem;
     left: auto;
   }
-}*/
+}
 
 nav .brand-logo.right {
   right: 0.5rem;
@@ -4420,7 +4420,7 @@ nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.b
 
 nav ul a:hover {
 /* 2018 ht edited */
-  background-color: #FFE600;
+  background-color: #e5e6e7;
 }
 
 nav ul.left {
@@ -5578,7 +5578,7 @@ button.btn-floating {
 
 .dropdown-content li:hover, .dropdown-content li.active {
 /* 2018 ht edited */
-  background-color: #FFE600;
+  background-color: #e5e6e7;
 }
 
 .dropdown-content li:focus {
