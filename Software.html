@@ -13,6 +13,7 @@
   #sideMenu, #top_title, .patrollink  {display:none;}
   #content { margin-left: 0; padding:0px; width:100%;}
   .judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2% !important; width: 92%!important;}
+  *{margin:0;padding:0;list-style:none}blockquote,body,button,dd,dl,dt,fieldset,form,h1,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp{font-family:courier new,courier,monospace}ol,ul{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}
 /*****************************************************************************/
 /* page specific */
 /*****************************************************************************/
@@ -25,7 +26,7 @@
     <title>2019 Team:Fudan-TSI Software</title>
 </head>
 <body>
-<div id="FudanTSIdivWrapper"><div id="FudanTSIBody" class="blue-grey">
+<div id="FudanTSIdivWrapper"><div id="FudanTSIBody">
         <header>
             <div id="emptyBar" style="position:relative;width: 100%;"></div>
 
@@ -94,10 +95,10 @@
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
     </ul></div>
 </li>
-<li><div class="collapsible-header"><span class="pageSidebar">Outreach</span></div>
+<li><div class="collapsible-header"><span class="pageSidebar">Human practices</span></div>
     <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated human practice</a></li>
+        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
+        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li>
     </ul></div>
@@ -115,13 +116,13 @@
             </ul>
         </header>
 
-        <div id="pageContent" style="">
+        <div id="pageContent">
 
             <div id="contentBanner" class="figureBanner">
                 <div class="row">
                     <div class="col s12 hide-on-med-and-up">
-                        <h1>Software</h1>
-                        <p style="flow-text">Our software simplifies the primer design process for target-specific mutagenesis via reverse transcriptase (RT). We called it tRNA primer designer. Studies have shown that tRNA functions as the primer for in vivo reverse transcription initiation: the 5' end of the tRNA interacts with RT, and the 3' end matches with the mRNA encoding the target.  The software consists of 4 parts: reverse transcriptase selection, target sequence input, designed-tRNA visualization, and primer output. Although we only test MMLV RT experimentally, the software can adjust its designing method based on the properties of well-studied RT from 3 species, MMLV, HIV-1 and RSV. Users could design their tRNA primers even for eukaryotic experiments. In addition, we calculate and output the tRNA acceptor stem annealing temperature, as this might be used as an indicator for likelihood to success.</p>
+                        <h1><br/>Software</h1>
+                        <p class="flow-text">Our software simplifies the primer design process for target-specific mutagenesis via reverse transcriptase (RT). We called it tRNA primer designer. Studies have shown that tRNA functions as the primer for in vivo reverse transcription initiation: the 5' end of the tRNA interacts with RT, and the 3' end matches with the mRNA encoding the target.  The software consists of 4 parts: reverse transcriptase selection, target sequence input, designed-tRNA visualization, and primer output. Although we only test MMLV RT experimentally, the software can adjust its designing method based on the properties of well-studied RT from 3 species, MMLV, HIV-1 and RSV. Users could design their tRNA primers even for eukaryotic experiments. In addition, we calculate and output the tRNA acceptor stem annealing temperature, as this might be used as an indicator for likelihood to success.</p>
                     </div>
                 </div>
                 <div class="hide-on-small-only">
@@ -145,156 +146,76 @@
 
 <div id="section1" class="section container scrolSpy">
   <h2>Motivation</h2>
-  <p style="flow-text">Previous studies have shown that a tRNA primer is required for the initiation of reverse transcription <a href="#Ref1">(Dahlberg et al.)</a>. In our system, we express the tRNA primer in E.coli by cloning it onto the plasmid that is used for generating the tools for mutation, i.e. P_mutant. However, designing the primer sequence according to different target sequences is time-consuming and needs many adjustments to find the perfect match. This motivates us to build a software for tRNA primer designing.</p>
+  <p class="flow-text">Previous studies have shown that a tRNA primer is required for the initiation of reverse transcription <a href="#Ref1">(Dahlberg et al.)</a>. In our system, we express the tRNA primer in E.coli by cloning it onto the plasmid that is used for generating the tools for mutation, i.e. P_mutant. However, designing the primer sequence according to different target sequences is time-consuming and needs many adjustments to find the perfect match. This motivates us to build a software for tRNA primer designing.</p>
+</div>
+
+<div class="expFigureHolder" id="Fig1">
+  <img class="responsive-img" src="https://2019.igem.org/wiki/images/e/e9/T--Fudan-TSI--SFig1.gif" />
+  <p>Figure 1. Model for the whole process of reverse transcription.</p>
 </div>
 
 <div id="section2" class="section container scrolSpy">
   <h2>Theoretical basis</h2>
-  <p style="flow-text">Previous studies have reported that the interactions between tRNA primer and mRNA template as well as the reverse transcriptase are crucial in directing subsequent cDNA synthesis <a href="Ref1">(James E. Dahlberg et al.)</a>. Specifically, according to the model for reverse transcription proposed by <a href="Ref2">Kulpa et al.</a>, reverse transcription includes 5 steps (<a href="#Fig1">Figure 1</a>), in which the annealing of tRNA primer to the primer binding site (PBS) region on mRNA template is crucial for the synthesis of minus strand strong stop DNA (–ssDNA) and the following cDNA synthesis process.</p>
+  <p class="flow-text">Previous studies have reported that the interactions between tRNA primer and mRNA template as well as the reverse transcriptase are crucial in directing subsequent cDNA synthesis <a href="Ref1">(James E. Dahlberg et al.)</a>. Specifically, according to the model for reverse transcription proposed by <a href="Ref2">Kulpa et al.</a>, reverse transcription includes 5 steps (<a href="#Fig1">Figure 1</a>), in which the annealing of tRNA primer to the primer binding site (PBS) region on mRNA template is crucial for the synthesis of minus strand strong stop DNA (–ssDNA) and the following cDNA synthesis process.</p>
+  <p class="flow-text">Many researchers have studied the reverse transcription process in viruses, from which we find two critical properties in the annealing process of tRNA primer and PBS that should be taken into consideration when building the tRNA primer designer.</p>
+  <p class="flow-text">The first property is that the 3'-terminal of the tRNA primer should be complementary to the PBS on mRNA template (<a href="Ref2">Kosloff et al.</a>). The second one is that different viruses prefer specific type of tRNA primer for reverse transcription <a>(Kulpa et al.,</a><a> Kosloff et al.)</a>. What should also be noted is that for different viruses, the lengths of PBS as well as the types of tRNA primer are different. The PBS lengths and the preferred tRNA types of 3 most well-studied retroviruses are listed in Table 1.</p>
+  <p class="flow-text">These discoveries serve as the theoretical basis for our tRNA primer designer. So basically, the function of our tRNA primer designer is to change the tRNA template in order to suit the basic properties of the reverse transcriptase (MMLV RT/ HIV-1 RT/ RSV RT) selected by the user as well as to replace several nucleotides (17 or 18) on 3'-terminal of the tRNA templates to match with nucleotides at the 5'-terminal of the GOI which users input. Also, to make sure that the RNA sequence is a tRNA sequence, the secondary structure should be revealed. We achieve this goal by using the similar tRNA secondary structure prediction scheme as the one implemented in the opensource software tRNAfinder <a>(Kurokawa et al.)</a>.</p>
+  <p class="flow-text">Studies have shown that the primary factor guiding the selection of tRNA primer for MMLV RT is the PBS sequence instead of the inherent nature of reverse transcriptase <a>(A. H. Lund et al.,</a><a> S. P. Goff et al.)</a>. So, by making mutations on both the PBS and tRNA sequence, the researchers have found that reverse transcription could still successfully take place while the virus’ titer is not greatly affected. Also, after several cycles of replication, the mutated sequence is not changed back to its original version <a>(Pedersen et al., 1997)</a>. Even though it is found that the primer is not stringent for MMLV, studies have revealed that the tRNA-like structure is necessary. A study that the inclusion of one single non-Watson-Crick base pair between PBS and tRNA primer would improve the replication efficiency (F. S. Pedersen et al., 1993), but we didn’t adopt this construct as the one base pair mismatch would often be changed to the full-complementary version after the first cycle of replication <a>(Pedersen et al., 1997)</a>, making this addition unnecessary.</p>
 </div>
-<div class="expFigureHolder" id="Fig1">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/e/e9/T--Fudan-TSI--SFig1.gif" />
-  <p class="flow-text">Figure 1. Model for the whole process of reverse transcription.</p>
-</div>
-
+<div class="tableHolder">
+    <table>
+    <tr>
+       <th>Name of retrovirus</th>
+       <th>Length of PBS</th>
+       <th>Preferred tRNA</th>
+    </tr>
+    <tr>
+       <td>Moloney murine leukemia virus (MMLV)</td>
+       <td>18</td>
+       <td>tRNA<sup>Pro</sup></td>
+    </tr>
+    <tr>
+       <td>Human immunodeficiency virus type 1(HIV-1)</td>
+       <td>18</td>
+       <td>tRNA<sup>Lys</sup></td>
+    </tr>
+    <tr>
+       <td>Rous sarcoma virus (RSV)</td>
+       <td>17</td>
+       <td>tRNA<sup>Trp</sup></td>
+    </tr>
+    </table>
+    <p>table legend table legend table legend table legend table legend </p>
+  </div>
 
 <div id="section3" class="section container scrolSpy">
+  <h2>User guidelines</h2>
+  <p class="flow-text">Our tRNA primer designer is a web tool for potential users of our mutagenesis system to design their own tRNA primers according to their experimental setups. Here we provide a step-by-step guide to using this software.</p>
+  <img class="left-on-med-and-up width40" src="https://2019.igem.org/wiki/images/5/53/T--Fudan-TSI--SFig2.gif" />
+  <p class="flow-text">Step 1. Select the type of reverse transcriptase (RT) that you want to use based on your experimental design, as shown in the figure below. Note that this software only allows you to choose from MMLV RT/ HIV-1 RT/ RSV RT.</p>
+  <p class="flow-text">Step 2. Input a DNA sequence that you want to mutate, as shown in the figure below (upper panel). You can find a demo for it if you click on the icon on the right side of the web page, as shown in the figure below (lower panel). The last 17/18 nucleotides (nt) of the sequence are selected to be PBS, depending on the type of RT that you have chosen in <b><i>Step 1</i></b>. The length of PBS is 18nt if MMLV RT/ HIV-1 RT is selected, and is 17nt if RSV RT is selected. Note that this sequence should be longer than 17/18 nucleotides based on your selected RT. Besides, it shouldn't contain any characters other than A/T/C/G.</p>
+  <img class="left-on-med-and-up width40" src="https://2019.igem.org/wiki/images/2/29/T--Fudan-TSI--SFig3.gif" />
+  <p class="flow-text">Step3. Click on the "DESIGN FOR ME!" button and see the result, as shown in the figure below (upper panel). The result is composed of two parts. The first part shows you the secondary structure of the template tRNA that you will be using as well as the designed tRNA primer. The fragment that can be annealed to PBS of the input DNA sequence is shown in red. The second part will give you the DNA sequence encoding the tRNA primer that satisfies your need. You can just copy it and use it elsewhere. These two parts are demonstrated in the figure below (lower panel).</p>
+  <img class="left-on-med-and-up width40" src="https://2019.igem.org/wiki/images/1/13/T--Fudan-TSI--SFig4.gif" />
+  <img class="left-on-med-and-up width40" src="https://2019.igem.org/wiki/images/9/91/T--Fudan-TSI--SFig5.gif" />
 </div>
+
 <div id="section4" class="section container scrolSpy">
+  <h2>References</h2>
+  <ol id="ref" style="margin: 23px 0 0 0;">
+    <li id="Ref1">[1]. Peters G , Dahlberg J E . RNA-directed DNA synthesis in Moloney murine leukemia virus: interaction between the primer tRNA and the genome RNA.[J]. Journal of Virology, 1979, 31(2):398-407.</a></li>
+    <li id="Ref2">[2]. Kulpa, D. Determination of the site of first strand transfer during Moloney murine leukemia virus reverse transcription and identification of strand transfer-associated reverse transcriptase errors[J]. EMBO (European Molecular Biology Organization) Journal, 1997, 16(4):856-865.</a></li>
+    <li id="Ref3">[3]. Palmer M T , Kirkman R , Kosloff B R , et al. tRNA Isoacceptor Preference prior to Retrovirus Gag-Pol Junction Links Primer Selection and Viral Translation[J]. Journal of Virology, 2007, 81(9):4397-4404.</a></li>
+    <li id="Ref4">[4]. Kinouchi M , Kurokawa K . [Special Issue: Fact Databases and Freewares] tRNAfinder: A Software System To Find All tRNA Genes in the DNA Sequence Based on the Cloverleaf Secondary Structure[J]. Journal of Computer Aided Chemistry, 2006, 7:116-124.</a></li>
+    <li id="Ref5">[5]. Lund, Anders H. et al. “Mutated primer binding sites interacting with different tRNAs allow efficient murine leukemia virus replication.” Journal of virology, 67 12 (1993): 7125-30.</a></li>
+  </ol>
 </div>
+
 <div id="section5" class="section container scrolSpy">
-demo demo demo
+  <h2>dasdf</h2>
+  <p class="flow-text">A demonstration of our software is below. And, we have a simplifed version running on <a href="http://9.cail.cn/tRNA_primer.html" target=_blank>Amazon EC2</a>.</p>
 </div>
-                    <div id="explained" class="section container">
 
-
-
-          <div class="row legend">
-            <div class="row">
-              <a name="Fig1"><img src="" style="width:30%; margin:auto;"></a>
-            </div>
-            <div class="row legends">
-              <b>Figure 1. </b><br />
-              Legend waiting to be added.
-            </div>
-          </div>
-
-          <div class="row para1">
-            <div class="row">
-              <div class="col">
-                Many researchers have studied the reverse transcription process in viruses, from which we find two critical properties in the annealing process of tRNA primer and PBS that should be taken into consideration when building the tRNA primer designer. <br /><br />
-                The first property is that the 3'-terminal of the tRNA primer should be complementary to the PBS on mRNA template (<a href="Ref2">Kosloff et al.</a>). The second one is that different viruses prefer specific type of tRNA primer for reverse transcription <a>(Kulpa et al.,</a><a> Kosloff et al.)</a>. What should also be noted is that for different viruses, the lengths of PBS as well as the types of tRNA primer are different. The PBS lengths and the preferred tRNA types of 3 most well-studied retroviruses are listed in Table I.<br /><br />
-
-                <table>
-                <tr>
-                   <td>Name of retrovirus</td>
-                   <td>Length of PBS</td>
-                   <td>Preferred tRNA type</td>
-                   <td>Reference</td>
-                </tr>
-                <tr>
-                   <td>Moloney murine leukemia virus (MMLV)</td>
-                   <td>18</td>
-                   <td>tRNA<sup>Pro</sup></td>
-                   <td>Kosloff et al.</td>
-                </tr>
-                <tr>
-                   <td>Human immunodeficiency virus type 1(HIV-1)</td>
-                   <td>18</td>
-                   <td>tRNA<sup>Lys</sup></td>
-                   <td>Kosloff et al.</td>
-                </tr>
-                <tr>
-                   <td>Rous sarcoma virus (RSV)</td>
-                   <td>17</td>
-                   <td>tRNA<sup>Trp</sup></td>
-                   <td>Kosloff et al.</td>
-                </tr>
-                </table>
-
-                These discoveries serve as the theoretical basis for our tRNA primer designer. So basically, the function of our tRNA primer designer is to change the tRNA template in order to suit the basic properties of the reverse transcriptase (MMLV RT/ HIV-1 RT/ RSV RT) selected by the user as well as to replace several nucleotides (17 or 18) on 3'-terminal of the tRNA templates to match with nucleotides at the 5'-terminal of the GOI which users input. Also, to make sure that the RNA sequence is a tRNA sequence, the secondary structure should be revealed. We achieve this goal by using the similar tRNA secondary structure prediction scheme as the one implemented in the opensource software tRNAfinder <a>(Kurokawa et al.)</a>.<br /><br />
-                Studies have shown that the primary factor guiding the selection of tRNA primer for MMLV RT is the PBS sequence instead of the inherent nature of reverse transcriptase <a>(A. H. Lund et al.,</a><a> S. P. Goff et al.)</a>. So, by making mutations on both the PBS and tRNA sequence, the researchers have found that reverse transcription could still successfully take place while the virus’ titer is not greatly affected. Also, after several cycles of replication, the mutated sequence is not changed back to its original version <a>(Pedersen et al., 1997)</a>. Even though it is found that the primer is not stringent for MMLV, studies have revealed that the tRNA-like structure is necessary. A study that the inclusion of one single non-Watson-Crick base pair between PBS and tRNA primer would improve the replication efficiency (F. S. Pedersen et al., 1993), but we didn’t adopt this construct as the one base pair mismatch would often be changed to the full-complementary version after the first cycle of replication <a>(Pedersen et al., 1997)</a>, making this addition unnecessary.
-
-              </div>
-            </div>                                              
-          </div>
-          
-          <div class="row title2" id="mainTitle3">
-            <div class="col"><i>User guidelines</i></div>
-          </div>
-                    
-          <div class="row para1">
-            <div class="row">
-              <div class="col">
-                Our tRNA primer designer is a web tool for potential users of our mutagenesis system to design their own tRNA primers according to their experimental setups. Here we provide a step-by-step guide to using this software.<br /><br />
-                Step 1. Select the type of reverse transcriptase (RT) that you want to use based on your experimental design, as shown in the figure below. Note that this software only allows you to choose from MMLV RT/ HIV-1 RT/ RSV RT.<br /><br />
-              </div>
-            </div>                                              
-          </div>
-
-          <div class="row legend">
-            <div class="row">
-              <img src="https://2019.igem.org/wiki/images/5/53/T--Fudan-TSI--SFig2.gif" style="width:30%; margin:auto;">
-            </div>
-          </div>
-
-                                       <div class="row para1">
-            <div class="row">
-              <div class="col">
-                Step 2. Input a DNA sequence that you want to mutate, as shown in the figure below (upper panel). You can find a demo for it if you click on the icon on the right side of the web page, as shown in the figure below (lower panel). The last 17/18 nucleotides (nt) of the sequence are selected to be PBS, depending on the type of RT that you have chosen in <b><i>Step 1</i></b>. The length of PBS is 18nt if MMLV RT/ HIV-1 RT is selected, and is 17nt if RSV RT is selected. Note that this sequence should be longer than 17/18 nucleotides based on your selected RT. Besides, it shouldn't contain any characters other than A/T/C/G.<br /><br />
-              </div>
-            </div>                                              
-          </div>
-
-          <div class="row legend">
-            <div class="row">
-              <img src="https://2019.igem.org/wiki/images/2/29/T--Fudan-TSI--SFig3.gif" style="width:30%; margin:auto;">
-            </div>
-          </div>
-
-                                       <div class="row para1">
-            <div class="row">
-              <div class="col">
-                Step3. Click on the "DESIGN FOR ME!" button and see the result, as shown in the figure below (upper panel). The result is composed of two parts. The first part shows you the secondary structure of the template tRNA that you will be using as well as the designed tRNA primer. The fragment that can be annealed to PBS of the input DNA sequence is shown in red. The second part will give you the DNA sequence encoding the tRNA primer that satisfies your need. You can just copy it and use it elsewhere. These two parts are demonstrated in the figure below (lower panel).
-                
-              </div>
-            </div>                                              
-          </div>
-
-          <div class="row legend">
-            <div class="row">
-              <img src="https://2019.igem.org/wiki/images/1/13/T--Fudan-TSI--SFig4.gif" style="width:30%; margin:auto;">
-            </div>
-          </div>
-
-          <div class="row legend">
-            <div class="row">
-              <img src="https://2019.igem.org/wiki/images/9/91/T--Fudan-TSI--SFig5.gif" style="width:30%; margin:auto;">
-            </div>
-          </div>
-          
-          <div class="row title2" id="mainTitle4">
-            <div class="col"><i>References</i></div>
-          </div>
-                    
-          <div class="row para1">
-            <div class="row">
-              <div class="col">
-                <ul class="paraUl" style="list-style:none;">
-                  <li><a name="Ref1">[1]. Peters G , Dahlberg J E . RNA-directed DNA synthesis in Moloney murine leukemia virus: interaction between the primer tRNA and the genome RNA.[J]. Journal of Virology, 1979, 31(2):398-407.</a></li>
-                  <li><a name="Ref2">[2]. Kulpa, D. Determination of the site of first strand transfer during Moloney murine leukemia virus reverse transcription and identification of strand transfer-associated reverse transcriptase errors[J]. EMBO (European Molecular Biology Organization) Journal, 1997, 16(4):856-865.</a></li>
-                  <li><a name="Ref3">[3]. Palmer M T , Kirkman R , Kosloff B R , et al. tRNA Isoacceptor Preference prior to Retrovirus Gag-Pol Junction Links Primer Selection and Viral Translation[J]. Journal of Virology, 2007, 81(9):4397-4404.</a></li>
-                  <li><a name="Ref4">[4]. Kinouchi M , Kurokawa K . [Special Issue: Fact Databases and Freewares] tRNAfinder: A Software System To Find All tRNA Genes in the DNA Sequence Based on the Cloverleaf Secondary Structure[J]. Journal of Computer Aided Chemistry, 2006, 7:116-124.</a></li>
-                  <li><a name="Ref5">[5]. Lund, Anders H. et al. “Mutated primer binding sites interacting with different tRNAs allow efficient murine leukemia virus replication.” Journal of virology, 67 12 (1993): 7125-30.</a></li>
-                </ul>
-
-
-
-
-                        <p class="flow-text">
-                            A demonstration of our software is below. And, to simulate the process of our engineered cells collaborating to wipe out cancer cells are offered as <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan/tree/master/demo" target=_blank>a demo</a>.
-                        </p>
-                    </div>
                 </main>
             </div>
             <!-- end of main content of the page -->
@@ -329,9 +250,9 @@ demo demo demo
                         </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
                         </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
                         </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
+                            <h3 class="col s12" style="text-align:left;font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
                         </div>
-                        <div id="usefulLinks" class="col m9 s12 row">
+                        <div id="footerNavList" class="col m9 s12 row">
                             <div class="col s12 l6 row">
                                 <div class="col s12 m4">
                                   <span><a href="/Team:Fudan-TSI/Description">Project</a></span>
@@ -374,8 +295,8 @@ demo demo demo
                                 <div class="col s12 m4">
                                   <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span>
                                     <ul>
-                                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated human practice</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
                                         <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
                                         <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
                                     </ul>
@@ -411,12 +332,7 @@ demo demo demo
     </div>
 </div>
 
-
-<!-- Javascript files -->
-<!-- Materialize 1.0.0-rc.2 -->
-<script src="/Template materialize.js"></script>
-
-<!-- Javascript -->
+<script src="/Template materialize.js"></script><!-- Materialize 1.0.0-rc.2 -->
 <script src="/Template Fudan-js.js"></script>
 
 </body>

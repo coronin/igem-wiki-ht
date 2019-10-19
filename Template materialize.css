@@ -2947,11 +2947,10 @@ ul.staggered-list li {
 
 .page-footer {
   padding-top: 20px;
-  color: #fff;
-  background-color: #ee6e73;
 }
 
-.page-footer .footer-copyright {
+#FudanTSIfooter div.footer-copyright {
+  background-color: black;
   overflow: hidden;
   min-height: 50px;
   display: -webkit-box;
@@ -2967,8 +2966,6 @@ ul.staggered-list li {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 10px 0px;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(51, 51, 51, 0.08);
 }
 
 table, th, td {
