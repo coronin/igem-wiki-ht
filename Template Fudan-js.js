@@ -259,7 +259,7 @@ $galleryBtnRight.click(function () {
 //hide the nav
 var $topNav=$("#topNav");
 var footerHeight=$("#FudanFooter").height();
-var pageHeight=$("#FudanWrapper").height();
+var pageHeight=$("#FudanTSIdivWrapper").height();
 scrollTop=$(document).scrollTop();
 //if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
 //    $topNav.fadeOut(200);
@@ -269,7 +269,7 @@ scrollTop=$(document).scrollTop();
 //}
 $(document).on("scroll",function () {
     footerHeight=$("#FudanFooter").height();
-    pageHeight=$("#FudanWrapper").height();
+    pageHeight=$("#FudanTSIdivWrapper").height();
     scrollTop=$(document).scrollTop();
     //if(scrollTop>pageHeight-footerHeight-$(window).height() && $(window).width()>991){
     //    $topNav.fadeOut(200);

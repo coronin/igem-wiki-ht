@@ -1,84 +1,40 @@
-<script src="/jquery-1.11.3.min.js"></script>
+{{Fudan-TSI}}<script src="/jquery-1.11.3.min.js"></script>
 <html lang="en">
-<!-- {{Fudan-TSI}}
-This html document is created by Tian Huang for Team Fudan iGEM 2018.
-We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
--->
-<!-- LC check on 2018-10-25 -->
 <head>
     <meta charset="UTF-8">
-
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/Template Fudan-css.css" />
-
-    <!-- Font-awesome icons 4.7.0 -->
-    <link rel="stylesheet" href="/Template local-font-awesome.css" />
-
-    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
     <link rel="stylesheet" href="/Template materialize.css">
-
-    <!-- Clear default CSS settings; CSS reset -->
+    <link rel="stylesheet" href="/Template local-font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="/Template Fudan-css.css" />
     <style>
-        *{margin: 0;padding: 0;list-style: none;}
-        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
-
-        /** 清除内外边距 **/
-        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-        pre, /* text formatting elements 文本格式元素 */
-        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-        th, td /* table elements 表格元素 */ {
-            margin: 0;
-            padding: 0;
-        }
-
-        /** 设置默认字体 **/
-
-        /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
-        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-        /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-
-        /** 重置列表元素 **/
-        ul, ol { list-style: none; }
-
-        /** 重置文本格式元素 **/
-        a { text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-
-        /** 重置表单元素 **/
-        legend { color: #000; } /* for ie6 */
-        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-        /* 注：optgroup 无法扶正 */
-
-        /** 重置表格元素 **/
-        table { border-collapse: collapse; border-spacing: 0; }
-
-#FudanBody .imgNoM img{
-    width:100%; }
-#FudanBody .imgNoM{
-    text-align:center; }
-.Off {display: none !important}
+/*****************************************************************************/
+/* DEFAULT WIKI SETTINGS */
+/*****************************************************************************/
+  #home_logo, #sideMenu { display:none; }
+  #sideMenu, #top_title, .patrollink  {display:none;}
+  #content { margin-left: 0; padding:0px; width:100%;}
+  .judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2% !important; width: 92%!important;}
+/*****************************************************************************/
+/* page specific */
+/*****************************************************************************/
+  #FudanTSIBody .imgNoM img{
+      width:100%; }
+  #FudanTSIBody .imgNoM{
+      text-align:center; }
+  .Off {display: none !important}
     </style>
     <title>2019 Team:Fudan-TSI Software</title>
 </head>
-
 <body>
-<!-- Fudan div at igem.org -->
-<div id="FudanWrapper" class="black"><div id="FudanBody" class="black">
+<div id="FudanTSIdivWrapper" class="black"><div id="FudanTSIBody" class="black">
         <header>
-            <!-- empty bar -->
             <div id="emptyBar" style="position:relative;width: 100%;"></div>
 
-            <!-- Navigation bar 2019-9-15 -->
             <nav id="topNav" class="black z-depth-0_5">
                 <div class="nav-wrapper">
                     <div id="teamLogo" class="brand-logo">
                         <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif"></a>
                     </div>
-                    <ul id="nav-mobile" class="right orangeBorder">
+                    <ul id="nav-mobile" class="right">
                         <li>
                             <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
                                 <i class="fa fa-navicon" style="font-size:24px"></i>
@@ -87,8 +43,9 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                     </ul>
                 </div>
             </nav>
+
             <!-- Dropdown and List elements in navigation bar -->
-            <!-- Slide-out navigator contents 2019-9-15 -->
+
             <ul id="slide-out" class="sidenav">
                 <li style="padding: 0"><div class="sidenavBanner">
                     <div class="background">
@@ -100,7 +57,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                         <li><span class="pageSidebar">Team: Fudan-TSI</span></li>
 <li><div class="collapsible-header"><span class="pageSidebar">Project</span></div>
     <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li>
+        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Description</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li>
@@ -127,7 +84,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
         <li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Parts#PartCollection">Part collection</a></li>
+        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
     </ul></div>
 </li>
 <li><div class="collapsible-header"><span class="pageSidebar">Outreach</span></div>
@@ -152,7 +109,6 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         </header>
 
         <div id="pageContent" style="">
-
 
             <div id="contentBanner" class="figureBanner"><!-- orangeBg -->
                 <div class="row">
@@ -697,7 +653,7 @@ $(document).ready(function () {
                 <a href="#!" id="abstractBtn" class="btn">
                     <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i>
                 </a>
-                <a href="#FudanWrapper" class="btn">
+                <a href="#FudanTSIdivWrapper" class="btn">
                     <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i>
                 </a>
             </div>
@@ -751,7 +707,7 @@ $(document).ready(function () {
                                         <li><a href="/Team:Fudan-TSI/Parts#BasicPart">Basic parts</a></li>
                                         <li><a href="/Team:Fudan-TSI/Parts#CompositePart">Composite parts</a></li>
                                         <li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Parts#PartCollection">Part collection</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4">

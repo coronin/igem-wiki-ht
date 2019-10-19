@@ -57,24 +57,24 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
         table { border-collapse: collapse; border-spacing: 0; }
 
 /* LC 2019-9-15 */
-#FudanBody #pageContent .section p{
+#FudanTSIBody #pageContent .section p{
     font-size: 25px;
     line-height: 40px;
     color: #377893;
     margin-top: 70px;
     text-indent: 0;
 }
-#FudanBody .section img{
+#FudanTSIBody .section img{
     margin-top: 70px;
 }
-#FudanBody .highlight{
+#FudanTSIBody .highlight{
     width: 20%;
     height: auto;
     float: left;
     padding: 0.5%;
     text-align: center;
 }
-#FudanBody .section .highlight img{
+#FudanTSIBody .section .highlight img{
     width: 100%;
     margin-top: 0;
 }
@@ -84,32 +84,32 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
     font-weight:400;
 }
 @media only screen and (max-width: 991px) {
-    #FudanBody #highlight1 .highlight{
+    #FudanTSIBody #highlight1 .highlight{
         width: 33%;margin: 0
     }
-    #FudanBody #highlight2 .highlight{
+    #FudanTSIBody #highlight2 .highlight{
         width: 50%;
     }
     #highlight1{width:100%;}
     #highlight2{width:66%;margin: 20px auto 0 auto;}
 }
 @media only screen and (max-width: 600px) {
-    #FudanBody #pageContent .section p{
+    #FudanTSIBody #pageContent .section p{
         font-size: 18px;
         line-height: 30px;
         margin-top: 50px;
     }
-    #FudanBody .highlight{
+    #FudanTSIBody .highlight{
         float: none;
     }
-    #FudanBody #highlight1 .highlight,
-    #FudanBody #highlight1 .highlight{
+    #FudanTSIBody #highlight1 .highlight,
+    #FudanTSIBody #highlight1 .highlight{
         width: 80%;margin: 0 auto;
     }
     #highlight1{width:100%;}
     #highlight2{width:100%;}
 }
-#FudanBody #pageContent p.figureCaption{
+#FudanTSIBody #pageContent p.figureCaption{
     color: rgba(0,0,0,0.4);
     font-size: 16px;
     line-height: 20px;
@@ -128,8 +128,8 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
 <body onload="init();">
 <!-- Fudan div at igem.org -->
-<div id="FudanWrapper" class="white">
-    <div id="FudanBody" class="white">
+<div id="FudanTSIdivWrapper" class="white">
+    <div id="FudanTSIBody" class="white">
         <header>
             <!-- empty bar -->
             <div id="emptyBar" style="position:relative;width: 100%;"></div>
@@ -195,7 +195,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                 Human&nbsp;practices
                             </div>
                             <div class="highlight">
-                                <a href="/Team:Fudan-TSI/Parts#PartCollection"><img src="https://2018.igem.org/wiki/images/e/e3/T--Fudan--highlights_parts.png" alt="frontpage parts" /></a>
+                                <a href="/Team:Fudan-TSI/Part_Collection"><img src="https://2018.igem.org/wiki/images/e/e3/T--Fudan--highlights_parts.png" alt="frontpage parts" /></a>
                                 Parts&nbsp;collection
                             </div>
                         </div>
@@ -207,7 +207,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
 
             <!-- Floating Btns
             <div class="floatingBtn">
-                <a href="#FudanWrapper" class="btn">
+                <a href="#FudanTSIdivWrapper" class="btn">
                 </a>
             </div> -->
 
@@ -261,7 +261,7 @@ We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc
                                         <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
                                         <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
                                         <li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Parts#PartCollection">Part collection</a></li>
+                                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
                                     </ul>
                                 </div>
                                 <div class="col s12 m4">

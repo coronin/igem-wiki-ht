@@ -2,70 +2,70 @@
     /*****
     *Font Styles
     *****/
-    #FudanBody h1,
-    #FudanBody h2,
-    #FudanBody h3,
-    #FudanBody h4,
-    #FudanBody h5,
-    #FudanBody h6,
+    #FudanTSIBody h1,
+    #FudanTSIBody h2,
+    #FudanTSIBody h3,
+    #FudanTSIBody h4,
+    #FudanTSIBody h5,
+    #FudanTSIBody h6,
     #nav-mobile {
         font-family: Helvetica, sans-serif;
     }
 
-    #FudanBody h3,
-    #FudanBody h4,
-    #FudanBody h5,
-    #FudanBody h6,
+    #FudanTSIBody h3,
+    #FudanTSIBody h4,
+    #FudanTSIBody h5,
+    #FudanTSIBody h6,
     #nav-mobile {
         color: rgba(0, 0, 0, 0.87);
     }
 
-    #FudanBody p,
-    #FudanBody div,
-    #FudanBody table,
-    #FudanBody ol,
-    #FudanBody ul {
+    #FudanTSIBody p,
+    #FudanTSIBody div,
+    #FudanTSIBody table,
+    #FudanTSIBody ol,
+    #FudanTSIBody ul {
         font-family: Calibri, sans-serif;
         color: rgba(0, 0, 0, 0.87);
     }
 
-    #FudanBody .slides h3 {
+    #FudanTSIBody .slides h3 {
         color: #F78E41;
         /* @@@@ font-size: 40px;*/
     }
 
-    #FudanBody .slides h5 {
+    #FudanTSIBody .slides h5 {
         color: #F78E41;
         /* @@@@ font-size: 20px;*/
     }
 
-    #FudanBody nav ul a {
+    #FudanTSIBody nav ul a {
         color: #60A9C2;
     }
 
-    #FudanBody .dropdown-content li a {
+    #FudanTSIBody .dropdown-content li a {
         color: #60A9C2;
     }
 
-    #FudanBody a {
+    #FudanTSIBody a {
         text-decoration: none;
         outline: none;
         color: #60A9C2;
     }
 
-    #FudanBody.orangeBg nav ul a {
+    #FudanTSIBody.orangeBg nav ul a {
         color: #F78E41;
     }
 
-    #FudanBody.orangeBg .dropdown-content li a {
+    #FudanTSIBody.orangeBg .dropdown-content li a {
         color: #F78E41;
     }
 
-    #FudanBody.orangeBg a {
+    #FudanTSIBody.orangeBg a {
         color: #F78E41;
     }
 
-    #FudanBody .floatingBtn .btn {
+    #FudanTSIBody .floatingBtn .btn {
         position: fixed;
         bottom: 40px;
         width: 50px;
@@ -77,28 +77,28 @@
         z-index: 998;
     }
 
-    #FudanBody .floatingBtn .btn:first-child {
+    #FudanTSIBody .floatingBtn .btn:first-child {
         right: 100px;
         background: #FFE600;
     }
 
-    #FudanBody .floatingBtn .btn:last-child {
+    #FudanTSIBody .floatingBtn .btn:last-child {
         right: 40px;
         background: #60A9C2;
     }
 
-    #FudanBody #nav-mobile li a {
+    #FudanTSIBody #nav-mobile li a {
         color: rgba(0, 0, 0, 0.87);
         text-align: center;
     }
 
-    #FudanBody #nav-mobile > li > a {
+    #FudanTSIBody #nav-mobile > li > a {
         /* @@@@ font-size: 18px;*/
         font-weight: 400;
         letter-spacing: 1px;
     }
 
-    #FudanBody #nav-mobile > li > ul a {
+    #FudanTSIBody #nav-mobile > li > ul a {
         /* @@@@ font-size: 14px;*/
         font-weight: 300;
     }
@@ -182,7 +182,7 @@
         text-align: center;
     }
 
-    #FudanBody.orangeBg #pageContent h2 {
+    #FudanTSIBody.orangeBg #pageContent h2 {
         color: #F78E41;
     }
 
@@ -220,7 +220,7 @@
         text-align: justify;
         text-indent: 30px;
     }
-#FudanBody #contentBanner p {
+#FudanTSIBody #contentBanner p {
         text-indent: 0;
     }
 
@@ -295,12 +295,12 @@
     line-height: 15px;
 }
 
-    #FudanBody .tableHolder caption {
+    #FudanTSIBody .tableHolder caption {
         /* @@@@ font-size: 18px;*/
         margin-bottom: 2px;
     }
 
-    /* @@@@ #FudanBody #pageContent .tableHolder {
+    /* @@@@ #FudanTSIBody #pageContent .tableHolder {
         /*font-size: 15px;
         line-height: 25px;
     }*/
@@ -355,11 +355,11 @@
         }
     }*/
 
-    #FudanBody .nameCard h3 {
+    #FudanTSIBody .nameCard h3 {
         margin-top: 0;
     }
 
-    #bodyContent #FudanBody a[href^="https://"] {
+    #bodyContent #FudanTSIBody a[href^="https://"] {
         padding-right: 0;
     }
 
@@ -367,29 +367,29 @@
         text-decoration: underline;
     }
 
-    #FudanBody ol#ref li {
+    #FudanTSIBody ol#ref li {
         /*font-size: 14px;*/
         /* @@@@ line-height: 20px;*/
         margin-top: 15px;
         list-style-type: none;
     }
 
-    #FudanBody ol#ref {
+    #FudanTSIBody ol#ref {
         list-style-type: none;
        /* counter-reset: sectioncounter; */
     }
 
-/*    #FudanBody ol#ref li:before {
+/*    #FudanTSIBody ol#ref li:before {
         content: "[" counter(sectioncounter) "] ";
         counter-increment: sectioncounter;
     }*/
-    #FudanBody .expFigureHolder p{
+    #FudanTSIBody .expFigureHolder p{
         font-size: 0.9rem;
         line-height: 1.5rem;
         text-indent: 0;
         margin-top: 0;
     }
-    #FudanBody #pageContent .expFigureHolder{
+    #FudanTSIBody #pageContent .expFigureHolder{
         background: rgba(96, 169, 194, 0.3);
         padding: 2%;
         margin-top: 23px;
@@ -404,11 +404,11 @@
     /*****
     *Structure Styles
     *****/
-    #FudanBody img {
+    #FudanTSIBody img {
         background: rgba(0, 0, 0, 0);
     }
 /*
-    #FudanBody .section img[src$=".svg"] {
+    #FudanTSIBody .section img[src$=".svg"] {
         background: #fff;
     }
 */
@@ -420,7 +420,7 @@
         box-sizing: content-box; /* Solve the conflict between Materialize(inherit) and igem.org default setting */
     }
 
-    #FudanBody div {
+    #FudanTSIBody div {
         box-sizing: border-box;
     }
 
@@ -433,33 +433,33 @@
         padding: 0;
     }
 
-    #FudanWrapper {
+    #FudanTSIdivWrapper {
         position: relative;
         width: 100%;
     }
 
-    #FudanBody {
+    #FudanTSIBody {
         position: relative;
         width: 100%;
         overflow: hidden;
     }
 
-    #FudanBody ul {
+    #FudanTSIBody ul {
         margin: 0;
         line-height: inherit;
     }
 
-    #FudanBody img {
+    #FudanTSIBody img {
         vertical-align: inherit;
     }
 
-    #FudanBody .fa {
+    #FudanTSIBody .fa {
         height: inherit;
         line-height: inherit;
         /*font-size: inherit;*/
     }
 
-    #FudanBody .container {
+    #FudanTSIBody .container {
         width: 90%;
     }
 
@@ -480,11 +480,11 @@
     }
 
     /*@media only screen and (min-width: 992px) {
-        #FudanBody.orangeBg #nav-mobile {
+        #FudanTSIBody.orangeBg #nav-mobile {
             border-top: solid 13px #F78E41;
         }
 
-        #FudanBody #nav-mobile {
+        #FudanTSIBody #nav-mobile {
             border-top: solid 13px #60A9C2;
             margin-right: 20px;
         }
@@ -494,7 +494,7 @@
         width: 135px;
     }
 
-    #FudanBody #nav-mobile > li:last-child > a {
+    #FudanTSIBody #nav-mobile > li:last-child > a {
         width: 50px;
         color: #888;
     }
@@ -535,7 +535,7 @@
         margin: 0 10px;
     }
 
-    #FudanBody .slider .indicators {
+    #FudanTSIBody .slider .indicators {
         bottom: 60px;
         z-index: 100;
     }
@@ -559,8 +559,8 @@
         width: 100%;
     }
 
-    #FudanBody.orangeBg #contentBanner,
-    #FudanBody.orangeBg #slide-out .background {
+    #FudanTSIBody.orangeBg #contentBanner,
+    #FudanTSIBody.orangeBg #slide-out .background {
         background-color: #F78E41;
     }
 
@@ -615,11 +615,11 @@
     }
 
     #pageContentNav,
-    #FudanBody .sidenav {
+    #FudanTSIBody .sidenav {
         overflow-y: auto;
     }
 
-    #FudanBody .sidenav {
+    #FudanTSIBody .sidenav {
         height: auto;
         bottom: 0;
     }
@@ -633,7 +633,7 @@
     }
 
     #pageContentNav li,
-    #FudanBody .sidenav li {
+    #FudanTSIBody .sidenav li {
         float: none;
         /* @@@@ line-height: 34px;*/
         /* @@@@ font-size: 18px;*/
@@ -641,26 +641,26 @@
         color: #60A9C2;
     }
 
-    #FudanBody.orangeBg #pageContentNav li,
-    #FudanBody.orangeBg .sidenav li {
+    #FudanTSIBody.orangeBg #pageContentNav li,
+    #FudanTSIBody.orangeBg .sidenav li {
         color: #F78E41;
     }
 
-    #FudanBody .sidenav .collapsible-header,
-    #FudanBody .sidenav .collapsible-body,
-    #FudanBody .sidenav .collapsible-body li a {
+    #FudanTSIBody .sidenav .collapsible-header,
+    #FudanTSIBody .sidenav .collapsible-body,
+    #FudanTSIBody .sidenav .collapsible-body li a {
         height: auto;
         /* @@@@ line-height: 28px;*/
     }
 
-    #FudanBody .sidenav li.active .collapsible-header {
+    #FudanTSIBody .sidenav li.active .collapsible-header {
         background: #FFE600;
     }
 
-    #FudanBody #pageContent li.onThisPageNav>a,
-    #FudanBody.orangeBg #pageContent li.onThisPageNav>a,
-    #FudanBody .sidenav li.onThisPageNav>a,
-    #FudanBody.orangeBg .sidenav li.onThisPageNav>a {
+    #FudanTSIBody #pageContent li.onThisPageNav>a,
+    #FudanTSIBody.orangeBg #pageContent li.onThisPageNav>a,
+    #FudanTSIBody .sidenav li.onThisPageNav>a,
+    #FudanTSIBody.orangeBg .sidenav li.onThisPageNav>a {
         /* @@@@ font-size: 15px;*/
         padding: 0 10px;
         /* @@@@ line-height: 24px;*/
@@ -668,51 +668,51 @@
         height: auto;
     }
 
-    #FudanBody #nav-mobile li > a.thisPageLink,
+    #FudanTSIBody #nav-mobile li > a.thisPageLink,
     #pageContentNav li > a.thisPageLink,
-    #FudanBody .sidenav li > a.thisPageLink {
+    #FudanTSIBody .sidenav li > a.thisPageLink {
         background-color: #FFE600;
     }
 
     #pageContentNav li.onThisPageNav.active,
-    #FudanBody .sidenav li.onThisPageNav.active {
+    #FudanTSIBody .sidenav li.onThisPageNav.active {
         background-color: rgba(96, 169, 194, 0.05);
     }
 
     #pageContentNav li > a,
-    #FudanBody .sidenav li > a {
+    #FudanTSIBody .sidenav li > a {
         color: #60A9C2;
         display: block;
         /* @@@@ font-size: 18px;*/
         /* @@@@ line-height: 30px;*/
     }
 
-    #FudanBody.orangeBg #pageContentNav li > a,
-    #FudanBody.orangeBg .sidenav li > a {
+    #FudanTSIBody.orangeBg #pageContentNav li > a,
+    #FudanTSIBody.orangeBg .sidenav li > a {
         color: #F78E41;
     }
 
     #pageContentNav li.onThisPageNav>a:hover,
-    #FudanBody .sidenav li.onThisPageNav>a:hover {
+    #FudanTSIBody .sidenav li.onThisPageNav>a:hover {
         background-color: rgba(96, 169, 194, 0.05);
         border-left: solid #60A9C2 2px;
         transition-duration: 0ms;
     }
 
-    #FudanBody.orangeBg #pageContentNav li.onThisPageNav>a:hover,
-    #FudanBody.orangeBg .sidenav li.onThisPageNav>a:hover {
+    #FudanTSIBody.orangeBg #pageContentNav li.onThisPageNav>a:hover,
+    #FudanTSIBody.orangeBg .sidenav li.onThisPageNav>a:hover {
         background-color: rgba(247, 142, 65, 0.05);
         border-left: solid #F78E41 2px;
     }
 
     #pageContentNav li.onThisPageNav>a.active,
-    #FudanBody .sidenav li.onThisPageNav>a.active {
+    #FudanTSIBody .sidenav li.onThisPageNav>a.active {
         border-left: solid #60A9C2 4px;
         background-color: rgba(96, 169, 194, 0.05);
     }
 
-    #FudanBody.orangeBg #pageContentNav li.onThisPageNav>a.active,
-    #FudanBody.orangeBg .sidenav li.onThisPageNav>a.active {
+    #FudanTSIBody.orangeBg #pageContentNav li.onThisPageNav>a.active,
+    #FudanTSIBody.orangeBg .sidenav li.onThisPageNav>a.active {
         border-left: solid #F78E41 4px;
         background-color: rgba(247, 142, 65, 0.05);
     }
@@ -728,24 +728,24 @@
         flex-direction: column;
     }
 
-    #FudanBody main {
+    #FudanTSIBody main {
         flex: 1 0 auto;
     }
 
-    #FudanBody .sidenavBanner {
+    #FudanTSIBody .sidenavBanner {
         position: relative;
         padding: 32px 32px 0;
         margin-bottom: 8px;
     }
 
-    #FudanBody .sidenavBanner > a {
+    #FudanTSIBody .sidenavBanner > a {
         height: auto;
         padding: 0;
         display: block;
         /* @@@@ line-height: 48px;*/
     }
 
-    #FudanBody .sidenavBanner .background {
+    #FudanTSIBody .sidenavBanner .background {
         overflow: hidden;
         position: absolute;
         top: 0;
@@ -763,7 +763,7 @@
         background: #60A9C2;
     }
 
-    #FudanBody.orangeBg #slide-out .background {
+    #FudanTSIBody.orangeBg #slide-out .background {
         background: #F78E41;
     }
 
@@ -787,15 +787,15 @@
         opacity: 0.95;
     }
 
-    #FudanBody .section {
+    #FudanTSIBody .section {
         margin-top: 70px;
     }
 
-    #FudanBody .section:last-child {
+    #FudanTSIBody .section:last-child {
         margin-bottom: 150px;
     }
 
-    #FudanBody #abstractContent {
+    #FudanTSIBody #abstractContent {
         width: 300px;
         height: 300px;
         position: fixed;
@@ -810,7 +810,7 @@
         z-index: 998;
     }
 
-    #FudanBody #abstractContent > a {
+    #FudanTSIBody #abstractContent > a {
         height: 30px;
         width: 30px;
         position: absolute;
@@ -819,13 +819,13 @@
     }
 
     @media only screen and (min-width: 601px) and (min-height: 501px) {
-        #FudanBody #abstractContent {
+        #FudanTSIBody #abstractContent {
             width: 700px;
             height: 500px;
             margin: -250px 0 0 -350px;
         }
 
-        #FudanBody #abstractContent > a {
+        #FudanTSIBody #abstractContent > a {
             /* @@@@ font-size: 40px;*/
             /* @@@@ line-height: 40px;*/
             position: absolute;
@@ -857,7 +857,7 @@
         width: 100%;
     }
 
-    #FudanBody .z-depth-0_5 {
+    #FudanTSIBody .z-depth-0_5 {
         -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 0 -1px rgba(0, 0, 0, 0.16), 0 1px 3px 0 rgba(0, 0, 0, 0.22);
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 0 -1px rgba(0, 0, 0, 0.16), 0 1px 3px 0 rgba(0, 0, 0, 0.22);
     }
@@ -927,20 +927,20 @@
         margin: 25px 0 0 0;
     }
 
-    #FudanBody .FudanGallery {
+    #FudanTSIBody .FudanGallery {
         position: relative;
         width: 70%;
     }
 
-    #FudanBody .FudanGallery > .galleryActive {
+    #FudanTSIBody .FudanGallery > .galleryActive {
         width: 100%;
     }
 
-    #FudanBody .FudanGallery > .galleryActive img {
+    #FudanTSIBody .FudanGallery > .galleryActive img {
         width: 100%;
     }
 
-    #FudanBody .FudanGallery > .galleryThumbnail {
+    #FudanTSIBody .FudanGallery > .galleryThumbnail {
         position: relative;
         width: 100%;
         margin: 0;
@@ -949,11 +949,11 @@
         white-space: nowrap;
     }
 
-    #FudanBody .FudanGallery > .galleryThumbnail::-webkit-scrollbar {
+    #FudanTSIBody .FudanGallery > .galleryThumbnail::-webkit-scrollbar {
         display: none;
     }
 
-    #FudanBody .FudanGallery > .galleryThumbnail img {
+    #FudanTSIBody .FudanGallery > .galleryThumbnail img {
         width: 15%;
         display: inline-block;
         opacity: 0.7;
@@ -961,12 +961,12 @@
     }
 
     @media only screen and (max-width: 991px) {
-        #FudanBody .FudanGallery > .galleryThumbnail img {
+        #FudanTSIBody .FudanGallery > .galleryThumbnail img {
             width: 22%;
         }
     }
-    #FudanBody .FudanGallery > .galleryBtnLeft,
-    #FudanBody .FudanGallery > .galleryBtnRight {
+    #FudanTSIBody .FudanGallery > .galleryBtnLeft,
+    #FudanTSIBody .FudanGallery > .galleryBtnRight {
         position: absolute;
         width: 40px;
         height: 40px;
@@ -980,54 +980,54 @@
         cursor: pointer;
     }
 
-    #FudanBody .FudanGallery > .galleryBtnLeft {
+    #FudanTSIBody .FudanGallery > .galleryBtnLeft {
         left: 2%;
     }
 
-    #FudanBody .FudanGallery > .galleryBtnRight {
+    #FudanTSIBody .FudanGallery > .galleryBtnRight {
         right: 2%;
     }
 
-    #FudanBody .tableHolder {
+    #FudanTSIBody .tableHolder {
         width: 100%;
         margin: 20px 0 30px 0;
     }
 
     @media only screen and (max-width: 991px) {
-        #FudanBody .tableHolder {
+        #FudanTSIBody .tableHolder {
             overflow-x: scroll;
             overflow-y: hidden;
         }
     }
-    #FudanBody .tableHolder td,
-    #FudanBody .tableHolder th {
+    #FudanTSIBody .tableHolder td,
+    #FudanTSIBody .tableHolder th {
         padding: 0 10px;
     }
 
-    #FudanBody .tableHolder th {
+    #FudanTSIBody .tableHolder th {
         text-align: left;
     }
 
-    #FudanBody .figureHolder {
+    #FudanTSIBody .figureHolder {
         margin: 20px auto 30px auto;
     }
 
-    #FudanBody #pageContent .nameCard {
+    #FudanTSIBody #pageContent .nameCard {
         margin-top: 80px;
         overflow: hidden;
     }
 
     @media only screen and (min-width: 991px) {
-        #FudanBody #pageContent .nameCard {
+        #FudanTSIBody #pageContent .nameCard {
             max-height: 300px;
         }
     }
-    #FudanBody #pageContent .nameCard h3,
-    #FudanBody #pageContent .nameCard p,
-    #FudanBody #pageContent .nameCard {
+    #FudanTSIBody #pageContent .nameCard h3,
+    #FudanTSIBody #pageContent .nameCard p,
+    #FudanTSIBody #pageContent .nameCard {
     }
 
-    #FudanBody #pageContent .nameCard img {
+    #FudanTSIBody #pageContent .nameCard img {
         width: 100%;
     }
 
@@ -1042,7 +1042,7 @@ li.onThisPageNav>a,
 ul.expandable div.active {
     border-left: solid #60A9C2 4px;
     background-color: rgba(96,169,194, 0.05); }
-#FudanBody.orangeBg ul.expandable div.active {
+#FudanTSIBody.orangeBg ul.expandable div.active {
     border-left: solid #F78E41 4px;
     background-color: rgba(247, 142, 65, 0.05); }
 
@@ -1052,10 +1052,10 @@ ul.expandable div.active {
     *print media
     *****/
 
-    #FudanWrapper{page-break-inside: auto}
-    #FudanBody header{display: none}
-    #FudanBody img{width:100%;display: none}
-    #FudanBody .figureHolder img{display: inherit}
+    #FudanTSIdivWrapper{page-break-inside: auto}
+    #FudanTSIBody header{display: none}
+    #FudanTSIBody img{width:100%;display: none}
+    #FudanTSIBody .figureHolder img{display: inherit}
     #contentBanner>div:first-child{display: none}
     #contentBanner>div:last-child{display: none}
     #pageContentNav{display: none}
@@ -1065,45 +1065,45 @@ ul.expandable div.active {
     #pageContent main{margin: 0}
     #top_menu_14{display: none}
     #emptyBar{display: none}
-    #FudanBody .floatingBtn{display: none}
+    #FudanTSIBody .floatingBtn{display: none}
     #abstractContent{display: none}
 
     /*****
     *Font Styles
     *****/
-    #FudanBody h1,
-    #FudanBody h2,
-    #FudanBody h3,
-    #FudanBody h4,
-    #FudanBody h5,
-    #FudanBody h6,
-    #FudanBody p,
-    #FudanBody div,
-    #FudanBody table,
-    #FudanBody ol,
-    #FudanBody ul,
-    #FudanBody a,
-    #FudanBody span{
+    #FudanTSIBody h1,
+    #FudanTSIBody h2,
+    #FudanTSIBody h3,
+    #FudanTSIBody h4,
+    #FudanTSIBody h5,
+    #FudanTSIBody h6,
+    #FudanTSIBody p,
+    #FudanTSIBody div,
+    #FudanTSIBody table,
+    #FudanTSIBody ol,
+    #FudanTSIBody ul,
+    #FudanTSIBody a,
+    #FudanTSIBody span{
         font-family: "Times New Roman",serif;
         color: rgb(0,0,0);
     }
-    #FudanBody h1{
+    #FudanTSIBody h1{
         font-size: 60px;
         line-height: 80px;
         font-weight: 900;
         page-break-after: always;
     }
-    #FudanBody h2{
+    #FudanTSIBody h2{
         font-size: 30px;
         line-height: 40px;
         margin: 30px 0 40px 0;
     }
-    #FudanBody h3{
+    #FudanTSIBody h3{
         font-size: 24px;
         line-height: 30px;
         margin: 50px 0 10px 0;
     }
-    #FudanBody h4{
+    #FudanTSIBody h4{
         font-size: 20px;
         line-height: 30px;
         margin: 50px 0 0 10px;
@@ -1122,18 +1122,18 @@ ul.expandable div.active {
         text-align: justify;
         text-indent: 30px;
     }
-    #FudanBody ol#ref li {
+    #FudanTSIBody ol#ref li {
         font-size: 14px;
         line-height: 20px;
         margin-top: 15px;
     }
 
-    #FudanBody ol#ref {
+    #FudanTSIBody ol#ref {
         list-style-type: none;
         counter-reset: sectioncounter;
     }
 
-    #FudanBody ol#ref li:before {
+    #FudanTSIBody ol#ref li:before {
         content: "[" counter(sectioncounter) "] ";
         counter-increment: sectioncounter;
     }
