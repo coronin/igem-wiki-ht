@@ -1,538 +1,245 @@
-{{Fudan-TSI}}<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+{{Fudan-TSI}}<script src="/jquery-1.11.3.min.js"></script>
 <html lang="en">
-<!--
-This html document is created by Tian Huang for Team Fudan iGEM 2018.
-We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
--->
-<!-- LC check on 2018-10-25 -->
 <head>
-    <meta charset="UTF-8">
-
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-css.css&action=raw&ctype=text/css" />
-    <link rel="stylesheet" type="text/css" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/jquery-ui.min.css&action=raw&ctype=text/css" />
-
-    <!-- Font-awesome icons 4.7.0 -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
-
-    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&action=raw&ctype=text/css">
-
-    <!-- Clear default CSS settings; CSS reset -->
-    <style>
-        *{margin: 0;padding: 0;list-style: none;}
-        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
-
-        /** 清除内外边距 **/
-        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-        pre, /* text formatting elements 文本格式元素 */
-        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-        th, td /* table elements 表格元素 */ {
-            margin: 0;
-            padding: 0;
-        }
-
-        /** 设置默认字体 **/
-
-        /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
-        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-        /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-
-        /** 重置列表元素 **/
-        ul, ol { list-style: none; }
-
-        /** 重置文本格式元素 **/
-        a { text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-
-        /** 重置表单元素 **/
-        legend { color: #000; } /* for ie6 */
-        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-        /* 注：optgroup 无法扶正 */
-
-        /** 重置表格元素 **/
-        table { border-collapse: collapse; border-spacing: 0; }
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/Template materialize.css">
+  <link rel="stylesheet" href="/Template local-font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="/Template Fudan-css.css" />
+  <style>
+/*****************************************************************************/
+/* DEFAULT WIKI SETTINGS */
+/*****************************************************************************/
+  #home_logo, #sideMenu { display:none; }
+  #sideMenu, #top_title, .patrollink { display:none; }
+  #content { margin-left: 0; padding:0px; width:100%; }
+  .judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2% !important; width: 92%!important; }
+  *{margin:0;padding:0;list-style:none}blockquote,body,button,dd,dl,dt,fieldset,form,h1,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp{font-family:courier new,courier,monospace}ol,ul{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}
+  .Off {display:none !important}
     </style>
-    <title>2019 Team:Fudan-TSI Model</title>
+    <title>2019 Team:Fudan-TSI Modeling</title>
 </head>
-
 <body>
-<!-- Fudan div at igem.org -->
-<div id="FudanTSIdivWrapper" class="black"><div id="FudanTSIBody" class="black">
-        <header>
-            <!-- empty bar -->
-            <div id="emptyBar" style="position:relative;width: 100%;"></div>
+<div id="FudanTSIdivWrapper"><div id="FudanTSIBody">
+  <header>
+  <div id="emptyBar" style="position:relative;width: 100%;"></div><nav id="topNav" class="black z-depth-0_5"><div class="nav-wrapper"><div id="teamLogo" class="brand-logo"> <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif"></a></div><ul id="nav-mobile" class="right"><li> <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right"> <i class="fa fa-navicon" style="font-size: 24px"></i> </a></li></ul></div> </nav>
+  <!-- Dropdown and List elements in navigation bar -->
 
-            <!-- Navigation bar 2019-9-15 -->
-            <nav id="topNav" class="black z-depth-0_5">
-                <div class="nav-wrapper">
-                    <div id="teamLogo" class="brand-logo">
-                        <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/3/3c/T--Fudan-TSI--Logo0.gif"></a>
-                    </div>
-                    <ul id="nav-mobile" class="right orangeBorder">
-                        <li>
-                            <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
-                                <i class="fa fa-navicon" style="font-size:24px"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- Dropdown and List elements in navigation bar -->
-            <!-- Slide-out navigator contents 2019-9-15 -->
-            <ul id="slide-out" class="sidenav">
-                <li style="padding: 0"><div class="sidenavBanner">
-                    <div class="background">
-                    </div>
-                    <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Model</span></p>
-                </div></li>
-                <li>
-                    <ul class="collapsible expandable">
-                        <li class="onThisPageNav"><span>On this page</span></li>
-                        <li class="onThisPageNav"><a href="#section1">div with id section1</a></li>
-                        <li class="onThisPageNav"><a href="#section2">div with id section2</a></li>
-                        <li class="onThisPageNav"><a href="#section3">div with id section3</a></li>
-                        <li><span class="pageSidebar">Team: Fudan-TSI</span></li>
-<li><div class="collapsible-header"><span class="pageSidebar">Project</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Results</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse Transcription</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header active"><span class="pageSidebar">Model</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Parts</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Human practices</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Team</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-        <li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-    </ul></div>
-</li>
-                    </ul><!-- .expandable -->
-                </li>
-                <li><div class="placeHolder"></div></li>
-            </ul>
-        </header>
+  <ul id="slide-out" class="sidenav">
+    <li style="padding: 0"><div class="sidenavBanner">
+      <div class="background"></div>
+      <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Modeling</span></p>
+    </div></li>
+    <li>
+      <ul class="collapsible expandable">
+        <li class="onThisPageNav"><span>On this page</span></li>
+        <li class="onThisPageNav"><a href="#section1">Overview</a></li>
+        <li class="onThisPageNav"><a href="#section2">Induced expression</a></li>
+        <li class="onThisPageNav"><a href="#section3">Reverse transcription</a></li>
+        <li class="onThisPageNav"><a href="#section4">Cre recombination</a></li>
+        <li class="onThisPageNav"><a href="#section5">Recombined P<sub>target</sub></a></li>
+        <li class="onThisPageNav"><a href="#section6">Optimal induction</a></li>
+        <li class="onThisPageNav"><a href="#section7">References</a></li>
 
-        <div id="pageContent">
+        <li><span class="pageSidebar">Team: Fudan-TSI</span></li><li><div class="collapsible-header"><span class="pageSidebar">Project</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Results</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse Transcription</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li></ul></div></li><li><div class="collapsible-header active"><span class="pageSidebar">Model</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Parts</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Improved parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Human practices</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Team</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li><li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li></ul></div></li>
+      </ul><!-- .expandable -->
+    </li>
+    <li><div class="placeHolder"></div></li>
+  </ul>
+  </header>
 
+  <div id="pageContent">
+      <div id="contentBanner" class="figureBanner">
+          <div class="row">
+              <div class="col s12 hide-on-med-and-up">
+                  <h1><br/>Modeling</h1>
+                  <p class="flow-text">In our modeling, we successfully simulated the function of our mutagenesis system, and contributed to improve our experimental setup. We divided our system into 3 sub-models: induced expression model, reverse transcription model and Cre recombination model. We utilized deterministic and stochastic techniques with parameters derived from our experiments or published papers. Our modeling established theoretical basis for our experiments: 1) The determination of simultaneous or separate expression of reverse transcriptase and Cre is guided by models revealing their different working concentration. 2) We estimated the optimal expression level and induction time needed to achieve maximal recombination efficiency. 3) We modeled the effect of Cre degradation on recombination. 4) We demonstrated that mutations accumulate accompanying <i>E. coli</i> growth. Modeling acted as a shortcut of answering questions concerning experimental setup and revealed new insights into our system. Thus, we believe that our modeling work is very competitive for the best modeling prize.</p>
+              </div>
+          </div>
+          <div class="hide-on-small-only">
+              <div style="text-align:center;padding-top:80px"><center><img style="height:120px;width:auto" src="https://2019.igem.org/wiki/images/c/c4/T--Fudan-TSI--coverModel.gif" /></center></div>
+          </div>
+      </div>
 
-            <div id="contentBanner" class="figureBanner">
-                <div class="row">
-                    <div class="col s12 hide-on-med-and-up">
-                        <h4>Model</h4>
-                        <p class="flow-text">It is important to observe and anticipate how one's product will work in the real world in order to make it more applicable. </p>
-                    </div>
-                </div>
-                <div id="figureBannerTitle" class="hide-on-small-only">
-                    <h1>Model</h1>
-                    <p class="flow-text">It is important to observe and anticipate how one's product will work in the real world in order to make it more applicable. </p>
-                </div>
-                <div class="hide-on-small-only">
-                    <img src="http://2018.igem.org/wiki/images/b/bb/T--Fudan--title_model.jpg">
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
+<!--////////////////////////////////////////////////////
+      do not edit above, if must BE CAREFUL
+  //////////////////////////////////////////////////////-->
+      <div class="container">
+          <!-- side navigator of page content -->
+          <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0"> 
+              <li class="onThisPageNav"><a href="#section1">Overview</a></li>
+              <li class="onThisPageNav"><a href="#section2">Induced&nbsp;expression</a></li>
+              <li class="onThisPageNav"><a href="#section3">Reverse&nbsp;transcription</a></li>
+              <li class="onThisPageNav"><a href="#section4">Cre&nbsp;recombination</a></li>
+              <li class="onThisPageNav"><a href="#section5">Recombined&nbsp;P<sub>target</sub></a></li>
+              <li class="onThisPageNav"><a href="#section6">Optimal&nbsp;induction</a></li>
+              <li class="onThisPageNav"><a href="#section7">References</a></li>
+              <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
+          </ul>
+          <!-- main content of the page -->
+          <main>
 
-            <!-- main content of the page -->
-            <div class="container">
-                <!-- side navigator of page content -->
-                <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
-                    <li class="onThisPageNav"><a href="#section1">div with id section1</a></li>
-                    <li class="onThisPageNav"><a href="#section2">div with id section2</a></li>
-                    <li class="onThisPageNav"><a href="#section3">div with id section3</a></li>
-                    <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
-                </ul>
-
-                <main>
-                    <div class="section container">
-                        <p class="flow-text">Our modeling focuses on two main aspects. The first is optimizing the transcriptional modules to increase signal-to-noise ratio, and the second is forecasting clinical outputs for multiple types of mixtures of immune cells and cancer cells. We experimentally showed that an amplification step is required. We also used a stochastic process to model receptor-ligand interaction kinetics, a possibility theory to model the transcriptional amplifier, and differential equations to model signal integration. ENABLE constructs with modeled parameters have increased signal-to-noise ratio and should have larger dynamic range.</p>
-                    </div>
-                    <div id="section1" class="section container scrolSpy">
-                        <h2>The essence of the Amplifier for transmembrane signaling</h2>
-                        <p class="flow-text">By modeling, we demonstrated that our 3-layer design balances adjustability and stability for transmembrane logic processing.
-</p><p class="flow-text">
-                            Cellular logic gate lies at the foundation of our system, but the core and essential design of ENABLE is the detection of transmembrane signals. With our powerful SynNotch receptors transferring extracellular signals into intracellular transcription factors, we aim to detect real-world signals through ligand-receptor binding. In previous designs that detect intracellular signals with logic gates, researchers merely control the input to the system by not adding or adding superfluous small molecule drugs <a href="https://www.ncbi.nlm.nih.gov/pubmed/22722847" target=_blank>(Auslnder et al., 2012)</a>, or by not performing transfection or performing superfluous transfection, which is analogous to the 0 or 1 binary input. In such scenarios, just one single element is suffice to faithfully represent the on and off of the input. However, these previous designs are unable to transduce transmembrane signals in realistic circumstances. Our analysis through modelling leads to the 3-layer design principle of the ENABLE toolbox, which is to introduce an amplifier layer between the SynNotch (input, which we call the Receptor) system and the responsive element (output, which we call the Combiner).</p>
-                        <h3>Previous designs fail to transduce transmembrane signals</h3>
-                        <p class="flow-text">
-                            Signal detection in engineered cells is composed of three parts: input, the representation of information through transcription factors (TFs); process, the processing of information through TF-Promoter interactions; and output, the response to the information through gene expressions. When the input is experimentally controllable or even artificially manipulated, researchers can explore the capacity of cellular information processing by designing specific circuits with only one element <font color="purple">(Figure 1)</font>. Using transduction or small molecule drugs for input manipulation, scientists in previous studies <a href="https://www.ncbi.nlm.nih.gov/pubmed/24413461" target=_blank>(Gaber et al., 2014)</a> have shown the logical processing ability of engineered cells and synthetic gene circuits.
-                        </p>
-                        <div class="expFigureHolder width40 left-on-med-and-up">
-                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/b/b9/T--Fudan--model_wyh_1.png">
-                            <p class="flow-text"><b>Figure 1. Previous designs usually incorporate one pair of transcription factor and promoter as the detection system.</b>
-                                <br/>The amount of transcription factor is manually controlled using small molecule drug, transduction, etc. As a result, the input of the system is nearly arbitrary, which can easily leads to the on/off output, represented by the activity of the promoter.
-                            </p>
-
-                        </div>
-                        <p class="flow-text">Unlike previous designs, the ENABLE system aims to detect real-world transmembrane signals represented by SynNotch receptors. The imperfect and variable situations and scenarios in the real world are far from experimentally controllable; yet they are unavoidable and must be dealt with.</p>
-                        <p class="flow-text">1) The number of Notch molecules on the cell membrane is relatively limited. Thus, the amount of released transcription factors is constrained (under detection level and have never been directly visualized) even under superfluous activation. This will prevent the input from being arbitrarily amplified.</p>
-                        <p class="flow-text">2) Experimental observations show that SynNotch comes with a certain level of background activation without external stimuli, which may most likely be a result of thermodynamic randomness.
-                        </p>
-                        <p class="flow-text">These factors prevent the previous designs from faithfully detecting the on and off of external stimuli. In fact, any synthetic circuits with only one input-process-output element will be limited in its detection ability. Here, we conventionally used the Hill Equation to characterize such an element, in which the output (denoted by X) relates to the input (activator for example, denoted by A) through the equation:
-                        </p>
-<p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width20"  src="http://2018.igem.org/wiki/images/e/eb/T--Fudan--model-eq1.png"></p>
-                        <p class="flow-text">Both X and A are described by their concentrations. Kd denotes the dissociation constant between the activator A and its binding site on the gene circuit whereas the n denotes the Hill coefficient. Please refer to <a href="http://2017.igem.org/Team:Fudan/Model/HE" target=_blank>the model from our team in 2017 for details on the simulation</a>.
-                        </p>
-                        <p class="flow-text">
-                            The two free parameters, the dissociation constant (Kd) and n (Hill Coefficient), can be controlled to adjust the element. As shown in the following interactive figure, this allows us to manipulate the element to achieve different input (A) - output (X) relationships.
-                        </p>
-<p class="hide-on-med-and-up">(Hidden content only visible on a desktop computer.)</p>
-                        <div id="figure1" style="margin: 40px auto;width: 500px;" class="hide-on-small-only"></div>
-                        <div class="expFigureHolder width40 right-on-med-and-up">
-                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/4/4b/T--Fudan--model_wyh_2.png">
-                            <p class="flow-text"><b>Figure 2. Previous designs with single element are not able to handle transmembrane signal processing task.</b>
-                                <br/>The input-output relationship of a single element is characterized by Hill Equation, which comes with a 'detection range' defined by Kd and n. When the input range does not match the detection range, the system cannot faithfully represent the on and off of the input.
-                            </p>
-
-                        </div>
-                        <p class="flow-text">
-                            However, the free parameters are in reality not 'free' at all. While Kd is determined by the stability of the transcription factor-binding complex. The available transcription factor-promoter pairs, unfortunately, are limited, thus this constrains the dynamics that the one single input element can achieve to very few possibilities. More specifically, membrane receptors such as SynNotch that detect transmembrane signals and interact with ligands via non-covalent interactions require extremely low dissociation constants that may not even be realistic. On the other hand, the sensibility of the system needs to be high while the possible input range remains low and narrow. Furthermore, the Hill coefficient n representing the sensibility is almost uncontrollable and requires the specific and accurate designing of the promoter. Thus the previous designs that utilize a single element are not able to handle transmembrane signal processing tasks <font color="purple">(Figure 2)</font>.
-                        </p>
-                        <p class="flow-text">
-                            One potential solution is to change the number of binding sites of the transcription factors. As illustrated in Figure 3, different binding situations can lead to different activation levels. While a single binding site can be characterized by the Hill Equation.
-                        </p>
-                        <div class="expFigureHolder width40 left-on-med-and-up">
-                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/3/32/T--Fudan--model_wyh_3.png">
-                            <p class="flow-text"><b>Figure 3. Changing the number of binding sites of the transcription factors can potentially lead to more complex dynamics.</b>
-                                <br/>Different numbers of bound transcription factors have different effects on the activity of the promoter, denoted by &alpha; in the figure.
-                            </p>
-
-                        </div>
-                        <p class="flow-text">We characterized the input-output relationship when there are multiple binding sites (of an activator A for example).</p>
-                        <p style="text-indent: 0;margin-bottom: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/8/83/T--Fudan--model-eq2.png"></p>
-                        <p class="flow-text">While n and Kd are the Hill coefficient and dissociation constants, N represents the total number of binding sites, &alpha;<sub>i</sub> denotes the activation level while i activators are bound to the binding sites (bigger i leads to bigger &alpha;). Unfortunately, the following interactive Figure demonstrates that such dynamics is still Hill-like, and still relies on different pairs of transcription factor-binding sites to manipulate the dynamical range (four binding sites are used as an example).</p>
-                        <p class="flow-text">In conclusion, changing both the transcription factor - promoter pairs and the number of binding sites can be used to adjust how a synthetic gene circuit responds to the input. However, both are limited and cannot enable a single limited-number element to faithfully detect transmembrane signals. Nevertheless, they are still valuable in our ENABLE after the addition of an amplifier layer <font color="purple">(Figure 4)</font>.</p>
-                        <div class="expFigureHolder width40 right-on-med-and-up">
-                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/c/c2/T--Fudan--model_wyh_4.png">
-                            <p class="flow-text"><b>Figure 4. In the design of our system, the input will first come from the SynNotch receptors.</b>
-                                <br/>Then it will be amplified by a tunable amplifier circuit, which will then feed input to the final responsive element, our Combiner.
-                            </p>
-
-                        </div>
-                        <h3> An amplifier circuit</h3>
-                        <p class="flow-text">The realistic constraints and our analysis through modeling prompted us to introduce the amplifier circuit. With the amplifier circuit present, the eventual input into the final responsive element now comes from the output of the amplifier circuit instead of the output of the SynNotch receptors. This enables our system to be much more adjustable and stable.
-</p><p class="flow-text">
-                            With the amplifier circuit, the input from SynNotch will no longer directly enter the responsive element but will first go through the Amplifier. As demonstrated before, the input signal from SynNotch is weak and has a narrow range, making it unsuitable to be directly processed by the responsive element. However, with the amplifier, input strength to the responsive element can be manipulated by the amplifier, providing a higher level of control.
-                    </p>
-                        <div class="expFigureHolder width40 right-on-med-and-up">
-                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/8/85/T--Fudan--model_wyh_5.png">
-                            <p class="flow-text"><b>Figure 5. The amplifier circuit introduces nested dynamics into our system.</b>
-                                <br/>The output of the amplifier A and its input from SynNotch B are characterized by the Hill Equation. The A subsequently leads to the final output X, which again follows the Hill Equation in relation to A. While the input range of B is usually narrow and hard to detect, it can be amplified to the range of A through the amplifier circuit.
-                            </p>
-
-                        </div><p class="flow-text">
-                            To remain consistent, we denoted the final output of the responsive element as X and the input as A. With amplifier circuit present, the A now means the output of the amplifier circuit while the B now means the direct input from SynNotch, which is again still the input to the amplifier circuit. As shown in Figure 5, the narrow range of the SynNotch signal does not support faithful detection. But with the amplifier circuit, the input range will be converted to an output range, which will then become the input range to the responsive element. </p>
-                        <p class="flow-text">The output range of the amplifier is currently still undiscriminatable to the responsive element, but the amplification range can be manipulated. First, we can freely engineer the transcription factors to change the dissociation constant Kd. Since the input signal is now amplified, it will be easier to find an appropriate A to X relationship <font color="purple">(Figure 6)</font>.</p>
-
-                        <p class="flow-text">Secondly, with a certain and fixed A to X relationship, we can change the binding sites of transcription factor B of the amplifier circuit which determines how the signal from SynNotch will be amplified. This allows us to very freely adjust the dynamical properties of the ENABLE toolbox. The previously unusable input range now gets amplified and enters the detection range of the responsive element; hence, allowing accurate detection <font color="purple">(Figure 7)</font>.</p>
-                        <div class="row expFigureHolder">
-                            <div class="col s12 m6"><img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/8/8e/T--Fudan--model_wyh_6.png">
-                                <p class="flow-text"><b>Figure 6. Adjusting the transcription factor - its promoter pair between the amplifier circuit and the responsive element changes the relationship between X and A.</b>
-                                    <br/>Comparing with Figure 5, the organe line moves, which suggests a response to lower concertation of input from the Amplifer output, allowing the final response to be a full range.
-                                </p></div>
-                            <div class="col s12 m6"><img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/a/a5/T--Fudan--model_wyh_7.png">
-                                <p class="flow-text"><b>Figure 7. Adjusting the binding sites of transcription factor B on the amplifier circuit leads to a dramatic change in the amplification magnitude.</b>
-                                    <br/>The former narrow and undetectable range of B can now be easily manipulated in terms of A. This modeling suggests to increase the copy number of our Amplifer's DNA binding domain in our 3-layer design.
-                                </p></div>
-                        </div>
-                        <ul class="collapsible expandable">
-                            <li style="list-style-type: none">
-                                <div class="collapsible-header">Click to see more about the formula</div>
-                                <div class="collapsible-body container">
-                                  <p class="flow-text">Derivation of the formula we use to characterize a single transcription factor - promoter pair with multiple binding sites is straightforward under a few appropriate assumptions. We will keep using activator for example. Since we have N binding sites, the number of actual bound activators ranges from 0 to N. First, we assume that the activity of the promoter is solely controlled by the number of bound activators, but not their spatial arrangement (or spatial arrangement has little influence on the activation mechanism). Similar evidence has been reported before. Thus we could simply consider in total the N+1 states representing N+1 bound activators. We use &alpha;<sub>i</sub> to denote the activation level while i activators are bound to the binding sites (bigger i leads to bigger &alpha;). Second, zinc finger proteins are used as the building block of our transcription factor. Structure analysis shows no known interaction sites between the proteins. We thus assume different biding sites are independent to each other. This allows us to easily assign probabilities to the N+1 states. For each binding site, the probability of the activator being bound is again describe by 'Hill Equation' (refer to the model of our team in 2017 for the probabilistic explanation of Hill Equation and more <a href="http://2017.igem.org/Team:Fudan/Model/HE" target="_blank">Link here</a>).</p>
-                                    <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width20" src="http://2018.igem.org/wiki/images/7/7d/T--Fudan--model-eq3.png"></p>
-                                  <p class="flow-text">To account for the four independent binding sites, elementary combination would show that the probability of i (ranging from 0 to 4) activator being bound is</p>
-                                    <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/0/08/T--Fudan--model-eq4.png"></p>
-                                  <p class="flow-text">Thus the final output can be characterized by the expectation of the promoter activity under the N+1 states, which is</p>
-                                    <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/2/2a/T--Fudan--model-eq5.png"></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-<div class="expFigureHolder" style="width:100%">
-    <img class="responsive-img" src="http://2018.igem.org/wiki/images/2/2c/T--Fudan--LC-gj-2012jp.png" />
-    <p class="flow-text">In our GJ presentation (10/25 Room 311 9:00-9:25), we used the image above in addition to the modeling just describe to add two points:
-        (1) A summary of the Receptor-Ligand kinetics described below that with the same number of receptors and proteases, due to the increased complexity with more diversed ligand-receptor interactions, the release of Notch intracellular domains significantly decreased.
-        (2) There was a previous study highlighting the requirement of amplification for signaling transduction across many cells.</p>
+<div id="section1" class="section container scrolSpy">
+  <h2>Overview</h2>
+  <p class="flow-text">Our mutagenesis system uses the BL21 (DE3) <i>E. coli</i> strain transformed with two plasmids, a stringent plasmid named P<sub>target</sub> carrying the target sequence that we want to mutate, and a relaxed plasmid named P<sub>mutant</sub>, carrying the gene encoding the tools necessary for mutagenesis, i.e. reverse transcriptase (RT) and Cre.</p>
+  <p class="flow-text">As we are designing a brand-new mutagenesis system inside <i>E. coli</i>, we want to demonstrate whether and under what condition it can work, so we turn to modelling to answer these questions. Our modelling work is comprised of 3 parts. <a href="#section2">1)</a> We used 3 deterministic models to describe the 3 reaction steps of our system—induced expression, reverse transcription and recombination. This allows us to compute and maximize the yield of the recombined P<sub>target</sub> which in turn, contributes to the optimization of our experimental setup. <a href="#section5">2)</a> We simulated the recombination process stochastically and calculated the number of recombined products that occurred during one replication cycle of <i>E. coli</i>. <a href="#section6">3)</a> We combined the 3 reaction steps together using deterministic model and found that selecting the least efficient degradation tag for Cre is optimal.</p>
 </div>
-                    <div id="section2" class="section container scrolSpy">
-                        <h2>Receptor-Ligand kinetics</h2>
-                        <p class="flow-text">
-                            The Receptor-Ligand collects extracellular signals for further intercellular processing, which constitutes the most significant part for any transmembrane logic gate. To reduce the background activation of SynNotch, we put a huge <a href="/Team:Fudan-TSI/Optimization" target=_blank>experimental effect based on its protein structure</a>.
-                        </p><p class="flow-text">
-                            We focused on the signal-to-noise ratio (SNR) of the Notch/SynNotch receptor. In previous research, some quantitative descriptions of Notch-Ligand have been published for explanation and exploration of systematic design <a href="https://www.ncbi.nlm.nih.gov/pubmed/23839946" target=_blank>(Andrawes MB, et al., 2013)</a>. For example, cis-inhibition was modeled via chemical kinetics, which precisely predict the mechanism of Notch-induced pattern formation <a href="https://www.ncbi.nlm.nih.gov/pubmed/20418862" target=_blank>(Sprinzak D, et al., 2010)</a>. However, stochastic models for Notch-Ligand simulations have not been reported yet.
-                    </p><p class="flow-text">
-                        Here we present a mathematical model for Notch-Ligand kinetics using Stochastic <a href="https://en.wikipedia.org/wiki/Petri_net#Mathematical_properties_of_Petri_nets" target=_blank>Petri nets</a>, which takes random intercellular processes into consideration. We found that the SNR of our system is not only dependent on the affinity of Notch-Ligands, but also the Secretase Complex. We also expanded our model from targeting just molecular-level chemical reactions to cell colony-level chemical reactions, which offers clues for oriented optimization of Notch. Last but not least, our object-oriented programming (OOP) makes it easy to transplant into <a href="/Team:Fudan-TSI/Software">further application</a>.
-                        </p>
-                        <h3>Using ChemicalReactions toolkit</h3>
-                        <p class="flow-text">
-                            Not like chemical reactions happening in tubes, Notch-Ligand interaction occurs in a 2D manner. That is to say, chemical reactions between Notch and Ligand takes place on the membrane of two neighboring cells. Two cells may exchange their components on the membrane by touching to each other. Due to physical constraints, the chemical constitution of those cells remains relatively independent. However, when Ligand proteins binding to the extracellular domain of Notch receptor, proteolytic cleavage and release of the intracellular domain are induced.
-                        </p><p class="flow-text">
-                        Proteolytic cleavage of Notch involves a few steps, including S2-cleaveage by metalloprotease ADAM10,  S3-cleavage by &gamma;-secretase complex or &gamma;-secretase Tetering <a href="https://www.ncbi.nlm.nih.gov/pubmed/21506924" target=_blank>(van Tetering G, et al., 2011)</a>. Here we simplify the cleavage of Notch after ligand binding, and we suppose that the cleavage is a one-step reaction with the smallest rate constant of all cleavages mentioned above. This simplification is coming down to the rate-limiting step in physics chemistry. The simplified equations are as follows.
-                                   &nbsp; N+L⇌NL &nbsp;
-                                   &nbsp; NL+S⇌NLS→icd &nbsp;
-                        Here N refers to Notch, L refers to Ligand, NL Notch-Ligand complex, S protease, NLS Notch-Ligand-protease complex, and icd means the intracellular domain of Notch.
-                    </p><p class="flow-text">
-                        Our mathematic tool is <a href="https://en.wikipedia.org/wiki/Petri_net#Mathematical_properties_of_Petri_nets" target=_blank>Petri net</a>. For the history and definition of Petri net,
-                        please check reference <a href="https://www.crcpress.com/Stochastic-Modelling-for-Systems-Biology/Wilkinson/p/book/9781439837726" target="_blank">Wilkinson DJ, et al., 2006</a>. This method views each chemical or reaction intermediate as nodes in a network, element reactions as edges, and weight and direction of each edge for stoichiometric number and reaction direction. Especially, we use {P, T, Pre, Post, M} to describe a Petri net precisely: P={p1, …, pu} is the space of chemicals, T={t1, …, tv} is the spaces of all transitions (element reactions) , Pre is a v*u integer matrix containing the weights from chemicals to transitions， and the (i,j)th element of this matrix is the weight of the arc going from chemical j to transition i, and Post is a v*u integer matrix containing the weights from transitions to chemicals, and the (i,j)th element of this matrix is the weight of the arc going from transition i to chemical j. M is a u-dimensional integer vector that represents the current state of the system (i.e. the number of molecules).
-                    </p><p class="flow-text">
-                        For system with only one kind of Notch and one kind of Ligand, we have
-                        <img class="responsive-img width60" src="http://2018.igem.org/wiki/images/1/1b/T--Fudan--LC-model-zlw1.png" alt="zlw1 model equation" />
-                        the subscripts refer to the index of a cell in a cell-pair, and the index is designated arbitrarily.
-                        Also, we have
-                        <img class="responsive-img width80" src="http://2018.igem.org/wiki/images/2/26/T--Fudan--LC-model-zlw2.png" alt="zlw1 model equation" />
-                        Here the lower capital g and d refer to the generation and degradation of following chemicals.
-                        Similarly, we can write out the matrix Post and Pre.
-                    </p><p class="flow-text">
-                        We set W as a u-dimensional zero vector for initialization. Then we need to designate when and how this system chooses to finish a certain element reaction. For this purpose, we consider that the occurrence of an element reaction is a heterogeneous Poisson process, and certain reaction selection via sampling. That’s, the possibility that an element reaction R<sub>i</sub> happening in the time interval (t,&delta;t] is given by h<sub>i</sub>(x,<sub>i</sub>) &delta;t. With additivity assumption, we can get the possibility an arbitrary reaction happening in the time interval (t,&delta;t] is
-                        <img class="responsive-img width20" src="http://2018.igem.org/wiki/images/d/dd/T--Fudan--LC-model-zlw3.png" alt="zlw1 model equation" />
-                    </p><p class="flow-text">
-                        The form of h<sub>i</sub>(x,<sub>i</sub>) is given by mass-action stochastic kinetics. For a given system, h<sub>i</sub>(x,<sub>i</sub>)=c<sub>i</sub>*C(n<sub>i1</sub>,n<sub>i2</sub>, …, n<sub>in</sub>), where c<sub>i</sub> is the rate constant for reaction i, n<sub>in</sub> refers to the molecule number of reactant k for reaction i, and function C() means
-                        combinatorial number of all n<sub>in</sub>. In practice, C() can be replaced by &Pi;() with some modifications for c<sub>i</sub>.
-                    </p><p class="flow-text">
-                        Similarly, we can easily derive the expression for system with i kinds of Notch and j kind of Ligand.
-                        </p>
-                        <h3>Constitutive expression for stationary system</h3>
-                        <p class="flow-text">For certain parameters, Notch signaling component is equivalent to constitutive expression for stationary system <font color="purple">(Figure 8A)</font>. It’s a good property for using Notch-Ligand in colony design, which uses the simplified version for higher-layer system simulation and shorten the simulation time without side effect of poor prediction.
-                        </p>
-                        <h3>The rate of Notch cleavage by proteases</h3>
-                        <p class="flow-text">Cleavage rate affects system response in a linear way. Notch-Ligand specificity may not affect system response.</p>
-                        <p class="flow-text">
-                            For certain parameters, generation of Notch-Ligand-protease complex may be the rate-limiting step <font color="purple">(Figure 8A)</font>. For example, decreased rate constant of Notch-Ligand-protease complex generation reduce the icd generating rate in a linear manner (Figure 8B with rate constant of gN<sub>A</sub>LS decreased to one tenth of that of Figure 8A). Also, changing Notch-Ligand binding affinity may not significantly change icd generating rate, which strongly corroborated this view (Figure 8C with rate constant of gN<sub>A</sub>L<sub>B</sub> decreased to one tenth of that of Figure 8A; and in Figure 8D where heter/homo refers to the rate constant ratio of gN<sub>A</sub>L<sub>B</sub>/gN<sub>A</sub>L<sub>A</sub>.
-                        </p>
-                        <h3>The signal-to-noise ratio (SNR)</h3>
-                        <p class="flow-text">
-                            SNR can be tuned via Notch-Ligand binding affinity in a power-law manner.
-                        </p><p class="flow-text">
-                        For certain parameters, signal-to-noise ratio can be tuned via Notch-Ligand binding affinity in a power-law manner (<font color="purple">Figure 8E</font> with rate constant of gN<sub>A</sub>L<sub>B</sub>varied compared to Figure 8A). This offers clue for <a href="/Team:Fudan-TSI/Optimization">SynNotch optimization</a>.
-                    </p><p class="flow-text">
-                            Amplification is required for Notch-Ligand (see above).
-                        For certain parameters, signal of a certain pair of Notch-Ligand coupling may be diluted by occurrence of other reactions (<font color="purple">Figure 8F</font> with types of overall Notch/Ligand varied compared to Figure 8A).
-                        </p>
-                        <div class="expFigureHolder" style="width:100%">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/3/33/T--Fudan--LC-zlw1018.png" />
-                            <p class="flow-text"><b>Figure 8. Simulation results of Notch-Ligand kinetics.</b>
-<br/>(A) Simulation of a 2 Notch-2 Ligand system. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. Both Cell1 and Cell2 are armed with all four kinds of Notch/Ligand A/B.
-<br/>(B) Weak binding affinity for cleavage leads to low response. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. The affinity of protease to NotchB-LigandB complex is weakened, leading to poor NotchB response to Ligand signal.
-<br/>(C) High Notch-Ligand specificity may not affect system response. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. The specificity of Notch-Ligand binding is enhanced, making no significant difference of system response with the cleavage being the rate-limit reaction in this system.
-<br/>(D) Variant Notch-Ligand specificity may not affect system response. The graph's horizontal axis shows the ratio of rate constant of gN<sub>i</sub>L<sub>j</sub> (i≠j) and that of gN<sub>i</sub>L<sub>j</sub> (i=j), and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in Cell2. The specificity of Notch-Ligand binding is tuned, making no significant difference of system response with the cleavage being the rate-limit reaction in this system. This strongly corresponds to the fact that the cleavage reaction is the rate-limit reaction in this system.
-<br/>(E) SNR can be tuned by Notch-Ligand specificity. The graph's horizontal axis shows the ratio of rate constant of gN<sub>i</sub>L<sub>j</sub> (i≠j) and that of gN<sub>i</sub>L<sub>j</sub> (i=j), and the SNR are defined as the ratio of the number of 2 kinds of intracellular domain (icdA and icdB) in Cell2, with Cell1 only have LigandA. The specificity of Notch-Ligand binding is tuned, changing SNR in a power-law manner.
-<br/>(F) Amplification is needed for multi-Notch/Signal system. The graph's horizontal axis shows the diversity of the Notch-Ligand system, and the diversity are defined as the species number of Notch/Ligand. With the diversity increasing, the number of a certain type of Notch intracellular domain molecules reduces.
-                            </p>
-                        </div>
-                        <ul class="collapsible expandable">
-                            <li style="list-style-type: none">
-                                <div class="collapsible-header">Click to see more about the modeling parameters</div>
-                                <div class="collapsible-body container">
-                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img" src="http://2018.igem.org/wiki/images/d/d9/T--Fudan--LC-zlw1018param1.png" /></p>
-                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img" src="http://2018.igem.org/wiki/images/c/cf/T--Fudan--LC-zlw1018param2.png" /></p>
-                                </div>
-                            </li>
-                        </ul>
-                        <p class="flow-text">
-                            The stochastic Notch-Ligand kinetics can be simplified as a single chemical constant for some certain conditions. Though this may greatly reduce the workload of transplant our model into a higher-scale application (e.g. to model a cell colony made up of cells armed with Notch and Ligand), this OOP modeling style makes it easy to transplant Notch-Ligand kinetics at the molecular level to macroscale level. Please continue to our <a href="/Team:Fudan-TSI/Software">software</a>, where we abstracted mammalian cells into blocks (with parameters modeled and simulated above), to predict cellular behaviors. We quantified the behavior of individual cells within a population. We found that besides ENABLE signaling, cell proliferation speed, cell life-span and cell adhesion greatly impact cancer elimination effectiveness. Our modeling and software gives ENABLE gates a population perspective, and test them in a clinical scenario.
-                        </p>
-                        <p class="flow-text">A document on <a href="http://2018.igem.org/wiki/images/c/c1/T--Fudan--model-cell-colony.pdf" target="_blank">model cell colony</a>, and source code is available on <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>GitHub</a>.</p>
-                    </div>
 
-                    <div class="section container scrolSpy" id="section3">
-                        <h2>title</h2>
-                        <p class="flow-text">
-                            content content
-                        </p>
+<div id="section2" class="section container scrolSpy">
+  <h2>Part I: Deterministic model to compute the yield of recombined P<sub>target</sub></h2>
+  <p class="flow-text">When we were constructing the plasmid, we encountered a dilemma concerning how RT and Cre should be expressed. Firstly, we thought of putting them both under a same Lac operon so that their expression can be easily induced merely by one kind of inducer—IPTG. Meanwhile, we also considered using different inducers to achieve a more modular design which would be easier to control. As it would take a long time to test which induced expression scheme is better through experiments, we used modelling to test the two constructs. We modelled all the reactions involved and computed the yield of the desired product, i.e. recombined P<sub>target</sub>. Through comparison of the yield acquired using these two induced expression schemes, we decided that the latter scheme should be employed for our system to perform better.</p>
+  <p class="flow-text">By common knowledge we can assume that, if the amount of RT and Cre needs to be different to achieve optimal yield, we should choose the second scheme and put them under different operons. On the contrary, if the yield reaches the maximum under the maximum amount of RT and Cre, the first scheme should be chosen.</p>
+  <p class="flow-text">In our initial attempt, we found that modelling all the reactions involved is rather difficult, as the reactions are in such a large number and all mixed together. This circumstance makes inspection of the reasonability of our models and parameters impossible. To overcome this issue, we decided to separate these reactions into three sub-models and use the steady-state concentration of the substances derived from the previous model as the input of the next model. The three sub-models are: <a href="#section2">induced expression model</a>, <a href="#section3">reverse transcription model</a> and <a href="#section4">Cre recombination model</a>, corresponding to the 3 reaction steps in R-Evolution. The schematic diagram is shown in <a href="#Fig1">Figure 1</a>.</p>
 
-                        <h2>title</h2>
-                        <p class="flow-text">
-                            Fangfei Ye is responsible for all <a href="/Team:Fudan-TSI/Design_Intention" target="_blank">art design</a>, which includes our team logo, team flag, team uniform (Dr. Cai gave comments), team name card, brochures, our posters, as well as materials related to our human practice events.
-                        </p>
-                    </div>
+  <div class="figureHolder" id="Fig1">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/5/54/T--Fudan-TSI--Fig1.gif" />
+    <p>Figure 1. Workflow of the model.
+    Three Grey boxes indicate three major reaction steps in R-Evolution. Arrows indicate the reaction that certain substance is involved. White arrows indicate the case in which substances that originally exist in <i>E. coli</i> act as inputs. Red arrows indicate the case in which intermediates, which are produced in the previous reaction, are generated or involved in next reaction process. The blue arrow indicates the final output that we would like to observe. Inducer – IPTG or aTc (anhydrotetracycline). RT – reverse transcriptase. Cre – Cre recombinase. cDNA – complementary DNA.</p>
+  </div>
 
-                </main>
-            </div>
+  <h4>Induced Expression Model</h4>
+  <p class="flow-text">We first assumed that both genes encoding RT and Cre are placed together under a lac operon <a href="#Fig2">(Figure 2a)</a>. The repressor protein LacI is stably expressed in the cell, 2 molecules of LacI will form a dimer which binds to LacO DNA fragment and represses the expression of RT and Cre. When IPTG is added and transported into the cell, IPTG molecules will bind with LacI and inhibit its binding to LacO. In this way, RT and Cre can be rescued from suppression <a href="#Ref1">(Nikos et al.)</a>. The ordinary differential equations (ODEs) describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations can be found in <a href="#">the appendix</a>.</p>
+
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/6f/T--Fudan-TSI--Formula1.gif" />
+  </div>
+
+  <p class="flow-text">According to our modelling result, the amount of target protein (RT and Cre) will be extremely low when IPTG is not added <a href="#Fig2">(Figure 2b)</a>. The origin point represents the time when an <i>E. coli</i> comes into being through reproduction. As a result, the lac operon is not fully repressed by LacI dimer, causing a leakage expression of target protein (from 0 min to 1 min, <a href="#Fig2">Figure 2b&amp;c</a>). After that, due to slow degradation rate of the target protein’s mRNA as well as the target protein itself, the amount of target protein will continue to accumulate to a certain amount after the lac operon is fully repressed (from 1 min to 5 min, <a href="#Fig2">Figure 2b&amp;c</a>). Finally, the degradation process removes target protein from the system (from 5 min to 50 min, <a href="#Fig2">Figure 2b</a>). When IPTG is added, we find that the concentration of protein product quickly rises as the repression of lac operon is quickly removed (from 50 min to 100 min, <a href="#Fig2">Figure 2b&amp;c</a>). The steady-state concentration is 6.70 μM. This number will be used for further analysis.</p>
+
+  <div class="figureHolder" id="Fig2">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/archive/5/59/20191020044015%21T--Fudan-TSI--Fig2b%26c.gif" />
+    <p>Figure 2. Induced expression of RT and Cre.
+    <b>a)</b> Schematic diagram of the model. <b>b)</b> Dynamics of target protein. Horizontal axis shows the length of time. Vertical axis demonstrates the amount of protein (RT and Cre) within the system. RT and Cre are expressed under the same Lac operon. <b>c)</b> Dynamics of free lac operon. Horizontal axis shows the length of time. Vertical axis demonstrates the amount of free lac operon, i.e. the lac operon unbound by tetR dimer, within the system. The vertical magenta line indicates the moment when 50μM is added to the system.</p>
+  </div>
+
+</div>
+
+<div id="section3" class="section container scrolSpy">
+  <h4>Reverse Transcription Model</h4>
+  <p class="flow-text">From the first model, the concentration of both RT and Cre are acquired. The concentration of RT serves as input to the reverse transcription model. As the schematic diagram depicts <a href="#Fig3">(Figure 3a)</a>, tRNA primer first binds with reverse transcriptase. When this complex binds with a certain fragment on the target sequence, which is called primer binding site (PBS), the reverse transcription will start and cDNA will be synthesized.</p>
+  <p class="flow-text">Although a more elaborate model of reverse transcription has been proposed by <a href="#Ref2">Kulpa et al.</a>, it includes many reactions whose kinetic properties are not well characterized. As a result, we simplified that model and came up with our own. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations we used can be found in <a href="#">the appendix</a>.</p>
+
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/3/3f/T--Fudan-TSI--Formula2.gif" />
+  </div>
+
+  <p class="flow-text">The modelling result is shown in <a href="#Fig3">Figure 3b</a>. It shows that the concentration of cDNA will accumulate at the presence of RT (whose initial concentration is 6.70 μM, computed by the induced expression model) and finally reach a steady-state of 9.60 nM. This number will be used for further analysis.</p>
+
+  <div class="figureHolder" id="Fig3">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/3/31/T--Fudan-TSI--Fig3.gif" />
+    <p>Figure 3. Reverse transcription.
+    <b>a)</b> Schematic diagram of the model. <b>b)</b> Dynamics of cDNA. Horizontal axis shows the length of time. Vertical axis demonstrates the amount of cDNA within the system.</p>
+  </div>
+</div>
+
+<div id="section4" class="section container scrolSpy">
+  <h4>Cre Recombination Model</h4>
+  <p class="flow-text">Our first assumption is that the genes encoding RT and Cre are both placed under lac operon and thus be expressed in the same amount. So now we are about to compute the yield of our desired product to identify whether this experimental setup is feasible. The model of the recombination process has been clearly described by <a href="#Ref3">Ehrilich et al</a>. We made some changes to it according to our own experimental design. The schematic diagram is shown in <a href="#Fig4">Figure 4a</a>. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations can be found in <a href="#">the appendix</a>.</p>
+
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/e/e9/T--Fudan-TSI--Formula3.gif" />
+  </div>
+
+  <p class="flow-text">As is shown in the diagram, 2 Cre molecules bind with 1 loxP site successively, either on cDNA or P<sub>target</sub>. Four Cre molecules will form a Holliday junction, and thus starting the recombination reaction. Two pairs of loxP will work together and complete the strand exchange between cDNA and P<sub>target</sub>. After that, the recombined product is produced. What we are interested in is the percentage of recombined P<sub>target</sub> among all P<sub>target</sub>s in one <i>E. coli</i>. So, we turn to compute that percentage based on the model that we have established.</p>
+  <p class="flow-text">Unfortunately, we found that the amount of substances is too small. For example, the concentration of @@@@ is only 10 nM, which means there are only about 5 molecules of  in one cell. These small numbers caused some computational problems in Matlab when we were using its ODE solver (ode15s). To address this problem, we converted the units of the amount of the substances from mole per litter (M) to molecule. The units of the kinetic parameters are also converted accordingly.</p>
+  <p class="flow-text">Now, the recombination step is modeled under the initial condition of 5 molecules of non-mutated , 3228 molecules of Cre and 5 molecules of cDNA <a href="#Fig4">(Figure 4b)</a>. The last two numbers are the outputs of previous models after going through some unit conversion steps.</p>
+  <p class="flow-text">After a long period of reaction, no recombined @@@@ showed up. It is because there are too many Cre molecules so s are all bounded by them and remain in the intermediate form. What’s more,  can't bind with T7 RNA polymerase and be transcribed as a consequence of Cre occupation. This leads to the system’s inability of undergoing further reverse transcription process, stopping cDNA’s production, resulting in a stop of the system, and rendering mutation accumulation impossible <a href="#Fig4">(Figure 4c)</a>.</p>
+  <p class="flow-text">This result tells us that the number of Cre molecules needs to be much lower for the system to function. We then set out to determine how many Cre is optimal. After we fed the recombination model with cDNA and Cre at different concentrations, the problem seems to be clear as the yield of recombined  varies greatly responding to different numbers of cDNA and Cre <a href="#Fig4">(Figure 4d)</a>. When cDNA is confined to 5 molecules, we will get no yield at all in the period of <i>E. coli</i>'s replication cycle if the concentration of Cre is greater than 20 molecules. Instead, the yield is maximized when the final Cre concentration is around 2 molecules <a href="#Fig4">(Figure 4e)</a>.</p>
+  <p class="flow-text">We use the optimized number of Cre as the input to our third model. The result is shown in <a href="#Fig4">Figure 4f</a>, which is satisfactory. The recombined P<sub>target</sub>) finally occurs and  has a chance to bind with T7 RNA polymerase, which means mutated gene of interest could be transcribed and further mutated, thus making the accumulation of mutations possible <a href="#Fig4">(Figure 4g)</a>.</p>
+
+  <div class="figureHolder" id="Fig4">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/d/d8/T--Fudan-TSI--Fig4.gif" />
+    <p>Figure 4. Cre recombination (deterministic).
+    <b>a)</b> Schematic diagram of the model. Ps, Un-recombined P<sub>target</sub>. Pp, Recombined P<sub>target</sub>. <b>b-c)</b> Recombination when Cre is expressed under Lac operon. Dynamics of the percentage of un-recombined/ recombined P<sub>target</sub> among all P<sub>target</sub>s is shown in <b>b</b>. Horizontal axis shows the length of time (8 hours, corresponding to R-Evolution’s function period). The distribution of the percentage of substances at the steady-state is shown in <b>c</b>. <b>d)</b>  Yield of recombined P<sub>target</sub> at different initial number of cDNA and Cre. The yield of recombined P<sub>target</sub> is calculated as the percentage of recombined P<sub>target</sub> among all P<sub>target</sub>s. The horizontal white line corresponds to current situation where the initial number of cDNA is 5 molecules in one <i>E. coli</i>. <b>e)</b>  Yield of recombined P<sub>target</sub> at different initial number of Cre when initial number of cDNA is 5 molecules. <b>f-g)</b>  Recombination when Cre is expressed under different operon. Dynamics of the percentage of un-recombined/ recombined P<sub>target</sub> among all P<sub>target</sub>s is shown in <b>f</b>. The distribution of the percentage of substances at the steady-state is shown in <b>g</b>.</p>
+  </div>
+
+  <p class="flow-text">These results remind us to use different inducer to induce the expression of RT and Cre. So, we revised our experimental design and decided to use Tet operon to control the expression of Cre and induce that with anhydrotetracycline (aTc). Even though we later used degradation tag to accelerate the degradation process of Cre and to decrease the expression level of Cre, considering the fact that the tet operon is less prone to leakage and that using merely lac operon to control the expression of RT and Cre may cause unexpected problems, we still used different operons to control the expression of RT and Cre. This setup will be considered in the model in <a href="#section6">Part III</a>.</p>
+  <p class="flow-text">There is still something that is not well explained in our current model. The final percentage of recombined P<sub>target</sub> is around 1.5%. The unit of the substance is molecules, so it means there is 0.075 recombined P<sub>target</sub> in one cell, which is unrealistic. This problem reflects that converting the unit of substance into molecule when doing deterministic modelling cannot offer a precise description of the system’s status. We then used <a href="#section5">stochastic modelling</a> techniques to determine whether and how many recombined P<sub>target</sub>s will show up in one replication cycle of <i>E. coli</i>.</p>
+</div>
+
+<div id="section5" class="section container scrolSpy">
+  <h2>Part II: Stochastic model to compute times of occurrence of recombined P<sub>target</sub></h2>
+  <p class="flow-text">We use Gillespie algorithm in stochastic modelling. The procedure of this algorithm is shown as follows in the form of pseudocode.</p>
+  <ol>
+    <li>  Step 1: Initialize the reaction system at \(t=0\) with rate constants \(c_1, c_2, ......, c_v\) as initial numbers of molecules \(x_1, x_2, ......, x_u\) corresponding to \(v\) reactions and \(u\) sustances (both reactants and products) involved in the reaction system.</li>
+    <li>  Step 2: For each \(i=1,2,......,v\), calculate the hazard for the \(i^{th}\) type of reaction, denoted as \(h_i(x,c_i)\) based on current substance number \(x\).</li>
+    <li>  Step 3: Calculate the combined reaction hazard \(h_0(x,c)=\Sigma_{i=1}^{v}h_i(x,c_i)\).</li>
+    <li>  Step 4: Simulate the time to the next reaction, \(t^{'}\) , which is a random quantity that obeys exponential distribution with parameter \(\lambda\).</li>
+    <li>  Step 5: Put \(t:=t+t^{'}\).</li>
+    <li>  Step 6: Simulate the reaction index, \(j\). The probability that the \(j^{th}\) reaction can occur is \(\frac{h_i(x,c_i)}{h_0(x,c)}, i=1,2,......,v.\).</li>
+    <li>  Step 7: Update \(x\) according to reaction \(j\), which means putting \(x:=x+S^{(j)}\), where \(S^{(j)}\) denotes the \(j^{th}\) colomn of the stoichiometry matrix \(S\). The \(j^{th}\) column of  denotes the change in substance number  caused by the \(j^{th}\) reaction.</li>
+    <li>  Step 8: Record time \(t\) and current substance number \(x\).</li>
+    <li>  Step 9: If \(t\ \text{<}\ T_{max}\), return to step 2. \(T_{max}\) corresponds to the maximum duration of the reaction set by the user.</li>
+    <li>  Step 10: Plot the result to see the dynamic of the quantity of the substance that you are interested in.</li>
+
+  <p class="flow-text">Although the algorithm is rather simple, basic mathematical skills is required to understand its theoretical basis. You may consult the book written by <a href="#Ref4">Wilkinson and Darren</a> for a thorough understanding. The result is shown in <a href="#Fig5">Figure 5</a>.</p>
+
+  <div class="figureHolder" id="Fig5">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/5/5f/T--Fudan-TSI--Fig5bc.gif" />
+    <p>Figure 5. Cre recombination (stochastic).
+    Horizontal axis shows the length of time (20 min, corresponding to the duration of 1 <i>E. coli</i> replication cycle). Vertical axis demonstrates the number of recombined P<sub>target</sub>. The initial number of Cre is 2 molecules in <b>a</b>, 3228 molecules in <b>b</b>.</p>
+  </div>
+
+  <p class="flow-text">The result demonstrates that recombined P<sub>target</sub>s do occur and two rounds of reverse transcription and recombination can take place in one replication cycle of <i>E. coli</i> (1200 s) <a href="#Fig5">(Figure 5a)</a>. On the contrary, no recombined  will come out within that period if the initial cDNA is 5 molecules and initial Cre is 3228 molecules <a href="#Fig5">(Figure 5b)</a>. This again demonstrates the necessity of putting RT and Cre under different induction setups. The fluctuation of the number of recombined P<sub>target</sub> is due to the backward reaction that Cre can rebind with recombined  and reverting the action, making it not counted as recombined P<sub>target</sub> by the algorithm.</p>
+</div>
+
+
+<div id="section6" class="section container scrolSpy">
+  <h2>Part III: Deterministic model to determine optimal induction time</h2>
+  <p class="flow-text">To ensure the evolved protein is encoded by the mutated GOI sequence that is recombined into P<sub>target</sub>, we decided to use degradation tag to accelerate the degradation process of Cre. This design would make Cre only function when inducer is in the system, thus allowing stringent control of the protein. However, we then face the problem of how to select the optimal degradation tag.</p>
+  <p class="flow-text">Empirically, to minimize the duration of recombination, we tend to choose degradation tags with higher efficiency, but extremely high degradation rate will also reduce the yield of recombined P<sub>target</sub>, leading to decreased library size. Also, it is impractical for researchers to do experiments to test these degradation tags one by one. For these reasons, we are going to use models to find out the optimal degradation tag that should be added to Cre based on the average yield of recombined P<sub>target</sub> at the end of R-Evolution functioning period (8 hours).</p>
+  <p class="flow-text">We intend to use the models described in <a href="#section2">Part I</a>, combined with aTc induction model proposed by <a href="#Ref5">Steel et al</a>. to compute the yield of recombined P<sub>target</sub> under different degradation rate of Cre (the reason why Tet operon is used has been elaborated in <a href="#section2">Part I</a>; the schematic diagram of this process is shown in <a href="#Fig6">Figure 6a</a>. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations we used can be found in <a href="#">the appendix</a>.</p>
+
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/9/9c/T--Fudan-TSI--Formula4.gif" />
+  </div>
+
+  <p class="flow-text">Although the setup in <a href="#section2">Part I</a> successfully provided us with a clear insight into the reactions and dynamic changes of substances that underlie our mutagenesis system, the simplification that the steady-state substance concentrations of previous models can be used as inputs for subsequent models doesn’t match real reaction situation. For example, when Cre is expressed, it can immediately bind with cDNA and initiate recombination. This fact contradicts with our model assumption that recombination only takes place after both Cre and cDNA has reached their steady-state concentration.</p>
+  <p class="flow-text">To overcome this issue, we decided to combine all three sub-models together and calculate the expected output.  As a result of the impreciseness of the basic assumption of the models in <a href="#section2">Part I</a>, we only gave a qualitative conclusion that the amount of RT and Cre should be different. Here we need to quantify how Cre degradation rate and steady-state concentration affects the yield of recombined P<sub>target</sub>. That’s why we employed deterministic model here to combine the separate steps together into one and better simulate real intracellular circumstances.</p>
+  <p class="flow-text">By combining the models that have been talked above, we revealed the reason why the degradation tag with a moderate degradation rate, which can’t be too high or too low, should be selected <a href="#Fig6">(Figure 6b)</a>: under appropriate inducer concentration (20~22uM), when the degradation rate is relatively low (below 0.1 min<sup>-1</sup>), the yield of recombined P<sub>target</sub> will increase according to the increase of Cre degradation rate, but when that rate is sufficiently high (above 0.1 min<sup>-1</sup>), the increase of Cre degradation rate will do harm to the yield of recombined P<sub>target</sub>.</p>
+
+  <div class="figureHolder" id="Fig6">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/archive/8/84/20191020042934%21T--Fudan-TSI--Fig6.gif" />
+    <p>Figure 6. Whole process simulation considering Cre degradation tag.
+    <b>a)</b> Chemical reactions involved in Cre induced expression. <b>b)</b> Yield of recombined P<sub>target</sub> at different Cre degradation rate and aTc dosage. The white line on the left corresponding to the case where the degradation rate of Cre is 0.2 min<sup>-1</sup>. The white line on the left corresponding to the case where the degradation rate of Cre is 0.69 min<sup>-1</sup>. <b>c)</b> Yield of recombined P<sub>target</sub> at different Cre degradation rate and aTc dosage (3D plot). The range of Cre degradation rate is 0.2~0.69 min<sup>-1</sup>. <b>d)</b> Dynamics of yield of recombined P<sub>target</sub> at the Cre degradation rate of 0.2 min<sup>-1</sup> and the initial 22 μM aTc dosage. <b>e)</b> Dynamics of yield of recombined P<sub>target</sub> at the Cre degradation rate of 0.2 min<sup>-1</sup> and the initial 22 μM aTc dosage.</p>
+  </div>
+
+  <p class="flow-text">The average degradation rate acquired from literature is 0.2 min<sup>-1</sup><a href="#Ref1">(Nikos et al.)</a> and the degradation rate of Cre when tagged with the most efficient degradation tag is 0.69 min<sup>-1</sup>. Within this range of degradation rate, the maximum yield of recombined P<sub>target</sub> will decrease according to the increase of Cre degradation efficiency <a href="#Fig6">(Figure 6c)</a>. So we decided to use the least efficient degradation tag.</p>
+  <p class="flow-text">We also revealed the dynamic change of the recombined P<sub>target</sub>. It will continuously accumulate within Cre function period <a href="#Fig6">(Figure 6d)</a>. However, the concentration remains to be low within that period, due to Cre degradation <a href="#Fig6">(Figure 6e)</a>.</p>
+  <p class="flow-text">Finally, there is another interesting phenomenon that is worth mentioning. From <a href="#Fig6">Figure 6b</a> and <a href="#Fig6">Figure 6c</a>, we can find that for each degradation tag rate greater than 0.2 min<sup>-1</sup>, there exits a range of aTc dosage that can make the yield of recombined  relatively big. Also, decreased degradation efficiency enlarges that range. This discovery provides us with another reason for using less efficient degradation tag in that it can increase the robustness of our mutagenesis system by decreasing its sensitivity to the change of inducer dosage.</p>
+  <p class="flow-text">In summary, in the deterministic model, we combined the three minor models proposed previously and assessed the mutagenesis system in whole. Through this addition, we achieved a better simulation of the real intracellular reactions and answered the question of when Cre should be induced for the highest level of recombination efficiency to be obtained.</p>
+</div>
+
+
+<div id="section7" class="section container scrolSpy">
+  <h2>References</h2>
+  <ol id="ref" style="margin: 23px 0 0 0;">
+    <li id="Ref1">[1] Stamatakis M, Mantzaris N V. <a href="https://www.cell.com/biophysj/fulltext/S0006-3495(08)00100-8" target="_blank">Comparison of Deterministic and Stochastic Models of the lac Operon Genetic Network</a>[J]. Biophysical Journal, 2009, 96(3):887-906.</li>
+    <li id="Ref2">[2] Kulpa, D. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1169686/pdf/000856.pdf" target="_blank">Determination of the site of first strand transfer during Moloney murine leukemia virus reverse transcription and identification of strand transfer-associated reverse transcriptase errors</a>[J]. EMBO (European Molecular Biology Organization) Journal, 1997, 16(4):856-865.</li>
+    <li id="Ref3">[3] Ringrose L, Lounnas V, Ehrlich L, et al. <a href="https://www.sciencedirect.com/science/article/pii/S0022283698921490" target="_blank">Comparative kinetic analysis of FLP and cre recombinases: mathematical models for DNA binding and recombination</a>[J]. Journal of Molecular Biology, 1998, 284(2):0-384.</li>
+    <li id="Ref4">[4] Wilkinson, Darren J. <a href="#">Stochastic Modelling for Systems Biology</a>, Second Edition[M]. Crc Press, 2011.</li>
+    <li id="Ref5">[5] Harris A W K, Kelly C L, Steel H, et al. <a href="https://ieeexplore.ieee.org/document/8263882" target="_blank">The autorepressor: A case study of the importance of model selection</a>[C]. Decision & Control. IEEE, 2018.</li>
+  </ol>
+</div>
+
+<!--////////////////////////////////////////////////////
+      do not edit below, if must BE CAREFUL
+  //////////////////////////////////////////////////////-->
+      </main></div><!-- end of side navigator and main of the page -->
 
 <!--Abstract on content page-->
-            <div id="abstractContent" class="z-depth-2">
-                <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
-                <div class="container">
-                    <h5 style="margin:0;padding:10px 0;">Project Summary &copy; Team:Fudan-TSI</h5>
-                    <p class="flow-text" style="margin:0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. Here we present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase reverts RNA into cDNA, during which the target is randomly mutated by enhanced error-prone reverse transcription. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the <i>in vivo</i> evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
-                    </p>
-                </div>
-            </div>
+      <div id="abstractContent" class="z-depth-2">
+          <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
+          <div class="container">
+              <h5 style="margin:0;padding:10px 0;">Modeling by Team:Fudan-TSI</h5>
+              <p class="flow-text" style="margin:0">In our modeling, we successfully simulated the function of our mutagenesis system, and contributed to improve our experimental setup. We divided our system into 3 sub-models: induced expression model, reverse transcription model and Cre recombination model. We utilized deterministic and stochastic techniques with parameters derived from our experiments or published papers.  Our modeling established theoretical basis for our experiments: 1) The determination of simultaneous or separate expression of reverse transcriptase and Cre is guided by models revealing their different working concentration. 2) We estimated the optimal expression level and induction time needed to achieve maximal recombination efficiency. 3) We modeled the effect of Cre degradation on recombination. 4) We demonstrated that mutations accumulate accompanying <i>E. coli</i> growth.  Modeling acted as a shortcut of answering questions concerning experimental setup and revealed new insights into our system. Thus, we believe that our modeling work is very competitive for the best modeling prize.
+              </p>
+          </div>
+      </div>
+<!-- Floating Btns, Footer with sponsors -->
+      <div class="floatingBtn"> <a href="#!" id="abstractBtn" class="btn"> <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i> </a> <a href="#FudanTSIdivWrapper" class="btn"> <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i> </a></div> <footer id="FudanTSIfooter" class="page-footer blue-grey darken-1"><div class="container"><div class="row"><div id="sponsor" class="col m3 s12 row"> <a href="https://2019.igem.org/Team:Fudan-TSI"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0.5em 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Logo0-crop-grey.png"> </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png"> </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png"> </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png"> </a><h3 class="col s12" style="text-align:left;font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3></div><div id="footerNavList" class="col m9 s12 row"><div class="col s12 l6 row"><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Description">Project</a></span><ul><li><a href="/Team:Fudan-TSI/Description">Background</a></li><li><a href="/Team:Fudan-TSI/Design">Design</a></li><li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a href="/Team:Fudan-TSI/Judging">Judging</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Demonstrate">Results</a></span><ul><li><a href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse Transcription</a></li><li><a href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li><li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li><li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li><li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li></ul></div><div class="col s12 m4 active"> <span><a href="/Team:Fudan-TSI/Model">Model</a></span><ul><li><a href="/Team:Fudan-TSI/Model">Modeling</a></li><li><a href="/Team:Fudan-TSI/Software">Software</a></li><li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li></ul></div></div><div class="col s12 l6 row"><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span><ul><li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li><li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li><li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li><li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span><ul><li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li><li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li><li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li><li><a href="/Team:Fudan-TSI/Safety">Safety</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Team">Team</a></span><ul><li><a href="/Team:Fudan-TSI/Team">Members</a></li><li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li><li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li></ul></div><div class="col s12 m4">&nbsp;</div></div></div></div></div><div class="footer-copyright"><div class="container"><div class="contactUS row"><div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai</div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727</div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn</div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM</div></div></div></div> </footer>
+</div></div></div><!-- #pageContent #FudanTSIBody #FudanTSIdivWrapper -->
 
-            <!-- Floating Btns -->
-            <div class="floatingBtn">
-                <a href="#!" id="abstractBtn" class="btn">
-                    <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i>
-                </a>
-                <a href="#FudanTSIdivWrapper" class="btn">
-                    <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i>
-                </a>
-            </div>
-
-            <!-- Footer with sponsors and contact methods -->
-            <footer id="FudanTSIfooter" class="page-footer grey">
-                <div class="container">
-                    <div class="row">
-                        <div id="sponsor" class="col m3 s12 row">
-                            <a href="https://2019.igem.org/Team:Fudan-TSI"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0.5em 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Logo0-crop-grey.png">
-                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
-                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
-                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
-                        </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
-                        </div>
-                        <div id="footerNavList" class="col m9 s12 row">
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Description">Project</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Description">Background</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Design">Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Judging">Judging</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span><a href="/Team:Fudan-TSI/Demonstrate">Results</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse Transcription</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4 active">
-                                    <span><a href="/Team:Fudan-TSI/Model">Model</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Team">Team</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Team">Members</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li><!-- &copy; 2019 -->
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">&nbsp;</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                         <div class="contactUS row">
-                           <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai
-                           </div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
-                           </div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
-                           </div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
-                           </div>
-                         </div>
-                     </div>
-                </div>
-            </footer>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- Javascript files -->
-<!-- Materialize 1.0.0-rc.2 -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script>
-
-<!-- Javascript -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-js.js&action=raw&ctype=text/javascript"></script>
-
-<!-- wang yiheng -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/jquery-ui.min.js&action=raw&ctype=text/javascript"></script>
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/d3.min.js&action=raw&ctype=text/javascript"></script>
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/function-plot.js&action=raw&ctype=text/javascript"></script>
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Kernel.js&action=raw&ctype=text/javascript"></script>
-
+<script src="/Template materialize.js"></script><!-- Materialize 1.0.0-rc.2 -->
+<script src="/Template Fudan-js.js"></script>
 </body>
 </html>
