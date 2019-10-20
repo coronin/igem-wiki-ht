@@ -1,437 +1,178 @@
-{{Fudan-TSI}}<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+{{Fudan-TSI}}<script src="/jquery-1.11.3.min.js"></script>
 <html lang="en">
-<!--
-This html document is created by Tian Huang for Team Fudan iGEM 2018.
-We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
--->
-<!-- LC check on 2018-10-18 -->
 <head>
-    <meta charset="UTF-8">
-
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-css.css&action=raw&ctype=text/css" />
-
-    <!-- Font-awesome icons 4.7.0 -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
-
-    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&action=raw&ctype=text/css">
-
-    <!-- Clear default CSS settings; CSS reset -->
-    <style>
-        *{margin: 0;padding: 0;list-style: none;}
-        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
-
-        /** 清除内外边距 **/
-        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-        pre, /* text formatting elements 文本格式元素 */
-        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-        th, td /* table elements 表格元素 */ {
-            margin: 0;
-            padding: 0;
-        }
-
-        /** 设置默认字体 **/
-
-        /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
-        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-        /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-
-        /** 重置列表元素 **/
-        ul, ol { list-style: none; }
-
-        /** 重置文本格式元素 **/
-        a { text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-
-        /** 重置表单元素 **/
-        legend { color: #000; } /* for ie6 */
-        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-        /* 注：optgroup 无法扶正 */
-
-        /** 重置表格元素 **/
-        table { border-collapse: collapse; border-spacing: 0; }
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&action=raw&ctype=text/css">
+  <link rel="stylesheet" href="/Template local-font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="/Template Fudan-css.css" />
+  <style>
+/*****************************************************************************/
+/* DEFAULT WIKI SETTINGS */
+/*****************************************************************************/
+  #home_logo, #sideMenu { display:none; }
+  #sideMenu, #top_title, .patrollink { display:none; }
+  #content { margin-left: 0; padding:0px; width:100%;}
+  .judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2% !important; width: 92%!important; }
+  *{margin:0;padding:0;list-style:none}blockquote,body,button,dd,dl,dt,fieldset,form,h1,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp{font-family:courier new,courier,monospace}ol,ul{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}
+  #section1 td, #section2 td, #section3 td {padding-bottom:1em;line-height:1.5em}
     </style>
-    <title>2019 Team:Fudan-TSI Collaborations</title>
+    <title>2019 Team:Fudan-TSI Education &amp; Public Engagement</title>
 </head>
-
 <body>
-<!-- Fudan div at igem.org -->
-<div id="FudanTSIdivWrapper" class="black"><div id="FudanTSIBody" class="black">
-        <header>
-            <!-- empty bar -->
-            <div id="emptyBar" style="position:relative;width: 100%;"></div>
+<div id="FudanTSIdivWrapper"><div id="FudanTSIBody">
+  <header>
+  <div id="emptyBar" style="position:relative;width: 100%;"></div><nav id="topNav" class="black z-depth-0_5"><div class="nav-wrapper"><div id="teamLogo" class="brand-logo"> <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif"></a></div><ul id="nav-mobile" class="right"><li> <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right"> <i class="fa fa-navicon" style="font-size: 24px"></i> </a></li></ul></div> </nav>
+  <!-- Dropdown and List elements in navigation bar -->
 
-            <!-- Navigation bar 2019-9-15 -->
-            <nav id="topNav" class="black z-depth-0_5">
-                <div class="nav-wrapper">
-                    <div id="teamLogo" class="brand-logo">
-                        <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/3/3c/T--Fudan-TSI--Logo0.gif"></a>
-                    </div>
-                    <ul id="nav-mobile" class="right orangeBorder">
-                        <li>
-                            <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
-                                <i class="fa fa-navicon" style="font-size:24px"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- Dropdown and List elements in navigation bar -->
-            <!-- Slide-out navigator contents 2019-9-15 -->
-            <ul id="slide-out" class="sidenav">
-                <li style="padding: 0"><div class="sidenavBanner">
-                    <div class="background">
-                    </div>
-                    <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Collaborations</span></p>
-                </div></li>
-                <li>
-                    <ul class="collapsible expandable">
-                        <li class="onThisPageNav"><span>On this page</span></li>
-                        <li class="onThisPageNav"><a href="#section1">div with id section1</a></li>
-                        <li class="onThisPageNav"><a href="#section2">div with id section2</a></li>
-                        <li class="onThisPageNav"><a href="#section3">div with id section1</a></li>
-                        <li><span class="pageSidebar">Team: Fudan-TSI</span></li>
-<li><div class="collapsible-header"><span class="pageSidebar">Project</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Results</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse transcription</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Model</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Parts</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Part improvement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header active"><span class="pageSidebar">Human practices</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Team</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-        <li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-    </ul></div>
-</li>
-                    </ul><!-- .expandable -->
-                </li>
-                <li><div class="placeHolder"></div></li>
-            </ul>
-        </header>
+  <ul id="slide-out" class="sidenav">
+    <li style="padding: 0"><div class="sidenavBanner">
+      <div class="background"></div>
+      <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Public Engagement</span></p>
+    </div></li>
+    <li>
+      <ul class="collapsible expandable">
+        <li><span class="pageSidebar">Team: Fudan-TSI</span></li><li><div class="collapsible-header"><span class="pageSidebar">Project</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied design</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Results</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse transcription</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Model</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Parts</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Part improvement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li></ul></div></li><li><div class="collapsible-header active"><span class="pageSidebar">Human practices</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Team</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li><li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li></ul></div></li>
+      </ul><!-- .expandable -->
+    </li>
+    <li><div class="placeHolder"></div></li>
+  </ul>
+  </header>
 
-        <div id="pageContent">
+  <div id="pageContent">
+      <div id="contentBanner" class="figureBanner">
+          <div class="row">
+              <div class="col s12 hide-on-med-and-up">
+                  <h1><br/>Education &amp; Public Engagement</h1>
+              </div>
+          </div>
+          <div class="hide-on-small-only">
+              <div style="text-align:center;padding-top:80px"><center><img style="height:120px;width:auto" alt="cover public engagement" src="https://2019.igem.org/wiki/images/8" /></center></div>
+          </div>
+      </div>
+
+<!--////////////////////////////////////////////////////
+      do not edit above, if must BE CAREFUL
+  //////////////////////////////////////////////////////-->
+      <div class="container">
+          <!-- side navigator of page content -->
+          <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
+              <li class="onThisPageNav"><a href="#section1">Kids</a></li>
+              <li class="onThisPageNav"><a href="#section2">Lectures&nbsp;workshop</a></li>
+              <li class="onThisPageNav"><a href="#section3">Board&nbsp;game</a></li>
+              <li class="onThisPageNav"><a href="#section4">General&nbsp;public</a></li>
+              <li class="onThisPageNav"><a href="#section5">Guidebooks</a></li>
+              <li><a href="/Team:Fudan-TSI/Public_Engagement">Public&nbsp;engagement</a></li>
+          </ul>
+          <!-- main content of the page -->
+          <main>
 
 
-            <div id="contentBanner" class="figureBanner">
-                <div class="row">
-                    <div class="col s12 hide-on-med-and-up">
-                        <h4>Collaborations</h4>
-                        <p class="flow-text"> </p>
-                    </div>
-                </div>
-                <div id="figureBannerTitle" class="hide-on-small-only">
-                    <h1>Collaborations</h1>
-                    <p class="flow-text"> </p>
-                </div>
-                <div class="hide-on-small-only">
-                    <img src="http://2018.igem.org/wiki/images/7/7e/T--Fudan--title_pic_collaboration.jpg">
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
+<div id="section1" class="section container scrolSpy">
+  <p class="flow-text">For Education and public engagement, we mainly focused on how to inspire public interest in synthetic biology targeting different groups of people.</p>
 
-            <!-- main content of the page -->
-            <div class="container">
-                <!-- side navigator of page content -->
-                <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
-                    <li><a href="/Team:Fudan-TSI/Bio-Art">Bio-Art display</a></li>
-                    <li>Collaborations</li>
-                    <li class="onThisPageNav"><a href="#section1">Fudan-CHINA</a></li>
-                    <li class="onThisPageNav"><a href="#section2">NAU-CHINA</a></li>
-                    <li class="onThisPageNav"><a href="#section3">OUC-China</a></li>
-
-                    <li class="onThisPageNav"><a href="#section9">USTC</a></li>
-                    <li class="onThisPageNav"><a href="#section4">Nanjing_NFLS</a></li>
-                    <li class="onThisPageNav"><a href="#section5">Tsinghua</a></li>
-                    <li class="onThisPageNav"><a href="#section6">EuroAsian Meetup</a></li>
-                    <li class="onThisPageNav"><a href="#section7">iAPC</a></li>
-                    <li class="onThisPageNav"><a href="#section8">CCiC</a></li>
-
-                    <li><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></li>
-                    <li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
-                    <li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
-                </ul>
-                <!-- side navigator of page content -->
-                <main>
-                    <div id="section1" class="section container scrolSpy">
-                        <h2>Working together, <a href="http://2018.igem.org/Team:Fudan-CHINA" target="_blank">Team:Fudan-CHINA</a></h2>
-                        <p class="flow-text">
-                            <img class="left-on-med-and-up width20" src="http://2018.igem.org/wiki/images/5/5b/T--Fudan--Fudan-CHINA-logo.png">
-                            Assembled around the same time and representing the same university, we have since built a strong
-                            and cooperative relationship. We, <a href="http://2018.igem.org/Team:Fudan" target="_blank">Team:Fudan</a>, and <a href="http://2018.igem.org/Team:Fudan-CHINA" target="_blank">Team:Fudan-CHINA</a>, have always been
-                                    on a fantastic and harmonious journey together, aiding each other and providing useful feedbacks
-                                    whenever we met or discussed. We frequently shared our plasmids and reagents to them, and
-                                    also provided them with immediate help on experiments including cell culture, fluorescent imaging,
-                            and flow cytometry. Vice versa, they assisted us on the <a href="/Team:Fudan-TSI/Interlab" target="_blank">interLab</a>, especially on the plate reader.
-                        </p>
-                    </div>
-                    <div id="section2" class="section container scrolSpy">
-                        <h2>With common interests, <a href="http://2018.igem.org/Team:NAU-CHINA" target="_blank">Team:NAU-CHINA</a></h2>
-                        <p class="flow-text">
-                            <img class="left-on-med-and-up width20" src="http://2018.igem.org/wiki/images/2/2e/T--Fudan--nau.jpg">
-                            As <a href="http://2018.igem.org/Team:NAU-CHINA/Collaborations" target="_blank">Team:NAU-CHINA</a> in <a href="https://wikitravel.org/en/Nanjing" target="_blank">Nanjing</a> found out that we had parts <a href="http://parts.igem.org/Part:BBa_K2549061" target="_blank">Part:BBa_K2549061</a>, <a href="http://parts.igem.org/Part:BBa_K2549062" target="_blank">Part:BBa_K2549062</a> that they could use to build their genetic circuits. They reached out to us, and we gladly provided them with these plasmids with detailed sequence information and instructions on how to use them. The parts we provided were ultimately very effective in constructing and testing their signal transduction system. The parts and the plasmids containing them are listed below:
-                        </p>
-                        <p class="flow-text"><a href="http://parts.igem.org/Part:BBa_K2549061" target="_blank">Part:BBa_K2549061</a>LaG16 with mNotch1 extented core region and tTA, which we have tested and characterized in <a href="http://2017.igem.org/Team:Fudan/Demonstrate" target="_blank">2017</a>.
-                        </p>
-                        <p class="flow-text"><a href="http://parts.igem.org/Part:BBa_K2549062" target="_blank">Part:BBa_K2549062</a>: surface EGFP (surEGFP), which we used as one of our antigens against the SynNotch receptor. We have also characterized surEGFP in <a href="http://2017.igem.org/Team:Fudan/Basic_Part" target="_blank">2017</a>.
-                        </p>
-                    </div>
-                    <div id="section3" class="section container scrolSpy">
-                        <h2>&#9786; Manufacturing and distributing, <a href="http://2018.igem.org/Team:OUC-China" target="_blank">Team:OUC-China</a></h2>
-                        <p class="flow-text">
-                            <img class="left-on-med-and-up width20" src="http://2018.igem.org/wiki/images/c/cb/T--Fudan--ouc_2.jpg">
-                            Sharing a similar idea on how to promote basic science, <a href="http://2018.igem.org/Team:OUC-China" target="_blank">Team:OUC-China</a> and we, <a href="http://2018.igem.org/Team:Fudan" target="_blank">Team:Fudan</a>, both wanted to provide a visual and entertaining way for people to understand synthetic biology. We took different approaches toward this mutual goal. They created <a href="http://2018.igem.org/Team:OUC-China/Public_Engagement" target="_blank">a comic book</a> on theories and technologies of <a href="https://www.bio.org/articles/synthetic-biology-explained" target="_blank">synthetic biology</a>. And we helped promote synthetic biology by hosting a <a href="/Team:Fudan-TSI/Bio-Art" target="_blank">Bio-Art</a> display and propagating our ENABLE project and synthetic biology at the school fair, in both of which we distributed and displayed <a href="http://2018.igem.org/Team:OUC-China/Public_Engagement" target="_blank">their book</a> to grab the interest of the audience.
-                        </p>
-                        <p style="margin-top:50px;text-indent:0"><img src="http://2018.igem.org/wiki/images/a/ab/T--Fudan--ouc-2-2.jpg"></p>
-                    </div>
-
-                    <div id="section9" class="section container scrolSpy">
-<h2>Surprise visits, <a href="http://2018.igem.org/Team:USTC" target="_blank">Team:USTC</a></h2>
-<p class="flow-text">When our teammates went to USTC to visit their high school friends who studies there in July, they contacted the USTC iGEM team at impromptu. Received with enthusiasm, our teammates happily shared our ENABLE project design with them. The USTC iGEM team gave us a thorough introduction on their lab and project. Later in August, one of their team member also surprised us with his presence in Shanghai, so we delightfully gave him a campus and lab tour in return. We also had an in-depth project communication at CCiC.
-</p>
+  <h2>Overview</h2>
+  <p class="flow-text">As an interdisciplinary branch of biology and engineering, synthetic biology has been widely used in many different areas and is relative to everyone. However, because of the enlarging gap between the public and synthetic biology, which is mainly caused by the public’s misconception and lack of knowledge on the subject, we find it hard to popularize, let alone getting more people involved in it. In this context, we think that iGEM presents to us a great opportunity to try our best to fill the gap and set up a bridge between the public and synthetic biology. To make our human practice work better targeted, we divided the audience into three groups: children, students, and general public. For children, we want to help them to realize the captivation of science and stimulate their interest in biology. For students, we focused on encouraging them to explore and participate in some real work in the field of synthetic biology. For the general public, we considered more about eliminating their misconceptions as well as inspiring them what can be achieved through synthetic biology to make the world a better place. So, to them, we mainly talked about the basic knowledge and concepts of synthetic biology research, and showed them some of the achievements across the years.</p>
 </div>
-                    <div id="section4" class="section container scrolSpy">
-                        <h2>Jumpstart, high school <a href="http://2018.igem.org/Team:Nanjing_NFLS" target="_blank">Team:Nanjing_NFLS</a></h2>
-                        <p class="flow-text">
-<img class="left-on-med-and-up width20" src="http://2018.igem.org/wiki/images/c/c9/T--Fudan--nfls.jpg">
-                            As it is the first time for them to participate in the iGEM competition, we provided them with many advice including how to conduct their experiment to the criteria of judges and parts documentation. We first explained our interpretation of things they were unclear about. In order to offer further help to them, we learnt about their project abstract and design through frequent mails. We further discussed with them on parts improvement and documentation. We explained to them what is parts improvement, listed examples of it and told them how it can be done. Moreover, in parts documentation, we examined their parts and provided recommendation on how to present parts in a more standardized way. Hopefully their documentation of parts will be very informative and they'll do well in part improvement.
-                        </p>
-                    </div>
-                    <div id="section5" class="section container scrolSpy">
-                        <h2>Our cornerstone, <a href="http://2018.igem.org/Team:Tsinghua">Team:Tsinghua</a></h2>
-                        <p class="flow-text">
-                            <img class="left-on-med-and-up width20" src="http://2018.igem.org/wiki/images/8/8d/T--Fudan--qinghua.jpg">
-                            Holding a long-standing friendship with <a href="http://2018.igem.org/Team:Tsinghua">Team:Tsinghua</a>, we made extensive discussions over Internet. When we met at <a href="https://mp.weixin.qq.com/s/2VgOBcAhAYG57vdAigR7hA" target="_blank">CCiC</a>, we exchanged a myriad of ideas covering project design, human practice, team management and so on. By the way, they gave us valuable suggestions on our poster <a href="/Team:Fudan-TSI/Design_Intention" target="_blank">design</a>.</p>
-<p style="margin-top:50px;text-indent:0"><img src="http://2018.igem.org/wiki/images/9/9b/T--Fudan--qinghua-3-2.jpg"></p>
 
-                    </div>
-                    <div id="section6" class="section container scrolSpy">
-                        <h2>Heading south, <a href="http://2018.igem.org/Team:TUDelft/EurAsianMeetup" target="_blank">the iGEM EuroAsian Meetup</a></h2>
-                        <p class="flow-text">
-                            <img class="left-on-med-and-up width40" src="http://2018.igem.org/wiki/images/3/3b/T--Fudan--EurAsian2-5-2.jpg">
-                            We participated in <a href="http://2018.igem.org/Team:TUDelft/EurAsianMeetup" target="_blank">the iGEM EuroAsian Meetup</a>, which was from July 24th to 26th, hosted
-                                    by <a href="http://2018.igem.org/Team:TUDelft" target="_blank">Team:TUDelft</a> and <a href="http://2018.igem.org/Team:BGIC-Global" target="_blank">Team:BGIC-Global</a> in <a href="https://wikitravel.org/en/Shenzhen" target="_blank">Shenzhen</a>. This July trip was our first opportunity to
-                                    share our ENABLE project  <i>internationally</i>. The Meetup has provided us with many valuable suggestions.
-                                    For example, since then we started to focus more intensely on how we could help our general audience
-                                    better understand our project. It was primarily thanks to the workshop sessions where we had to come
-                                    up with solutions to promote our project and human practice within \[just 1 minute](link to our 1-min intro video or audio).
-                                    Furthermore, we made many friends, especially with members of <a href="http://2017.igem.org/Team:TUDelft/Team" target="_blank">Team:TuDelft</a> and
-                           <a href="http://2018.igem.org/Team:SZU-China/Team" target="_blank">Team:SZU-China</a>. We sincerely hope that our collaboration will extend to the next competition season. <i>See you next summer!</i>
-                        </p>
-                        <p style="text-indent:0"><img src="http://2018.igem.org/wiki/images/9/94/T--Fudan--EurAsian4.jpg"></p>
-                    </div>
-                    <div id="section7" class="section container scrolSpy">
-                        <h2>Heading east, <a href="https://secret.nchu.edu.tw/%E7%AC%AC%E5%85%AD%E5%B1%86%E5%9C%8B%E9%9A%9B%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B%E4%BA%9E%E5%A4%AA%E4%BA%A4%E6%B5%81%E6%9C%83-%E8%88%88%E5%A4%A7%E7%99%BB%E5%A0%B4/" target="_blank">iAPC</a> </h2>
-                        <p class="flow-text">
-                            Between July 30th and August 2nd, we attended <a href="https://secret.nchu.edu.tw/%E7%AC%AC%E5%85%AD%E5%B1%86%E5%9C%8B%E9%9A%9B%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B%E4%BA%9E%E5%A4%AA%E4%BA%A4%E6%B5%81%E6%9C%83-%E8%88%88%E5%A4%A7%E7%99%BB%E5%A0%B4/" target="_blank">the 6th iGEM Asia Pacific Conference</a>.                     iGEMers from China, America, Japan and other countries gathered together to communicate about the
-                                    progress of their projects. We have faced larger audiences than EuroAsian, and we were better prepared
-                                    and made sure to create [a deep and thorough description] of our ENABLE project. Participating in iAPC has not
-                                    only offered us another excellent chance to practice our presentation skills but also gave us additional
-                                    helpful feedback regarding our <a href="/Team:Fudan-TSI/Design_Intention" target="_blank">experimental design</a> and <a href="/Team:Fudan-TSI/Model#Transcriptional_Amplifer" target="_blank">modeling</a>.
-                        </p>
-                        <p class="flow-text">
-                            As we traveled to <a href="https://wikitravel.org/en/Taiwan" target="_blank">Taiwan</a>, we also took the opportunity to enjoy their nightlife and food, <i>yummy</i>!
-                        </p>
-<div class="row">
-                            <div class="col s12 m4"><img class="responsive-img" src="http://2018.igem.org/wiki/images/7/7c/T--Fudan--taiwanpic.jpg"></div>
-                            <div class="col s12 m4"><img class="responsive-img" src="http://2018.igem.org/wiki/images/2/2e/T--Fudan--taiwanfood.jpg"></div>
-<div class="col s12 m4"><img class="responsive-img" src="http://2018.igem.org/wiki/images/b/b2/T--Fudan--Taiwanlife.jpg"></div>
-                        </div>
-                    </div>
-                    <div id="section8" class="section container scrolSpy">
-                        <h2>Local &amp; global, <a href="http://2018.igem.org/Team:ShanghaiTech/Collaborations" target="_blank">CCiC</a></h2>
-                        <p class="flow-text">
-                            Between August 28th and 31st, we participated in <a href="http://2018.igem.org/Team:ShanghaiTech/Collaborations" target="_blank">the 5th Conference of China iGEMer Community</a> held in <a href="http://www.shanghaitech.edu.cn/eng/" target="_blank">ShanghaiTech University</a>, <a href="https://wikitravel.org/en/Shanghai" target="_blank">Shanghai</a>. It was in the local, and some of us were participating in the conference during the day and working in the lab at night. It was a global event, with 60 current iGEM teams and 500 people attending.
-                        </p>
-                        <p class="flow-text">
-                            <img class="left-on-med-and-up width40" src="http://2018.igem.org/wiki/images/7/77/T--Fudan--CCiC-1.jpg">
-                            During the conference, apart from presenting our ENABLE project and explaining our poster, we also distributed questionnaires regarding <a href="@@@@">the explanation of logic gates</a> to collect opinions from our colleagues to improve the project. Moreover, we also had a valuable opportunity to meet the iGEM competition organizer <a href="http://igem.org/Staff/MeaganLizarazo" target="_blank">Meagan</a> face to face and ask her relevant questions regarding recent competition policy changes and the future of iGEM, etc. Overall, this conference has undoubtedly inspired us with new ideas and new methods, and has provided us with terrific feedbacks for improving our project!</p>
-                        <p class="flow-text">Now, we are ready to head <b>West</b>. See you all in Boston, when the winter comes.</p>
-                    </div>
+<div id="section2" class="section container scrolSpy">
+  <h2>Kids – Biology is a fun thing to learn.</h2>
+  <p class="flow-text">What can we do to get children involved in biology? To answer this question, we chose to work with Shanghai Jiuqian volunteer club, a voluntary association in our university devoting to providing long-term education support for migrant children. They showed a great interest in promoting biology. We cooperated with them in purpose of guiding children to excavate the fun of biology through motivating their creation and imagination.</p>
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/65/T--Fudan-TSI--Education_kids1.gif" />
+    <p>Communication with volunteers from Shanghai Jiuqian volunteer club.</p>
+  </div>
 
-                </main>
-            </div>
+  <p class="flow-text">On October 6<sup>th</sup>, members from our team and their association held a public class for children aged nine to fifteen together. To start with, we asked how they think of biology. We found that most of them understand biology as macro-level creatures like animal and plants. Then we introduced to them the basic knowledge of DNA structure and function, and showed them a DNA model which can be taken apart and reassembled. Afterwards, we invited them to build their own DNA model. One of the kids expressed to us that how amazing it is that such a small and simple molecule can play such an important role in maintaining and shaping our lives. We then gave a brief introduction of synthetic biology and held a discussion about what can be achieved by it. To our surprise, the perspectives they have about synthetic biology are so different and innovative that we were also inspired by them. One of them compared synthetic biology to a 3D printer which can create whatever you want by precise design and programming. They also proposed that synthetic biology can be very useful in medical field.</p>
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/61/T--Fudan-TSI--Education_kids2.gif" />
+    <p>Public class for kids.</p>
+  </div>
+
+  <p class="flow-text">Our team and Jiuqian association both felt that the workshop is a mutually beneficial activity, and decided to establish a long-term collaboration between us.</p>
+</div>
+
+<div id="section3" class="section container scrolSpy">
+  <h2>Students - Act now to create and innovate</h2>
+  <h4>Lectures and workshop</h4>
+  <p class="flow-text">On June 1<sup>st</sup>, we delivered a lecture to high school students from Jiading No. 2 Middle School. As they are students of high school who already have some basic knowledge in different subjects such as mathematics, chemistry and biology, we believed that we should center our lecture around that synthetic biology is a new interdisciplinary area, and that it involves applying engineering principles to biology. Thus, not only students majoring in biology, but also others who are interested in relevant subjects such as engineering, are welcomed to participate in iGEM. Even if you’re from a less academic background, you could take part in it by conducting the work of human practices. By introducing iGEM to them, we hope to get them involved in next year’s competition.</p>
+  <p class="flow-text">In the lecture, we introduced synthetic biology from the basic concepts to its forefront applications, hoping to present an overview of synthetic biology to our audience. We also shared with them some basic experimental skills and our experience in laboratory. We believed that this could both be of great help in bringing them closer to synthetic biology and revealing how it is actually like to work in a laboratory.</p>
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f5/T--Fudan-TSI--Education_lecture1.gif" />
+    <p>Lecture to high school students from Jiading No. 2 Middle School.</p>
+  </div>
+
+  <p class="flow-text">As for students from high schools who showed great enthusiasm in biology, we joined them in a Biology Summer Camp and held a seminar of synthetic biology on July 19<sup>th</sup>. Hosting over 300 students from 30 different high schools around China, the summer camp was a perfect approach for us to get access to students from wider areas. During the camp, we shared our experience of working on synthetic biology and iGEM with them. In order to give them a concrete idea of synthetic biology and our project, our team members shared their first-hand experiences in lab research and iGEM participation. After that, we gave a short presentation of our project, hoping to inspire them to come up with their own innovative ideas. Moreover, we had a more thorough conversation with students who showed specific interest in synthetic biology after the presentation. To our surprise, they brought up some creative ideas and new interpretations of our project.</p>
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/2/2e/T--Fudan-TSI--Education_lecture2.gif" />
+    <p>Seminar in Biology Summer Camp.</p>
+  </div>
+
+  <p class="flow-text">We also held a workshop with students from BIOS (Biology Intensive Orientation Summer) summer course. BIOS is a course for students with high interest in biological research and aims to cultivate their lab skills.We believed that the students have already possessed the capability of starting their own work in synthetic biology. What they need is just an idea and some inspiration. On July 30<sup>th</sup>, our team hosted a workshop with students from BIOS to introduce iGEM and our project to them. We also invited them to join in next year's iGEM competition. In the workshop, we delivered a presentation to introduce of the summary and experimental details of our project, through which we hope to excite the formation of new ideas.</p>
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/b/ba/T--Fudan-TSI--Education_lecture4.gif" />
+    <p>Workshop in BIOS.</p>
+  </div>
+
+  <p class="flow-text">On August 16<sup>th</sup>, we invited Prof. Hal Alper to deliver a lecture about his recent research. (We also had a brainstorm session with Prof. Alper, details can be found in our <a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a>.) Dozens of undergraduates from our university attended this lecture, hoping to learn more about synthetic biology as well as system biology. During the session, Prof. Alper talked about his work on bioengineering and directed evolution, which is very inspiring to us.</p>
+  <p class="flow-text">Prof. Alper also held a fireside discussion with other biology-majored students. Fireside session is a tradition of Fudan University, during which the invited professor would share his research experience and answer students’ questions regarding life choice and research.</p>
+</div>
+
+<div id="section4" class="section container scrolSpy">
+  <h4>Board game</h4>
+  <p class="flow-text">It is always easier for people to get involved and learn new things when are playing and enjoying themselves. When considering what can be done to stimulate students’ interest in synthetic biology and make it a fun thing to learn, we thought of board game. When we first set our sights on board games, we were impressed by its slogan: Everything is a board game. Numerous areas can be combined with board games including but not limited to education, careers and life. We regard it a perfect medium to introduce our system design and popularize synthetic biology among students.</p>
+  <p class="flow-text">To design a board game which can both be fun and educational, we held a brainstorm and came up with three prototypes. The first one is called Gene Expression War. Every player in this board game is an “E. coli”. Each E. coli will try its best to fully accomplish the travel of genome, and during this process it will utilize the function cards to express various proteins and gain the product cards to help itself to accelerate its journey or block other E. coli. The rules may seem easy to understand, but the overall design lack of scientific rigor and entertainment. We abandoned it after many unsuccessful revisions.</p>
+  <p class="flow-text">Our second prototype is based on co-culture and expression competition. By randomly drawing cards, players will be able to put different parts on a basic plasmid vector, including improved promoters, origin and various functional genes. Under the limitation of culture medium and the bacteria burden, players will compete with each other. The one who can produce most proteins and energy is the winner. However, this version is so complicated that we are still working on it and we truly hope to finish it in the future.</p>
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/ff/T--Fudan-TSI--Education_Boardgame.gif" />
+    <p>Board game: Bio Mahjong Cards.</p>
+  </div>
+  <p class="flow-text">Here is our final prototype called <a href="#">Bio Mahjong Cards</a>. It is succinct and quite easy to understand, based on a traditional board game in China: Mahjong. The goal of Mahjong is to collect special melds with different tiles, which is much like using different parts to construct a biological system.</p>
+</div>
+
+<div id="section5" class="section container scrolSpy">
+  <h2>General public – Synthetic biology is easier and closer than you think.</h2>
+  <p class="flow-text">efore trying to popularize biology to general public, we carried out a questionnaire survey in order to have a preliminary understanding of the average level of biological knowledge among the general public. In the questionnaire, we first designed questions to collect some basic information of our respondents for further analysis. Then a few questions like ‘Have you ever heard of gene?’ were asked to evaluate the respondents’ level of basic biological knowledge. In the end, we asked some questions about synthetic biology and iGEM.</p>
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/5/5d/T--Fudan-TSI--result_of_the_questionaries.gif" />
+    <p>Result of the questionaries.</p>
+  </div>
+  <p class="flow-text">Even though we know that the misconception between public and biological research has existed for a long time, the result showed that their current understanding of biology is even below our expectation. Over 97.85% respondents have heard of gene but most of them learned it from hot topics like GMF (genetically modified food). Only 50.77% are aware of synthetic biology. This indicates that there is still a long way to go for the promotion of synthetic biology and elimination of misunderstandings. The development of biology requires the understanding and acceptance of the public as the fertile soil for its growth, we hope that through our effort, we could contribute to this process.</p>
+
+  <h4>Pamphlet of synthetic biology</h4>
+  <p class="flow-text">To start with, we designed a pamphlet of synthetic biology. Our first edition was distributed to student of different majors in our school. We collected their feedback to improve our pamphlet before we distributed to the general public to make it more attractive and easier to understand. Considering that our target audiences lack specialized knowledge, we tried to avoid using professional terms, and made our statement as concise and clear as possible. In order to promote understanding, we also added some examples about how synthetic biology enhanced our daily life in various aspects including food, medicine and fuel. We believed that by reading this pamphlet, people could learn some basic knowledge about synthetic biology in a short time. And we hope this could encourage the public to think further about biology and to get more involved in it.</p>
+  <div class="figureHolder">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/c/c1/T--Fudan-TSI--Education_pamphlet.gif" />
+  </div>
+
+  <p class="flow-text">In parallel with popularizing synthetic biology, we also dedicated our effort to shortening the distance between the public and the scientific researchers. The most direct way is to reveal the daily work of the researchers to the public. PCR (Polymerase Chain Reaction) is a basic molecular biology technique and is widely used in biology laboratories. Thus, we chose the demonstration of PCR as a window to show the public how the daily work in laboratory is like. Collaborating with students majoring in journalism, we took two vlogs, one records the main steps of PCR while another is about BioArt and uploaded them to the internet platforms such as YouTube and Bilibili. By /date/, our video had been viewed more than /number/ times. We hope that through the propagation of simple experiment procedures, the public would be amazed to see that such elaborate demonstrations and such important theories all originate from adding up such ‘simple’ experiments.</p>
+</div>
+
+<div id="section5" class="section container scrolSpy">
+  <h2>Guidebooks</h2>
+  <p class="flow-text">At the beginning of our project, we found that we had no clue about how to start our Human Practice work. That’s how we realized that the conduct of previous teams is a valuable source of inspiration. Although the track they chose may be different, the goal of Human Practice has always been to reach out to more people and make a difference with your project.</p>
+  <p class="flow-text">Thus, we compiled two guidebooks, one on <a href="#">Education and Public Engagement</a>, and one on <a href="#">Integrated Human Practice</a>. We shared our guidebook with other teams and asked for their suggestions. In doing so, we hope to offer guidance to future teams on how to carry out Human Practice.</p>
+</div>
+
+
+<!--////////////////////////////////////////////////////
+      do not edit below, if must BE CAREFUL
+  //////////////////////////////////////////////////////-->
+      </main></div><!-- end of side navigator and main of the page -->
 
 <!--Abstract on content page-->
-            <div id="abstractContent" class="z-depth-2">
-                <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
-                <div class="container">
-                    <h5 style="margin:0;padding:10px 0;">Project Summary &copy; Team:Fudan-TSI</h5>
-                    <p class="flow-text" style="margin:0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. Here we present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase reverts RNA into cDNA, during which the target is randomly mutated by enhanced error-prone reverse transcription. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the <i>in vivo</i> evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
-                    </p>
-                </div>
-            </div>
+      <div id="abstractContent" class="z-depth-2">
+          <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
+          <div class="container">
+              <h5 style="margin:0;padding:10px 0;">Public Engagement by Team:Fudan-TSI</h5>
+              <p class="flow-text" style="margin:0">Interaction is our key focus. We divided our audience into three categories: kids, students, and the general public.  1) For kids, we introduced the concept and function of DNA through workshop. In the process, we established a long-term collaboration with Fudan Jiuqian Volunteer Association.  2) For students, to inspire them to pursue biological research, we held three lectures on synthetic biology, and one workshop to share lab experience. We also designed a boardgame to enlighten them with the mechanisms and significance of continuous evolution.  3) For the general public, we aimed to popularize biology - we distributed pamphlets with examples of how synthetic biology advancements have changed our lives, and published a video on PCR procedures to convey that the important discoveries were made from ‘down-to-earth' experiments.  4) In addition, we released a HP guidebook through cataloguing previous projects, which we distributed to collaborators and hope to guide future teams.
+              </p>
+          </div>
+      </div>
+<!-- Floating Btns, Footer with sponsors -->
+      <div class="floatingBtn"> <a href="#!" id="abstractBtn" class="btn"> <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i> </a> <a href="#FudanTSIdivWrapper" class="btn"> <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i> </a></div> <footer id="FudanTSIfooter" class="page-footer blue-grey darken-1"><div class="container"><div class="row"><div id="sponsor" class="col m3 s12 row"> <a href="https://2019.igem.org/Team:Fudan-TSI"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0.5em 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Logo0-crop-grey.png"> </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png"> </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png"> </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png"> </a><h3 class="col s12" style="text-align:left;font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3></div><div id="footerNavList" class="col m9 s12 row"><div class="col s12 l6 row"><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Description">Project</a></span><ul><li><a href="/Team:Fudan-TSI/Description">Background</a></li><li><a href="/Team:Fudan-TSI/Design">Design</a></li><li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a href="/Team:Fudan-TSI/Applied_Design">Applied design</a></li><li><a href="/Team:Fudan-TSI/Judging">Judging</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Demonstrate">Results</a></span><ul><li><a href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse transcription</a></li><li><a href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li><li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li><li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li><li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Model">Model</a></span><ul><li><a href="/Team:Fudan-TSI/Model">Modeling</a></li><li><a href="/Team:Fudan-TSI/Software">Software</a></li><li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li></ul></div></div><div class="col s12 l6 row"><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span><ul><li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li><li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li><li><a href="/Team:Fudan-TSI/Improve">Part improvement</a></li><li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li></ul></div><div class="col s12 m4 active"> <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span><ul><li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li><li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li><li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li><li><a href="/Team:Fudan-TSI/Safety">Safety</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Team">Team</a></span><ul><li><a href="/Team:Fudan-TSI/Team">Members</a></li><li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li><li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li></ul></div><div class="col s12 m4">&nbsp;</div></div></div></div></div><div class="footer-copyright"><div class="container"><div class="contactUS row"><div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai</div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727</div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn</div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM</div></div></div></div> </footer>
+</div></div></div><!-- #pageContent #FudanTSIBody #FudanTSIdivWrapper -->
 
-            <!-- Floating Btns -->
-            <div class="floatingBtn">
-                <a href="#!" id="abstractBtn" class="btn">
-                    <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i>
-                </a>
-                <a href="#FudanTSIdivWrapper" class="btn">
-                    <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i>
-                </a>
-            </div>
-
-            <!-- Footer with sponsors and contact methods -->
-            <footer id="FudanTSIfooter" class="page-footer grey">
-                <div class="container">
-                    <div class="row">
-                        <div id="sponsor" class="col m3 s12 row">
-                            <a href="https://2019.igem.org/Team:Fudan-TSI"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0.5em 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Logo0-crop-grey.png">
-                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
-                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
-                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
-                        </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
-                        </div>
-                        <div id="footerNavList" class="col m9 s12 row">
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Description">Project</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Description">Background</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Design">Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Judging">Judging</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span><a href="/Team:Fudan-TSI/Demonstrate">Results</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse Transcription</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span><a href="/Team:Fudan-TSI/Model">Model</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Improve">Part improvement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4 active">
-                                  <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Team">Team</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Team">Members</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li><!-- &copy; 2019 -->
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">&nbsp;</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                         <div class="contactUS row">
-                           <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai
-                           </div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
-                           </div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
-                           </div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
-                           </div>
-                         </div>
-                     </div>
-                </div>
-            </footer>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- Javascript files -->
-<!-- Materialize 1.0.0-rc.2 -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script>
-
-<!-- Javascript -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-js.js&action=raw&ctype=text/javascript"></script>
-
+<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script><!-- Materialize 1.0.0-rc.2 -->
+<script src="/Template Fudan-js.js"></script>
 </body>
 </html>
