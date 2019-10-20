@@ -1,453 +1,113 @@
-{{Fudan-TSI}}<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+{{Fudan-TSI}}<script src="/jquery-1.11.3.min.js"></script>
 <html lang="en">
-<!--
-This html document is created by Tian Huang for Team Fudan iGEM 2018.
-We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
--->
-<!-- LC check on 2018-10-18 -->
 <head>
-    <meta charset="UTF-8">
-
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-css.css&action=raw&ctype=text/css" />
-
-    <!-- Font-awesome icons 4.7.0 -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
-
-    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&action=raw&ctype=text/css">
-
-    <!-- Clear default CSS settings; CSS reset -->
-    <style>
-        *{margin: 0;padding: 0;list-style: none;}
-        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
-
-        /** 清除内外边距 **/
-        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-        pre, /* text formatting elements 文本格式元素 */
-        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-        th, td /* table elements 表格元素 */ {
-            margin: 0;
-            padding: 0;
-        }
-
-        /** 设置默认字体 **/
-
-        /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
-        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-        /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-
-        /** 重置列表元素 **/
-        ul, ol { list-style: none; }
-
-        /** 重置文本格式元素 **/
-        a { text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-
-        /** 重置表单元素 **/
-        legend { color: #000; } /* for ie6 */
-        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-        /* 注：optgroup 无法扶正 */
-
-        /** 重置表格元素 **/
-        table { border-collapse: collapse; border-spacing: 0; }
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/Template materialize.css">
+  <link rel="stylesheet" href="/Template local-font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="/Template Fudan-css.css" />
+  <style>
+/*****************************************************************************/
+/* DEFAULT WIKI SETTINGS */
+/*****************************************************************************/
+  #home_logo, #sideMenu { display:none; }
+  #sideMenu, #top_title, .patrollink { display:none; }
+  #content { margin-left: 0; padding:0px; width:100%;}
+  .judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2% !important; width: 92%!important; }
+  *{margin:0;padding:0;list-style:none}blockquote,body,button,dd,dl,dt,fieldset,form,h1,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp{font-family:courier new,courier,monospace}ol,ul{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}
+  #section1 td, #section2 td, #section3 td {padding-bottom:1em;line-height:1.5em}
     </style>
     <title>2019 Team:Fudan-TSI Description</title>
 </head>
-
 <body>
-<!-- Fudan div at igem.org -->
-<div id="FudanTSIdivWrapper" class="white">
-    <div id="FudanTSIBody" class="white">
-        <header>
-            <!-- empty bar -->
-            <div id="emptyBar" style="position:relative;width: 100%;"></div>
+<div id="FudanTSIdivWrapper"><div id="FudanTSIBody">
+  <header>
+  <div id="emptyBar" style="position:relative;width: 100%;"></div><nav id="topNav" class="black z-depth-0_5"><div class="nav-wrapper"><div id="teamLogo" class="brand-logo"> <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif"></a></div><ul id="nav-mobile" class="right"><li> <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right"> <i class="fa fa-navicon" style="font-size: 24px"></i> </a></li></ul></div> </nav>
+  <!-- Dropdown and List elements in navigation bar -->
 
-            <!-- Navigation bar 2019-9-15 -->
-            <nav id="topNav" class="white z-depth-0_5">
-                <div class="nav-wrapper">
-                    <div id="teamLogo" class="brand-logo">
-                        <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/3/3c/T--Fudan-TSI--Logo0.gif"></a>
-                    </div>
-                    <ul id="nav-mobile" class="right">
-                        <li>
-                            <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
-                                <i class="fa fa-navicon" style="font-size:24px"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- Dropdown and List elements in navigation bar -->
-            <!-- Slide-out navigator contents 2019-9-15 -->
-            <ul id="slide-out" class="sidenav">
-                <li style="padding: 0"><div class="sidenavBanner">
-                    <div class="background">
-                    </div>
-                    <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Background</span></p>
-                </div></li>
-                <li>
-                    <ul class="collapsible expandable">
-                        <li class="onThisPageNav"><span>On this page</span></li>
-                        <li class="onThisPageNav"><a href="#section1">div with id section1</a></li>
-                        <li class="onThisPageNav"><a href="#section2">div with id section2</a></li>
-                        <li class="onThisPageNav"><a href="#section3">div with id section3</a></li>
-                        <li><span class="pageSidebar">Team: Fudan-TSI</span></li>
-<li><div class="collapsible-header active"><span class="pageSidebar">Project</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Results</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Results#ReverseTranscription">Reverse Transcription</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Results#Recombination">Recombination</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Model</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Parts</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Human practices</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Team</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-        <li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-    </ul></div>
-</li>
-                    </ul><!-- .expandable -->
-                </li>
-                <li><div class="placeHolder"></div></li>
-            </ul>
-        </header>
+  <ul id="slide-out" class="sidenav">
+    <li style="padding: 0"><div class="sidenavBanner">
+      <div class="background"></div>
+      <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Description</span></p>
+    </div></li>
+    <li>
+      <ul class="collapsible expandable">
+        <li class="onThisPageNav"><span>On this page</span></li>
+        <li class="onThisPageNav"><a href="#section1">Inspiration</a></li>
+        <li class="onThisPageNav"><a href="#section2">About R-Evolution</a></li>
 
-        <div id="pageContent">
+        <li><span class="pageSidebar">Team: Fudan-TSI</span></li><li><div class="collapsible-header active"><span class="pageSidebar">Project</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Results</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Results#ReverseTranscription">Reverse Transcription</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Results#Recombination">Recombination</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Model</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Parts</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Improved parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Human practices</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Team</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li><li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li></ul></div></li>
+      </ul><!-- .expandable -->
+    </li>
+    <li><div class="placeHolder"></div></li>
+  </ul>
+  </header>
 
+  <div id="pageContent">
+      <div id="contentBanner" class="figureBanner">
+          <div class="row">
+              <div class="col s12 hide-on-med-and-up">
+                  <h1><br/>Description</h1>
+                  <p class="flow-text">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. We hereby present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase (RT) reverts RNA into cDNA, during which the target is randomly mutated by our RT's enhanced error-prone ability. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.</p>
+              </div>
+          </div>
+          <div class="hide-on-small-only">
+              <img style="padding:10%" src="https://2019.igem.org/wiki/images/9/9c/T--Fudan-TSI--coverDescription.gif" />
+          </div>
+      </div>
 
-            <div id="contentBanner" class="figureBanner">
-                <div class="row"><!-- below for smaller screen, duplicate h1 and span -->
-                    <div class="col s12 hide-on-med-and-up">
-                        <h4>Description</h4>
-                        <p class="flow-text">tba tba</p>
-                    </div>
-                </div><!-- above for smaller screen, duplicate h1 and span -->
-                <div id="figureBannerTitle" class="hide-on-small-only">
-                    <h1>Description</h1>
-                    <p class="flow-text"> tba tba </p>
-                </div>
-                <div class="hide-on-small-only">
-                    <img alt="2018 team Fudan title attributions" src="http://2018.igem.org/wiki/images/5/5f/T--Fudan--title_attri.jpg">
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
+<!--////////////////////////////////////////////////////
+      do not edit above, if must BECAREFUL
+  //////////////////////////////////////////////////////-->
+      <div class="container">
+          <!-- side navigator of page content -->
+          <!-- main content of the page -->
+          <main style="margin:0">
 
-            <!-- main content of the page -->
-            <div class="container">
-                <!-- side navigator of page content -->
-                <main style="margin: 0;">
-                    <div class="section container scrolSpy" id="section1">
-                        <h2>greatbay的文字</h2>
-                        <p class="flow-text">
-Project Description
-
-
-Background
-
-Want to treat your baby cat better? I bet you are using catnip. Or even if you don’t own a cat, you must have heard of this magical herb. Catnip refers to the plant Nepeta cataria renown for its interesting behavioural effects on felines. Upon smelling the catnip, not only domestic pet cats, but also larger feline species like tiger, leopard, lynxes, and cougars[1], all exhibit behaviors including sniffing, licking and chewing, chin and cheek rubbing, body rolling, vocalizing and salivating[2], similar to those of females in heat.
-
-Figure. 1 Cats and catnip
-
-Although it has a drug-like effect, catnip is non-addictive and harmless to cat and has been used in many recreational toys made for cats. The secret behind the magic of catnip is nepetalactone, a monoterpene found in catnip oil similar to cats’ pheromones. The binding of nepetalactone to specific olfactory receptors at the olfactory epithelium of cats, which is hypothesized to stimulate the medial amygdala and medial preoptic area associated with sexual behaviors.
-
-Apart from being a powerful cat-attractant, nepetalactone also exhibits potent repellent against a large number of insects including mosquitoes, fly, cockroaches, and termites.[3][4] Research suggests that nepetalactone repels mosquitoes ten times more effectively than DEET.[5]
-
-However, the complete biosynthesis pathway of nepetalactone is not yet elucidated, with the last enzyme responsible for the conversion of nepetalactol to nepetalactone unidentified.[6]
-
-The precursor of nepetalactone, nepetalactol is also an intermediate in the synthesis pathway of strictosidine, the universal biosynthetic precursor of all monoterpene indole alkaloids (MIAs). [12]
-
-Figure. 2 The reconstituted S. cerevisiae strictosidine biosynthetic pathway.[12]
-
-MIAs are a family of plant-derived metabolites[7] with significant therapeutic value and important biological activities, such as the anticancer medicine vinblastine and vincristine,[8][9] and the antimalarial drug quinine. However, the structural complexity of MIAs has made them difficult to be chemically synthesised.[10] Moreover, the natural yield of MIAs by plants is extremely low — vinblastine for example only makes up about 0.001% dry weight of Catharanthus roseus,[11] consequently making the price of it incredibly high.
-
-Figure. 3 Price of vinblastine provided by www.drug.com
-
-Synthetic biology offers a potential solution to this puzzle. Recently, progress has been made in the microbial production of strictosidine in engineered yeast, producing a titre of 0.53mg/L.[12] But this could still be improved as the unsatisfactory flux to the early intermediate nepetalactol was limiting the yield. Thus, optimisation of nepetalactol production becomes a crucial bottleneck to overcome in order to enable efficient microbial production of strictosidine and downstream MIAs[13] — the reason why we decided to work on this project.
-
-The Synthesis Pathway of Nepetalactol
-
-Figure. 4 The biosynthesis pathway from simple sugar to nepetalactol
-
-Obtaining nepetalactol from a simple carbon source involves the participation of a considerable sum of 23 enzymes.[14] Energy sources like glucose is first metabolised to acetyl-coA which is then converted into IPP and DMAPP, the two universal precursor of all terpenes, through a mevalonate-dependent (MVA) isoprenoid pathway in the case of animals, archaea, and yeast, or a methylerythritol 4-phosphate (MEP) pathway as in most prokaryotes,[15][16] or both for certain species. IPP and DMAPP would be catalysed into geranyl pyrophosphate (GPP) by a geranyl pyrophosphate synthase (GPPS) followed by a conversion of GPP to geraniol facilitated by a geraniol synthase (GES). The conversion of geraniol to nepetalactol involves three cytochrome P-450 catalysing three metabolic reactions: (a) hydroxylation of geraniol by geraniol 8-hydroxylase (G8H) to form 8-hydroxygeraniol; (b) oxidation of 8-hydroxygeraniol to 8-oxogeranial by geraniol oxidoreductase (GOR); (c) the reductive cyclisation to produce nepetalactol by iridoid synthase (ISY).[17] Besides reacting with the carbon eight, an alternative biosynthesis route exist on carbon ten involving geraniol 10-hydroxylase (G10H), 10-hydroxygeraniol oxidoreductase (10HGO) and iridoid synthase (ISY).
-
-Biosynthesis of Nepetalactol in S. cerevisisae is subjected to Enzyme Promiscuity and Endogenous Reduction
-
-
-In recent years, effort has been made in the microbial production of nepetalatcol using the eukaryotic host S. cerevisiae. Based on an existing yeast strain that could producing 11.4mg/L of the precursor geraniol, upon introduction of G10H, the strain successfully produced 5.3 mg/L of 10-hydroxygeraniol. But after expressing 10HGO and ISY, none of geraniol, 10-hydroxygeraniol, 10-oxogeraniol, or nepetalactol was detectable by GC-MS, instead, striking peaks of the shunt products like citronellol and 10-hydroxycitronellol were observed. Later, ISY was found to be the promiscuous enzyme which has diverted the flux of carbon source away to the shunt products.[18]
-
-Later attempts explored the biosynthesis of nepetalactol from 8-hydroxygeraniol by directly supplying chemically synthesised 8-hydroxygeraniol to yeast and has clarified two distinctive mechanism of shunt product formation involving yeast endogenous ‘ene’-reduction and alcohol dehydrogenation pathway. A nepetalactol yield of 45 mg/L from 8-hydroxygeraniol was reported after the deletion of 5 endogenous yeast genes: oye2, oye3, ari1, adh6, adh7. [13] Also, the precursor geraniol is metabolized into geranyl acetate and citronellol by S. cerevisiae, which would attenuate if deleted atf1 and oye2.[12]
-
-
-Figure. 5 Production of shunt products due to enzyme promiscuity
-
-Our approach: a division of labour
-
-
-Figure. 6 An overview of the specialisation between E. coli and S. cerevisiae
-
-Although some progress has been made by previous works, there are still limitations in the current methods used. We want to establish an one-stop production of nepetalactol without having to chemically synthesise any precursors. The solution lies behind the employment of a division of labour between different chassis: S. cerevisiae, as the most widely-used eukaryotic model organism, is often used for the production of complicated molecules like artemisinic acid[19] and even cannabinoid[20], and was once used for nepetalactol production; E. coli though being a lower organism than yeast, exhibits much better efficiency in producing simpler products like the precursor geraniol[21]. So our strategy is to split the pathway at the position of geraniol to have E. coli generating geraniol and yeast converting it to nepetalactol, and to co-culture E. coli and yeast.
-
-Figure. 7 Comparison between different host for monoterpene/monoterpenoid synthesis[21]
-
-To put in a nutshell, we want to create a co-culture system with synthetic E. coli and S. cerevisiae able to perform the production of geraniol and conversion of geraniol to nepetalctol respectively. E. coli would first convert the carbon source fed to geraniol, the semi-finished product. Next, geraniol would be transported out of E. coli into the culture medium by diffusion and native E. coli transporters as geraniol are inhibitory to its growth. Geraniol would then enter into S. cerevisiae and it’s metabolised into nepetalactol. Together, E. coli and yeast are like two compartments in a nepetalactol-manufacturing factory, and they are designed, characterised for their individual functions before being cultured in a system.
-
-Firstly, we need to engineer E. coli to make it synthesise geraniol at the higher titre possible. Excretion of geraniol into the culture medium would follow its production simultaneously by diffusion and native E. coli transporters.[22] Since E. coli naturally produces acetyl-CoA and possesses a MEP pathway, theoretically with addition of only GPPS and GES, it would acquire the capability of synthesising geraniol. However, for E. coli to generate substantial geraniol, it is probable that the endogenous MEP pathway couldn’t supply enough IPP and DMAPP. Previously, engineering effort aimed at terpenoid/terpene synthesis in prokaryotes attempted to enhance the intracellular availability of precursors IPP and DMAPP through the optimisation of the native E. coli MEP pathway[23], which was proven to be restricted by some not-yet elucidated physiological mechanism in the host E. coli. The subsequent research has altered the approach, supplementing the terpenoid/terpene production by introduction of a heterologous S. cerevisiae mevalonate-dependent pathway in E. coli.[24] This method appeared to establish a more stable and efficient supply of IPP and DMAPP.
-
-Then, we would engineer yeast for converting geraniol to nepetalatcol. Besides introduction of G8H, GOR and ISY, knocking out native yeast gene which crosstalk with nepetalatol synthesis pathway is also necessary to avoid shunt product production as indicated in J. Billingsley et. al’s study. The hydroxylation of geraniol to 8-hydroxygeraniol was reported to be a limiting step in nepetalactol synthesis because of poor activity of G8H in yeast, making the over-expression of G8H a crucial requisite. [12]
-
-
-
-
-
-
-
-
-
-
-References                        
-                        </p>
-
-                        <h2>title</h2>
-                        <p class="flow-text">
-                            Fangfei Ye is responsible for all <a href="/Team:Fudan-TSI/Design_Intention" target="_blank">art design</a>, which includes our team logo, team flag, team uniform (Dr. Cai gave comments), team name card, brochures, our posters, as well as materials related to our human practice events.
-                        </p>
-                    </div>
-
-                    <div class="section container scrolSpy" id="section2">
-                       <div class="figureHolder">
-                           <p class="flow-text">PCR and subcloning were performed using standard methods. Detailed primer sequences are <a href="/Team:Fudan-TSI/Primers">provided</a>. All constructs were verified by Sanger sequencing.
-                           </p>
-                           <p class="flow-text">Cells were cultured in DMEM supplemented with 10% FBS (HyClone), 100 U/ml penicillin, 100 μg/ml streptomycin and 1x GlutaMax (Gibco). Transient transfections were performed using Lipofectamine 2000 (Invitrogen) and Opti-MEM (Gibco). Viral packaging, infection and fluorescence-activated cell sorting were performed using standard methods.
-                           </p>
-                           <p class="flow-text">Images, unless otherwise indicated, were captured using an inverted epifluorescence microscope (IX-81, Olympus) and a sCMOS camera (pixel size = 0.3222 &mu;m; Zyla 5.5, Andor; 20x objective N.A.  0.75) and were controlled by <a href="http://www.micro-manager.org/" target=_blank>Micro-Manager software</a>.
-                           </p>
-                           <p class="flow-text">All statistical analysis was performed using Prism (Graphpad) and <a href="http://rsbweb.nih.gov/ij/developer/macro/macros.html" target=_blank>ImageJ</a>. All experiments were independently performed in triplicates; unless otherwise indicated. Images were combined and annotated in Powerpoint for presentation. Representative images are shown.
-                           </p>
-                       </div>
--
-                       <div class="tableHolder">
-                           <table>
-                               <tr>
-                                   <th>Our protocols as PDF files</th><th>&nbsp;</th>
-                                   <th>Download</th>
-                               </tr>
-                               <tr>
-                                   <td>Be a Good Lab Member</td><td><i>GoodLabPractices.pdf</i></td>
-                                   <td><a href="http://2018.igem.org/File:T--Fudan--GoodLabPractices.pdf" target="_blank"><i class="fa fa-download"></i></a></td>
-                               </tr>
-                               <tr>
-                                   <td>Molecular Cloning</td><td><i>MolecularCloning.pdf</i></td>
-                                   <td><a href="http://2018.igem.org/File:T--Fudan--MolecularCloning.pdf" target="_blank"><i class="fa fa-download"></i></a></td>
-                               </tr>
-                               <tr>
-                                   <td>Tissue Culture</td><td><i>CellCulture.pdf</i></td>
-                                   <td><a href="http://2018.igem.org/File:T--Fudan--CellCulture.pdf" target="_blank"><i class="fa fa-download"></i></a></td>
-                               </tr>
-                               <tr>
-                                   <td>Make a Stable Cell Line</td><td><i>MakeStableCellLine.pdf</i></td>
-                                   <td><a href="http://2018.igem.org/File:T--Fudan--MakeStableCellLine.pdf" target="_blank"><i class="fa fa-download"></i></a></td>
-                               </tr>
-                               <tr>
-                                   <td>Cell Sorting</td><td><i>FACS.pdf</i></td>
-                                   <td><a href="http://2018.igem.org/File:T--Fudan--FACS.pdf" target="_blank"><i class="fa fa-download"></i></a></td>
-                               </tr>
-                               <tr>
-                                   <td>Cell Staining</td><td><i>FixStain.pdf</i></td>
-                                   <td><a href="http://2018.igem.org/File:T--Fudan--FixStain.pdf" target="_blank"><i class="fa fa-download"></i></a></td>
-                               </tr>
-                               <tr>
-                                   <td>Time-lapse Live-cell Imaging</td><td><i>TimeLapseImaging.pdf</i></td>
-                                   <td><a href="http://2018.igem.org/File:T--Fudan--TimeLapseImaging.pdf" target="_blank"><i class="fa fa-download"></i></a></td>
-                               </tr>
-                           </table>
-                       </div>
-                       <p style="color:grey">
-                           For practical reasons, all full-length protocols are in Chinese.
-                       </p>
-                   </div>
-
-                </main>
-            </div>
-
-            <!--Abstract on content page-->
-            <div id="abstractContent" class="z-depth-2">
-                <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
-                <div class="container">
-                    <h5 style="margin:0;padding:10px 0;">Project Summary &copy; Team:Fudan-TSI</h5>
-                    <p class="flow-text" style="margin:0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. Here we present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase reverts RNA into cDNA, during which the target is randomly mutated by enhanced error-prone reverse transcription. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the <i>in vivo</i> evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Floating Btns -->
-            <div class="floatingBtn">
-                <a href="#!" id="abstractBtn" class="btn">
-                    <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i>
-                </a>
-                <a href="#FudanTSIdivWrapper" class="btn">
-                    <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i>
-                </a>
-            </div>
-
-            <!-- Footer with sponsors and contact methods -->
-            <footer id="FudanTSIfooter" class="page-footer grey">
-                <div class="container">
-                    <div class="row">
-                        <div id="sponsor" class="col m3 s12 row">
-                            <a href="https://2019.igem.org/Team:Fudan-TSI"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0.5em 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Logo0-crop-grey.png">
-                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
-                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
-                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
-                        </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
-                        </div>
-                        <div id="footerNavList" class="col m9 s12 row">
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4 active">
-                                  <span><a href="/Team:Fudan-TSI/Description">Project</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Description">Background</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Design">Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Judging">Judging</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span><a href="/Team:Fudan-TSI/Results">Results</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Results#ReverseTranscription">Reverse Transcription</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Results#Recombination">Recombination</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span><a href="/Team:Fudan-TSI/Model">Model</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Team">Team</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Team">Members</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li><!-- &copy; 2019 -->
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">&nbsp;</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                         <div class="contactUS row">
-                           <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai
-                           </div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
-                           </div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
-                           </div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
-                           </div>
-                         </div>
-                     </div>
-                </div>
-            </footer>
-
-        </div>
-    </div>
+<div id="section1" class="section container scrolSpy">
+  <h2>Inspiration</h2>
+  <h4>Why are we doing mutation library generation?</h4>
+  <p class="flow-text">Mutation is a natural component of life, its participation is crucial for the development of any species, or on a much smaller level, any genetic materials.</p>
+  <p class="flow-text">Mutation libraries are widely used in various fields, allowing for downstream high throughput scanning of desired product. It’s generation not only gives new insights to the nature of existing products, but also helps to bring about novel outcomes, promoting synthetic biology in its way. Through the development of mutagenesis methods, we hope to make up the missing puzzle by mutating only the target sequence in vivo. We believe that this offers researchers an easy and care-free choice among the existing ones.</p>
+  <h4>Existing mutagenesis methods</h4>
+  <p class="flow-text">Current mutagenesis methods can be divided into two large categories, <i>in vitro</i> and <i>in vivo</i>. <i>In vitro</i> methods like error-prone PCR is most-used among researchers, but it bears the intrinsic problem of separate mutagenesis and selection period, which brings about laborious and costly design-build-test cycles, as well as the limitation of host transformation efficiency.</p>
+  <p class="flow-text">The most renowned <i>in vivo</i> methods these days would be PACE (Phage Assisted Continuous Evolution). However, apart from its difficulty to set up in common laboratories, it encounters the limitation of linking selection process to phage survival, which greatly limits its range of applicable substrates. Also, the mutagenesis plasmid it used would mutate the whole genome and plasmid alike.</p>
+  <p class="flow-text">We hope to establish a system to address the above problems and allow for easy manipulation of genetic sequences. We then consulted our idea through mail with <a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Prof. Alper</a>, who had published a paper of a similar system in yeast, and received his supportive response.</p>
 </div>
 
+<div class="figureHolder" id="FigDesp">
+  <img class="responsive-img" src="https://2019.igem.org/wiki/images/c/c5/T--Fudan-TSI--description.gif" />
+  <p></p>
+</div>
 
-<!-- Javascript files -->
-<!-- Materialize 1.0.0-rc.2 -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script>
+<div id="section2" class="section container scrolSpy">
+  <h2>A brief description of R-Evolution</h2>
+  <p class="flow-text">R-Evolution is a dual plasmid system, with one plasmid containing the target sequence and necessary flanking sequences; while the other contains the remaining components for the target’s random mutation.</p>
+  <p class="flow-text">In the system, the target sequence will go through three process—transcription into mRNA, <a href="/Team:Fudan-TSI/Description#section6">reverse transcription</a> into cDNA, and recombination to allow the mutated sequence replace the original target.</p>
+  <p class="flow-text">The target sequence is placed under T7 promoter and allowed to express stably. The target sequence is flanked by the sequences supporting reverse transcription, and in the outward loxP sites are placed.</p>
+  <p class="flow-text">The reverse transcription module, consists of the gag-pol polyprotein from <a href="/Team:Fudan-TSI/Description#section1">Moloney murine leukemia virus</a> (MMLV), and its matching initiation tRNA, tRNAPro. This is the crucial step where the target sequence will be randomly mutated by the error-prone nature of reverse transcriptase.</p>
+  <p class="flow-text">The recombination process utilizes <a href="/Team:Fudan-TSI/Description#section4">Cre recombinase</a> and incompatible loxP sites on either end to allow for the re-insertion of mutated sequence and minimize the possibility of self-splicing. To gain better control of this process, degradation tag is added to enable its fast disappearance in the system.</p>
+  <p class="flow-text">As transcription serves as a great amplifier and could happen continuously, the cell could obtain various versions of mutated sequence, which are then randomly inserted back into the plasmid. Also, the three processes can happen for multiple times in one round of the system, allowing for mutation accumulation and bringing an increase to mutation rate.</p>
+</div>
 
-<!-- Javascript -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-js.js&action=raw&ctype=text/javascript"></script>
+<!--////////////////////////////////////////////////////
+      do not edit below, if must BECAREFUL
+  //////////////////////////////////////////////////////-->
+      </main></div><!-- end of side navigator and main of the page -->
 
+<!--Abstract on content page-->
+      <div id="abstractContent" class="z-depth-2">
+          <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
+          <div class="container">
+              <h5 style="margin:0;padding:10px 0;">Project by Team:Fudan-TSI</h5>
+              <p class="flow-text" style="margin:0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. We hereby present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase (RT) reverts RNA into cDNA, during which the target is randomly mutated by our RT's enhanced error-prone ability. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
+              </p>
+          </div>
+      </div>
+<!-- Floating Btns, Footer with sponsors -->
+      <div class="floatingBtn"> <a href="#!" id="abstractBtn" class="btn"> <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i> </a> <a href="#FudanTSIdivWrapper" class="btn"> <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i> </a></div> <footer id="FudanTSIfooter" class="page-footer blue-grey darken-1"><div class="container"><div class="row"><div id="sponsor" class="col m3 s12 row"> <a href="https://2019.igem.org/Team:Fudan-TSI"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0.5em 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Logo0-crop-grey.png"> </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png"> </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png"> </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png"> </a><h3 class="col s12" style="text-align:left;font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3></div><div id="footerNavList" class="col m9 s12 row"><div class="col s12 l6 row"><div class="col s12 m4 active"> <span><a href="/Team:Fudan-TSI/Description">Project</a></span><ul><li><a href="/Team:Fudan-TSI/Description">Background</a></li><li><a href="/Team:Fudan-TSI/Design">Design</a></li><li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a href="/Team:Fudan-TSI/Judging">Judging</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Results">Results</a></span><ul><li><a href="/Team:Fudan-TSI/Results#ReverseTranscription">Reverse Transcription</a></li><li><a href="/Team:Fudan-TSI/Results#Recombination">Recombination</a></li><li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li><li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li><li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Model">Model</a></span><ul><li><a href="/Team:Fudan-TSI/Model">Modeling</a></li><li><a href="/Team:Fudan-TSI/Software">Software</a></li><li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li></ul></div></div><div class="col s12 l6 row"><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span><ul><li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li><li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li><li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li><li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span><ul><li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li><li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li><li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li><li><a href="/Team:Fudan-TSI/Safety">Safety</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Team">Team</a></span><ul><li><a href="/Team:Fudan-TSI/Team">Members</a></li><li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li><li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li></ul></div><div class="col s12 m4">&nbsp;</div></div></div></div></div><div class="footer-copyright"><div class="container"><div class="contactUS row"><div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai</div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727</div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn</div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM</div></div></div></div> </footer>
+</div></div></div><!-- #pageContent #FudanTSIBody #FudanTSIdivWrapper -->
+
+<script src="/Template materialize.js"></script><!-- Materialize 1.0.0-rc.2 -->
+<script src="/Template Fudan-js.js"></script>
 </body>
 </html>
