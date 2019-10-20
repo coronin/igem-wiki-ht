@@ -1,398 +1,104 @@
-{{Fudan-TSI}}<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+{{Fudan-TSI}}<script src="/jquery-1.11.3.min.js"></script>
 <html lang="en">
-<!--
-This html document is created by Tian Huang for Team Fudan iGEM 2018.
-We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
--->
-<!-- LC check on 2018-10-18 -->
 <head>
-    <meta charset="UTF-8">
-
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-css.css&action=raw&ctype=text/css" />
-
-    <!-- Font-awesome icons 4.7.0 -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
-
-    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&action=raw&ctype=text/css">
-
-    <!-- Clear default CSS settings; CSS reset -->
-    <style>
-        *{margin: 0;padding: 0;list-style: none;}
-        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
-
-        /** 清除内外边距 **/
-        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-        pre, /* text formatting elements 文本格式元素 */
-        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-        th, td /* table elements 表格元素 */ {
-            margin: 0;
-            padding: 0;
-        }
-
-        /** 设置默认字体 **/
-
-        /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
-        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-        /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-
-        /** 重置列表元素 **/
-        ul, ol { list-style: none; }
-
-        /** 重置文本格式元素 **/
-        a { text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-
-        /** 重置表单元素 **/
-        legend { color: #000; } /* for ie6 */
-        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-        /* 注：optgroup 无法扶正 */
-
-        /** 重置表格元素 **/
-        table { border-collapse: collapse; border-spacing: 0; }
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&action=raw&ctype=text/css">
+  <link rel="stylesheet" href="/Template local-font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="/Template Fudan-css.css" />
+  <style>
+/*****************************************************************************/
+/* DEFAULT WIKI SETTINGS */
+/*****************************************************************************/
+  #home_logo, #sideMenu { display:none; }
+  #sideMenu, #top_title, .patrollink { display:none; }
+  #content { margin-left: 0; padding:0px; width:100%;}
+  .judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2% !important; width: 92%!important; }
+  *{margin:0;padding:0;list-style:none}blockquote,body,button,dd,dl,dt,fieldset,form,h1,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp{font-family:courier new,courier,monospace}ol,ul{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}
+  #section1 td, #section2 td, #section3 td {padding-bottom:1em;line-height:1.5em}
     </style>
     <title>2019 Team:Fudan-TSI Safety</title>
 </head>
-
 <body>
-<!-- Fudan div at igem.org -->
-<div id="FudanTSIdivWrapper" class="black"><div id="FudanTSIBody" class="black">
-        <header>
-            <!-- empty bar -->
-            <div id="emptyBar" style="position:relative;width: 100%;"></div>
+<div id="FudanTSIdivWrapper"><div id="FudanTSIBody">
+  <header>
+  <div id="emptyBar" style="position:relative;width: 100%;"></div><nav id="topNav" class="black z-depth-0_5"><div class="nav-wrapper"><div id="teamLogo" class="brand-logo"> <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif"></a></div><ul id="nav-mobile" class="right"><li> <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right"> <i class="fa fa-navicon" style="font-size: 24px"></i> </a></li></ul></div> </nav>
+  <!-- Dropdown and List elements in navigation bar -->
 
-            <!-- Navigation bar 2019-9-15 -->
-            <nav id="topNav" class="black z-depth-0_5">
-                <div class="nav-wrapper">
-                    <div id="teamLogo" class="brand-logo">
-                        <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/3/3c/T--Fudan-TSI--Logo0.gif"></a>
-                    </div>
-                    <ul id="nav-mobile" class="right orangeBorder">
-                        <li>
-                            <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
-                                <i class="fa fa-navicon" style="font-size:24px"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- Dropdown and List elements in navigation bar -->
-            <!-- Slide-out navigator contents 2019-9-15 -->
-            <ul id="slide-out" class="sidenav">
-                <li style="padding: 0"><div class="sidenavBanner">
-                    <div class="background">
-                    </div>
-                    <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Safety</span></p>
-                </div></li>
-                <li>
-                    <ul class="collapsible expandable">
-                        <li><span class="pageSidebar">Team: Fudan-TSI</span></li>
-<li><div class="collapsible-header"><span class="pageSidebar">Project</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Results</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse transcription</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Model</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Parts</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Part improvement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header active"><span class="pageSidebar">Human practices</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Team</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-        <li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-    </ul></div>
-</li>
-                    </ul><!-- .expandable -->
-                </li>
-                <li><div class="placeHolder"></div></li>
-            </ul>
-        </header>
+  <ul id="slide-out" class="sidenav">
+    <li style="padding: 0"><div class="sidenavBanner">
+      <div class="background"></div>
+      <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Safety</span></p>
+    </div></li>
+    <li>
+      <ul class="collapsible expandable">
+        <li><span class="pageSidebar">Team: Fudan-TSI</span></li><li><div class="collapsible-header"><span class="pageSidebar">Project</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied design</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Results</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse transcription</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Model</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Parts</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Part improvement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li></ul></div></li><li><div class="collapsible-header active"><span class="pageSidebar">Human practices</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Team</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li><li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li></ul></div></li>
+      </ul><!-- .expandable -->
+    </li>
+    <li><div class="placeHolder"></div></li>
+  </ul>
+  </header>
 
-        <div id="pageContent">
-            <div id="contentBanner" class="figureBanner">
-                <div class="row">
-                    <div class="col s12 m6 valign-wrapper hide-on-med-and-up">
-                        <h4>Safety</h4>
-                        <p class="flow-text">Safety is always our top priority in the laboratory.
-                            We ensure our lab procedures and equipment handling adhere to the proper safety standards and regulations.
-                            We have conducted all our experiments safely. And, we should always stay safe with the highest safety precautions.</p>
-                    </div>
-                </div>
-                <div id="figureBannerTitle" class="hide-on-small-only">
-                    <h1>Safety</h1>
-                    <p class="flow-text">Safety is always our top priority in the laboratory.
-                        <!--We ensure our lab procedures and equipment handling adhere to the proper safety standards and regulations.
-                        We have conducted all our experiments safely. And, we should always stay safe with the highest safety precautions.
-                        --></p>
-                </div>
-                <div class="hide-on-small-only">
-                    <img src="http://2018.igem.org/wiki/images/7/7f/T--Fudan--safety_big.jpg">
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
+  <div id="pageContent">
+      <div id="contentBanner" class="figureBanner">
+          <div class="row">
+              <div class="col s12 hide-on-med-and-up">
+                  <h1><br/>Safety</h1>
+              </div>
+          </div>
+          <div class="hide-on-small-only">
+              <div style="text-align:center;padding-top:80px"><center><img style="height:120px;width:auto" src="https://2019.igem.org/wiki/images/9/97/T--Fudan-TSI--coverSafety.gif" /></center></div>
+          </div>
+      </div>
 
-            <!-- main content of the page -->
-            <div class="container">
-                <!-- side navigator of page content -->
-                <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
-                                    <li><a href="/Team:Fudan-TSI/Interlab">iGEM interLab</a></li>
-                                    <li><a href="/Team:Fudan-TSI/Notebook">Our notebook</a></li>
-                                    <li><a href="/Team:Fudan-TSI/Protocols">Protocols</a></li>
-                                    <li>Safety</li>
-                    <li class="onThisPageNav"><a href="#section1">General safety concerns</a></li>
-                    <li class="onThisPageNav"><a href="#section2">Laboratory practice</a></li>
-                    <li class="onThisPageNav"><a href="#section3">Specific safety concerns</a></li>
-                </ul>
-                <main>
-                    <div id="section1" class="section container scrolSpy">
-                        <h2>General safety concerns</h2>
-                        <p class="flow-text">
-                            <img class="left-on-med-and-up width45" src="http://2018.igem.org/wiki/images/0/01/T--Fudan--general-1.png">
-                            Our ENABLE project has provided diverse real-world applications.
-                                As a foundational advance project, the majority of the immediate users of
-                                our project are researchers in biology labs. Components in our project are
-                                perfectly safe to use and can be modified in standard biology laboratories
-                                equipped with a cell-culturing room and a Class II biological safety cabinet.
-                                To ensure our project remains safe and ethical when applied to other practical
-                                usages in the long term, we have hosted a special debate and a creative display between our team
-                                and the public in which several mutual points have been reached. For more information,
-                            please visit our <a href="/Team:Fudan-TSI/Human_Practices" target="_blank">Human Practice page</a>.</p>
-                    </div>
-                    <div id="section2" class="section container scrolSpy">
-                        <h2>Laboratory practice</h2>
-                        <p class="flow-text">Because we have inserted our logic gates into mammalian cells to assay the functional
-                            outputs, we were performing our experiments both in <i>E. coli</i> strains and on mammalian
-                            293T and HeLa cells. Also, we carry out our experiments in the lab of our supervisor,
-                            <a href="https://about.me/cail" target="_blank">Liang Cai</a>, who was also our Cell Biology course instructor.
-                            The setup in <a href="https://actin.cn/" target="_blank">Cai Lab</a> meets all the standards for working on
-                            Risk Group 2 organisms. Since some of our team members have never worked on mammalian cells before joining
-                            the team, we divided our lab work into two parts which are carried out by either the students who have previously done experiments on <i>E. coli</i> or on mammalian cells. This safety arrangement grants only the members who previously have been
-                            <a href="http://tsg2011.sinaapp.com/students/undergraduate-students/bios/" target="_blank">fully trained</a> with the mammalian cell culture experimental skills to perform related experiments.</p>
-                        <p class="flow-text">For further precaution, even though every team member has previous lab experience and has passed
-                            the laboratory safety knowledge test <a href="http://lsem.fudan.edu.cn/wz/" target="_blank">organized by our university</a>, they were trained again
-                            by members of <a href="https://2017.igem.org/Team:Fudan" target="_blank">2017 iGEM team</a> on basic safety measures during the assembly of the team. Before
-                                performing experiments in <a href="https://actin.cn/" target="_blank">Cai Lab</a>, we were all required to follow the
-                            <i>Good Lab Practices</i> written by our supervisor, and a subsequent test was taken to ensure
-                            we understood the rules precisely. Before then,  we were not allowed to start doing experiments on our own.</p>
-                    </div>
-                    <div id="section3" class="section container scrolSpy">
-                        <h2>Specific safety concerns on our project</h2>
-                        <p class="flow-text">Aside from the general concerns for lab safety, we would like to reflect upon certain aspects which are related to our project such as: </p>
-                        <h3>Molecular cloning</h3>
-                        <p class="flow-text">
-                            <img class="right-on-med-and-up width40" src="http://2018.igem.org/wiki/images/1/12/T--Fudan--cloning.jpg">
-                            Most of our <i>E. coli</i> experiments are done through molecular cloning. The strains of <i>Escherichia coli</i> we used are <a href="http://www.tiangen.com/?productShow/t1/6/id/358.html" target="_blank">T-FAST</a>
-                            and <a href="https://microbewiki.kenyon.edu/index.php/DH5-Alpha_E.coli" target="_blank">DH5α</a> competence bacteria, both of
-                            which will die in the natural environment without supplied nutrients. The plasmids we transformed into the bacteria do not
-                            contain anything related to virulence. Furthermore, our designed and encoded genes will be translated into fluorescent protein fusions and
-                            transcription factors.
-                        </p><p class="flow-text">We made efforts to ensure that those bacteria were kept within control. These efforts include methods we utilized such as sealing the culture medium
-                        and plates with parafilm, sterilizing our clean benches with 75% ethanol and ultraviolet illumination before and after the operations,
-                        and washing our hands upon entering and leaving the lab, intact <a href="https://ehs.berkeley.edu/workplace-safety/glove-selection-guide" target="_blank">nitrile gloves</a> all the time, etc.
-                        </p>
-                        <p class="flow-text">To visualize double stranded DNA, we used <a href="https://en.wikipedia.org/wiki/Ethidium_bromide" target="_blank">ethidium bromide</a>. However, to ensure safety, we always wear an additional pair of plastic gloves in which we take off immediately after handing materials containing ethidium bromide to avoid spreading the contamination to other regions of the lab.</p>
-                        <h3>Cell culturing</h3>
-                        <div class="row">
-                            <div class="col s12 m6"><img class="responsive-img" src="http://2018.igem.org/wiki/images/e/e9/T--Fudan--cell-2.JPG"></div>
-                            <div class="col s12 m6"><img class="responsive-img" src="http://2018.igem.org/wiki/images/9/9d/T--Fudan--cell-1.jpg"></div>
-                        </div>
-                        <p class="flow-text">Before entering the cell culture room, we always make sure to exchange our shoes or to wear shoe covers, and put on
-                            <a href="https://ehs.berkeley.edu/workplace-safety/glove-selection-guide" target="_blank">nitrile gloves</a>. All cell
-                            culture operations were done in <a href="https://www.ehs.washington.edu/biological/biological-safety-cabinets" target="_blank">biosafety cabinets</a> to
-                            keep the cells in a sterile environment as well as to prevent the serum from contaminating the outside environment. We used
-                            <a href="https://medicine.uiowa.edu/vectorcore/about-our-products/lentivirus-products/custom-lentivirus-constructs" target="_blank">non-self replicable</a>
-                            <a href="https://en.wikipedia.org/wiki/Retrovirus" target="_blank">retrovirus</a> to generate stable-transfected cell lines for our experiments.</p>
-                        <h3>Additional lab training when coaching high school students</h3>
-                        <p class="flow-text">
-                            <img class="right-on-med-and-up width40" src="http://2018.igem.org/wiki/images/1/1b/T--Fudan--training.jpg">
-                            We hosted a lab training program as part of our <a href="/Team:Fudan-TSI/Public_Engagement" target="_blank">Human Practice page</a>
-                            during the summer semester 2018. As all the students were very inexperienced, we took special care in ensuring
-                            their safety during the program. Beside memorizing all the lab safety protocols and policies, they were required
-                            to wear long trousers inside their protective gowns even though it was summertime; luckily the air conditioning
-                            was working. Moreover, we ensured that they were under at least one <a href= "/Team" target="_blank">iGEM team member</a> supervision the whole time
-                            throughout their stay in the lab, no matter if they were doing experiments or eating/drinking in the resting area.</p>
-                    </div>
-                </main>
-            </div>
+<!--////////////////////////////////////////////////////
+      do not edit above, if must BE CAREFUL
+  //////////////////////////////////////////////////////-->
+      <div class="container">
+          <!-- side navigator of page content -->
+          <!-- main content of the page -->
+          <main style="margin:0">
 
-<!--Abstract on content page-->
-            <div id="abstractContent" class="z-depth-2">
-                <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
-                <div class="container">
-                    <h5 style="margin:0;padding:10px 0;">Project Summary &copy; Team:Fudan-TSI</h5>
-                    <p class="flow-text" style="margin:0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. Here we present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase reverts RNA into cDNA, during which the target is randomly mutated by enhanced error-prone reverse transcription. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the <i>in vivo</i> evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
-                    </p>
-                </div>
-            </div>
+<div class="section container">
+  <p class="flow-text">Our project observes all the safety rules and policies required by iGEM organizers. Safety has been carefully and thoroughly considered throughout our project design and experiment operation. We made sure to keep all the microorganisms used in our project in control and avoid the unintentional exposure to pathogens and toxins, or their accidental release. Our project remains at an experimental stage and any application outside the lab is strictly forbidden.</p>
+  <h2>Design</h2>
+  <h4><i>E. coli</i></h4>
+  <p class="flow-text">To accomplish molecular cloning and obtain the designed plasmids, <i>E. coli</i> strain T-FAST and DH5&alpha; have been used in our project. Both of them are non-pathogenic and can only live in provided environment. <i>E. coli</i> strain BL21 has been used for construct test. All the strains of <i>E. coli</i> used in our project are in Group 1 and have been handled properly in Safety Level 1 and 2 laboratories.</p>
 
-            <!-- Floating Btns -->
-            <div class="floatingBtn">
-                <a href="#!" id="abstractBtn" class="btn">
-                    <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i>
-                </a>
-                <a href="#FudanTSIdivWrapper" class="btn">
-                    <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i>
-                </a>
-            </div>
+  <h4>Reverse transcriptase</h4>
+  <p class="flow-text">We used both original and mutated version of reverse transcriptase (RT) from Moloney murine leukemia virus. The mutation is made to enhance the error-prone ability of the reverse transcriptase and poses no risk to the experimenters or the environment. When expressing the gag-pol polyprotein with the reverse transcriptase in it, we made sure that the Integrase fraction was removed, so that the construct does not affect host cells’ genome. The capsid protein and reverse transcriptase are both not infectious on its own. In our project, the RT will strictly reverse transcribe the sequence we assigned as it is acting in a non-native system and other mRNAs do not contain its initiation sequence. To know more about it, please check <a href="https://2019.igem.org/Safety/Check_In" target="_blank">our check-in form</a>.</p>
 
-            <!-- Footer with sponsors and contact methods -->
-            <footer id="FudanTSIfooter" class="page-footer grey">
-                <div class="container">
-                    <div class="row">
-                        <div id="sponsor" class="col m3 s12 row">
-                            <a href="https://2019.igem.org/Team:Fudan-TSI"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0.5em 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Logo0-crop-grey.png">
-                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
-                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
-                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
-                        </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
-                        </div>
-                        <div id="footerNavList" class="col m9 s12 row">
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Description">Project</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Description">Background</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Design">Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Judging">Judging</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span><a href="/Team:Fudan-TSI/Demonstrate">Results</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse Transcription</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span><a href="/Team:Fudan-TSI/Model">Model</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Improve">Part improvement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4 active">
-                                  <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Team">Team</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Team">Members</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li><!-- &copy; 2019 -->
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">&nbsp;</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                         <div class="contactUS row">
-                           <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai
-                           </div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
-                           </div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
-                           </div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
-                           </div>
-                         </div>
-                     </div>
-                </div>
-            </footer>
+  <h4>Anti-microbial resistance (AMR)</h4>
+  <p class="flow-text">Ampicillin resistance and kanamycin resistance have been introduced to <i>E. coli</i> strains used in our project as selectable markers to examine whether the plasmids carrying the resistance gene are transformed into the bacteria successfully. We also use chloramphenicol resistance to prove and evaluate the efficiency of our system. As all the microorganisms used in the project need to be strictly kept in the laboratory, we made certain that the antibiotics resistance poses no threat to the ecological environment.</p>
 
-        </div>
-    </div>
+  <h2>Working safely</h2>
+
+  <p class="flow-text">Our experiments are all performed in a standard laboratory where all the equipment and reagents needed are prepared and placed appropriately. We have the dedicated refrigerators to store our experimental materials such as plasmids and primers. There is also a cabinet to store the hazardous reagents which is usually locked and only the PI has the key. To make sure all the processes are operated correctly and canonically, everyone in our team has been trained in experiment skills by experienced colleagues before we started our project. There is also <a href="http://lsem.fudan.edu.cn/wz/" target="_blank">a laboratory safety knowledge test</a> organized by our university to ensure all the members joining our project are qualified for performing experiments. Everyone performing the experiment must wear the lab coat and nitrile gloves all the time in the laboratory.</p>
+  <h4>Simultaneously, a lot of efforts have been made to prevent contamination.</h4>
+  <p class="flow-text">All the experiments that might cause direct contact between the bacteria and the environment are performed in the clean bench, which is sterilized with 75% ethanol and ultraviolet light before and after each operation. We also seal our culture medium and plates with parafilm before putting them into refrigerators. All the vessels that has been in contact with microorganisms are sterilized after use to keep them away from the environment.</p>
+  <p class="flow-text">At the same time, as the ethidium bromide used to visualize double stranded DNA can be toxic at high concentrations and poses potential risks to the experimenters’ health, there is a special area divided from the console to operate the experiments related to ethidium bromide. In that area, experimenters must wear an additional pair of plastic gloves when contacting with the materials containing ethidium bromide.</p>
+  <p class="flow-text">Furthermore, we have the laboratory waste bins which will be emptied regularly to collect the normal waste. There are also special containers for contaminative and toxic materials such as agarose gel containing ethidium bromide. All the waste will be treated uniformly by specialists at regular intervals.</p>
 </div>
 
 
-<!-- Javascript files -->
-<!-- Materialize 1.0.0-rc.2 -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script>
+<!--////////////////////////////////////////////////////
+      do not edit below, if must BE CAREFUL
+  //////////////////////////////////////////////////////-->
+      </main></div><!-- end of side navigator and main of the page -->
 
-<!-- Javascript -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-js.js&action=raw&ctype=text/javascript"></script>
+<!--Abstract on content page-->
+      <div id="abstractContent" class="z-depth-2">
+          <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
+          <div class="container">
+              <h5 style="margin:0;padding:10px 0;">Project by Team:Fudan-TSI</h5>
+              <p class="flow-text" style="margin:0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. We hereby present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase (RT) reverts RNA into cDNA, during which the target is randomly mutated by our RT's enhanced error-prone ability. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
+              </p>
+          </div>
+      </div>
+<!-- Floating Btns, Footer with sponsors -->
+      <div class="floatingBtn"> <a href="#!" id="abstractBtn" class="btn"> <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i> </a> <a href="#FudanTSIdivWrapper" class="btn"> <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i> </a></div> <footer id="FudanTSIfooter" class="page-footer blue-grey darken-1"><div class="container"><div class="row"><div id="sponsor" class="col m3 s12 row"> <a href="https://2019.igem.org/Team:Fudan-TSI"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0.5em 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Logo0-crop-grey.png"> </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png"> </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png"> </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png"> </a><h3 class="col s12" style="text-align:left;font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3></div><div id="footerNavList" class="col m9 s12 row"><div class="col s12 l6 row"><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Description">Project</a></span><ul><li><a href="/Team:Fudan-TSI/Description">Background</a></li><li><a href="/Team:Fudan-TSI/Design">Design</a></li><li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a href="/Team:Fudan-TSI/Applied_Design">Applied design</a></li><li><a href="/Team:Fudan-TSI/Judging">Judging</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Demonstrate">Results</a></span><ul><li><a href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse transcription</a></li><li><a href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li><li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li><li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li><li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Model">Model</a></span><ul><li><a href="/Team:Fudan-TSI/Model">Modeling</a></li><li><a href="/Team:Fudan-TSI/Software">Software</a></li><li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li></ul></div></div><div class="col s12 l6 row"><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span><ul><li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li><li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li><li><a href="/Team:Fudan-TSI/Improve">Part improvement</a></li><li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li></ul></div><div class="col s12 m4 active"> <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span><ul><li><a href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li><li><a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li><li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li><li><a href="/Team:Fudan-TSI/Safety">Safety</a></li></ul></div><div class="col s12 m4"> <span><a href="/Team:Fudan-TSI/Team">Team</a></span><ul><li><a href="/Team:Fudan-TSI/Team">Members</a></li><li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li><li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li></ul></div><div class="col s12 m4">&nbsp;</div></div></div></div></div><div class="footer-copyright"><div class="container"><div class="contactUS row"><div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai</div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727</div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn</div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM</div></div></div></div> </footer>
+</div></div></div><!-- #pageContent #FudanTSIBody #FudanTSIdivWrapper -->
 
+<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script><!-- Materialize 1.0.0-rc.2 -->
+<script src="/Template Fudan-js.js"></script>
 </body>
 </html>
