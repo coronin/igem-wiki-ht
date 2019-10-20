@@ -579,7 +579,7 @@
 
     #FudanTSIfooter .contactUS > div {
         margin: 5px 0;
-        color: rgba(255, 255, 255, 0.24); /* 0.86 */
+        color: rgba(255, 255, 255, 0.51); /* 0.86 */
     }
 
     #pageContentNav,
@@ -937,6 +937,7 @@
     #FudanTSIBody .tableHolder td,
     #FudanTSIBody .tableHolder th {
         padding: 0 10px;
+        padding-right: 10px;
     }
 
     #FudanTSIBody .tableHolder th {
