@@ -467,11 +467,11 @@
     }*/
     #nav-mobile > li > a {
         cursor: default;
-        width: 135px;
+        width: 50px;
     }
 
     #FudanTSIBody #nav-mobile > li:last-child > a {
-        width: 50px;
+        width: 80px;
     }
 
     #nav-mobile li ul {
