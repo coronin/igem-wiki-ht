@@ -464,14 +464,14 @@
             border-top: solid 13px #16283f;
             margin-right: 20px;
         }
-    }*/
+    }
     #nav-mobile > li > a {
         cursor: default;
         width: 50px;
-    }
+    } */
 
     #FudanTSIBody #nav-mobile > li:last-child > a {
-        width: 80px;
+        width: 50px;
     }
 
     #nav-mobile li ul {
