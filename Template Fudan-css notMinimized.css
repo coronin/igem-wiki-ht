@@ -43,9 +43,12 @@
         color: #16283f;
     }
 
-    #FudanTSIBody .dropdown-content li a {
+    /*#FudanTSIBody .dropdown-content li a {
         color: #16283f;
-    }
+    }  */
+#FudanTSIBody ul.dropdown-content { background-color: rgba(0,0,0,0.87); }
+#FudanTSIBody ul.dropdown-content>li { text-align: left; width: 8px; }
+#FudanTSIBody ul.dropdown-content>li>a { font-size: 0.9em; }
 
     #FudanTSIBody a {
         text-decoration: none;
