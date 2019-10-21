@@ -943,10 +943,12 @@
     #FudanTSIBody .tableHolder th {
         text-align: left;
     }
+    div.tableHolder tr { border-bottom: 3px solid yellow; } /*@@@@*/
 
     #FudanTSIBody .figureHolder {
         margin: 20px auto 30px auto;
     }
+    div.figureHolder p>b { font-size: 3em; color: yellow; } /*@@@@*/
 
     #FudanTSIBody #pageContent .nameCard {
         margin-top: 80px;
