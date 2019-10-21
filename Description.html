@@ -102,14 +102,6 @@ function highlight_current_page_menu(){var e="https://2019.igem.org/";e+=wgPageN
           <!-- side navigator of page content -->
           <!-- main content of the page -->
           <main style="margin:0">
-<div style="position:relative;top:100;width:100%;">
-  <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/CreatJS&action=raw&ctype=text/javascript"></script>
-  <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/AnimationPrinciple&action=raw&ctype=text/javascript"></script>
-  <div id="animation_container" style="width:800px; height:450px; margin:0 auto;" class="blue-grey darken-1">
-    <canvas id="canvas" width="800" height="450" style="position: relative; display: block;" class="blue-grey darken-1"></canvas>
-    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:800px; height:450px; position: relative; left: 0px; top: 0px; display: block;"></div>
-  </div>
-</div>
 
 <div id="section1" class="section container scrolSpy">
   <h2>Inspiration</h2>
@@ -131,7 +123,93 @@ function highlight_current_page_menu(){var e="https://2019.igem.org/";e+=wgPageN
 <div id="section2" class="section container scrolSpy">
   <h2>A brief description of R-Evolution</h2>
   <p class="flow-text">R-Evolution is a dual plasmid system, with one plasmid containing the target sequence and necessary flanking sequences; while the other contains the remaining components for the target’s random mutation.</p>
-  <p class="flow-text">In the system, the target sequence will go through three process—transcription into mRNA, <a href="/Team:Fudan-TSI/Description#section6">reverse transcription</a> into cDNA, and recombination to allow the mutated sequence replace the original target.</p>
+
+
+<div style="position:relative;top:100;width:100%;">
+  <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/CreatJS&action=raw&ctype=text/javascript"></script>
+  <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/AnimationPrinciple&action=raw&ctype=text/javascript"></script>
+  <div id="animation_container" style="width:800px; height:450px; margin:0 auto;" class="blue-grey darken-1">
+    <canvas id="canvas" width="800" height="450" style="position: relative; display: block;" class="blue-grey darken-1"></canvas>
+    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:800px; height:450px; position: relative; left: 0px; top: 0px; display: block;"></div>
+  </div>
+</div>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+  canvas = document.getElementById("canvas");
+  anim_container = document.getElementById("animation_container");
+  dom_overlay_container = document.getElementById("dom_overlay_container");
+  var comp=AdobeAn.getComposition("606E0DE334AFCC40AD82C26E927D2160");
+  var lib=comp.getLibrary();
+  var loader = new createjs.LoadQueue(false);
+  loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+  loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+  var lib=comp.getLibrary();
+  loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+  var images=comp.getImages();
+  if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+}
+function handleComplete(evt,comp) {
+  //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+  var lib=comp.getLibrary();
+  var ss=comp.getSpriteSheet();
+  var queue = evt.target;
+  var ssMetadata = lib.ssMetadata;
+  for(i=0; i<ssMetadata.length; i++) {
+    ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+  }
+  exportRoot = new lib.Principle副本();
+  stage = new lib.Stage(canvas);
+  //Registers the "tick" event listener.
+  fnStartAnimation = function() {
+    stage.addChild(exportRoot);
+    createjs.Ticker.setFPS(lib.properties.fps);
+    createjs.Ticker.addEventListener("tick", stage);
+  }
+  //Code to support hidpi screens and responsive scaling.
+  function makeResponsive(isResp, respDim, isScale, scaleType) {
+    var lastW, lastH, lastS=1;
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    function resizeCanvas() {
+      var w = lib.properties.width, h = lib.properties.height;
+      var iw = window.innerWidth, ih=window.innerHeight;
+      var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;
+      if(isResp) {
+        if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {
+          sRatio = lastS;
+        }
+        else if(!isScale) {
+          if(iw<w || ih<h)
+            sRatio = Math.min(xRatio, yRatio);
+        }
+        else if(scaleType==1) {
+          sRatio = Math.min(xRatio, yRatio);
+        }
+        else if(scaleType==2) {
+          sRatio = Math.max(xRatio, yRatio);
+        }
+      }
+      canvas.width = w*pRatio*sRatio;
+      canvas.height = h*pRatio*sRatio;
+      canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';
+      canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+      stage.scaleX = pRatio*sRatio;
+      stage.scaleY = pRatio*sRatio;
+      lastW = iw; lastH = ih; lastS = sRatio;
+      stage.tickOnUpdate = false;
+      stage.update();
+      stage.tickOnUpdate = true;
+    }
+  }
+  makeResponsive(true,'both',false,1);
+  AdobeAn.compositionLoaded(lib.properties.id);
+  fnStartAnimation();
+}
+</script>
+  <p class="flow-text"><br/><br/><br/><br/>In the system, the target sequence will go through three process—transcription into mRNA, <a href="/Team:Fudan-TSI/Description#section6">reverse transcription</a> into cDNA, and recombination to allow the mutated sequence replace the original target.</p>
   <p class="flow-text">The target sequence is placed under T7 promoter and allowed to express stably. The target sequence is flanked by the sequences supporting reverse transcription, and in the outward loxP sites are placed.</p>
   <p class="flow-text">The reverse transcription module, consists of the gag-pol polyprotein from <a href="/Team:Fudan-TSI/Description#section1">Moloney murine leukemia virus</a> (MMLV), and its matching initiation tRNA, tRNAPro. This is the crucial step where the target sequence will be randomly mutated by the error-prone nature of reverse transcriptase.</p>
   <p class="flow-text">The recombination process utilizes <a href="/Team:Fudan-TSI/Description#section4">Cre recombinase</a> and incompatible loxP sites on either end to allow for the re-insertion of mutated sequence and minimize the possibility of self-splicing. To gain better control of this process, degradation tag is added to enable its fast disappearance in the system.</p>
