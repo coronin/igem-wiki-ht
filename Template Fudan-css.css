@@ -944,6 +944,7 @@
         text-align: left;
     }
     div.tableHolder tr { border-bottom: 1px solid #b0bec5; }  /* blue-grey lighten-3 */
+    div.tableHolder tr:first-child { border-top: 1px solid #b0bec5; }
 
     #FudanTSIBody .figureHolder {
         margin: 20px auto 30px auto;
