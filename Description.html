@@ -18,7 +18,7 @@
     </style>
     <title>2019 Team:Fudan-TSI Description</title>
 </head>
-<body>
+<body onload="init();">
 <div id="FudanTSIdivWrapper"><div id="FudanTSIBody">
   <header>
   <div id="emptyBar" style="position:relative;width: 100%;"></div><nav id="topNav" class="black z-depth-0_5"><div class="nav-wrapper"><div id="teamLogo" class="brand-logo"> <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif"></a></div><ul id="nav-mobile" class="right">
@@ -63,6 +63,14 @@
           <!-- side navigator of page content -->
           <!-- main content of the page -->
           <main style="margin:0">
+<div style="position:relative;top:100;width:100%;">
+  <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/CreatJS&action=raw&ctype=text/javascript"></script>
+  <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/AnimationPrinciple&action=raw&ctype=text/javascript"></script>
+  <div id="animation_container" style="width:800px; height:450px; margin:0 auto;" class="blue-grey darken-1">
+    <canvas id="canvas" width="800" height="450" style="position: relative; display: block;" class="blue-grey darken-1"></canvas>
+    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:800px; height:450px; position: relative; left: 0px; top: 0px; display: block;"></div>
+  </div>
+</div>
 
 <div id="section1" class="section container scrolSpy">
   <h2>Inspiration</h2>
