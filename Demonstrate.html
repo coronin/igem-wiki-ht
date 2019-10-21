@@ -77,6 +77,11 @@
   </div>
 
   <h2>Transcription</h2>
+  <div class="figureHolder" id="Fig2">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
+    <p><b>Figure 2. xx</b><br/>
+    asdfffsafffeasdfasdfe</p>
+  </div>
   <p class="flow-text">We put the target sequence and its flanking elements together under a T7 stable promoter for high expression level of target RNA. To verify our R-Evolution system, we constructed 8 nonsense mutant of chloramphenicol resistance gene (Chl), bearing the 8 base pair substitution from sense codon to nonsense mutant. We verified this construct through culturing bacteria carrying the original version or mutant on plates containing chloramphenicol. We found that bacteria carrying the original Chl grow naturally, while no colony was formed on the plates of mChl (Table 1). After adding the flanking sequences on both ends, we used the C158X mutant and showed that the gene’s function has not been changed by our conduct (Figure 1).</p>
   <p class="flow-text">In addition, we also constructed and verified nonsense mutants of fluorescent protein EGFP and mCherry at the 158<sup>th</sup> and 159<sup>th</sup> amino acid (Figure 2), based on the split EGFP assay that either half of the protein cannot emit fluorescence (ref1).</p>
 </div>
@@ -119,33 +124,28 @@
     </table>
 </div>
 
-<div class="figureHolder" id="Fig2">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-  <p><b>Figure 2. xx</b><br/>
-  asdfffsafffeasdfasdfe</p>
-</div>
-
 <div id="ReverseTranscription" class="section container scrolSpy">
   <h2>Reverse transcription</h2>
   <h4>The successful expression of RT</h4>
   <p class="flow-text">Reverse transcriptase (RT) is expressed under an IPTG controlled promoter, we constructed a series of promoters by placing a LacO fragment under a stable promoter, and hopes to determine under which we could achieve most stringent control. The constructs we tested are—T5, T5-LacO, T7-LacO, LacUV5-LacO, J23119-LacO.</p>
   <p class="flow-text">We initially attempted to verify RT’s expression through an EGFP fusion protein. We fused the EGFP to the C’ end of pol protein, linked by a GS tag. But this construct proved unsuccessful (data not shown), possibly due to the length and complexity of the gag-pol polyprotein. Then we turned to directly expressing EGFP in the place of RT under the control of IPTG. If EGFP can be successfully expressed, so should RT. Unfortunately, we failed to detect green fluorescence in either case (Figure 3).</p>
+
+  <div class="figureHolder" id="Fig3">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
+    <p><b>Figure 3. xx</b><br/>
+    xx</p>
+  </div>
+
   <p class="flow-text">We found through careful examination that this failure is due to problems with our plasmid construct, so we moved the RT to another tested plasmid, and through SDS-PAGE, verified its successful expression (Figure 4).</p>
+
+  <div class="figureHolder" id="Fig4">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
+    <p><b>Figure 4. xx</b><br/>
+    xx</p>
+  </div>
+
   <h4>RT can complete reverse transcription <i>in vitro</i>s</h4>
   <p class="flow-text">xxxx xxxx ss ssxx xx. xxxx xxxx ss ssxx.</p>
-</div>
-
-
-<div class="figureHolder" id="Fig3">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-  <p><b>Figure 3. xx</b><br/>
-  xx</p>
-</div>
-
-<div class="figureHolder" id="Fig4">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-  <p><b>Figure 4. xx</b><br/>
-  xx</p>
 </div>
 
 <div id="Recombination" class="section container scrolSpy">
@@ -153,40 +153,49 @@
   <h4>Cre expression is controlled by Tet operon</h4>
   <p class="flow-text">We placed Cre under the promoter ptetR, whose expression is controlled by its inhibitor TetR. Regarding where we should place the inhibitor gene to maximize its expression, we opted between 2 options, one is placing it downstream of the LacI inhibitor, the other is to place it downstream of the kanamycin resistance gene (KanR).</p>
   <p class="flow-text">We tested both construct by placing an EGFP in these two places and measuring its fluorescence emission. Results show that the expression level is almost the same in both construct (Figure 5).</p>
+
+  <div class="figureHolder" id="Fig5">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
+    <p><b>Figure 5. EGFP expression level is relatively the same downstream of LacI or KanR.</b><br/>
+    The vertical axe shows the semiquantitative analysis of EGFP fluorescence (excitation wavelength: 485 nm; detection wavelength: 528 nm), normalized by cell amount (OD600).</p>
+  </div>
+
   <h4>Cre initiates excision between two homologous loxP sites</h4>
   <p class="flow-text">Placing 2 wild-type loxP on both ends of the target sequence (mCherry) in the same direction, and expressing it under a stable promoter (J23101). By co-transforming the target plasmid with another plasmid carrying Cre recombinase, we verified that our Cre protein functions accordingly by excising the mCherry sequence from the promoter (Figure 6).</p>
+
+  <div class="figureHolder" id="Fig6">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
+    <p><b>Figure 6. Cre excises sequences flanked by homologous loxP sites, but are incompatible with its mutant version.</b><br/>
+    Ctr stands for control, Ctr+ means the positive control group in which mCherry is transformed with an empty plasmid without Cre, while Ctr- means the negative control group in which Cre is transformed with an empty plasmid without mCherry. The 3 middle lanes stand for Cre co-transforming with mCherry flanked on both ends by wildtype loxP (Lane 3), or with wildtype loxP on only one end, the other end being lox2272 (Lane 4) or lox5171 (Lane 5). mCherry flanked with lox2272 or lox5171 on one end does not go through excision so a full-length band was detectable, while mCherry flanked with wildtype loxP on both ends are excised and only a shorter band was seen.</p>
+  </div>
+
   <p class="flow-text">Through PCR amplification with the primers annealing to sequences outside the target, and subsequent electrophoresis, we found that the band from bacteria co-transforming Cre corresponds to the excision of mCherry.</p>
   <h4>lox5171 is most incompatible with wildtype loxP (wtlox)</h4>
   <p class="flow-text">When we were carrying out integrated human practice, we were warned by <a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Prof. Wang</a> that two homologous loxP would be excised at a much higher efficiency than performing recombination as we wished, so we searched the literature and selected 3 mutants that are said to be incompatible with wtlox but are compatible with themselves, they are lox511, lox2272 and lox5171.</p>
   <p class="flow-text">We tested their incompatibility with wtlox by replacing one of wtlox into the mutant at the ends of mCherry, and co-transformed the plasmid with Cre (Figure 6 &amp; 7). The result we obtained showed that lox5171-mCherry-wtlox performs best, and used it in further analysis (Figure 6).</p>
+
+  <div class="figureHolder" id="Fig7">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
+    <p><b>Figure 7. lox511 remains compatible with wildtype loxP, though at a lower excision rate.</b><br/>
+    Wildtype loxP and lox511-mCherry-loxP are analyzed on two different gels, their marker bands are indicated. Wildtype loxP only has an excision band. lox511 has a slight full-length mCherry band slightly longer than 1000 bp, which corresponds with the Ctr+ result in Figure 6, but excision band is still visible and brighter than that of full-length mCherry. This result suggests that lox511 still interacts with wildtype loxP and go through excision, but at a lower efficiency.</p>
+  </div>
+
   <h4>Cre with degradation tags</h4>
   <p class="flow-text">When our <a href="/Team:Fudan-TSI/Model">modeling</a> demonstrated to us that the expression level of Cre needs to be much lower than that of RT, we introduced degradation tags. By attaching them to the C terminal of Cre recombinase, the protein would be rapidly recognized and degraded by the <i>E. coli</i>’s native SsrA-SmpB degradation system. This construct could also solve the problem of basal leakage and continued existence after inducer removal.</p>
+
+  <div class="figureHolder" id="Fig8">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
+    <p><b>Figure 8. Degradation tag greatly reduces the protein level at stable state.</b><br/>
+    WT represents the positive control of EGFP without any tag attachment. The five degradation tags are represented by their last five amino acid sequence. The vertical axe shows the quantitative analysis of EGFP fluorescence (excitation wavelength: 485 nm; detection wavelength: 528 nm), normalized by cell amount (OD600). The fluorescence is quantified by the concentration of green fluorescein, cell number is quantified by the number of silicon beads, both are from the distributed measurement kit. Fluorescent level below detection level are eliminated from the result. Error bar stands for the SEM of 3 replicates. t-test is performed between WT and each degradation tag, P<0.0001 (****).</p>
+  </div>
+
   <p class="flow-text">Apart from the native AANDENYALAA tag, we also modified its last three or five amino acids into YALAV, YALVA, YALVV and WVLAA. We tested the stable expression level, as well as the degradation dynamic of each tag by attaching them to the C terminal of EGFP protein and measuring the change in fluorescence level (Figure 8 &amp; 9). The stable state expression increases as the number of mutated amino acids increase, or the mutated site nears the N’ of the tag. Supported by our modeling result, we deemed that the XXX tag performs best and chose to use it in further experiments.</p>
-</p>
-</div>
 
-<div class="figureHolder" id="Fig5">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-  <p><b>Figure 5. EGFP expression level is relatively the same downstream of LacI or KanR.</b><br/>
-  The vertical axe shows the semiquantitative analysis of EGFP fluorescence (excitation wavelength: 485 nm; detection wavelength: 528 nm), normalized by cell amount (OD600).</p>
-</div>
-
-<div class="figureHolder" id="Fig6">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-  <p><b>Figure 6. Cre excises sequences flanked by homologous loxP sites, but are incompatible with its mutant version.</b><br/>
-  Ctr stands for control, Ctr+ means the positive control group in which mCherry is transformed with an empty plasmid without Cre, while Ctr- means the negative control group in which Cre is transformed with an empty plasmid without mCherry. The 3 middle lanes stand for Cre co-transforming with mCherry flanked on both ends by wildtype loxP (Lane 3), or with wildtype loxP on only one end, the other end being lox2272 (Lane 4) or lox5171 (Lane 5). mCherry flanked with lox2272 or lox5171 on one end does not go through excision so a full-length band was detectable, while mCherry flanked with wildtype loxP on both ends are excised and only a shorter band was seen.</p>
-</div>
-
-<div class="figureHolder" id="Fig7">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-  <p><b>Figure 7. lox511 remains compatible with wildtype loxP, though at a lower excision rate.</b><br/>
-  Wildtype loxP and lox511-mCherry-loxP are analyzed on two different gels, their marker bands are indicated. Wildtype loxP only has an excision band. lox511 has a slight full-length mCherry band slightly longer than 1000 bp, which corresponds with the Ctr+ result in Figure 6, but excision band is still visible and brighter than that of full-length mCherry. This result suggests that lox511 still interacts with wildtype loxP and go through excision, but at a lower efficiency.</p>
-</div>
-
-<div class="figureHolder" id="Fig8">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-  <p><b>Figure 8. Degradation tag greatly reduces the protein level at stable state.</b><br/>
-  WT represents the positive control of EGFP without any tag attachment. The five degradation tags are represented by their last five amino acid sequence. The vertical axe shows the quantitative analysis of EGFP fluorescence (excitation wavelength: 485 nm; detection wavelength: 528 nm), normalized by cell amount (OD600). The fluorescence is quantified by the concentration of green fluorescein, cell number is quantified by the number of silicon beads, both are from the distributed measurement kit. Fluorescent level below detection level are eliminated from the result. Error bar stands for the SEM of 3 replicates. t-test is performed between WT and each degradation tag, P<0.0001 (****).</p>
+  <div class="figureHolder" id="Fig9">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
+    <p><b>Figure 9. Degradation tag greatly reduces the protein level at stable state.</b><br/>
+    WT represenxxxx.</p>
+  </div>
 </div>
 
 

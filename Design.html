@@ -91,26 +91,28 @@
     <li>MMLV-RT has low primer specificity, which means that if we change the sequence of its primer and its corresponding primer binding site (PBS), unlike HIV, the change will not be reverted in the following reverse transcription process. This makes it possible for us to customize the sequence of the tRNA primer used in accord with the target sequence in <a href="/Team:Fudan-TSI/Software">our software</a>.</li>
   </ul>
   <p class="flow-text">Even though RT does the function of reverse transcription, what is expressed in the cell is its polyprotein version. The gag-pol polyprotein has four parts—capsid protein, protease (stop codon separated), reverse transcriptase, and integrase. The integrase is deleted from the polyprotein to eliminate the possibility of genome interference. The protease contains a UAG stop codon at its 5<sup>th</sup> amino acid site (ref1), which is readthrough as glutamine at a 5% efficiency in its native host cells, to enable the 20:1 ratio between capsid and reverse transcriptase protein. As its readthrough efficiency is much lower in <i>E. coli</i> cells, and studies have shown that lower efficiency greatly damages the activity of reverse transcriptase (ref2), we mutated the UAG codon into CAG, making a complete readthrough of the polyprotein. This will slightly decrease the activity of RT but within an acceptable range.</p>
+
+  <div class="figureHolder" id="Fig1">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/4/43/T--Fudan-TSI--4mh8.gif" />
+    <p>Figure 1. Crystal structure of MMLV reverse transcriptase (PDB:4MH8).</p>
+  </div>
+
   <p class="flow-text">The capsid protein is necessary as it has been found to promote the annealing of tRNA primer to the primer binding site (PBS) in MMLV, and plays an important role in the following two strand transfer steps (ref3,4). To be certain of this design, we have consulted <a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Prof. Alper</a> through email and received his confirmation on the necessity of the capsid protein.</p>
   <p class="flow-text">To increase the mutation of our RT, we built a mutated version (Y1245F). This mutation has been shown to increase the mutation level by 5 times (ref5).</p>
   <p class="flow-text">The gag-pol polyprotein is placed under Lac operon, whose expression controlled by IPTG.</p>
 </div>
 
-<div class="figureHolder" id="Fig1">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/4/43/T--Fudan-TSI--4mh8.gif" />
-  <p>Figure 1. Crystal structure of MMLV reverse transcriptase (PDB:4MH8).</p>
-</div>
-
 <div id="section2" class="section container scrolSpy">
   <h2>tRNA primer</h2>
   <p class="flow-text">The initiation of reverse transcription requires its cognate tRNA primer. For MMLV-RT, the primer is tRNA<sup>Pro</sup>(AGG) (ref6). After comparing its sequence to the endogenous tRNA sequences in <i>E. coli</i>, we found very little homology between them, which again proves our system’s orthogonality to prokaryotic system. However, this also arises problems regarding its post-transcriptional processing.</p>
+
+  <div class="figureHolder" id="Fig2">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/9/9a/T--Fudan-TSI--designRT.gif" />
+    <p>Figure 2.</p>
+  </div>
+
   <p class="flow-text">To make sure that the exogenous tRNA could be successfully expressed and processed in <i>E. coli</i> cells into its matured form, we placed it under two promoters, one T7 promoter, and another pGlnW promoter, which is the endogenous promoter for GlnW and its downstream MetU. The CCA motif is added to the 3’ end, and followed by the interval sequence between two tRNA<sup>Gln</sup>, and a T7Te terminator.</p>
   <p class="flow-text">Apart from using the native tRNA<sup>Pro</sup>, which requires an additional PBS outside the target sequence, we have designed <a href="/Team:Fudan-TSI/Software">a software tool</a> which can design novel tRNAs aligning with the target sequence.</p>
-</div>
-
-<div class="figureHolder" id="Fig2">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/9/9a/T--Fudan-TSI--designRT.gif" />
-  <p>Figure 2.</p>
 </div>
 
 <div id="section3" class="section container scrolSpy">
@@ -124,14 +126,15 @@
   </ul>
 </div>
 
-<div class="figureHolder" id="Fig3">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-  <p>Figure 3. Crystal structure of Cre recombinase bound to a loxP holliday junction (PDB:3MGV).</p>
-</div>
-
 <div id="section4" class="section container scrolSpy">
   <h2>Cre recombinase</h2>
   <p class="flow-text">Cre recombinase is derived from P1 bacteriophage, which could initiate recombination events between two loxP sites. Cre recombinase binds to the palindromic sequence in loxP, and after forming a tetramer (two Cre on one loxP), its active site would initiate different recombination process based on the orientation of the two loxP (ref12). Two loxP sites in the same direction would initiate self-splicing, resulting the sequence in between be excised and form a circular loop. If the two loxP sites are oriented opposingly, the sequence in between would be inverted.</p>
+
+  <div class="figureHolder" id="Fig3">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
+    <p>Figure 3. Crystal structure of Cre recombinase bound to a loxP holliday junction (PDB:3MGV).</p>
+  </div>
+
   <p class="flow-text">If the two loxP sites are placed on different sequences, the two sequence would be transferred into each other’s place, but at a lower efficiency than the other two events. Our system utilizes its strand-transfer recombination activity to insert the mutated target into its original place, thus replacing the unmutated version and allows for another round of mutation.</p>
   <p class="flow-text">The expression of Cre recombinase is placed under a different operon, and anhydrotetracycline (aTc) serves as its inducer. The reason behind placing RT and Cre under different control has been elaborated in our modeling. Apart from the need of different final concentration of these two proteins for the system to achieve its optimal function, putting them under different promoters also enables better control over the system’s status.</p>
   <h4>Sequences flanking loxP</h4>
@@ -142,26 +145,28 @@
   <ul>
   <li>Firstly, we mutated some of the encoding codons to rare codons in hope that this would bring difficulty to translation and thus bring down the expression level.</li>
   <li>Then, we added different degradation tags following it. We designed the tags utilizing the endogenous degradation system of <i>E. coli</i> (ref15). We tested 5 tags, (YA)LAA, LVA, LAV, LVV, and (WV)LAA based on research literatures (ref16,17). With the support of our modeling, we found that XXX tag best suits our need, with moderate steady state level and quick degradation dynamic.</li>
+
+  <div class="figureHolder" id="Fig4">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/e/ee/T--Fudan-TSI--creVersions.gif" />
+    <p>Figure 4.</p>
+  </div>
+
   <li>As an alternative approach, we also tested the split-Cre construct (ref18). Cre recombinase is split between its 59<sup>th</sup> and 60<sup>th</sup> amino acid, the N- and C-terminal fragments are attached to FRB and FKBP separately. When the inducer rapamycin is absent, the two fragments will not polymerize and no detectable Cre activity is found. After adding rapamycin into the culture, FKBP and FRB will polymerize, thus bringing the two Cre fragments into contact, and recombination activity will be gained.</li>
   </ul>
-</div>
-
-<div class="figureHolder" id="Fig4">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/e/ee/T--Fudan-TSI--creVersions.gif" />
-  <p>Figure 4.</p>
 </div>
 
 <div id="section5" class="section container scrolSpy">
   <h2>Experiments</h2>
   <h4>Successful induction and processing of reverse transcriptase</h4>
   <p class="flow-text">EGFP is cloned in the place of the reverse transcriptase, and fluorescence level is measured. The gag-pol polyprotein is induced and SDS-PAGE is run to see if it has been successfully processed by the protease.</p>
+
+  <div class="figureHolder" id="Fig5">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/6c/T--Fudan-TSI--creFunction.gif" />
+    <p>Figure 5.</p>
+  </div>
+
   <h4>Reverse transcription completion</h4>
   <p class="flow-text">When Cre is not present in the cell, the system’s outcome would be reverse transcribed double-stranded cDNA. After lysing the cell and extracting its DNA components within, PCR amplification of the cDNA product would be performed and after electrophoresis, we could observe a brighter band if RT is induced to express compared to RT non-existent cells. For more quantitative analysis, qPCR would be performed.</p>
-</div>
-
-<div class="figureHolder" id="Fig5">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/6c/T--Fudan-TSI--creFunction.gif" />
-  <p>Figure 5.</p>
 </div>
 
 <div id="section6" class="section container scrolSpy">
@@ -178,15 +183,16 @@
   <h4>System verification</h4>
   <p class="flow-text">We have constructed plasmids carrying chloramphenicol resistance gene with <a href="/Team:Fudan-TSI/Part_Collection">different stop-codon mutations</a>. The gene is thus inactive, and acts as the target sequence. The two plasmids, carrying the target and other mutation necessary components respectively, are co-transformed.</p>
   <p class="flow-text">After incubation, the reverse transcriptase would be induced first, then Cre recombinase. The target sequence would be randomly mutated in the system, and if the mutation happens to successfully reverse the stop-codon back into its original coding sequence, the cell would grow successfully on solid medium containing chloramphenicol. By counting the number of cells grown, we could get a picture of the efficiency of single site mutation.</p>
+
+  <div class="figureHolder" id="Fig6">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/6c/T--Fudan-TSI--designDemo.gif" />
+    <p>Figure 6.</p>
+  </div>
+
   <h4>Sequence specificity</h4>
   <p class="flow-text">The surviving cells would be cultured and plasmid extracted. The plasmids would be sent for sequencing to prove that other sequences unrelative to the target is not mutated. It would also be retransformed into bacteria which has never encountered the system, and be planted on media containing chloramphenicol. If the cell could still grow normally, we could assume that the bacteria’s genome is not mutated in our mutagenesis process.</p>
   <h4>Host adaptability</h4>
   <p class="flow-text">Since we’re using parts that are orthogonal of native bacterial systems, our system is expected to work independently in different species. The system is tested in <i>E. coli</i>, and will then expand to species including cyanobacteria and lactic acid bacteria.</p>
-</div>
-
-<div class="figureHolder" id="Fig6">
-  <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/6c/T--Fudan-TSI--designDemo.gif" />
-  <p>Figure 6.</p>
 </div>
 
 <div id="section7" class="section container scrolSpy">
