@@ -60,13 +60,20 @@
 
 <div class="section container">
   <p class="flow-text">As best basic part we’d like to present the Moloney Murine Leukemia Virus Reverse Transcriptase (MMLV-RT) <a target="_blank" href="http://parts.igem.org/Part:BBa_K3257042">BBa_K3257042</a>. MMLV-RT is responsible for the reverse transcription process of the target Gene of Interest (GOI), which is rather one of the most important processes in our system.</p>
-  <p class="flow-text">MMLV-RT acts as a reverse transcription tool with a relatively low fidelity so that it is qualified for a random mutation generator. Also, <a href="https://www.ncbi.nlm.nih.gov/pubmed/12119402" target="_blank">a previous study</a> showed that point mutation (nucleotide from A to T) of at the 586th amino acid residual (from Y to F) of the polymerase itself (encoded merely by pol gene, <a target="_blank" href=''http://parts.igem.org/Part:BBa_K3257043>BBa_K3257043</a>), further improves its error-prone nature by ≈5-fold in a single replication cycle.</p>
+  <p class="flow-text">MMLV-RT acts as a reverse transcription tool with a relatively low fidelity so that it is qualified for a random mutation generator. Also, <a href="#Ref1">Zhang et al.</a> showed that point mutation (nucleotide from A to T) of at the 586<sup>th</sup> amino acid residual (from Y to F) of the polymerase itself (encoded merely by pol gene, <a target="_blank" href=''http://parts.igem.org/Part:BBa_K3257043>BBa_K3257043</a>), further improves its error-prone nature by ≈5-fold in a single replication cycle.</p>
   <p class="flow-text">MMLV-RT was first designed to be transcribed into a single mRNA with a stop codon between the gag gene (encoding capsid protein) and pol gene (encoding the reverse transcriptase), which could not be properly expressed <i>in vivo</i> (of <i>E. coli</i>) when we fused an EGFP after the gag-pol CDS.</p>
   <p class="flow-text">Frustratedly, we set out to solve the problem by cloning it into various kinds of vectors, after different promoters, and mutating the stop codon between gag and pol into Glutamine (from T to C), an intermediate amino acid residual as a read-through. (In wild type Moloney Murine Leukemia virus , there is a stop codon between mRNA transcribed from the gag gene and pol gene while it can be read through as a Glutamine when translated by ribosome to form gag and gag-pol polyprotein at a ratio of 20:1. We have changed the stop codon into a Glutamine codon to assure its readability in <i>E. coli</i>.)</p>
   <p class="flow-text">Using SDS-PAGE and qRT-PCR, we have verified its expression in <i>E. coli</i> <a href="#Fig1">(Figure 1a)</a> and its function as a reverse transcriptase <a href="#Fig1">(Figure 1b)</a>. Furthermore, its mutation rate is able to be measured by high throughput sequencing. In the future, this part can be used to express gag-pol polyprotein inside the bacteria to initiate the reverse transcription process <i>in vivo</i>.</p>
   <p class="flow-text">For more information of other basic parts, please refer to <a href="/Team:Fudan-TSI/Part_Collection">the part collection page</a> and <a target="_blank" href="http://parts.igem.org/">the iGEM Part Registry</a> ranging from BBa_K3257000 to BBa_K3257076.</p>
 
 </div>
+
+<div class="section container">
+    <h2>Reference</h2>
+    <ol id="ref" style="margin: 23px 0 0 0;">
+      <li id="Ref1">[1] Zhang W H, Svarovskaia E S, Barr R, et al. <a href="https://www.ncbi.nlm.nih.gov/pubmed/12119402" target="_blank">Y586F mutation in murine leukemia virus reverse transcriptase decreases fidelity of DNA synthesis in regions associated with adenine-thymine tracts</a>. Proceedings of the National Academy of Sciences, 2002, 99(15):10090-10095.</li>
+    </ol>
+  </div>
 
 
 <!--////////////////////////////////////////////////////
