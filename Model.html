@@ -14,7 +14,12 @@
   #content { margin-left: 0; padding:0px; width:100%; }
   .judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2% !important; width: 92%!important; }
   *{margin:0;padding:0;list-style:none}blockquote,body,button,dd,dl,dt,fieldset,form,h1,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp{font-family:courier new,courier,monospace}ol,ul{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}
-  .Off {display:none !important}
+  .mjx-chtml {
+    outline: 0;
+    font-size:80%; }
+  .MJXc-display {
+    overflow-x: auto;
+    overflow-y: hidden; }
     </style>
     <title>2019 Team:Fudan-TSI Modeling</title>
 </head>
@@ -38,7 +43,8 @@
         <li class="onThisPageNav"><a href="#section4">Cre recombination</a></li>
         <li class="onThisPageNav"><a href="#section5">Recombined P<sub>target</sub></a></li>
         <li class="onThisPageNav"><a href="#section6">Optimal induction</a></li>
-        <li class="onThisPageNav"><a href="#section7">References</a></li>
+        <li class="onThisPageNav"><a href="#section7">Appendix</a></li>
+        <li class="onThisPageNav"><a href="#section8">References</a></li>
 
         <li><span class="pageSidebar">Team: Fudan-TSI</span></li><li><div class="collapsible-header"><span class="pageSidebar">Project</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied design</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Results</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#ReverseTranscription">Reverse transcription</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate#Recombination">Recombination</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li></ul></div></li><li><div class="collapsible-header active"><span class="pageSidebar">Model</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Parts</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Part improvement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Human practices</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Public engagement</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Integrated HP</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li></ul></div></li><li><div class="collapsible-header"><span class="pageSidebar">Team</span></div><div class="collapsible-body"><ul><li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li><li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li><li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li></ul></div></li>
       </ul><!-- .expandable -->
@@ -72,7 +78,8 @@
               <li class="onThisPageNav"><a href="#section4">Cre&nbsp;recombination</a></li>
               <li class="onThisPageNav"><a href="#section5">Recombined&nbsp;P<sub>target</sub></a></li>
               <li class="onThisPageNav"><a href="#section6">Optimal&nbsp;induction</a></li>
-              <li class="onThisPageNav"><a href="#section7">References</a></li>
+              <li class="onThisPageNav"><a href="#section7">Appendix</a></li>
+              <li class="onThisPageNav"><a href="#section8">References</a></li>
               <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
           </ul>
           <!-- main content of the page -->
@@ -97,7 +104,7 @@
   </div>
 
   <h4>Induced Expression Model</h4>
-  <p class="flow-text">We first assumed that both genes encoding RT and Cre are placed together under a lac operon <a href="#Fig2">(Figure 2a)</a>. The repressor protein LacI is stably expressed in the cell, 2 molecules of LacI will form a dimer which binds to LacO DNA fragment and represses the expression of RT and Cre. When IPTG is added and transported into the cell, IPTG molecules will bind with LacI and inhibit its binding to LacO. In this way, RT and Cre can be rescued from suppression <a href="#Ref1">(Nikos et al.)</a>. The ordinary differential equations (ODEs) describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations can be found in <a href="#">the appendix</a>.</p>
+  <p class="flow-text">We first assumed that both genes encoding RT and Cre are placed together under a lac operon <a href="#Fig2">(Figure 2a)</a>. The repressor protein LacI is stably expressed in the cell, 2 molecules of LacI will form a dimer which binds to LacO DNA fragment and represses the expression of RT and Cre. When IPTG is added and transported into the cell, IPTG molecules will bind with LacI and inhibit its binding to LacO. In this way, RT and Cre can be rescued from suppression <a href="#Ref1">(Nikos et al.)</a>. The ordinary differential equations (ODEs) describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations can be found in <a href="#section7">the appendix</a>.</p>
 
   <div class="figureHolder">
     <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/6f/T--Fudan-TSI--Formula1.gif" />
@@ -116,7 +123,7 @@
 <div id="section3" class="section container scrolSpy">
   <h4>Reverse Transcription Model</h4>
   <p class="flow-text">From the first model, the concentration of both RT and Cre are acquired. The concentration of RT serves as input to the reverse transcription model. As the schematic diagram depicts <a href="#Fig3">(Figure 3a)</a>, tRNA primer first binds with reverse transcriptase. When this complex binds with a certain fragment on the target sequence, which is called primer binding site (PBS), the reverse transcription will start and cDNA will be synthesized.</p>
-  <p class="flow-text">Although a more elaborate model of reverse transcription has been proposed by <a href="#Ref2">Kulpa et al.</a>, it includes many reactions whose kinetic properties are not well characterized. As a result, we simplified that model and came up with our own. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations we used can be found in <a href="#">the appendix</a>.</p>
+  <p class="flow-text">Although a more elaborate model of reverse transcription has been proposed by <a href="#Ref2">Kulpa et al.</a>, it includes many reactions whose kinetic properties are not well characterized. As a result, we simplified that model and came up with our own. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations we used can be found in <a href="#section7">the appendix</a>.</p>
 
   <div class="figureHolder">
     <img class="responsive-img" src="https://2019.igem.org/wiki/images/3/3f/T--Fudan-TSI--Formula2.gif" />
@@ -133,16 +140,16 @@
 
 <div id="section4" class="section container scrolSpy">
   <h4>Cre Recombination Model</h4>
-  <p class="flow-text">Our first assumption is that the genes encoding RT and Cre are both placed under lac operon and thus be expressed in the same amount. So now we are about to compute the yield of our desired product to identify whether this experimental setup is feasible. The model of the recombination process has been clearly described by <a href="#Ref3">Ehrilich et al</a>. We made some changes to it according to our own experimental design. The schematic diagram is shown in <a href="#Fig4">Figure 4a</a>. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations can be found in <a href="#">the appendix</a>.</p>
+  <p class="flow-text">Our first assumption is that the genes encoding RT and Cre are both placed under lac operon and thus be expressed in the same amount. So now we are about to compute the yield of our desired product to identify whether this experimental setup is feasible. The model of the recombination process has been clearly described by <a href="#Ref3">Ehrilich et al</a>. We made some changes to it according to our own experimental design. The schematic diagram is shown in <a href="#Fig4">Figure 4a</a>. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations can be found in <a href="#section7">the appendix</a>.</p>
 
   <div class="figureHolder">
     <img class="responsive-img" src="https://2019.igem.org/wiki/images/e/e9/T--Fudan-TSI--Formula3.gif" />
   </div>
 
   <p class="flow-text">As is shown in the diagram, 2 Cre molecules bind with 1 loxP site successively, either on cDNA or P<sub>target</sub>. Four Cre molecules will form a Holliday junction, and thus starting the recombination reaction. Two pairs of loxP will work together and complete the strand exchange between cDNA and P<sub>target</sub>. After that, the recombined product is produced. What we are interested in is the percentage of recombined P<sub>target</sub> among all P<sub>target</sub>s in one <i>E. coli</i>. So, we turn to compute that percentage based on the model that we have established.</p>
-  <p class="flow-text">Unfortunately, we found that the amount of substances is too small. For example, the concentration of @@@@ is only 10 nM, which means there are only about 5 molecules of  in one cell. These small numbers caused some computational problems in Matlab when we were using its ODE solver (ode15s). To address this problem, we converted the units of the amount of the substances from mole per litter (M) to molecule. The units of the kinetic parameters are also converted accordingly.</p>
+  <p class="flow-text">Unfortunately, we found that the amount of substances is too small. For example, the concentration of P<sub>target</sub> is only 10 nM, which means there are only about 5 molecules of  in one cell. These small numbers caused some computational problems in Matlab when we were using its ODE solver (ode15s). To address this problem, we converted the units of the amount of the substances from mole per litter (M) to molecule. The units of the kinetic parameters are also converted accordingly.</p>
   <p class="flow-text">Now, the recombination step is modeled under the initial condition of 5 molecules of non-mutated , 3228 molecules of Cre and 5 molecules of cDNA <a href="#Fig4">(Figure 4b)</a>. The last two numbers are the outputs of previous models after going through some unit conversion steps.</p>
-  <p class="flow-text">After a long period of reaction, no recombined @@@@ showed up. It is because there are too many Cre molecules so s are all bounded by them and remain in the intermediate form. What’s more,  can't bind with T7 RNA polymerase and be transcribed as a consequence of Cre occupation. This leads to the system’s inability of undergoing further reverse transcription process, stopping cDNA’s production, resulting in a stop of the system, and rendering mutation accumulation impossible <a href="#Fig4">(Figure 4c)</a>.</p>
+  <p class="flow-text">After a long period of reaction, no recombined P<sub>target</sub> showed up. It is because there are too many Cre molecules so s are all bounded by them and remain in the intermediate form. What’s more,  can't bind with T7 RNA polymerase and be transcribed as a consequence of Cre occupation. This leads to the system’s inability of undergoing further reverse transcription process, stopping cDNA’s production, resulting in a stop of the system, and rendering mutation accumulation impossible <a href="#Fig4">(Figure 4c)</a>.</p>
   <p class="flow-text">This result tells us that the number of Cre molecules needs to be much lower for the system to function. We then set out to determine how many Cre is optimal. After we fed the recombination model with cDNA and Cre at different concentrations, the problem seems to be clear as the yield of recombined  varies greatly responding to different numbers of cDNA and Cre <a href="#Fig4">(Figure 4d)</a>. When cDNA is confined to 5 molecules, we will get no yield at all in the period of <i>E. coli</i>'s replication cycle if the concentration of Cre is greater than 20 molecules. Instead, the yield is maximized when the final Cre concentration is around 2 molecules <a href="#Fig4">(Figure 4e)</a>.</p>
   <p class="flow-text">We use the optimized number of Cre as the input to our third model. The result is shown in <a href="#Fig4">Figure 4f</a>, which is satisfactory. The recombined P<sub>target</sub>) finally occurs and  has a chance to bind with T7 RNA polymerase, which means mutated gene of interest could be transcribed and further mutated, thus making the accumulation of mutations possible <a href="#Fig4">(Figure 4g)</a>.</p>
 
@@ -162,12 +169,12 @@
   <ol>
     <li>  Step 1: Initialize the reaction system at \(t=0\) with rate constants \(c_1, c_2, ......, c_v\) as initial numbers of molecules \(x_1, x_2, ......, x_u\) corresponding to \(v\) reactions and \(u\) sustances (both reactants and products) involved in the reaction system.</li>
     <li>  Step 2: For each \(i=1,2,......,v\), calculate the hazard for the \(i^{th}\) type of reaction, denoted as \(h_i(x,c_i)\) based on current substance number \(x\).</li>
-    <li>  Step 3: Calculate the combined reaction hazard \(h_0(x,c)=\Sigma_{i=1}^{v}h_i(x,c_i)\).</li>
+    <li>  Step 3: Calculate the combined reaction hazard \(h_0(x,c)=\Sigma_{i=1}^{v}h_i(x,c_i)\). </li>
     <li>  Step 4: Simulate the time to the next reaction, \(t^{'}\) , which is a random quantity that obeys exponential distribution with parameter \(\lambda\).</li>
-    <li>  Step 5: Put \(t:=t+t^{'}\).</li>
+    <li>  Step 5: Put \(t:=t+t^{'}\). </li>
     <li>  Step 6: Simulate the reaction index, \(j\). The probability that the \(j^{th}\) reaction can occur is \(\frac{h_i(x,c_i)}{h_0(x,c)}, i=1,2,......,v.\).</li>
     <li>  Step 7: Update \(x\) according to reaction \(j\), which means putting \(x:=x+S^{(j)}\), where \(S^{(j)}\) denotes the \(j^{th}\) colomn of the stoichiometry matrix \(S\). The \(j^{th}\) column of  denotes the change in substance number  caused by the \(j^{th}\) reaction.</li>
-    <li>  Step 8: Record time \(t\) and current substance number \(x\).</li>
+    <li>  Step 8: Record time \(t\) and current substance number \(x\). </li>
     <li>  Step 9: If \(t\ \text{<}\ T_{max}\), return to step 2. \(T_{max}\) corresponds to the maximum duration of the reaction set by the user.</li>
     <li>  Step 10: Plot the result to see the dynamic of the quantity of the substance that you are interested in.</li>
 
@@ -187,7 +194,7 @@
   <h2>Part III: Deterministic model to determine optimal induction time</h2>
   <p class="flow-text">To ensure the evolved protein is encoded by the mutated GOI sequence that is recombined into P<sub>target</sub>, we decided to use degradation tag to accelerate the degradation process of Cre. This design would make Cre only function when inducer is in the system, thus allowing stringent control of the protein. However, we then face the problem of how to select the optimal degradation tag.</p>
   <p class="flow-text">Empirically, to minimize the duration of recombination, we tend to choose degradation tags with higher efficiency, but extremely high degradation rate will also reduce the yield of recombined P<sub>target</sub>, leading to decreased library size. Also, it is impractical for researchers to do experiments to test these degradation tags one by one. For these reasons, we are going to use models to find out the optimal degradation tag that should be added to Cre based on the average yield of recombined P<sub>target</sub> at the end of R-Evolution functioning period (8 hours).</p>
-  <p class="flow-text">We intend to use the models described in <a href="#section2">Part I</a>, combined with aTc induction model proposed by <a href="#Ref5">Steel et al</a>. to compute the yield of recombined P<sub>target</sub> under different degradation rate of Cre (the reason why Tet operon is used has been elaborated in <a href="#section2">Part I</a>; the schematic diagram of this process is shown in <a href="#Fig6">Figure 6a</a>. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations we used can be found in <a href="#">the appendix</a>.</p>
+  <p class="flow-text">We intend to use the models described in <a href="#section2">Part I</a>, combined with aTc induction model proposed by <a href="#Ref5">Steel et al</a>. to compute the yield of recombined P<sub>target</sub> under different degradation rate of Cre (the reason why Tet operon is used has been elaborated in <a href="#section2">Part I</a>; the schematic diagram of this process is shown in <a href="#Fig6">Figure 6a</a>. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations we used can be found in <a href="#section7">the appendix</a>.</p>
 
   <div class="figureHolder">
     <img class="responsive-img" src="https://2019.igem.org/wiki/images/9/9c/T--Fudan-TSI--Formula4.gif" />
@@ -209,13 +216,20 @@
   <p class="flow-text">In summary, in the deterministic model, we combined the three minor models proposed previously and assessed the mutagenesis system in whole. Through this addition, we achieved a better simulation of the real intracellular reactions and answered the question of when Cre should be induced for the highest level of recombination efficiency to be obtained.</p>
 </div>
 
-
 <div id="section7" class="section container scrolSpy">
+  <h2>Appendix</h2>
+  <p class="flow-text">Please consult the following file for a clearer understanding of the formulation of the model.</p>
+  <embed src="https://2019.igem.org/wiki/images/8/8c/T--Fudan-TSI--ModelApp.pdf" width="100%" height="400" type="application/pdf">
+</div>
+
+
+
+<div id="section8" class="section container scrolSpy">
   <h2>References</h2>
   <ol id="ref" style="margin: 23px 0 0 0;">
-    <li id="Ref1">[1] Stamatakis M, Mantzaris N V. <a href="https://www.cell.com/biophysj/fulltext/S0006-3495(08)00100-8" target="_blank">Comparison of Deterministic and Stochastic Models of the lac Operon Genetic Network</a>[J]. Biophysical Journal, 2009, 96(3):887-906.</li>
-    <li id="Ref2">[2] Kulpa, D. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1169686/pdf/000856.pdf" target="_blank">Determination of the site of first strand transfer during Moloney murine leukemia virus reverse transcription and identification of strand transfer-associated reverse transcriptase errors</a>[J]. EMBO (European Molecular Biology Organization) Journal, 1997, 16(4):856-865.</li>
-    <li id="Ref3">[3] Ringrose L, Lounnas V, Ehrlich L, et al. <a href="https://www.sciencedirect.com/science/article/pii/S0022283698921490" target="_blank">Comparative kinetic analysis of FLP and cre recombinases: mathematical models for DNA binding and recombination</a>[J]. Journal of Molecular Biology, 1998, 284(2):0-384.</li>
+    <li id="Ref1">[1] Stamatakis M, Mantzaris N V. <a href="https://www.ncbi.nlm.nih.gov/pubmed/19186128" target="_blank">Comparison of Deterministic and Stochastic Models of the lac Operon Genetic Network</a>[J]. Biophysical Journal, 2009, 96(3):887-906.</li>
+    <li id="Ref2">[2] Kulpa, D. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1169686/" target="_blank">Determination of the site of first strand transfer during Moloney murine leukemia virus reverse transcription and identification of strand transfer-associated reverse transcriptase errors</a>[J]. EMBO (European Molecular Biology Organization) Journal, 1997, 16(4):856-865.</li>
+    <li id="Ref3">[3] Ringrose L, Lounnas V, Ehrlich L, et al. <a href="https://www.ncbi.nlm.nih.gov/pubmed/9813124" target="_blank">Comparative kinetic analysis of FLP and cre recombinases: mathematical models for DNA binding and recombination</a>[J]. Journal of Molecular Biology, 1998, 284(2):0-384.</li>
     <li id="Ref4">[4] Wilkinson, Darren J. <a href="#">Stochastic modeling for Systems Biology</a>, Second Edition[M]. Crc Press, 2011.</li>
     <li id="Ref5">[5] Harris A W K, Kelly C L, Steel H, et al. <a href="https://ieeexplore.ieee.org/document/8263882" target="_blank">The autorepressor: A case study of the importance of model selection</a>[C]. Decision & Control. IEEE, 2018.</li>
   </ol>
@@ -241,5 +255,14 @@
 
 <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script><!-- Materialize 1.0.0-rc.2 -->
 <script src="/Template Fudan-js.js"></script>
+<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/mathjax275.js&action=raw&ctype=text/javascript"></script>
+<script>let isMathjaxConfig=!1;const initMathjaxConfig=()=>{window.MathJax&&(window.MathJax.Hub.Config({showProcessingMessages:!1,messageStyle:"none",jax:["input/TeX","output/HTML-CSS"],tex2jax:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],skipTags:["script","noscript","style","textarea","pre","code","a"]},"HTML-CSS":{availableFonts:["STIX","TeX"],showMathMenu:!1}}),isMathjaxConfig=!0)};
+  if (isMathjaxConfig === false) {
+    initMathjaxConfig();
+  }window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('app')]);
+</script>
+<script>
+</script>
+
 </body>
 </html>
