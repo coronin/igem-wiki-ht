@@ -28,6 +28,7 @@
         font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
         color: rgba(255, 255, 255, 0.86);
     }
+    #FudanTSIBody table {background:transparent;}
 
     #FudanTSIBody .slides h3 {
         color: #F78E41;
@@ -48,7 +49,7 @@
     }  */
 #FudanTSIBody ul.dropdown-content { background-color: rgba(0,0,0,0.87); }
 #FudanTSIBody ul.dropdown-content>li { text-align: left; width: 8px; }
-#FudanTSIBody ul.dropdown-content>li>a { font-size: 0.9em; }
+#FudanTSIBody ul.dropdown-content>li>a, #FudanTSIBody a.dropdown-trigger { font-size: 14px; }
 
     #FudanTSIBody a {
         text-decoration: none;
@@ -88,6 +89,8 @@
         font-weight: 400;
         letter-spacing: 1px;
     }
+
+#FudanTSIBody #nav-mobile li:hover { background: transparent; color: cyan;}
 
     #FudanTSIBody #nav-mobile > li > ul a {
         /* @@@@ font-size: 14px;*/

@@ -5549,7 +5549,7 @@ button.btn-floating {
 }
 
 .dropdown-content {
-  background-color: #fff;
+/*  background-color: #fff; */
   margin: 0;
   display: none;
   min-width: 100px;
@@ -5579,8 +5579,7 @@ button.btn-floating {
 }
 
 .dropdown-content li:hover, .dropdown-content li.active {
-/* 2018 ht edited */
-  background-color: #e5e6e7;
+  color: cyan;
 }
 
 .dropdown-content li:focus {
