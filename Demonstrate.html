@@ -12,7 +12,6 @@
   #content { margin-left: 0; padding:0px; width:100%;}
   .judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2% !important; width: 92%!important; }
   *{margin:0;padding:0;list-style:none}blockquote,body,button,dd,dl,dt,fieldset,form,h1,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp{font-family:courier new,courier,monospace}ol,ul{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}
-  #section1 td, #section2 td, #section3 td {padding-bottom:1em;line-height:1.5em}
     </style>
     <title>2019 Team:Fudan-TSI Demonstration</title>
 </head>
@@ -119,8 +118,53 @@
     <p><b>Figure 1. The flanking of reverse transcription initiation and loxP sequences does not disrupt Chl functionality.</b><br/>
     Wildtype Chl gene continues to express and colonies are grown on the plate containing chloramphenicol (plate on the right). The L158X mutant cannot express functional resistance gene and thus the plate is devoid of cell colony (plate on the right).</p>
   </div>
-  <p class="flow-text">We put the target sequence and its flanking elements together under a T7 stable promoter for high expression level of target RNA. To verify our R-Evolution system, we constructed 8 nonsense mutant of chloramphenicol resistance gene (Chl), bearing the 8 base pair substitution from sense codon to nonsense mutant. We verified this construct through culturing bacteria carrying the original version or mutant on plates containing chloramphenicol. We found that bacteria carrying the original Chl grow naturally, while no colony was formed on the plates of mutated Chl (Figure 1).</p>
-  <p class="flow-text">In addition, we also constructed and verified nonsense mutants of fluorescent protein EGFP and mCherry at the 158<sup>th</sup> and 159<sup>th</sup> amino acid (Figure 2).</p>
+  <p class="flow-text">We put the target sequence and its flanking elements together under a T7 stable promoter for high expression level of target RNA. To verify our R-Evolution system, we constructed 8 nonsense mutant of chloramphenicol resistance gene (Chl), bearing the 8 base pair substitution from sense codon to nonsense mutant. We verified this construct through culturing bacteria carrying the original version or mutant on plates containing chloramphenicol. We found that bacteria carrying the original Chl grow naturally, while no colony was formed on the plates of mChl (Table. 1). After adding the flanking sequences on both ends, we used the C158X mutant and showed that the gene’s function has not been changed by our conduct <a href="#Fig1">(Figure 1)</a>.</p>
+
+  <div class="figureHolder">
+    <p><b>Table 1. Nonsense mutation disrupts the chloramphenicol resistance ability of Chl.</b><br/>
+      Amp stands for ampicillin, Chl stands for chloramphenicol, the left column means that they are added to the plate. Chl acts as the positive control, cells grow naturally on both plates, while cells transformed with the negative control plasmid can only grow on plates containing ampicillin. Chl gene carrying nonsense mutation at different sites does not affect its ampicillin resistance, but chloramphenicol resistance is lost as no colony is formed. Single colony was picked and shook in liquid culture overnight, the plate was coated with 100 μL culture after 104 dilution.
+    </p>
+<table style="color:white;border:1px solid white">
+  <tr style="border:1px solid white">
+    <td></td>
+    <td>Control</td>
+    <td>&nbsp;Chl&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Chl-Y33X</td>
+    <td>Chl-W85X</td>
+    <td>Chl-E97X</td>
+    <td>Chl-S121X</td>
+    <td>Chl-L158X</td>
+    <td>Chl-K182X</td>
+    <td>Chl-Q190X</td>
+  </tr>
+  <tr style="border:1px solid white">
+    <td>Amp</td>
+    <td>19</td>
+    <td>192</td>
+    <td>291</td>
+    <td>128</td>
+    <td>236</td>
+    <td>138</td>
+    <td>255</td>
+    <td>175</td>
+    <td>276</td>
+  </tr>
+  <tr style="border:1px solid white">
+    <td>Amp &amp; Chl</td>
+    <td>0</td>
+    <td>30</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+</table>
+  </div>
+
+  <p class="flow-text">In addition, we also constructed and verified nonsense mutants of fluorescent protein EGFP and mCherry at the 158<sup>th</sup> and 159<sup>th</sup> amino acid <a href="#Fig2">(Figure 2)</a>.</p>
 
   <div class="figureHolder" id="Fig2">
     <img class="responsive-img" src="https://2019.igem.org/wiki/images/4/45/T--Fudan-TSI--Result_Fig2.gif" />
@@ -130,9 +174,11 @@
 </div>
 
 <div id="ReverseTranscription" class="section container scrolSpy">
-  <h2>Reverse transcription</h2>
+  <h2>Reverse transcription (RT)</h2>
   <h4>The successful expression of RT</h4>
-  <p class="flow-text">We conducted SDS-PAGE on whole-cell lysates of uninduced and induced cell. Gag-pol polyprotein is expressed as a whole with its stop codon mutated into its readthrough product, glutamine. The polyprotein has three functional parts, capsid protein, protease and reverse transcriptase. We made Y586F mutation on reverse transcriptase to increase its mutation rate. From the PAGE gel, we can see that all three bands could be seen when induced (Figure 3).</p>
+  <p class="flow-text">RT is expressed under an IPTG controlled promoter, we constructed a series of promoters by placing a LacO fragment under a stable promoter, and hopes to determine under which we could achieve most stringent control. The constructs we tested are: T5, T5-LacO, T7-LacO, LacUV5-LacO, J23119-LacO.</p>
+  <p class="flow-text">We initially attempted to verify RT’s expression through an EGFP fusion protein. We fused the EGFP to the C’ end of pol protein, linked by a GS tag. But this construct proved unsuccessful (data not shown), possibly due to the length and complexity of the gag-pol polyprotein. Then we turned to directly expressing EGFP in the place of RT under the control of IPTG. If EGFP can be successfully expressed, so should RT. And results are obtained for each induction promoter construct (figure would be supplemented in presentation and poster).</p>
+  <p class="flow-text">We found through careful examination that this failure is due to problems with our plasmid construct, so we moved the RT to another tested plasmid, and through SDS-PAGE, verified its successful expression <a href="#Fig3">(Figure 3)</a>. Gag-pol polyprotein is expressed as a whole with its stop codon mutated into its readthrough product, glutamine. The polyprotein has three functional parts, capsid protein, protease and reverse transcriptase. We made Y586F mutation on reverse transcriptase to increase its mutation rate. From the PAGE gel, we can see that all three bands could be seen when induced.</p>
 
   <div class="figureHolder" id="Fig3">
     <img class="responsive-img" src="https://2019.igem.org/wiki/images/2/2f/T--Fudan-TSI--Result_Fig3.gif" />
@@ -143,8 +189,11 @@
 
 <div id="Recombination" class="section container scrolSpy">
   <h2>Recombination</h2>
+  <h4>Cre expression is controlled by Tet operon</h4>
+  <p class="flow-text">We placed Cre under the promoter ptetR, whose expression is controlled by its inhibitor TetR. Regarding where we should place the inhibitor gene to maximize its expression, we opted between 2 options, one is placing it downstream of the LacI inhibitor, the other is to place it downstream of the kanamycin resistance gene (KanR). We tested both construct by placing an EGFP in these two places and measuring its fluorescence emission. Results show that the expression level is almost the same in both construct. </p>
+
   <h4>Cre initiates excision between two homologous loxP site</h4>
-  <p class="flow-text">Placing 2 wild-type loxP on both ends of the target sequence (mCherry) in the same direction, and expressing it under a stable promoter (J23101). By co-transforming the target plasmid with another plasmid carrying Cre recombinase, we verified that our Cre protein functions accordingly by excising the mCherry sequence from the promoter (Figure 4).</p>
+  <p class="flow-text">Placing 2 wild-type loxP on both ends of the target sequence (mCherry) in the same direction, and expressing it under a stable promoter (J23101). By co-transforming the target plasmid with another plasmid carrying Cre recombinase, we verified that our Cre protein functions accordingly by excising the mCherry sequence from the promoter <a href="#Fig4">(Figure 4)</a>.</p>
 
   <div class="figureHolder" id="Fig4">
     <img class="responsive-img" src="https://2019.igem.org/wiki/images/e/e8/T--Fudan-TSI--Result_Fig5.gif" />
@@ -156,15 +205,15 @@
 
   <h4>lox5171 is most incompatible with wildtype loxP (wtlox)</h4>
   <p class="flow-text">When we were carrying out integrated human practice, we were warned by <a href="/Team:Fudan-TSI/Human_Practices#IntegratedHumanPractice">Prof. Wang</a> that two homologous loxP would be excised at a much higher efficiency than performing recombination as we wished, so we searched the literature and selected 3 mutants that are said to be incompatible with wtlox but are compatible with themselves, they are lox511, lox2272 and lox5171.</p>
-  <p class="flow-text">We tested their incompatibility with wtlox by replacing one of wtlox into the mutant at the ends of mCherry, and co-transformed the plasmid with Cre (Figure 5 &amp; 6). The result we obtained showed that lox5171-mCherry-wtlox performs best, and used it in further analysis (Figure 6).</p>
-
-  <div class="figureHolder" id="Fig5">
-    <img class="responsive-img" src="https://2019.igem.org/wiki/images/b/b3/T--Fudan-TSI--Result_Fig7.gif" />
-    <p>Figure 5. Schematic diagram of loxP mutant incompatibility test.</p>
-  </div>
+  <p class="flow-text">We tested their incompatibility with wtlox by replacing one of wtlox into the mutant at the ends of mCherry, and co-transformed the plasmid with Cre <a href="#Fig5">(Figure 5</a><a href="#Fig6"> &amp; 6)</a>. The result we obtained showed that lox5171-mCherry-wtlox performs best, and used it in further analysis <a href="#Fig6">(Figure 6)</a>.</p>
 
   <div class="figureHolder" id="Fig5">
     <img class="responsive-img" src="https://2019.igem.org/wiki/images/9/9e/T--Fudan-TSI--Result_Fig6.gif" />
+    <p><b>Figure 5. Schematic diagram of loxP mutant incompatibility test.</b></p>
+  </div>
+
+  <div class="figureHolder" id="Fig5">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/b/b3/T--Fudan-TSI--Result_Fig7.gif" />
     <p><b>Figure 6. Cre excises sequences flanked by homologous loxP sites, but are incompatible with its mutant version.</b><br/>
     The above column shows which plasmids are transformed. The 3 middle lanes stand for Cre co-transforming with mCherry flanked on both ends by wildtype loxP (Lane 3), or with wildtype loxP on only one end, the other end being lox2272 (Lane 4) or lox5171 (Lane 5). mCherry flanked with lox2272 or lox5171 on one end does not go through excision so a full-length band was detectable, while mCherry flanked with wildtype loxP on both ends are excised and only a shorter band was seen.</p>
   </div>
@@ -178,7 +227,7 @@
     <br/>WT represents the positive control of EGFP without any tag attachment. The five degradation tags are represented by their last five amino acid sequence. The vertical axis shows the quantitative analysis of EGFP fluorescence (excitation wavelength: 485 nm; detection wavelength: 528 nm), normalized by cell amount (OD600). The fluorescence is quantified by the concentration of green fluorescein, cell number is quantified by the number of silicon beads, both are from the distributed measurement kit. Fluorescence below detection level are eliminated. Error bar stands for the SEM of 3 replicates. t-test is performed between WT and each degradation tag, P<0.0001 (****).</p>
   </div>
 
-  <p class="flow-text">Apart from the native AANDENYALAA tag, we also modified its last three or five amino acids into YALAV, YALVA, YALVV and WVLAA. We tested the stable expression level, as well as the degradation dynamic of each tag by attaching them to the C terminal of EGFP protein and measuring the change in fluorescence level (Figure 7). The stable state expression increases as the number of mutated amino acids increase, or the mutated site nears the N’ of the tag. Supported by our modeling result, we deemed that the XXX tag performs best and chose to use it in further experiments.</p>
+  <p class="flow-text">Apart from the native AANDENYALAA tag, we also modified its last three or five amino acids into YALAV, YALVA, YALVV and WVLAA. We tested the stable expression level, as well as the degradation dynamic of each tag by attaching them to the C terminal of EGFP protein and measuring the change in fluorescence level <a href="#Fig7">(Figure 7)</a>. The stable state expression increases as the number of mutated amino acids increase, or the mutated site nears the N’ of the tag. Supported by our modeling result, we deemed that the XXX tag performs best and chose to use it in further experiments.</p>
 
 <div id="section4" class="section container scrolSpy">
   <p class="flow-text">Our modelling successfully demonstrated that our system could function and mutation could accumulate along bacteria growth <a href="#Fig8">(Figure 8)</a>. For detailed explanation of our system, please visit our <a href="Team:Fudan-TSI/Model">Modeling</a> page.</p>

@@ -12,7 +12,6 @@
   #content { margin-left: 0; padding:0px; width:100%;}
   .judges-will-not-evaluate { border: 4px solid #e4dede; padding: 2% !important; width: 92%!important; }
   *{margin:0;padding:0;list-style:none}blockquote,body,button,dd,dl,dt,fieldset,form,h1,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp{font-family:courier new,courier,monospace}ol,ul{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}
-  #section1 td, #section2 td, #section3 td {padding-bottom:1em;line-height:1.5em}
     </style>
     <title>2019 Team:Fudan-TSI Part Improvement</title>
 </head>
@@ -105,15 +104,17 @@
   <p class="flow-text">We have upgraded LacI gene <a target="_blank" href="http://parts.igem.org/Part:BBa_K3257012">(BBa_C0012)</a> to a better version <a target="_blank" herf="http://parts.igem.org/Part:BBa_K3257045">(BBa_K3257045)</a>.</p>
   <p class="flow-text">LacI is one of the genes in Lac operon encoding the inhibitor protein binding to LacO <a target="_blank" href="http://parts.igem.org/Part:BBa_K3257066">(BBa_K3257066)</a> sites (cis-acting element). In response to IPTG, the inhibitor protein detaches from LacO and enables the transcription of downstream genes. We mutated some specific sites in the LacI gene to improve its sensibility to IPTG <a href="https://www.ncbi.nlm.nih.gov/pubmed/30478458" target="_blank">(Christopher Voigt, et al.)</a>. Using EGFP as a reporter, its fluorescence intensity demonstrates a lower level of leakage and the same level of expression before and after the induction of IPTG. Also, we induce the improved Lac operon by arabinose to verify its orthogonal response to IPTG.</p>
   <p class="flow-text">With LacIq promoter <a href="http://parts.igem.org/Part:BBa_K3257003" target="_blank">(BBa_K3257003)</a> and rrnB T1 terminator <a href="http://parts.igem.org/Part:BBa_K3257020" target="_blank">(BBa_K3257020)</a>, improved LacI protein can be expressed and function properly in the <i>Escherichia coli</i> BL21(DE3). We used EGFP as a reporter controlled by our improved Lac operon and measured its green fluorescence over time.</p>
+  <p class="flow-text">We cut out BBa_C0012 between the 9<sup>th</sup> and 1153<sup>rd</sup> nucleotide, mutated the 60<sup>th</sup> nucleotide from C to A, the 61<sup>st</sup> nucleotide from A to T, 136<sup>th</sup> nucleotide from C to T, the 490<sup>th</sup> nucleotide from T to A, the 500<sup>th</sup> nucleotide from A to G and the 1001<sup>st</sup> nucleotide from C to G of it and added a stop codon at the end of it.</p>
   <p class="flow-text">According to our experiment, our Lac operon is improved in the following three main aspects.</p>
 </div>
 
 <div id="section2" class="section container scrolSpy">
   <h4>Lower response to arabinose, better orthogonality</h4>
   <p class="flow-text">Crosstalk between the response to IPTG and arabinose has been a defect of the wild type Lac operon. When 4 mM arabinose is added, a few lac inhibitors would detach from lac operator. This means that it is induced in a relatively low but unignorable level. According to the measurement of our experiment, our improved LacI can respond to IPTG with better orthogonality. As shown in <a href="#Fig1">Figure 1</a>, when 4 mM arabinose is added, oLacI (wild-type LacI) is induced at a significantly higher level than iLacI (improved LacI).</p>
+
   <div class="figureHolder" id="Fig1">
-    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-    <p>Figure 1. The expression level of EGFP controlled by different versions of LacI and inducers, or under different promoters.
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/d/d0/T--Fudan-TSI--Improved_Fig1.png" />
+    <p><b>Figure 1. The expression level of EGFP controlled by different versions of LacI and inducers, or under different promoters.</b><br/>
     The origin point indicates the time when different inducers are added (1 mM IPTG and/or 4 mM Arabinose). The title of the graph shows which kind of inducer is added to the culture. The horizontal axe shows the duration of time, the vertical axe shows the quantified level of EGFP expression. The fluorescence level (excitation wavelength: 485 nm; detection wavelength: 528 nm) is quantified by the concentration of fluorescein, and normalized by the measured OD600 equivalent to the number of beads in the system. oLacI stands for the wildtype LacI, iLacI stands for our improved version of LacI. +LacO indicates that the promoter constitutes a LacO sequence. Control is the negative control plasmid which does not constitute an EGFP sequence. Error bar in the two graphs on the first row indicates the SEM of three replicates. The second row showed only the mean amount of three replicate.</p>
   </div>
 </div>
@@ -122,18 +123,18 @@
   <h4>Higher induction level than the wild-type Lac operon when induced by IPTG</h4>
   <p class="flow-text">Our improved Lac operon does not malfunction and can be normally induced by IPTG. When 1 mM IPTG is added, EGFP controlled by both operons can be induced and expressed at relatively the same level <a href="#Fig1">(Figure 1)</a>, while the level of induction under the control of iLacI is significantly higher than that of oLacI <a href="#Fig2">(Figure 2)</a>.</p>
   <div class="figureHolder" id="Fig2">
-    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-    <p>Figure 2. The induction level of EGFP under different repressor and promoters.
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/d/d6/T--Fudan-TSI--Improved_Fig2.png" />
+    <p><b>Figure 2. The induction level of EGFP under different repressor and promoters.</b><br/>
     Induction level is calculated by dividing fluorescence level after 9 h of induction by 1 h afterwards. The fluorescence level is quantified as in <a href="#Fig1">Figure 1</a>. oLacI stands for the wildtype LacI, iLacI stands for our improved version of LacI. +LacO indicates that the promoter constitutes a LacO sequence. t test analysis shows that the induction level of iLacI is significantly higher than oLacI, *** indicates that p=0.0002.</p>
   </div>
 </div>
 
 <div id="section4" class="section container scrolSpy">
   <h4>Lower uninduced leakage</h4>
-  <p class="flow-text">The uninduced leakage level is also an important parameter of an operon. Improved LacI lowers the leakage level compared to the wild-type one. The figure below <a href="#Fig3">(Figure 3)</a> is the measurement of the fluorescence of EGFP controlled by wild-type and improved Lac operon. When no IPTG or arabinose is added, the fluorescence of EGFP controlled by improved Lac operon much lower than the fluorescence of EGFP controlled by wild-type Lac operon (<a href="#Fig1">Figure 1</a> &amp; <a href="#Fig3">3</a>).</p>
+  <p class="flow-text">The uninduced leakage level is also an important parameter of an operon. Improved LacI lowers the leakage level compared to the wild-type one. The figure below <a href="#Fig3">(Figure 3)</a> is the measurement of the fluorescence of EGFP controlled by wild-type and improved Lac operon. When no IPTG or arabinose is added, the fluorescence of EGFP controlled by improved Lac operon much lower than the fluorescence of EGFP controlled by wild-type Lac operon <a href="#Fig1">)Figure 1</a><a href="#Fig3"> &amp; 3)</a>.</p>
   <div class="figureHolder" id="Fig3">
-    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif" />
-    <p>Figure 3. The basal fluorescence level of EGFP controlled by different repressors.
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/4/45/T--Fudan-TSI--Improved_Fig3.png" />
+    <p><b>Figure 3. The basal fluorescence level of EGFP controlled by different repressors.</b><br/>
     The bar indicates the mean fluorescence level during the 10 h with no inducer in the culture. The fluorescence level is quantified as in <a href="#Fig3">Figure 1</a>. oLacI stands for the wildtype LacI, iLacI stands for our improved version of LacI. Control is below the detection level and not shown. Error bar indicates the SEM of fluorescence signal in the 10 h. Paired t test analysis shows that iLacI has a significantly lower of fluorescence than oLacI, p=0.0057 (**).</p>
   </div>
 </div>
