@@ -1,8 +1,8 @@
 {{Fudan-TSI}}<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 <html></p></div></div></div><meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="UTF-8">
-  <link rel="stylesheet" href="/Template materialize.css">
+  <link rel="stylesheet" href="/Template%20materialize.css">
   <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
-  <link rel="stylesheet" type="text/css" href="/Template Fudan-css.css" />
+  <link rel="stylesheet" type="text/css" href="/Template%20Fudan-css.css" />
 <style>
 /*****************************************************************************/
 /* DEFAULT WIKI SETTINGS */
@@ -105,7 +105,6 @@
               <li class="onThisPageNav"><a href="#section3">PCR&nbsp;verification</a></li>
               <li class="onThisPageNav"><a href="#section4">The&nbsp;kit</a></li>
               <li class="onThisPageNav"><a href="#section5">SDS-PAGE</a></li>
-              <li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
           </ul>
           <!-- main content of the page -->
           <main>
@@ -123,16 +122,25 @@
 <div id="section2" class="section container scrolSpy">
   <h4>Naked eye examination</h4>
   <div class="figureHolder" id="Fig1">
-    <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/65/T--Fudan-TSI--Education_kids1.gif" />
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/3/32/T--Fudan-TSI--Measurement_Fig1.jpeg" />
+    <p><b>Figure 1. Cell colonies expressing green fluorescence can be detected by naked eyes under UV light.</b></p>
   </div>
-  <p class="flow-text">Single colony of <i>Escherichia coli</i> (BL21) transformed with plasmid containing EGFP is picked and cultured in liquid medium (2*YT). After overnight 37 degree culture, we transferred the liquid into an empty petri dish, and observed its fluorescence under a fluorescence microscope. Green fluorescence can be detected at the place of the bacteria solution while the rest of the plate as we expected <a href="#Fig1">(Figure 1)</a>.</p>
+
+  <p class="flow-text">Single colony of <i>Escherichia coli</i> (BL21) transformed with plasmid containing EGFP is picked and cultured in liquid medium (2*YT). After overnight 37 degree culture, we transferred the liquid into an empty petri dish, and observed its fluorescence under a fluorescence microscope. Green fluorescence can be detected at the place of the bacteria solution while the rest of the plate is dark as we expected <a href="#Fig2">(Figure 2)</a>.</p>
+  <div class="figureHolder" id="Fig2">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/68/T--Fudan-TSI--Measurement_Fig2.png" />
+    <p><b>Figure 2. Fluorescence can be detected under fluorescence microscopy.</b><br/>
+    Green fluorescence can be detected from liquid culture under fluorescence microscopy (emission wavelength 488 nm). The line in the middle shows the boundary between culture and empty control from the same petri dish (divided).</p>
+  </div>
 </div>
 
 <div id="section3" class="section container scrolSpy">
   <h4>PCR verification</h4>
-  <p class="flow-text">We designed a set of primers which cannot amplify the nonsense mutant but is able to amplify the recovered EGFP. After PCR reaction, electrophoresis is performed and the recovered EGFP band is visibly bright while the mutant band does not appear <a href="#Fig2">(Figure 2)</a>.</p>
-  <div class="figureHolder" id="Fig2">
-    <img class="responsive-img" src="https://2019.igem.org/wiki/images/6/65/T--Fudan-TSI--Education_kids1.gif" />
+  <p class="flow-text">We designed a set of primers which cannot amplify the nonsense mutant but is able to amplify the recovered EGFP. After PCR reaction, electrophoresis is performed and the recovered EGFP band is visibly bright while the mutant band does not appear <a href="#Fig3">(Figure 3)</a>.</p>
+  <div class="figureHolder" id="Fig3">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Measurement_Fig3.png" />
+    <p><b>Figure 3. EGFP can be amplified through PCR while its nonsense mutant could not.</b><br/>
+    The primer is specifically designed at the site of mutation to only amplify the EGFP (sequence: CATGGCCGACAAGCAG). The expected product length should be 410 bp as the arrow shows, which correlates with the band. When the annealing temperature is set at 64 degree, only the full-length EGFP can be amplified. Control is a nonrelevant plasmid.</p>
   </div>
 </div>
 
@@ -147,25 +155,21 @@
   <h4>Cell quantity</h4>
   <p class="flow-text">For OD600 measurement, we use the silica beads in 2019 iGEM measurement kit as a standard substance.</p>
 
-  <div class="figureHolder" id="Fig3">
-    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif"s />
-    <p><b>Figure 3. Crystal structure of Cre recombinase bound to a loxP holliday junction (PDB:3MGV).</b></p>
-  </div>
-
-  <p class="flow-text">As a preparation, we have measured a particle standard curve of the silica beads from maximum concentration to 0 (pure ddH2O) and used iGEM official data processing excel to generate the particle standard curve. Then, we determined the best-fitted linear region with maximum correlation coefficient R2 <a href="#Fig3">(Figure 3)</a>. Before each time we measure our samples, we will first measure the OD600 of the silica beads samples whose concentration are at both ends of the best-fitted linear region, which in our case, is from 300,000,000/100μl to 18,750,000/100μl for calibration of the particle standard curve. After measuring the bacteria liquid culture samples, we will change the OD600 to the number of particles according to the calibrated standard curve.</p>
+  <p class="flow-text">As a preparation, we have measured a particle standard curve of the silica beads from maximum concentration to 0 (pure ddH<sub>2</sub>O) and used iGEM official data processing excel to generate the particle standard curve. Then, we determined the best-fitted linear region with maximum correlation coefficient R2 <a href="#Fig4">(Figure 4a)</a>. Before each time we measure our samples, we will first measure the OD600 of the silica beads samples whose concentration are at both ends of the best-fitted linear region, which in our case, is from 300,000,000/100μl to 18,750,000/100μl for calibration of the particle standard curve. After measuring the bacteria liquid culture samples, we will change the OD600 to the number of particles according to the calibrated standard curve.</p>
 
   <h4>Fluorescence</h4>
   <p class="flow-text">For fluorescence quantification, we use the fluorescein salt provided in 2019 iGEM measurement kit as a standard substance.</p>
 
   <div class="figureHolder" id="Fig4">
-    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f7/T--Fudan-TSI--3mgv.gif"s />
-    <p><b>Figure 4. Crystal structure of Cre recombinase bound to a loxP holliday junction (PDB:3MGV).</b></p>
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/8/80/T--Fudan-TSI--Measurement_Fig4.png" />
+    <p><b>Figure 4. Standard line for fluorescence and cell quantity quantification.</b><br/>
+    The vertical axis stands for the abstract value measured by our microplate reader. Fluorescence is quantified by fluorescein (a) while cell quantity is quantified by silico beads (b). Both are from iGEM distributed measurement kit. For green fluorescence measurement, excitation wavelength is 485 nm; detection wavelength is 528 nm.</p>
   </div>
 
-  <p class="flow-text">As a preparation, we have measured a fluorescence standard curve of the fluorescein salt from maximum concentration to 0 (pure PBS) and used iGEM official data processing excel to generate the fluorescence standard curve. Then, we determined the best-fitted linear region with maximum correlation coefficient R2 <a href="#Fig4">(Figure 4)</a>. Before each time we measure our samples, we will first measure the fluorescence intensity of the fluorescein salt samples whose concentration are at both ends of the best-fitted linear region, which in our case, is from 10 μM to 0.039 μM for calibration of the fluorescence standard curve. After measuring the bacteria liquid culture samples, we have changed the fluorescence intensity to the concentration of fluorescein salt according to the calibrated standard curve.</p>
+  <p class="flow-text">As a preparation, we have measured a fluorescence standard curve of the fluorescein salt from maximum concentration to 0 (pure PBS) and used iGEM official data processing excel to generate the fluorescence standard curve. Then, we determined the best-fitted linear region with maximum correlation coefficient R2 <a href="#Fig4">(Figure 4b)</a>. Before each time we measure our samples, we will first measure the fluorescence intensity of the fluorescein salt samples whose concentration are at both ends of the best-fitted linear region, which in our case, is from 10 μM to 0.039 μM for calibration of the fluorescence standard curve. After measuring the bacteria liquid culture samples, we have changed the fluorescence intensity to the concentration of fluorescein salt according to the calibrated standard curve.</p>
 
   <h4>Normalization</h4>
-  <p class="flow-text">Finally, we would divide the fluorescein salt concentration by the number of silica beads for our final quantified fluorescence intensity which is <b>c[fluorescein salt]/n[silica beads]</b> and has a unit of <b>μM/(pcs per 100 μl)</b>.</p>
+  <p class="flow-text">Finally, we would divide the fluorescein salt concentration by the number of silica beads for our final quantified fluorescence intensity which is <b>c[fluorescein salt]/n[silica beads]</b> and has a unit of <b>μM/(pcs per 100 μl)</b>. Quantified result for EGFP and its mutant please visit our <a href="/Team:Fudan-TSI/Demonstrate">Results</a> page.</p>
 
   <p class="flow-text">As a preparation, we have measured a fluorescence standard curve of the fluorescein salt from maximum concentration to 0 (pure PBS) and used iGEM official data processing excel to generate the fluorescence standard curve. Then, we determined the best-fitted linear region with maximum correlation coefficient R2 <a href="#Fig4">(Figure 4)</a>. Before each time we measure our samples, we will first measure the fluorescence intensity of the fluorescein salt samples whose concentration are at both ends of the best-fitted linear region, which in our case, is from 10 μM to 0.039 μM for calibration of the fluorescence standard curve. After measuring the bacteria liquid culture samples, we have changed the fluorescence intensity to the concentration of fluorescein salt according to the calibrated standard curve.</p>
 </div>
@@ -173,6 +177,11 @@
 <div id="section5" class="section container scrolSpy">
   <h2>SDS-PAGE</h2>
   <p class="flow-text">The EGFP nonsense mutant can only express a truncated peptide of 17.8 kD, while the full-length EGFP protein is 26.9 kD, the difference between their molecular weight could be visualized through SDS-PAGE <a href="#Fig5">(Figure 5)</a>.</p>
+  <div class="figureHolder" id="Fig5">
+    <img class="responsive-img" src="https://2019.igem.org/wiki/images/f/f9/T--Fudan-TSI--Measurement_Fig5.png" />
+    <p><b>Figure 5. EGFP and EGFP mutant are of different length on the PAGE gel.</b><br/>
+    Full-length EGFP has a brighter band at 26.9 kDa, while its two mutants have brighter bands at 17.8 kDa. SDS-PAGE is performed on whole-cell lysis, which makes the band obscure.</p>
+  </div>
 </div>
 
 <!--////////////////////////////////////////////////////
@@ -185,6 +194,6 @@
 </div></div></div><!-- #pageContent #FudanTSIBody #FudanTSIdivWrapper -->
 
 <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script><!-- Materialize 1.0.0-rc.2 -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-js.js&action=raw&ctype=text/javascript"></script>
+<script src="/Template%20Fudan-js.js"></script>
 </body>
 </html>

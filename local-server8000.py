@@ -17,9 +17,9 @@ class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             #self.path = self.path.strip("/Team:Fudan-TSI/")+'.html'
             self.path = self.path.replace("/Team:Fudan-TSI/", "")+'.html'
 #        self.path = self.path.replace('&action=raw&ctype=text/css', ''
-#                            ).replace('https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/', '/Template ')
+#                            ).replace('https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/', '/Template%20')
 #        self.path = self.path.replace('&action=raw&ctype=text/javascript', ''
-#                            ).replace('https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/', '/Template ')
+#                            ).replace('https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/', '/Template%20')
         return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
 
 Handler = MyRequestHandler
