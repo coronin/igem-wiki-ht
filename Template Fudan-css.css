@@ -552,9 +552,9 @@
         z-index: 10;
         padding: 3%;
     }
-    #contentBanner .hide-on-small-only{
+    /* #contentBanner .hide-on-small-only{
         background: #000;
-    }
+    } // svg demo */
     @media only screen and (min-width: 601px) {
         #contentBanner.figureBanner {
             min-height: 0;
