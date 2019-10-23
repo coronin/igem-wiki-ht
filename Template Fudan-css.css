@@ -47,9 +47,6 @@
     /*#FudanTSIBody .dropdown-content li a {
         color: #16283f;
     }  */
-#FudanTSIBody ul.dropdown-content { background-color: rgba(0,0,0,0.87); }
-#FudanTSIBody ul.dropdown-content>li { text-align: left; width: 8px; }
-#FudanTSIBody ul.dropdown-content>li>a, #FudanTSIBody a.dropdown-trigger { font-size: 14px; }
 
     #FudanTSIBody a {
         text-decoration: none;
@@ -90,7 +87,9 @@
         letter-spacing: 1px;
     }
 
-#FudanTSIBody #nav-mobile li:hover { background: transparent; color: cyan;}
+#FudanTSIBody #nav-mobile a:hover { background:transparent!important;color:cyan; }
+#FudanTSIBody ul.dropdown-content { background-color:rgba(0,0,0,0.87);overflow-y:padding; }
+#FudanTSIBody ul.dropdown-content>li>a, #FudanTSIBody a.dropdown-trigger { font-size:14px;text-align:left!important; }
 
     #FudanTSIBody #nav-mobile > li > ul a {
         /* @@@@ font-size: 14px;*/
