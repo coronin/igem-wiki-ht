@@ -88,7 +88,7 @@
     }
 
 #FudanTSIBody #nav-mobile a:hover { background:transparent!important;color:cyan; }
-#FudanTSIBody ul.dropdown-content { background-color:rgba(0,0,0,0.87);overflow-y:padding; }
+#FudanTSIBody ul.dropdown-content { background-color:rgba(0,0,0,0.87);overflow-y:visible }
 #FudanTSIBody ul.dropdown-content>li>a, #FudanTSIBody a.dropdown-trigger { font-size:14px;text-align:left!important; }
 
     #FudanTSIBody #nav-mobile > li > ul a {
