@@ -587,12 +587,11 @@
         color: rgba(255,255,255, 0.51); /* 0.86 */
     }
 
-    #pageContentNav,
     #FudanTSIBody .sidenav {
         overflow-y: auto;
     }
 
-    #FudanTSIBody .sidenav {
+    #FudanTSIBody .sidenav { /* @@@@ */
         height: auto;
         bottom: 0;
     }
@@ -602,6 +601,7 @@
         position: fixed;
         width: 190px;
         left: 10%;
+        overflow-y: visible;
     }
 
     #pageContentNav li,
