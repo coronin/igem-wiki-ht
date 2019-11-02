@@ -247,7 +247,7 @@
   <div id="graph_result"></div>
   <hr/>
   <p id="p_primer" style="color:green" class="Off">
-    <em>Your tRNA primer (complement to <u>Your tRNA</u>):</em><br/>
+    <em>Your tRNA primer <span style="color:blue">(complement to <u>Your tRNA</u>)</span>:</em><br/>
     5'-<span id="primer_seq"></span>-3'
   </p>
   <script>
@@ -536,8 +536,8 @@ function draw_tRNA(ForDraw, Type_RT, preId) {
     linker['DArmLink'] = linkerDtm(ForDraw.DArmComp,ForDraw.DArm, 'vertical')
     linker['AnticodonArmLink'] = linkerDtm(ForDraw.AnticodonArm, ForDraw.AnticodonArmComp)
     linker['TArmLink'] = linkerDtm(ForDraw.TArm, ForDraw.TArmComp, 'vertical')
-    pre = '                        ' + ForDraw.Redundance + '-5\n';
-    pre += '                 3-' + ForDraw.AcceptArm[0] +
+    pre = '                        ' + ForDraw.Redundance + '-3\n';
+    pre += '                 5-' + ForDraw.AcceptArm[0] +
            ' ' + linker.AcceptorArmLink[0] + ' ' +
            ForDraw.AcceptArmComp[ForDraw.AcceptArm.length-1]+'\n';
     for (let i = 1; i < ForDraw.AcceptArm.length-1; i++) {
