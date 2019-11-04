@@ -1,468 +1,967 @@
-{{Fudan-Shanghai}}<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
-<html lang="en">
-<!--
-This html document is created by Tian Huang for Team Fudan iGEM 2018.
-We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
--->
-<!-- LC check on 2018-10-25 -->
-<head>
-    <meta charset="UTF-8">
+<style>
 
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="./Fudan-css.css" />
 
-    <!-- Font-awesome icons 4.7.0 -->
-    <link href="./Fudan-font-awesome.css" rel="stylesheet" />
+/**********public**********/
+* {
+    margin: 0;
+    padding: 0;
+}
 
-    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
-    <link rel="stylesheet" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.css&action=raw&ctype=text/css">
+ul {
+    list-style: none none;
+    margin: 0;
+    padding: 0;
+}
 
-    <!-- Clear default CSS settings; CSS reset -->
-    <style>
-        *{margin: 0;padding: 0;list-style: none;}
-        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
+#HQ_page li, h1, h2, h3, h4, h5, h6 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
-        /** 清除内外边距 **/
-        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-        pre, /* text formatting elements 文本格式元素 */
-        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-        th, td /* table elements 表格元素 */ {
-            margin: 0;
-            padding: 0;
+#top_menu_inside li {
+    padding: 0 25px 0 20px !important;
+}
+
+body {
+    background: white url("https://2019.igem.org/wiki/images/thumb/9/90/T--GreatBay_SZ--Home_Blue_Red.png/800px-T--GreatBay_SZ--Home_Blue_Red.png") no-repeat fixed center !important;
+    background-size: cover !important;
+}
+
+a {
+    padding: 0 !important;
+    text-decoration-line: none !important;
+}
+
+#content {
+    margin: 0 auto !important;
+    background-color: transparent !important;
+    width: 100%  !important;
+    padding: 0 !important;
+    word-wrap: break-word;
+}
+
+#mw-content-text > p {
+    display: none !important;
+}
+
+#top_title {
+    display: none !important;
+    margin: 0 !important;
+}
+
+#globalWrapper {
+    padding-bottom: 0 !important;
+}
+
+.wrap {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+}
+
+.wrap h1, h2, h3, h4, h5, h6, p {
+    display: block !important;
+    font-family: helvetica, sans-serif !important;
+    word-wrap: break-word !important;
+    height: fit-content;
+    padding: 2px;
+}
+
+.container {
+    flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    margin-right: 100px;
+    position: relative;
+    background: white;
+}
+
+.container:before {
+    content: '';
+    width: 65px;
+    height: 100%;
+    background-image: url("https://2019.igem.org/wiki/images/3/3c/T--GreatBay_SZ--Home_Film.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: repeat-y;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.container:after {
+    content: '';
+    width: 65px;
+    height: 100%;
+    background-image: url("https://2019.igem.org/wiki/images/3/3c/T--GreatBay_SZ--Home_Film.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: repeat-y;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+}
+
+#middle {
+    position: relative;
+    padding: 0 64px;
+}
+/**********left-column*******/
+.left-column {
+    display: block;
+    width: 210px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/**********to-top************/
+
+#dialogue-box {
+    display: none;
+    height: 200px;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    position: fixed;
+}
+
+#dialogue-box.active {
+    display: block;
+}
+
+#dialogue-box>img {
+    height: 100px;
+    width: auto;
+    position: relative;
+    left: 20px;
+    top: 85px;
+    filter: invert(11%) sepia(99%) saturate(7493%) hue-rotate(344deg) brightness(99%) contrast(105%);
+}
+
+#dialogue-box>p {
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    color: #ff0033;
+    left: 35px;
+    top: inherit;
+}
+
+#spider-top {
+    position: fixed;
+    top: 342px;
+    left: -45px;
+}
+
+/**********menu**********/
+#side-bar {
+    width: 90px;
+    margin-left: 30px;
+    margin-top: 20px;
+    height: fit-content;
+    background-color: #FEFEFE;
+    position: fixed;
+    z-index: 1000;
+}
+
+#side-bar>li {
+    position: relative;
+    color: #000000;
+    text-align: center;
+    border-bottom: 2px solid #001545;
+}
+
+#side-bar>li a {
+    height: 31px;
+    font-size: 14px;
+    line-height: 31px;
+    color: #000000;
+}
+
+#side-bar>li a>h6 {
+    height: 31px;
+    font-size: 14px;
+    line-height: 31px
+}
+
+#side-bar>li a>h6:hover {
+    cursor: pointer;
+    background-color: #bf0e1e;
+    color: #ffffff;
+}
+
+#side-bar>li h5,
+#side-bar>li h6 {
+    height: 31px;
+    font-size: 14px;
+    line-height: 31px
+}
+
+#side-bar>li h5:hover {
+    cursor: pointer;
+    background-color: #bf0e1e;
+    color: #ffffff;
+}
+
+#side-bar>li h6:hover {
+    cursor: pointer;
+    background-color: #bf0e1e;
+    color: #ffffff;
+}
+
+#side-bar>li ul {
+    position: absolute;
+    left: 90px;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 140px;
+    background: #bf0e1e;
+    z-index: 100;
+    display: none;
+}
+
+#side-bar>li ul.active {
+    display: block;
+}
+
+#side-bar>li ul>li {
+    height: fit-content;
+    font-size: 12px;
+    line-height: 31px;
+    font-family: "Palatino Linotype", sans-serif;
+}
+
+#side-bar>li ul>li:hover {
+    cursor: pointer;
+    background-color: #bf5a58;
+}
+
+#side-bar>li ul>li a {
+    color: #ffffff !important;
+}
+
+/**********content**********/
+.my-content {
+    background-color: transparent;
+    height: fit-content;
+    z-index: 1;
+    padding-bottom: 20px;
+}
+
+.content-block {
+    margin: 10px;
+    position: relative;
+}
+
+.content-box {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+
+#abstract {
+    background-color: #585858;
+    color: white;
+    margin: 15px;
+    border: 5px solid black;
+    height: fit-content;
+}
+
+.content-box > h3 {
+    text-align: left;
+    margin: 10px;
+    position: relative;
+    left: 32px;
+}
+
+#abstract p {
+    text-align: left;
+    margin: 10px;
+    color: #FFFFFF;
+    line-height: 25px;
+    text-indent: 30px;
+}
+
+#title {
+    background-color: #585858;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    position: relative;
+}
+
+#title > h1 {
+    font-size: 64px;
+    font-weight: bolder;
+    width: 100%;
+    line-height: 150%;
+    padding: 2px;
+    color: white;
+}
+
+#title > h2 {
+    font-size: 48px;
+    font-weight: bold;
+    width: 100%;
+    line-height: 180%;
+    padding: 2px;
+    color: white;
+}
+
+.content-box1 {
+    width: 100%;
+    height: 570px;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.content-box1 a {
+    width: 20%;
+    height: 250px;
+    margin: 5px;
+    border: 5px solid black;
+    display: inline-block;
+    position: relative;
+    background: white;
+}
+
+.page-guide {
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: block;
+    position: relative;
+}
+
+.page-guide > h3 {
+    font-size: 15px;
+    top: 48%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.page-guide-gray {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background-color: #585858;
+    color: black;
+}
+
+.page-guide-gray > p {
+    color: white;
+    padding: 5px;
+    text-align: left;
+    top: 0;
+    font-size: 12px;
+}
+
+#project {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/c/ca/T--GreatBay_SZ--project_new.png/240px-T--GreatBay_SZ--project_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#project.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/3/35/T--GreatBay_SZ--project_new_color.png/240px-T--GreatBay_SZ--project_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#demonstration {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/5/5f/T--GreatBay_SZ--demonstration_new.png/240px-T--GreatBay_SZ--demonstration_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#demonstration.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/e/e4/T--GreatBay_SZ--demonstration_new_color.png/240px-T--GreatBay_SZ--demonstration_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#parts {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/7/7c/T--GreatBay_SZ--parts_new.png/240px-T--GreatBay_SZ--parts_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#parts.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/c/ce/T--GreatBay_SZ--parts_new_color.png/240px-T--GreatBay_SZ--parts_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#hp {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/d/da/T--GreatBay_SZ--hp_new.png/240px-T--GreatBay_SZ--hp_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#hp.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/2/2d/T--GreatBay_SZ--hp_new_color.png/240px-T--GreatBay_SZ--hp_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#team {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/5/54/T--GreatBay_SZ--team_new.png/240px-T--GreatBay_SZ--team_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#team.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/0/09/T--GreatBay_SZ--team_new_color.png/240px-T--GreatBay_SZ--team_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#judging {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/0/07/T--GreatBay_SZ--judging_new.png/240px-T--GreatBay_SZ--judging_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#judging.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/0/03/T--GreatBay_SZ--judging_new_color.png/240px-T--GreatBay_SZ--judging_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#notebook {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/d/d1/T--GreatBay_SZ--notebook_new.png/240px-T--GreatBay_SZ--notebook_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#notebook.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/0/0a/T--GreatBay_SZ--notebook_new_color.png/240px-T--GreatBay_SZ--notebook_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#safety {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/9/96/T--GreatBay_SZ--safety_new.png/240px-T--GreatBay_SZ--safety_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#safety.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/9/9c/T--GreatBay_SZ--safety_new_color.png/240px-T--GreatBay_SZ--safety_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+/**********right-column******/
+.logo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#spider>img {
+    width: 100px;
+    height: auto;
+}
+
+#continue {
+    right: 5px;
+    top: 150%;
+    width: 80px;
+    height: auto;
+    display: block;
+    position: absolute;
+}
+
+#continue > img {
+    width: 100%;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show-up {
+    opacity: 1;
+    animation: loading 0.1s ease-out;
+}
+
+@keyframes loading {
+
+    from {
+
+        opacity: 0;
+
+        transform: translate(-100%, 0);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translate(0, 0);
+
+    }
+
+}
+
+
+/**********header************/
+.header {
+    position: relative;
+    background-color: white;
+    height: fit-content;
+}
+
+.header>img {
+    position: relative;
+    vertical-align: middle;
+}
+/**********footer************/
+.footer {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    height: 300px;
+    background-color: #585858;
+    color: white;
+}
+
+.footer-left {
+    flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    margin: 15px 0 15px 25px;
+    border: 5px solid white;
+    border-right: none;
+    padding: 15px;
+}
+
+.footer-right {
+    flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    margin: 15px 25px 15px 0;
+    border: 5px solid white;
+    border-left: none;
+    padding: 15px;
+}
+/**********tooltip***********/
+[tooltip] {
+    position: relative;
+    margin: 0 5px;
+    color: #76BF8D;
+    display: inline-block;
+}
+
+[tooltip]:after {
+    content: attr(tooltip);
+    position: absolute;
+    top: calc(100% + 10px);
+    padding: 8px 15px;
+    max-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    background-color: #313131;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 100;
+    display: none;
+}
+
+[tooltip]:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    border: 5px solid transparent;
+    border-bottom-color: #313131;
+    z-index: 100;
+    display: none;
+}
+
+[tooltip]:hover:before {
+    display: block;
+    animation: anim-bottom 300ms ease-out forwards;
+}
+
+[tooltip]:hover:after {
+    display: block;
+    animation: anim-bottom 300ms ease-out forwards;
+}
+
+@keyframes anim-bottom {
+    from {
+        opacity: .5;
+        top: 180%;
+    }
+}
+/*************pictures-scroll*************/
+#flash{ /*根据图片的大小来设置外层div的大小*/
+    width: 520px;
+    height: 280px;
+    margin: 10px;
+    position: relative; /*设置div定位，方便之后图片及圆点位置的设定*/
+    left: 16%;
+    top: 0.5%;
+    border: 3px solid grey;
+}
+#flash img{
+    width: 100%;
+    height: 100%;
+    position: absolute; /*设置所有图片重叠*/
+    left: 0;
+    top: 0;
+    display: none; /*设置所有图片隐藏，通过改变第一个图片的行间样式来使第一个图片显示*/
+}
+#flash ul{
+    width: 150px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    left: 35%;
+    bottom: 10%;
+}
+#flash ul li{
+    width: 12px;
+    height: 12px;
+    margin-top: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 15px;
+    float: left;
+}
+#flash ul .li_1{
+    background-color: #f40; /*设置第一个圆点背景色为红色*/
+}
+#flash .span-r{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 2%;
+    top: 45%;
+    background-color: rgba(255,255,255,0.5);
+}
+#flash .span-r span{
+    width: 100%;
+    height:100%;
+    color:rgba(0,0,0,0.5);
+    font-size: xx-large;
+    font-weight: 700;
+    line-height: 50px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+#flash .span-l{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 2%;
+    top: 45%;
+    background-color: rgba(255,255,255,0.5);
+}
+#flash .span-l span{
+    width: 100%;
+    height:100%;
+    color:rgba(0,0,0,0.5);
+    font-size: xx-large;
+    font-weight: 700;
+    line-height: 50px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.span-r, .span-l {
+    cursor: pointer;
+    display: none;
+}
+
+
+
+</style>
+
+
+<script>
+
+
+window.onload = function () {
+    /* 菜单逻辑 */
+    var sideBar = document.getElementById('side-bar');
+    var mainMenu = sideBar.getElementsByTagName('h5');
+    var subMenu = sideBar.getElementsByTagName('ul');
+    for (var i = 0, len = mainMenu.length; i < len; i++) {
+        mainMenu[i].onmouseover = (function (i) {
+            return function () {
+                for (var j = 0; j < len; j++) {
+                    subMenu[j].classList.remove('active');
+                }
+                subMenu[i].classList.add('active');
+            }
+        })(i);
+        mainMenu[i].onmouseout = (function (i) {
+            return function () {
+                subMenu[i].classList.remove('active');
+            }
+        })(i);
+        subMenu[i].onmouseout = (function (i) {
+            return function () {
+                mainMenu[i].classList.remove('active');
+                subMenu[i].classList.remove('active');
+            }
+        })(i);
+        subMenu[i].onmouseover = (function (i) {
+            return function () {
+                subMenu[i].classList.add('active');
+            }
+        })(i);
+    }
+
+    /* to-top logic */
+    var topBar = document.getElementById('to-top');
+    var spider = document.getElementById('spider-top');
+    var box = document.getElementById('dialogue-box');
+
+    spider.onmouseover = function () {
+        box.classList.add('active');
+    };
+    spider.onmouseout = function () {
+        box.classList.remove('active');
+    };
+
+    /* color-change logic */
+    changeLogo('safety');
+    changeLogo('project');
+    changeLogo('demonstration');
+    changeLogo('judging');
+    changeLogo('notebook');
+    changeLogo('parts');
+    changeLogo('team');
+    changeLogo('hp');
+
+    function changeLogo(id) {
+        var change = document.getElementById(id);
+
+    change.onmouseover = function () {
+        change.classList.add('active');
+    };
+    }
+
+
+    /* show-up */
+    window.onscroll = function () {
+
+        var show = document.getElementById("show-up");
+
+        // 获取浏览器窗口可视化高度
+
+        var clientH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        // 获取show-up元素顶部到浏览器窗口顶部的距离
+
+        var showTop = show.getBoundingClientRect().top;
+
+        // 如果距离小于可视化窗口高度，就给show-up元素添加动画效果
+
+        console.log(showTop + ' ' + clientH);
+
+        this.console.log(showTop <= (clientH / 2));
+
+        if (showTop <= (clientH / 2)) {
+            if (showTop <= 0) {
+                show.classList.add("hide");
+                show.classList.remove("show-up");
+            } else if (showTop >= (clientH / 3)) {
+                show.classList.remove("hide");
+                show.classList.add("show-up");
+            }
+        } else if (showTop > clientH) {
+            show.classList.add("hide");
+            show.classList.remove("show-up");
         }
 
-        /** 设置默认字体 **/
-
-        h1, h3, h3, h4, h5, h6 { font-size: 100%; }
-        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-        small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-
-        /** 重置列表元素 **/
-        ul, ol { list-style: none; }
-
-        /** 重置文本格式元素 **/
-        a { text-decoration: none; }
-        a:hover { text-decoration: underline; }
+    };
 
 
-        /** 重置表单元素 **/
-        legend { color: #000; } /* for ie6 */
-        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-        /* 注：optgroup 无法扶正 */
 
-        /** 重置表格元素 **/
-        table { border-collapse: collapse; border-spacing: 0; }
-        #FudanBody .imgNoM img{
-            width:100%;
+    /* content logic */
+    handleHashChange(); // 根据url中的hash值初始化内容区域
+
+    if ("onhashchange" in window) {
+        // 浏览器支持onhashchange事件
+        window.onhashchange = handleHashChange;
+    } else {
+        // 不支持则用定时器检测的办法
+        var location = window.location,
+            oldHash = location.hash;
+        // 每隔100ms检查hash是否发生变化
+        setInterval(function () {
+            var newHash = location.hash;
+            if (newHash !== oldHash) {
+                handleHashChange();
+                oldHash = newHash;
+            }
+        }, 100);
+    }
+    function handleHashChange() {
+        // 获取hash中的菜单id，示例：menu-1 => 1
+        var currentPageID = window.location.hash.split('-')[1] || 1;
+        displayPage(--currentPageID);
+    }
+
+    function displayPage(id) {
+        var el = document.getElementsByClassName("content");
+        for (var i = 0; i < el.length; i++) {
+            el[i].style.display = "none";
         }
-        #FudanBody .imgNoM{
-            text-align:center;
+        el[id].style.display = "block";
+    }
+};
+
+/*  picture scroll */
+
+var div = document.getElementById('flash');
+var img = div.getElementsByTagName('img'); /*选中div下所有的图片*/
+var ul = document.getElementById('flash-controller');
+var li = ul.getElementsByTagName('li');
+var div_r = document.querySelector('.span-r'); /*querySelector的方式选中元素*/
+// var span_r = div_r.getElementsByTagName('span');
+var div_l = document.querySelector('.span-l');
+// var sapn_l = div_l.getElementsByTagName('span');
+var len = img.length;
+var count = 0; /*设置count来显示当前图片的序号*/
+function run(){ /*将定时器里的函数提取到外部*/
+    count++;
+    count = count==5?0:count; /*当图片加载到最后一张时，使其归零*/
+    for(var i=0;i<len;i++){
+        img[i].style.display = 'none'; /*利用for循环使除当前count位其他图片隐藏*/
+    }
+    img[count].style.display = 'block'; /*显示当前count的值所代表的图片*/
+    for(var i=0;i<li.length;i++){
+        li[i].style.backgroundColor = "#fff"; /*原理同上*/
+    }
+    li[count].style.backgroundColor = "#f40";
+}
+var timer = setInterval(run,2000); /*定义定时器，使图片每隔2s更换一次（1s 有点快）*/
+div.onmouseover = function(){
+    clearInterval(timer);
+}
+div.onmouseleave = function(){ /*定义鼠标移出事件，当鼠标移出div区域，轮播继续*/
+    timer = setInterval(run,2000);
+}
+for(var i=0;i<len;i++){
+    li[i].index = i; /*定义index记录当前鼠标在li的位置*/
+    li[i].onmouseenter = function(){ /*定义鼠标经过事件*/
+        for(var i=0;i<len;i++){ /*通过for循环将所有图片隐藏，圆点背景设为白色*/
+            li[i].style.background = '#fff';
+            img[i].style.display = 'none';
         }
-    </style>
-    <title>2019 Team:Fudan -Software</title>
-</head>
+        this.style.background = '#f40'; /*设置当前所指圆点的背景色*/
+        img[this.index].style.display = 'block'; /*使圆点对应的图片显示*/
+    }
+}
+div_r.onclick = function(){ /*因为span没有设置宽高，直接把事件添加到他的父级*/
+    console.log('div_r click')
+    run(); /*直接调用现成的run函数*/
+}
+function reverse(){
+    count--;
+    count = count==-1?4:count;
+    for(var i=0;i<len;i++){
+        img[i].style.display = 'none'; /*利用for循环使除当前count位其他图片隐藏*/
+    }
+    img[count].style.display = 'block'; /*显示当前count的值所代表的图片*/
+    for(var i=0;i<li.length;i++){
+        li[i].style.backgroundColor = "#fff"; /*原理同上*/
+    }
+    li[count].style.backgroundColor = "#f40";
+}
+div_l.onclick = function(){
+    reverse(); /*重新设置函数*/
+}
 
-<body>
-<!-- Fudan div at igem.org -->
-<div id="FudanWrapper" class="white">
-    <div id="FudanBody" class="white">
-        <header>
-            <!-- empty bar -->
-            <div id="emptyBar" style="position:relative;width: 100%;"></div>
 
-            <!-- Navigation bar -->
-            <!-- Dropdown and List elements in navigation bar -->
-            <!-- Slide-out navigator contents -->
-        </header>
+</script>
 
-        <div id="pageContent" style="">
-
-
-            <div id="contentBanner" class="figureBanner orangeBg">
-                <div class="row">
-                    <div class="col s12 hide-on-med-and-up">
-                        <h1>Software</h1>
-                    </div>
-                    <div class="col s12 hide-on-med-and-up">
-                        <span>...</span>
-                    </div>
-                </div>
-                <div id="figureBannerTitle" class="hide-on-small-only">
-                    <h1>Software</h1>
-                    <p><span>...</span></p>
-                </div>
-                <div class="hide-on-small-only">
-                    <img src="http://2018.igem.org/wiki/images/2/26/T--Fudan--title_software.jpg">
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-
-            <!-- @@@@ main content of the page -->
-            <div class="container">
-                <!-- side navigator of page content -->
-                <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
-                    <li><a href="./Addon#ribo">Addon: ribo</a></li>
-                    <li><a href="./Addon#TALE">Addon: TALE</a></li>
-                    <li><a href="./Addon#T2">Addon: T2</a></li>
-                    <li><a href="./Model#Transcriptional_Amplifer">Model: transcriptional amplifer</a></li>
-                    <li><a href="./Model#NotchLigandKinetics">Model: Notch-ligand&nbsp;kinetics</a></li>
-                    <li>Software</li>
-                    <li class="onThisPageNav"><a href="#section1">Abstract</a></li>
-                    <li class="onThisPageNav"><a href="#section2">Introduction</a></li>
-                    <li class="onThisPageNav"><a href="#section3">Method</a></li>
-                    <li class="onThisPageNav"><a href="#section4">Tutorials</a></li>
-                </ul>
-                <main>
-                    <div id="section1" class="section container scrolSpy">
-                        <p>Our software tool was built based on (1) <a href="./Model">modeled parameters</a> characterizing our 3-layer design; (2) populational description of individual cellular behaviors. We found that several cell behaviors and ENABLE signaling have key impact on the evolution of a cell colony with mixed cell types. In an object-oriented-programming and user-friendly style, our software allows users to adjust those key factors and profile the fate of their own mixed cells. Our software bridges a nanoscopic transcriptional design of biological circuits, with microscopic cellular behaviors, up to a macroscopic population output, from which clinical outcome could be predicted, artificial tissue could be assembled, etc.
-                        </p>
-
-                    </div>
-<div class="expFigureHolder" style="width:100%">
-    <img class="responsive-img" src="http://2018.igem.org/wiki/images/d/d0/T--Fudan--LC-gj-software.png" />
-    <p>In our GJ presentation (10/25 Room 311 9:00-9:25), we used the image above to demonstrate a possible clinical outcome with cells having 100-fold granzyme release.</p>
-</div>
-                    <div id="section2" class="section container scrolSpy">
-                        <h2>Introduction
-                        </h2>
-                        <p>
-                            Modeling is necessary for quantifying biological processes and designing biological systems for customized function. With the increasingly rapid development of synthetic biology, many models are based on different branches of applied mathematics, as exampled by stochastic process, cellular automaton, dynamic systems, and Boltzmann kinetics for different biological processes. For example, automaton is often used to model birth and death processes, stochastic processes is often used to model transcription factor-DNA binding，dynamic systems is often used in population ecology to predict the evolution of colony, and Boltzmann kinetics is often used to quantitatively describe chemical reactions. Some toolkit based on this model, like <a href="http://www.compucell3d.org/" target=_blank>CompCell3D</a>, has been developed for computational nanotechnology and simulating tissue development.
-                        </p>
-                        <p>
-                            However, there hasn’t a ready single model for our ENABLE project. It is because an overall model for our project should not only consist the 3-layer standard design (for more details please visit <a href="./Results">our Results page</a>) but also the biological mechanism underlying it (for more details please visit <a href="./Model">our Modeling page</a>).
-                        </p>
-                        <p>
-                            Here we present a software (<a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>github.com/0vioiano/iGEM2018_Team_Fudan</a>) using multiscale mathematical tools for different biological processes, which serves as a reusable tool for cell colony design. We use different modules packaged in different <i>Classes</i> to simulate different biological processes. Based on the object-oriented principal, it is easy for users to realize customized Classes and simulate cell colony using our software.
-                        </p>
-                        <p>
-                            A colony is occupied by different populations, a population is unitized by abundant individuals, be it a cell or an ensemble of various cells, and a cell is a network of chemicals, for example, proteins, lipids, nucleotides, etc. To simulate cell colony, our software bridges a nanoscopic transcriptional design of biological circuits, with microscopic cellular behaviors, up to a macroscopic population output, from which clinical outcome could be predicted, artificial tissue could be assembled, etc.
-                        </p>
-                        <p>
-                            A demonstration using our software to simulate the process of our engineered cells collaborating to wipe out cancer cells are offered as <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan/tree/master/demo" target=_blank>a demo</a>.
-
-                        </p>
-
-                    </div>
-                    <div id="section3" class="section container scrolSpy">
-                        <h2>Method
-                        </h2>
-                        <p>Our software is built based on OOP algorithm and MATLAB. The workflow of our software is shown below. For more details, please refer to <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>src and demo folders on GitHub</a>.
-                        </p>
-                        <div class="expFigureHolder" style="width:100%">
-                            <img style="width: 100%" src="http://2018.igem.org/wiki/images/5/57/T--Fudan--Software-1.png">
-                            <p>Figure.1 UML of our toolbox.
-                            </p>
-
-                        </div>
-                        <div class="expFigureHolder" style="width:100%;margin-top: 23px">
-                            <img style="width: 100%" src="http://2018.igem.org/wiki/images/1/17/T--Fudan--Software-2.png">
-                            <p>Figure.2 Workflow of our software.
-                            </p>
-
-                        </div>
-                        <p>
-                            <b>Initialization:</b> First, initialize the system. Use the formative text as input, then designate the initial state of each cell (life span, type, vitality), properties of each cell type (type of Ligand and Notch, proliferation rate, mean vitality, and special chemical reactions in cells of this type), and relationship between cells (binding affinity between cells, which can be related to cell type and expression of membrane proteins, such as Notch and Ligand).
-
-                        </p>
-                        <div class="tableHolder">
-                            <table>
-                                <tr>
-                                    <th>Parameter</th>
-                                    <th>Meaning</th>
-                                </tr>
-                                <tr>
-                                    <td>T</td>
-                                    <td>Temperate, measuring the effect of random move.</td>
-                                </tr>
-                                <tr>
-                                    <td>E_neighbor</td>
-                                    <td>Affinity, measuring the effect of directional movement of cell based on cell-cell recognition.</td>
-                                </tr>
-                                <tr>
-                                    <td>Nm</td>
-                                    <td>Sampling rate in dt, measuring the rate of cell movement.</td>
-                                </tr>
-                                <tr>
-                                    <td>dt</td>
-                                    <td>The step length of Euler method in our simulation.</td>
-                                </tr>
-                                <tr>
-                                    <td>T</td>
-                                    <td>Simulation time, measuring how long we want to simulate with our software.
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <p>
-                            <b>Iteration:</b> After initiation, an iteration is made. In a period of &delta;t (very short time, and at the scale at 1-10 seconds), the cell may try to migrate, proliferate, or contact to neighboring cells to gather information for choice making. What is worth noticing is that if the cell moves/divides/dies, the Notch-Ligand kinetics may change abruptly for the changing cell-cell interaction, and a movement is relatively rapid compared with cell size. Therefore, it only takes little time for the switching of cell-cell network, but the process of finding proper movement takes some.
-
-                        </p>
-                        <p>
-                            Within the interval of two “cellular movements (proliferation/migration/death included)”, “chemical movements” happens. This refers to the Notch-Ligand kinetics between cell membranes, the amplification of the signal of Notch ICD (intracellular domain) and the combination of augmented signals. Using <a href="https://en.wikipedia.org/wiki/Euler_method" target=_blank>Euler method</a> (for kinetics) and discrete <a href="https://en.wikipedia.org/wiki/Gillespie_algorithm" target="_blank">Gillespie algorithm</a> (for stochastic process), we have predicted how a single cell works in a period within the interval of <b>cellular movements</b> (proliferation/migration/death included) and <b>chemical movements</b>, which refers to the <a href="./Model#NotchLigandKinetics">Notch-Ligand kinetics</a> between cell membranes, the amplification of the signal of Notch intracellular domain and the combination of augmented signals.
-
-                        </p>
-                        <p>
-                            After this prediction, we construct some functions to record the general state of each cell, including index, position, age, and then tendency to die or divide, for further data analysis. A snapshot of our cell colony is taken simultaneously for further simulation visualization. A judgement statement is executed to determine whether to terminate (when &delta;t multiples iteration time is greater than T, the full length of the simulation) or continue to iterate (both cellular movements and chemical movements). Movements in a single iteration seems negligible, but a big number of iterations would show a difference.
-
-                        </p>
-                        <p>For more details of cellular movement, please refer to the <a href="#">supplementary material</a>; for more details of chemical movement, please refer to our modeling of <a href="./Model#NotchLigandKinetics">Notch-Ligand Kinetics</a>.
-                        </p>
-                        <p>
-                            <b>Data analysis:</b> Upon simulation termination, data will be analyzed using prepared functions. We offer APIs for cell track, cell census and cell network analysis.
-
-                        </p>
-                        <p><b>Simulation visualization:</b> Using <i>clips</i> recorded in Iteration step, it’s easy to get our simulation visualized using built-in Matlab function <i>videowrite</i>. Cell colony composition can be checked by watching the output video.
-                        </p>
-                    </div>
-                    <div id="section4" class="section container scrolSpy">
-                        <h2>Tutorials (single functions)
-                        </h2>
-                        <p>To make users familiar to our toolbox, a tutorial is as follows.</p>
-                        <h4>Notch-Ligand kinetics (using <i>ChemicalReactions</i> toolkit)
-                        </h4>
-                        <p><i>ChemicalReactions</i> toolkit is a toolkit for chemical reaction modeling using <a href="https://en.wikipedia.org/wiki/Petri_net#Mathematical_properties_of_Petri_nets" target=_blank>Petri net</a> and Possion process. Here we demonstrate the usage of <i>ChemicalReactions</i> through an example of Notch-Ligand kinetics modeling.
-                        </p>
-                        <div class="expFigureHolder" style="width:100%;margin-top: 23px">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/5/5f/T--Fudan--Software-3.png">
-                            <p>
-                                Figure 3. Notch-Ligand kinetics analysis using ChemicalReactions toolkit. Code are offered on <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>Github</a>.
-                            </p>
-
-                        </div>
-                        <h4>STEP 1</h4>
-                        <p>Open MATLAB, and open the file ChemicalReactions.md in folder @ChemicalReactions.</p>
-                        <h4>STEP 2</h4>
-                        <p>prepare MATLAB variables.<br/>
-                            >>[Pre,Post]=Pre_Notch_Ligand(2)<br/>
-                                    >>obj= ChemicalReactions(‘’,’’,Post,Pre,@H_Notch_Ligand,zeros(1,12),2)
 </p><p>
-                                    Here Pre_Notch_Ligand() is a function to generate transition matrix for chemical reactions, @H_Notch_Ligand is a function handle for calculation of reaction possibilities, zeros(1,12) designates the initial condition of the system, and 2 refers to 2 kinds of Notch/Ligand exist.
+<body>
 
-                        </p>
-                        <h4>STEP 3</h4>
-                        <p> Enter in the command line window<br/>
-                            >>XMat=obj.iteration(100,1)<br>
-                            >>for i =1:12<br>
-                            >>plot(XMat(:,i));<br>
-                            >>hold on<br>
-                            >>end
-                        </p><p>
-                            Here iteration() is a method of class <i>ChemicalReactions</i> for predicting the state of the system. (100, 1) is the setting step for data recording, and XMat is for data storage.
-                        </p><p>
-                            To repeat the results of Figure 3, please refer to <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>Github</a> for code.
-                        </p>
-                        <h3>War predictor (using <i>Cell2DProl</i> toolkit)
-                        </h3>
-                        <p>
-                            <i>Cell2DProl</i> toolkit is a toolkit for Cell colony simulation. For more details, please refer to the <a href="#">supplementary material at the end of this page</a> or <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>Github</a>.
-                            Here we demonstrate the usage of <i>Cell2DProl</i> through an example of therapeutic engineered cell design.
-                        </p>
-                        <div class="expFigureHolder" style="width:100%;margin-top: 23px">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--Software-4.png">
-                            <p>
-                                Figure 4. Demo - visualization function in the <i>Cell2DProl</i> toolkit
-                            </p>
-
-                        </div>
-                        <div class="expFigureHolder" style="width:100%;margin-top: 23px">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/b/be/T--Fudan--Software-5.png">
-                            <p>
-                                Figure 5. Demo - Data analysis functions in <i>Cell2DProl</i> toolkit
-                            </p>
-
-                        </div>
-                        <h4>STEP 1</h4><p>Open MATLAB, and open the file Cell2DShadeProl.md in your folder.</p>
-                        <h4>STEP 2</h4><p>Click the ‘run’ on the panel.</p>
-                        <p>Here all the parameters are set proper previously. For more details on parameters, please refer to the supplementary PDF below. If your simulation results are visualized successfully, a video called 1_6_1_6 can be found in your current folder.
-                        </p>
-                        <h4>STEP 3</h4><p>The left Figure in Figure 5 will be plotted automatically. To get the right figure, Enter in the command line window<br/>
-                            >> res1 = -Culture.*(Culture&lt;-1);<br/>
-                            >> res2 = res1(:);<br/>
-                            >> ecdf(res2);</p>
-                        <h3>OOP-based AND gate design (using <i>Cell</i> toolkit)</h3>
-                        <p><i>Cell</i> toolkit is a toolkit to design combinational circuits by linking user-defined cellular movement (element) together. Here we show you how to use our toolkit <i>Cell</i> by an example of AND gate circuit design.
-                        </p>
-                        <div class="expFigureHolder" style="width:100%;margin-top: 23px">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/8/84/T--Fudan--Software-6.png">
-                            <p>
-                                Figure 6. Demo - Simulation of 3-layer ENABLE using <i>Cell</i> toolkit
-                            </p>
-
-                        </div>
-                        <h4>STEP 1</h4><p>Open MATLAB, and open the folder with subfolder @Cell.
-                        </p >
-                        <h4>STEP 2</h4><p>Run kinetic_notch_test.m, kinetic_addgate_test_signal.m, kinetic_addgate_test.m<br/>
-                        Here we use kinetic model for Notch activation and signal amplification, and 3-step kinetics for intein kinetics to validate the function of our toolkit.
-                        </p>
-                        <h4>STEP 3</h4><p>Figure 6 will be output automatically.
-                        </p>
-                    </div>
-                    <div class="section container">
-                        <h4>Supplementary PDF with references
-                        </h4>
-                        <p><a href="http://2018.igem.org/wiki/images/c/c1/T--Fudan--model-cell-colony.pdf" target="_blank">Model_cell_colony</a></p>
-                    </div>
-                </main>
-            </div>
-            <!-- @@@@ end of main content of the page -->
-
-            <!--Abstract on content page-->
-            <div id="abstractContent" class="z-depth-2">
-                <a href="#!"><img alt=alt="project summary" src="http://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
-                <div class="container">
-                    <h2 style="margin: 0;padding: 10px 0;">Project Summary</h2>
-                    <p style="margin: 0">Contact-dependent signaling is critical for multicellular biological
-                        events, yet customizing contact-dependent signal transduction between
-                        cells remains challenging. Here we have developed the ENABLE toolbox, a
-                        complete set of transmembrane binary logic gates. Each gate consists of
-                        3 layers: Receptor, Amplifier, and Combiner. We first optimized synthetic
-                        Notch receptors to enable cells to respond to different signals across the
-                        membrane reliably. These signals, individually amplified intracellularly by
-                        transcription, are further combined for computing. Our engineered zinc finger-based
-                        transcription factors perform binary computation and output designed products.
-                        In summary, we have combined spatially different signals in mammalian cells,
-                        and revealed new potentials for biological oscillators, tissue engineering,
-                        cancer treatments, bio-computing, etc. ENABLE is a toolbox for constructing
-                        contact-dependent signaling networks in mammals. The 3-layer design principle
-                        underlying ENABLE empowers any future development of transmembrane logic circuits,
-                        thus contributes a foundational advance to Synthetic Biology.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Floating Btns -->
-            <div class="floatingBtn">
-                <a href="#!" id="abstractBtn" class="btn">
-                    <i class="fa fa-sticky-note" style="font-size: 30px;line-height: 50px"></i>
-                </a>
-                <a href="#FudanWrapper" class="btn">
-                    <i class="fa fa-angle-up" style="font-size: 48px;line-height: 45px"></i>
-                </a>
-            </div>
-
-            <!-- Footer with sponsors and contact methods -->
-            <footer id="FudanFooter" class="page-footer grey">
-                <div class="container">
-                    <div class="row">
-                        <div id="sponsor" class="col m3 s12 row">
-                            <a href="http://2018.igem.org/Team:Fudan" target="_blank"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="http://2018.igem.org/wiki/images/7/73/T--Fudan--teamLogoWhite.png">
-                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="http://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
-                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
-                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="http://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
-                        </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size: 18px">ENABLE: making cells even smarter</h3>
-                        </div>
-                        <div id="usefulLinks" class="col m9 s12 row">
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                    <span>Project</span>
-                                    <ul>
-                                        <li><a href="./Description">Background</a></li>
-                                        <li><a href="./Design">Design</a></li>
-                                        <li><a href="./Protocols">Experiments</a></li>
-                                        <li><a href="./Demonstrate">Results</a></li>
-                                        <li><a href="./Judging">iGEM judging</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="./Parts">BioBricks</a></span>
-                                    <ul>
-                                        <li><a href="./Basic_Part">Basic parts</a></li>
-                                        <li><a href="./Composite_Part">Composite parts</a></li>
-                                        <li><a href="./Part_Collection">Part collection</a></li>
-                                        <li><a href="./Improve">Parts improvement</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span>Lab</span>
-                                    <ul>
-                                        <li><a href="./Interlab">iGEM interLab</a></li>
-                                        <li><a href="./Notebook">Notebook</a></li>
-                                        <li><a href="./Protocols">Protocols</a></li>
-                                        <li><a href="./Measurement">Quantification</a></li>
-                                        <li><a href="./Safety">Safety</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4 active">
-                                    <span>not-sure</span>
-                                    <ul>
-                                        <li><a href="./Applied_Design">Applied design</a></li>
-                                        <li><a href="./Hardware">Hardware</a></li>
-                                        <li><a href="./Model">Model</a></li>
-                                        <li><a href="./Software">Software</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span>Outreach</span>
-                                    <ul>
-                                        <li><a href="./Collaborations">Collaborations</a></li>
-                                        <li><a href="./Human_Practices">Human practices</a></li>
-                                        <li><a href="./Public_Engagement">Public engagement</a></li>
-                                        <li><a href="./HP">Why we do this</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span>Team</span>
-                                    <ul>
-                                        <li><a href="./Attributions">Attributions</a></li>
-                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-                                        <li><a href="./Team">Members</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                         <div class="contactUS row">
-                           <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg E301, 2005 Songhu Rd, Shanghai
-                           </div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
-                           </div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
-                           </div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
-                           </div>
-                         </div>
-                     </div>
-                </div>
-            </footer>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- Javascript files -->
-<!-- Materialize 1.0.0-rc.2 -->
-<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.js&action=raw&ctype=text/javascript"></script>
-
-<!-- Javascript -->
-<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/js.js&action=raw&ctype=text/javascript"></script>
+<h1>This Template is useless so I'm not using it</h1>
 
 </body>
-</html>
+
+
+
+
+<div class="column full_size judges-will-not-evaluate">
+<h3>★  ALERT! </h3>
+<p>This page is used by the judges to evaluate your team for the <a href="https://2019.igem.org/Judging/Medals">medal criterion</a> or <a href="https://2019.igem.org/Judging/Awards"> award listed below</a>. </p>
+<p> Delete this box in order to be evaluated for this medal criterion and/or award. See more information at <a href="https://2019.igem.org/Judging/Pages_for_Awards"> Instructions for Pages for awards</a>.</p>
+</div>
+
+
+<div class="clear"></div>
+
+
+<div class="column full_size">
+<h1>Software</h1>
+</div>
+<div class="column two_thirds_size">
+<h3>Best Software Tool Special Prize</h3>
+<p>Regardless of the topic, iGEM projects often create or adapt computational tools to move the project forward. Because they are born out of a direct practical need, these software tools (or new computational methods) can be surprisingly useful for other teams. Without necessarily being big or complex, they can make the crucial difference to a project's success. This award tries to find and honor such "nuggets" of computational work.
+
+
+<br><br>
+To compete for the <a href="https://2019.igem.org/Judging/Awards">Best Software Tool prize</a>, please describe your work on this page and also fill out the description on the <a href="https://2019.igem.org/Judging/Judging_Form">judging form</a>.
+<br><br>
+To be eligible, your software has to be documented and made available under an OSI approved open source license. You must also delete the alert box on the top of this page to be eligible for this prize.
+</p>
+
+
+</div>
+
+<div class="column third_size">
+<div class="highlight decoration_A_full">
+<h3> Inspiration </h3>
+<p>
+Here are a few examples from previous teams:
+</p>
+<ul>
+<li><a href="http://2016.igem.org/Team:BostonU_HW">2016 BostonU HW</a></li>
+<li><a href="http://2016.igem.org/Team:Valencia_UPV">2016 Valencia UPV</a></li>
+<li><a href="http://2014.igem.org/Team:Heidelberg/Software">2014 Heidelberg</a></li>
+<li><a href="http://2014.igem.org/Team:Aachen/Project/Measurement_Device#Software">2014 Aachen</a></li>
+</ul>
+</div>
+</div>

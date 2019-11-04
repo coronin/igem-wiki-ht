@@ -1,409 +1,1303 @@
-{{Fudan-Shanghai}}<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
-<html lang="en">
-<!--
-This html document is created by Tian Huang for Team Fudan iGEM 2018.
-We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
--->
-<!-- LC check on 2018-10-18 -->
 <head>
-    <meta charset="UTF-8">
+<title>GBSZ:Home</title>
 
-<!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="./Fudan-css.css" />
+<style>
+/**********public**********/
+* {
+    margin: 0;
+    padding: 0;
+}
 
-    <!-- Font-awesome icons 4.7.0 -->
-    <link href="./Fudan-font-awesome.css" rel="stylesheet" />
+ul {
+    list-style: none none;
+    margin: 0;
+    padding: 0;
+}
 
-    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
-    <link rel="stylesheet" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.css&action=raw&ctype=text/css">
+#HQ_page li, h1, h2, h3, h4, h5, h6 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
-    <!-- Clear default CSS settings; CSS reset -->
-    <style>
-        *{margin: 0;padding: 0;list-style: none;}
-        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
+#top_menu_inside li {
+    padding: 0 25px 0 20px !important;
+}
 
-        /** 清除内外边距 **/
-        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-        pre, /* text formatting elements 文本格式元素 */
-        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-        th, td /* table elements 表格元素 */ {
-            margin: 0;
-            padding: 0;
-        }
+body {
+    background: white url("https://2019.igem.org/wiki/images/thumb/9/90/T--GreatBay_SZ--Home_Blue_Red.png/800px-T--GreatBay_SZ--Home_Blue_Red.png") no-repeat fixed center !important;
+    background-size: cover !important;
+}
 
-        /** 设置默认字体 **/
+body.dark {
+    background: black !important;
+}
 
-        h1, h3, h3, h4, h5, h6 { font-size: 100%; }
-        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-        small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+a {
+    padding: 0 !important;
+    text-decoration-line: none !important;
+}
 
-        /** 重置列表元素 **/
-        ul, ol { list-style: none; }
+#content {
+    margin: 0 auto !important;
+    background-color: transparent !important;
+    width: 100%  !important;
+    padding: 0 !important;
+    word-wrap: break-word;
+line-height: auto !important;
+}
 
-        /** 重置文本格式元素 **/
-        a { text-decoration: none; }
-        a:hover { text-decoration: underline; }
+#mw-content-text > p {
+    display: none !important;
+}
+
+#top_title {
+    display: none !important;
+    margin: 0 !important;
+}
+
+#globalWrapper {
+    padding-bottom: 0 !important;
+}
+
+.wrap {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+}
+
+.wrap h1, h2, h3, h4, h5, h6, p {
+    display: block !important;
+    font-family: helvetica, sans-serif !important;
+    word-wrap: break-word !important;
+    height: fit-content;
+    padding: 2px;
+}
+
+.container {
+    flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    margin-right: 100px;
+    position: relative;
+    background: white;
+}
+
+.container:before {
+    content: '';
+    width: 65px;
+    height: 100%;
+    background-image: url("https://2019.igem.org/wiki/images/3/3c/T--GreatBay_SZ--Home_Film.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: repeat-y;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.container:after {
+    content: '';
+    width: 65px;
+    height: 100%;
+    background-image: url("https://2019.igem.org/wiki/images/3/3c/T--GreatBay_SZ--Home_Film.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: repeat-y;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+}
+
+#middle {
+    position: relative;
+    padding: 0 64px;
+}
+/**********left-column*******/
+.left-column {
+    display: block;
+    width: 210px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+#spit1 {
+    position: fixed;
+    background-image: url(https://2019.igem.org/wiki/images/7/76/T--GreatBay_SZ--submenuconnect.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0 0;
+    background-size: 100px 320px;
+    width: 500px;
+    z-index: 10;
+    height: 600px;
+    top: 170px;
+    left: 140px;
+    display: none;
+}
+
+#spit1.type0 {
+    display: block;
+    background-size: 100px 320px;
+    top: 170px;
+    left: 140px;
+}
+#spit1.type1 {
+    width: 88px;
+    display: block;
+}
+#spit1.type2 {
+    width: 73px;
+    display: block;
+}
+#spit1.type3 {
+    width: 59px;
+    display: block;
+}
+#spit1.type4 {
+    width: 45px;
+    display: block;
+}
+#spit1.type5 {
+    width: 32px;
+    display: block;
+}
+
+/**********to-top************/
+
+#dialogue-box {
+    display: none;
+    height: 200px;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    position: fixed;
+}
+
+#dialogue-box.active {
+    display: block;
+}
+
+#spider-top1 {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/1/12/T--GreatBay_SZ--menu1.png/240px-T--GreatBay_SZ--menu1.png");
+    background-size: 250px auto;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-color: transparent;
+    position: fixed;
+    top: 400px;
+    left: -45px;
+    width: 250px;
+    height: 250px;
+    display: block;
+}
+
+#spider-top1:hover {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/0/03/T--GreatBay_SZ--menu3.png/240px-T--GreatBay_SZ--menu3.png");
+    background-size: 250px auto;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-color: transparent;
+    position: fixed;
+    top: 400px;
+    left: -45px;
+    width: 250px;
+    height: 250px;
+    display: block;
+    cursor: grab;
+}
+
+#spider-top1.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/3/31/T--GreatBay_SZ--menu2.png/240px-T--GreatBay_SZ--menu2.png");
+    background-size: 250px auto;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-color: transparent;
+    position: fixed;
+    top: 400px;
+    left: -45px;
+    width: 250px;
+    height: 250px;
+    display: block;
+    cursor: grab;
+}
+
+/**********menu**********/
+#menu-background {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/e/ef/T--GreatBay_SZ--menubackground.png/600px-T--GreatBay_SZ--menubackground.png");
+    background-size: 100% 100%;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-color: transparent;
+    display: block;
+    width: 600px;
+    height: 415px;
+    top: 0;
+    left: -210px;
+}
+
+#side-bar {
+    width: 90px;
+    margin-left: 39px;
+    margin-top: 12px;
+    height: fit-content;
+    background-color: #bcb6bb;
+    position: fixed;
+    border-radius: 40px 8px 10px 10px;
+    z-index: 1000;
+}
+
+#side-bar>li {
+    position: relative;
+    color: #000000;
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    z-index: 1000;
+}
+
+#side-bar>li>a {
+    color: black;
+}
+
+#side-bar>li a>h6 {
+    height: 31px;
+    font-size: 14px;
+    line-height: 31px
+}
+
+#side-bar>li a>h6:hover {
+    cursor: pointer;
+    background-color: #bf0e1e;
+    color: #ffffff;
+}
+
+#side-bar>li h5,
+#side-bar>li h6 {
+    height: 31px;
+    font-size: 14px;
+    line-height: 31px;
+    z-index: 1000;
+}
+
+#side-bar>li h5:hover {
+    cursor: pointer;
+    background-color: #bf0e1e;
+    color: #ffffff;
+}
+
+#side-bar>li h6:hover {
+    cursor: pointer;
+    background-color: #bf0e1e;
+    color: #ffffff;
+}
+
+#side-bar>li ul {
+    background-image: url(https://2019.igem.org/wiki/images/8/8a/T--GreatBay_SZ--submenu.png);
+    background-position: 0 0;
+    background-color: transparent;
+    background-size: 160px 250px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 90px;
+    top: -65px;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 350px;
+    z-index: 100;
+    display: none;
+}
+
+#side-bar>li ul.active {
+    display: block;
+}
+
+#side-bar>li ul>li {
+    height: fit-content;
+    z-index: 1000;
+    width: 80px;
+    position: relative;
+    left: 35px;
+    padding-bottom: 20px !important;
+    padding-top: 6px !important;
+    top: 40px;
+    border: 0 solid black;
+    border-top-width: 2px;
+    word-break: keep-all;
+}
+
+#side-bar>li ul>li:hover {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#side-bar>li ul>li a {
+    color: #000000 !important;
+    height: 31px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/**********content**********/
+.my-content {
+    background-color: transparent;
+    height: fit-content;
+    z-index: 1;
+    padding-bottom: 20px;
+}
+
+.content-block {
+    margin: 10px;
+    position: relative;
+}
+
+.content-box {
+    position: relative;
+}
+
+.content-box h3 {
+height: 40px;
+    line-height: 40px;
+}
+
+.subpage-title1 {
+    margin: 20px;
+    height: fit-content;
+    font-size: 30px;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+}
+
+.subpage-title2 {
+    margin: 20px;
+    height: fit-content;
+    font-size: 20px;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+    color: grey;
+}
+
+#abstract {
+    background-color: transparent;
+    color: #000000;
+    padding: 20px;
+}
+
+.content-box > h3 {
+    text-align: left;
+    position: relative;
+    left: 32px;
+    top: 22px;
+    font-size: 34px;
+    border-bottom: 10px solid transparent;
+}
+
+#abstract p {
+    text-align: justify;
+    padding: 10px;
+    color: #000000;
+    line-height: 30px;
+    text-indent: 30px;
+    font-size: 20px;
+}
+
+#title {
+    background-color: #585858;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    position: relative;
+}
+
+#title > h1 {
+    font-size: 120px;
+    font-weight: bolder;
+    width: 100%;
+    line-height: 120%;
+    padding: 2px;
+    color: white;
+}
+
+#title > h2 {
+    font-size: 45px;
+    font-weight: bold;
+    width: 100%;
+    line-height: 110%;
+    height: 120px;
+    padding: 2px;
+    color: white;
+}
+
+.content-box1 {
+    width: 100%;
+    height: 1170px;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.content-box1 a {
+    width: 22%;
+    height: 500px;
+    margin: 5px;
+    border: 5px solid black;
+    display: inline-block;
+    position: relative;
+    background: white;
+}
+
+.page-guide {
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: block;
+    position: relative;
+}
+
+.page-guide > h3 {
+    font-size: 15px;
+    top: 46%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.page-guide-gray {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #585858;
+    color: black;
+}
+
+.page-guide-gray > p {
+    color: white;
+    padding: 5px;
+    text-align: left !important;
+    top: 0;
+    font-size: 13px;
+}
+
+#project {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/c/ca/T--GreatBay_SZ--project_new.png/240px-T--GreatBay_SZ--project_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#project.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/3/35/T--GreatBay_SZ--project_new_color.png/240px-T--GreatBay_SZ--project_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#demonstration {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/5/5f/T--GreatBay_SZ--demonstration_new.png/240px-T--GreatBay_SZ--demonstration_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#demonstration.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/e/e4/T--GreatBay_SZ--demonstration_new_color.png/240px-T--GreatBay_SZ--demonstration_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#parts {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/7/7c/T--GreatBay_SZ--parts_new.png/240px-T--GreatBay_SZ--parts_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#parts.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/c/ce/T--GreatBay_SZ--parts_new_color.png/240px-T--GreatBay_SZ--parts_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#hp {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/d/da/T--GreatBay_SZ--hp_new.png/240px-T--GreatBay_SZ--hp_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#hp.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/2/2d/T--GreatBay_SZ--hp_new_color.png/240px-T--GreatBay_SZ--hp_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#team {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/5/54/T--GreatBay_SZ--team_new.png/240px-T--GreatBay_SZ--team_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#team.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/0/09/T--GreatBay_SZ--team_new_color.png/240px-T--GreatBay_SZ--team_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#judging {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/0/07/T--GreatBay_SZ--judging_new.png/240px-T--GreatBay_SZ--judging_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#judging.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/0/03/T--GreatBay_SZ--judging_new_color.png/240px-T--GreatBay_SZ--judging_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#notebook {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/d/d1/T--GreatBay_SZ--notebook_new.png/240px-T--GreatBay_SZ--notebook_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#notebook.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/0/0a/T--GreatBay_SZ--notebook_new_color.png/240px-T--GreatBay_SZ--notebook_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+#safety {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/9/96/T--GreatBay_SZ--safety_new.png/240px-T--GreatBay_SZ--safety_new.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#safety.active {
+    background-image: url("https://2019.igem.org/wiki/images/thumb/9/9c/T--GreatBay_SZ--safety_new_color.png/240px-T--GreatBay_SZ--safety_new_color.png");
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+/**********right-column******/
+#bulb {
+    background-image: url("http://www.justiceeagan.com/wp-content/uploads/2012/01/light-bulb.png");
+    background-position: 0 0;
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: rotate(180deg);
+}
+
+#bulb:hover {
+    cursor: pointer;
+}
+
+.logo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#spider>img {
+    width: 100px;
+    height: auto;
+}
+
+.continue {
+    right: -70px;
+    top: 150%;
+    width: 250px;
+    height: auto;
+    display: block;
+    position: absolute;
+}
+
+.continue > img {
+    width: 100%;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show-up {
+    opacity: 1;
+    animation: loading 0.1s ease-out;
+}
+
+@keyframes loading {
+
+    from {
+
+        opacity: 0;
+
+        transform: translate(-100%, 0);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translate(0, 0);
+
+    }
+
+}
 
 
-        /** 重置表单元素 **/
-        legend { color: #000; } /* for ie6 */
-        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-        /* 注：optgroup 无法扶正 */
+/**********header************/
+.header {
+    position: relative;
+    background-color: white;
+    height: fit-content;
+}
 
-        /** 重置表格元素 **/
-        table { border-collapse: collapse; border-spacing: 0; }
+.header>img {
+    position: relative;
+    vertical-align: middle;
+}
+/**********footer************/
+.footer {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    color: black;
+}
 
-        /* wangyiheng init 2018-10-16 */
-        #animation_container{
-            position:absolute;
-            margin:0 auto;/* Tian Huang edited here */
-            left:0;right:0;
-            top:0;bottom:0;
-        }
-        #FudanBody #pageContent .section p{
-            font-size: 25px;
-            line-height: 40px;
-            color: #377893;
-            margin-top: 70px;
-            text-indent: 0;
-        }
-        #FudanBody .section img{
-            margin-top: 70px;
-        }
-        #FudanBody .highlight{
-            width: 20%;
-            height: auto;
-            float: left;
-            padding: 0.5%;
-            text-align: center;
-        }
-        #FudanBody .section .highlight img{
-            width: 100%;
-            margin-top: 0;
-        }
-        #highlight2 div,#highlight1 div{
-            margin-bottom: 150px;
-            color:#377893;
-            font-weight:400;
-        }
-        @media only screen and (max-width: 991px) {
-            #FudanBody #highlight1 .highlight{
-                width: 33%;margin: 0
-            }
-            #FudanBody #highlight2 .highlight{
-                width: 50%;
-            }
-            #highlight1{width:100%;}
-            #highlight2{width:66%;margin: 20px auto 0 auto;}
-        }
-        @media only screen and (max-width: 600px) {
-            #FudanBody #pageContent .section p{
-                font-size: 18px;
-                line-height: 30px;
-                margin-top: 50px;
-            }
-            #FudanBody .highlight{
-                float: none;
-            }
-            #FudanBody #highlight1 .highlight,
-            #FudanBody #highlight1 .highlight{
-                width: 80%;margin: 0 auto;
-            }
-            #highlight1{width:100%;}
-            #highlight2{width:100%;}
-        }
-        #FudanBody #pageContent p.figureCaption{
-            color: rgba(0,0,0,0.4);
-            font-size: 16px;
-            line-height: 20px;
-            display: none;
-            text-indent: 0;
-            position: absolute;
-            bottom: -20px;
-        }
-    </style>
-    <script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/createjs20151126.js&action=raw&ctype=text/javascript"></script>
-    <script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/mainpageDraw.js&action=raw&ctype=text/javascript"></script>
-    <!-- init 2018-10-16 -->
-    <title>2018 iGEM Team:Fudan</title>
+.footer img {
+    height: 620px%;
+width: auto;
+}
+
+.footer-left h5 {
+   color: #ffffff;
+}
+
+.footer-right {
+    flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    margin: 15px 25px 15px 0;
+    border: 5px solid white;
+    border-left: none;
+    padding: 15px;
+    overflow: hidden;
+}
+
+
+.footer-right>img {
+    width: 80px;
+    height: 80px;
+    float: right;
+    display: inline-block;
+    margin: 30px;
+}
+/**********tooltip***********/
+[tooltip] {
+    position: relative;
+    margin: 0;
+    color: #bf1215;
+    display: inline-block;
+}
+
+[tooltip]:after {
+    content: attr(tooltip);
+    position: absolute;
+    top: calc(100% + 10px);
+    padding: 8px 15px;
+    max-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    background-color: #313131;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 100;
+    display: none;
+}
+
+[tooltip]:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    border: 5px solid transparent;
+    border-bottom-color: #313131;
+    z-index: 100;
+    display: none;
+}
+
+[tooltip]:hover:before {
+    display: block;
+    animation: anim-bottom 300ms ease-out forwards;
+}
+
+[tooltip]:hover:after {
+    display: block;
+    animation: anim-bottom 300ms ease-out forwards;
+}
+
+@keyframes anim-bottom {
+    from {
+        opacity: .5;
+        top: 180%;
+    }
+}
+/*************pictures-scroll*************/
+#flash{ /*根据图片的大小来设置外层div的大小*/
+    width: 100%;
+    height: 618px;
+    position: relative; /*设置div定位，方便之后图片及圆点位置的设定*/
+    background-color: transparent;
+}
+#flash img{
+    width: auto;
+    height: 100%;
+    position: absolute; /*设置所有图片重叠*/
+    left: 0;
+    top: 0;
+    display: none; /*设置所有图片隐藏，通过改变第一个图片的行间样式来使第一个图片显示*/
+}
+#flash ul{
+    width: 180px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    left: 39%;
+    bottom: 10%;
+}
+#flash ul li{
+    width: 12px;
+    height: 12px;
+    margin-top: 5px !important;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 15px !important;
+    float: left;
+}
+#flash ul .li_1{
+    background-color: #f40; /*设置第一个圆点背景色为红色*/
+}
+#flash .span-r{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 2%;
+    top: 45%;
+    background-color: rgba(255,255,255,0.5);
+}
+#flash .span-r span{
+    width: 100%;
+    height:100%;
+    color:rgba(0,0,0,0.5);
+    font-size: xx-large;
+    font-weight: 700;
+    line-height: 50px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+#flash .span-l{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 2%;
+    top: 45%;
+    background-color: rgba(255,255,255,0.5);
+}
+#flash .span-l span{
+    width: 100%;
+    height:100%;
+    color:rgba(0,0,0,0.5);
+    font-size: xx-large;
+    font-weight: 700;
+    line-height: 50px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.span-r, .span-l {
+    cursor: pointer;
+    display: none;
+}
+
+</style>
+
 </head>
+<body>
 
-<body onload="init();">
-<!-- Fudan div at igem.org -->
-<div id="FudanWrapper" class="white">
-    <div id="FudanBody" class="white">
-        <header>
-            <!-- empty bar -->
-            <div id="emptyBar" style="position:relative;width: 100%;"></div>
 
-            <!-- Navigation bar -->
-            <!-- Dropdown and List elements in navigation bar -->
-            <!-- Slide-out navigator contents -->
-        </header>
 
-        <div id="pageContent" style="">
-            <main style="margin: 0">
-                <div style="position: relative;top:0;width: 100%;">
-                    <!-- 5/58/T Fudan MainPageGIF_Half.gif , 0/06/T Fudan MainPageGIF.gif , 0/07/T Fudan mainpage2.gif -->
 
-                    <div id="animation_container" style="position:relative;background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
-                        <canvas id="canvas" width="1920" height="1080" style="position: relative;/* Tian Huang edited here */ display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-                        <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: relative;/* Tian Huang edited here */ left: 0px; top: 0px; display: block;"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="section container">
-<div class="container">
-                        <p>To survive, cells must identify and integrate various signals from the environment. Cells utilize their transmembrane receptors to recognize extracellular signals to execute a myriad of tasks ranging from cell-mediated immunity to tissue formation and regeneration.
-                        </p>
-                        <div style="position: relative"><img class="figure" style="width: 100%" src="http://2018.igem.org/wiki/images/6/6e/T--Fudan--111111.png" alt="frontpage image 1" /><p class="figureCaption">A cell using its specific transmembrane receptor, recognizes an external signal, integrates and output corresponding cellular decision.</p></div>
-                        <p>
-                            Therefore, in the field of synthetic biology, it would be especially impactful if cells could be programmed to recognize external environmental signals, generate contact-dependent signaling, and perform reliable logical computations.
-                        </p>
-                        <div style="position: relative"><img class="figure" style="width: 100%" src="http://2018.igem.org/wiki/images/7/7a/T--Fudan--2222222.png" alt="frontpage image 2" /><p class="figureCaption">Cells, armed with our transmembrane logic gates, can perform various tasks. We have made them even smarter.</p></div>
-                        <p>
-                            Our project ENABLE (ENgineered, Across membrane, Binary Logic in Eukaryotes) offers the first toolbox for mammalian cells to generate contact-dependent signaling from the external environment and Boolean output decisions. We believe this is a foundational advance for synthetic biology, and enables a wide range of opportunities.
-                        </p>
-                        <img style="width: 100%" src="http://2018.igem.org/wiki/images/7/71/T--Fudan--333333.png" alt="frontpage image 3" />
-</div>
-                    </div>
-                    <div class="section container">
-                        <p style="text-align:center">We gave the public presentation on #iGEM2018 between 9:00 and 9:25,
-                          Oct 25<sup>th</sup> 2018,
-                          Room 311, Hynes Convention Center in Boston, USA. This video was originally recorded by
-                          <a href="https://v.douyu.com/show/GnzXvb8263zM462l" target=_blank>douyu</a>,
-                          and later uploaded to <a href="https://youtu.be/hWuCCksK9d4" target=_blank>youtube</a>.</p>
-<div style="width:560px;margin:0 auto;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hWuCCksK9d4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<!-- iframe src="https://v.douyu.com/video/share/index?vid=GnzXvb8263zM462l" frameborder="0" allowfullscreen="true" width="480" height="350"></iframe -->
-</div>
-                    </div>
-                    <div class="section" style="margin-bottom: 150px">
-                        <h2 style="font-weight: 900; margin-bottom: 30px;color:#377893;">Highlights</h2>
-                        <div id="highlight1">
-                            <div class="highlight">
-                                <a href="./Demonstrate"><img src="http://2018.igem.org/wiki/images/6/65/T--Fudan--highlights_demonstration.png" alt="frontpage demonstration" /></a>
-                                Demonstration
-                            </div>
-                            <div class="highlight">
-                                <a href="./Public_Engagement"><img src="http://2018.igem.org/wiki/images/0/02/T--Fudan--highlights_education.png" alt="frontpage education" /></a>
-                                Public&nbsp;engagement
-                            </div>
-                            <div class="highlight">
-                                <a href="./Model"><img src="http://2018.igem.org/wiki/images/b/b9/T--Fudan--highlights_model.png" alt="frontpage model" /></a>
-                                Model
-                            </div>
-                        </div>
-                        <div id="highlight2">
-                            <div class="highlight">
-                                <a href="./Human_Practices"><img src="http://2018.igem.org/wiki/images/3/3b/T--Fudan--highlights_integrated.png" alt="frontpage human practices" /></a>
-                                Human&nbsp;practices
-                            </div>
-                            <div class="highlight">
-                                <a href="./Part_Collection"><img src="http://2018.igem.org/wiki/images/e/e3/T--Fudan--highlights_parts.png" alt="frontpage parts" /></a>
-                                Parts&nbsp;collection
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
+<div class="wrap">
+    <!--right column-->
+    <div id="bulb"></div>
+    <div class="logo">
+        <a id="spider">
+            <img src="https://2019.igem.org/wiki/images/thumb/7/7c/T--GreatBay_SZ--New_Team_Logo.png/600px-T--GreatBay_SZ--New_Team_Logo.png" alt="logo">
+        </a>
+    </div>
+    <!--left column-->
+    <div class="left-column">
+        <div id="menu-background">
 
-            <!--Abstract on content page-->
-            <div id="abstractContent" class="z-depth-2">
-                <a href="#!"><img alt=alt="project summary" src="http://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
-                <div class="container">
-                    <h2 style="margin: 0;padding: 10px 0;">Project Summary</h2>
-                    <p style="margin: 0">Contact-dependent signaling is critical for multicellular biological
-                            events, yet customizing contact-dependent signal transduction between
-                            cells remains challenging. Here we have developed the ENABLE toolbox, a
-                            complete set of transmembrane binary logic gates. Each gate consists of
-                            3 layers: Receptor, Amplifier, and Combiner. We first optimized synthetic
-                            Notch receptors to enable cells to respond to different signals across the
-                            membrane reliably. These signals, individually amplified intracellularly by
-                            transcription, are further combined for computing. Our engineered zinc finger-based
-                            transcription factors perform binary computation and output designed products.
-                            In summary, we have combined spatially different signals in mammalian cells,
-                            and revealed new potentials for biological oscillators, tissue engineering,
-                            cancer treatments, bio-computing, etc. ENABLE is a toolbox for constructing
-                            contact-dependent signaling networks in mammals. The 3-layer design principle
-                            underlying ENABLE empowers any future development of transmembrane logic circuits,
-                            thus contributes a foundational advance to Synthetic Biology.
-                    </p>
-                </div>
+        </div>
+        <ul id="side-bar">
+            <li style="border-top: 0">
+                <h5 class="connect" id="connect1" style="border-radius: 40px 8px 0 0">Team</h5>
+                <ul class="">
+                    <li style="top: 60px"><a href="https://2019.igem.org/Team:GreatBay_SZ/Team">Team</a></li>
+                    <li style="top: 60px"><a href="http://2019.igem.org/Team:GreatBay_SZ/Collaborations">Collaboration</a></li>
+                    <!--required-->
+                    <li style="top: 60px"><a href="http://2019.igem.org/Team:GreatBay_SZ/Attributions">Attribution</a></li>
+                    <!--required-->
+                </ul>
+            </li>
+            <li>
+                <h5>Project</h5>
+                <ul class="">
+                    <li style="top: 60px"><a href="http://2019.igem.org/Team:GreatBay_SZ/Description">Description</a></li>
+                    <!--required-->
+                    <li style="top: 60px"><a href="http://2019.igem.org/Team:GreatBay_SZ/Demonstrate" style="position: relative; left: -5px">Demonstration</a></li>
+                    <!--required-->
+                    <li style="top: 60px"><a href="https://2019.igem.org/Team:GreatBay_SZ/Results">Results</a></li>
+                </ul>
+            </li>
+            <li>
+                <h5 id="to-top3">Parts</h5>
+                <ul class="">
+                    <li><a href="https://2019.igem.org/Team:GreatBay_SZ/Basic_Part">Basic</a></li>
+                    <li><a href="https://2019.igem.org/Team:GreatBay_SZ/Composite_Part">Composite</a></li>
+                    <li><a href="https://2019.igem.org/Team:GreatBay_SZ/Part_Collection">Collection</a></li>
+                    <li><a href="https://2019.igem.org/Team:GreatBay_SZ/Improve">Improve</a></li>
+                </ul>
+            </li>
+            <li>
+                <h5>Product</h5>
+                <ul class="">
+                    <li style="top: 60px"><a href="http://2019.igem.org/Team:GreatBay_SZ/Model">Modeling</a></li>
+                    <!--required-->
+                    <li style="top: 60px"><a href="http://2019.igem.org/Team:GreatBay_SZ/Hardware">Hardware</a></li>
+                    <!--required-->
+                    <li style="top: 60px"><a href="http://2019.igem.org/Team:GreatBay_SZ/Entrepreneurship" style="position: relative; left: -11px">Entrepreneurship</a></li>
+                    <!--required-->
+                </ul>
+            </li>
+            <li>
+                <h5>Lab</h5>
+                <ul class="">
+                    <li style="top: 90px"><a href="https://2019.igem.org/Team:GreatBay_SZ/Experiments">Experiments</a></li>
+                    <li style="top: 90px"><a href="https://2019.igem.org/Team:GreatBay_SZ/Notebook">Notebook</a></li>
+                </ul>
+            </li>
+            <li>
+                <h5>HP</h5>
+                <ul class="">
+                    <li style="top: 60px"><a href="http://2019.igem.org/Team:GreatBay_SZ/Human_Practices" style="vertical-align: top">Integrated Human Practice</a></li>
+                    <!--required-->
+                    <li style="top: 60px"><a href="http://2019.igem.org/Team:GreatBay_SZ/Human_Practices" style="vertical-align: top">Public Engagement</a></li>
+                    <!--required-->
+                </ul>
+            </li>
+            <li>
+                <a href="https://2019.igem.org/Team:GreatBay_SZ/Safety"><h6>Safety</h6></a>
+            </li>
+            <li>
+                <a href="https://2019.igem.org/Team:GreatBay_SZ/Judging"><h6>Judging</h6></a>
+            </li>
+            <li style="border-bottom: 0">
+                <a href="https://2019.igem.org/Team:GreatBay_SZ"><h6 style="border-radius: 0 0 10px 10px">Home</h6></a>
+            </li>
+        </ul>
+        <div id="spit1"></div>
+
+        <div id="spider-top1" class="">
+        </div>
+    </div>
+
+    <!--content-->
+    <div class="container">
+        <div id="middle">
+            <div class="header">
+                <img src="https://2019.igem.org/wiki/images/3/38/T--GreatBay_SZ--Home_SPIDERMAN.png" alt="header"
+                     width="100%">
             </div>
-
-            <!-- Floating Btns
-            <div class="floatingBtn">
-                <a href="#FudanWrapper" class="btn">
-                    <i class="fa fa-angle-up" style="font-size: 48px;line-height: 45px"></i>
-                </a>
-            </div> -->
-
-            <!-- Footer with sponsors and contact methods -->
-            <footer id="FudanFooter" class="page-footer grey">
-                <div class="container">
-                    <div class="row">
-                        <div id="sponsor" class="col m3 s12 row">
-                            <a href="http://2018.igem.org/Team:Fudan" target="_blank"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="http://2018.igem.org/wiki/images/7/73/T--Fudan--teamLogoWhite.png">
-                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="http://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
-                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="http://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
-                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="http://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
-                        </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size: 18px">ENABLE: making cells even smarter</h3>
-                        </div>
-                        <div id="usefulLinks" class="col m9 s12 row">
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="./Judging">Project</a></span>
-                                    <ul>
-                                        <li><a href="./Description">Background</a></li>
-                                        <li><a href="./Design">Design</a></li>
-                                        <li><a href="./Measurement">Measurement</a></li>
-                                        <li><a href="./Model">Model</a></li>
-                                        <li><a href="./Demonstrate">Results</a></li>
-                                        <li><a href="./Applied_Design">Potentials</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="./Parts">BioBricks</a></span>
-                                    <ul>
-                                        <li><a href="./Basic_Part">Basic parts</a></li>
-                                        <li><a href="./Composite_Part">Composite parts</a></li>
-                                        <li><a href="./Part_Collection">Part collection</a></li>
-                                        <li><a href="./Improve">Parts improvement</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span>Lab</span>
-                                    <ul>
-                                        <li><a href="./Interlab">iGEM interLab</a></li>
-                                        <li><a href="./Notebook">Notebook</a></li>
-                                        <li><a href="./Protocols">Protocols</a></li>
-                                        <li><a href="./Safety">Safety</a></li>
-                                        <li><a href="./Hardware">Hardware</a></li>
-                                        <li><a href="./Software">Software</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="./HP">Outreach</a></span>
-                                    <ul>
-                                        <li><a href="./Collaborations">Collaborations</a></li>
-                                        <li><a href="./Human_Practices">Human practices</a></li>
-                                        <li><a href="./Public_Engagement">Public engagement</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="./Team">Team</a></span>
-                                    <ul>
-                                        <li><a href="./Attributions">Attributions</a></li>
-                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-                                        <li><a href="./" target=_blank>2019.Fudan</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">&nbsp;</div>
-                            </div>
+            <div class="my-content">
+                <div class="content-box" id="title">
+                    <h1>SPIDERMAN</h1>
+                    <h2>SPIDroin EngineeRing with chroMoprotein And Natural dye</h2>
+                </div>
+                <div class="content-block">
+                    <div class="content-box">
+                        <h3>Abstract</h3>
+                        <div id="abstract">
+                            <p>Spider silk serves as a new material with superior properties
+                                that can be applied in medication, cloth, and aerospace fields.
+                                However, spider breeding is not applicable due to spider's fierce
+                                behavior. The current approach is to produce recombinant spidroins
+                                (silk proteins) from other chassis and spin them into silk. This year
+                                , we aim to manufacture recombinant spider silk with E.coli and color
+                                the silk for application in cloth industry. We modularized three significant
+                                domains of spidroin - the N-terminal, the repetitive region, and the
+                                C-terminal - and integrated them into various spidroin to form silk.
+                                We then dyed the silk with microbial natural pigments deoxyviolacein
+                                and indigo. To obtain better color and a more convenient dying process,
+                                we fused the repetitive region to chromoproteins and mixed them with
+                                spidroin during spinning. Our team hopes to provide a novel approach
+                                for cloth production and explore new possibilities for spider silk
+                                applications. </p>
                         </div>
                     </div>
                 </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                         <div class="contactUS row">
-                           <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg E301, 2005 Songhu Rd, Shanghai
-                           </div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
-                           </div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
-                           </div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
-                           </div>
-                         </div>
-                     </div>
+                <div class="content-block">
+                    <div class="content-box1" id="content-box1">
+                        <a href="http://2019.igem.org/Team:GreatBay_SZ/Description">
+                        <div class="page-guide" id="project">
+                            <h3>PROJECT</h3>
+                            <div class="page-guide-gray">
+                                <p>How to weave a Spiderman suit out of nothing but a handful of DNA sequences and E. Coli? In this project, GreatBay_SZ creates biobricks that demonstrate functional fabulous spider silk protein (spidroin) expression. Click here to know more about our project!</p>
+                            </div>
+                        </div>
+                        </a>
+                        <a href="http://2019.igem.org/Team:GreatBay_SZ/Demonstrate">
+                        <div class="page-guide" id="demonstration">
+                            <h3>DEMONSTRATION</h3>
+                            <div class="page-guide-gray">
+                                <p>Our project is well-demonstrated to ensure our understanding and present it to the public. With solid and thorough data of our experiments, we perform demonstrations to directly show our progress.</p>
+                            </div>
+                        </div>
+                        </a>
+                        <a href="https://2019.igem.org/Team:GreatBay_SZ/Basic_Part">
+                        <div class="page-guide" id="parts">
+                            <h3>PARTS</h3>
+                            <div class="page-guide-gray">
+                                <p>For our project, parts of natural dye production and a collection of spider silk proteins are successfully characterized. This includes improvements based on previous parts, invention of new parts and collection of parts.</p>
+                            </div>
+                        </div>
+                        </a>
+                        <a href="http://2019.igem.org/Team:GreatBay_SZ/Human_Practices">
+                        <div class="page-guide" id="hp">
+                            <h3>HP</h3>
+                            <div class="page-guide-gray">
+                                <p>Besides lab-based work, we host substantial human practices event along with our experiments. We endeavor to raise public concerns about synthetic biology, and beyond which we organize small-scale and research-based workshops with professional groups.</p>
+                            </div>
+                        </div>
+                        </a>
+                        <a href="https://2019.igem.org/Team:GreatBay_SZ/Team">
+                        <div class="page-guide" id="team">
+                            <h3>TEAM</h3>
+                            <div class="page-guide-gray">
+                                <p>GreatBay_SZ consists of 21 high school students and 1 instructor from China. Our schools cover countries including China, America and Costa Rica. This diversity promotes universal work that the team does internationally. Learn more about these enthusiastic bio-lovers in our team page!</p>
+                            </div>
+                        </div>
+                        </a>
+                        <a href="https://2019.igem.org/Team:GreatBay_SZ/Judging">
+                        <div class="page-guide" id="judging">
+                            <h3>JUDGING</h3>
+                            <div class="page-guide-gray">
+                                <p>This is a special page to help judges on evaluating the project. Let us show you why we deserve medals and awards. </p>
+                            </div>
+                        </div>
+                        </a>
+                        <a href="https://2019.igem.org/Team:GreatBay_SZ/Notebook">
+                        <div class="page-guide" id="notebook">
+                            <h3>NOTEBOOK</h3>
+                            <div class="page-guide-gray">
+                                <p>This notebook contains detailed description of our experiments. If you want to learn more about our organized experiments, click here.</p>
+                            </div>
+                        </div>
+                        </a>
+                        <a href="https://2019.igem.org/Team:GreatBay_SZ/Safety">
+                        <div class="page-guide" id="safety">
+                            <h3>SAFETY</h3>
+                            <div class="page-guide-gray">
+                                <p>Safety is an essential concern in our project. We have been trained to work safely and responsibly both as individuals and as a team in the lab.</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
                 </div>
-            </footer>
-
+                    <div class="content-box">
+                        <div id="flash">
+                            <img src="https://2019.igem.org/wiki/images/thumb/d/d5/T--GreatBay_SZ--dye.jpeg/800px-T--GreatBay_SZ--dye.jpeg" alt="" style="display: block;">
+                            <img src="https://2019.igem.org/wiki/images/thumb/7/74/T--GreatBay_SZ--needle1.jpeg/800px-T--GreatBay_SZ--needle1.jpeg" alt="" style="display: none;">
+                            <img src="https://2019.igem.org/wiki/images/thumb/b/b3/T--GreatBay_SZ--hardware1.jpeg/450px-T--GreatBay_SZ--hardware1.jpeg" alt="" style="display: none;left: 23%">
+                            <img src="https://2019.igem.org/wiki/images/thumb/7/73/T--GreatBay_SZ--dye7.jpeg/450px-T--GreatBay_SZ--dye7.jpeg" alt="" style="display: none;left: 23%">
+                            <img src="https://2019.igem.org/wiki/images/thumb/3/33/T--GreatBay_SZ--silk8.jpeg/417px-T--GreatBay_SZ--silk8.jpeg" alt="" style="display: none;left: 23%">
+                            <img src="https://2019.igem.org/wiki/images/thumb/5/59/T--GreatBay_SZ--silk18.jpeg/800px-T--GreatBay_SZ--silk18.jpeg" alt="" style="display: none;">
+                            <ul id="flash-controller">
+                                <li class="li_1" style="background-color: rgb(255, 68, 0);"></li>
+                                <li style="background-color: rgb(255, 255, 255);"></li>
+                                <li style="background-color: rgb(255, 255, 255);"></li>
+                                <li style="background-color: rgb(255, 255, 255);"></li>
+                                <li style="background-color: rgb(255, 255, 255);"></li>
+                                <li style="background-color: rgb(255, 255, 255);"></li>
+                            </ul>
+                            <div class="span-r">
+                                <span>&gt;</span>
+                            </div>
+                            <div class="span-l">
+                                <span>&lt;</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="footer">
+                <img src="https://2019.igem.org/wiki/images/thumb/4/41/T--GreatBay_SZ--_Footer.png/800px-T--GreatBay_SZ--_Footer.png" alt="">
+            </div>
         </div>
     </div>
 </div>
 
 
-<!-- Javascript files -->
-<!-- Materialize 1.0.0-rc.2 -->
-<script src="http://2018.igem.org/wiki/index.php?title=Template:Fudan/materialize.js&action=raw&ctype=text/javascript"></script>
 
-<!-- some from Fudan-js.js -->
-<script>
-    //Sidenav Init
-    $(function(){
-        $('.sidenav').sidenav({
-            edge:'right',
-            inDuration: 250,
-            outDuration: 350
-        });
-    });
 
-    //Slider Init (Index Only)
-    $(function(){
-        $('.slider').slider({
-            height: 400
-        });
-    });
 
-    //Dropdown Init
-
-    //Floating Btn Init
-    $(function(){
-        $('.fixed-action-btn').floatingActionButton();
-    });
-
-    //Tabs Init
-    $(function(){
-        $('.tabs').tabs();
-    });
-
-    $(function(){
-        $('.tap-target').tapTarget();
-    });
-
-    //Collapsible Init
-    $(function(){
-        $('.collapsible').collapsible({});
-    });
-
-    //ScrollSpy Init, not the frontpage or pages without sidebar
-
-    //Init slide-out nav
-    $(function () {
-        $('#slide-out .collapsible-body').css('display','none');
-        $('#slide-out .collapsible li').removeClass('active');
-    });
-
-    //Parallax Init
-    $(function(){
-        $('.parallax').parallax();
-    });
-
-//hide the nav
-
-//show caption
-if($(window).width()>991){
-    var $figureCaption=$(".figureCaption");
-    var $figure=$(".figure");
-    $figure.eq(0).mouseover(function () {
-        $figureCaption.eq(0).fadeIn(100);
-        $figure.eq(0).mouseout(function () {
-            $figureCaption.eq(0).fadeOut(100);
-        });
-    });
-    $figure.eq(1).mouseover(function () {
-        $figureCaption.eq(1).fadeIn(100);
-        $figure.eq(1).mouseout(function () {
-            $figureCaption.eq(1).fadeOut(100);
-        });
-    });
-}
-</script>
 
 </body>
-</html>
+<script>
+window.onload = function () {
+  /* 菜单逻辑 */
+    var sideBar = document.getElementById('side-bar');
+    var mainMenu = sideBar.getElementsByTagName('h5');
+    var subMenu = sideBar.getElementsByTagName('ul');
+    var box = document.getElementById('spider-top1');
+    var spit = document.getElementById('spit1');
+    for (var i = 0, len = mainMenu.length; i < len; i++) {
+        mainMenu[i].onmouseover = (function (i) {
+            return function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                for (var j = 0; j < len; j++) {
+                    subMenu[j].classList.remove('active');
+                }
+                subMenu[i].classList.add('active');
+                box.classList.add('active');
+                spit.classList.add('type' + i);
+            }
+        })(i);
+        mainMenu[i].onmouseout = (function (i) {
+            return function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                subMenu[i].classList.remove('active');
+                box.classList.remove('active');
+                spit.classList.remove('type' + i);
+            }
+        })(i);
+        subMenu[i].onmouseout = (function (i) {
+            return function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                mainMenu[i].classList.remove('active');
+                subMenu[i].classList.remove('active');
+                box.classList.remove('active');
+                spit.classList.remove('type' + i);
+            }
+        })(i);
+        subMenu[i].onmouseover = (function (i) {
+            return function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                subMenu[i].classList.add('active');
+                box.classList.add('active');
+                spit.classList.add('type' + i);
+            }
+        })(i);
+    }
+
+    /* bulb */
+    var bulb = this.document.getElementById('bulb');
+    bulb.onclick = function() {
+        if (document.body.classList.contains('dark')) {
+            document.body.classList.remove('dark');
+        } else {
+            document.body.classList.add('dark');
+        }
+    };
+
+
+    /* content logic */
+    // handleHashChange(); // 根据url中的hash值初始化内容区域
+
+    if ("onhashchange" in window) {
+        // 浏览器支持onhashchange事件
+        window.onhashchange = handleHashChange;
+    } else {
+        // 不支持则用定时器检测的办法
+        var location = window.location,
+            oldHash = location.hash;
+        // 每隔100ms检查hash是否发生变化
+        setInterval(function () {
+            var newHash = location.hash;
+            if (newHash !== oldHash) {
+                handleHashChange();
+                oldHash = newHash;
+            }
+        }, 100);
+    }
+
+    function handleHashChange() {
+        // 获取hash中的菜单id，示例：menu-1 => 1
+        var currentPageID = window.location.hash.split('-')[1] || 1;
+        displayPage(--currentPageID);
+    }
+
+    function displayPage(id) {
+        var el = document.getElementsByClassName("content");
+        for (var i = 0; i < el.length; i++) {
+            el[i].style.display = "none";
+        }
+        el[id].style.display = "block";
+    }
+/*  picture scroll */
+
+    var div = document.getElementById('flash');
+    var img = div.getElementsByTagName('img'); /*选中div下所有的图片*/
+    var ul = document.getElementById('flash-controller');
+    var li = ul.getElementsByTagName('li');
+    var div_r = document.querySelector('.span-r'); /*querySelector的方式选中元素*/
+// var span_r = div_r.getElementsByTagName('span');
+    var div_l = document.querySelector('.span-l');
+// var sapn_l = div_l.getElementsByTagName('span');
+    var len = img.length;
+    var count = 0; /*设置count来显示当前图片的序号*/
+    function run() { /*将定时器里的函数提取到外部*/
+        count++;
+        count = count == 6 ? 0 : count; /*当图片加载到最后一张时，使其归零*/
+        for (var i = 0; i < len; i++) {
+            img[i].style.display = 'none'; /*利用for循环使除当前count位其他图片隐藏*/
+        }
+        img[count].style.display = 'block'; /*显示当前count的值所代表的图片*/
+        for (var i = 0; i < li.length; i++) {
+            li[i].style.backgroundColor = "#fff"; /*原理同上*/
+        }
+        li[count].style.backgroundColor = "#f40";
+    }
+
+    var timer = setInterval(run, 2000); /*定义定时器，使图片每隔2s更换一次（1s 有点快）*/
+    div.onmouseover = function () {
+        clearInterval(timer);
+    };
+    div.onmouseleave = function () { /*定义鼠标移出事件，当鼠标移出div区域，轮播继续*/
+        timer = setInterval(run, 2000);
+    };
+    for (var i = 0; i < len; i++) {
+        li[i].index = i; /*定义index记录当前鼠标在li的位置*/
+        li[i].onmouseenter = function () { /*定义鼠标经过事件*/
+            for (var i = 0; i < len; i++) { /*通过for循环将所有图片隐藏，圆点背景设为白色*/
+                li[i].style.background = '#fff';
+                img[i].style.display = 'none';
+            }
+            this.style.background = '#f40'; /*设置当前所指圆点的背景色*/
+            img[this.index].style.display = 'block'; /*使圆点对应的图片显示*/
+        }
+    }
+    div_r.onclick = function () { /*因为span没有设置宽高，直接把事件添加到他的父级*/
+        console.log('div_r click')
+        run(); /*直接调用现成的run函数*/
+    };
+
+    function reverse() {
+        count--;
+        count = count == -1 ? 4 : count;
+        for (var i = 0; i < len; i++) {
+            img[i].style.display = 'none'; /*利用for循环使除当前count位其他图片隐藏*/
+        }
+        img[count].style.display = 'block'; /*显示当前count的值所代表的图片*/
+        for (var i = 0; i < li.length; i++) {
+            li[i].style.backgroundColor = "#fff"; /*原理同上*/
+        }
+        li[count].style.backgroundColor = "#f40";
+    }
+
+    div_l.onclick = function () {
+        reverse(); /*重新设置函数*/
+    }
+/* show-up */
+window.onscroll = function () {
+    showUp('show-up');
+
+    function showUp(id) {
+        var show = document.getElementById(id);
+
+        // 获取浏览器窗口可视化高度
+
+        var clientH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        // 获取show-up元素顶部到浏览器窗口顶部的距离
+
+        var showTop = show.getBoundingClientRect().top;
+
+        // 如果距离小于可视化窗口高度，就给show-up元素添加动画效果
+
+        console.log(showTop + ' ' + clientH);
+
+        this.console.log(showTop <= (clientH / 2));
+
+        if (showTop <= (clientH / 2)) {
+            if (showTop <= 0) {
+                show.classList.add("hide");
+                show.classList.remove("show-up");
+            } else if (showTop >= (clientH / 3)) {
+                show.classList.remove("hide");
+                show.classList.add("show-up");
+            }
+        } else if (showTop > clientH) {
+            show.classList.add("hide");
+            show.classList.remove("show-up");
+        }
+    }
+}
+/* to top */
+var toTop = this.document.getElementById('spider-top1');
+toTop.onclick = function() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+/* color-change logic */
+    changeLogo('safety');
+    changeLogo('project');
+    changeLogo('demonstration');
+    changeLogo('judging');
+    changeLogo('notebook');
+    changeLogo('parts');
+    changeLogo('team');
+    changeLogo('hp');
+
+    function changeLogo(id) {
+        var change = document.getElementById(id);
+
+        change.onmouseover = function () {
+            change.classList.add('active');
+        };
+    }
+}
+</script>
