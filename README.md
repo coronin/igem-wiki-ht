@@ -6,11 +6,11 @@ The content of XXX.html should be copied into Team:Fudan-TSI/XXX page, keep {{Fu
 
 The wiki template should be blank, because the code to suppress iGEM HQ formating has now be included in each page.
 
-The part &lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; behind &lt;html&gt; is to tags open before #mw-content-text.
+The part &lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; behind &lt;html&gt; is to close tags open by HQ, which could be located by id="mw-content-text" search.
 
 The file etc-nginx.conf is for running a mirror site.
 
-Both .py files could be used to running locally, very good for site building and testing. Run [the local site](http://127.0.0.1:8000) and start coding!
+Both .py files could be used to run the site locally, a must for building and testing. Run [the local site](http://127.0.0.1:8000) and start coding!
 
 ## Branches
 * 1107 - live at http://2018.igem.org/Team:Fudan
