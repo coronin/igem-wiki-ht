@@ -2,9 +2,11 @@
 It was initially developed by Tian Huang for 2018, and later modified by Liang Cai for 2019.
 
 ## For wiki coder
-The content of XXX.html should be copied into Team:Fudan-TSI/XXX page, keep {{Fudan-TSI}} but delete the jquery link before <html>
+The content of XXX.html should be copied into Team:Fudan-TSI/XXX page, keep {{Fudan-TSI}} but delete the jquery link before <html>. The site has a function to import jquery automatically, thus there is no need to import again.
 
-The site has a function to import jquery automatically, thus there is no need to import again.
+The wiki template should be blank, because the code to suppress iGEM HQ formating has now be included in each page.
+
+The part </p></div></div></div> behind <html> is to tags open before #mw-content-text.
 
 The file etc-nginx.conf is for running a mirror site.
 
