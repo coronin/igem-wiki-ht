@@ -1,540 +1,2630 @@
-{{Fudan-TSI}}<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<html lang="en">
-<!--
-This html document is created by Tian Huang for Team Fudan iGEM 2018.
-We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
--->
-<!-- LC check on 2018-10-25 -->
-<head>
-    <meta charset="UTF-8">
+{{Fudan-TSI}}
+<html>
 
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-css.css&action=raw&ctype=text/css" />
-    <link rel="stylesheet" type="text/css" href="http://2018.igem.org/wiki/index.php?title=Template:Fudan/jquery-ui.min.css&action=raw&ctype=text/css" />
 
-    <!-- Font-awesome icons 4.7.0 -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
+<script>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&action=raw&ctype=text/css">
+    $(document).ready(function() {
 
-    <!-- Clear default CSS settings; CSS reset -->
-    <style>
-        *{margin: 0;padding: 0;list-style: none;}
-        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
+        //remove the HQ_page id
+        $("#HQ_page").attr('id','');
 
-        /** 清除内外边距 **/
-        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-        pre, /* text formatting elements 文本格式元素 */
-        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-        th, td /* table elements 表格元素 */ {
-            margin: 0;
-            padding: 0;
+
+        //highlight current page on the menu
+        highlight_current_page_menu();
+
+        //accessing submenus
+        $(".menu_item").click(function(){
+            $(".submenu_control_icon", this).toggleClass("open");
+            $(this).next(".submenu").fadeToggle(400);
+        });
+
+        //mobile menu access
+        $(".igem_2019_team_mobile_bar").click(function(){
+            $(this).next().toggleClass("displaying_menu");
+        });
+
+    });
+
+
+        function highlight_current_page_menu() {
+
+            var page_url="https://2019.igem.org/";
+            page_url = page_url + wgPageName;
+            $("a[href$='"+ page_url +"']").children().addClass("current_page");
+
+            //if the page is in a submenu, open the submenu and make the appropiate changes
+            if( $( ".current_page" ).hasClass( "submenu_item" )){
+
+                $(".current_page").parent().parent().fadeToggle(400);
+                $(".current_page").parent().parent().prev().addClass("current_page");
+                $(".menu_item.current_page > .submenu_control_icon").toggleClass("open");
+
+            }
         }
 
-        /** 设置默认字体 **/
 
-        /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
-        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-        /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-
-        /** 重置列表元素 **/
-        ul, ol { list-style: none; }
-
-        /** 重置文本格式元素 **/
-        a { text-decoration: none; }
-        a:hover { text-decoration: underline; }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+</script>
 
 
-        /** 重置表单元素 **/
-        legend { color: #000; } /* for ie6 */
-        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-        /* 注：optgroup 无法扶正 */
+<style>
+/**************************************************************************************************************************************************************************************************/
 
-        /** 重置表格元素 **/
-        table { border-collapse: collapse; border-spacing: 0; }
-    </style>
-    <title>2019 Team:Fudan-TSI Model</title>
+
+
+/**************************************************************************************************************************************************************************************************/
+/* DEFAULT WIKI SETTINGS */
+/**************************************************************************************************************************************************************************************************/
+
+
+    #home_logo, #sideMenu { display:none; }
+    #sideMenu, #top_title, .patrollink  {display:none;}
+    #content { margin-left:0px; margin-top:-7px; padding:0px; width:100%;}
+    #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
+    #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
+
+
+
+
+/**************************************************************************************************************************************************************************************************/
+/* MENU */
+/**************************************************************************************************************************************************************************************************/
+
+    /*wrapping for the menu*/
+    .igem_2019_team_menu {
+        background-color:#cecece;
+        border-left: 1px solid #635d5d;
+        float:right;
+        height:100vh;
+        max-width: 270px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding:0px;
+        position:fixed;
+        right:0%;
+        text-align:left;
+        width: 15%;
+    }
+
+    /*controlling menu visibility*/
+    .igem_2019_team_menu.displaying_menu{
+        display:block;
+    }
+
+    /*links in the menu*/
+    .igem_2019_team_menu  a {
+        color: #484848;
+        text-decoration:none;
+    }
+
+    /*images in the menu*/
+    .igem_2019_team_menu img {
+        width:100%;
+    }
+
+    /*level 1 menu items*/
+    .igem_2019_team_menu .menu_item {
+        background-color: #cecece;
+        border-bottom: 1px solid #635d5d;
+        clear: both;
+        color: #484848;
+        cursor: pointer;
+        float: left;
+        font-size: 120%;
+        font-weight: bold;
+        padding: 15px 0px 15px 5%;
+        width: 100%;
+    }
+
+    /*level 1 menu items without submenus*/
+    .igem_2019_team_menu .menu_item.direct_link {
+        color: #484848;
+        padding-left: 15%;
+    }
+
+
+    /*level 1 menu items on hover*/
+    .igem_2019_team_menu .menu_item:hover {
+        background-color: #ecb656 !important;
+    }
+
+    /*icon for expanding and collapsing level 1 menut items*/
+    .igem_2019_team_menu .menu_item .submenu_control_icon {
+        color: #484848;
+        float: left;
+        width: 10%;
+    }
+
+    /* submenu icon  "-"*/
+    .igem_2019_team_menu .menu_item .submenu_control_icon::before {
+        content: "+";
+    }
+
+    /* submenu icon  "-"*/
+    .igem_2019_team_menu .menu_item .submenu_control_icon.open::before {
+        content: "-";
+    }
+
+
+    /*level 2 menu (submenu) wrapper*/
+    .igem_2019_team_menu .submenu{
+        background-color: #ececec;
+        clear:both;
+        display:none;
+        float: left;
+        width:100%;
+    }
+
+    /*level 2 menu (submenu) item*/
+    .igem_2019_team_menu .submenu .submenu_item {
+        border-bottom: 1px solid #cecece;
+        color: #635d5d;
+        height: 30px;
+        float: left;
+        font-size: 110%;
+        font-weight: bold;
+        padding: 12px 0px 0px 15%;
+        width: 100%;
+    }
+
+    /*level 2 menu (submenu) items on hover*/
+    .igem_2019_team_menu .submenu .submenu_item:hover {
+        background-color: #ecb656 !important;
+    }
+
+    /*color for highlighting current page on the wiki*/
+    .igem_2019_team_menu .submenu .submenu_item.current_page,
+    .igem_2019_team_menu .menu_item.current_page,
+    .igem_2019_team_menu .menu_item.direct_link.current_page {
+        background-color:#a2d3d0;
+    }
+
+
+/*mobile menu bar styling*/
+/**************************************************************************************************************************************************************************************************/
+
+    /*mobile bar that controls the menu*/
+    .igem_2019_team_mobile_bar {
+        background-color:#ececec;
+        border-bottom: 1px solid #cecece;
+        cursor:pointer;
+        display:none;
+        float:left;
+        margin-top: 0;
+        padding: 5px 0;
+        position:fixed;
+        width:100%;
+    }
+
+    /*mobile logo*/
+    .igem_logo_mobile {
+        float:left;
+        padding-left: 5%;
+        width: 30%;
+    }
+
+    /*image within the mobile logo*/
+    .igem_logo_mobile img {
+        width:70px;
+    }
+
+    /*mobile expand collapse button*/
+    .igem_menu_control_mobile {
+        float:right;
+        padding-right:5%;
+        padding-top:5px;
+        text-align:right;
+        width: 30%;
+    }
+
+    /*image for mobile expand collapse button*/
+    .igem_menu_control_mobile img {
+        width:25px;
+    }
+
+
+    /*add extra padding to the menu to improve mobile scrolling*/
+    .menu_padding{
+        float:left;
+        height:100px;
+    }
+
+
+/**************************************************************************************************************************************************************************************************/
+/* CONTENT OF THE PAGE */
+/**************************************************************************************************************************************************************************************************/
+
+    /* general wrapper for the content */
+    .igem_2019_team_content {
+        background-color:white;
+        display:block;
+        width: 87%;
+    }
+
+    /* subwrapper to center content */
+    .igem_2019_team_content .igem_2019_team_column_wrapper {
+        margin:auto;
+        max-width: 1400px;
+        width:90%;
+    }
+
+
+
+/*general styling*/
+/**************************************************************************************************************************************************************************************************/
+
+    /*size for title h tags*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper h1 { font-size: 210%;}
+    .igem_2019_team_content .igem_2019_team_column_wrapper h2 { font-size: 190%;}
+    .igem_2019_team_content .igem_2019_team_column_wrapper h3 { font-size: 170%;}
+    .igem_2019_team_content .igem_2019_team_column_wrapper h4 { font-size: 150%;}
+    .igem_2019_team_content .igem_2019_team_column_wrapper h5 { font-size: 140%;}
+    .igem_2019_team_content .igem_2019_team_column_wrapper h6 { font-size: 130%;}
+
+
+    /*titles h1, h2*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper h1, .igem_2019_team_content .igem_2019_team_column_wrapper h2 {
+        border-bottom:0px;
+        color: white;
+        font-family: "Arial Black", Gadget, sans-serif;
+        padding: 10px 0px;
+    }
+
+    /*titles h3, h3, h5, h6 */
+    .igem_2019_team_content .igem_2019_team_column_wrapper h3,
+    .igem_2019_team_content .igem_2019_team_column_wrapper h4,
+    .igem_2019_team_content .igem_2019_team_column_wrapper h5,
+    .igem_2019_team_content .igem_2019_team_column_wrapper h6 {
+        border-bottom:0px;
+        color: white;
+        font-family: "Arial Black", Gadget, sans-serif;
+        padding: 5px 0px;
+    }
+
+    /* text p tag*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper p {
+        font-size: 130%;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 5px 0px;
+        text-align: left;
+        color: white;
+    }
+
+    /* Links a tag*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper a {
+        color: #00a19b;
+        font-weight: bold;
+        text-decoration: underline;
+        text-decoration-color:#00a19b;
+        transition: all 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -ms-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+    }
+
+    /* hover for the links */
+    .igem_2019_team_content .igem_2019_team_column_wrapper a:hover {
+        color: #085156;
+        text-decoration:none;
+    }
+
+
+    /* Table tag*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper table {
+        border: 1px solid #635d5d;
+        border-collapse: collapse;
+        font-size: 130%;
+        width: 100%;
+    }
+
+    /* table cells */
+    .igem_2019_team_content .igem_2019_team_column_wrapper td {
+        border: 1px solid #cecece;
+        border-collapse: collapse;
+        font-size: 105%;
+        padding: 10px;
+        vertical-align: text-top;
+    }
+
+    /* table headers */
+    .igem_2019_team_content .igem_2019_team_column_wrapper th {
+        background-color:#cecece;
+        border: 1px solid #635d5d;
+        border-collapse: collapse;
+        font-size: 110%;
+        padding: 10px;
+        vertical-align: text-top;
+    }
+
+
+
+    /* non numbered lists */
+    .igem_2019_team_content .igem_2019_team_column_wrapper ul, .igem_2019_team_content .igem_2019_team_column_wrapper ol {
+        font-size: 130%;
+        font-family: Arial, Helvetica, sans-serif;
+        padding:0px 20px;
+    }
+
+
+    /*font sizing within list nesting*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper ul ul li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ul ul li,
+    .igem_2019_team_content .igem_2019_team_column_wrapper ul ol li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ul ol li,
+    .igem_2019_team_content .igem_2019_team_column_wrapper ol ol li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ol ul li,
+    .igem_2019_team_content .igem_2019_team_column_wrapper ol ul li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ol ol li,
+    .igem_2019_team_content .igem_2019_team_column_wrapper ol ul ul li, .igem_2019_team_content .igem_2019_team_column_wrapper ol ol ul li,
+    .igem_2019_team_content .igem_2019_team_column_wrapper ol ol ol li, .igem_2019_team_content .igem_2019_team_column_wrapper ol ul ol li{ font-size: 76%; }
+
+
+
+/*layout classes*/
+/**************************************************************************************************************************************************************************************************/
+
+    /*main layout class */
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column  {
+        float:left;
+        margin: 1% 2%;
+        padding: 0px;
+    }
+
+    /* 100% */
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.full_size { width:96%; }
+
+    /* 66% */
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.two_thirds_size { width: 62.6%; }
+
+    /* 33% */
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.third_size { width: 29.3%; }
+
+
+
+
+    /*all images*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.full_size img,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.two_thirds_size img,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.third_size img {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+
+    /* page break */
+    .igem_2019_team_content .igem_2019_team_column_wrapper .clear {
+        clear:both;
+    }
+    /*add extra space to page break with clear class*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper .clear.extra_space {
+        height: 30px;
+    }
+
+    /* horizontal line to divide the page*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper .line_divider {
+        border-top: 1px solid #cecece;
+        margin: auto;
+        width: 98%;
+    }
+
+
+
+
+/*support classes*/
+/**************************************************************************************************************************************************************************************************/
+
+
+    /*Button  */
+    /************************************************/
+    .igem_2019_team_content .igem_2019_team_column_wrapper .button_link {
+        font-size: 130%;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .button_link a  {
+        background-color: #00a19bad !important;
+        color: #000 !important;
+        font-weight: bold;
+        margin: auto;
+        text-decoration: none !important;
+        padding: 10px 15px !important;
+    }
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .button_link a:hover {
+        background-color: #ffb819 !important;
+    }
+
+
+
+    /*highlight */
+    /************************************************/
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight {
+        padding: 15px 20px;
+    }
+
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight p,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h1,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h2,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h3,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h4,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h5,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h6 {
+        padding: 5px 15px;
+    }
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_background {
+        background-color: #ececec;
+    }
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_A_top {
+        border-top: 4px solid #00a19bad;
+    }
+
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_A_full {
+        border: 4px solid #00a19bad;
+    }
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_B_top {
+        border-top: 4px solid #ffb819
+    }
+
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_B_full {
+        border: 4px solid #ffb819;
+    }
+
+
+
+
+/*mobile*/
+/**************************************************************************************************************************************************************************************************/
+
+
+    /* 1800px  */
+    /************************************************/
+    @media only screen and (max-width: 1800px) {
+        .igem_2019_team_content { width: 85%;}
+        .igem_2019_team_menu {display:block;}
+
+}
+
+    /* 1400px  */
+    /************************************************/
+    @media only screen and (max-width: 1400px) {
+        .igem_2019_team_menu .menu_item { font-size:100%;}
+        .igem_2019_team_menu .submenu .submenu_item { font-size:90%;}
+        .igem_2019_team_menu {display:block;}
+    }
+
+
+    /* 1100px  */
+    /************************************************/
+    @media only screen and (max-width: 1100px) {
+        .igem_2019_team_content {width:100%; margin-left:0px;}
+
+        .igem_2019_team_menu {display:none;float:right;margin-top:47px;max-width:100%;position:fixed;width:25%;}
+
+        .igem_2019_team_mobile_bar {display:block;}
+
+        .igem_2019_team_content .igem_2019_team_column_wrapper .column.full_size, .igem_2019_team_content .igem_2019_team_column_wrapper .column.two_thirds_size,.igem_2019_team_content .igem_2019_team_column_wrapper .column.third_size {width:96%; }
+
+    }
+
+    /* 850px  */
+    /************************************************/
+        @media only screen and (max-width: 850px) {
+        .igem_2019_team_menu {width:40%;}
+    }
+
+    /*500px  */
+    /************************************************/
+    @media only screen and (max-width: 500px) {
+        .igem_2019_team_menu {min-width:100%;width:100%;}
+    }
+
+
+/**************************************************************************************************************************************************************************************************/
+
+
+
+
+
+</style>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- THIS IS WHERE THE HTML BEGINS --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<head>
+
+    <!-- This tells the browser that your page is responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/jQuery&amp;action=raw&amp;ctype=text/javascript"></script>
+
+
+
 </head>
 
-<body>
-<!-- Fudan div at igem.org -->
-<div id="FudanWrapper" class="white">
-    <div id="FudanBody" class="white orangeBg">
-        <header>
-            <!-- empty bar -->
-            <div id="emptyBar" style="position:relative;width: 100%;"></div>
+<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
 
-            <!-- Navigation bar 2019-9-15 -->
-            <nav id="topNav" class="white z-depth-0_5">
-                <div class="nav-wrapper">
-                    <div id="teamLogo" class="brand-logo">
-                        <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/3/3c/T--Fudan-TSI--Logo0.gif"></a>
-                    </div>
-                    <ul id="nav-mobile" class="right orangeBorder">
-                        <li>
-                            <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
-                                <i class="fa fa-navicon" style="font-size:24px"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- Dropdown and List elements in navigation bar -->
-            <!-- Slide-out navigator contents 2019-9-15 -->
-            <ul id="slide-out" class="sidenav">
-                <li style="padding: 0"><div class="sidenavBanner">
-                    <div class="background">
-                    </div>
-                    <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Model</span></p>
-                </div></li>
-                <li>
-                    <ul class="collapsible expandable">
-                        <li class="onThisPageNav"><span>On this page</span></li>
-                        <li class="onThisPageNav"><a href="#section1">div with id section1</a></li>
-                        <li class="onThisPageNav"><a href="#section2">div with id section2</a></li>
-                        <li class="onThisPageNav"><a href="#section3">div with id section3</a></li>
-                        <li><span class="pageSidebar">Team: Fudan-TSI</span></li>
-<li><div class="collapsible-header"><span class="pageSidebar">Project</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Results</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Results#ReverseTranscription">Reverse Transcription</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Results#Recombination">Recombination</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header active"><span class="pageSidebar">Model</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Parts</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Outreach</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Integrated_Human_Practice">Integrated human practice</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Team</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-        <li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-    </ul></div>
-</li>
-                    </ul><!-- .expandable -->
-                </li>
-                <li><div class="placeHolder"></div></li>
-            </ul>
-        </header>
-
-        <div id="pageContent" style="">
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Menu --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
-            <div id="contentBanner" class="figureBanner orangeBg">
-                <div class="row">
-                    <div class="col s12 hide-on-med-and-up">
-                        <h4>Model</h4>
-                        <p class="flow-text">It is important to observe and anticipate how one's product will work in the real world in order to make it more applicable. </p>
-                    </div>
-                </div>
-                <div id="figureBannerTitle" class="hide-on-small-only">
-                    <h1>Model</h1>
-                    <p class="flow-text">It is important to observe and anticipate how one's product will work in the real world in order to make it more applicable. </p>
-                </div>
-                <div class="hide-on-small-only">
-                    <img src="http://2018.igem.org/wiki/images/b/bb/T--Fudan--title_model.jpg">
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
+        <style>
 
-            <!-- main content of the page -->
-            <div class="container">
-                <!-- side navigator of page content -->
-                <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
-                    <li class="onThisPageNav"><a href="#section1">div with id section1</a></li>
-                    <li class="onThisPageNav"><a href="#section2">div with id section2</a></li>
-                    <li class="onThisPageNav"><a href="#section3">div with id section3</a></li>
-                    <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
-                </ul>
+            *{margin: 0;padding: 0;list-style: none;}
+            /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
 
-                <main>
-                    <div class="section container">
-                        <p class="flow-text">Our modeling focuses on two main aspects. The first is optimizing the transcriptional modules to increase signal-to-noise ratio, and the second is forecasting clinical outputs for multiple types of mixtures of immune cells and cancer cells. We experimentally showed that an amplification step is required. We also used a stochastic process to model receptor-ligand interaction kinetics, a possibility theory to model the transcriptional amplifier, and differential equations to model signal integration. ENABLE constructs with modeled parameters have increased signal-to-noise ratio and should have larger dynamic range.</p>
-                    </div>
-                    <div id="section1" class="section container scrolSpy">
-                        <h2>The essence of the Amplifier for transmembrane signaling</h2>
-                        <p class="flow-text">By modeling, we demonstrated that our 3-layer design balances adjustability and stability for transmembrane logic processing.
-</p><p class="flow-text">
-                            Cellular logic gate lies at the foundation of our system, but the core and essential design of ENABLE is the detection of transmembrane signals. With our powerful SynNotch receptors transferring extracellular signals into intracellular transcription factors, we aim to detect real-world signals through ligand-receptor binding. In previous designs that detect intracellular signals with logic gates, researchers merely control the input to the system by not adding or adding superfluous small molecule drugs <a href="https://www.ncbi.nlm.nih.gov/pubmed/22722847" target=_blank>(Auslnder et al., 2012)</a>, or by not performing transfection or performing superfluous transfection, which is analogous to the 0 or 1 binary input. In such scenarios, just one single element is suffice to faithfully represent the on and off of the input. However, these previous designs are unable to transduce transmembrane signals in realistic circumstances. Our analysis through modelling leads to the 3-layer design principle of the ENABLE toolbox, which is to introduce an amplifier layer between the SynNotch (input, which we call the Receptor) system and the responsive element (output, which we call the Combiner).</p>
-                        <h3>Previous designs fail to transduce transmembrane signals</h3>
-                        <p class="flow-text">
-                            Signal detection in engineered cells is composed of three parts: input, the representation of information through transcription factors (TFs); process, the processing of information through TF-Promoter interactions; and output, the response to the information through gene expressions. When the input is experimentally controllable or even artificially manipulated, researchers can explore the capacity of cellular information processing by designing specific circuits with only one element <font color="purple">(Figure 1)</font>. Using transduction or small molecule drugs for input manipulation, scientists in previous studies <a href="https://www.ncbi.nlm.nih.gov/pubmed/24413461" target=_blank>(Gaber et al., 2014)</a> have shown the logical processing ability of engineered cells and synthetic gene circuits.
-                        </p>
-                        <div class="expFigureHolder width40 left-on-med-and-up">
-                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/b/b9/T--Fudan--model_wyh_1.png">
-                            <p class="flow-text"><b>Figure 1. Previous designs usually incorporate one pair of transcription factor and promoter as the detection system.</b>
-                                <br/>The amount of transcription factor is manually controlled using small molecule drug, transduction, etc. As a result, the input of the system is nearly arbitrary, which can easily leads to the on/off output, represented by the activity of the promoter.
-                            </p>
+            /** 清除内外边距 **/
+            body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+            dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+            pre, /* text formatting elements 文本格式元素 */
+            form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+            th, td /* table elements 表格元素 */ {
+                margin: 0;
+                padding: 0;
+            }
 
-                        </div>
-                        <p class="flow-text">Unlike previous designs, the ENABLE system aims to detect real-world transmembrane signals represented by SynNotch receptors. The imperfect and variable situations and scenarios in the real world are far from experimentally controllable; yet they are unavoidable and must be dealt with.</p>
-                        <p class="flow-text">1) The number of Notch molecules on the cell membrane is relatively limited. Thus, the amount of released transcription factors is constrained (under detection level and have never been directly visualized) even under superfluous activation. This will prevent the input from being arbitrarily amplified.</p>
-                        <p class="flow-text">2) Experimental observations show that SynNotch comes with a certain level of background activation without external stimuli, which may most likely be a result of thermodynamic randomness.
-                        </p>
-                        <p class="flow-text">These factors prevent the previous designs from faithfully detecting the on and off of external stimuli. In fact, any synthetic circuits with only one input-process-output element will be limited in its detection ability. Here, we conventionally used the Hill Equation to characterize such an element, in which the output (denoted by X) relates to the input (activator for example, denoted by A) through the equation:
-                        </p>
-<p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width20"  src="http://2018.igem.org/wiki/images/e/eb/T--Fudan--model-eq1.png"></p>
-                        <p class="flow-text">Both X and A are described by their concentrations. Kd denotes the dissociation constant between the activator A and its binding site on the gene circuit whereas the n denotes the Hill coefficient. Please refer to <a href="http://2017.igem.org/Team:Fudan/Model/HE" target=_blank>the model from our team in 2017 for details on the simulation</a>.
-                        </p>
-                        <p class="flow-text">
-                            The two free parameters, the dissociation constant (Kd) and n (Hill Coefficient), can be controlled to adjust the element. As shown in the following interactive figure, this allows us to manipulate the element to achieve different input (A) - output (X) relationships.
-                        </p>
-<p class="hide-on-med-and-up">(Hidden content only visible on a desktop computer.)</p>
-                        <div id="figure1" style="margin: 40px auto;width: 500px;" class="hide-on-small-only"></div>
-                        <div class="expFigureHolder width40 right-on-med-and-up">
-                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/4/4b/T--Fudan--model_wyh_2.png">
-                            <p class="flow-text"><b>Figure 2. Previous designs with single element are not able to handle transmembrane signal processing task.</b>
-                                <br/>The input-output relationship of a single element is characterized by Hill Equation, which comes with a 'detection range' defined by Kd and n. When the input range does not match the detection range, the system cannot faithfully represent the on and off of the input.
-                            </p>
+            /** 设置默认字体 **/
 
-                        </div>
-                        <p class="flow-text">
-                            However, the free parameters are in reality not 'free' at all. While Kd is determined by the stability of the transcription factor-binding complex. The available transcription factor-promoter pairs, unfortunately, are limited, thus this constrains the dynamics that the one single input element can achieve to very few possibilities. More specifically, membrane receptors such as SynNotch that detect transmembrane signals and interact with ligands via non-covalent interactions require extremely low dissociation constants that may not even be realistic. On the other hand, the sensibility of the system needs to be high while the possible input range remains low and narrow. Furthermore, the Hill coefficient n representing the sensibility is almost uncontrollable and requires the specific and accurate designing of the promoter. Thus the previous designs that utilize a single element are not able to handle transmembrane signal processing tasks <font color="purple">(Figure 2)</font>.
-                        </p>
-                        <p class="flow-text">
-                            One potential solution is to change the number of binding sites of the transcription factors. As illustrated in Figure 3, different binding situations can lead to different activation levels. While a single binding site can be characterized by the Hill Equation.
-                        </p>
-                        <div class="expFigureHolder width40 left-on-med-and-up">
-                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/3/32/T--Fudan--model_wyh_3.png">
-                            <p class="flow-text"><b>Figure 3. Changing the number of binding sites of the transcription factors can potentially lead to more complex dynamics.</b>
-                                <br/>Different numbers of bound transcription factors have different effects on the activity of the promoter, denoted by &alpha; in the figure.
-                            </p>
+            /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
+            address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+            code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+            /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
 
-                        </div>
-                        <p class="flow-text">We characterized the input-output relationship when there are multiple binding sites (of an activator A for example).</p>
-                        <p style="text-indent: 0;margin-bottom: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/8/83/T--Fudan--model-eq2.png"></p>
-                        <p class="flow-text">While n and Kd are the Hill coefficient and dissociation constants, N represents the total number of binding sites, &alpha;<sub>i</sub> denotes the activation level while i activators are bound to the binding sites (bigger i leads to bigger &alpha;). Unfortunately, the following interactive Figure demonstrates that such dynamics is still Hill-like, and still relies on different pairs of transcription factor-binding sites to manipulate the dynamical range (four binding sites are used as an example).</p>
-                        <p class="flow-text">In conclusion, changing both the transcription factor - promoter pairs and the number of binding sites can be used to adjust how a synthetic gene circuit responds to the input. However, both are limited and cannot enable a single limited-number element to faithfully detect transmembrane signals. Nevertheless, they are still valuable in our ENABLE after the addition of an amplifier layer <font color="purple">(Figure 4)</font>.</p>
-                        <div class="expFigureHolder width40 right-on-med-and-up">
-                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/c/c2/T--Fudan--model_wyh_4.png">
-                            <p class="flow-text"><b>Figure 4. In the design of our system, the input will first come from the SynNotch receptors.</b>
-                                <br/>Then it will be amplified by a tunable amplifier circuit, which will then feed input to the final responsive element, our Combiner.
-                            </p>
+            /** 重置列表元素 **/
+            ul, ol { list-style: none; }
 
-                        </div>
-                        <h3> An amplifier circuit</h3>
-                        <p class="flow-text">The realistic constraints and our analysis through modeling prompted us to introduce the amplifier circuit. With the amplifier circuit present, the eventual input into the final responsive element now comes from the output of the amplifier circuit instead of the output of the SynNotch receptors. This enables our system to be much more adjustable and stable.
-</p><p class="flow-text">
-                            With the amplifier circuit, the input from SynNotch will no longer directly enter the responsive element but will first go through the Amplifier. As demonstrated before, the input signal from SynNotch is weak and has a narrow range, making it unsuitable to be directly processed by the responsive element. However, with the amplifier, input strength to the responsive element can be manipulated by the amplifier, providing a higher level of control.
-                    </p>
-                        <div class="expFigureHolder width40 right-on-med-and-up">
-                            <img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/8/85/T--Fudan--model_wyh_5.png">
-                            <p class="flow-text"><b>Figure 5. The amplifier circuit introduces nested dynamics into our system.</b>
-                                <br/>The output of the amplifier A and its input from SynNotch B are characterized by the Hill Equation. The A subsequently leads to the final output X, which again follows the Hill Equation in relation to A. While the input range of B is usually narrow and hard to detect, it can be amplified to the range of A through the amplifier circuit.
-                            </p>
+            /** 重置文本格式元素 **/
+            a { text-decoration: none; }
+            a:hover { text-decoration: underline; }
 
-                        </div><p class="flow-text">
-                            To remain consistent, we denoted the final output of the responsive element as X and the input as A. With amplifier circuit present, the A now means the output of the amplifier circuit while the B now means the direct input from SynNotch, which is again still the input to the amplifier circuit. As shown in Figure 5, the narrow range of the SynNotch signal does not support faithful detection. But with the amplifier circuit, the input range will be converted to an output range, which will then become the input range to the responsive element. </p>
-                        <p class="flow-text">The output range of the amplifier is currently still undiscriminatable to the responsive element, but the amplification range can be manipulated. First, we can freely engineer the transcription factors to change the dissociation constant Kd. Since the input signal is now amplified, it will be easier to find an appropriate A to X relationship <font color="purple">(Figure 6)</font>.</p>
 
-                        <p class="flow-text">Secondly, with a certain and fixed A to X relationship, we can change the binding sites of transcription factor B of the amplifier circuit which determines how the signal from SynNotch will be amplified. This allows us to very freely adjust the dynamical properties of the ENABLE toolbox. The previously unusable input range now gets amplified and enters the detection range of the responsive element; hence, allowing accurate detection <font color="purple">(Figure 7)</font>.</p>
-                        <div class="row expFigureHolder">
-                            <div class="col s12 m6" style=""><img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/8/8e/T--Fudan--model_wyh_6.png">
-                                <p class="flow-text"><b>Figure 6. Adjusting the transcription factor - its promoter pair between the amplifier circuit and the responsive element changes the relationship between X and A.</b>
-                                    <br/>Comparing with Figure 5, the organe line moves, which suggests a response to lower concertation of input from the Amplifer output, allowing the final response to be a full range.
-                                </p></div>
-                            <div class="col s12 m6" style=""><img class="responsive-img" style="background:#fff;" src="http://2018.igem.org/wiki/images/a/a5/T--Fudan--model_wyh_7.png">
-                                <p class="flow-text"><b>Figure 7. Adjusting the binding sites of transcription factor B on the amplifier circuit leads to a dramatic change in the amplification magnitude.</b>
-                                    <br/>The former narrow and undetectable range of B can now be easily manipulated in terms of A. This modeling suggests to increase the copy number of our Amplifer's DNA binding domain in our 3-layer design.
-                                </p></div>
-                        </div>
-                        <ul class="collapsible expandable">
-                            <li style="list-style-type: none">
-                                <div class="collapsible-header">Click to see more about the formula</div>
-                                <div class="collapsible-body container">
-                                  <p class="flow-text">Derivation of the formula we use to characterize a single transcription factor - promoter pair with multiple binding sites is straightforward under a few appropriate assumptions. We will keep using activator for example. Since we have N binding sites, the number of actual bound activators ranges from 0 to N. First, we assume that the activity of the promoter is solely controlled by the number of bound activators, but not their spatial arrangement (or spatial arrangement has little influence on the activation mechanism). Similar evidence has been reported before. Thus we could simply consider in total the N+1 states representing N+1 bound activators. We use &alpha;<sub>i</sub> to denote the activation level while i activators are bound to the binding sites (bigger i leads to bigger &alpha;). Second, zinc finger proteins are used as the building block of our transcription factor. Structure analysis shows no known interaction sites between the proteins. We thus assume different biding sites are independent to each other. This allows us to easily assign probabilities to the N+1 states. For each binding site, the probability of the activator being bound is again describe by 'Hill Equation' (refer to the model of our team in 2017 for the probabilistic explanation of Hill Equation and more <a href="http://2017.igem.org/Team:Fudan/Model/HE" target="_blank">Link here</a>).</p>
-                                    <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width20" src="http://2018.igem.org/wiki/images/7/7d/T--Fudan--model-eq3.png"></p>
-                                  <p class="flow-text">To account for the four independent binding sites, elementary combination would show that the probability of i (ranging from 0 to 4) activator being bound is</p>
-                                    <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/0/08/T--Fudan--model-eq4.png"></p>
-                                  <p class="flow-text">Thus the final output can be characterized by the expectation of the promoter activity under the N+1 states, which is</p>
-                                    <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img width50" src="http://2018.igem.org/wiki/images/2/2a/T--Fudan--model-eq5.png"></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-<div class="expFigureHolder" style="width:100%">
-    <img class="responsive-img" src="http://2018.igem.org/wiki/images/2/2c/T--Fudan--LC-gj-2012jp.png" />
-    <p class="flow-text">In our GJ presentation (10/25 Room 311 9:00-9:25), we used the image above in addition to the modeling just describe to add two points:
-        (1) A summary of the Receptor-Ligand kinetics described below that with the same number of receptors and proteases, due to the increased complexity with more diversed ligand-receptor interactions, the release of Notch intracellular domains significantly decreased.
-        (2) There was a previous study highlighting the requirement of amplification for signaling transduction across many cells.</p>
-</div>
-                    <div id="section2" class="section container scrolSpy">
-                        <h2>Receptor-Ligand kinetics</h2>
-                        <p class="flow-text">
-                            The Receptor-Ligand collects extracellular signals for further intercellular processing, which constitutes the most significant part for any transmembrane logic gate. To reduce the background activation of SynNotch, we put a huge <a href="/Team:Fudan-TSI/Optimization" target=_blank>experimental effect based on its protein structure</a>.
-                        </p><p class="flow-text">
-                            We focused on the signal-to-noise ratio (SNR) of the Notch/SynNotch receptor. In previous research, some quantitative descriptions of Notch-Ligand have been published for explanation and exploration of systematic design <a href="https://www.ncbi.nlm.nih.gov/pubmed/23839946" target=_blank>(Andrawes MB, et al., 2013)</a>. For example, cis-inhibition was modeled via chemical kinetics, which precisely predict the mechanism of Notch-induced pattern formation <a href="https://www.ncbi.nlm.nih.gov/pubmed/20418862" target=_blank>(Sprinzak D, et al., 2010)</a>. However, stochastic models for Notch-Ligand simulations have not been reported yet.
-                    </p><p class="flow-text">
-                        Here we present a mathematical model for Notch-Ligand kinetics using Stochastic <a href="https://en.wikipedia.org/wiki/Petri_net#Mathematical_properties_of_Petri_nets" target=_blank>Petri nets</a>, which takes random intercellular processes into consideration. We found that the SNR of our system is not only dependent on the affinity of Notch-Ligands, but also the Secretase Complex. We also expanded our model from targeting just molecular-level chemical reactions to cell colony-level chemical reactions, which offers clues for oriented optimization of Notch. Last but not least, our object-oriented programming (OOP) makes it easy to transplant into <a href="/Team:Fudan-TSI/Software">further application</a>.
-                        </p>
-                        <h3>Using ChemicalReactions toolkit</h3>
-                        <p class="flow-text">
-                            Not like chemical reactions happening in tubes, Notch-Ligand interaction occurs in a 2D manner. That is to say, chemical reactions between Notch and Ligand takes place on the membrane of two neighboring cells. Two cells may exchange their components on the membrane by touching to each other. Due to physical constraints, the chemical constitution of those cells remains relatively independent. However, when Ligand proteins binding to the extracellular domain of Notch receptor, proteolytic cleavage and release of the intracellular domain are induced.
-                        </p><p class="flow-text">
-                        Proteolytic cleavage of Notch involves a few steps, including S2-cleaveage by metalloprotease ADAM10,  S3-cleavage by &gamma;-secretase complex or &gamma;-secretase Tetering <a href="https://www.ncbi.nlm.nih.gov/pubmed/21506924" target=_blank>(van Tetering G, et al., 2011)</a>. Here we simplify the cleavage of Notch after ligand binding, and we suppose that the cleavage is a one-step reaction with the smallest rate constant of all cleavages mentioned above. This simplification is coming down to the rate-limiting step in physics chemistry. The simplified equations are as follows.
-                                   &nbsp; N+L⇌NL &nbsp;
-                                   &nbsp; NL+S⇌NLS→icd &nbsp;
-                        Here N refers to Notch, L refers to Ligand, NL Notch-Ligand complex, S protease, NLS Notch-Ligand-protease complex, and icd means the intracellular domain of Notch.
-                    </p><p class="flow-text">
-                        Our mathematic tool is <a href="https://en.wikipedia.org/wiki/Petri_net#Mathematical_properties_of_Petri_nets" target=_blank>Petri net</a>. For the history and definition of Petri net,
-                        please check reference <a href="https://www.crcpress.com/Stochastic-Modelling-for-Systems-Biology/Wilkinson/p/book/9781439837726" target="_blank">Wilkinson DJ, et al., 2006</a>. This method views each chemical or reaction intermediate as nodes in a network, element reactions as edges, and weight and direction of each edge for stoichiometric number and reaction direction. Especially, we use {P, T, Pre, Post, M} to describe a Petri net precisely: P={p1, …, pu} is the space of chemicals, T={t1, …, tv} is the spaces of all transitions (element reactions) , Pre is a v*u integer matrix containing the weights from chemicals to transitions， and the (i,j)th element of this matrix is the weight of the arc going from chemical j to transition i, and Post is a v*u integer matrix containing the weights from transitions to chemicals, and the (i,j)th element of this matrix is the weight of the arc going from transition i to chemical j. M is a u-dimensional integer vector that represents the current state of the system (i.e. the number of molecules).
-                    </p><p class="flow-text">
-                        For system with only one kind of Notch and one kind of Ligand, we have
-                        <img class="responsive-img width60" src="http://2018.igem.org/wiki/images/1/1b/T--Fudan--LC-model-zlw1.png" alt="zlw1 model equation" />
-                        the subscripts refer to the index of a cell in a cell-pair, and the index is designated arbitrarily.
-                        Also, we have
-                        <img class="responsive-img width80" src="http://2018.igem.org/wiki/images/2/26/T--Fudan--LC-model-zlw2.png" alt="zlw1 model equation" />
-                        Here the lower capital g and d refer to the generation and degradation of following chemicals.
-                        Similarly, we can write out the matrix Post and Pre.
-                    </p><p class="flow-text">
-                        We set W as a u-dimensional zero vector for initialization. Then we need to designate when and how this system chooses to finish a certain element reaction. For this purpose, we consider that the occurrence of an element reaction is a heterogeneous Poisson process, and certain reaction selection via sampling. That’s, the possibility that an element reaction R<sub>i</sub> happening in the time interval (t,&delta;t] is given by h<sub>i</sub>(x,<sub>i</sub>) &delta;t. With additivity assumption, we can get the possibility an arbitrary reaction happening in the time interval (t,&delta;t] is
-                        <img class="responsive-img width20" src="http://2018.igem.org/wiki/images/d/dd/T--Fudan--LC-model-zlw3.png" alt="zlw1 model equation" />
-                    </p><p class="flow-text">
-                        The form of h<sub>i</sub>(x,<sub>i</sub>) is given by mass-action stochastic kinetics. For a given system, h<sub>i</sub>(x,<sub>i</sub>)=c<sub>i</sub>*C(n<sub>i1</sub>,n<sub>i2</sub>, …, n<sub>in</sub>), where c<sub>i</sub> is the rate constant for reaction i, n<sub>in</sub> refers to the molecule number of reactant k for reaction i, and function C() means
-                        combinatorial number of all n<sub>in</sub>. In practice, C() can be replaced by &Pi;() with some modifications for c<sub>i</sub>.
-                    </p><p class="flow-text">
-                        Similarly, we can easily derive the expression for system with i kinds of Notch and j kind of Ligand.
-                        </p>
-                        <h3>Constitutive expression for stationary system</h3>
-                        <p class="flow-text">For certain parameters, Notch signaling component is equivalent to constitutive expression for stationary system <font color="purple">(Figure 8A)</font>. It’s a good property for using Notch-Ligand in colony design, which uses the simplified version for higher-layer system simulation and shorten the simulation time without side effect of poor prediction.
-                        </p>
-                        <h3>The rate of Notch cleavage by proteases</h3>
-                        <p class="flow-text">Cleavage rate affects system response in a linear way. Notch-Ligand specificity may not affect system response.</p>
-                        <p class="flow-text">
-                            For certain parameters, generation of Notch-Ligand-protease complex may be the rate-limiting step <font color="purple">(Figure 8A)</font>. For example, decreased rate constant of Notch-Ligand-protease complex generation reduce the icd generating rate in a linear manner (Figure 8B with rate constant of gN<sub>A</sub>LS decreased to one tenth of that of Figure 8A). Also, changing Notch-Ligand binding affinity may not significantly change icd generating rate, which strongly corroborated this view (Figure 8C with rate constant of gN<sub>A</sub>L<sub>B</sub> decreased to one tenth of that of Figure 8A; and in Figure 8D where heter/homo refers to the rate constant ratio of gN<sub>A</sub>L<sub>B</sub>/gN<sub>A</sub>L<sub>A</sub>.
-                        </p>
-                        <h3>The signal-to-noise ratio (SNR)</h3>
-                        <p class="flow-text">
-                            SNR can be tuned via Notch-Ligand binding affinity in a power-law manner.
-                        </p><p class="flow-text">
-                        For certain parameters, signal-to-noise ratio can be tuned via Notch-Ligand binding affinity in a power-law manner (<font color="purple">Figure 8E</font> with rate constant of gN<sub>A</sub>L<sub>B</sub>varied compared to Figure 8A). This offers clue for <a href="/Team:Fudan-TSI/Optimization">SynNotch optimization</a>.
-                    </p><p class="flow-text">
-                            Amplification is required for Notch-Ligand (see above).
-                        For certain parameters, signal of a certain pair of Notch-Ligand coupling may be diluted by occurrence of other reactions (<font color="purple">Figure 8F</font> with types of overall Notch/Ligand varied compared to Figure 8A).
-                        </p>
-                        <div class="expFigureHolder" style="width:100%">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/3/33/T--Fudan--LC-zlw1018.png" />
-                            <p class="flow-text"><b>Figure 8. Simulation results of Notch-Ligand kinetics.</b>
-<br/>(A) Simulation of a 2 Notch-2 Ligand system. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. Both Cell1 and Cell2 are armed with all four kinds of Notch/Ligand A/B.
-<br/>(B) Weak binding affinity for cleavage leads to low response. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. The affinity of protease to NotchB-LigandB complex is weakened, leading to poor NotchB response to Ligand signal.
-<br/>(C) High Notch-Ligand specificity may not affect system response. The graph's horizontal axis shows the time range, and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in 2 neighboring cells. The specificity of Notch-Ligand binding is enhanced, making no significant difference of system response with the cleavage being the rate-limit reaction in this system.
-<br/>(D) Variant Notch-Ligand specificity may not affect system response. The graph's horizontal axis shows the ratio of rate constant of gN<sub>i</sub>L<sub>j</sub> (i≠j) and that of gN<sub>i</sub>L<sub>j</sub> (i=j), and #molecules shows the number of 2 kinds of intracellular domain (icdA and icdB) in Cell2. The specificity of Notch-Ligand binding is tuned, making no significant difference of system response with the cleavage being the rate-limit reaction in this system. This strongly corresponds to the fact that the cleavage reaction is the rate-limit reaction in this system.
-<br/>(E) SNR can be tuned by Notch-Ligand specificity. The graph's horizontal axis shows the ratio of rate constant of gN<sub>i</sub>L<sub>j</sub> (i≠j) and that of gN<sub>i</sub>L<sub>j</sub> (i=j), and the SNR are defined as the ratio of the number of 2 kinds of intracellular domain (icdA and icdB) in Cell2, with Cell1 only have LigandA. The specificity of Notch-Ligand binding is tuned, changing SNR in a power-law manner.
-<br/>(F) Amplification is needed for multi-Notch/Signal system. The graph's horizontal axis shows the diversity of the Notch-Ligand system, and the diversity are defined as the species number of Notch/Ligand. With the diversity increasing, the number of a certain type of Notch intracellular domain molecules reduces.
-                            </p>
-                        </div>
-                        <ul class="collapsible expandable">
-                            <li style="list-style-type: none">
-                                <div class="collapsible-header">Click to see more about the modeling parameters</div>
-                                <div class="collapsible-body container">
-                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img" src="http://2018.igem.org/wiki/images/d/d9/T--Fudan--LC-zlw1018param1.png" /></p>
-                                  <p style="text-indent: 0;margin-top: 0;text-align: center"><img class="responsive-img" src="http://2018.igem.org/wiki/images/c/cf/T--Fudan--LC-zlw1018param2.png" /></p>
-                                </div>
-                            </li>
-                        </ul>
-                        <p class="flow-text">
-                            The stochastic Notch-Ligand kinetics can be simplified as a single chemical constant for some certain conditions. Though this may greatly reduce the workload of transplant our model into a higher-scale application (e.g. to model a cell colony made up of cells armed with Notch and Ligand), this OOP modeling style makes it easy to transplant Notch-Ligand kinetics at the molecular level to macroscale level. Please continue to our <a href="/Team:Fudan-TSI/Software">software</a>, where we abstracted mammalian cells into blocks (with parameters modeled and simulated above), to predict cellular behaviors. We quantified the behavior of individual cells within a population. We found that besides ENABLE signaling, cell proliferation speed, cell life-span and cell adhesion greatly impact cancer elimination effectiveness. Our modeling and software gives ENABLE gates a population perspective, and test them in a clinical scenario.
-                        </p>
-                        <p class="flow-text">A document on <a href="http://2018.igem.org/wiki/images/c/c1/T--Fudan--model-cell-colony.pdf" target="_blank">model cell colony</a>, and source code is available on <a href="https://github.com/0vioiano/iGEM2018_Team_Fudan" target=_blank>GitHub</a>.</p>
-                    </div>
+            /** 重置表单元素 **/
+            legend { color: #000; } /* for ie6 */
+            fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+            button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+            /* 注：optgroup 无法扶正 */
 
-                    <div class="section container scrolSpy" id="section3">
-                        <h2>title</h2>
-                        <p class="flow-text">
-                            content content
-                        </p>
+            /** 重置表格元素 **/
+            table { border-collapse: collapse; border-spacing: 0; }
 
-                        <h2>title</h2>
-                        <p class="flow-text">
-                            Fangfei Ye is responsible for all <a href="/Team:Fudan-TSI/Design_Intention" target="_blank">art design</a>, which includes our team logo, team flag, team uniform (Dr. Cai gave comments), team name card, brochures, our posters, as well as materials related to our human practice events.
-                        </p>
-                    </div>
+        </style>
 
-                </main>
-            </div>
 
-<!--Abstract on content page-->
-            <div id="abstractContent" class="z-depth-2">
-                <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
-                <div class="container">
-                    <h5 style="margin:0;padding:10px 0;">Project Summary &copy; Team:Fudan-TSI</h5>
-                    <p class="flow-text" style="margin:0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. Here we present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase reverts RNA into cDNA, during which the target is randomly mutated by enhanced error-prone reverse transcription. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the <i>in vivo</i> evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
-                    </p>
-                </div>
-            </div>
 
-            <!-- Floating Btns -->
-            <div class="floatingBtn">
-                <a href="#!" id="abstractBtn" class="btn">
-                    <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i>
-                </a>
-                <a href="#FudanWrapper" class="btn">
-                    <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i>
-                </a>
-            </div>
 
-            <!-- Footer with sponsors and contact methods -->
-            <footer id="FudanFooter" class="page-footer grey">
-                <div class="container">
-                    <div class="row">
-                        <div id="sponsor" class="col m3 s12 row">
-                            <a href="https://2019.igem.org/Team:Fudan-TSI"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0.5em 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Logo0-crop-grey.png">
-                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
-                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
-                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
-                        </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
-                        </div>
-                        <div id="usefulLinks" class="col m9 s12 row">
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Description">Project</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Description">Background</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Design">Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Judging">Judging</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span><a href="/Team:Fudan-TSI/Results">Results</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Results#ReverseTranscription">Reverse Transcription</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Results#Recombination">Recombination</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4 active">
-                                    <span><a href="/Team:Fudan-TSI/Model">Model</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Integrated_Human_Practice">Integrated human practice</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Team">Team</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Team">Members</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-                                        <li><a href="/Team:Fudan-TSI">&copy; 2019</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">&nbsp;</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                         <div class="contactUS row">
-                           <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai
-                           </div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
-                           </div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
-                           </div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
-                           </div>
-                         </div>
-                     </div>
-                </div>
-            </footer>
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    Content begins    --------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&amp;action=raw&amp;ctype=text/css">
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            background-color:#08273a;
+        }
+        a{
+            text-decoration:none;
+        }
+        #global_wrapper{
+            width:100%;
+            height:auto;
+            margin:0;
+            position:absolute;
+        }
+        #navUl{
+            width:100%;
+            height:110px;
+            padding:40px 0 0 0;
+            overflow:visible;
+            position:fixed;
+            list-style:none;
+            z-index:999;
+            background-color:#08273a;
+            margin:0;
+            top:0;
+        }
+        #mobileNav{
+            width:100%;
+            height:80px;
+            padding:20px 0 0 0;
+            top:0;
+            background-color:#001d2a;
+            position:fixed;
+            display:none;
+            text-align:center;
+            z-index:999;
+        }
+        #mobileNav img{
+            display:none;
+            margin:0;
+            padding:0;
+        }
+        #mobileLogo{
+            display:inline-block;
+        }
+        #mobileControl{
+            float:right;
+            display:inline-block;
+            margin-right:15px;
+            margin-top:3px;
+        }
+        #mobileCtrl{
+            height:25px;
+        }
+        #mobileTeamName{
+            display:inline-block;
+        }
+        #navImg{
+            display:inline-block;
+            float:left;
+            height:70px;
+            width:auto;
+            position:relative;
+            margin-left:4%;
+            margin-top:0;
+        }
+        .logo{
+            height:55px;
+            width:auto;
+            margin-top:1.3%;
+        }
+        .teamname{
+            height:28px;
+        }
+
+        #navBar{
+            float:right;
+            position:relative;
+            width:auto;
+            display:inline-block;
+            margin-right:4%;
+        }
+        .navLi{
+            float:left;
+            display:inline-block;
+            margin-top:3%;
+            color:white;
+            font-size:20px;
+            position:relative;
+            margin-left:18px;
+            text-align:center;
+            font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+            text-decoration:none;
+        }
+        .navA{
+            display:block;
+            text-align:center;
+            color:white;
+            text-decoration:none;
+        }
+        .navA2{
+            display:block;
+            overflow:visible;
+            color:white;
+            height:auto;
+        }
+        .ul2{
+            list-style:none;
+            position:absolute;
+            display:none;
+            overflow:hidden;
+            padding:10px 0 0 0 !important;
+            margin:0 !important;
+            font-size:17px;
+            left:50%;
+            transform:translateX(-50%);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background:linear-gradient(#08273a,rgba(0,138,201,1));
+        }
+        .li2{
+            padding:0;
+            margin:10px 20px;
+            text-align:center;
+            display:block;
+        }
+        .navA:link,.navA2:link{
+            text-decoration:none;
+        }
+        .navA:visited{
+            color:white;
+        }
+        .navA2:visited,.navA2:active{
+            color:white;
+        }
+        .navA:hover{
+            color:#7dded4;
+        }
+        .navA2:hover{
+            color:#7dded4;
+        }
+        .jqhover{
+            color:#7dded4;
+        }
+        .navA:hover{
+            text-decoration:none;
+        }
+        .navA:active{
+            text-decoration:none;
+            color:white;
+        }
+
+    </style>
+
+
+
+
+    <style>
+
+        #pageContent{
+            margin:100px 0 0 0;
+            text-align:center;
+        }
+
+        .row{
+            clear:both!important;
+            width:100%!important;
+        }
+
+        .title1{
+            font-size:2.3rem;
+            text-align:center;
+            color:white;
+            display:block;
+            margin-top:10%;
+            margin-bottom:7%;
+            line-height:110%;
+        }
+        .title2{
+            color:white;
+            text-align:left;
+            font-size:2rem;
+            line-height:130%;
+            display:block;
+            width:100%;
+        }
+        .title3{
+            font-size:1.5rem;
+            color:white;
+            text-align:left !important;
+            display:block;
+            width:100%;
+            line-height:110%;
+            padding-left:2%;
+        }
+        .para1{
+            color:white;
+            text-align:justify !important;
+            align-items:flex-start;
+            line-height:140%;
+            font-size:1.3rem;
+            margin-bottom:50px !important;
+            width:100%;
+            margin:auto 0;
+        }
+        .para1 a{
+            color:white;
+        }
+        .para1 a:visited, .para1 a:active{
+            color:white;
+        }
+        .para1 a:hover{
+            color:rgba(96,255,249,1.00)!important;
+        }
+        .content1{
+            margin:7% auto;
+        }
+        .pic2{
+            width:150%;
+        }
+        .reverseDiv{
+            position:relative !important;
+            float:right !important;
+        }
+
+
+        .paraUl{
+            list-style-type:decimal !important;
+            list-style-position:outside;
+            padding-left:auto;
+            font-size:1.2rem;
+        }
+        .paraUl li{
+            padding-right:4% ;
+        }
+
+
+        #containerWithLeftNav{
+            display:block;
+            margin-left:25%;
+        }
+        .legend{
+            color:white;
+            text-align:center;
+        }
+        .legend>div{
+            width:100%;
+            text-align:justify!important;
+            font-size:1.1rem;
+        }
+        .legends{
+            margin:auto 15%;
+        }
+
+
+    </style>
+
+    <style>
+
+        @media only screen and (max-width:1200px){
+            #mobileBar{
+                margin-left:4%;
+            }
+            .navLi{
+                font-size:18px;
+                margin-top:3.5%;
+            }
+        }
+
+
+        @media only screen and (max-width:1100px){
+
+            #navUl{
+                display:block;
+                float:right;
+                margin-top:0;
+                top:80px;
+                right:0;
+                background-color:rgba(0,0,0,0);
+                padding:0;
+            }
+
+            #mobileNav{
+                display:block;
+            }
+
+            #navImg{
+                display:none;
+            }
+
+
+            #navBar{
+                margin:0 1% 0 0;
+                padding-right:2%;
+                padding-left:1%;
+                position:relative;
+                display:none;
+            }
+
+            #mobileNav img{
+                display:inline-block;
+                margin:5px 0;
+                padding:0;
+            }
+            #mobileControl{
+                margin-top:8px;
+            }
+
+            .logo{
+                height:45px;
+                margin-top:7px;
+            }
+            .navLi{
+                display:block;
+                position:relative;
+                float:right;
+                clear:both;
+                white-space:nowrap;
+                text-align:right;
+                margin:0;
+                height:60px;
+                width:100%;
+                background-color:#00324a;
+            }
+            .navA{
+                display:block;
+                text-align:right;
+                position:relative;
+                float:right;
+                padding:20px 20px !important;
+            }
+            .n2{
+                display:none;
+                width:0;
+                position:relative;
+                float:left;
+                text-align:right;
+            }
+            .ul2{
+                background:none;
+                padding-top:0;
+                background-color:#00557b;
+                text-align:right;
+                display:block;
+                position:relative;
+                float:right;
+                right:100%;
+                transform:translateX(0%);
+                top:0;
+                transform:translateY(1%);
+                border-radius:0 0 0 10px;
+            }
+            .open{
+                display:block;
+            }
+
+            .title2{
+                font-size:1.8rem;
+                line-height:140%;
+            }
+            .para1{
+                font-size:1.3rem;
+            }
+            .pic2{
+                width:120%;
+            }
+
+            .highlightIcon{
+                margin:20% auto 10% auto;
+            }
+            .highlightTitle{
+                margin-bottom:15%;
+            }
+
+
+        }
+
+
+        @media only screen and (max-width:992px){
+
+            #navUl{
+                display:block;
+                float:right;
+                margin:0;
+                top:80px;
+                right:0;
+            }
+
+            #mobileNav{
+                display:block;
+            }
+
+            #navImg{
+                display:none;
+            }
+
+            #navTeamName{
+                display:none;
+            }
+
+            #navBar{
+                margin:0 1% 0 0 ;
+                margin-right:2%;
+                padding-right:1%;
+                padding-left:1%;
+                position:relative;
+                display:none;
+            }
+            #mobileControl{
+                margin-top:10px;
+            }
+            #mobileNav img{
+                display:inline-block;
+                margin:5px 0;
+                padding:0;
+            }
+            .logo{
+                height:40px;
+            }
+            .navLi{
+                display:block;
+                position:relative;
+                float:right;
+                clear:both;
+                white-space:nowrap;
+                text-align:right;
+                height:60px;
+                width:100%;
+            }
+            .navA{
+                display:block;
+                text-align:right;
+                position:relative;
+                float:right;
+                font-size:15px;
+            }
+            .n2{
+                display:none;
+                width:0;
+                position:relative;
+                float:left;
+            }
+            .ul2{
+                font-size:13px;
+            }
+            .open{
+                display:block;
+            }
+
+
+
+            #animation_container{
+                display:none;
+            }
+            #teamLogo{
+                display:block;
+            }
+
+
+            .title2{
+                font-size:1.5rem;
+            }
+            .para1{
+                font-size:1.2rem;
+            }
+            .paraUl{
+                font-size:1.1rem;
+            }
+            .pic2{
+                width:100%;
+            }
+
+
+        }
+
+
+        @media only screen and (max-width:768px){
+            .col-md-4{
+                clear:both;
+            }
+            .col-md-8{
+                clear:both;
+            }
+            .pic2{
+                margin-bottom:10%;
+                width:80%;
+            }
+            .title2{
+                font-size:1.2rem;
+            }
+            .para1{
+                font-size:1.1rem;
+            }
+            .paraUl{
+                font-size:1rem;
+            }
+            .pic2{
+                width:80%;
+            }
+            #sponser img {
+                width:60%;
+            }
+
+            #containerWithLeftNav{
+                margin-left:auto;
+            }
+
+        }
+
+    </style>
+
+
+
+
+
+
+    <style>
+        #footContainer{
+            width:90%;
+        }
+        #FudanFooter{
+            margin:auto 0;
+            width:100%;
+            padding:3% 0;
+        }
+        #FudanFooter #usefulLinks {
+            color: #cacaca;
+            padding-left: 1rem;
+        }
+
+        #FudanFooter #usefulLinks ul {
+            font-size: 13px;
+            line-height: 14px;
+            border-top: solid 2px;
+            color: inherit;
+            text-decoration: none;
+            padding-top: 5px;
+            margin:0;
+        }
+
+        #FudanFooter #usefulLinks div {
+            color: #cacaca;
+        }
+
+        #FudanFooter #usefulLinks div:hover {
+            color: white;
+        }
+
+        #FudanFooter #usefulLinks a {
+            color: inherit;
+        }
+
+        #FudanFooter #usefulLinks a:hover {
+            text-decoration: underline;
+        }
+
+        #FudanFooter #usefulLinks div.active,
+        #FudanFooter #usefulLinks div.active a {
+            color: white;
+        }
+
+        #FudanFooter #usefulLinks div.active ul {
+            border-top: solid white 2px;
+        }
+
+        #FudanFooter #usefulLinks li {
+            padding: 3px 0 6px 3px;
+            list-style:none;
+        }
+
+        #usefulLinks span {
+            font-size: 20px;
+        }
+
+
+        #FudanFooter div.footer-copyright {
+            font-size: 13px;
+            line-height: 15px;
+        }
+        .footerUl{
+            margin:2% 4%;
+        }
+    </style>
+
+    <script>
+
+        $(document).ready(function(){
+
+
+            var winWidth=$(window).width();
+
+            if (winWidth>1100){
+                $(".navA").mouseenter(function(){
+                    $(this).parent().find(".ul2").stop().fadeIn(400);
+                });
+                $(".navLi").mouseleave(function(){
+                    $(this).find(".ul2").stop().fadeOut(400);
+                });
+
+
+            }
+            else{
+                $(".navA:not(.noSubmenu)").removeAttr("href");
+                $("#mobileNav").click(function(){
+                    $("#navBar").toggle();
+                });
+                $(document).click(function(event){
+                    var m = $("#mobileNav,#navBar");
+                    if (!m.is(event.target)){
+                        if (m.has(event.target).length===0){
+                            $("#navBar").hide();
+                            $(".open").parent().find(".navA").css("color","white");
+                            $(".open").removeClass("open");
+                        }
+
+                    }
+                });
+                $(".navLi").click(function(){
+                    if ($(this).find(".n2").hasClass("open")){
+                        $(".open").parent().find(".navA").css("color","white");
+                        $(this).find(".n2").removeClass("open");
+                    }
+                    else{
+                        $(".open").parent().find(".navA").css("color","white");
+                        $(".open").removeClass("open");
+                        $(this).find(".n2").addClass("open");
+                        $(this).find(".navA").css("color","#7dded4");
+                    }
+                });
+            }
+
+
+
+
+
+
+        });
+
+
+    </script>
+
+
+
+    <div id="global_wrapper">
+        <div id="mobileNav">
+
+            <div id="mobileLogo"><img src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif" class="logo"></div>
+            <div id="mobileControl"><img src="https://2019.igem.org/wiki/images/thumb/a/ae/T--Fudan-TSI--mobileCtrl.gif/683px-T--Fudan-TSI--mobileCtrl.gif" id="mobileCtrl"></div>
 
         </div>
+
+        <ul id="navUl">
+
+                <li id="navImg">
+                    <img src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif" class="logo">
+
+                </li>
+
+
+            <ul id="navBar">
+
+                <li class="navLi"><a class="navA noSubmenu" href="https://2019.igem.org/Team:Fudan-TSI">Home</a></li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Description">Project</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Description">Description</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Design">Design</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Applied_Design" style="white-space:nowrap">Applied Design</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Experiments">Experiment</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Results">Results</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Results/Reverse_Transcription">Reverse Transcription</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Results/Recombination">Recombination</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Measurement">Measurement</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Notebook">Notebook</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Model">Model</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Model">Modeling</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Software">Software</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Hardware">Hardware</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Parts">Parts</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Basic_Part">Basic Parts</a></li>
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Composite_Part">Composite Parts</a></li>
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Improve">Improved Parts</a></li>
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Part_Collection">Part Collection</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Human_Practices">Human Practices</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Public_Engagement">Education &amp; <br />Public Engagement</a></li>
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Human_Practices">Integrated <br />Human Practice</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Collaborations">Collaboration</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Safety">Safety</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Team">Team</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Team">Team Members</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Attributions">Attribution</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Acknowledgment">Acknowledgement</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi"><a class="navA noSubmenu" href="https://2019.igem.org/Team:Fudan-TSI/Judging">Judging</a></li>
+
+            </ul>
+
+
+            </ul>
+
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+        <!---- Cover ---->
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+
+        <div id="pageCover">
+
+            <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/bkg&amp;action=raw&amp;ctype=text/javascript"></script>
+            <script>
+            $(document).ready(function($){
+                var $root = $('html, body');
+                $('a[href^="#"]').click(function() {
+                    var href = $.attr(this, 'href');
+                    $root.animate({
+                        scrollTop: $(href).offset().top
+                    }, 1000, function () {
+                        window.location.hash = href;
+                    });
+                    return false;
+                });
+            })
+            </script>
+
+            <svg id="demo" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" style="z-index: -100;">
+              <defs>
+                <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
+                  <stop id="stop1a" offset="0%" stop-color="#12a3b4"></stop>
+                  <stop id="stop1b" offset="100%" stop-color="#ff509e"></stop>
+                </linearGradient>
+                <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
+                  <stop id="stop2a" offset="0%" stop-color="#e3bc13"></stop>
+                  <stop id="stop2b" offset="100%" stop-color="#00a78f"></stop>
+                </linearGradient>
+              </defs>
+              <rect id="rect1" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad1)"></rect>
+              <rect id="rect2" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad2)"></rect>
+            </svg>
+            <div id="demoCover"><img id="coverPic" src="https://2019.igem.org/wiki/images/c/c4/T--Fudan-TSI--coverModel.gif"></div>
+        </div>
+        <style>
+            #pageCover{
+                width:100%;
+                margin:0;
+                padding-top:80px;
+            }
+            #demoCover{
+                width:100vw;
+                height:60vh;
+                position:absolute;
+                background-color:rgba(8,39,58,0.5);
+                top:80px;
+                left:0;
+                text-align:center;
+            }
+            #coverPic{
+                width:550px;
+                margin:15vh auto;
+            }
+            #demo{
+                width:100vw;
+                height:60vh;
+                position:relative;
+            }
+            #demo svg {
+              width: 100%;
+              height: 100%;
+              position: fixed;
+            }
+            #demo svg g {
+              mix-blend-mode: lighten;
+            }
+            #demo svg polygon {
+              stroke: none;
+              fill: white;
+            }
+
+            @media only screen and (max-width:1100px){
+                #pageCover{
+                    padding-top:55px;
+                }
+                #demoCover{
+                    top:55px;
+                }
+                #demo{
+                    height:30vh;
+                }
+                #coverPic{
+                    width:500px;
+                    margin:7vh auto;
+                }
+            }
+            @media only screen and (max-width:992px){
+                #pageCover{
+                    padding-top:55px;
+                }
+                #demoCover{
+                    top:55px;
+                }
+                #coverPic{
+                    width:500px;
+                    margin:6vh auto;
+                }
+            }
+            @media only screen and (max-width:768px){
+                #pageCover{
+                    padding-top:55px;
+                }
+                #demoCover{
+                    top:55px;
+                }
+                #coverPic{
+                    width:400px;
+                    margin:8vh auto;
+                }
+            }
+            @media only screen and (max-width:500px){
+                #coverPic{
+                    width:200px;
+                    margin:8vh auto;
+                }
+            }
+        </style>
+                <script>
+            //////////////////////////////
+            // Demo Functions
+            //////////////////////////////
+            function bkgFunction(showStats) {
+              // stats
+              if (showStats) {
+                var stats = new Stats();
+                stats.domElement.style.position = 'absolute';
+                stats.domElement.style.left = '0';
+                stats.domElement.style.top = '0';
+                document.body.appendChild(stats.domElement);
+                requestAnimationFrame(function updateStats(){
+                  stats.update();
+                  requestAnimationFrame(updateStats);
+                });
+              }
+              // init
+              var svg = document.getElementById('demo');
+              tesselation.setup(svg);
+              gradients.setup();
+              var lastTransitionAt, transitionDelay = 10000, transitionDuration = 3000;
+              function playNextTransition() {
+                tesselation.next(transitionDuration);
+                gradients.next(transitionDuration);
+              };
+              function tick(time) {
+                if (!lastTransitionAt || time - lastTransitionAt > transitionDelay) {
+                  lastTransitionAt = time;
+                  playNextTransition();
+                }
+                window.requestAnimationFrame(tick);
+              }
+              window.requestAnimationFrame(tick);
+            }
+            //////////////////////////////
+            // Delaunay Triangulation
+            //////////////////////////////
+            var calcDelaunayTriangulation = (function() {
+              var EPSILON = 1.0 / 1048576.0;
+              function getSuperT(vertices) {
+                var xMin = Number.POSITIVE_INFINITY, yMin = Number.POSITIVE_INFINITY,
+                    xMax = Number.NEGATIVE_INFINITY, yMax = Number.NEGATIVE_INFINITY,
+                    i, xDiff, yDiff, maxDiff, xCenter, yCenter;
+                for(i = vertices.length; i--; ) {
+                  if(vertices[i][0] < xMin) xMin = vertices[i][0];
+                  if(vertices[i][0] > xMax) xMax = vertices[i][0];
+                  if(vertices[i][1] < yMin) yMin = vertices[i][1];
+                  if(vertices[i][1] > yMax) yMax = vertices[i][1];
+                }
+                xDiff = xMax - xMin;
+                yDiff = yMax - yMin;
+                maxDiff = Math.max(xDiff, yDiff);
+                xCenter = xMin + xDiff * 0.5;
+                yCenter = yMin + yDiff * 0.5;
+                return [
+                  [xCenter - 20 * maxDiff, yCenter - maxDiff],
+                  [xCenter, yCenter + 20 * maxDiff],
+                  [xCenter + 20 * maxDiff, yCenter - maxDiff]
+                ];
+              }
+              function circumcircle(vertices, i, j, k) {
+                var xI = vertices[i][0], yI = vertices[i][1],
+                    xJ = vertices[j][0], yJ = vertices[j][1],
+                    xK = vertices[k][0], yK = vertices[k][1],
+                    yDiffIJ = Math.abs(yI - yJ), yDiffJK = Math.abs(yJ - yK),
+                    xCenter, yCenter, m1, m2, xMidIJ, xMidJK, yMidIJ, yMidJK, xDiff, yDiff;
+                // bail condition
+                if(yDiffIJ < EPSILON){
+                    if (yDiffJK < EPSILON){
+                         throw new Error("Can't get circumcircle since all 3 points are y-aligned");
+                    }
+                }
+
+
+                // calc circumcircle center x/y, radius
+                m1  = -((xJ - xI) / (yJ - yI));
+                m2  = -((xK - xJ) / (yK - yJ));
+                xMidIJ = (xI + xJ) / 2.0;
+                xMidJK = (xJ + xK) / 2.0;
+                yMidIJ = (yI + yJ) / 2.0;
+                yMidJK = (yJ + yK) / 2.0;
+                xCenter = (yDiffIJ < EPSILON) ? xMidIJ :
+                  (yDiffJK < EPSILON) ? xMidJK :
+                  (m1 * xMidIJ - m2 * xMidJK + yMidJK - yMidIJ) / (m1 - m2);
+                yCenter  = (yDiffIJ > yDiffJK) ?
+                  m1 * (xCenter - xMidIJ) + yMidIJ :
+                  m2 * (xCenter - xMidJK) + yMidJK;
+                xDiff = xJ - xCenter;
+                yDiff = yJ - yCenter;
+                // return
+                return {i: i, j: j, k: k, x: xCenter, y: yCenter, r: xDiff * xDiff + yDiff * yDiff};
+              }
+              function dedupeEdges(edges) {
+                var i, j, a, b, m, n;
+                for(j = edges.length; j; ) {
+                  b = edges[--j]; a = edges[--j];
+                  for(i = j; i; ) {
+                    n = edges[--i]; m = edges[--i];
+                    if(a === m){
+                       if (b===n){
+                           edges.splice(j, 2); edges.splice(i, 2);
+                        break;
+                       }
+                    }
+                    if(a === n){
+                       if (b===m){
+                           edges.splice(j, 2); edges.splice(i, 2);
+                        break;
+                       }
+                    }
+                  }
+                }
+              }
+              return function(vertices) {
+                var n = vertices.length,
+                    i, j, indices, st, candidates, locked, edges, dx, dy, a, b, c;
+                // bail if too few / too many verts
+                if(n < 3 || n > 2000)
+                  return [];
+                // copy verts and sort indices by x-position
+                vertices = vertices.slice(0);
+                indices = new Array(n);
+                for(i = n; i--; )
+                  indices[i] = i;
+                indices.sort(function(i, j) {
+                  return vertices[j][0] - vertices[i][0];
+                });
+                // supertriangle
+                st = getSuperT(vertices);
+                vertices.push(st[0], st[1], st[2]);
+                // init candidates/locked tris list
+                candidates = [circumcircle(vertices, n + 0, n + 1, n + 2)];
+                locked = [];
+                edges = [];
+                // scan left to right
+                for(i = indices.length; i--; edges.length = 0) {
+                  c = indices[i];
+                  // check candidates tris against point
+                  for(j = candidates.length; j--; ) {
+                    // lock tri if point to right of circumcirc
+                    dx = vertices[c][0] - candidates[j].x;
+                    if (dx > 0.0){
+                        if(dx * dx > candidates[j].r){
+                            locked.push(candidates[j]);
+                      candidates.splice(j, 1);
+                      continue;
+                        }
+                    }
+
+
+                    // point outside circumcirc = leave candidates
+                    dy = vertices[c][1] - candidates[j].y;
+                    if(dx * dx + dy * dy - candidates[j].r > EPSILON)
+                      continue;
+                    // point inside circumcirc = break apart, save edges
+                    edges.push(
+                      candidates[j].i, candidates[j].j,
+                      candidates[j].j, candidates[j].k,
+                      candidates[j].k, candidates[j].i
+                    );
+                    candidates.splice(j, 1);
+                  }
+                  // new candidates from broken edges
+                  dedupeEdges(edges);
+                  for(j = edges.length; j; ) {
+                    b = edges[--j];
+                    a = edges[--j];
+                    candidates.push(circumcircle(vertices, a, b, c));
+                  }
+                }
+                // close candidates tris, remove tris touching supertri verts
+                for(i = candidates.length; i--; )
+                  locked.push(candidates[i]);
+                candidates.length = 0;
+                for(i = locked.length; i--; )
+                  if(locked[i].i < n){
+                      if(locked[i].j < n){
+                          if(locked[i].k < n){
+                              candidates.push(locked[i].i, locked[i].j, locked[i].k);
+                          }
+                      }
+                  }
+
+
+                // done
+                return candidates;
+              };
+            })();
+            var tesselation = (function() {
+              var svg, svgW, svgH, prevGroup;
+              function createRandomTesselation() {
+                var wW = window.innerWidth;
+                var wH = window.innerHeight;
+                var gridSpacing = 250, scatterAmount = 0.75;
+                var gridSize, i, x, y;
+                if (wW / wH > svgW / svgH) { // window wider than svg = use width for gridSize
+                  gridSize = gridSpacing * svgW / wW;
+                } else { // window taller than svg = use height for gridSize
+                  gridSize = gridSpacing * svgH / wH;
+                }
+                var vertices = [];
+                var xOffset = (svgW % gridSize) / 2, yOffset = (svgH % gridSize) / 2;
+                for (x = Math.floor(svgW/gridSize) + 1; x >= -1; x--) {
+                  for (y = Math.floor(svgH/gridSize) + 1; y >= -1; y--) {
+                    vertices.push(
+                      [
+                        xOffset + gridSize * (x + scatterAmount * (Math.random() - 0.5)),
+                        yOffset + gridSize * (y + scatterAmount * (Math.random() - 0.5))
+                      ]
+                    );
+                  }
+                }
+                var triangles = calcDelaunayTriangulation(vertices);
+                var group = document.createElementNS('http://www.w3.org/2000/svg','g');
+                var polygon;
+                for(i = triangles.length; i; ) {
+                  polygon = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+                  polygon.setAttribute('points',
+                    vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1] + ' ' +
+                    vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1] + ' ' +
+                    vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1]
+                  );
+                  group.appendChild(polygon);
+                }
+                return group;
+              }
+              return {
+                setup: function(svgElement) {
+                  svg = svgElement;
+                  var vb = svg.getAttribute('viewBox').split(/\D/g);
+                  svgW = vb[2];
+                  svgH = vb[3];
+                },
+                next: function(t) {
+                  var toRemove, i, n;
+                  t /= 1000;
+                    if(prevGroup){
+                        if(prevGroup.children){
+                            if(prevGroup.children.length){
+                                toRemove = prevGroup;
+                                n = toRemove.children.length;
+                                for (i = n; i--; ) {
+                                  TweenMax.to(toRemove.children[i], t*0.4, {opacity: 0, delay: t*(0.3*i/n)});
+                                }
+                                TweenMax.delayedCall(t * (0.7 + 0.05), function(group) { svg.removeChild(group); }, [toRemove], this);
+                            }
+                        }
+                    }
+
+                  var g = createRandomTesselation();
+                  n = g.children.length;
+                  for (i = n; i--; ) {
+                    TweenMax.fromTo(g.children[i], t*0.4, {opacity: 0}, {opacity: 0.3 + 0.25 * Math.random(), delay: t*(0.3*i/n + 0.3), ease: Back.easeOut});
+                  }
+                  svg.appendChild(g);
+                  prevGroup = g;
+                }
+              }
+            })();
+            //////////////////////////////
+            // Gradients
+            //////////////////////////////
+            var gradients = (function() {
+              var grad1, grad2, showingGrad1;
+              // using colors from IBM Design Colors this time
+              var colors = [ // 14 colors - use 3-5 span
+                '#3c6df0', // ultramarine50
+                '#12a3b4', // aqua40
+                '#00a78f', // teal40
+                '#00aa5e', // green40
+                '#81b532', // lime30
+                '#e3bc13', // yellow20
+                '#ffb000', // gold20
+                '#fe8500', // orange30
+                '#fe6100', // peach40
+                '#e62325', // red50
+                '#dc267f', // magenta50
+                '#c22dd5', // purple50
+                '#9753e1', // violet50
+                '#5a3ec8'  // indigo60
+              ];
+              function assignRandomColors(gradObj) {
+                var rA = Math.floor(colors.length * Math.random());
+                var rB = Math.floor(Math.random() * 3) + 3; // [3 - 5]
+                rB = (rA + (rB * (Math.random() < 0.5 ? -1 : 1)) + colors.length) % colors.length;
+                gradObj.stopA.setAttribute('stop-color', colors[rA]);
+                gradObj.stopB.setAttribute('stop-color', colors[rB]);
+              }
+              return {
+                setup: function() {
+                  showingGrad1 = false;
+                  grad1 = {
+                    stopA: document.getElementById('stop1a'),
+                    stopB: document.getElementById('stop1b'),
+                    rect:  document.getElementById('rect1')
+                  };
+                  grad2 = {
+                    stopA: document.getElementById('stop2a'),
+                    stopB: document.getElementById('stop2b'),
+                    rect:  document.getElementById('rect2')
+                  };
+                  grad1.rect.style.opacity = 0;
+                  grad2.rect.style.opacity = 0;
+                },
+                next: function(t) {
+                  t /= 1000;
+                  var show, hide;
+                  if (showingGrad1) {
+                    hide = grad1;
+                    show = grad2;
+                  } else {
+                    hide = grad2;
+                    show = grad1;
+                  }
+                  showingGrad1 = !showingGrad1;
+                  TweenMax.to(hide.rect, 0.55*t, {opacity: 0, delay: 0.2*t, ease: Sine.easeOut});
+                  assignRandomColors(show);
+                  TweenMax.to(show.rect, 0.65*t, {opacity: 1, ease: Sine.easeIn});
+                }
+              };
+            })();
+            //////////////////////////////
+            // Start
+            //////////////////////////////
+            bkgFunction();
+        </script>
+
+
+
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+        <!---- Left Navigator ---->
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+
+
+        <ul class="leftNav" style="margin:0;padding:0;">
+
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle1">Overview</a>
+            </li>
+
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle2">Part I: Yield of recombined P<sub>target</sub></a>
+                <ul class="leftNavUl2">
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle2_1">Induced expression model</a></li>
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle2_2">Reverse Transcription model</a></li>
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle2_3">Cre Recombination Model</a></li>
+                    <li class="leftNavLi2" style="display:none;"><a class="leftNavA2" href="#mainTitle2_4"></a></li>
+                </ul>
+            </li>
+
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle3">Part II: Times of occurrence of recombined P<sub>target</sub></a>
+            </li>
+
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle4">Part III: Degradation tag selection</a>
+            </li>
+
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle5">Complementary materials</a>
+            </li>
+
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle6">Reference</a>
+            </li>
+
+        </ul>
+
+        <style>
+            .leftNav{
+                position: absolute;
+                top:20vw;
+                left:4%;
+                list-style: none;
+                z-index: 3;
+                text-align:left !important;
+                width:15vw;
+            }
+            .leftNav .leftNavA2{
+                position: relative;
+            }
+            .leftNav .leftNavA2:before {
+                content: "";
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                background-color: rgba(55,55,62,0.7);
+                border-radius: 50%;
+                position: absolute;
+                left: 0.3vw;
+                top:50%;
+                margin: 0;
+                padding: 0;
+                transform: translateY(-50%);
+            }
+            .leftNavUl2{
+                list-style: none;
+            }
+            .leftNavA{
+                display: block;
+                font-size: 1.1vw;
+                font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+                padding: 0.2vw 0.8vw;
+                color:#4CA198;
+                text-decoration: none;
+            }
+            .leftNavLi2{
+                width: 13vw;
+                margin:0.3vw  0;
+                line-height: 17px;
+            }
+            .leftNavA:visited{
+                text-decoration: none;
+                color:#4CA198;
+            }
+            .leftNavA:focus{
+                text-decoration: none;
+                color:#4CA198;
+            }
+            .leftNavA:hover,.leftNavA:active{
+                text-decoration: none;
+                color: #B0EBE4;
+            }
+
+            .leftNavA2{
+                display: block;
+                font-size: 1vw;
+                font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+                padding: 0.1vw 1.5vw;
+                color:rgba(168,168,168,1);
+                text-decoration: none;
+            }
+            .leftNavA2:visited{
+                text-decoration: none;
+                color:rgba(168,168,168,1);
+            }
+            .leftNavA2:focus{
+                text-decoration: none;
+                color:rgba(168,168,168,1);
+            }
+            .leftNavA2:hover,.leftNavA2:active{
+                text-decoration: none;
+                color: white;
+            }
+            .menu-active,.menu-active:focus{
+                text-decoration: none;
+                color: white;
+            }
+            .menu-active2,.menu-active2:focus{
+                text-decoration:none;
+                color:#B0EBE4;
+            }
+
+
+            .mjx-chtml {
+                 outline: 0;
+                 font-size:80%;
+             }
+            .MJXc-display {
+                  overflow-x: auto;
+                  overflow-y: hidden;
+             }
+            @media only screen and (max-width:768px){
+                .leftNav{
+                    display:none;
+                }
+            }
+        </style>
+
+
+
+        <div id="pageContent">
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+        <!---- Content ---->
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+
+            <div class="container" id="containerWithLeftNav">
+                <div class="row">
+
+                    <div class="row title2" id="mainTitle1">
+                        <div class="col">Overview</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="row">
+                            <div class="col col-lg-12">
+                                Our mutagenesis system uses the BL21 (DE3) <i>E. coli</i> strain transformed with two plasmids, a stringent plasmid named P<sub>target</sub> carrying the target sequence that we want to mutate, and a relaxed plasmid named P<sub>mutant</sub>, carrying the gene encoding the tools necessary for mutagenesis, i.e. reverse transcriptase (RT) and Cre. <br /><br />
+                                As we are designing a brand-new mutagenesis system inside <i>E. coli</i>, we want to demonstrate whether and under what condition it can work, so we turn to modelling to answer these questions. Our modelling work is comprised of 3 parts.
+                            <ul class="paraUl" style="list-style:none;">
+                                <a href="#mainTitle2">1)</a> We used 3 deterministic models to describe the 3 reaction steps of our system—<b><i>induced expression</i></b>, <b><i>reverse transcription</i></b> and <b><i>recombination</i></b>. This allows us to compute and maximize the yield of the recombined P<sub>target</sub> which in turn, contributes to the optimization of our experimental setup. <br />
+                                <a href="#mainTitle3">2)</a> We simulated the recombination process stochastically and calculated the number of recombined products that occurred during one replication cycle of <i>E. coli</i>. <br />
+                                <a href="#mainTitle4">3)</a> We combined the 3 reaction steps together using deterministic model and found that selecting the least efficient degradation tag for Cre is optimal.<br />
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row title2" id="mainTitle2">
+                        <div class="col">Part I: Deterministic model to compute the yield of recombined P<sub>target</sub></div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                        When we were constructing the plasmid, we encountered a dilemma concerning how RT and Cre should be expressed. Firstly, we thought of putting them both under a same Lac operon so that their expression can be easily induced merely by one kind of inducer—IPTG. Meanwhile, we also considered using different inducers to achieve a more modular design which would be easier to control. As it would take a long time to test which induced expression scheme is better through experiments, we used modelling to test the two constructs. We modelled all the reactions involved and computed the yield of the desired product, i.e. recombined P<sub>target</sub>. Through comparison of the yield acquired using these two induced expression schemes, we decided that the latter scheme should be employed for our system to perform better.  <br /><br />
+                        By common knowledge we can assume that, if the amount of RT and Cre needs to be different to achieve optimal yield, we should choose the second scheme and put them under different operons. On the contrary, if the yield reaches the maximum under the maximum amount of RT and Cre, the first scheme should be chosen. <br /><br />
+                        In our initial attempt, we found that modelling all the reactions involved is rather difficult, as the reactions are in such a large number and all mixed together. This circumstance makes inspection of the reasonability of our models and parameters impossible. To overcome this issue, we decided to separate these reactions into three minor models and use the steady-state concentration of the substances derived from the previous model as the input of the next model. The three minor models are: <b><i>induced expression model, reverse transcription model and Cre recombination model</i></b>, corresponding to the 3 reaction steps in R-Evolution. The schematic diagram is shown in Fig. 1.
+                        </div>
+                    </div>
+
+                                       <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/5/54/T--Fudan-TSI--Fig1.gif" style="width:70%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                             <b><a name="Fig1"></a>Figure 1. Workflow of the model.</a></b><br />
+                             <p>Three Grey boxes indicate three major reaction steps in R-Evolution. Arrows indicate the reaction that certain substance is involved. White arrows indicate the case in which substances that originally exist in E.coli act as inputs. Red arrows indicate the case in which intermediates, which are produced in the previous reaction, are generated or involved in next reaction process. The blue arrow indicates the final output that we would like to observe. Inducer – IPTG or aTc (anhydrotetracycline). RT – reverse transcriptase. Cre – Cre recombinase. cDNA – complementary DNA.</p>
+                        </div>
+                    </div>
+
+                    <div class="row title3" id="mainTitle2_1">
+                        <div class="col"><i>Induced expression model</i></div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            We first assumed that both genes encoding RT and Cre are placed together under a lac operon (Fig 2a). The repressor protein LacI is stably expressed in the cell, 2 molecules of LacI will form a dimer which binds to LacO DNA fragment and represses the expression of RT and Cre. When IPTG is added and transported into the cell, IPTG molecules will bind with LacI and inhibit its binding to LacO. In this way, RT and Cre can be rescued from suppression (<a href="#Ref1"><u>Stamatakis et al.</u></a>). The ordinary differential equations (ODEs) describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations can be found in the <a href="#App"><u>appendix</u></a>.<br /><br />
+                        </div>
+                    </div>
+
+                    <div class="formula para1">
+                        $$
+                    \begin{aligned}
+                    \frac{\text{d}}{\text{d}t}MR &= k_{sMR}\cdot O_{total} - \lambda_{MR}\cdot MR
+                    \\
+                    \frac{\text{d}}{\text{d}t}R &= k_{sR}\cdot MR-2\cdot k_{2R}\cdot R^2 + 2\cdot k_{2R}R^2- \lambda_R\cdot R
+                    \\
+                    \frac{\text{d}}{\text{d}t}R_2 &= k_{2R}\cdot R^2 - k_{-2R}\cdot R_2 - k_r\cdot R_2\cdot O+k_{-r}\cdot (O_{total}-O)-k_{dr1}\cdot R_2\cdot I^2+k_{-dr1}\cdot I_2R_2 -                                 \lambda_{R_2}\cdot R_2
+                    \\
+                    \frac{\text{d}}{\text{d}t}O &= -k_r\cdot R_2\cdot O + k_{-r}\cdot (O_{total}-O) + k_{dr2}\cdot (O_{total}-O)\cdot I^2 - k_{-dr2}\cdot O\cdot I_2R_2
+                    \\
+                    \frac{\text{d}}{\text{d}t}I &= -2\cdot k_{dr1}\cdot R_2\cdot I^2 + 2\cdot k_{-dr1}\cdot I_2R_2 - 2\cdot k_{dr2}\cdot (O_{total}-O)\cdot I^2 \\\ \ \ \ \ \ \ &\ \ \ + 2\cdot k_{-dr2}\cdot O\cdot I_2R_2 + k_{ft}\cdot YI_{ex} + k_t \cdot (I_{ex}-I) + 2\cdot \lambda_{I_2R_2}\cdot I_2R_2
+                    \\
+                    \frac{\text{d}}{\text{d}t}I_2R_2 &= k_{dr1}\cdot R_2\cdot I^2 - k_{-dr1} \cdot I_2R_2 + k_{dr2}\cdot (O_{total}-O)\cdot I^2 - k_{-dr2}\cdot O\cdot I_2R_2 - \lambda_{I_2R_2}\cdot I_2R_2
+                    \\
+                    \frac{\text{d}}{\text{d}t}MY &= k_{sMY}\cdot O_{total} - \lambda_{MY}\cdot MY
+                    \\
+                    \frac{\text{d}}{\text{d}t}Y &= k_{sY}\cdot MY + (k_{ft}+k_p)\cdot YI_{ex} - k_p\cdot Y\cdot I_{ex} - \lambda_Y\cdot Y
+                    \\
+                    \frac{\text{d}}{\text{d}t}YI_{ex} &= -(k_{ft}+k_p)\cdot YI_{ex} + k_p\cdot Y\cdot I_{ex} - \lambda_{YI_{ex}}\cdot YI_{ex}
+                    \\
+                    \frac{\text{d}}{\text{d}t}MRT &= k_{s0RT}\cdot (O_{total}-O) + k_{s1RT}\cdot O - \lambda_{MRT}\cdot MRT
+                    \\
+                    \frac{\text{d}}{\text{d}t}RT &= k_{sRT}\cdot MRT - \lambda_{RT}\cdot RT
+                    \end{aligned}
+                        $$
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            According to our modelling result, the amount of target protein (RT and Cre) will be extremely low when IPTG is not added (Fig. 2b). The origin point represents the time when an E. coli comes into being through reproduction. As a result, the lac operon is not fully repressed by LacI dimer, causing a leakage expression of target protein (from 0 min to 1 min, Fig. 2b&c). After that, due to slow degradation rate of the target protein’s mRNA as well as the target protein itself, the amount of target protein will continue to accumulate to a certain amount after the lac operon is fully repressed (from 1 min to 5 min, Fig. 2b&c). Finally, the degradation process removes target protein from the system (from 5 min to 50 min, Fig. 2b). When IPTG is added, we find that the concentration of protein product quickly rises as the repression of lac operon is quickly removed (Fig. 2b&c from 50 min to 100 min ). The steady-state concentration is 6.70 μM. This number will be used for further analysis.
+                        </div>
+                    </div>
+
+                                        <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/archive/5/59/20191021145821%21T--Fudan-TSI--Fig2b%26c.gif" style="width:80%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b><a name="Fig2">Figure 2. Induced expression of RT and Cre.</a></b><br />
+                            <p><b>a)</b> Schematic diagram of the model. <b>b)</b> Dynamics of target protein. Horizontal axis shows the length of time. Vertical axis demonstrates the amount of protein (RT and Cre) within the system. RT and Cre are expressed under the same Lac operon. <b>c)</b> Dynamics of free lac operon. Horizontal axis shows the length of time. Vertical axis demonstrates the amount of free lac operon, i.e. the lac operon unbound by tetR dimer, within the system. The vertical magenta line indicates the moment when 50μM is added to the system.</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row title3" id="mainTitle2_2">
+                        <div class="col"><i>Reverse Transcription model</i></div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            From the first model, the concentration of both RT and Cre are acquired. The concentration of RT serves as input to the reverse transcription model. As the schematic diagram depicts (Fig. 3a), tRNA primer first binds with reverse transcriptase. When this complex binds with a certain fragment on the target sequence, which is called primer binding site (PBS), the reverse transcription will start and cDNA will be synthesized.<br /><br />
+                            Although a more elaborate model of reverse transcription has been proposed by <a href="#Ref2"><u>Kulpa et al.</u></a>, it includes many reactions whose kinetic properties are not well characterized. As a result, we simplified that model and came up with our own. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations we used can be found in the <a href="#App"><u>appendix</u></a>.<br /><br />
+                        </div>
+                    </div>
+
+                    <div class="formula para1">
+                    $$
+                    \begin{aligned}
+                    \frac{\text{d}}{\text{d}t}mGOI &= k_{smGOI}\cdot P_{target} - k_{anneal}\cdot mGOI\cdot C2 - \lambda_{mGOI}\cdot mGOI
+                    \\
+                    \frac{\text{d}}{\text{d}t}Pr &= k_{sPr}\cdot P_{mutant} - k_{bind}\cdot RT\cdot Pr + k_{dis}\cdot C2 - \lambda_{Pr}\cdot Pr
+                    \\
+                    \frac{\text{d}}{\text{d}t}C2 &= k_{bind}\cdot RT\cdot Pr - \lambda_{C_2}\cdot C2  - k_{anneal}\cdot mGOI\cdot C2 - k_{dis}\cdot C2
+                    \\
+                    \frac{\text{d}}{\text{d}t}RT &= -k_{bind}\cdot RT+k_{dis}\cdot C2
+                    \\
+                    \frac{\text{d}}{\text{d}t}C3 &= k_{anneal}\cdot mGOI\cdot C2 - \lambda_{C3\_RT}\cdot C3
+                    \\
+                    \frac{\text{d}}{\text{d}t}cDNA &= k_{scDNA}\cdot C3 - \lambda_{cDNA}\cdot cDNA
+                    \end{aligned}
+                    $$
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            The modelling result is shown in Fig. 3b. It shows that the concentration of cDNA will accumulate at the presence of RT (whose initial concentration is 6.70 μM, computed by the induced expression model) and finally reach a steady-state of 9.60 nM. This number will be used for further analysis.
+                        </div>
+                    </div>
+
+                                       <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/3/31/T--Fudan-TSI--Fig3.gif" style="width:80%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b><a name="Fig3">Figure 3. Reverse transcription.</a></b> <br />
+                            <p><b>a)</b> Schematic diagram of the model. <b>b)</b> Dynamics of cDNA. Horizontal axis shows the length of time. Vertical axis demonstrates the amount of cDNA within the system.</p>
+                        </div>
+                    </div>
+
+                    <div class="row title3" id="mainTitle2_3">
+                        <div class="col"><i>Cre Recombination Model</i></div>
+                    </div>
+
+
+                    <div class="row para1">
+                        <div class="col">
+                            Our first assumption is that the genes encoding RT and Cre are both placed under lac operon and thus be expressed in the same amount. So now we are about to compute the yield of our desired product to identify whether this experimental setup is feasible. The model of the recombination process has been clearly described by <a href="#Ref3"><u>Ehrilich et al</u></a>. We made some changes to it according to our own experimental design. The schematic diagram is shown in Fig. 4a. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations can be found in the <a href="#App"><u>appendix</u></a>.<br /><br />
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+$$
+\begin{aligned}
+\frac{\text{d}}{\text{d}t}Ps &= k_{-1}\cdot Ps\_Cre1 - k_1\cdot Ps\cdot Cre - k_{on}\cdot Ps \cdot T7RNA_p + k_{off}\cdot Ps\_T7RNAp
+\\
+\frac{\text{d}}{\text{d}t}Ds &= k_{-1}\cdot Ds\_Cre1 - k_1\cdot Ds\cdot Cre
+\\
+\frac{\text{d}}{\text{d}t}Ps\_Cre1  &= k_1\cdot Ps\cdot Cre - k_{-1}\cdot Ps\_Cre1 + k_{-2}\cdot Ps\_Cre2 - k_2\cdot Ps\_Cre1\cdot Cre
+\\
+\frac{\text{d}}{\text{d}t}Ds\_Cre1 &= k_1\cdot Ds\cdot Cre - k_{-1}\cdot Ds\_Cre1 + k_{-2}\cdot Ds\_Cre2 - k_2\cdot Ds\_Cre1\cdot Cre
+\\
+\frac{\text{d}}{\text{d}t}Ps\_Cre2 &= -k_{34}\cdot Ps\_Cre2\cdot Ds\_Cre2 + k_{-34}\cdot Pp\_Dp\_Cre4 + k_2\cdot Ps\_Cre1\cdot Cre - k_{-2} \cdot Ps\_Cre2
+\\
+\frac{\text{d}}{\text{d}t}Ds\_Cre2 &= -k_{34}\cdot Ps\_Cre2\cdot Ds\_Cre2 + k_{-34}\cdot Pp\_Dp\_Cre4 + k_2\cdot Ds\_Cre1\cdot Cre - k_{-2}\cdot Ds\_Cre2
+\\
+\frac{\text{d}}{\text{d}t}Pp\_Dp\_Cre4 &= -k_{-34}\cdot Pp\_Dp\_Cre4 + k_{34}\cdot Ps\_Cre2\cdot Ds\_Cre2 - k_5\cdot Pp\_Dp\_Cre4 + k_{-5}\cdot Pp\_Cre2\cdot Dp\_Cre2
+\\
+\frac{\text{d}}{\text{d}t}Pp\_Cre2 &= k_5\cdot Pp\_Dp\_Cre4 - k_{-5}\cdot Pp\_Cre2\cdot Dp\_Cre2 + k_2\cdot Pp\_Cre1\cdot Cre - k_{-2}\cdot Pp\_Cre2
+\\
+\frac{\text{d}}{\text{d}t}Dp\_Cre2 &= k_5\cdot Pp\_Dp\_Cre4 - k_{-5}\cdot Pp\_Cre2\cdot Dp\_Cre2 + k_2\cdot Dp\_Cre1\cdot Cre - k_{-2}\cdot Dp\_Cre2
+\\
+\frac{\text{d}}{\text{d}t}Pp\_Cre1 &= - k_2\cdot Pp\_Cre1\cdot Cre + k_{-2}\cdot Pp\_Cre2- k_{-1} \cdot Pp\_Cre1 + k_1\cdot Pp\cdot Cre
+\\
+\frac{\text{d}}{\text{d}t}Dp\_Cre1 &= - k_2\cdot Dp\_Cre1\cdot Cre + k_{-2}\cdot Dp\_Cre2 - k_{-1} \cdot Dp\_Cre1 + k_1\cdot Dp\cdot Cre
+\\
+\frac{\text{d}}{\text{d}t}Pp &= k_{-1}\cdot Pp\_Cre1 - k_1\cdot Pp\cdot Cre
+\\
+\frac{\text{d}}{\text{d}t}Dp &= k_{-1}\cdot Dp\_Cre1 - k_1\cdot Dp\cdot Cre
+\\
+\frac{\text{d}}{\text{d}t}Cre &= - k_1\cdot Ps\cdot Cre + k_{-1}\cdot Ps\_Cre1 - k_1\cdot Ds\cdot Cre \\\ \ \ \ \ \ \ \ \ \ \ \ &\ \ \ + k_{-1}\cdot Ds\_Cre1 - k_2\cdot Ps\_Cre1\cdot Cre + k_{-2}\cdot Ps\_Cre2 - k_2\cdot Ds\_Cre1\cdot Cre \\\ \ \ \ \ \ \ \ \ \ \ \ &\ \ \ + k_{-2}\cdot Ds\_Cre2 + k_{-2}\cdot Pp\_Cre2 - k_2\cdot Pp\_Cre1\cdot Cre + k_{-2}\cdot Dp\_Cre2 \\\ \ \ \ \ \ \ \ \ \ \ \ &\ \ \ - k_2\cdot Dp\_Cre1\cdot Cre + k_{-1}\cdot Pp\_Cre1 - k_1\cdot Pp\cdot Cre + k_{-1}\cdot Dp\_Cre1 - k_1\cdot Dp\cdot Cre
+\\
+\frac{\text{d}}{\text{d}t}Ps\_T7RNAp &= k_{on}\cdot Ps\cdot T7RNAp - k_{off}\cdot Ps\_T7RNAp
+\\
+\frac{\text{d}}{\text{d}t}T7RNAp &= 0
+\end{aligned}
+$$
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            As is shown in the diagram, 2 Cre molecules bind with 1 loxP site successively, either on cDNA or P<sub>target</sub>. Four Cre molecules will form a Holliday junction, and thus starting the recombination reaction. Two pairs of loxP will work together and complete the strand exchange between cDNA and P<sub>target</sub>. After that, the recombined product is produced. What we are interested in is the percentage of recombined P<sub>target</sub> among all P<sub>target</sub>s in one E. coli. So, we turn to compute that percentage based on the model that we have established.<br /><br />
+                            Unfortunately, we found that the amount of substances is too small. For example, the concentration of  is only 10 nM, which means there are only about 5 molecules of  in one cell. These small numbers caused some computational problems in Matlab when we were using its ODE solver (ode15s). To address this problem, we converted the units of the amount of the substances from mole per litter (M) to molecule. The units of the kinetic parameters are also converted accordingly.<br /><br />
+                            Now the recombination step is modeled under the initial condition of 5 molecules of non-mutated , 3228 molecules of Cre and 5 molecules of cDNA (Fig 4b). The last two numbers are the outputs of previous models after going through some unit conversion steps.
+                        </div>
+                    </div>
+                    <div class="row para1">
+                        <div class="col">
+                            The result is disappointing. After a long period of reaction, no recombined  showed up. It is because there are too many Cre molecules so s are all bounded by them and remain in the intermediate form. What’s more,  can't bind with T7 RNA polymerase and be transcribed as a consequence of Cre occupation. This leads to the system’s inability of undergoing further reverse transcription process, stopping cDNA’s production, resulting in a stop of the system, and rendering mutation accumulation impossible (Fig. 4c).<br /><br />
+                                                       This result tells us that the number of Cre molecules needs to be much lower for the system to function. We then set out to determine how many Cre is optimal. After we fed the recombination model with cDNA and Cre at different concentrations, the problem seems to be clear as the yield of recombined  varies greatly responding to different numbers of cDNA and Cre (Fig. 4d). When cDNA is confined to 5 molecules, we will get no yield at all in the period of E. coli's replication cycle if the concentration of Cre is greater than 20 molecules. Instead, the yield is maximized when the final Cre concentration is around 2 molecules (Fig 4e).
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            Now we use the optimized number of Cre as the input to our third model. The result is shown in Fig. 4f, which is satisfactory. The recombined P<sub>target</sub>) finally occurs and  has a chance to bind with T7 RNA polymerase, which means mutated gene of interest could be transcribed and further mutated, thus making the accumulation of mutations possible (Fig 4g). These results remind us to use different inducer to induce the expression of RT and Cre. So, we revised our experimental design and decided to use Tet operon to control the expression of Cre and induce that with anhydrotetracycline (aTc). Even though we later used degradation tag to accelerate the degradation process of Cre and to decrease the expression level of Cre, considering the fact that the tet operon is less prone to leakage and that using merely lac operon to control the expression of RT and Cre may cause unexpected problems, we still used different operons to control the expression of RT and Cre. This setup will be considered in the model in Part III.
+                        </div>
+                    </div>
+                    <div class="row para1">
+                        <div class="col">
+                            There is still something that is not well explained in our current model. The final percentage of recombined P<sub>target</sub> is around 1.5%. The unit of the substance is molecules, so it means there is 0.075 recombined P<sub>target</sub> in one cell, which is unrealistic. This problem reflects that converting the unit of substance into molecule when doing deterministic modelling cannot offer a precise description of the system’s status.<br /><br />
+                            We then used stochastic modelling techniques to determine whether and how many recombined P<sub>target</sub>s will show up in one replication cycle of E. coli.
+                        </div>
+                    </div>
+
+                                       <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/d/d8/T--Fudan-TSI--Fig4.gif" style="width:70%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b><a name="Fig4">Figure 4. Cre recombination (deterministic).</a></b><br />
+                            <p><b>a)</b> Schematic diagram of the model. Ps, Un-recombined P<sub>target</sub>. Pp, Recombined P<sub>target</sub>. <b>b-c)</b> Recombination when Cre is expressed under Lac operon. Dynamics of the percentage of un-recombined/ recombined P<sub>target</sub> among all P<sub>target</sub>s is shown in <b>b</b>. Horizontal axis shows the length of time (8 hours, corresponding to R-Evolution’s function period). The distribution of the percentage of substances at the steady-state is shown in <b>c</b>. <b>d)</b>  Yield of recombined P<sub>target</sub> at different initial number of cDNA and Cre. The yield of recombined P<sub>target</sub> is calculated as the percentage of recombined P<sub>target</sub> among all P<sub>target</sub>s. The horizontal white line corresponds to current situation where the initial number of cDNA is 5 molecules in one E.coli. <b>e)</b>  Yield of recombined P<sub>target</sub> at different initial number of Cre when initial number of cDNA is 5 molecules. <b>f-g)</b>  Recombination when Cre is expressed under different operon. Dynamics of the percentage of un-recombined/ recombined P<sub>target</sub> among all P<sub>target</sub>s is shown in <b>f</b>. The distribution of the percentage of substances at the steady-state is shown in <b>g</b>.</p>
+
+                        </div>
+                    </div>
+
+                    <div class="row title3" id="mainTitle2_4">
+                    </div>
+
+                    <div class="row title2" id="mainTitle3">
+                        <div class="col">Part II: Stochastic model to compute times of occurrence of recombined P<sub>target</sub></div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                        We use Gillespie algorithm in stochastic modelling. The procedure of this algorithm is shown as follows in the form of pseudocode:<br /><br />
+                            <ul class="paraUl" style="list-style:none;">
+                            Step 1: Initialize the reaction system at \(t=0\) with rate constants \(c_1, c_2, ......, c_v\) as initial numbers of molecules \(x_1, x_2, ......, x_u\) corresponding to \(v\) reactions and \(u\) sustances (both reactants and products) involved in the reaction system.<br />
+                            Step 2: For each \(i=1,2,......,v\), calculate the hazard for the \(i^{th}\) type of reaction, denoted as \(h_i(x,c_i)\) based on current substance number \(x\).<br />
+                            Step 3: Calculate the combined reaction hazard \(h_0(x,c)=\Sigma_{i=1}^{v}h_i(x,c_i)\).<br />
+                            Step 4: Simulate the time to the next reaction, \(t^{'}\) , which is a random quantity that obeys exponential distribution with parameter \(\lambda\).<br />
+                            Step 5: Put \(t:=t+t^{'}\). <br />
+                            Step 6: Simulate the reaction index, \(j\). The probability that the \(j^{th}\) reaction can occur is \(\frac{h_i(x,c_i)}{h_0(x,c)}, i=1,2,......,v.\).<br />
+                            Step 7: Update \(x\) according to reaction \(j\), which means putting \(x:=x+S^{(j)}\), where \(S^{(j)}\) denotes the \(j^{th}\) colomn of the stoichiometry matrix \(S\). The \(j^{th}\) column of  denotes the change in substance number  caused by the \(j^{th}\) reaction.<br />
+                            Step 8: Record time \(t\) and current substance number \(x\).<br />
+                            Step 9: If \(t\ \text{<}\ T_{max}\), return to step 2. \(T_{max}\) corresponds to the maximum duration of the reaction set by the user.<br />
+                            Step 10: Plot the result to see the dynamic of the quantity of the substance that you are interested in.<br />
+                            </ul>
+                            Although the algorithm is rather simple, basic mathematical skills is required to understand its theoretical basis. You may consult the book written by <a href="#Ref4"><u>Wilkinson and Darren J.</u></a> for a thorough understanding. The result is shown in Fig. 5.<br /><br />
+                            The result demonstrates that recombined P<sub>target</sub>s do occur and two rounds of reverse transcription and recombination can take place in one replication cycle of E. coli (1200 s) (Fig 5a). On the contrary, no recombined  will come out within that period if the initial cDNA is 5 molecules and initial Cre is 3228 molecules (Fig 5b). This again demonstrates the necessity of putting RT and Cre under different induction setups. The fluctuation of the number of recombined P<sub>target</sub> is due to the backward reaction that Cre can rebind with recombined  and reverting the action, making it not counted as recombined P<sub>target</sub> by the algorithm.
+                        </div>
+                    </div>
+
+                                       <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/5/5f/T--Fudan-TSI--Fig5bc.gif" style="width:80%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b><a name="Fig5">Figure 5. Cre recombination (stochastic).</a></b><br />
+                            <p>Horizontal axis shows the length of time (20min, corresponding to the duration of 1 E.coli replication cycle). Vertical axis demonstrates the number of recombined P<sub>target</sub>. The initial number of Cre is 2 molecules in <b>a</b>, 3228 molecules in <b>b</b>.</p>
+                        </div>
+                    </div>
+
+                    <div class="row title2" id="mainTitle4">
+                        <div class="col">Part III: Deterministic model to determine optimal optimal Cre degradation tag</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            To ensure the evolved protein is encoded by the mutated GOI sequence that is recombined into P<sub>target</sub>, we decided to use degradation tag to accelerate the degradation process of Cre. This design would make Cre only function when inducer is in the system, thus allowing stringent control of the protein. However, we then face the problem of how to select the optimal degradation tag. Empirically, to minimize the duration of recombination, we tend to choose degradation tags with higher efficiency, but extremely high degradation rate will also reduce the yield of recombined P<sub>target</sub>, leading to decreased library size. Also, it is impractical for researchers to do experiments to test these degradation tags one by one. For these reasons, we are going to use models to find out the optimal degradation tag that should be added to Cre based on the average yield of recombined P<sub>target</sub> at the end of R-Evolution functioning period (8 hours).<br /><br />
+                            We intend to use the models described in Part I, combined with aTc induction model proposed by <a href="#Ref5"><u>Steel et al</u></a>. to compute the yield of recombined P<sub>target</sub> under different degradation rate of Cre (the reason why Tet operon is used has been elaborated in Part I; the schematic diagram of this process is shown in Fig 6a. The ODEs describing these processes are shown as follows. Details of the substance names, parameter names and chemical equations we used can be found in the <a href="#App"><u>appendix</u></a>.
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            Although the setup in Part I successfully provided us with a clear insight into the reactions and dynamic changes of substances that underlie our mutagenesis system, the simplification that the steady-state substance concentrations of previous models can be used as inputs for subsequent models doesn’t match real reaction situation. For example, when Cre is expressed, it can immediately bind with cDNA and initiate recombination. This fact contradicts with our model assumption that recombination only takes place after both Cre and cDNA has reached their steady-state concentration.<br /><br />
+                            To overcome this issue, we decided to combine all three minor models together and calculate the expected output.<br /><br />
+                            As a result of the impreciseness of the basic assumption of the models in part I, we only gave a qualitative conclusion that the amount of RT and Cre should be different. Here we need to quantify how Cre degradation rate and steady-state concentration affects the yield of recombined P<sub>target</sub>. That’s why we employed deterministic model here to combine the separate steps together into one and better simulate real intracellular circumstances.<br /><br />
+                            By combining the models that have been talked above, we revealed the reason why the degradation tag with a moderate degradation rate, which can’t be too high or too low, should be selected (Fig 6b): under appropriate inducer concentration (20~22uM), when the degradation rate is relatively low (below 0.1 min<sup>-1</sup>), the yield of recombined P<sub>target</sub> will increase according to the increase of Cre degradation rate, but when that rate is sufficiently high (above 0.1 min<sup>-1</sup>), the increase of Cre degradation rate will do harm to the yield of recombined P<sub>target</sub>.<br /><br />
+                            The average degradation rate acquired from literature is 0.2 min<sup>-1</sup>(<a href="#Ref1"><u>Stamatakis et al.</u></a>) and the degradation rate of Cre when tagged with the most efficient degradation tag is 0.69 min<sup>-1</sup>. Within this range of degradation rate, the maximum yield of recombined P<sub>target</sub> will decrease according to the increase of Cre degradation efficiency (Fig 6c). So we decided to use the least efficient degradation tag.<br /><br />
+                            We also revealed the dynamic change of the recombined P<sub>target</sub>. It will continuously accumulate within Cre function period (Fig 6d). However, the concentration remains to be low within that period, due to Cre degradation (Fig 6e).<br /><br />
+                            Finally, there is another interesting phenomenon that is worth mentioning. From Fig 6b and Fig 6c, we can find that for each degradation tag rate greater than 0.2 min<sup>-1</sup>, there exits a range of aTc dosage that can make the yield of recombined  relatively big. Also, decreased degradation efficiency enlarges that range. This discovery provides us with another reason for using less efficient degradation tag in that it can increase the robustness of our mutagenesis system by decreasing its sensitivity to the change of inducer dosage.
+                        </div>
+                    </div>
+
+                                       <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/8/84/T--Fudan-TSI--Fig6.gif" style="width:80%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b><a name="Fig6">Figure 6. Whole process simulation considering Cre degradation tag.</a></b> <br />
+                            <p><b>a)</b> Chemical reactions involved in Cre induced expression. <b>b)</b> Yield of recombined P<sub>target</sub> at different Cre degradation rate and aTc dosage. The white line on the left corresponding to the case where the degradation rate of Cre is 0.2 min<sup>-1</sup>. The white line on the left corresponding to the case where the degradation rate of Cre is 0.69 min<sup>-1</sup>. <b>c)</b> Yield of recombined P<sub>target</sub> at different Cre degradation rate and aTc dosage (3D plot). The range of Cre degradation rate is 0.2~0.69 min<sup>-1</sup>. <b>d)</b> Dynamics of yield of recombined P<sub>target</sub> at the Cre degradation rate of 0.2 min<sup>-1</sup> and the initial 22uM aTc dosage. <b>e)</b> Dynamics of yield of recombined P<sub>target</sub> at the Cre degradation rate of 0.2 min<sup>-1</sup> and the initial 22uM aTc dosage.</p>
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                        In the deterministic model, we combined the three minor models proposed previously and assessed the mutagenesis system in whole. Through this addition, we achieved a better simulation of the real intracellular reactions and answered the question of when Cre should be induced for the highest level of recombination efficiency to be obtained.
+                        </div>
+                    </div>
+
+                    <div class="row title3" id="mainTitle5">
+                        <div class="col">Complementary materials</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            <ul class="paraUl" style="list-style:none;">
+                        You can access the Matlab codes of our models from our <a href="https://github.com/kiyochou/2019-iGEM-Fudan-TSI" target="_blank"><u>Github</u></a> repository.<br /><br />
+                        Please consult the appendix file for a clearer understanding of the formulation of the model.<br /><br />
+                        <a name="App"><embed src="https://2019.igem.org/wiki/images/8/8c/T--Fudan-TSI--ModelApp.pdf" width="100%" height="1000"   type="application/pdf"></a>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row title3" id="mainTitle6">
+                        <div class="col">References</div>
+                    </div>
+
+
+                    <div class="row para1">
+                        <div class="col">
+                            <ul class="paraUl" style="list-style:none;">
+                                    <li>[1] Stamatakis M, Mantzaris N V. <a href="https://www.ncbi.nlm.nih.gov/pubmed/19186128" target="_blank" name="Ref1">Comparison of Deterministic and Stochastic Models of the lac Operon Genetic Network.</a> <i>Biophys. J.</i> 96, 887–906 (2009).</li>
+                                    <li>[2] Kulpa, D. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1169686/" target="_blank" name="Ref2">Determination of the site of first strand transfer during Moloney murine leukemia virus reverse transcription and identification of strand transfer-associated reverse transcriptase errors</a> <i>EMBO J.</i> 16, 856–865 (1997).</li>
+                                    <li>[3] Ringrose, L. et al.<a href="https://www.ncbi.nlm.nih.gov/pubmed/9813124" target="_blank" name="Ref3">Comparative kinetic analysis of FLP and cre recombinases: mathematical models for DNA binding and recombination</a> <i>J. Mol. Biol.</i> 284, 363–384 (1998).</li>
+                                    <li>[4] Wilkinson, Darren J. <a  name="Ref4">Stochastic modeling for Systems Biology</a>, Second Edition. <a>Crc Press</a>, 2011.</li>
+                                    <li>[5] Harris A W K, Kelly C L, Steel H, et al. <a href="https://ieeexplore.ieee.org/document/8263882" target="_blank" name="Ref5">The autorepressor: A case study of the importance of model selection</a> <i>2017 IEEE 56th Annual Conference on Decision and Control (CDC)</i> 1622–1627 (2017).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+        <!---- Foot ---->
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+
+        <footer id="FudanFooter" class="page-footer grey">
+
+            <div class="container" id="footContainer">
+                <div class="row">
+                    <div class="col-md-4" id="sponser" style="padding-top:3%;">
+                        <div class="row">
+                            <div class="col-sm-6" style="padding:0;">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <img class="img-fluid" alt="Team Fudan-TSI" src="https://2019.igem.org/wiki/images/0/0f/T--Fudan-TSI--LogoGrey.gif" />
+                                    </div>
+                                    <div class="col">
+                                        <img class="img-fluid" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6" style="padding:0;">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <img class="img-fluid" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png" />
+                                    </div>
+                                    <div class="col">
+                                        <img class="img-fluid" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px; margin-top:5px;">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8" id="usefulLinks">
+                        <div class="row">
+                            <div class="col-lg-6" style="padding:0;">
+                                <div class="row">
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center">
+                                            <span><a href="/Team:Fudan-TSI/Description" style="text-decoration:none;">Project</a></span>
+                                                <ul>
+                                                    <li><a href="/Team:Fudan-TSI/Description">Background</a></li>
+                                                    <li><a href="/Team:Fudan-TSI/Design">Design</a></li>
+                                                    <li><a href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
+                                                    <li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
+                                                    <li><a href="/Team:Fudan-TSI/Judging">Judging</a></li>
+                                                </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center">
+                                            <span><a href="/Team:Fudan-TSI/Results" style="text-decoration:none;">Results</a></span>
+                                            <ul>
+                                                <li><a href="/Team:Fudan-TSI/Results/ReverseTranscription">Reverse Transcription</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Results/Recombination">Recombination</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center active">
+                                            <span style="text-decoration:none;">Model</span>
+                                            <ul>
+                                                <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6" style="padding:0;">
+                                <div class="row">
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center">
+                                          <span><a href="/Team:Fudan-TSI/Parts" style="text-decoration:none;">Parts</a></span>
+                                            <ul>
+                                                <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center">
+                                          <span><a href="/Team:Fudan-TSI/Human_Practices" style="text-decoration:none;">Outreach</a></span>
+                                            <ul>
+                                                <li><a href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Human_Practices">Integrated human practice</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center">
+                                          <span><a href="/Team:Fudan-TSI/Team" style="text-decoration:none;">Team</a></span>
+                                            <ul>
+                                                <li><a href="/Team:Fudan-TSI/Team">Members</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
+                                                <li><a href="/Team:Fudan-TSI">&#169; 2019</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="container" style="width:90%;">
+                     <div class="contactUS row">
+                       <div class="col s12 m6 l6"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai
+                       </div>
+                        <div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
+                       </div>
+                         <div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
+                       </div>
+                         <div class="col s12 m6 l2"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
+                       </div>
+                     </div>
+                 </div>
+            </div>
+        </footer>
+
+
+
     </div>
-</div>
 
 
-<!-- Javascript files -->
-<!-- Materialize 1.0.0-rc.2 -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script>
 
-<!-- Javascript -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-js.js&action=raw&ctype=text/javascript"></script>
+    <script>
 
-<!-- wang yiheng -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/jquery-ui.min.js&action=raw&ctype=text/javascript"></script>
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/d3.min.js&action=raw&ctype=text/javascript"></script>
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/function-plot.js&action=raw&ctype=text/javascript"></script>
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Kernel.js&action=raw&ctype=text/javascript"></script>
+        var winHeight=$(window).height();
+        var winWidth=$(window).width();
+        var pagePosition=$("#pageContent").offset().top;
+        var navHeight=$(".leftNav").height();
+        var footerHeight=$("#FudanFooter").height();
+        var maxTopDistance=$("#pageContent").height();
+        $(".leftNav").css({"position":"absolute","top":pagePosition});
+        $(window).resize(function(){
+                var winHeight=$(window).height();
+                var winWidth=$(window).width();
+                var topDistance=$(window).scrollTop();
+                var navHeight=$(".leftNav").height();
+                var footerHeight=$("#FudanFooter").height();
+                var maxTopDistance=$("#pageContent").height();
+                var leftNavFromTop=pagePosition-$(window).scrollTop();
+            if (leftNavFromTop<0.1*winWidth){
+                if(topDistance<maxTopDistance){
+                    $(".leftNav").css({"position":"fixed","top":0.1*winWidth+$("#top_menu_14").height()});
+                }
+                else{
+                    $(".leftNav").css({"position":"absolute","top":maxTopDistance});
+                }
+            }
+            else{
+                $(".leftNav").css({"position":"absolute","top":pagePosition});
+            }
+        });
 
-</body>
+        $(window).scroll(function(){
+            var winHeight=$(window).height();
+            var winWidth=$(window).width();
+            var leftNavFromTop=pagePosition-$(window).scrollTop();
+            var topDistance=$(window).scrollTop();
+            if (leftNavFromTop<0.1*winWidth){
+                if(topDistance<maxTopDistance){
+                    $(".leftNav").css({"position":"fixed","top":0.1*winWidth+$("#top_menu_14").height()});
+                }
+                else{
+                    $(".leftNav").css({"position":"absolute","top":maxTopDistance});
+                };
+            }
+            else{
+                $(".leftNav").css({"position":"absolute","top":pagePosition});
+            }
+        });
+
+        $(".leftNav a").click(function () {
+            $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top-$("#navUl").height()-50
+        }, 500);
+        return false;
+        });
+
+
+        $(window).scroll(function(){
+
+            var currentScroll=$(this).scrollTop();
+            var firstHeight=$("#pageCover").height();
+            var footerFromTop=$("#FudanFooter").offset().top;
+            var $currentSection=null;
+            $(".leftNavA").each(function(){
+                $('.leftNavA').removeClass('menu-active');
+                var hePoint=$($(this).attr("href"));
+                var divPosition=hePoint.offset().top-$("#navUl").height()-50;
+                if (divPosition-1<currentScroll){
+                    $currentSection=$(this);
+                }
+                if (currentScroll>firstHeight){
+                    $(".leftNavA").removeClass("menu-active");
+                    $currentSection.addClass("menu-active");
+                }
+            });
+
+            var $currentSection2;
+            $('.leftNavA2').each(function(){
+                $('.leftNavA2').removeClass('menu-active2');
+                var hePoint2=$($(this).attr("href"));
+                var divPosition2=hePoint2.offset().top-$("#navUl").height()-50;
+                if (divPosition2-1<currentScroll){
+                    $currentSection2=$(this);
+                }
+                if (currentScroll>firstHeight){
+                    $('.leftNavA2').removeClass('menu-active2');
+                    $currentSection2.addClass('menu-active2');
+                }
+            });
+        });
+
+    </script>
+
+
+
+    <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/popper.min.js&amp;action=raw&amp;ctype=text/javascript" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/bootstrap.js&amp;action=raw&amp;ctype=text/javascript" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+let isMathjaxConfig = false; // 防止重复调用Config，造成性能损耗
+
+const initMathjaxConfig = () => {
+  if (!window.MathJax) {
+    return;
+  }
+  window.MathJax.Hub.Config({
+    showProcessingMessages: false, //关闭js加载过程信息
+    messageStyle: "none", //不显示信息
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+      displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+      skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+    },
+    "HTML-CSS": {
+      availableFonts: ["STIX", "TeX"], //可选字体
+      showMathMenu: false //关闭右击菜单显示
+    }
+
+  });
+  isMathjaxConfig = true; //
+};
+</script>
+<script>
+if (isMathjaxConfig === false) { // 如果：没有配置MathJax
+  initMathjaxConfig();
+}
+
+// 如果，不传入第三个参数，则渲染整个document
+// 因为使用的Vuejs，所以指明#app，以提高速度
+window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('app')]);
+
+
+</script>
+
+<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan/scrollUp&amp;action=raw&amp;ctype=text/javascript"></script>
+
+<script>
+$(function () {
+    $(function () {
+      $.scrollUp({
+        scrollName: 'scrollUp',      // Element ID
+        scrollDistance: 300,         // Distance from top/bottom before showing element (px)
+        scrollFrom: 'top',           // 'top' or 'bottom'
+        scrollSpeed: 300,            // Speed back to top (ms)
+        easingType: 'linear',        // Scroll to top easing (see http://easings.net/)
+        animation: 'fade',           // Fade, slide, none
+        animationSpeed: 200,         // Animation speed (ms)
+        scrollTrigger: false,        // Set a custom triggering element. Can be an HTML string or jQuery object
+        scrollTarget: false,         // Set a custom target element for scrolling to. Can be element or number
+        scrollText: false,           // Text for element, can contain HTML
+        scrollTitle: "Scroll to top",       // Set a custom <a> title if required.
+        scrollImg: true,             // Set true to use image
+        activeOverlay: false,        // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        zIndex: 2147483647           // Z-Index for the overlay
+      });
+    });
+  });
+
+</script>
+
+<script>
+window.onload=function(){
+a = document.getElementsByTagName("p");
+a[a.length - 1].style.display = "none";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    Content ends    --------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 </html>

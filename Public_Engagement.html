@@ -607,7 +607,6 @@
 
 
 
-
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -620,6 +619,7 @@
             margin:0;
             padding:0;
             background-color:#08273a;
+                        width:100%;
         }
         a{
             text-decoration:none;
@@ -782,6 +782,7 @@
 
         .row{
             clear:both!important;
+            width:100%!important;
         }
 
         .title1{
@@ -802,7 +803,7 @@
             width:100%;
         }
         .title3{
-            font-size:1.4rem;
+            font-size:1.5rem;
             color:white;
             text-align:left !important;
             display:block;
@@ -821,7 +822,6 @@
             margin:auto 0;
         }
         .para1 a{
-            text-decoration:underline !important;
             color:white;
         }
         .para1 a:visited, .para1 a:active{
@@ -846,7 +846,7 @@
             list-style-type:decimal !important;
             list-style-position:outside;
             padding-left:auto;
-            font-size:1rem;
+            font-size:1.2rem;
         }
         .paraUl li{
             padding-right:4% ;
@@ -1081,6 +1081,9 @@
             .para1{
                 font-size:1.2rem;
             }
+            .paraUl{
+                font-size:1.1rem;
+            }
             .pic2{
                 width:100%;
             }
@@ -1104,6 +1107,9 @@
                 font-size:1.2rem;
             }
             .para1{
+                font-size:1.1rem;
+            }
+            .paraUl{
                 font-size:1rem;
             }
             .pic2{
@@ -1387,7 +1393,7 @@
               <rect id="rect1" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad1)"></rect>
               <rect id="rect2" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad2)"></rect>
             </svg>
-            <div id="demoCover"><img id="coverPic" src="https://2019.igem.org/wiki/images/2/26/T--Fudan-TSI--coverJudging.gif"></div>
+            <div id="demoCover"><img id="coverPic" src="https://2019.igem.org/wiki/images/9/97/T--Fudan-TSI--coverPublicEngagement.gif"></div>
         </div>
         <style>
             #pageCover{
@@ -1405,7 +1411,7 @@
                 text-align:center;
             }
             #coverPic{
-                width:600px;
+                width:900px;
                 margin:20vh auto;
             }
             #demo{
@@ -1438,7 +1444,7 @@
                     height:30vh;
                 }
                 #coverPic{
-                    width:500px;
+                    width:800px;
                     margin:7vh auto;
                 }
             }
@@ -1450,7 +1456,7 @@
                     top:55px;
                 }
                 #coverPic{
-                    width:400px;
+                    width:700px;
                     margin:6vh auto;
                 }
             }
@@ -1462,7 +1468,7 @@
                     top:55px;
                 }
                 #coverPic{
-                    width:350px;
+                    width:450px;
                     margin:8vh auto;
                 }
             }
@@ -1809,6 +1815,118 @@
 
 
 
+        <ul class="leftNav" style="margin:0;padding:0;">
+
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle1">Kids</a>
+            </li>
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle2">Student</a>
+                <ul class="leftNavUl2">
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle2_1">Lectures and Workshop</a></li>
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle2_2">Board game</a></li>
+                </ul>
+            </li>
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle3">General public</a>
+
+            </li>
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle4">Guidebook</a></li>
+
+
+
+        </ul>
+
+        <style>
+            .leftNav{
+                position: absolute;
+                top:20vw;
+                left:4%;
+                list-style: none;
+                z-index: 3;
+                text-align:left !important;
+                width:15vw;
+            }
+            .leftNav .leftNavA2{
+                position: relative;
+            }
+            .leftNav .leftNavA2:before {
+                content: "";
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                background-color: rgba(55,55,62,0.7);
+                border-radius: 50%;
+                position: absolute;
+                left: 0.3vw;
+                top:50%;
+                margin: 0;
+                padding: 0;
+                transform: translateY(-50%);
+            }
+            .leftNavUl2{
+                list-style: none;
+            }
+            .leftNavA{
+                display: block;
+                font-size: 1.1vw;
+                font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+                padding: 0.2vw 0.8vw;
+                color:#4CA198;
+                text-decoration: none;
+            }
+            .leftNavLi2{
+                width: 13vw;
+                margin:0.3vw  0;
+                line-height: 17px;
+            }
+            .leftNavA:visited{
+                text-decoration: none;
+                color:#4CA198;
+            }
+            .leftNavA:focus{
+                text-decoration: none;
+                color:#4CA198;
+            }
+            .leftNavA:hover,.leftNavA:active{
+                text-decoration: none;
+                color: #B0EBE4;
+            }
+
+            .leftNavA2{
+                display: block;
+                font-size: 1vw;
+                font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+                padding: 0.1vw 1.5vw;
+                color:rgba(168,168,168,1);
+                text-decoration: none;
+            }
+            .leftNavA2:visited{
+                text-decoration: none;
+                color:rgba(168,168,168,1);
+            }
+            .leftNavA2:focus{
+                text-decoration: none;
+                color:rgba(168,168,168,1);
+            }
+            .leftNavA2:hover,.leftNavA2:active{
+                text-decoration: none;
+                color: white;
+            }
+            .menu-active,.menu-active:focus{
+                text-decoration: none;
+                color: white;
+            }
+            .menu-active2,.menu-active2:focus{
+                text-decoration:none;
+                color:#B0EBE4;
+            }
+
+
+            @media only screen and (max-width:768px){
+                .leftNav{
+                    display:none;
+                }
+            }
+        </style>
+
 
 
         <div id="pageContent">
@@ -1816,76 +1934,303 @@
         <!---- Content ---->
         <!----------------------------------------------------------------------------------------------------------------------------------------->
 
-            <div class="container">
+            <div class="container" id="containerWithLeftNav">
                 <div class="row">
 
+                    <div class="row para1">
+                        <div class="row">
+                            <div class="col col-lg-12">
+                                As an interdisciplinary branch of biology and engineering, synthetic biology has been widely used in many different areas and is relative to everyone. However, because of the enlarging gap between the public and synthetic biology, which is mainly caused by the public’s misconception and lack of knowledge on the subject, we find it hard to popularize, let alone getting more people involved in it. In this context, we think that iGEM presents to us a great opportunity to try our best to fill the gap and set up a bridge between the public and synthetic biology. To make our human practice work better targeted, we divided the audience into three groups: children, students, and general public. For children, we want to help them to realize the captivation of science and stimulate their interest in biology. For students, we focused on encouraging them to explore and participate in some real work in the field of synthetic biology. For the general public, we considered more about eliminating their misconceptions as well as inspiring them what can be achieved through synthetic biology to make the world a better place. So, to them, we mainly talked about the basic knowledge and concepts of synthetic biology research, and showed them some of the achievements across the years.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row title1" id="mainTitle4">
+                        <div class="col">Guidebook</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            At the beginning of our project, we found that we had no clue about how to start our Human Practice work. That’s how we realized that the conduct of previous teams is a valuable source of inspiration. Although the track they chose may be different, the goal of Human Practice has always been to reach out to more people and make a difference with your project. Thus, we compiled two guidebooks, one on Education and Public engagement, and one on Integrated Human Practice. We shared our guidebook with other teams and asked for their suggestions. In doing so, we hope to offer guidance to future teams on how to carry out Human Practice.
+
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            Here we present you our two Guidebooks. For Education and Public Engagement, we mainly focused on how to inspire public interest in synthetic biology targeting different groups of people.
+
+                        </div>
+                    </div>
+
+                    <div class="row" style="width:100%;">
+                        <div class="col">
+                            <embed src="https://2019.igem.org/wiki/images/5/59/T--Fudan-TSI--HP--Guidebook.pdf" width="100%" height="600px" type="application/pdf" />
+                        </div>
+                    </div>
+
                     <div class="row title1" id="mainTitle1">
-                        <div class="col">Bronze</div>
+                        <div class="col">Kids– Biology is a fun thing to learn.</div>
                     </div>
 
                     <div class="row para1">
                         <div class="row">
-                            <div class="col">
-                                 1. Registration and Giant Jamboree Attendance<br /><br />
-2.  Competition deliverables<br />
-Please come to see our presentation at Room 309 on Nov 2nd at 9:30 am, and feel free to visit our poster stand in Zone 1-20. Here is the link to our Judging form.<br /><br />
-3.  Attributions<br />
-We have carefully documented each of our responsibilities and contribution to the project as well as the help we were offered by others.<br /><br />
-4.  Project inspiration and description<br />
-We put down how we came up with our mutagenesis system and what we’re trying to achieve through the implementation of our project.<br /><br />
-5.  Characterization<br />
-We used 4 methods to verify and characterize the fluorescence recovery of EGFP from its nonsense mutant.
+                            <div class="col col-lg-12">
+                                What can we do to get children involved in biology? To answer this question, we chose to work with Shanghai Jiuqian volunteer club, a voluntary association in our university devoting to providing long-term education support for migrant children. They showed a great interest in promoting biology. We cooperated with them in purpose of guiding children to excavate the fun of biology through motivating their creation and imagination.
 
                             </div>
                         </div>
                     </div>
 
-                    <div class="row title1" id="mainTitle1">
-                        <div class="col">Silver</div>
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/6/65/T--Fudan-TSI--Education_kids1.gif" style="width:50%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Communication with volunteers from Shanghai Jiuqian volunteer club</b><br />
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            On October 6th, members from our team and their association held a public class for children aged nine to fifteen together. To start with, we asked how they think of biology. We found that most of them understand biology as macro-level creatures like animal and plants. Then we introduced to them the basic knowledge of DNA structure and function, and showed them a DNA model which can be taken apart and reassembled. Afterwards, we invited them to build their own DNA model. One of the kids expressed to us that how amazing it is that such a small and simple molecule can play such an important role in maintaining and shaping our lives. We then gave a brief introduction of synthetic biology and held a discussion about what can be achieved by it. To our surprise, the perspectives they have about synthetic biology are so different and innovative that we were also inspired by them. One of them compared synthetic biology to a 3D printer which can create whatever you want by precise design and programming. They also proposed that synthetic biology can be very useful in medical field.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/6/61/T--Fudan-TSI--Education_kids2.gif" style="width:85%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Public class for kids</b><br />
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            Our team and Jiuqian association both felt that the workshop is a mutually beneficial activity, and decided to establish a long-term collaboration between us.
+                        </div>
                     </div>
 
                     <div class="row para1">
                         <div class="row">
                             <div class="col">
-                                1.  Validated part<br />
-5 different degradation tags with differed degradation dynamics are tested, each of their effect on protein steady-state concentration is measured.<br /><br />
-2.  Collaboration<br />
-We actively collaborated with different teams on various activities, including experimental design, plasmid sharing, and human practices.<br /><br />
-3.  Human Practices<br />
-In our HP work, we presented how we interacted with the public and tried to promote understanding of biological research. Also, we recorded in detail how we engaged with different researchers in regards to our project’s prospects.
-
 
                             </div>
                         </div>
                     </div>
 
-                    <div class="row title1" id="mainTitle1">
-                        <div class="col">Gold</div>
+
+                    <div class="row title1" id="mainTitle2">
+                        <div class="col">Students - Act now to create and innovate.</div>
+                    </div>
+
+                    <div class="row title2" id="mainTitle2_2">
+                        <div class="col">Board game</div>
                     </div>
 
                     <div class="row para1">
+                        <div class="col col-lg-12">
+                            It is always easier for people to get involved and learn new things when are playing and enjoying themselves. When considering what can be done to stimulate students’ interest in synthetic biology and make it a fun thing to learn, we thought of board game. When we first set our sights on board games, we were impressed by its slogan: Everything is a board game. Numerous areas can be combined with board games including but not limited to education, careers and life. We regard it a perfect medium to introduce our system design and popularize synthetic biology among students.
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            To design a board game which can both be fun and educational, we held a brainstorm and came up with three prototypes. The first one is called Gene Expression War. Every player in this board game is an “E. coli”. Each E. coli will try its best to fully accomplish the travel of genome, and during this process it will utilize the function cards to express various proteins and gain the product cards to help itself to accelerate its journey or block other E. coli. The rules may seem easy to understand, but the overall design lack of scientific rigor and entertainment. We abandoned it after many unsuccessful revisions.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
                         <div class="row">
-                            <div class="col">
-                                1.  Integrated human practices<br />
-Through interacting with relevant researchers, we gained valuable insight on experimental design, project application, modelling and even human practice work itself.<br /><br />
-2.  Improve a previous part<br />
-We improved the LacI repressor of Lac operon to enable lower level of basal leakage, and better orthogonality with arabinose inducer.<br /><br />
-3.  Model your project<br />
-We used deterministic and stochastic models to simulate the intracellular reactions in our system. Our modelling demonstrated theoretically of our system’s function and provided important guidance on several of our experimental designs.<br /><br />
-4.  Demonstration<br />
-We demonstrated that the two critical component of our system, reverse transcriptase and Cre recombinase are functional, and proved the feasibility of our system design.
-We thought carefully and complied all safety requirements in carrying out experiments.<br /><br />
+                            <img src="https://2019.igem.org/wiki/images/7/7e/T--Fudan-TSI--Education_brainstorm.gif" style="width:50%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Brainstorm</b><br />
+                        </div>
+                    </div>
 
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            Our second prototype is based on co-culture and expression competition. By randomly drawing cards, players will be able to put different parts on a basic plasmid vector, including improved promoters, origin and various functional genes. Under the limitation of culture medium and the bacteria burden, players will compete with each other. The one who can produce most proteins and energy is the winner. However, this version is so complicated that we are still working on it and we truly hope to finish it in the future.
+                        </div>
+                    </div>
 
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            And here is our final prototype called Bio Mahjong Cards. It is succinct and quite easy to understand, based on a traditional board game in China: Mahjong. The goal of Mahjong is to collect special melds with different tiles, which is much like using different parts to construct a biological system. For detailed introduction, please visit our Boardgame Page.
+                        </div>
+                    </div>
 
-                            </div>
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/f/ff/T--Fudan-TSI--Education_Boardgame.gif" style="width:50%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Board game card</b><br />
+                        </div>
+                    </div>
+
+                     <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/7/76/T--Fudan-TSI--Education_cards.gif" style="width:50%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Board game card</b><br />
+                        </div>
+                    </div>
+
+                    <div class="row" style="width:100%;">
+                        <div class="col">
+                            <embed src="https://2019.igem.org/wiki/images/7/78/T--Fudan-TSI--HP--Bio_Mahjong_Card_Rules.pdf" width="100%" height="600px" type="application/pdf" />
+                        </div>
+                    </div>
+
+                    <div class="row title2" id="mainTitle2_1">
+                        <div class="col">Lectures and Workshop</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            On June 1st, we delivered a lecture to high school students from Jiading No. 2 Middle School. As they are students of high school who already have some basic knowledge in different subjects such as mathematics, chemistry and biology, we believed that we should center our lecture around that synthetic biology is a new interdisciplinary area, and that it involves applying engineering principles to biology. Thus, not only students majoring in biology, but also others who are interested in relevant subjects such as engineering, are welcomed to participate in iGEM. Even if you’re from a less academic background, you could take part in it by conducting the work of human practices. By introducing iGEM to them, we hope to get them involved in next year’s competition.
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            In the lecture, we introduced synthetic biology from the basic concepts to its forefront applications, hoping to present an overview of synthetic biology to our audience. We also shared with them some basic experimental skills and our experience in laboratory. We believed that this could both be of great help in bringing them closer to synthetic biology and revealing how it is actually like to work in a laboratory.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/f/f5/T--Fudan-TSI--Education_lecture1.gif" style="width:50%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Lecture to high school students from Jiading No. 2 Middle School</b><br />
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            As for students from high schools who showed great enthusiasm in biology, we joined them in a Biology Summer Camp and held a seminar of synthetic biology on July 19th. Hosting over 300 students from 30 different high schools around China, the summer camp was a perfect approach for us to get access to students from wider areas. During the camp, we shared our experience of working on synthetic biology and iGEM with them. In order to give them a concrete idea of synthetic biology and our project, our team members shared their first-hand experiences in lab research and iGEM participation. After that, we gave a short presentation of our project, hoping to inspire them to come up with their own innovative ideas. Moreover, we had a more thorough conversation with students who showed specific interest in synthetic biology after the presentation. To our surprise, they brought up some creative ideas and new interpretations of our project.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/2/2e/T--Fudan-TSI--Education_lecture2.gif" style="width:85%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Seminar in Biology Summer Camp</b><br />
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            We also held a workshop with students from BIOS (Biology Intensive Orientation Summer) summer course. BIOS is a course for students with high interest in biological research and aims to cultivate their lab skills.We believed that the students have already possessed the capability of starting their own work in synthetic biology. What they need is just an idea and some inspiration. On July 30th, our team hosted a workshop with students from BIOS to introduce iGEM and our project to them. We also invited them to join in next year's iGEM competition. In the workshop, we delivered a presentation to introduce of the summary and experimental details of our project, through which we hope to excite the formation of new ideas.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/b/ba/T--Fudan-TSI--Education_lecture4.gif" style="width:50%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Workshop in BIOS</b><br />
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            On August 16th, we invited Prof. Hal Alper to deliver a lecture about his recent research. (We also had a brainstorm session with Prof. Alper, details can be found in our <a href="https://2019.igem.org/Team:Fudan-TSI/Integrated_Human_Practice">Integrated HP</a>.) Dozens of undergraduates from our university attended this lecture, hoping to learn more about synthetic biology as well as system biology. During the session, Prof. Alper talked about his work on bioengineering and directed evolution, which is very inspiring to us.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/a/a5/T--Fudan-TSI--Education_lecture.gif" style="width:50%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Lecture of Prof. Hal Alper</b><br />
                         </div>
                     </div>
 
 
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            Prof. Alper also held a Fireside with other biology-majored students. Fireside session is a tradition of Fudan University, during which the invited professor would share his research experience and answer students’ questions regarding life choice and research.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/b/be/T--Fudan-TSI--Education_fireside.gif" style="width:50%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Fireside with Prof. Alper</b><br />
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            We found through careful examination that this failure is due to problems with our plasmid construct, so we moved the RT to another tested plasmid, and through SDS-PAGE, verified its successful expression (Fig. 4).
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row title1" id="mainTitle3">
+                        <div class="col">General public –Synthetic biology is easier and closer than you think.</div>
+                    </div>
+
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            Before trying to popularize biology to general public, we carried out a questionnaire survey in order to have a preliminary understanding of the average level of biological knowledge among the general public. In the questionnaire, we first designed questions to collect some basic information of our respondents for further analysis. Then a few questions like ‘Have you ever heard of gene?’ were asked to evaluate the respondents’ level of basic biological knowledge. In the end, we asked some questions about synthetic biology and iGEM. Even though we know that the misconception between public and biological research has existed for a long time, the result showed that their current understanding of biology is even below our expectation. Over 97.85% respondents have heard of gene but most of them learned it from hot topics like GMF (genetically modified food). Only 50.77% are aware of synthetic biology. This indicates that there is still a long way to go for the promotion of synthetic biology and elimination of misunderstandings. The development of biology requires the understanding and acceptance of the public as the fertile soil for its growth, we hope that through our effort, we could contribute to this process.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/5/5d/T--Fudan-TSI--result_of_the_questionaries.gif" style="width:100%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Result of the questionaries.</b><br />
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            To start with, we designed a pamphlet of synthetic biology. Our first edition was distributed to student of different majors in our school. We collected their feedback to improve our pamphlet before we distributed to the general public to make it more attractive and easier to understand. Considering that our target audiences lack specialized knowledge, we tried to avoid using professional terms, and made our statement as concise and clear as possible. In order to promote understanding, we also added some examples about how synthetic biology enhanced our daily life in various aspects including food, medicine and fuel. We believed that by reading this pamphlet, people could learn some basic knowledge about synthetic biology in a short time. And we hope this could encourage the public to think further about biology and to get more involved in it.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/9/9d/T--Fudan-TSI--Education_%2B1.jpeg" style="width:70%; margin:auto;">
+                        </div>
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/2/2f/T--Fudan-TSI--Education_%2B2.jpeg" style="width:70%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Pamphlet of Synthetic Biology</b><br />
+                        </div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col col-lg-12">
+                            In parallel with popularizing synthetic biology, we also dedicated our effort to shortening the distance between the public and the scientific researchers. The most direct way is to reveal the daily work of the researchers to the public. PCR (Polymerase Chain Reaction) is a basic molecular biology technique and is widely used in biology laboratories. Thus, we chose the demonstration of PCR as a window to show the public how the daily work in laboratory is like. Collaborating with students majoring in journalism, we took two vlogs,  <a href="https://2019.igem.org/wiki/images/9/9b/T--Fudan-TSI--Video--PCR.mp4"><u>one</u></a> records the main steps of PCR while <a href="https://2019.igem.org/wiki/images/d/db/T--Fudan-TSI--Video--E._coli.mp4"><u>another</u></a> is about BioArt and uploaded them to the internet platforms such as Bilibili. By 21st October, our video had been viewed more than 370 times. We hope that through the propagation of simple experiment procedures, the public would be amazed to see that such elaborate demonstrations and such important theories all originate from adding up such ‘simple’ experiments.
+                        </div>
+                    </div>
 
                 </div>
             </div>
+
+
+
+        </div>
 
 
 
@@ -1985,7 +2330,7 @@ We thought carefully and complied all safety requirements in carrying out experi
                                     </div>
 
                                     <div class="col-sm-4">
-                                        <div class="footerUl align-items-center">
+                                        <div class="footerUl align-items-center active">
                                           <span><a href="/Team:Fudan-TSI/Human_Practices" style="text-decoration:none;">Outreach</a></span>
                                             <ul>
                                                 <li><a href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>

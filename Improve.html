@@ -1,371 +1,2304 @@
-{{Fudan-TSI}}<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<html lang="en">
-<!--
-This html document is created by Tian Huang for Team Fudan iGEM 2018.
-We make it compatible on laptop and mobile devices by using Materialize 1.0.0-rc.2.
--->
-<!-- LC check on 2018-10-26 -->
-<head>
-    <meta charset="UTF-8">
+{{Fudan-TSI}}
+<html>
 
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-css.css&action=raw&ctype=text/css" />
 
-    <!-- Font-awesome icons 4.7.0 -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
+<script>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    <!-- Materialize 1.0.0-rc.2 (Material Design like) -->
-    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&action=raw&ctype=text/css">
+    $(document).ready(function() {
 
-    <!-- Clear default CSS settings; CSS reset -->
-    <style>
-        *{margin: 0;padding: 0;list-style: none;}
-        /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
+        //remove the HQ_page id
+        $("#HQ_page").attr('id','');
 
-        /** 清除内外边距 **/
-        body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-        pre, /* text formatting elements 文本格式元素 */
-        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-        th, td /* table elements 表格元素 */ {
-            margin: 0;
-            padding: 0;
+
+        //highlight current page on the menu
+        highlight_current_page_menu();
+
+        //accessing submenus
+        $(".menu_item").click(function(){
+            $(".submenu_control_icon", this).toggleClass("open");
+            $(this).next(".submenu").fadeToggle(400);
+        });
+
+        //mobile menu access
+        $(".igem_2019_team_mobile_bar").click(function(){
+            $(this).next().toggleClass("displaying_menu");
+        });
+
+    });
+
+
+        function highlight_current_page_menu() {
+
+            var page_url="https://2019.igem.org/";
+            page_url = page_url + wgPageName;
+            $("a[href$='"+ page_url +"']").children().addClass("current_page");
+
+            //if the page is in a submenu, open the submenu and make the appropiate changes
+            if( $( ".current_page" ).hasClass( "submenu_item" )){
+
+                $(".current_page").parent().parent().fadeToggle(400);
+                $(".current_page").parent().parent().prev().addClass("current_page");
+                $(".menu_item.current_page > .submenu_control_icon").toggleClass("open");
+
+            }
         }
 
-        /** 设置默认字体 **/
 
-        /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
-        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-        /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-
-        /** 重置列表元素 **/
-        ul, ol { list-style: none; }
-
-        /** 重置文本格式元素 **/
-        a { text-decoration: none; }
-        a:hover { text-decoration: underline; }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+</script>
 
 
-        /** 重置表单元素 **/
-        legend { color: #000; } /* for ie6 */
-        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-        /* 注：optgroup 无法扶正 */
+<style>
+/**************************************************************************************************************************************************************************************************/
 
-        /** 重置表格元素 **/
-        table { border-collapse: collapse; border-spacing: 0; }
-    </style>
-    <title>2019 Team:Fudan-TSI Improve</title>
+
+
+/**************************************************************************************************************************************************************************************************/
+/* DEFAULT WIKI SETTINGS */
+/**************************************************************************************************************************************************************************************************/
+
+
+    #home_logo, #sideMenu { display:none; }
+    #sideMenu, #top_title, .patrollink  {display:none;}
+    #content { margin-left:0px; margin-top:-7px; padding:0px; width:100%;}
+    #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
+    #bodyContent a[href ^="https://"], .link-https { padding-right:0px;}
+
+
+
+
+/**************************************************************************************************************************************************************************************************/
+/* MENU */
+/**************************************************************************************************************************************************************************************************/
+
+    /*wrapping for the menu*/
+    .igem_2019_team_menu {
+        background-color:#cecece;
+        border-left: 1px solid #635d5d;
+        float:right;
+        height:100vh;
+        max-width: 270px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding:0px;
+        position:fixed;
+        right:0%;
+        text-align:left;
+        width: 15%;
+    }
+
+    /*controlling menu visibility*/
+    .igem_2019_team_menu.displaying_menu{
+        display:block;
+    }
+
+    /*links in the menu*/
+    .igem_2019_team_menu  a {
+        color: #484848;
+        text-decoration:none;
+    }
+
+    /*images in the menu*/
+    .igem_2019_team_menu img {
+        width:100%;
+    }
+
+    /*level 1 menu items*/
+    .igem_2019_team_menu .menu_item {
+        background-color: #cecece;
+        border-bottom: 1px solid #635d5d;
+        clear: both;
+        color: #484848;
+        cursor: pointer;
+        float: left;
+        font-size: 120%;
+        font-weight: bold;
+        padding: 15px 0px 15px 5%;
+        width: 100%;
+    }
+
+    /*level 1 menu items without submenus*/
+    .igem_2019_team_menu .menu_item.direct_link {
+        color: #484848;
+        padding-left: 15%;
+    }
+
+
+    /*level 1 menu items on hover*/
+    .igem_2019_team_menu .menu_item:hover {
+        background-color: #ecb656 !important;
+    }
+
+    /*icon for expanding and collapsing level 1 menut items*/
+    .igem_2019_team_menu .menu_item .submenu_control_icon {
+        color: #484848;
+        float: left;
+        width: 10%;
+    }
+
+    /* submenu icon  "-"*/
+    .igem_2019_team_menu .menu_item .submenu_control_icon::before {
+        content: "+";
+    }
+
+    /* submenu icon  "-"*/
+    .igem_2019_team_menu .menu_item .submenu_control_icon.open::before {
+        content: "-";
+    }
+
+
+    /*level 2 menu (submenu) wrapper*/
+    .igem_2019_team_menu .submenu{
+        background-color: #ececec;
+        clear:both;
+        display:none;
+        float: left;
+        width:100%;
+    }
+
+    /*level 2 menu (submenu) item*/
+    .igem_2019_team_menu .submenu .submenu_item {
+        border-bottom: 1px solid #cecece;
+        color: #635d5d;
+        height: 30px;
+        float: left;
+        font-size: 110%;
+        font-weight: bold;
+        padding: 12px 0px 0px 15%;
+        width: 100%;
+    }
+
+    /*level 2 menu (submenu) items on hover*/
+    .igem_2019_team_menu .submenu .submenu_item:hover {
+        background-color: #ecb656 !important;
+    }
+
+    /*color for highlighting current page on the wiki*/
+    .igem_2019_team_menu .submenu .submenu_item.current_page,
+    .igem_2019_team_menu .menu_item.current_page,
+    .igem_2019_team_menu .menu_item.direct_link.current_page {
+        background-color:#a2d3d0;
+    }
+
+
+/*mobile menu bar styling*/
+/**************************************************************************************************************************************************************************************************/
+
+    /*mobile bar that controls the menu*/
+    .igem_2019_team_mobile_bar {
+        background-color:#ececec;
+        border-bottom: 1px solid #cecece;
+        cursor:pointer;
+        display:none;
+        float:left;
+        margin-top: 0;
+        padding: 5px 0;
+        position:fixed;
+        width:100%;
+    }
+
+    /*mobile logo*/
+    .igem_logo_mobile {
+        float:left;
+        padding-left: 5%;
+        width: 30%;
+    }
+
+    /*image within the mobile logo*/
+    .igem_logo_mobile img {
+        width:70px;
+    }
+
+    /*mobile expand collapse button*/
+    .igem_menu_control_mobile {
+        float:right;
+        padding-right:5%;
+        padding-top:5px;
+        text-align:right;
+        width: 30%;
+    }
+
+    /*image for mobile expand collapse button*/
+    .igem_menu_control_mobile img {
+        width:25px;
+    }
+
+
+    /*add extra padding to the menu to improve mobile scrolling*/
+    .menu_padding{
+        float:left;
+        height:100px;
+    }
+
+
+/**************************************************************************************************************************************************************************************************/
+/* CONTENT OF THE PAGE */
+/**************************************************************************************************************************************************************************************************/
+
+    /* general wrapper for the content */
+    .igem_2019_team_content {
+        background-color:white;
+        display:block;
+        width: 87%;
+    }
+
+    /* subwrapper to center content */
+    .igem_2019_team_content .igem_2019_team_column_wrapper {
+        margin:auto;
+        max-width: 1400px;
+        width:90%;
+    }
+
+
+
+/*general styling*/
+/**************************************************************************************************************************************************************************************************/
+
+    /*size for title h tags*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper h1 { font-size: 210%;}
+    .igem_2019_team_content .igem_2019_team_column_wrapper h2 { font-size: 190%;}
+    .igem_2019_team_content .igem_2019_team_column_wrapper h3 { font-size: 170%;}
+    .igem_2019_team_content .igem_2019_team_column_wrapper h4 { font-size: 150%;}
+    .igem_2019_team_content .igem_2019_team_column_wrapper h5 { font-size: 140%;}
+    .igem_2019_team_content .igem_2019_team_column_wrapper h6 { font-size: 130%;}
+
+
+    /*titles h1, h2*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper h1, .igem_2019_team_content .igem_2019_team_column_wrapper h2 {
+        border-bottom:0px;
+        color: white;
+        font-family: "Arial Black", Gadget, sans-serif;
+        padding: 10px 0px;
+    }
+
+    /*titles h3, h3, h5, h6 */
+    .igem_2019_team_content .igem_2019_team_column_wrapper h3,
+    .igem_2019_team_content .igem_2019_team_column_wrapper h4,
+    .igem_2019_team_content .igem_2019_team_column_wrapper h5,
+    .igem_2019_team_content .igem_2019_team_column_wrapper h6 {
+        border-bottom:0px;
+        color: white;
+        font-family: "Arial Black", Gadget, sans-serif;
+        padding: 5px 0px;
+    }
+
+    /* text p tag*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper p {
+        font-size: 130%;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 5px 0px;
+        text-align: left;
+        color: white;
+    }
+
+    /* Links a tag*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper a {
+        color: #00a19b;
+        font-weight: bold;
+        text-decoration: underline;
+        text-decoration-color:#00a19b;
+        transition: all 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -ms-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+    }
+
+    /* hover for the links */
+    .igem_2019_team_content .igem_2019_team_column_wrapper a:hover {
+        color: #085156;
+        text-decoration:none;
+    }
+
+
+    /* Table tag*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper table {
+        border: 1px solid #635d5d;
+        border-collapse: collapse;
+        font-size: 130%;
+        width: 100%;
+    }
+
+    /* table cells */
+    .igem_2019_team_content .igem_2019_team_column_wrapper td {
+        border: 1px solid #cecece;
+        border-collapse: collapse;
+        font-size: 105%;
+        padding: 10px;
+        vertical-align: text-top;
+    }
+
+    /* table headers */
+    .igem_2019_team_content .igem_2019_team_column_wrapper th {
+        background-color:#cecece;
+        border: 1px solid #635d5d;
+        border-collapse: collapse;
+        font-size: 110%;
+        padding: 10px;
+        vertical-align: text-top;
+    }
+
+
+
+    /* non numbered lists */
+    .igem_2019_team_content .igem_2019_team_column_wrapper ul, .igem_2019_team_content .igem_2019_team_column_wrapper ol {
+        font-size: 130%;
+        font-family: Arial, Helvetica, sans-serif;
+        padding:0px 20px;
+    }
+
+
+    /*font sizing within list nesting*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper ul ul li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ul ul li,
+    .igem_2019_team_content .igem_2019_team_column_wrapper ul ol li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ul ol li,
+    .igem_2019_team_content .igem_2019_team_column_wrapper ol ol li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ol ul li,
+    .igem_2019_team_content .igem_2019_team_column_wrapper ol ul li, .igem_2019_team_content .igem_2019_team_column_wrapper ul ol ol li,
+    .igem_2019_team_content .igem_2019_team_column_wrapper ol ul ul li, .igem_2019_team_content .igem_2019_team_column_wrapper ol ol ul li,
+    .igem_2019_team_content .igem_2019_team_column_wrapper ol ol ol li, .igem_2019_team_content .igem_2019_team_column_wrapper ol ul ol li{ font-size: 76%; }
+
+
+
+/*layout classes*/
+/**************************************************************************************************************************************************************************************************/
+
+    /*main layout class */
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column  {
+        float:left;
+        margin: 1% 2%;
+        padding: 0px;
+    }
+
+    /* 100% */
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.full_size { width:96%; }
+
+    /* 66% */
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.two_thirds_size { width: 62.6%; }
+
+    /* 33% */
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.third_size { width: 29.3%; }
+
+
+
+
+    /*all images*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.full_size img,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.two_thirds_size img,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .column.third_size img {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+
+    /* page break */
+    .igem_2019_team_content .igem_2019_team_column_wrapper .clear {
+        clear:both;
+    }
+    /*add extra space to page break with clear class*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper .clear.extra_space {
+        height: 30px;
+    }
+
+    /* horizontal line to divide the page*/
+    .igem_2019_team_content .igem_2019_team_column_wrapper .line_divider {
+        border-top: 1px solid #cecece;
+        margin: auto;
+        width: 98%;
+    }
+
+
+
+
+/*support classes*/
+/**************************************************************************************************************************************************************************************************/
+
+
+    /*Button  */
+    /************************************************/
+    .igem_2019_team_content .igem_2019_team_column_wrapper .button_link {
+        font-size: 130%;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .button_link a  {
+        background-color: #00a19bad !important;
+        color: #000 !important;
+        font-weight: bold;
+        margin: auto;
+        text-decoration: none !important;
+        padding: 10px 15px !important;
+    }
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .button_link a:hover {
+        background-color: #ffb819 !important;
+    }
+
+
+
+    /*highlight */
+    /************************************************/
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight {
+        padding: 15px 20px;
+    }
+
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight p,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h1,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h2,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h3,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h4,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h5,
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight h6 {
+        padding: 5px 15px;
+    }
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_background {
+        background-color: #ececec;
+    }
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_A_top {
+        border-top: 4px solid #00a19bad;
+    }
+
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_A_full {
+        border: 4px solid #00a19bad;
+    }
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_B_top {
+        border-top: 4px solid #ffb819
+    }
+
+
+    .igem_2019_team_content .igem_2019_team_column_wrapper .highlight.decoration_B_full {
+        border: 4px solid #ffb819;
+    }
+
+
+
+
+/*mobile*/
+/**************************************************************************************************************************************************************************************************/
+
+
+    /* 1800px  */
+    /************************************************/
+    @media only screen and (max-width: 1800px) {
+        .igem_2019_team_content { width: 85%;}
+        .igem_2019_team_menu {display:block;}
+
+}
+
+    /* 1400px  */
+    /************************************************/
+    @media only screen and (max-width: 1400px) {
+        .igem_2019_team_menu .menu_item { font-size:100%;}
+        .igem_2019_team_menu .submenu .submenu_item { font-size:90%;}
+        .igem_2019_team_menu {display:block;}
+    }
+
+
+    /* 1100px  */
+    /************************************************/
+    @media only screen and (max-width: 1100px) {
+        .igem_2019_team_content {width:100%; margin-left:0px;}
+
+        .igem_2019_team_menu {display:none;float:right;margin-top:47px;max-width:100%;position:fixed;width:25%;}
+
+        .igem_2019_team_mobile_bar {display:block;}
+
+        .igem_2019_team_content .igem_2019_team_column_wrapper .column.full_size, .igem_2019_team_content .igem_2019_team_column_wrapper .column.two_thirds_size,.igem_2019_team_content .igem_2019_team_column_wrapper .column.third_size {width:96%; }
+
+    }
+
+    /* 850px  */
+    /************************************************/
+        @media only screen and (max-width: 850px) {
+        .igem_2019_team_menu {width:40%;}
+    }
+
+    /*500px  */
+    /************************************************/
+    @media only screen and (max-width: 500px) {
+        .igem_2019_team_menu {min-width:100%;width:100%;}
+    }
+
+
+/**************************************************************************************************************************************************************************************************/
+
+
+
+
+
+</style>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- THIS IS WHERE THE HTML BEGINS --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<head>
+
+    <!-- This tells the browser that your page is responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/jQuery&amp;action=raw&amp;ctype=text/javascript"></script>
+
+
+
 </head>
 
-<body>
-<!-- Fudan div at igem.org -->
-<div id="FudanWrapper" class="white">
-    <div id="FudanBody" class="white">
-        <header>
-            <!-- empty bar -->
-            <div id="emptyBar" style="position:relative;width: 100%;"></div>
+<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-font-awesome.css&action=raw&ctype=text/css" />
 
-            <!-- Navigation bar 2019-9-15 -->
-            <nav id="topNav" class="white z-depth-0_5">
-                <div class="nav-wrapper">
-                    <div id="teamLogo" class="brand-logo">
-                        <a href="/Team:Fudan-TSI" target="_self"><img alt="2019 team logo" src="https://2019.igem.org/wiki/images/3/3c/T--Fudan-TSI--Logo0.gif"></a>
-                    </div>
-                    <ul id="nav-mobile" class="right">
-                        <li>
-                            <a id="navList" data-target="slide-out" class="waves-effect waves-light sidenav-trigger right">
-                                <i class="fa fa-navicon" style="font-size:24px"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- Dropdown and List elements in navigation bar -->
-            <!-- Slide-out navigator contents 2019-9-15 -->
-            <ul id="slide-out" class="sidenav">
-                <li style="padding: 0"><div class="sidenavBanner">
-                    <div class="background">
-                    </div>
-                    <p class="flow-text" style="width:100%;text-align:center"><span class="white-text">Improved parts</span></p>
-                </div></li>
-                <li>
-                    <ul class="collapsible expandable">
-                        <li class="onThisPageNav"><span>On this page</span></li>
-                        <li class="onThisPageNav"><a href="#section1">div with id section1</a></li>
-                        <li class="onThisPageNav"><a href="#section2">div with id section2</a></li>
-                        <li class="onThisPageNav"><a href="#section3">div with id section3</a></li>
-                        <li><span class="pageSidebar">Team: Fudan-TSI</span></li>
-<li><div class="collapsible-header"><span class="pageSidebar">Project</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Description">Background</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Design">Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Judging">Judging</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Results</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Results#ReverseTranscription">Reverse Transcription</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Results#Recombination">Recombination</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Model</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Model">Modeling</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Software">Software</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header active"><span class="pageSidebar">Parts</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Outreach</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Integrated_Human_Practice">Integrated human practice</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Safety">Safety</a></li>
-    </ul></div>
-</li>
-<li><div class="collapsible-header"><span class="pageSidebar">Team</span></div>
-    <div class="collapsible-body"><ul>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Team">Members</a></li>
-        <li><a class="pageSidebar" href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-        <li><a class="pageSidebar" href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-    </ul></div>
-</li>
-                    </ul><!-- .expandable -->
-                </li>
-                <li><div class="placeHolder"></div></li>
-            </ul>
-        </header>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--- Menu --->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-        <div id="pageContent" style="">
-            <div id="contentBanner" class="figureBanner">
-                <div class="row">
-                    <div class="col s12 m6 valign-wrapper hide-on-med-and-up">
-                        <h4>Parts improvement</h4>
-                        <p class="flow-text">In an effort to innovate and improve, we enhanced our engineered transmembrane binary logic gates </p>
-                    </div>
-                </div>
-                <div id="figureBannerTitle" class="hide-on-small-only">
-                    <h1>Parts improvement</h1>
-                    <p class="flow-text">In an effort to innovate and improve, we enhanced our engineered transmembrane binary logic gates </p>
-                </div>
-                <div class="hide-on-small-only">
-                    <img src="http://2018.igem.org/wiki/images/7/72/T--Fudan--title_partsimprovement.jpg">
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; left:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraleft">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_1" fill="url(#blackgraleft)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                    <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="position:absolute; right:0;top:0; width: 4%;height: 100%;">
-                        <defs>
-                            <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="blackgraright">
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="0" offset="0%"/>
-                                <stop stop-color="rgb(0,0,0)" stop-opacity="1" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <rect id="svg_2" fill="url(#blackgraright)" height="100%" width="100%"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
 
-            <!-- main content of the page -->
-            <div class="container">
-                <!-- side navigator of page content -->
-                <ul id="pageContentNav" class="hide-on-med-and-down z-depth-0">
-                    <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-                    <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-                    <li><a href="/Team:Fudan-TSI/Optimization">Optimization</a></li>
-                    <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-                    <li>Parts improvement</li>
-                    <li class="onThisPageNav"><a href="#section1">Introduction</a></li>
-                    <li class="onThisPageNav"><a href="#section2">Responsive elements</a></li>
-                    <li class="onThisPageNav"><a href="#section3">pSV40 vs pCMV</a></li>
-                    <li><a href="/Team:Fudan-TSI/Measurement">Quantification</a></li>
-                </ul>
+        <style>
 
-                <main>
-                    <div id="section1" class="section container scrolSpy">
-                        <h2>Introduction</h2>
-                        <p class="flow-text">Last year our team has proposed a <a href="http://2017.igem.org/Team:Fudan/Part_Collection" target="_blank">SynTF-SynPro approach</a> which enables others to construct a customized and orthogonal transcriptional network in mammalian cells. The structures of the corresponding silencing- or activating-form of SynPros were pSV40-N*RE and N*RE-minCMV, in which N*RE is short for responsive elements of N repeats.
-                            </p>
-                        <p class="flow-text">
-                            This year we took it a step further to create our engineered transmembrane binary logic gates in eukaryotic cells based on the foundational concepts we have constructed upon last year. We made use of the SynTF-SynPro system to function as our Combiner, which executes the final computation of our genetic circuits. To improve the signal-to-noise ratio of our Combiner and to allow others to more easily use our toolbox, we attempted to optimize the structure of the SynPros and constructed N*RE-CMV, which replaces the pSV40-N*RE to respond to transcriptional repressors. Furthermore, we also conducted experiments to characterize our N*RE-CMV, ensuring that it performs exceedingly better than the previous pSV40-N*RE. We have substituted all the pSV40-N*RE with N*RE-CMV when wiring our genetic circuits and picked 8*ZF21.16-CMV for specific demonstration of our parts improvement. For more details, refer to the <a href="http://parts.igem.org/Part:BBa_K2446030" target="_blank">existing BioBrick page</a> or the <a href="http://parts.igem.org/Part:BBa_K2549029" target="_blank">improved BioBrick page</a>.
-                        </p>
-                    </div>
-                    <div id="section2" class="section container scrolSpy">
-                        <h2>Place of responsive elements</h2>
-                        <p class="flow-text">We have experimentally discovered that the place of N*RE can have an impact on basal expression of SynPros. Thus, when designing transcription repressing circuit, we hope that the addition of the N*RE will not bother the original expression of the promotor. Unfortunately, we realized that when the N*RE is placed downstream the promotor, the basal expression of the promotor is effected without the transcriptional repressor. Therefore, we made an attempt to adjust the position of N*RE to upstream of the promotor. Interestingly, the basal expression of the promotor is less affected as compared to the previous design. Actually, similar phenomenon have been reported previously that reporter activity was highly variable among the four different TALE binding sites introduced between the promoter and the reporter coding sequence while the introduction of multiple copies of each of the four different operators upstream from the promoter caused only minimal variability in reporter expression
-                            as suggested by <a href="http://dx.doi.org/10.1038/nchembio.1433" target=_blank>Gaber R, et al, 2014 (PMID: 24413461)</a>.
-                        </p>
-                    </div>
-                    <div id="section3" class="section container scrolSpy">
-                        <h2>pSV40 vs pCMV
-                        </h2>
-                        <p class="flow-text">To better verify that the transcription repressor can effectively repress the expression of its responsive circuit, we attempted to increase the basal expression for a more precise comparison. As a result, we designed a simple genetic circuit in which a EGFP-P2A was put downstream the promotor to test and compare the basal expression of pSV40 and pCMV. We used fluorescence microscopy to detect the expression of the reporter gene 24 hours after transient transfecting 293T cells with the two mentioned circuits, respectively. We found that pCMV has a significantly higher basal expression than that of pSV40, providing us a more ideal alternation to construct our transcriptional repressor-based Combiner circuit.
-                        </p>
-                        <div class="figureHolder width40" style="margin: 23px auto 0 auto;">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/c/c2/T--Fudan--improve-1.png">
-                        </div>
-                        <p style="margin-top:0;text-indent: 0;"><b>Figure 1. Flow cytometry data of previously designed SynPros based on pSV40.</b> It can be clearly identified that the basal expression of pSV40 is easily effected by the adding of responsive elements. (sTF is short for silencing-form transcriptional factors.)
-                        </p>
-                        <div class="figureHolder width40" style="margin: 23px auto 0 auto;">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/b/bb/T--Fudan--improve-2.png">
-                        </div>
-                        <p style="margin-top:0;text-indent: 0;"><b>Figure 2. Flow cytometry data of the improved design of SynPros based on pCMV.</b> It is shown that the basal expression of pCMV is barely effected by the adding of responsive elements. (sTF is short for silencing-form transcriptional factors.)
+            *{margin: 0;padding: 0;list-style: none;}
+            /* via: https://blog.csdn.net/weixin_41014370/article/details/79523637 */
 
-                        </p>
-                        <div class="figureHolder width45" style="margin: 23px auto 0 auto;">
-                            <img class="responsive-img" src="http://2018.igem.org/wiki/images/0/06/T--Fudan--improve-3.png">
-                        </div>
-                        <p style="margin-top:0;text-indent: 0;"><b>Figure 3. Fluorescence intensity comparison of pCMV-EGFP-P2A and pSV40-EGFP-P2A 24 hours after transfection.</b> The expression level of pCMV is significantly higher than pSV40.
+            /** 清除内外边距 **/
+            body, h1, h3, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+            dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+            pre, /* text formatting elements 文本格式元素 */
+            form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+            th, td /* table elements 表格元素 */ {
+                margin: 0;
+                padding: 0;
+            }
 
-                        </p>
-                    </div>
-                </main>
-            </div>
+            /** 设置默认字体 **/
 
-<!--Abstract on content page-->
-            <div id="abstractContent" class="z-depth-2">
-                <a href="#!"><img alt="project summary" src="https://2018.igem.org/wiki/images/9/96/T--Fudan--X.svg"></a>
-                <div class="container">
-                    <h5 style="margin:0;padding:10px 0;">Project Summary &copy; Team:Fudan-TSI</h5>
-                    <p class="flow-text" style="margin:0">Mutation library generation is critical for biological and medical research, but current methods cannot mutate a specific sequence continuously without manual intervention. Here we present a toolbox for <i>in vivo</i> continuous mutation library construction. First, the target DNA is transcribed into RNA. Next, our reverse transcriptase reverts RNA into cDNA, during which the target is randomly mutated by enhanced error-prone reverse transcription. Finally, the mutated version replaces the original sequence through recombination. These steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. Our toolbox is orthogonal and provides a wide range of applications among various species. R-Evolution could mutate coding sequences and regulatory sequences, which enables the <i>in vivo</i> evolution of individual proteins or multiple targets at a time, promotes high-throughput research, and serves as a foundational advance to synthetic biology.
-                    </p>
-                </div>
-            </div>
+            /* @@@@ h1, h3, h3, h4, h5, h6 { font-size: 100%; }*/
+            address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+            code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+            /* @@@@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
 
-            <!-- Floating Btns -->
-            <div class="floatingBtn">
-                <a href="#!" id="abstractBtn" class="btn">
-                    <i class="fa fa-sticky-note" style="font-size:30px;line-height:50px"></i>
-                </a>
-                <a href="#FudanWrapper" class="btn">
-                    <i class="fa fa-angle-up" style="font-size:48px;line-height:45px"></i>
-                </a>
-            </div>
+            /** 重置列表元素 **/
+            ul, ol { list-style: none; }
 
-            <!-- Footer with sponsors and contact methods -->
-            <footer id="FudanFooter" class="page-footer grey">
-                <div class="container">
-                    <div class="row">
-                        <div id="sponsor" class="col m3 s12 row">
-                            <a href="https://2019.igem.org/Team:Fudan-TSI"><img alt="2018 Team:Fudan logo white" class="col s3 m6 l3" style="position:relative; padding: 0.5em 0.3rem; margin:-0.15rem 0; left: -0.45rem;" src="https://2019.igem.org/wiki/images/7/7f/T--Fudan-TSI--Logo0-crop-grey.png">
-                            </a><a href="http://www.fudan.edu.cn/en/" target="_blank"><img class="col s3 m6 l3" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png">
-                        </a><a href="http://life.fudan.edu.cn/" target="_blank"><img class="col s3 m6 l3" style="margin-bottom: 4%;/* 该图比其他小一点，排版需要 */" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png">
-                        </a><a href="http://www.yfc.cn/en/" target="_blank"><img class="col s3 m6 l3" style="padding: 0.15rem 0.9rem;" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png">
-                        </a>
-                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
-                        </div>
-                        <div id="usefulLinks" class="col m9 s12 row">
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Description">Project</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Description">Background</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Design">Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Judging">Judging</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span><a href="/Team:Fudan-TSI/Results">Results</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Results#ReverseTranscription">Reverse Transcription</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Results#Recombination">Recombination</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                    <span><a href="/Team:Fudan-TSI/Model">Model</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col s12 l6 row">
-                                <div class="col s12 m4 active">
-                                  <span><a href="/Team:Fudan-TSI/Parts">Parts</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Human_Practices">Outreach</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Integrated_Human_Practice">Integrated human practice</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">
-                                  <span><a href="/Team:Fudan-TSI/Team">Team</a></span>
-                                    <ul>
-                                        <li><a href="/Team:Fudan-TSI/Team">Members</a></li>
-                                        <li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
-                                        <li><a href="http://2018.igem.org/Team:Fudan/Heritage" target=_blank>Heritage</a></li>
-                                        <li><a href="/Team:Fudan-TSI">&copy; 2019</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m4">&nbsp;</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                         <div class="contactUS row">
-                           <div class="col s12 m6 l4"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai
-                           </div><div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
-                           </div><div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
-                           </div><div class="col s12 m6 l4"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
-                           </div>
-                         </div>
-                     </div>
-                </div>
-            </footer>
+            /** 重置文本格式元素 **/
+            a { text-decoration: none; }
+            a:hover { text-decoration: underline; }
+
+
+            /** 重置表单元素 **/
+            legend { color: #000; } /* for ie6 */
+            fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+            button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+            /* 注：optgroup 无法扶正 */
+
+            /** 重置表格元素 **/
+            table { border-collapse: collapse; border-spacing: 0; }
+
+        </style>
+
+
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    Content begins    --------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.css&amp;action=raw&amp;ctype=text/css">
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            background-color:#08273a;
+        }
+        a{
+            text-decoration:none;
+        }
+        #global_wrapper{
+            width:100%;
+            height:auto;
+            margin:0;
+            position:absolute;
+        }
+        #navUl{
+            width:100%;
+            height:110px;
+            padding:40px 0 0 0;
+            overflow:visible;
+            position:fixed;
+            list-style:none;
+            z-index:999;
+            background-color:#08273a;
+            margin:0;
+            top:0;
+        }
+        #mobileNav{
+            width:100%;
+            height:80px;
+            padding:20px 0 0 0;
+            top:0;
+            background-color:#001d2a;
+            position:fixed;
+            display:none;
+            text-align:center;
+            z-index:999;
+        }
+        #mobileNav img{
+            display:none;
+            margin:0;
+            padding:0;
+        }
+        #mobileLogo{
+            display:inline-block;
+        }
+        #mobileControl{
+            float:right;
+            display:inline-block;
+            margin-right:15px;
+            margin-top:3px;
+        }
+        #mobileCtrl{
+            height:25px;
+        }
+        #mobileTeamName{
+            display:inline-block;
+        }
+        #navImg{
+            display:inline-block;
+            float:left;
+            height:70px;
+            width:auto;
+            position:relative;
+            margin-left:4%;
+            margin-top:0;
+        }
+        .logo{
+            height:55px;
+            width:auto;
+            margin-top:1.3%;
+        }
+        .teamname{
+            height:28px;
+        }
+
+        #navBar{
+            float:right;
+            position:relative;
+            width:auto;
+            display:inline-block;
+            margin-right:4%;
+        }
+        .navLi{
+            float:left;
+            display:inline-block;
+            margin-top:3%;
+            color:white;
+            font-size:20px;
+            position:relative;
+            margin-left:18px;
+            text-align:center;
+            font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+            text-decoration:none;
+        }
+        .navA{
+            display:block;
+            text-align:center;
+            color:white;
+            text-decoration:none;
+        }
+        .navA2{
+            display:block;
+            overflow:visible;
+            color:white;
+            height:auto;
+        }
+        .ul2{
+            list-style:none;
+            position:absolute;
+            display:none;
+            overflow:hidden;
+            padding:10px 0 0 0 !important;
+            margin:0 !important;
+            font-size:17px;
+            left:50%;
+            transform:translateX(-50%);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background:linear-gradient(#08273a,rgba(0,138,201,1));
+        }
+        .li2{
+            padding:0;
+            margin:10px 20px;
+            text-align:center;
+            display:block;
+        }
+        .navA:link,.navA2:link{
+            text-decoration:none;
+        }
+        .navA:visited{
+            color:white;
+        }
+        .navA2:visited,.navA2:active{
+            color:white;
+        }
+        .navA:hover{
+            color:#7dded4;
+        }
+        .navA2:hover{
+            color:#7dded4;
+        }
+        .jqhover{
+            color:#7dded4;
+        }
+        .navA:hover{
+            text-decoration:none;
+        }
+        .navA:active{
+            text-decoration:none;
+            color:white;
+        }
+
+    </style>
+
+
+
+
+    <style>
+
+        #pageContent{
+            margin:100px 0 0 0;
+            text-align:center;
+        }
+
+        .row{
+            clear:both!important;
+        }
+
+        .title1{
+            font-size:2.3rem;
+            text-align:center;
+            color:white;
+            display:block;
+            margin-top:10%;
+            margin-bottom:7%;
+            line-height:110%;
+        }
+        .title2{
+            color:white;
+            text-align:left;
+            font-size:2rem;
+            line-height:130%;
+            display:block;
+            width:100%;
+        }
+        .title3{
+            font-size:1.4rem;
+            color:white;
+            text-align:left !important;
+            display:block;
+            width:100%;
+            line-height:110%;
+            padding-left:2%;
+        }
+        .para1{
+            color:white;
+            text-align:justify !important;
+            align-items:flex-start;
+            line-height:140%;
+            font-size:1.3rem;
+            margin-bottom:50px !important;
+            width:100%;
+            margin:auto 0;
+        }
+        .para1 a{
+            text-decoration:underline !important;
+            color:white;
+        }
+        .para1 a:visited, .para1 a:active{
+            color:white;
+        }
+        .para1 a:hover{
+            color:rgba(96,255,249,1.00)!important;
+        }
+        .content1{
+            margin:7% auto;
+        }
+        .pic2{
+            width:150%;
+        }
+        .reverseDiv{
+            position:relative !important;
+            float:right !important;
+        }
+
+
+        .paraUl{
+            list-style-type:decimal !important;
+            list-style-position:outside;
+            padding-left:auto;
+            font-size:1rem;
+        }
+        .paraUl li{
+            padding-right:4% ;
+        }
+
+
+        #containerWithLeftNav{
+            display:block;
+            margin-left:25%;
+        }
+        .legend{
+            color:white;
+            text-align:center;
+        }
+        .legend>div{
+            width:100%;
+            text-align:justify!important;
+            font-size:1.1rem;
+        }
+        .legends{
+            margin:auto 15%;
+        }
+
+
+    </style>
+
+    <style>
+
+        @media only screen and (max-width:1200px){
+            #mobileBar{
+                margin-left:4%;
+            }
+            .navLi{
+                font-size:18px;
+                margin-top:3.5%;
+            }
+        }
+
+
+        @media only screen and (max-width:1100px){
+
+            #navUl{
+                display:block;
+                float:right;
+                margin-top:0;
+                top:80px;
+                right:0;
+                background-color:rgba(0,0,0,0);
+                padding:0;
+            }
+
+            #mobileNav{
+                display:block;
+            }
+
+            #navImg{
+                display:none;
+            }
+
+
+            #navBar{
+                margin:0 1% 0 0;
+                padding-right:2%;
+                padding-left:1%;
+                position:relative;
+                display:none;
+            }
+
+            #mobileNav img{
+                display:inline-block;
+                margin:5px 0;
+                padding:0;
+            }
+            #mobileControl{
+                margin-top:8px;
+            }
+
+            .logo{
+                height:45px;
+                margin-top:7px;
+            }
+            .navLi{
+                display:block;
+                position:relative;
+                float:right;
+                clear:both;
+                white-space:nowrap;
+                text-align:right;
+                margin:0;
+                height:60px;
+                width:100%;
+                background-color:#00324a;
+            }
+            .navA{
+                display:block;
+                text-align:right;
+                position:relative;
+                float:right;
+                padding:20px 20px !important;
+            }
+            .n2{
+                display:none;
+                width:0;
+                position:relative;
+                float:left;
+                text-align:right;
+            }
+            .ul2{
+                background:none;
+                padding-top:0;
+                background-color:#00557b;
+                text-align:right;
+                display:block;
+                position:relative;
+                float:right;
+                right:100%;
+                transform:translateX(0%);
+                top:0;
+                transform:translateY(1%);
+                border-radius:0 0 0 10px;
+            }
+            .open{
+                display:block;
+            }
+
+            .title2{
+                font-size:1.8rem;
+                line-height:140%;
+            }
+            .para1{
+                font-size:1.3rem;
+            }
+            .pic2{
+                width:120%;
+            }
+
+            .highlightIcon{
+                margin:20% auto 10% auto;
+            }
+            .highlightTitle{
+                margin-bottom:15%;
+            }
+
+
+        }
+
+
+        @media only screen and (max-width:992px){
+
+            #navUl{
+                display:block;
+                float:right;
+                margin:0;
+                top:80px;
+                right:0;
+            }
+
+            #mobileNav{
+                display:block;
+            }
+
+            #navImg{
+                display:none;
+            }
+
+            #navTeamName{
+                display:none;
+            }
+
+            #navBar{
+                margin:0 1% 0 0 ;
+                margin-right:2%;
+                padding-right:1%;
+                padding-left:1%;
+                position:relative;
+                display:none;
+            }
+            #mobileControl{
+                margin-top:10px;
+            }
+            #mobileNav img{
+                display:inline-block;
+                margin:5px 0;
+                padding:0;
+            }
+            .logo{
+                height:40px;
+            }
+            .navLi{
+                display:block;
+                position:relative;
+                float:right;
+                clear:both;
+                white-space:nowrap;
+                text-align:right;
+                height:60px;
+                width:100%;
+            }
+            .navA{
+                display:block;
+                text-align:right;
+                position:relative;
+                float:right;
+                font-size:15px;
+            }
+            .n2{
+                display:none;
+                width:0;
+                position:relative;
+                float:left;
+            }
+            .ul2{
+                font-size:13px;
+            }
+            .open{
+                display:block;
+            }
+
+
+
+            #animation_container{
+                display:none;
+            }
+            #teamLogo{
+                display:block;
+            }
+
+
+            .title2{
+                font-size:1.5rem;
+            }
+            .para1{
+                font-size:1.2rem;
+            }
+            .pic2{
+                width:100%;
+            }
+
+
+        }
+
+
+        @media only screen and (max-width:768px){
+            .col-md-4{
+                clear:both;
+            }
+            .col-md-8{
+                clear:both;
+            }
+            .pic2{
+                margin-bottom:10%;
+                width:80%;
+            }
+            .title2{
+                font-size:1.2rem;
+            }
+            .para1{
+                font-size:1rem;
+            }
+            .pic2{
+                width:80%;
+            }
+            #sponser img {
+                width:60%;
+            }
+
+            #containerWithLeftNav{
+                margin-left:auto;
+            }
+
+        }
+
+    </style>
+
+
+
+
+
+
+    <style>
+        #footContainer{
+            width:90%;
+        }
+        #FudanFooter{
+            margin:auto 0;
+            width:100%;
+            padding:3% 0;
+        }
+        #FudanFooter #usefulLinks {
+            color: #cacaca;
+            padding-left: 1rem;
+        }
+
+        #FudanFooter #usefulLinks ul {
+            font-size: 13px;
+            line-height: 14px;
+            border-top: solid 2px;
+            color: inherit;
+            text-decoration: none;
+            padding-top: 5px;
+            margin:0;
+        }
+
+        #FudanFooter #usefulLinks div {
+            color: #cacaca;
+        }
+
+        #FudanFooter #usefulLinks div:hover {
+            color: white;
+        }
+
+        #FudanFooter #usefulLinks a {
+            color: inherit;
+        }
+
+        #FudanFooter #usefulLinks a:hover {
+            text-decoration: underline;
+        }
+
+        #FudanFooter #usefulLinks div.active,
+        #FudanFooter #usefulLinks div.active a {
+            color: white;
+        }
+
+        #FudanFooter #usefulLinks div.active ul {
+            border-top: solid white 2px;
+        }
+
+        #FudanFooter #usefulLinks li {
+            padding: 3px 0 6px 3px;
+            list-style:none;
+        }
+
+        #usefulLinks span {
+            font-size: 20px;
+        }
+
+
+        #FudanFooter div.footer-copyright {
+            font-size: 13px;
+            line-height: 15px;
+        }
+        .footerUl{
+            margin:2% 4%;
+        }
+    </style>
+
+    <script>
+
+        $(document).ready(function(){
+
+
+            var winWidth=$(window).width();
+
+            if (winWidth>1100){
+                $(".navA").mouseenter(function(){
+                    $(this).parent().find(".ul2").stop().fadeIn(400);
+                });
+                $(".navLi").mouseleave(function(){
+                    $(this).find(".ul2").stop().fadeOut(400);
+                });
+
+
+            }
+            else{
+                $(".navA:not(.noSubmenu)").removeAttr("href");
+                $("#mobileNav").click(function(){
+                    $("#navBar").toggle();
+                });
+                $(document).click(function(event){
+                    var m = $("#mobileNav,#navBar");
+                    if (!m.is(event.target)){
+                        if (m.has(event.target).length===0){
+                            $("#navBar").hide();
+                            $(".open").parent().find(".navA").css("color","white");
+                            $(".open").removeClass("open");
+                        }
+
+                    }
+                });
+                $(".navLi").click(function(){
+                    if ($(this).find(".n2").hasClass("open")){
+                        $(".open").parent().find(".navA").css("color","white");
+                        $(this).find(".n2").removeClass("open");
+                    }
+                    else{
+                        $(".open").parent().find(".navA").css("color","white");
+                        $(".open").removeClass("open");
+                        $(this).find(".n2").addClass("open");
+                        $(this).find(".navA").css("color","#7dded4");
+                    }
+                });
+            }
+
+
+
+
+
+
+        });
+
+
+    </script>
+
+
+
+    <div id="global_wrapper">
+        <div id="mobileNav">
+
+            <div id="mobileLogo"><img src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif" class="logo"></div>
+            <div id="mobileControl"><img src="https://2019.igem.org/wiki/images/thumb/a/ae/T--Fudan-TSI--mobileCtrl.gif/683px-T--Fudan-TSI--mobileCtrl.gif" id="mobileCtrl"></div>
 
         </div>
+
+        <ul id="navUl">
+
+                <li id="navImg">
+                    <img src="https://2019.igem.org/wiki/images/d/d3/T--Fudan-TSI--HomepageLogo.gif" class="logo">
+
+                </li>
+
+
+            <ul id="navBar">
+
+                <li class="navLi"><a class="navA noSubmenu" href="https://2019.igem.org/Team:Fudan-TSI">Home</a></li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Description">Project</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Description">Description</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Design">Design</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Applied_Design" style="white-space:nowrap">Applied Design</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Experiments">Experiment</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Results">Results</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Results/Reverse_Transcription">Reverse Transcription</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Results/Recombination">Recombination</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Measurement">Measurement</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Notebook">Notebook</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Model">Model</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Model">Modeling</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Software">Software</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Hardware">Hardware</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Parts">Parts</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Basic_Part">Basic Parts</a></li>
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Composite_Part">Composite Parts</a></li>
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Improve">Improved Parts</a></li>
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Part_Collection">Part Collection</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Human_Practices">Human Practices</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Public_Engagement">Education &amp; <br />Public Engagement</a></li>
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Human_Practices">Integrated <br />Human Practice</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Collaborations">Collaboration</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Safety">Safety</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi">
+                    <a class="navA" href="https://2019.igem.org/Team:Fudan-TSI/Team">Team</a>
+                    <div class="n2">
+                        <ul class="ul2">
+                            <li class="li2"><a class="navA2" style="white-space:nowrap;" href="https://2019.igem.org/Team:Fudan-TSI/Team">Team Members</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Attributions">Attribution</a></li>
+                            <li class="li2"><a class="navA2" href="https://2019.igem.org/Team:Fudan-TSI/Acknowledgment">Acknowledgement</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="navLi"><a class="navA noSubmenu" href="https://2019.igem.org/Team:Fudan-TSI/Judging">Judging</a></li>
+
+            </ul>
+
+
+            </ul>
+
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+        <!---- Cover ---->
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+
+        <div id="pageCover">
+
+            <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/bkg&amp;action=raw&amp;ctype=text/javascript"></script>
+            <script>
+            $(document).ready(function($){
+                var $root = $('html, body');
+                $('a[href^="#"]').click(function() {
+                    var href = $.attr(this, 'href');
+                    $root.animate({
+                        scrollTop: $(href).offset().top
+                    }, 1000, function () {
+                        window.location.hash = href;
+                    });
+                    return false;
+                });
+            })
+            </script>
+
+            <svg id="demo" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" style="z-index: -100;">
+              <defs>
+                <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
+                  <stop id="stop1a" offset="0%" stop-color="#12a3b4"></stop>
+                  <stop id="stop1b" offset="100%" stop-color="#ff509e"></stop>
+                </linearGradient>
+                <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
+                  <stop id="stop2a" offset="0%" stop-color="#e3bc13"></stop>
+                  <stop id="stop2b" offset="100%" stop-color="#00a78f"></stop>
+                </linearGradient>
+              </defs>
+              <rect id="rect1" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad1)"></rect>
+              <rect id="rect2" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad2)"></rect>
+            </svg>
+            <div id="demoCover"><img id="coverPic" src="https://2019.igem.org/wiki/images/2/23/T--Fudan-TSI--coverImprovedParts.gif"></div>
+        </div>
+        <style>
+            #pageCover{
+                width:100%;
+                margin:0;
+                padding-top:80px;
+            }
+            #demoCover{
+                width:100vw;
+                height:80vh;
+                position:absolute;
+                background-color:rgba(8,39,58,0.5);
+                top:70px;
+                left:0;
+                text-align:center;
+            }
+            #coverPic{
+                width:900px;
+                margin:20vh auto;
+            }
+            #demo{
+                width:100vw;
+                height:70vh;
+                position:relative;
+            }
+            #demo svg {
+              width: 100%;
+              height: 100%;
+              position: fixed;
+            }
+            #demo svg g {
+              mix-blend-mode: lighten;
+            }
+            #demo svg polygon {
+              stroke: none;
+              fill: white;
+            }
+
+            @media only screen and (max-width:1100px){
+                #pageCover{
+                    padding-top:55px;
+                }
+                #demoCover{
+                    top:55px;
+                    height:30vh;
+                }
+                #demo{
+                    height:30vh;
+                }
+                #coverPic{
+                    width:800px;
+                    margin:7vh auto;
+                }
+            }
+            @media only screen and (max-width:992px){
+                #pageCover{
+                    padding-top:55px;
+                }
+                #demoCover{
+                    top:55px;
+                }
+                #coverPic{
+                    width:700px;
+                    margin:6vh auto;
+                }
+            }
+            @media only screen and (max-width:768px){
+                #pageCover{
+                    padding-top:55px;
+                }
+                #demoCover{
+                    top:55px;
+                }
+                #coverPic{
+                    width:450px;
+                    margin:8vh auto;
+                }
+            }
+            @media only screen and (max-width:500px){
+                #coverPic{
+                    width:250px;
+                    margin:8vh auto;
+                }
+            }
+        </style>
+                <script>
+            //////////////////////////////
+            // Demo Functions
+            //////////////////////////////
+            function bkgFunction(showStats) {
+              // stats
+              if (showStats) {
+                var stats = new Stats();
+                stats.domElement.style.position = 'absolute';
+                stats.domElement.style.left = '0';
+                stats.domElement.style.top = '0';
+                document.body.appendChild(stats.domElement);
+                requestAnimationFrame(function updateStats(){
+                  stats.update();
+                  requestAnimationFrame(updateStats);
+                });
+              }
+              // init
+              var svg = document.getElementById('demo');
+              tesselation.setup(svg);
+              gradients.setup();
+              var lastTransitionAt, transitionDelay = 10000, transitionDuration = 3000;
+              function playNextTransition() {
+                tesselation.next(transitionDuration);
+                gradients.next(transitionDuration);
+              };
+              function tick(time) {
+                if (!lastTransitionAt || time - lastTransitionAt > transitionDelay) {
+                  lastTransitionAt = time;
+                  playNextTransition();
+                }
+                window.requestAnimationFrame(tick);
+              }
+              window.requestAnimationFrame(tick);
+            }
+            //////////////////////////////
+            // Delaunay Triangulation
+            //////////////////////////////
+            var calcDelaunayTriangulation = (function() {
+              var EPSILON = 1.0 / 1048576.0;
+              function getSuperT(vertices) {
+                var xMin = Number.POSITIVE_INFINITY, yMin = Number.POSITIVE_INFINITY,
+                    xMax = Number.NEGATIVE_INFINITY, yMax = Number.NEGATIVE_INFINITY,
+                    i, xDiff, yDiff, maxDiff, xCenter, yCenter;
+                for(i = vertices.length; i--; ) {
+                  if(vertices[i][0] < xMin) xMin = vertices[i][0];
+                  if(vertices[i][0] > xMax) xMax = vertices[i][0];
+                  if(vertices[i][1] < yMin) yMin = vertices[i][1];
+                  if(vertices[i][1] > yMax) yMax = vertices[i][1];
+                }
+                xDiff = xMax - xMin;
+                yDiff = yMax - yMin;
+                maxDiff = Math.max(xDiff, yDiff);
+                xCenter = xMin + xDiff * 0.5;
+                yCenter = yMin + yDiff * 0.5;
+                return [
+                  [xCenter - 20 * maxDiff, yCenter - maxDiff],
+                  [xCenter, yCenter + 20 * maxDiff],
+                  [xCenter + 20 * maxDiff, yCenter - maxDiff]
+                ];
+              }
+              function circumcircle(vertices, i, j, k) {
+                var xI = vertices[i][0], yI = vertices[i][1],
+                    xJ = vertices[j][0], yJ = vertices[j][1],
+                    xK = vertices[k][0], yK = vertices[k][1],
+                    yDiffIJ = Math.abs(yI - yJ), yDiffJK = Math.abs(yJ - yK),
+                    xCenter, yCenter, m1, m2, xMidIJ, xMidJK, yMidIJ, yMidJK, xDiff, yDiff;
+                // bail condition
+                if(yDiffIJ < EPSILON){
+                    if (yDiffJK < EPSILON){
+                         throw new Error("Can't get circumcircle since all 3 points are y-aligned");
+                    }
+                }
+
+
+                // calc circumcircle center x/y, radius
+                m1  = -((xJ - xI) / (yJ - yI));
+                m2  = -((xK - xJ) / (yK - yJ));
+                xMidIJ = (xI + xJ) / 2.0;
+                xMidJK = (xJ + xK) / 2.0;
+                yMidIJ = (yI + yJ) / 2.0;
+                yMidJK = (yJ + yK) / 2.0;
+                xCenter = (yDiffIJ < EPSILON) ? xMidIJ :
+                  (yDiffJK < EPSILON) ? xMidJK :
+                  (m1 * xMidIJ - m2 * xMidJK + yMidJK - yMidIJ) / (m1 - m2);
+                yCenter  = (yDiffIJ > yDiffJK) ?
+                  m1 * (xCenter - xMidIJ) + yMidIJ :
+                  m2 * (xCenter - xMidJK) + yMidJK;
+                xDiff = xJ - xCenter;
+                yDiff = yJ - yCenter;
+                // return
+                return {i: i, j: j, k: k, x: xCenter, y: yCenter, r: xDiff * xDiff + yDiff * yDiff};
+              }
+              function dedupeEdges(edges) {
+                var i, j, a, b, m, n;
+                for(j = edges.length; j; ) {
+                  b = edges[--j]; a = edges[--j];
+                  for(i = j; i; ) {
+                    n = edges[--i]; m = edges[--i];
+                    if(a === m){
+                       if (b===n){
+                           edges.splice(j, 2); edges.splice(i, 2);
+                        break;
+                       }
+                    }
+                    if(a === n){
+                       if (b===m){
+                           edges.splice(j, 2); edges.splice(i, 2);
+                        break;
+                       }
+                    }
+                  }
+                }
+              }
+              return function(vertices) {
+                var n = vertices.length,
+                    i, j, indices, st, candidates, locked, edges, dx, dy, a, b, c;
+                // bail if too few / too many verts
+                if(n < 3 || n > 2000)
+                  return [];
+                // copy verts and sort indices by x-position
+                vertices = vertices.slice(0);
+                indices = new Array(n);
+                for(i = n; i--; )
+                  indices[i] = i;
+                indices.sort(function(i, j) {
+                  return vertices[j][0] - vertices[i][0];
+                });
+                // supertriangle
+                st = getSuperT(vertices);
+                vertices.push(st[0], st[1], st[2]);
+                // init candidates/locked tris list
+                candidates = [circumcircle(vertices, n + 0, n + 1, n + 2)];
+                locked = [];
+                edges = [];
+                // scan left to right
+                for(i = indices.length; i--; edges.length = 0) {
+                  c = indices[i];
+                  // check candidates tris against point
+                  for(j = candidates.length; j--; ) {
+                    // lock tri if point to right of circumcirc
+                    dx = vertices[c][0] - candidates[j].x;
+                    if (dx > 0.0){
+                        if(dx * dx > candidates[j].r){
+                            locked.push(candidates[j]);
+                      candidates.splice(j, 1);
+                      continue;
+                        }
+                    }
+
+
+                    // point outside circumcirc = leave candidates
+                    dy = vertices[c][1] - candidates[j].y;
+                    if(dx * dx + dy * dy - candidates[j].r > EPSILON)
+                      continue;
+                    // point inside circumcirc = break apart, save edges
+                    edges.push(
+                      candidates[j].i, candidates[j].j,
+                      candidates[j].j, candidates[j].k,
+                      candidates[j].k, candidates[j].i
+                    );
+                    candidates.splice(j, 1);
+                  }
+                  // new candidates from broken edges
+                  dedupeEdges(edges);
+                  for(j = edges.length; j; ) {
+                    b = edges[--j];
+                    a = edges[--j];
+                    candidates.push(circumcircle(vertices, a, b, c));
+                  }
+                }
+                // close candidates tris, remove tris touching supertri verts
+                for(i = candidates.length; i--; )
+                  locked.push(candidates[i]);
+                candidates.length = 0;
+                for(i = locked.length; i--; )
+                  if(locked[i].i < n){
+                      if(locked[i].j < n){
+                          if(locked[i].k < n){
+                              candidates.push(locked[i].i, locked[i].j, locked[i].k);
+                          }
+                      }
+                  }
+
+
+                // done
+                return candidates;
+              };
+            })();
+            var tesselation = (function() {
+              var svg, svgW, svgH, prevGroup;
+              function createRandomTesselation() {
+                var wW = window.innerWidth;
+                var wH = window.innerHeight;
+                var gridSpacing = 250, scatterAmount = 0.75;
+                var gridSize, i, x, y;
+                if (wW / wH > svgW / svgH) { // window wider than svg = use width for gridSize
+                  gridSize = gridSpacing * svgW / wW;
+                } else { // window taller than svg = use height for gridSize
+                  gridSize = gridSpacing * svgH / wH;
+                }
+                var vertices = [];
+                var xOffset = (svgW % gridSize) / 2, yOffset = (svgH % gridSize) / 2;
+                for (x = Math.floor(svgW/gridSize) + 1; x >= -1; x--) {
+                  for (y = Math.floor(svgH/gridSize) + 1; y >= -1; y--) {
+                    vertices.push(
+                      [
+                        xOffset + gridSize * (x + scatterAmount * (Math.random() - 0.5)),
+                        yOffset + gridSize * (y + scatterAmount * (Math.random() - 0.5))
+                      ]
+                    );
+                  }
+                }
+                var triangles = calcDelaunayTriangulation(vertices);
+                var group = document.createElementNS('http://www.w3.org/2000/svg','g');
+                var polygon;
+                for(i = triangles.length; i; ) {
+                  polygon = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+                  polygon.setAttribute('points',
+                    vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1] + ' ' +
+                    vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1] + ' ' +
+                    vertices[triangles[--i]][0] + ',' + vertices[triangles[i]][1]
+                  );
+                  group.appendChild(polygon);
+                }
+                return group;
+              }
+              return {
+                setup: function(svgElement) {
+                  svg = svgElement;
+                  var vb = svg.getAttribute('viewBox').split(/\D/g);
+                  svgW = vb[2];
+                  svgH = vb[3];
+                },
+                next: function(t) {
+                  var toRemove, i, n;
+                  t /= 1000;
+                    if(prevGroup){
+                        if(prevGroup.children){
+                            if(prevGroup.children.length){
+                                toRemove = prevGroup;
+                                n = toRemove.children.length;
+                                for (i = n; i--; ) {
+                                  TweenMax.to(toRemove.children[i], t*0.4, {opacity: 0, delay: t*(0.3*i/n)});
+                                }
+                                TweenMax.delayedCall(t * (0.7 + 0.05), function(group) { svg.removeChild(group); }, [toRemove], this);
+                            }
+                        }
+                    }
+
+                  var g = createRandomTesselation();
+                  n = g.children.length;
+                  for (i = n; i--; ) {
+                    TweenMax.fromTo(g.children[i], t*0.4, {opacity: 0}, {opacity: 0.3 + 0.25 * Math.random(), delay: t*(0.3*i/n + 0.3), ease: Back.easeOut});
+                  }
+                  svg.appendChild(g);
+                  prevGroup = g;
+                }
+              }
+            })();
+            //////////////////////////////
+            // Gradients
+            //////////////////////////////
+            var gradients = (function() {
+              var grad1, grad2, showingGrad1;
+              // using colors from IBM Design Colors this time
+              var colors = [ // 14 colors - use 3-5 span
+                '#3c6df0', // ultramarine50
+                '#12a3b4', // aqua40
+                '#00a78f', // teal40
+                '#00aa5e', // green40
+                '#81b532', // lime30
+                '#e3bc13', // yellow20
+                '#ffb000', // gold20
+                '#fe8500', // orange30
+                '#fe6100', // peach40
+                '#e62325', // red50
+                '#dc267f', // magenta50
+                '#c22dd5', // purple50
+                '#9753e1', // violet50
+                '#5a3ec8'  // indigo60
+              ];
+              function assignRandomColors(gradObj) {
+                var rA = Math.floor(colors.length * Math.random());
+                var rB = Math.floor(Math.random() * 3) + 3; // [3 - 5]
+                rB = (rA + (rB * (Math.random() < 0.5 ? -1 : 1)) + colors.length) % colors.length;
+                gradObj.stopA.setAttribute('stop-color', colors[rA]);
+                gradObj.stopB.setAttribute('stop-color', colors[rB]);
+              }
+              return {
+                setup: function() {
+                  showingGrad1 = false;
+                  grad1 = {
+                    stopA: document.getElementById('stop1a'),
+                    stopB: document.getElementById('stop1b'),
+                    rect:  document.getElementById('rect1')
+                  };
+                  grad2 = {
+                    stopA: document.getElementById('stop2a'),
+                    stopB: document.getElementById('stop2b'),
+                    rect:  document.getElementById('rect2')
+                  };
+                  grad1.rect.style.opacity = 0;
+                  grad2.rect.style.opacity = 0;
+                },
+                next: function(t) {
+                  t /= 1000;
+                  var show, hide;
+                  if (showingGrad1) {
+                    hide = grad1;
+                    show = grad2;
+                  } else {
+                    hide = grad2;
+                    show = grad1;
+                  }
+                  showingGrad1 = !showingGrad1;
+                  TweenMax.to(hide.rect, 0.55*t, {opacity: 0, delay: 0.2*t, ease: Sine.easeOut});
+                  assignRandomColors(show);
+                  TweenMax.to(show.rect, 0.65*t, {opacity: 1, ease: Sine.easeIn});
+                }
+              };
+            })();
+            //////////////////////////////
+            // Start
+            //////////////////////////////
+            bkgFunction();
+        </script>
+
+
+
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+        <!---- Left Navigator ---->
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+
+
+        <ul class="leftNav" style="margin:0;padding:0;">
+
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle1">Overview</a>
+            </li>
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle2">Results</a>
+                <ul class="leftNavUl2">
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle2_1">Lower response to arabinose, better orthogonalitye</a></li>
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle2_2">Higher induction level than the Wild-type Lac operon when Induced by IPTG</a></li>
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle2_3">Lower Uninduced Leakage</a></li>
+                </ul>
+            </li>
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle3">References</a></li>
+
+
+
+        </ul>
+
+        <style>
+            .leftNav{
+                position: absolute;
+                top:30vw;
+                left:4%;
+                list-style: none;
+                z-index: 3;
+                text-align:left !important;
+                width:15vw;
+            }
+            .leftNav .leftNavA2{
+                position: relative;
+            }
+            .leftNav .leftNavA2:before {
+                content: "";
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                background-color: rgba(55,55,62,0.7);
+                border-radius: 50%;
+                position: absolute;
+                left: 0.3vw;
+                top:50%;
+                margin: 0;
+                padding: 0;
+                transform: translateY(-50%);
+            }
+            .leftNavUl2{
+                list-style: none;
+            }
+            .leftNavA{
+                display: block;
+                font-size: 1.1vw;
+                font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+                padding: 0.2vw 0.8vw;
+                color:#4CA198;
+                text-decoration: none;
+            }
+            .leftNavLi2{
+                width: 13vw;
+                margin:0.3vw  0;
+                line-height: 17px;
+            }
+            .leftNavA:visited{
+                text-decoration: none;
+                color:#4CA198;
+            }
+            .leftNavA:focus{
+                text-decoration: none;
+                color:#4CA198;
+            }
+            .leftNavA:hover,.leftNavA:active{
+                text-decoration: none;
+                color: #B0EBE4;
+            }
+
+            .leftNavA2{
+                display: block;
+                font-size: 1vw;
+                font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+                padding: 0.1vw 1.5vw;
+                color:rgba(168,168,168,1);
+                text-decoration: none;
+            }
+            .leftNavA2:visited{
+                text-decoration: none;
+                color:rgba(168,168,168,1);
+            }
+            .leftNavA2:focus{
+                text-decoration: none;
+                color:rgba(168,168,168,1);
+            }
+            .leftNavA2:hover,.leftNavA2:active{
+                text-decoration: none;
+                color: white;
+            }
+            .menu-active,.menu-active:focus{
+                text-decoration: none;
+                color: white;
+            }
+            .menu-active2,.menu-active2:focus{
+                text-decoration:none;
+                color:#B0EBE4;
+            }
+
+
+            @media only screen and (max-width:768px){
+                .leftNav{
+                    display:none;
+                }
+            }
+        </style>
+
+
+
+        <div id="pageContent">
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+        <!---- Content ---->
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+
+            <div class="container" id="containerWithLeftNav">
+                <div class="row">
+
+                    <div class="row title1" id="mainTitle1">
+                        <div class="col">Overview</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="row">
+                            <div class="col col-lg-12">
+                                This year team Fudan-TSI has upgraded LacI gene <a href="http://parts.igem.org/Part:BBa_C0012"><u>(BBa_C0012)</u></a> to a better version <a href="http://parts.igem.org/Part:BBa_K3257045"><u>(BBa_K3257045)</u></a>.<br /><br />
+                                LacI is one of the genes in Lac operon encoding the inhibitor protein binding to LacO <a href=" http://parts.igem.org/Part:BBa_K3257066"><u>(BBa_K3257066)</u></a> sites (cis-acting element). In response to IPTG, the inhibitor protein detaches from LacO and enables the transcription of downstream genes. We mutated some specific sites in the LacI gene to improve its sensibility to IPTG (<a href="#Ref1"><u>Christopher Voigt, et al.</u></a>). Using EGFP as a reporter, its fluorescence intensity demonstrates a lower level of leakage and the same level of expression before and after the induction of IPTG. Also, we induce the improved Lac operon by arabinose to verify its orthogonal response to IPTG. <br /><br />
+                                With LacIq promoter <a href="http://parts.igem.org/Part:BBa_K3257003"><u>(BBa_K3257003)</u></a> and rrnB T1 terminator <a href="http://parts.igem.org/Part:BBa_K3257020"><u>(BBa_K3257020)</u></a>, improved LacI protein can be expressed and function properly in the Escherichia coli BL21(DE3). We used EGFP as a reporter controlled by our improved Lac operon and measured its green fluorescence over time. <br /><br />
+                                According to our experiment, our Lac operon is improved in the following three main aspects.
+                            </div>
+                        </div>
+                    </div>
+
+                                       <div class="row title1" id="mainTitle2">
+                        <div class="col">Design</div>
+                                       </div>
+
+                                       <div class="row para1">
+                        <div class="row">
+                                                         <div class="col col-lg-12">
+                            We cut out BBa_C0012 between the 9th and 1153rd nucleotide, mutated the 60th nucleotide from C to A, the 61st nucleotide from A to T, 136th nucleotide from C to T, the 490th nucleotide from T to A, the 500th nucleotide from A to G and the 1001st nucleotide from C to G of it and added a stop codon at the end of it.
+                                                         </div>
+                        </div>
+                    </div>
+
+                    <div class="row title1" id="mainTitle2">
+                        <div class="col">Results</div>
+                    </div>
+
+                    <div class="row title2" id="mainTitle2_1">
+                        <div class="col">Lower response to arabinose, better orthogonality</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            Crosstalk between the response to IPTG and arabinose has been a defect of the wild type Lac operon. When 4 mM arabinose is added, a few lac inhibitors would detach from lac operator. This means that it is induced in a relatively low but unignorable level. According to the measurement of our experiment, our improved LacI can respond to IPTG with better orthogonality. As shown in Fig. 1, when 4 mM arabinose is added, oLacI (wild-type LacI) is induced at a significantly higher level than iLacI (improved LacI).
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/d/d0/T--Fudan-TSI--Improved_Fig1.png" style="width:900px; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Figure 1. The expression level of EGFP controlled by different versions of LacI and inducers, or under different promoters. </b><br />
+                            The origin point indicates the time when different inducers are added (1 mM IPTG and/or 4 mM Arabinose). The title of the graph shows which kind of inducer is added to the culture. The horizontal axe shows the duration of time, the vertical axe shows the quantified level of EGFP expression. The fluorescence level (excitation wavelength: 485 nm; detection wavelength: 528 nm) is quantified by the concentration of fluorescein, and normalized by the measured OD600 equivalent to the number of beads in the system. oLacI stands for the wildtype LacI, iLacI stands for our improved version of LacI. +LacO indicates that the promoter constitutes a LacO sequence. Control is the negative control plasmid which does not constitute an EGFP sequence. Error bar in the two graphs on the first row indicates the SEM of three replicates. The second row showed only the mean amount of three replicate.
+                        </div>
+                    </div>
+
+                    <div class="row title2" id="mainTitle2_2">
+                        <div class="col">Higher Induction Level than the Wild-type Lac operon when Induced by IPTG</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            Our improved Lac operon does not malfunction and can be normally induced by IPTG. When 1 mM IPTG is added, EGFP controlled by both operons can be induced and expressed at relatively the same level (Fig. 1), while the level of induction under the control of iLacI is significantly higher than that of oLacI (Fig. 2).
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/d/d6/T--Fudan-TSI--Improved_Fig2.png" style="width:30%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Figure 2. The induction level of EGFP under different repressor and promoters. </b><br />
+                            Induction level is calculated by dividing fluorescence level after 9 h of induction by 1 h afterwards. The fluorescence level is quantified as in Fig. 1. oLacI stands for the wildtype LacI, iLacI stands for our improved version of LacI. +LacO indicates that the promoter constitutes a LacO sequence. t test analysis shows that the induction level of iLacI is significantly higher than oLacI, *** indicates that p=0.0002.
+                        </div>
+                    </div>
+
+                    <div class="row title2" id="mainTitle2_3">
+                        <div class="col">Lower Uninduced Leakage</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            The uninduced leakage level is also an important parameter of an operon. Improved LacI lowers the leakage level compared to the wild-type one. The figure below (Figure 3) is the measurement of the fluorescence of EGFP controlled by wild-type and improved Lac operon. When no IPTG or arabinose is added, the fluorescence of EGFP controlled by improved Lac operon much lower than the fluorescence of EGFP controlled by wild-type Lac operon (Fig. 1, Fig. 3).
+                        </div>
+                    </div>
+
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/4/45/T--Fudan-TSI--Improved_Fig3.png" style="width:30%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Figure 3. The basal fluorescence level of EGFP controlled by different repressors.</b><br />
+                            The bar indicates the mean fluorescence level during the 10 h with no inducer in the culture. The fluorescence level is quantified as in Fig. 1. oLacI stands for the wildtype LacI, iLacI stands for our improved version of LacI. Control is below the detection level and not shown. Error bar indicates the SEM of fluorescence signal in the 10 h. Paired t test analysis shows that iLacI has a significantly lower of fluorescence than oLacI, p=0.0057 (**).
+                        </div>
+                    </div>
+
+                    <div class="row title3" id="mainTitle3">
+                        <div class="col">References</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            <div class="col">
+                                <ul class="paraUl" style="list-style:none;">
+                                    <li>[1]. Meyer, A. J., Segall-Shapiro, et al. <a href="https://www.ncbi.nlm.nih.gov/pubmed/30478458" target="_blank" name="Ref1">Escherichia coli “Marionette” strains with 12 highly optimized small-molecule sensors.</a> <i>Nat Chem Biol</i> 15, 196–204 (2019).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+        <!---- Foot ---->
+        <!----------------------------------------------------------------------------------------------------------------------------------------->
+
+        <footer id="FudanFooter" class="page-footer grey">
+
+            <div class="container" id="footContainer">
+                <div class="row">
+                    <div class="col-md-4" id="sponser" style="padding-top:3%;">
+                        <div class="row">
+                            <div class="col-sm-6" style="padding:0;">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <img class="img-fluid" alt="Team Fudan-TSI" src="https://2019.igem.org/wiki/images/0/0f/T--Fudan-TSI--LogoGrey.gif" />
+                                    </div>
+                                    <div class="col">
+                                        <img class="img-fluid" alt="Fudan University" src="https://2018.igem.org/wiki/images/f/f7/T--Fudan--schoolLogo.png" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6" style="padding:0;">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <img class="img-fluid" alt="School of Life Sciences, Fudan University" src="https://2018.igem.org/wiki/images/1/1d/T--Fudan--schoolOfLifeSciencesIcon.png" />
+                                    </div>
+                                    <div class="col">
+                                        <img class="img-fluid" alt="Yunfeng Capital" src="https://2018.igem.org/wiki/images/e/e2/T--Fudan--yunfengLogo.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h3 class="col s12" style="text-align: left; color: rgba(255, 255, 255, 0.8); font-size:12.5px; margin-top:5px;">R-Evolution: an <i>in vivo</i> sequence-specific toolbox for continuous mutagenesis</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8" id="usefulLinks">
+                        <div class="row">
+                            <div class="col-lg-6" style="padding:0;">
+                                <div class="row">
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center">
+                                            <span><a href="/Team:Fudan-TSI/Description" style="text-decoration:none;">Project</a></span>
+                                                <ul>
+                                                    <li><a href="/Team:Fudan-TSI/Description">Background</a></li>
+                                                    <li><a href="/Team:Fudan-TSI/Design">Design</a></li>
+                                                    <li><a href="/Team:Fudan-TSI/Applied_Design">Applied Design</a></li>
+                                                    <li><a href="/Team:Fudan-TSI/Experiments">Experiments</a></li>
+                                                    <li><a href="/Team:Fudan-TSI/Judging">Judging</a></li>
+                                                </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center">
+                                            <span><a href="/Team:Fudan-TSI/Results" style="text-decoration:none;">Results</a></span>
+                                            <ul>
+                                                <li><a href="/Team:Fudan-TSI/Results/ReverseTranscription">Reverse Transcription</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Results/Recombination">Recombination</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Demonstrate">Demonstration</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Measurement">Measurement</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Notebook">Notebook</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center">
+                                            <span style="text-decoration:none;">Model</span>
+                                            <ul>
+                                                <li><a href="/Team:Fudan-TSI/Model">Modeling</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Software">Software</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Hardware">Hardware</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6" style="padding:0;">
+                                <div class="row">
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center active">
+                                          <span><a href="/Team:Fudan-TSI/Parts" style="text-decoration:none;">Parts</a></span>
+                                            <ul>
+                                                <li><a href="/Team:Fudan-TSI/Basic_Part">Basic parts</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Composite_Part">Composite parts</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Improve">Improved parts</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Part_Collection">Part collection</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center">
+                                          <span><a href="/Team:Fudan-TSI/Human_Practices" style="text-decoration:none;">Outreach</a></span>
+                                            <ul>
+                                                <li><a href="/Team:Fudan-TSI/Public_Engagement">Education &amp; Public engagement</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Human_Practices">Integrated human practice</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Collaborations">Collaborations</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Safety">Safety</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="footerUl align-items-center">
+                                          <span><a href="/Team:Fudan-TSI/Team" style="text-decoration:none;">Team</a></span>
+                                            <ul>
+                                                <li><a href="/Team:Fudan-TSI/Team">Members</a></li>
+                                                <li><a href="/Team:Fudan-TSI/Attributions">Attributions</a></li>
+                                                <li><a href="/Team:Fudan-TSI">&#169; 2019</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="container" style="width:90%;">
+                     <div class="contactUS row">
+                       <div class="col s12 m6 l6"><i class="fa fa-location-arrow"></i> Life Sci Bldg, 2005 Songhu Rd, Shanghai
+                       </div>
+                        <div class="col s12 m6 l2"><i class="fa fa-fax"></i> +86-21-31246727
+                       </div>
+                         <div class="col s12 m6 l2"><i class="fa fa-envelope-o"></i> igem@fudan.edu.cn
+                       </div>
+                         <div class="col s12 m6 l2"><i class="fa fa-twitter"></i> <i class="fa fa-wechat"></i> Fudan_iGEM
+                       </div>
+                     </div>
+                 </div>
+            </div>
+        </footer>
+
+
+
     </div>
-</div>
 
 
-<!-- Javascript files -->
-<!-- Materialize 1.0.0-rc.2 -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/materialize.js&action=raw&ctype=text/javascript"></script>
 
-<!-- Javascript -->
-<script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/Fudan-js.js&action=raw&ctype=text/javascript"></script>
+    <script>
 
-</body>
+        var winHeight=$(window).height();
+        var winWidth=$(window).width();
+        var pagePosition=$("#pageContent").offset().top+90;
+        var navHeight=$(".leftNav").height();
+        var footerHeight=$("#FudanFooter").height();
+        var maxTopDistance=$("#FudanFooter").offset().top-$(".leftNav").height()-$("#top_menu_14").height()-$("#navUl").height();
+        $(".leftNav").css({"position":"absolute","top":pagePosition});
+        $(window).resize(function(){
+                var winHeight=$(window).height();
+                var winWidth=$(window).width();
+                var topDistance=$(window).scrollTop()+0.25*winHeight;
+                var navHeight=$(".leftNav").height();
+                var footerHeight=$("#FudanFooter").height();
+                var maxTopDistance=$("#FudanFooter").offset().top-$(".leftNav").height()-$("#navUl").height();
+                var leftNavFromTop=pagePosition-$(window).scrollTop();
+            if (leftNavFromTop<0.25*winHeight){
+                if(topDistance<maxTopDistance){
+                    $(".leftNav").css({"position":"fixed","top":0.25*winHeight+$("#top_menu_14").height()});
+                }
+                else{
+                    $(".leftNav").css({"position":"absolute","top":maxTopDistance});
+                }
+            }
+            else{
+                $(".leftNav").css({"position":"absolute","top":pagePosition});
+            }
+        });
+
+        $(window).scroll(function(){
+            var winHeight=$(window).height();
+            var winWidth=$(window).width();
+            var leftNavFromTop=pagePosition-$(window).scrollTop();
+            var topDistance=$(window).scrollTop()+0.25*winHeight;
+            if (leftNavFromTop<0.25*winHeight){
+                if(topDistance<maxTopDistance){
+                    $(".leftNav").css({"position":"fixed","top":0.25*winHeight+$("#top_menu_14").height()});
+                }
+                else{
+                    $(".leftNav").css({"position":"absolute","top":maxTopDistance});
+                };
+            }
+            else{
+                $(".leftNav").css({"position":"absolute","top":pagePosition});
+            }
+        });
+
+        $(".leftNav a").click(function () {
+            $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top-$("#navUl").height()-50
+        }, 500);
+        return false;
+        });
+
+
+        $(window).scroll(function(){
+
+            var currentScroll=$(this).scrollTop();
+            var firstHeight=$("#pageCover").height();
+            var footerFromTop=$("#FudanFooter").offset().top;
+            var $currentSection=null;
+            $(".leftNavA").each(function(){
+                $('.leftNavA').removeClass('menu-active');
+                var hePoint=$($(this).attr("href"));
+                var divPosition=hePoint.offset().top-$("#navUl").height()-50;
+                if (divPosition-1<currentScroll){
+                    $currentSection=$(this);
+                }
+                if (currentScroll>firstHeight){
+                    $(".leftNavA").removeClass("menu-active");
+                    $currentSection.addClass("menu-active");
+                }
+            });
+
+            var $currentSection2;
+            $('.leftNavA2').each(function(){
+                $('.leftNavA2').removeClass('menu-active2');
+                var hePoint2=$($(this).attr("href"));
+                var divPosition2=hePoint2.offset().top-$("#navUl").height()-50;
+                if (divPosition2-1<currentScroll){
+                    $currentSection2=$(this);
+                }
+                if (currentScroll>firstHeight){
+                    $('.leftNavA2').removeClass('menu-active2');
+                    $currentSection2.addClass('menu-active2');
+                }
+            });
+        });
+
+    </script>
+
+
+    <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/popper.min.js&amp;action=raw&amp;ctype=text/javascript" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://2019.igem.org/wiki/index.php?title=Template:Fudan-TSI/bootstrap.js&amp;action=raw&amp;ctype=text/javascript" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    Content ends    --------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 </html>

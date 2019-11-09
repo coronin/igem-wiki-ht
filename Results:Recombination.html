@@ -602,13 +602,7 @@
 
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    Content begins    --------------------------------------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
@@ -896,6 +890,7 @@
                 right:0;
                 background-color:rgba(0,0,0,0);
                 padding:0;
+
             }
 
             #mobileNav{
@@ -1387,7 +1382,7 @@
               <rect id="rect1" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad1)"></rect>
               <rect id="rect2" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad2)"></rect>
             </svg>
-            <div id="demoCover"><img id="coverPic" src="https://2019.igem.org/wiki/images/2/26/T--Fudan-TSI--coverJudging.gif"></div>
+            <div id="demoCover"><img id="coverPic" src="https://2019.igem.org/wiki/images/8/87/T--Fudan-TSI--coverRecombination.gif"></div>
         </div>
         <style>
             #pageCover{
@@ -1405,7 +1400,7 @@
                 text-align:center;
             }
             #coverPic{
-                width:600px;
+                width:900px;
                 margin:20vh auto;
             }
             #demo{
@@ -1438,7 +1433,7 @@
                     height:30vh;
                 }
                 #coverPic{
-                    width:500px;
+                    width:800px;
                     margin:7vh auto;
                 }
             }
@@ -1450,7 +1445,7 @@
                     top:55px;
                 }
                 #coverPic{
-                    width:400px;
+                    width:700px;
                     margin:6vh auto;
                 }
             }
@@ -1462,7 +1457,7 @@
                     top:55px;
                 }
                 #coverPic{
-                    width:350px;
+                    width:450px;
                     margin:8vh auto;
                 }
             }
@@ -1808,6 +1803,115 @@
         <!----------------------------------------------------------------------------------------------------------------------------------------->
 
 
+        <ul class="leftNav" style="margin:0;padding:0;">
+
+
+            <li class="leftNavLi"><a class="leftNavA" href="#mainTitle3">Recombination</a>
+                <ul class="leftNavUl2">
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle3_1">Cre expression is controlled by Tet operon</a></li>
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle3_2">Cre initiates excision between two homologous loxP site</a></li>
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle3_3">lox5171 is most incompatible with wildtype loxP (wtlox)</a></li>
+                    <li class="leftNavLi2"><a class="leftNavA2" href="#mainTitle3_4">Cre with degradation tags</a></li>
+                </ul>
+            </li>
+
+
+
+
+        </ul>
+
+        <style>
+            .leftNav{
+                position: absolute;
+                top:30vw;
+                left:4%;
+                list-style: none;
+                z-index: 3;
+                text-align:left !important;
+                width:15vw;
+            }
+            .leftNav .leftNavA2{
+                position: relative;
+            }
+            .leftNav .leftNavA2:before {
+                content: "";
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                background-color: rgba(55,55,62,0.7);
+                border-radius: 50%;
+                position: absolute;
+                left: 0.3vw;
+                top:50%;
+                margin: 0;
+                padding: 0;
+                transform: translateY(-50%);
+            }
+            .leftNavUl2{
+                list-style: none;
+            }
+            .leftNavA{
+                display: block;
+                font-size: 1.1vw;
+                font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+                padding: 0.2vw 0.8vw;
+                color:#4CA198;
+                text-decoration: none;
+            }
+            .leftNavLi2{
+                width: 13vw;
+                margin:0.3vw  0;
+                line-height: 17px;
+            }
+            .leftNavA:visited{
+                text-decoration: none;
+                color:#4CA198;
+            }
+            .leftNavA:focus{
+                text-decoration: none;
+                color:#4CA198;
+            }
+            .leftNavA:hover,.leftNavA:active{
+                text-decoration: none;
+                color: #B0EBE4;
+            }
+
+            .leftNavA2{
+                display: block;
+                font-size: 1vw;
+                font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+                padding: 0.1vw 1.5vw;
+                color:rgba(168,168,168,1);
+                text-decoration: none;
+            }
+            .leftNavA2:visited{
+                text-decoration: none;
+                color:rgba(168,168,168,1);
+            }
+            .leftNavA2:focus{
+                text-decoration: none;
+                color:rgba(168,168,168,1);
+            }
+            .leftNavA2:hover,.leftNavA2:active{
+                text-decoration: none;
+                color: white;
+            }
+            .menu-active,.menu-active:focus{
+                text-decoration: none;
+                color: white;
+            }
+            .menu-active2,.menu-active2:focus{
+                text-decoration:none;
+                color:#B0EBE4;
+            }
+
+
+            @media only screen and (max-width:768px){
+                .leftNav{
+                    display:none;
+                }
+            }
+        </style>
 
 
 
@@ -1816,69 +1920,102 @@
         <!---- Content ---->
         <!----------------------------------------------------------------------------------------------------------------------------------------->
 
-            <div class="container">
+            <div class="container" id="containerWithLeftNav">
                 <div class="row">
 
-                    <div class="row title1" id="mainTitle1">
-                        <div class="col">Bronze</div>
+                    <div class="row title1" id="mainTitle3">
+                        <div class="col">Recombination</div>
+                    </div>
+
+                    <div class="row title2" id="mainTitle3_1">
+                        <div class="col">Cre expression is controlled by Tet operon</div>
                     </div>
 
                     <div class="row para1">
-                        <div class="row">
-                            <div class="col">
-                                 1. Registration and Giant Jamboree Attendance<br /><br />
-2.  Competition deliverables<br />
-Please come to see our presentation at Room 309 on Nov 2nd at 9:30 am, and feel free to visit our poster stand in Zone 1-20. Here is the link to our Judging form.<br /><br />
-3.  Attributions<br />
-We have carefully documented each of our responsibilities and contribution to the project as well as the help we were offered by others.<br /><br />
-4.  Project inspiration and description<br />
-We put down how we came up with our mutagenesis system and what we’re trying to achieve through the implementation of our project.<br /><br />
-5.  Characterization<br />
-We used 4 methods to verify and characterize the fluorescence recovery of EGFP from its nonsense mutant.
-
-                            </div>
+                        <div class="col">
+                            We placed Cre under the promoter ptetR, whose expression is controlled by its inhibitor TetR. Regarding where we should place the inhibitor gene to maximize its expression, we opted between 2 options, one is placing it downstream of the LacI inhibitor, the other is to place it downstream of the kanamycin resistance gene (Kan<sup>R</sup>). We tested both construct by placing an EGFP in these two places and measuring its fluorescence emission. Results show that the expression level is almost the same in both construct (Fig. 4).
                         </div>
                     </div>
 
-                    <div class="row title1" id="mainTitle1">
-                        <div class="col">Silver</div>
-                    </div>
-
-                    <div class="row para1">
+                    <div class="row legend">
                         <div class="row">
-                            <div class="col">
-                                1.  Validated part<br />
-5 different degradation tags with differed degradation dynamics are tested, each of their effect on protein steady-state concentration is measured.<br /><br />
-2.  Collaboration<br />
-We actively collaborated with different teams on various activities, including experimental design, plasmid sharing, and human practices.<br /><br />
-3.  Human Practices<br />
-In our HP work, we presented how we interacted with the public and tried to promote understanding of biological research. Also, we recorded in detail how we engaged with different researchers in regards to our project’s prospects.
-
-
-                            </div>
+                            <img src="https://2019.igem.org/wiki/images/2/2f/T--Fudan-TSI--Result_Fig4.gif" style="width:50%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Figure 4. EGFP expression level is relatively the same downstream of LacI or Kan<sup>R</sup>.</b><br />
+                            The vertical axis shows the semiquantitative analysis of EGFP fluorescence (excitation wavelength: 485 nm; detection wavelength: 528 nm), normalized by cell amount (OD600).
                         </div>
                     </div>
 
-                    <div class="row title1" id="mainTitle1">
-                        <div class="col">Gold</div>
+                    <div class="row title2" id="mainTitle3_2">
+                        <div class="col">Cre initiates excision between two homologous loxP site</div>
                     </div>
 
                     <div class="row para1">
+                        <div class="col">
+                            Placing 2 wild-type loxP on both ends of the target sequence (mCherry) in the same direction, and expressing it under a stable promoter (J23101). By co-transforming the target plasmid with another plasmid carrying Cre recombinase, we verified that our Cre protein functions accordingly by excising the mCherry sequence from the promoter (Fig. 5). Through PCR amplification with the primers annealing to sequences outside the target, and subsequent electrophoresis, we found that the band from bacteria co-transforming Cre corresponds to the excision of mCherry.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
                         <div class="row">
-                            <div class="col">
-                                1.  Integrated human practices<br />
-Through interacting with relevant researchers, we gained valuable insight on experimental design, project application, modelling and even human practice work itself.<br /><br />
-2.  Improve a previous part<br />
-We improved the LacI repressor of Lac operon to enable lower level of basal leakage, and better orthogonality with arabinose inducer.<br /><br />
-3.  Model your project<br />
-We used deterministic and stochastic models to simulate the intracellular reactions in our system. Our modelling demonstrated theoretically of our system’s function and provided important guidance on several of our experimental designs.<br /><br />
-4.  Demonstration<br />
-We demonstrated that the two critical component of our system, reverse transcriptase and Cre recombinase are functional, and proved the feasibility of our system design.
-We thought carefully and complied all safety requirements in carrying out experiments.<br /><br />
+                            <img src="https://2019.igem.org/wiki/images/e/e8/T--Fudan-TSI--Result_Fig5.gif" style="width:60%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Figure 5. lox511 remains compatible with wildtype loxP, though at a lower excision rate. </b><br />
+                            Wildtype loxP and lox511-mCherry-loxP are analyzed on two different gels, their marker bands are indicated. Wildtype loxP only has an excision band. lox511 has a slight full-length mCherry band slightly longer than 1000 bp, which corresponds with the Ctr+ result in Fig. 6, but excision band is still visible and brighter than that of full-length mCherry. This result suggests that lox511 still interacts with wildtype loxP and go through excision, but at a lower efficiency.
+                        </div>
+                    </div>
 
 
 
-                            </div>
+                    <div class="row title2" id="mainTitle3_3">
+                        <div class="col">lox5171 is most incompatible with wildtype loxP (wtlox)</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            When we were carrying out integrated human practice, we were warned by Prof. Wang that two homologous loxP would be excised at a much higher efficiency than performing recombination as we wished, so we searched the literature and selected 3 mutants that are said to be incompatible with wt-loxP but are compatible with themselves, they are lox511, lox2272 and lox5171. We tested their incompatibility with wt-loxP by replacing one of wt-loxP into the mutant at the ends of mCherry, and co-transformed the plasmid with Cre (Fig. 5 & 7). The result we obtained showed that lox5171-mCherry-wt_loxP performs best, and used it in further analysis (Fig. 7).
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/9/9e/T--Fudan-TSI--Result_Fig6.gif" style="width:60%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Figure 6. Schematic diagram of loxP mutant incompatibility test. </b><br />
+
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/b/b3/T--Fudan-TSI--Result_Fig7.gif" style="width:70%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Figure 7. Cre excises sequences flanked by homologous loxP sites, but are incompatible with its mutant version. </b><br />
+                            The above column shows which plasmids are transformed. The 3 middle lanes stand for Cre co-transforming with mCherry flanked on both ends by wildtype loxP (Lane 3), or with wildtype loxP on only one end, the other end being lox2272 (Lane 4) or lox5171 (Lane 5). mCherry flanked with lox2272 or lox5171 on one end does not go through excision so a full-length band was detectable, while mCherry flanked with wildtype loxP on both ends are excised and only a shorter band was seen.
+                        </div>
+                    </div>
+
+                    <div class="row title2" id="mainTitle3_4">
+                        <div class="col">Cre with degradation tags</div>
+                    </div>
+
+                    <div class="row para1">
+                        <div class="col">
+                            When our modelling demonstrated to us that the expression level of Cre needs to be much lower than that of RT, we introduced degradation tags. By attaching them to the C terminal of Cre recombinase, the protein would be rapidly recognized and degraded by the E. coli’s native SsrA-SmpB degradation system. This construct could also solve the problem of basal leakage and continued existence after inducer removal. Apart from the native AANDENYALAA tag, we also modified its last three or five amino acids into YALAV, YALVA, YALVV and WVLAA. We tested the stable expression level of each tag by attaching them to the C terminal of EGFP protein and measuring the change in fluorescence level (Fig. 8). The stable state expression increases as the number of mutated amino acids increase, or the mutated site nears the N’ of the tag. Supported by our modelling result, we deemed that the WVLAA tag performs best and chose to use it in further experiments.
+                        </div>
+                    </div>
+
+                    <div class="row legend">
+                        <div class="row">
+                            <img src="https://2019.igem.org/wiki/images/6/61/T--Fudan-TSI--Result_Fig8.gif" style="width:70%; margin:auto;">
+                        </div>
+                        <div class="row legends">
+                            <b>Figure 8. Degradation tag greatly reduces the protein level at stable state. </b><br />
+                            WT represents the positive control of EGFP without any tag attachment. The five degradation tags are represented by their last five amino acid sequence. The vertical axis shows the quantitative analysis of EGFP fluorescence (excitation wavelength: 485 nm; detection wavelength: 528 nm), normalized by cell amount (OD600). The fluorescence is quantified by the concentration of green fluorescein, cell number is quantified by the number of silicon beads, both are from the distributed measurement kit. Fluorescence below detection level are eliminated. Error bar stands for the SEM of 3 replicates. t-test is performed between WT and each degradation tag, P<0.0001 (****).
                         </div>
                     </div>
 
@@ -1886,6 +2023,10 @@ We thought carefully and complied all safety requirements in carrying out experi
 
                 </div>
             </div>
+
+
+
+        </div>
 
 
 
@@ -1944,7 +2085,7 @@ We thought carefully and complied all safety requirements in carrying out experi
                                     </div>
 
                                     <div class="col-sm-4">
-                                        <div class="footerUl align-items-center">
+                                        <div class="footerUl align-items-center active">
                                             <span><a href="/Team:Fudan-TSI/Results" style="text-decoration:none;">Results</a></span>
                                             <ul>
                                                 <li><a href="/Team:Fudan-TSI/Results/ReverseTranscription">Reverse Transcription</a></li>
