@@ -27,6 +27,7 @@ https://2019.igem.org/Team:Fudan-TSI/Safety
 
 https://2019.igem.org/Team:Fudan-TSI/Team
 https://2019.igem.org/Team:Fudan-TSI/Attributions
+https://2019.igem.org/Team:Fudan-TSI/Heritage
 
 
 
@@ -34,7 +35,7 @@ https://2019.igem.org/Team:Fudan-TSI/Attributions
 
 
 
-
+https://2019.igem.org/wiki/index.php?action=edit&title=Team:Fudan-TSI/Heritage
 https://2019.igem.org/wiki/index.php?action=edit&title=Team:Fudan-TSI/Applied_Design
 https://2019.igem.org/wiki/index.php?action=edit&title=Team:Fudan-TSI/Demonstrate
 https://2019.igem.org/wiki/index.php?action=edit&title=Team:Fudan-TSI/Human_Practices
